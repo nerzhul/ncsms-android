@@ -28,12 +28,6 @@
 -->
 
 <resources>
-
-	<string name="app_name">ownCloud-SMS</string>
-	<string name="account_type">fr.unix_experience.owncloud_sms</string>
-	<string name="account_authority">fr.unix_experience.owncloud_sms.datasync.provider</string>
-	
-	<string name="target_package">fr.unix_experience.owncloud_sms</string>
 	<string name="pref_title_sync_frequency">Frecuencia de sincronización</string>
 	
 	<!-- Translations must begin there -->
