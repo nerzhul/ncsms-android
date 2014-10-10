@@ -2,8 +2,6 @@
 
 ## Introduction
 
-Oc Sms provides a webinterface to display your SMS conversations.
-
 ownCloud SMS app push your Android devices conversation into your ownCloud instance, using ocsms app.
 
 Android download link: https://play.google.com/store/apps/details?id=fr.unix_experience.owncloud_sms
