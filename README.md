@@ -8,11 +8,20 @@ Android download link: https://play.google.com/store/apps/details?id=fr.unix_exp
 
 ocsms app sources are available here: https://github.com/nerzhul/ocsms/
 
+## Application documentation
+
+You can found application documentation here: https://github.com/nerzhul/ownCloud-SMS-App/wiki
+
 ## Licence
 
 ownCloud SMS Android Application licence is in reflexion, then sources are partial.
 
 - App locales are under BSD 2 clause licence
+
+## Contributions
+
+We are searching for translations in others langs (german, spanish, russian).
+To contribute please download res/values/strings.xml and give us a translated version !
 
 ## Requirements
 - An ownCloud instance with ocsms app
