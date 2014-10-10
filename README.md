@@ -20,9 +20,9 @@ ownCloud SMS Android Application licence is in reflexion, then sources are parti
 
 ## Contributions
 
-We are searching for translations in others langs (german, spanish, russian).
+We are searching for translations in others langs (german, russian, italian, japanese).
 
-To contribute please download res/values/strings.xml and give us a translated version !
+To contribute please download res/values/strings.xml and res/values/google_playstore_strings.xml and give us a translated version !
 
 ## Requirements
 - An ownCloud instance with ocsms app
