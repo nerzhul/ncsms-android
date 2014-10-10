@@ -16,7 +16,8 @@ You can found application documentation here: https://github.com/nerzhul/ownClou
 
 ownCloud SMS Android Application licence is in reflexion, then sources are partial.
 
-- App locales are under BSD 2 clause licence
+- App locales and layouts are under BSD 2 clause licence
+- App DataProviders are under AGPLv3
 
 ## Contributions
 
