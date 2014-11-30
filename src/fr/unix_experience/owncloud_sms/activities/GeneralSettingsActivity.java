@@ -39,6 +39,7 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 	private static final boolean ALWAYS_SIMPLE_PREFS = false;
 	static AccountManager mAccountMgr;
 	static String mAccountAuthority;
+	static String mSlowSyncAccountAuthority;
 	static String mAccountType;
 
 	@Override
@@ -47,6 +48,7 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 
 		mAccountMgr = AccountManager.get(getBaseContext());
 		mAccountAuthority = getString(R.string.account_authority);
+		mSlowSyncAccountAuthority = getString(R.string.slowsync_account_authority);
 		mAccountType = getString(R.string.account_type);
 		setupSimplePreferencesScreen();
 	}
@@ -69,6 +71,7 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 		// their values. When their values change, their summaries are updated
 		// to reflect the new value, per the Android Design guidelines.
 		bindPreferenceSummaryToValue(findPreference("sync_frequency"));
+		bindPreferenceSummaryToValue(findPreference("slow_sync_frequency"));
 	}
 
 	/** {@inheritDoc} */
@@ -151,6 +154,35 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 						}
 					}
 
+				} else if (prefKey.equals(new String("slow_sync_frequency"))) {
+					long syncFreq = Long.parseLong((String)value);
+
+					// Get ownCloud SMS account list
+					Account[] myAccountList = mAccountMgr.getAccountsByType(mAccountType);
+					for (int i = 0; i < myAccountList.length; i++) {
+						// And get all authorities for this account
+						List<PeriodicSync> syncList = ContentResolver.getPeriodicSyncs(myAccountList[i], mSlowSyncAccountAuthority);
+						
+						boolean foundSameSyncCycle = false;
+						for (int j = 0; j < syncList.size(); j++) {
+							PeriodicSync ps = syncList.get(i);
+							
+							if (ps.period == syncFreq && ps.extras.getInt("synctype") == 2) {
+								foundSameSyncCycle = true;
+							}
+						}
+						
+						if (foundSameSyncCycle == false) {
+							Bundle b = new Bundle();
+							b.putInt("synctype", 2);
+
+							ContentResolver.removePeriodicSync(myAccountList[i], 
+								mSlowSyncAccountAuthority, b);
+							ContentResolver.addPeriodicSync(myAccountList[i],
+								mSlowSyncAccountAuthority, b, syncFreq * 60);
+						}
+					}
+
 				}
 			} else {
 				// For all other preferences, set the summary to the value's
@@ -203,6 +235,7 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 			// updated to reflect the new value, per the Android Design
 			// guidelines.
 			bindPreferenceSummaryToValue(findPreference("sync_frequency"));
+			bindPreferenceSummaryToValue(findPreference("slow_sync_frequency"));
 		}
 	}
 }

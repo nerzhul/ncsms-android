@@ -40,7 +40,7 @@
         <service
             android:name=".sync_adapters.SmsSyncService"
             android:exported="true"
-            android:process=":sync" >
+            android:process=":sync">
             <intent-filter>
                 <action android:name="android.content.SyncAdapter" />
             </intent-filter>
@@ -52,7 +52,27 @@
 
         <provider
             android:name=".providers.SmsDataProvider"
-            android:authorities="fr.unix_experience.owncloud_sms.datasync.provider">
+            android:label="@string/pref_title_slow_sync"
+            android:authorities="@string/account_authority">
+        </provider>
+        
+        <service
+            android:name=".sync_adapters.SmsSlowSyncService"
+            android:exported="true"
+            android:process=":sync">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.content.SyncAdapter"
+                android:resource="@xml/slow_sync_adapter" />
+        </service>
+        
+        <provider
+            android:name=".providers.SmsDataProvider"
+            android:label="@string/pref_title_sync"
+            android:authorities="@string/slowsync_account_authority">
         </provider>
 
         <!-- Related to Login -->

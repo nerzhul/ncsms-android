@@ -26,7 +26,10 @@
  */
 -->
 <resources>
-    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string name="pref_title_sync">Fast Sync</string>
+    <string name="pref_title_sync_frequency">Fast Sync frequency</string>
+    <string name="pref_title_slow_sync">Secure Slow Sync</string>
+    <string name="pref_title_slow_sync_frequency">Secure Slow Sync frequency</string>
     
     <!-- Translations must begin there -->
     <!-- Preferences -->
@@ -43,6 +46,7 @@
 	<string name="title_activity_general_settings">General Settings</string>
 
     <string-array name="pref_sync_frequency_titles">
+        <item>5 minutes</item>
         <item>15 minutes</item>
         <item>30 minutes</item>
         <item>1 hour</item>
@@ -53,8 +57,27 @@
         <item>Never</item>
     </string-array>
     <string-array name="pref_sync_frequency_values">
+        <item>5</item>
         <item>15</item>
         <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>-1</item>
+    </string-array>
+    
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>12 hours</item>
+        <item>24 hours</item>
+        <item>Never</item>
+    </string-array>
+    
+    <string-array name="pref_slow_sync_frequency_values">
         <item>60</item>
         <item>180</item>
         <item>360</item>
