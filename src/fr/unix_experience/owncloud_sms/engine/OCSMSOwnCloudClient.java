@@ -173,6 +173,10 @@ public class OCSMSOwnCloudClient {
 		return createGetRequest(OC_GET_ALL_SMS_IDS_WITH_STATUS);
 	}
 	
+	public GetMethod createGetLastSmsTimestampRequest() {
+		return createGetRequest(OC_GET_LAST_MSG_TIMESTAMP);
+	}
+	
 	private GetMethod createGetRequest(String oc_call) {
 		GetMethod get = new GetMethod(_ocClient.getBaseUri() + oc_call);
 		get.addRequestHeader("OCS-APIREQUEST", "true");
@@ -344,6 +348,7 @@ public class OCSMSOwnCloudClient {
 	private static String OC_GET_VERSION = "/index.php/apps/ocsms/get/apiversion?format=json";
 	private static String OC_GET_ALL_SMS_IDS = "/index.php/apps/ocsms/get/smsidlist?format=json";
 	private static String OC_GET_ALL_SMS_IDS_WITH_STATUS = "/index.php/apps/ocsms/get/smsidstate?format=json";
+	private static String OC_GET_LAST_MSG_TIMESTAMP = "/index.php/apps/ocsms/get/lastmsgtime?format=json";
 	private static String OC_PUSH_ROUTE = "/index.php/apps/ocsms/push?format=json";
 	
 	private static final String TAG = OCSMSOwnCloudClient.class.getSimpleName();
