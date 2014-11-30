@@ -52,7 +52,7 @@
 
         <provider
             android:name=".providers.SmsDataProvider"
-            android:label="@string/pref_title_slow_sync"
+            android:label="@string/pref_title_sync"
             android:authorities="@string/account_authority">
         </provider>
         
@@ -71,7 +71,7 @@
         
         <provider
             android:name=".providers.SmsDataProvider"
-            android:label="@string/pref_title_sync"
+            android:label="@string/pref_title_slow_sync"
             android:authorities="@string/slowsync_account_authority">
         </provider>
 

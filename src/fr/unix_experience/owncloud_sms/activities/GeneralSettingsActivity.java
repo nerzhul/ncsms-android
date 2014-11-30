@@ -153,7 +153,7 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 				                mAccountAuthority, b, syncFreq * 60);
 						}
 					}
-
+				// Slow Sync frequency 
 				} else if (prefKey.equals(new String("slow_sync_frequency"))) {
 					long syncFreq = Long.parseLong((String)value);
 
