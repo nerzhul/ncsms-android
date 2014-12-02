@@ -17,6 +17,9 @@ package fr.unix_experience.owncloud_sms.engine;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,6 +28,7 @@ import fr.unix_experience.owncloud_sms.enums.MailboxID;
 import fr.unix_experience.owncloud_sms.providers.SmsDataProvider;
 import android.content.Context;
 import android.database.Cursor;
+import android.net.Uri;
 import android.util.Log;
 
 public class SmsFetcher {
@@ -43,11 +47,7 @@ public class SmsFetcher {
 		getSentMessages(true);
 		getDraftMessages(true);
 		
-		JSONArray result = _jsonTempDatas;
-		
-		// Empty the buffer
-		_jsonTempDatas = new JSONArray();
-		return result;
+		return _jsonTempDatas;
 	}
 	
 	public JSONArray getInboxMessages(Boolean toTempBuffer) {
@@ -66,15 +66,24 @@ public class SmsFetcher {
 		if (_context == null || _mb.length() == 0) {
 			return null;
 		}
-		 
+		
+		Date startDate = new Date();
 		// Fetch Sent SMS Message from Built-in Content Provider
-		Cursor c = (new SmsDataProvider(_context)).query(_mb);
+		
+		//Cursor c = (new SmsDataProvider(_context)).query(_mb);
+		
+		String existingIDs = buildExistingMessagesString();
+		
+		Cursor c = (new SmsDataProvider(_context)).query(Uri.parse(_mb), 
+				new String[] { "read", "date", "address", "seen", "body", "_id", "type", }, "_id NOT IN (" + existingIDs + ")", null, null);
 		
 		// We create a list of strings to store results
 		JSONArray results = new JSONArray();
 		
+		
 		// Reading mailbox
 		if (c != null && c.getCount() > 0) {
+			
 			c.moveToFirst();
 			do {
 				JSONObject entry = new JSONObject();
@@ -107,14 +116,15 @@ public class SmsFetcher {
 					
 					// Mailbox ID is required by server
 					entry.put("mbox", _mbID.ordinal());
+					Log.d(TAG,"" + msgId);
 					
 					/*
 					 * Use the existing lists to verify if mail needs to be buffered
 					 * It's useful to decrease data use
 					 */
-					if (_mbID == MailboxID.INBOX && isAnExistingInboxMessage(msgId) == false ||
-						_mbID == MailboxID.SENT && isAnExistingSentMessage(msgId) == false ||
-						_mbID == MailboxID.DRAFTS && isAnExistingDraftsMessage(msgId) == false) {
+					if (_mbID == MailboxID.INBOX ||
+						_mbID == MailboxID.SENT ||
+						_mbID == MailboxID.DRAFTS) {
 						if (toTempBuffer) {
 							_jsonTempDatas.put(entry);
 						}
@@ -134,10 +144,15 @@ public class SmsFetcher {
 			
 			c.close();
 		}
+
+		long diffInMs = (new Date()).getTime() - startDate.getTime();
+		
+		Log.d(TAG, "SmsFetcher->getMailboxMessages() Time spent: " + diffInMs);
 		
 		return results;
 	}
 	
+	// Used by Content Observer
 	public JSONArray getLastMessage(String _mb) {
 		if (_context == null || _mb.length() == 0) {
 			return null;
@@ -193,35 +208,50 @@ public class SmsFetcher {
 		return results;
 	}
 	
-	private boolean isAnExistingInboxMessage(int msgId) {
-		return isExistingMessage(_existingInboxMessages, msgId);
-	}
-	
-	private boolean isAnExistingSentMessage(int msgId) {
-		return isExistingMessage(_existingSentMessages, msgId);
-	}
-	
-	private boolean isAnExistingDraftsMessage(int msgId) {
-		return isExistingMessage(_existingDraftsMessages, msgId);
-	}
-	
-	private boolean isExistingMessage(JSONArray msgList, int msgId) {
-		if (msgList == null) {
-			return false;
+	private String buildExistingMessagesString() {
+		StringBuilder sb = new StringBuilder();
+		if (_existingInboxMessages != null) {
+			int len = _existingInboxMessages.length(); 
+	        for (int i = 0; i < len; i++) {
+	        	try {
+	        		if (sb.length() > 0) {
+	        			sb.append(",");
+	        		}
+	        		sb.append(_existingInboxMessages.getInt(i));
+				} catch (JSONException e) {
+					
+				}
+	        }
+		}
+		if (_existingSentMessages != null) {
+			int len = _existingSentMessages.length(); 
+	        for (int i = 0; i < len; i++) {
+	        	try {
+	        		if (sb.length() > 0) {
+	        			sb.append(",");
+	        		}
+	        		sb.append(_existingSentMessages.getInt(i));
+				} catch (JSONException e) {
+					
+				}
+	        }
 		}
 		
-		int len = msgList.length(); 
-        for (int i = 0; i < len; i++) {
-        	try {
-				if (msgList.getInt(i) == msgId) {
-					return true;
+		if (_existingDraftsMessages != null) {
+			int len = _existingDraftsMessages.length(); 
+	        for (int i = 0; i < len; i++) {
+	        	try {
+	        		if (sb.length() > 0) {
+	        			sb.append(",");
+	        		}
+	        		sb.append(_existingDraftsMessages.getInt(i));
+				} catch (JSONException e) {
+					
 				}
-			} catch (JSONException e) {
-				return false;
-			}
-        }
+	        }
+		}
 		
-		return false;
+		return sb.toString();
 	}
 	
 	public void setExistingInboxMessages(JSONArray inboxMessages) {

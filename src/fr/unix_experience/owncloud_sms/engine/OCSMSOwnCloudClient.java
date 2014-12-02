@@ -83,6 +83,7 @@ public class OCSMSOwnCloudClient {
 		 * If we need other API push, set it here
 		 */
 		switch (_serverAPIVersion) {
+			case 2: doPushRequestV2(smsList); break;
 			case 1: 
 			default: doPushRequestV1(smsList); break;
 		}
@@ -159,6 +160,10 @@ public class OCSMSOwnCloudClient {
 		}
 
 		Log.d(TAG, "SMS Push request said: status " + pushStatus + " - " + pushMessage);
+	}
+	
+	public void doPushRequestV2(JSONArray smsList) throws OCSyncException {
+	
 	}
 	
 	public GetMethod createGetVersionRequest() {
