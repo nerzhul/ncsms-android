@@ -38,9 +38,9 @@
     
     <!-- Translations must begin there -->
     <!-- Preferences -->
-    <string name="pref_title_sync">Fast Sync</string>
+    <string name="pref_title_sync">SMS - Fast</string>
     <string name="pref_title_sync_frequency">Fast Sync frequency</string>
-    <string name="pref_title_slow_sync">Secure Slow Sync</string>
+    <string name="pref_title_slow_sync">SMS - Slow and Secure</string>
     <string name="pref_title_slow_sync_frequency">Secure Slow Sync frequency</string>
     <string name="action_settings">Settings</string>
     <string name="sync_now">Synchronize now</string>

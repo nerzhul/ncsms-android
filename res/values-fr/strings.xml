@@ -40,6 +40,9 @@
 	
     <string name="pref_header_data_sync">Données &amp; synchronisation</string>
     <string name="pref_title_sync_frequency">Fréquence de synchronisation</string>
+    <string name="pref_title_sync">SMS - Méthode rapide</string>
+    <string name="pref_title_slow_sync">SMS - Méthode lente (sécurisée)</string>
+    <string name="pref_title_slow_sync_frequency">Fréquence de la synchronisation lente</string>
 
 	<string name="title_activity_general_settings">Préférences générales</string>
 

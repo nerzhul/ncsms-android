@@ -71,7 +71,7 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 		// their values. When their values change, their summaries are updated
 		// to reflect the new value, per the Android Design guidelines.
 		bindPreferenceSummaryToValue(findPreference("sync_frequency"));
-		bindPreferenceSummaryToValue(findPreference("slow_sync_frequency"));
+		//bindPreferenceSummaryToValue(findPreference("slow_sync_frequency"));
 	}
 
 	/** {@inheritDoc} */
@@ -154,7 +154,7 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 						}
 					}
 				// Slow Sync frequency 
-				} else if (prefKey.equals(new String("slow_sync_frequency"))) {
+				} /*else if (prefKey.equals(new String("slow_sync_frequency"))) {
 					long syncFreq = Long.parseLong((String)value);
 
 					// Get ownCloud SMS account list
@@ -182,8 +182,7 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 								mSlowSyncAccountAuthority, b, syncFreq * 60);
 						}
 					}
-
-				}
+				}*/
 			} else {
 				// For all other preferences, set the summary to the value's
 				// simple string representation.
@@ -235,7 +234,7 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 			// updated to reflect the new value, per the Android Design
 			// guidelines.
 			bindPreferenceSummaryToValue(findPreference("sync_frequency"));
-			bindPreferenceSummaryToValue(findPreference("slow_sync_frequency"));
+			//bindPreferenceSummaryToValue(findPreference("slow_sync_frequency"));
 		}
 	}
 }
