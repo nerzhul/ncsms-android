@@ -42,6 +42,13 @@ public class SmsDataProvider extends ContentProvider {
 			null, null, null
 		);
 	}
+	
+	public Cursor query(String mailBox, String condition) {
+		return query(Uri.parse(mailBox),
+			new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
+			condition, null, null
+		);
+	}
 
 	@Override
 	public Cursor query(Uri uri, String[] projection, String selection,
@@ -52,6 +59,8 @@ public class SmsDataProvider extends ContentProvider {
 		
 		return null;
 	}
+	
+	
 
 	@Override
 	public String getType(Uri uri) {

@@ -133,7 +133,12 @@ public class OCSMSOwnCloudClient {
 			fetcher.setExistingSentMessages(sentSmsList);
 			fetcher.setExistingDraftsMessages(draftsSmsList);
 			
-			smsList = fetcher.getJSONMessages();
+			smsList = fetcher.fetchAllMessages();
+		}
+		
+		if (smsList.length() == 0) {
+			Log.d(TAG, "No new SMS to sync, sync done");
+			return;
 		}
 		
 		PostMethod post = createPushRequest(smsList);
@@ -190,7 +195,7 @@ public class OCSMSOwnCloudClient {
 	
 	public PostMethod createPushRequest() throws OCSyncException {
 		SmsFetcher fetcher = new SmsFetcher(_context);
-		JSONArray smsList = fetcher.getJSONMessages();
+		JSONArray smsList = fetcher.fetchAllMessages();
 		return createPushRequest(smsList);
 	}
 	

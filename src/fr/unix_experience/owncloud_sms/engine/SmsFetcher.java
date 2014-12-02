@@ -18,8 +18,6 @@ package fr.unix_experience.owncloud_sms.engine;
  */
 
 import java.util.Date;
-import java.util.concurrent.TimeUnit;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,50 +38,53 @@ public class SmsFetcher {
 		_existingDraftsMessages = null;
 	}
 	
-	public JSONArray getJSONMessages() {
-		_jsonTempDatas = new JSONArray();
-				
-		getInboxMessages(true);
-		getSentMessages(true);
-		getDraftMessages(true);
-		
-		return _jsonTempDatas;
+	public JSONArray fetchAllMessages() {
+		_jsonDataDump = new JSONArray();
+		fetchInboxMessages();
+		fetchSentMessages();
+		fetchDraftMessages();
+		return _jsonDataDump;
 	}
 	
-	public JSONArray getInboxMessages(Boolean toTempBuffer) {
-		return getMailboxMessages("content://sms/inbox", toTempBuffer, MailboxID.INBOX);
+	public void fetchInboxMessages() {
+		bufferizeMailboxMessages("content://sms/inbox", MailboxID.INBOX);
 	}
 	
-	public JSONArray getSentMessages(Boolean toTempBuffer) {
-		return getMailboxMessages("content://sms/sent", toTempBuffer, MailboxID.SENT);
+	public void fetchSentMessages() {
+		bufferizeMailboxMessages("content://sms/sent", MailboxID.SENT);
 	}
 	
-	public JSONArray getDraftMessages(Boolean toTempBuffer) {
-		return getMailboxMessages("content://sms/drafts", toTempBuffer, MailboxID.DRAFTS);
+	public void fetchDraftMessages() {
+		bufferizeMailboxMessages("content://sms/drafts", MailboxID.DRAFTS);
 	}
 	
-	private JSONArray getMailboxMessages(String _mb, Boolean toTempBuffer, MailboxID _mbID) {
+	private void bufferizeMailboxMessages(String _mb, MailboxID _mbID) {
 		if (_context == null || _mb.length() == 0) {
-			return null;
+			return;
+		}
+		
+		if (_mbID != MailboxID.INBOX && _mbID != MailboxID.SENT &&
+			_mbID != MailboxID.DRAFTS) {
+			Log.e(TAG,"Unhandled MailboxID " + _mbID.ordinal());
+			return;
 		}
 		
 		Date startDate = new Date();
 		// Fetch Sent SMS Message from Built-in Content Provider
 		
-		//Cursor c = (new SmsDataProvider(_context)).query(_mb);
+		// We generate a ID list for this message box
+		String existingIDs = buildExistingMessagesString(_mbID);
 		
-		String existingIDs = buildExistingMessagesString();
-		
-		Cursor c = (new SmsDataProvider(_context)).query(Uri.parse(_mb), 
-				new String[] { "read", "date", "address", "seen", "body", "_id", "type", }, "_id NOT IN (" + existingIDs + ")", null, null);
-		
-		// We create a list of strings to store results
-		JSONArray results = new JSONArray();
-		
+		Cursor c = null;
+		if (existingIDs.length() > 0) {
+			c = (new SmsDataProvider(_context)).query(_mb, "_id NOT IN (" + existingIDs + ")");
+		}
+		else {
+			c = (new SmsDataProvider(_context)).query(_mb);
+		}
 		
 		// Reading mailbox
 		if (c != null && c.getCount() > 0) {
-			
 			c.moveToFirst();
 			do {
 				JSONObject entry = new JSONObject();
@@ -116,22 +117,8 @@ public class SmsFetcher {
 					
 					// Mailbox ID is required by server
 					entry.put("mbox", _mbID.ordinal());
-					Log.d(TAG,"" + msgId);
 					
-					/*
-					 * Use the existing lists to verify if mail needs to be buffered
-					 * It's useful to decrease data use
-					 */
-					if (_mbID == MailboxID.INBOX ||
-						_mbID == MailboxID.SENT ||
-						_mbID == MailboxID.DRAFTS) {
-						if (toTempBuffer) {
-							_jsonTempDatas.put(entry);
-						}
-						else {
-							results.put(entry);
-						}
-					}
+					_jsonDataDump.put(entry);
 					
 				} catch (JSONException e) {
 					Log.e(TAG, "JSON Exception when reading SMS Mailbox", e);
@@ -147,9 +134,7 @@ public class SmsFetcher {
 
 		long diffInMs = (new Date()).getTime() - startDate.getTime();
 		
-		Log.d(TAG, "SmsFetcher->getMailboxMessages() Time spent: " + diffInMs);
-		
-		return results;
+		Log.d(TAG, "SmsFetcher->getMailboxMessages() Time spent: " + diffInMs + "ms");
 	}
 	
 	// Used by Content Observer
@@ -208,43 +193,26 @@ public class SmsFetcher {
 		return results;
 	}
 	
-	private String buildExistingMessagesString() {
-		StringBuilder sb = new StringBuilder();
-		if (_existingInboxMessages != null) {
-			int len = _existingInboxMessages.length(); 
-	        for (int i = 0; i < len; i++) {
-	        	try {
-	        		if (sb.length() > 0) {
-	        			sb.append(",");
-	        		}
-	        		sb.append(_existingInboxMessages.getInt(i));
-				} catch (JSONException e) {
-					
-				}
-	        }
+	private String buildExistingMessagesString(MailboxID _mbID) {
+		JSONArray existingMessages = null;
+		if (_mbID == MailboxID.INBOX) {
+			existingMessages = _existingInboxMessages;
+		} else if (_mbID == MailboxID.DRAFTS) {
+			existingMessages = _existingDraftsMessages;
+		} else if (_mbID == MailboxID.SENT) {
+			existingMessages = _existingSentMessages;
 		}
-		if (_existingSentMessages != null) {
-			int len = _existingSentMessages.length(); 
-	        for (int i = 0; i < len; i++) {
-	        	try {
-	        		if (sb.length() > 0) {
-	        			sb.append(",");
-	        		}
-	        		sb.append(_existingSentMessages.getInt(i));
-				} catch (JSONException e) {
-					
-				}
-	        }
-		}
+		// Note: The default case isn't possible, we check the mailbox before
 		
-		if (_existingDraftsMessages != null) {
-			int len = _existingDraftsMessages.length(); 
+		StringBuilder sb = new StringBuilder();
+		if (existingMessages != null) {
+			int len = existingMessages.length(); 
 	        for (int i = 0; i < len; i++) {
 	        	try {
 	        		if (sb.length() > 0) {
 	        			sb.append(",");
 	        		}
-	        		sb.append(_existingDraftsMessages.getInt(i));
+	        		sb.append(existingMessages.getInt(i));
 				} catch (JSONException e) {
 					
 				}
@@ -267,7 +235,7 @@ public class SmsFetcher {
 	}
 	
 	private Context _context;
-	private JSONArray _jsonTempDatas;
+	private JSONArray _jsonDataDump;
 	private JSONArray _existingInboxMessages;
 	private JSONArray _existingSentMessages;
 	private JSONArray _existingDraftsMessages;
