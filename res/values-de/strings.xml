@@ -26,16 +26,9 @@
 */
 -->
 <resources>
-
-	<!-- System strings, do not translate -->
-	<string name="app_name">ownCloud-SMS</string>
-	<string name="account_type">fr.unix_experience.owncloud_sms</string>
-	<string name="account_authority">fr.unix_experience.owncloud_sms.datasync.provider</string>
-	<string name="slowsync_account_authority">fr.unix_experience.owncloud_sms.datasync.slowsync_provider</string>
-
-	<string name="target_package">fr.unix_experience.owncloud_sms</string>
-	<string name="login_logo">Login logo</string>
-
+	<!-- Translation version, reference for translators -->
+	<string name="translation_version">2</string>
+	
 	<!-- Translations must begin there -->
 	<!-- Preferences -->
 	<string name="pref_title_sync">SMS - Schnell</string>
@@ -106,7 +99,7 @@
 	<string name="error_invalid_password">Dieses Passwort ist zu kurz</string>
 	<string name="error_field_required">Pflichtfeld</string>
 	<string name="prompt_serverURI">Server-Adresse</string>
-	<string name="error_invalid_server_address">Ung&uuml;ltige Serveradresse</string>
+	<string name="error_invalid_server_address">Ungültige Serveradresse</string>
 	<string name="error_connection_failed">Verbindung fehlgeschlagen, ist dies der richtige Server?</string>
 	<string name="error_http_connection_failed">Kann keine HTTP-Verbindung aufbauen. Läuft der Webserver unter dieser Adresse?</string>
 	
@@ -117,7 +110,7 @@
 	
 	<!-- Notifications -->
 	<string name="sync_title">Synchronisation</string>
-	<string name="sync_inprogress">Sychronisation l&auml;uft...</string>
+	<string name="sync_inprogress">Sychronisation läuft...</string>
 	<string name="fatal_error">Kritischer Fehler!</string>
 	
 	
@@ -126,7 +119,7 @@
 	<string name="err_sync_craft_http_request">Fehler #2: Fehler bei der Erstellung des HTTP-Requests</string>
 	<string name="err_sync_push_request">Fehler #3: Push-Request fehlgeschlagen</string>
 	<string name="err_sync_push_request_resp">Fehler #4: Beim Pushen von Daten ungültige Serverdaten empfangen</string>
-	<string name="err_sync_create_json_null_smslist">Fehler #5: SMS-Liste gab NULL zur&uuml;ck</string>
+	<string name="err_sync_create_json_null_smslist">Fehler #5: SMS-Liste gab NULL zurück</string>
 	<string name="err_sync_create_json_put_smslist">Fehler #6: Fehler bei der Erstellung des Push-Requests</string>
 	<string name="err_sync_create_json_request_encoding">Fehler #7: Ungültige Zeichenkodierung bei der Erstellung des Requests</string>
 	<string name="err_sync_auth_failed">Fehler #8: Anmeldung fehlgeschlagen</string>
