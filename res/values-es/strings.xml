@@ -28,10 +28,12 @@
 -->
 
 <resources>
-	<string name="pref_title_sync_frequency">Frecuencia de sincronización</string>
+    <!-- Translation version, reference for translators -->
+	<string name="translation_version">1</string>
 	
-	<!-- Translations must begin there -->
+    <!-- Translations must begin there -->
 	<!-- Preferences -->
+	<string name="pref_title_sync_frequency">Frecuencia de sincronización</string>
 	<string name="action_settings">Configuración</string>
 	<string name="sync_now">Sincronizar ahora</string>
 	<string name="pref_category_sync">Sincronización</string>
