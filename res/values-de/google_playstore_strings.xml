@@ -26,12 +26,13 @@
  */
 -->
 <resources>
-    <string name="gp_short_description">ownCloud SMS permet de synchroniser vos SMS sur votre instance ownCloud</string>
+    <string name="gp_short_description">Mit ownCloud SMS kannst Du Deine SMS mit Deiner ownCloud synchronisieren</string>
     <string name="gp_description">
-L\'application ownCloud SMS vous permet de synchroniser vos messages SMS sur une instance ownCloud distante et ainsi de pouvoir les lire.
+Die ownCloud SMS App synchronisiert Deine SMS-Nachrichten mit einer ownCloud-Instanz und erlaubt Dir, die SMS dort zu lesen.
 
-Il est prévu d\'ajouter le support de l\'envoi de SMS depuis l\'instance ownCloud dans une future mise à jour, vous permettant d\'envoyer des SMS depuis n\'importe où dans le monde, en laissant votre téléphone Android à portée d\'un accès DATA et GSM
+In kommenden Versionen soll auch den SMS-Versand von der ownCloud-Instanz aus möglich sein.
+Auf diese Weise wirst Du von überall in der Welt SMS versenden können, solange Dein Android-Smartphone GSM- und Datenempfang hat.
 
-L\'application est pleinement compatible des versions Android 4.0 à 4.4
+Die App ist vollständig kompatibel mit Android 4.0 bis 4.4
 	</string>
 </resources>
