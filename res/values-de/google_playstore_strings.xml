@@ -27,7 +27,7 @@
 -->
 <resources>
     <!-- Translation version, reference for translators -->
-	<string name="translation_version">2</string>
+	<string name="translation_version">3</string>
 	
     <!-- Translations must begin there -->
     <string name="gp_short_description">Mit ownCloud SMS kannst Du Deine SMS mit Deiner ownCloud synchronisieren</string>
@@ -37,6 +37,6 @@ Die ownCloud SMS App synchronisiert Deine SMS-Nachrichten mit einer ownCloud-Ins
 In kommenden Versionen soll auch den SMS-Versand von der ownCloud-Instanz aus möglich sein.
 Auf diese Weise wirst Du von überall in der Welt SMS versenden können, solange Dein Android-Smartphone GSM- und Datenempfang hat.
 
-Die App ist vollständig kompatibel mit Android 4.0 bis 4.4
+Die App ist vollständig kompatibel mit Android 4.0 bis 5.0
 	</string>
 </resources>
