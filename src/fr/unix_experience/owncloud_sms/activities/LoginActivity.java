@@ -286,6 +286,7 @@ public class LoginActivity extends Activity {
 				// Then it's finished
 				finish();
 				
+				// Start sync settings, we have finished to configure account
 				Intent settingsIntent = new Intent(Settings.ACTION_SYNC_SETTINGS);
 				settingsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				getApplicationContext().startActivity(settingsIntent);
