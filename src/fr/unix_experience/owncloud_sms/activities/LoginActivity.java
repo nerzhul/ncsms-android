@@ -24,10 +24,12 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -283,6 +285,10 @@ public class LoginActivity extends Activity {
 				ContentResolver.addPeriodicSync(account, getString(R.string.account_authority), b, 15 * 60);
 				// Then it's finished
 				finish();
+				
+				Intent settingsIntent = new Intent(Settings.ACTION_SYNC_SETTINGS);
+				settingsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				getApplicationContext().startActivity(settingsIntent);
 			} else {
 				switch (_returnCode) {
 					case INVALID_ADDR:
