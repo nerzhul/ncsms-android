@@ -108,7 +108,7 @@
 	<string name="prompt_serverURI">Server-Adresse</string>
 	<string name="error_invalid_server_address">Ung&uuml;ltige Serveradresse</string>
 	<string name="error_connection_failed">Verbindung fehlgeschlagen, ist dies der richtige Server?</string>
-	<string name="error_http_connection_failed">Kann keine HTTP-Verbindung aufbauen. Läuft der Webserver unter dieser Adresse?</string>
+	<string name="error_http_connection_failed">Kann keine HTTP-Verbindung aufbauen. L&auml;uft der Webserver unter dieser Adresse?</string>
 	
 	<string-array name="protocol_array">
 		<item>https://</item>
@@ -122,13 +122,13 @@
 	
 	
 	<!-- Errors -->
-	<string name="err_sync_get_smslist">Fehler #1: Bei vorherigen Nachrichten ungültige Serverdaten empfangen</string>
+	<string name="err_sync_get_smslist">Fehler #1: Bei vorherigen Nachrichten ung&uuml;ltige Serverdaten empfangen</string>
 	<string name="err_sync_craft_http_request">Fehler #2: Fehler bei der Erstellung des HTTP-Requests</string>
 	<string name="err_sync_push_request">Fehler #3: Push-Request fehlgeschlagen</string>
-	<string name="err_sync_push_request_resp">Fehler #4: Beim Pushen von Daten ungültige Serverdaten empfangen</string>
+	<string name="err_sync_push_request_resp">Fehler #4: Beim Pushen von Daten ung&uuml;ltige Serverdaten empfangen</string>
 	<string name="err_sync_create_json_null_smslist">Fehler #5: SMS-Liste gab NULL zur&uuml;ck</string>
 	<string name="err_sync_create_json_put_smslist">Fehler #6: Fehler bei der Erstellung des Push-Requests</string>
-	<string name="err_sync_create_json_request_encoding">Fehler #7: Ungültige Zeichenkodierung bei der Erstellung des Requests</string>
+	<string name="err_sync_create_json_request_encoding">Fehler #7: Ung&uuml;ltige Zeichenkodierung bei der Erstellung des Requests</string>
 	<string name="err_sync_auth_failed">Fehler #8: Anmeldung fehlgeschlagen</string>
 	<string name="err_sync_http_request_returncode_unhandled">Fehler #9: Unbekannter HTTP-Antwortcode vom Server</string>
 	<string name="err_sync_http_request_connect">Fehler #11: Konnte nicht mit der ownCloud-Instanz verbinden (HTTP-Request)</string>
