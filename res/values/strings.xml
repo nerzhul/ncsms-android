@@ -26,24 +26,16 @@
  */
 -->
 <resources>
-	<!-- Translation version, reference for translators -->
+    <!-- Translation version, reference for translators -->
 	<string name="translation_version">2</string>
-
-	<!-- System strings, do not translate -->
-    <string name="app_name">ownCloud-SMS</string>
-    <string name="account_type">fr.unix_experience.owncloud_sms</string>
-    <string name="account_authority">fr.unix_experience.owncloud_sms.datasync.provider</string>
-    <string name="slowsync_account_authority">fr.unix_experience.owncloud_sms.datasync.slowsync_provider</string>
-    
-    <string name="target_package">fr.unix_experience.owncloud_sms</string>
-    <string name="login_logo">Login logo</string>
-    
+	
     <!-- Translations must begin there -->
     <!-- Preferences -->
-    <string name="pref_title_sync">SMS - Fast</string>
+    <string name="pref_title_sync">Fast Sync</string>
     <string name="pref_title_sync_frequency">Fast Sync frequency</string>
-    <string name="pref_title_slow_sync">SMS - Slow and Secure</string>
+    <string name="pref_title_slow_sync">Secure Slow Sync</string>
     <string name="pref_title_slow_sync_frequency">Secure Slow Sync frequency</string>
+    
     <string name="action_settings">Settings</string>
     <string name="sync_now">Synchronize now</string>
     <string name="pref_category_sync">Synchronization</string>
@@ -57,7 +49,7 @@
 	<string name="title_activity_general_settings">General Settings</string>
 
     <string-array name="pref_sync_frequency_titles">
-    	<item>5 minutes</item>
+        <item>5 minutes</item>
         <item>15 minutes</item>
         <item>30 minutes</item>
         <item>1 hour</item>
@@ -68,7 +60,7 @@
         <item>Never</item>
     </string-array>
     <string-array name="pref_sync_frequency_values">
-    	<item>5</item>
+        <item>5</item>
         <item>15</item>
         <item>30</item>
         <item>60</item>
@@ -80,6 +72,7 @@
     </string-array>
     
     <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 minute</item>
         <item>1 hour</item>
         <item>3 hours</item>
         <item>6 hours</item>
@@ -89,6 +82,7 @@
     </string-array>
     
     <string-array name="pref_slow_sync_frequency_values">
+        <item>1</item>
         <item>60</item>
         <item>180</item>
         <item>360</item>
@@ -121,7 +115,6 @@
     <string name="sync_title">Sync process</string>
     <string name="sync_inprogress">Sync in progress...</string>
     <string name="fatal_error">Fatal error ! </string>
-    
     
     <!-- Errors -->
     <string name="err_sync_get_smslist">Error #1: Invalid data received from server when getting previous messages</string>
