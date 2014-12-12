@@ -43,10 +43,17 @@ public class SmsDataProvider extends ContentProvider {
 		);
 	}
 	
-	public Cursor query(String mailBox, String condition) {
+	public Cursor query(String mailBox, String selection) {
 		return query(Uri.parse(mailBox),
 			new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
-			condition, null, null
+			selection, null, null
+		);
+	}
+	
+	public Cursor query(String mailBox, String selection, String[] selectionArgs) {
+		return query(Uri.parse(mailBox),
+			new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
+			selection, selectionArgs, null
 		);
 	}
 
