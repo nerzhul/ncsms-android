@@ -26,7 +26,9 @@
  */
 -->
 <resources>
-    
+    <!-- Translation version, reference for translators -->
+	<string name="translation_version">1</string>
+	
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync_frequency">Frekvence synchronizace</string>

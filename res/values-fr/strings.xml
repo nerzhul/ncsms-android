@@ -26,6 +26,10 @@
  */
 -->
 <resources>
+	<!-- Translation version, reference for translators -->
+	<string name="translation_version">2</string>
+	
+    <!-- Translations must begin there -->
 
     <string name="app_name">ownCloud-SMS</string>
     <string name="action_settings">Paramètres</string>
@@ -38,11 +42,11 @@
 	<string name="summary_global_pref_to_general_prefs">Options de synchronisation</string>
 	<string name="summary_notif_prefs">Notifications</string>
 	
-    <string name="pref_header_data_sync">Données &amp; synchronisation</string>
-    <string name="pref_title_sync_frequency">Fréquence de synchronisation</string>
-    <string name="pref_title_sync">SMS - Méthode rapide</string>
-    <string name="pref_title_slow_sync">SMS - Méthode lente (sécurisée)</string>
-    <string name="pref_title_slow_sync_frequency">Fréquence de la synchronisation lente</string>
+	<string name="pref_header_data_sync">Données &amp; synchronisation</string>
+	<string name="pref_title_sync_frequency">Fréquence de synchronisation</string>
+	<string name="pref_title_sync">SMS - Méthode rapide</string>
+	<string name="pref_title_slow_sync">SMS - Méthode lente (sécurisée)</string>
+	<string name="pref_title_slow_sync_frequency">Fréquence de la synchronisation lente</string>
 
 	<string name="title_activity_general_settings">Préférences générales</string>
 

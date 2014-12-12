@@ -26,6 +26,8 @@
  */
 -->
 <resources>
+	<!-- Translation version, reference for translators -->
+	<string name="translation_version">2</string>
 
 	<!-- System strings, do not translate -->
     <string name="app_name">ownCloud-SMS</string>

@@ -29,13 +29,14 @@
     <!-- Translation version, reference for translators -->
 	<string name="translation_version">3</string>
 	
-	<!-- Translations must begin here -->
-    <string name="gp_short_description">ownCloud SMS synchronizuje vaše lokální SMS zprávy na váš server ownCloud</string>
+    <!-- Translations must begin there -->
+    <string name="gp_short_description">Mit ownCloud SMS kannst Du Deine SMS mit Deiner ownCloud synchronisieren</string>
     <string name="gp_description">
-Aplikace ownCloud SMS synchronizuje vaše SMS zprávy na vzdálenou instanci ownCloud, kde si poté můžete zprávy přečíst.
+Die ownCloud SMS App synchronisiert Deine SMS-Nachrichten mit einer ownCloud-Instanz und erlaubt Dir, die SMS dort zu lesen.
 
-Zasílání SMS ze serveru ownCloud bude doplněno v příštích vydáních.
+In kommenden Versionen soll auch den SMS-Versand von der ownCloud-Instanz aus möglich sein.
+Auf diese Weise wirst Du von überall in der Welt SMS versenden können, solange Dein Android-Smartphone GSM- und Datenempfang hat.
 
-Applikace je plně kompatibilní pro Android 4.0 až 5.0
+Die App ist vollständig kompatibel mit Android 4.0 bis 5.0
 	</string>
 </resources>
