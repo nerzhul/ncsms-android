@@ -43,6 +43,7 @@ import com.owncloud.android.lib.common.OwnCloudCredentialsFactory;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.enums.OCSyncErrorType;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
+import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
 public class OCSMSOwnCloudClient {
 
@@ -172,10 +173,7 @@ public class OCSMSOwnCloudClient {
 		}
 
 		// Push was OK, we can save the lastMessageDate which was saved to server
-		SharedPreferences sharedPref = _context.getSharedPreferences(_context.getString(R.string.shared_preference_file), Context.MODE_PRIVATE);
-		SharedPreferences.Editor editor = sharedPref.edit();
-		editor.putLong(_context.getString(R.string.pref_lastmsgdate), lastMsgDate);
-		editor.commit();
+		(new OCSMSSharedPrefs(_context)).setLastMessageDate(lastMsgDate);
 
 		Log.d(TAG, "SMS Push request said: status " + pushStatus + " - " + pushMessage);
 	}
