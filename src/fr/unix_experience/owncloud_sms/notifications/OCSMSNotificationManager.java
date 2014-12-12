@@ -46,6 +46,12 @@ public class OCSMSNotificationManager {
 		);
 	}
 	
+	public void setDebugMsg(String errMsg) {
+		createNotificationIfPossible(OCSMSNotificationType.DEBUG, 
+			"DEBUG", errMsg
+		);
+	}
+	
 	private void createNotificationIfPossible(OCSMSNotificationType nType, String nTitle, String nMsg) {
 		_notification.createNotify(nType, nTitle, nMsg);
 	}

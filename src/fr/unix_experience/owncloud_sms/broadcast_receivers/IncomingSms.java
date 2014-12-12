@@ -29,10 +29,6 @@ public class IncomingSms extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		launchSmsObserver(context);
-	}
-	
-	public static void launchSmsObserver(Context context) {
 		if (_mboxObserver == null) {
 			Log.d(TAG,"_mboxObserver == null");
 			_mboxObserver = new SmsObserver(new Handler(), context);
