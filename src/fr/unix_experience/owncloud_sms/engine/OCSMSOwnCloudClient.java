@@ -32,6 +32,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.util.Log;
 
@@ -89,7 +90,10 @@ public class OCSMSOwnCloudClient {
 		}
 	}
 		
-	public void doPushRequestV1(JSONArray smsList) throws OCSyncException {	
+	public void doPushRequestV1(JSONArray smsList) throws OCSyncException {
+		// We need to save this date as a step for connectivity change
+		Long lastMsgDate = (long) 0;
+		
 		if (smsList == null) {
 			GetMethod get = createGetSmsIdListRequest();
 			JSONObject smsGetObj = doHttpRequest(get);
@@ -134,6 +138,9 @@ public class OCSMSOwnCloudClient {
 			fetcher.setExistingDraftsMessages(draftsSmsList);
 			
 			smsList = fetcher.fetchAllMessages();
+			
+			// Get maximum message date present in smsList to keep a step when connectivity changes
+			lastMsgDate = fetcher.getLastMessageDate();
 		}
 		
 		if (smsList.length() == 0) {
@@ -163,6 +170,12 @@ public class OCSMSOwnCloudClient {
 			Log.e(TAG, "Invalid datas received from server", e);
 			throw new OCSyncException(R.string.err_sync_push_request_resp, OCSyncErrorType.PARSE);
 		}
+
+		// Push was OK, we can save the lastMessageDate which was saved to server
+		SharedPreferences sharedPref = _context.getSharedPreferences(_context.getString(R.string.shared_preference_file), Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = sharedPref.edit();
+		editor.putLong(_context.getString(R.string.pref_lastmsgdate), lastMsgDate);
+		editor.commit();
 
 		Log.d(TAG, "SMS Push request said: status " + pushStatus + " - " + pushMessage);
 	}

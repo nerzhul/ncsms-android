@@ -38,6 +38,10 @@
     <string name="target_package">fr.unix_experience.owncloud_sms</string>
     <string name="login_logo">Login logo</string>
     
+    <!-- System strings: preferences -->
+    <string name="shared_preference_file">ownCloudSMSPrefs</string>
+    <string name="pref_lastmsgdate">last_message_date</string>
+    
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">SMS - Fast</string>

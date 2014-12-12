@@ -26,11 +26,11 @@ import fr.unix_experience.owncloud_sms.enums.MailboxID;
 import fr.unix_experience.owncloud_sms.providers.SmsDataProvider;
 import android.content.Context;
 import android.database.Cursor;
-import android.net.Uri;
 import android.util.Log;
 
 public class SmsFetcher {
 	public SmsFetcher(Context ct) {
+		_lastMsgDate = (long) 0;
 		_context = ct;
 		
 		_existingInboxMessages = null;
@@ -111,6 +111,13 @@ public class SmsFetcher {
 							entry.put(colName, c.getInt(idx) > 0 ? "true" : "false");
 						}
 						else {
+							// Special case for date, we need to record last without searching
+							if (colName.equals(new String("date"))) {
+								final Long tmpDate = c.getLong(idx);
+								if (tmpDate > _lastMsgDate) {
+									_lastMsgDate = tmpDate;
+								}
+							}
 							entry.put(colName, c.getString(idx));
 						}
 					}
@@ -234,13 +241,17 @@ public class SmsFetcher {
 		_existingDraftsMessages = draftMessages;
 	}
 	
+	public Long getLastMessageDate() {
+		return _lastMsgDate;
+	}
+	
 	private Context _context;
 	private JSONArray _jsonDataDump;
 	private JSONArray _existingInboxMessages;
 	private JSONArray _existingSentMessages;
 	private JSONArray _existingDraftsMessages;
 	
-	private static final String TAG = SmsFetcher.class.getSimpleName();
-
+	private Long _lastMsgDate;
 	
+	private static final String TAG = SmsFetcher.class.getSimpleName();
 }
