@@ -19,20 +19,16 @@ package fr.unix_experience.owncloud_sms.observers;
 
 import org.json.JSONArray;
 
-import fr.unix_experience.owncloud_sms.R;
+import fr.unix_experience.owncloud_sms.engine.ASyncTask;
 import fr.unix_experience.owncloud_sms.engine.OCSMSOwnCloudClient;
 import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
-import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
-import android.accounts.Account;
-import android.accounts.AccountManager;
+import fr.unix_experience.owncloud_sms.enums.MailboxID;
 import android.content.Context;
 import android.database.ContentObserver;
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Handler;
 import android.util.Log;
 
-public class SmsObserver extends ContentObserver {
+public class SmsObserver extends ContentObserver implements ASyncTask {
 
 	public SmsObserver(Handler handler) {
 		super(handler);
@@ -46,45 +42,13 @@ public class SmsObserver extends ContentObserver {
 	public void onChange(boolean selfChange) {
 		super.onChange(selfChange);
 		Log.d(TAG, "onChange SmsObserver");
-		
-		if (_accountMgr == null && _context != null) {
-			_accountMgr = AccountManager.get(_context);
-		}
-		String smsURI = "content://sms";
-		
-		SmsFetcher sFetch = new SmsFetcher(_context);
-		JSONArray smsList = sFetch.getLastMessage(smsURI);
+	
+		SmsFetcher fetcher = new SmsFetcher(_context);
+		JSONArray smsList = fetcher.getLastMessage(MailboxID.ALL);
 		
 		if (smsList != null) {
-			new SyncTask(smsList).execute();
+			new SyncTask(_context, smsList).execute();
 		}
-	}
-	
-	private class SyncTask extends AsyncTask<Void, Void, Void>{
-		public SyncTask(JSONArray smsList) {
-			_smsList = smsList;
-		}
-		@Override
-		protected Void doInBackground(Void... params) {
-			// Get ownCloud SMS account list
-			Account[] myAccountList = _accountMgr.getAccountsByType(_context.getString(R.string.account_type));
-			for (int i = 0; i < myAccountList.length; i++) {
-				Log.d(TAG, "int i = 0; i < myAccountList.length; i++" + myAccountList[i] + " SmsObserver");
-				Uri serverURI = Uri.parse(_accountMgr.getUserData(myAccountList[i], "ocURI"));
-				
-				OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(_context,
-					serverURI, _accountMgr.getUserData(myAccountList[i], "ocLogin"),
-					_accountMgr.getPassword(myAccountList[i]));
-				
-				try {
-					_client.doPushRequest(_smsList);
-				} catch (OCSyncException e) {
-					Log.e(TAG, _context.getString(e.getErrorId()));
-				}
-			}
-			return null;
-		}
-		private JSONArray _smsList;
 	}
 
 	public void setContext(Context context) {
@@ -92,7 +56,6 @@ public class SmsObserver extends ContentObserver {
 	}
 	
 	private Context _context;
-	private static AccountManager _accountMgr;
 	
 	private static final String TAG = OCSMSOwnCloudClient.class.getSimpleName();
 }

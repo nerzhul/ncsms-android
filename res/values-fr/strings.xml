@@ -27,7 +27,7 @@
 -->
 <resources>
 	<!-- Translation version, reference for translators -->
-	<string name="translation_version">2</string>
+	<string name="translation_version">3</string>
 	
     <!-- Translations must begin there -->
 
@@ -90,4 +90,6 @@
     <string name="sync_title">Processus de synchronisation</string>
     <string name="sync_inprogress">Synchonisation en cours...</string>
     <string name="fatal_error">Erreur fatale ! </string>
+    
+    <string name="err_sync_no_connection_available">Erreur #16: Aucune connexion data disponible</string>
 </resources>

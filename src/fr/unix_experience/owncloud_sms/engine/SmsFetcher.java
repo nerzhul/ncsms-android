@@ -17,7 +17,6 @@ package fr.unix_experience.owncloud_sms.engine;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import java.util.Date;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -40,47 +39,34 @@ public class SmsFetcher {
 	
 	public JSONArray fetchAllMessages() {
 		_jsonDataDump = new JSONArray();
-		fetchInboxMessages();
-		fetchSentMessages();
-		fetchDraftMessages();
+		bufferizeMailboxMessages(MailboxID.INBOX);
+		bufferizeMailboxMessages(MailboxID.SENT);
+		bufferizeMailboxMessages(MailboxID.DRAFTS);
 		return _jsonDataDump;
 	}
 	
-	public void fetchInboxMessages() {
-		bufferizeMailboxMessages("content://sms/inbox", MailboxID.INBOX);
-	}
-	
-	public void fetchSentMessages() {
-		bufferizeMailboxMessages("content://sms/sent", MailboxID.SENT);
-	}
-	
-	public void fetchDraftMessages() {
-		bufferizeMailboxMessages("content://sms/drafts", MailboxID.DRAFTS);
-	}
-	
-	private void bufferizeMailboxMessages(String _mb, MailboxID _mbID) {
-		if (_context == null || _mb.length() == 0) {
+	private void bufferizeMailboxMessages(MailboxID mbID) {
+		String mbURI = mapMailboxIDToURI(mbID);
+		
+		if (_context == null || mbURI == null) {
 			return;
 		}
 		
-		if (_mbID != MailboxID.INBOX && _mbID != MailboxID.SENT &&
-			_mbID != MailboxID.DRAFTS) {
-			Log.e(TAG,"Unhandled MailboxID " + _mbID.ordinal());
+		if (mbID != MailboxID.INBOX && mbID != MailboxID.SENT &&
+			mbID != MailboxID.DRAFTS) {
+			Log.e(TAG,"Unhandled MailboxID " + mbID.ordinal());
 			return;
 		}
-		
-		Date startDate = new Date();
-		// Fetch Sent SMS Message from Built-in Content Provider
-		
+
 		// We generate a ID list for this message box
-		String existingIDs = buildExistingMessagesString(_mbID);
+		String existingIDs = buildExistingMessagesString(mbID);
 		
 		Cursor c = null;
 		if (existingIDs.length() > 0) {
-			c = (new SmsDataProvider(_context)).query(_mb, "_id NOT IN (" + existingIDs + ")");
+			c = (new SmsDataProvider(_context)).query(mbURI, "_id NOT IN (" + existingIDs + ")");
 		}
 		else {
-			c = (new SmsDataProvider(_context)).query(_mb);
+			c = (new SmsDataProvider(_context)).query(mbURI);
 		}
 		
 		// Reading mailbox
@@ -90,8 +76,6 @@ public class SmsFetcher {
 				JSONObject entry = new JSONObject();
 
 				try {
-					// Reading each mail element
-					int msgId = -1;
 					for(int idx=0;idx<c.getColumnCount();idx++) {
 						String colName = c.getColumnName(idx);
 						
@@ -102,7 +86,6 @@ public class SmsFetcher {
 							
 							// bufferize Id for future use
 							if (colName.equals(new String("_id"))) {
-								msgId = c.getInt(idx);
 							}
 						}
 						// Seen and read must be pseudo boolean
@@ -123,7 +106,7 @@ public class SmsFetcher {
 					}
 					
 					// Mailbox ID is required by server
-					entry.put("mbox", _mbID.ordinal());
+					entry.put("mbox", mbID.ordinal());
 					
 					_jsonDataDump.put(entry);
 					
@@ -134,24 +117,22 @@ public class SmsFetcher {
 			}
 			while(c.moveToNext());
 			
-			Log.d(TAG, c.getCount() + " messages read from " +_mb);
+			Log.d(TAG, c.getCount() + " messages read from " + mbURI);
 			
 			c.close();
 		}
-
-		long diffInMs = (new Date()).getTime() - startDate.getTime();
-		
-		Log.d(TAG, "SmsFetcher->getMailboxMessages() Time spent: " + diffInMs + "ms");
 	}
 	
 	// Used by Content Observer
-	public JSONArray getLastMessage(String _mb) {
-		if (_context == null || _mb.length() == 0) {
+	public JSONArray getLastMessage(MailboxID mbID) {
+		String mbURI = mapMailboxIDToURI(mbID);
+		
+		if (_context == null || mbURI == null) {
 			return null;
 		}
-		 
+		
 		// Fetch Sent SMS Message from Built-in Content Provider
-		Cursor c = (new SmsDataProvider(_context)).query(_mb);
+		Cursor c = (new SmsDataProvider(_context)).query(mbURI);
 		
 		c.moveToNext();
 		
@@ -184,11 +165,8 @@ public class SmsFetcher {
 			}
 			
 			// Mailbox ID is required by server
-			switch (entry.getInt("type")) {
-				case 1: entry.put("mbox", MailboxID.INBOX.ordinal()); break;
-				case 2: entry.put("mbox", MailboxID.SENT.ordinal()); break;
-				case 3: entry.put("mbox", MailboxID.DRAFTS.ordinal()); break;
-			}
+			entry.put("mbox", mbID.ordinal());
+			
 			results.put(entry);
 		} catch (JSONException e) {
 			Log.e(TAG, "JSON Exception when reading SMS Mailbox", e);
@@ -198,6 +176,96 @@ public class SmsFetcher {
 		c.close();
 		
 		return results;
+	}
+	
+	// Used by ConnectivityChanged Event
+	public JSONArray bufferizeMessagesSinceDate(Long sinceDate) {
+		_jsonDataDump = new JSONArray();
+		bufferizeMessagesSinceDate(MailboxID.INBOX, sinceDate);
+		bufferizeMessagesSinceDate(MailboxID.SENT, sinceDate);
+		bufferizeMessagesSinceDate(MailboxID.DRAFTS, sinceDate);
+		return _jsonDataDump;
+	}
+	
+	// Used by ConnectivityChanged Event
+	public void bufferizeMessagesSinceDate(MailboxID mbID, Long sinceDate) {
+		String mbURI = mapMailboxIDToURI(mbID);
+		
+		if (_context == null || mbURI == null) {
+			return;
+		}
+		
+		Cursor c = (new SmsDataProvider(_context)).query(mbURI, "date > " + sinceDate);
+		
+		// Reading mailbox
+		if (c != null && c.getCount() > 0) {
+			c.moveToFirst();
+			do {
+				JSONObject entry = new JSONObject();
+
+				try {
+					for(int idx=0;idx<c.getColumnCount();idx++) {
+						String colName = c.getColumnName(idx);
+						
+						// Id column is must be an integer
+						if (colName.equals(new String("_id")) ||
+							colName.equals(new String("type"))) {
+							entry.put(colName, c.getInt(idx));
+							
+							// bufferize Id for future use
+							if (colName.equals(new String("_id"))) {
+							}
+						}
+						// Seen and read must be pseudo boolean
+						else if (colName.equals(new String("read")) ||
+								colName.equals(new String("seen"))) {
+							entry.put(colName, c.getInt(idx) > 0 ? "true" : "false");
+						}
+						else {
+							// Special case for date, we need to record last without searching
+							if (colName.equals(new String("date"))) {
+								final Long tmpDate = c.getLong(idx);
+								if (tmpDate > _lastMsgDate) {
+									_lastMsgDate = tmpDate;
+								}
+							}
+							entry.put(colName, c.getString(idx));
+						}
+					}
+					
+					// Mailbox ID is required by server
+					entry.put("mbox", mbID.ordinal());
+					
+					_jsonDataDump.put(entry);
+					
+				} catch (JSONException e) {
+					Log.e(TAG, "JSON Exception when reading SMS Mailbox", e);
+					c.close();
+				}
+			}
+			while(c.moveToNext());
+			
+			Log.d(TAG, c.getCount() + " messages read from " + mbURI);
+			
+			c.close();
+		}
+	}
+	
+	private String mapMailboxIDToURI(MailboxID mbID) {
+		if (mbID == MailboxID.INBOX) {
+			return "content://sms/inbox";
+		}
+		else if (mbID == MailboxID.DRAFTS) {
+			return "content://sms/drafts";
+		}
+		else if (mbID == MailboxID.SENT) {
+			return "content://sms/sent";
+		}
+		else if (mbID == MailboxID.ALL) {
+			return "content://sms";
+		}
+		
+		return null;
 	}
 	
 	private String buildExistingMessagesString(MailboxID _mbID) {

@@ -29,4 +29,5 @@ public enum MailboxID {
 	INBOX,
 	SENT,
 	DRAFTS,
+	ALL,
 }

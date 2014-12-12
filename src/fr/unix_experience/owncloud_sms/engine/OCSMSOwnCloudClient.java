@@ -32,7 +32,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.util.Log;
 
@@ -274,9 +273,18 @@ public class OCSMSOwnCloudClient {
 		
 		// We try maximumHttpReqTries because sometimes network is slow or unstable
 		int tryNb = 0;
+		ConnectivityMonitor cMon = new ConnectivityMonitor(_context);
 		
 		while (tryNb < maximumHttpReqTries) {
 			tryNb++;
+			
+			if (!cMon.isValid()) {
+				if (tryNb == maximumHttpReqTries) {
+					req.releaseConnection();
+					throw new OCSyncException(R.string.err_sync_no_connection_available, OCSyncErrorType.IO);
+				}
+				continue;
+			}
 			
 			try {
 				status = _ocClient.executeMethod(req);

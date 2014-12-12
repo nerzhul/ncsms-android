@@ -27,7 +27,7 @@
 -->
 <resources>
     <!-- Translation version, reference for translators -->
-	<string name="translation_version">2</string>
+	<string name="translation_version">3</string>
 	
     <!-- Translations must begin there -->
     <!-- Preferences -->
@@ -131,5 +131,6 @@
     <string name="err_sync_http_request_ioexception">Error #13: Unable to perform a connection to ownCloud instance</string>
     <string name="err_sync_http_request_resp">Error #14: Unable to parse server response</string>
     <string name="err_sync_http_request_parse_resp">Error #15: Unable to parse server response</string>
+    <string name="err_sync_no_connection_available">Error #16: No data connection available</string>
     
 </resources>
