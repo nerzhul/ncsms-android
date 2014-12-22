@@ -52,3 +52,7 @@ https://github.com/nerzhul/ownCloud-SMS-App/issues
 And for the server app here:
 
 https://github.com/nerzhul/ocsms/issues
+
+## Developpers
+
+You can found our continuous integration here: http://jenkins.unix-experience.fr/job/ownCloud%20SMS%20%28Android%29/
