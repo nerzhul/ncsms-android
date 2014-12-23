@@ -54,7 +54,6 @@ public class ConnectivityChanged extends BroadcastReceiver implements ASyncTask 
 		
 		// Now fetch messages since last stored date
 		JSONArray smsList = new SmsFetcher(context).bufferizeMessagesSinceDate(lastMessageSynced);
-		Log.d(TAG,"smsList " + smsList.toString());
 		
 		if (smsList != null) {
 			new SyncTask(context, smsList).execute();
