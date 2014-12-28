@@ -195,7 +195,7 @@ public class SmsFetcher {
 			return;
 		}
 		
-		Cursor c = (new SmsDataProvider(_context)).query(mbURI, "date > " + sinceDate);
+		Cursor c = new SmsDataProvider(_context).query(mbURI, "date > ?", new String[] { sinceDate.toString() });
 		
 		// Reading mailbox
 		if (c != null && c.getCount() > 0) {
