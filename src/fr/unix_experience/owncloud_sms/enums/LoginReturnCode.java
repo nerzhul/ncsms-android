@@ -1,7 +1,7 @@
 package fr.unix_experience.owncloud_sms.enums;
 
 /*
- * Copyright (c) 2014, Loic Blot <loic.blot@unix-experience.fr>
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
  * All rights reserved.
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions

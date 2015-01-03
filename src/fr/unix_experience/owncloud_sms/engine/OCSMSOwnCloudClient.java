@@ -1,7 +1,7 @@
 package fr.unix_experience.owncloud_sms.engine;
 
 /*
- *  Copyright (c) 2014, Loic Blot <loic.blot@unix-experience.fr>
+ *  Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Affero General Public License as
