@@ -58,6 +58,8 @@ public class SmsSyncAdapter extends AbstractThreadedSyncAdapter {
 			
 			// and push datas
 			_client.doPushRequest(null);
+			
+			nMgr.dropSyncErrorMsg();
 		} catch (OCSyncException e) {
 			nMgr.setSyncErrorMsg(getContext().getString(e.getErrorId()));
 			if (e.getErrorType() == OCSyncErrorType.IO) {
@@ -75,6 +77,7 @@ public class SmsSyncAdapter extends AbstractThreadedSyncAdapter {
 		}
 		
 		nMgr.dropSyncProcessMsg();
+		
 	}
 
 	private AccountManager _accountMgr;

@@ -46,6 +46,10 @@ public class OCSMSNotificationManager {
 		);
 	}
 	
+	public void dropSyncErrorMsg() {
+		_notification.cancelNotify(OCSMSNotificationType.SYNC_FAILED);
+	}
+	
 	public void setDebugMsg(String errMsg) {
 		createNotificationIfPossible(OCSMSNotificationType.DEBUG, 
 			"DEBUG", errMsg
