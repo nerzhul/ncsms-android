@@ -3,10 +3,11 @@
     package="fr.unix_experience.owncloud_sms"
     android:versionCode="17"
     android:versionName="0.16.1" >
-	<!-- From Android 3.0 to 5.0 -->
+
+    <!-- From Android 3.0 to 5.0 -->
     <uses-sdk
-        android:minSdkVersion="11"
         android:maxSdkVersion="21"
+        android:minSdkVersion="11"
         android:targetSdkVersion="19" />
 
     <uses-permission android:name="android.permission.READ_SMS" />
@@ -19,8 +20,8 @@
     <uses-permission android:name="android.permission.READ_SYNC_STATS" />
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <!-- For account management -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
@@ -35,13 +36,13 @@
         android:theme="@style/AppTheme" >
 
         <!-- Related to periodic sync -->
-        <service android:name=".observers.SmsObserverService"
+        <service
+            android:name=".observers.SmsObserverService"
             android:exported="false" />
-
-         <service
+        <service
             android:name=".sync_adapters.SmsSyncService"
             android:exported="true"
-            android:process=":sync">
+            android:process=":sync" >
             <intent-filter>
                 <action android:name="android.content.SyncAdapter" />
             </intent-filter>
@@ -53,10 +54,10 @@
 
         <provider
             android:name=".providers.SmsDataProvider"
-            android:label="@string/pref_title_sync"
-            android:authorities="@string/account_authority">
+            android:authorities="@string/account_authority"
+            android:label="@string/pref_title_sync" >
         </provider>
-        
+
         <!--
         <service
             android:name=".sync_adapters.SmsSlowSyncService"
@@ -78,8 +79,9 @@
         </provider>
         -->
 
+
         <!-- Related to Login -->
-        <service android:name=".authenticators.OwnCloudAuthenticatorService">
+        <service android:name=".authenticators.OwnCloudAuthenticatorService" >
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator" />
             </intent-filter>
@@ -89,15 +91,14 @@
                 android:resource="@xml/owncloud_account_authenticator" />
         </service>
 
-        <receiver android:name=".broadcast_receivers.IncomingSms">
-			<intent-filter>
-				<action android:name="android.provider.Telephony.SMS_RECEIVED" />
-			</intent-filter>
-		</receiver>
-		
-        <receiver android:name=".broadcast_receivers.ConnectivityChanged">
+        <receiver android:name=".broadcast_receivers.IncomingSms" >
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcast_receivers.ConnectivityChanged" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
 
@@ -106,8 +107,17 @@
             android:label="@string/title_activity_login" >
         </activity>
         <activity
-            android:name="fr.unix_experience.owncloud_sms.activities.GeneralSettingsActivity"
+            android:name=".activities.GeneralSettingsActivity"
             android:label="@string/title_activity_general_settings" >
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
