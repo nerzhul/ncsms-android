@@ -43,7 +43,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
         android:minHeight="36dp"
-        android:text="Rate us !"
+        android:text="@string/ma_button_rate_us"
+        android:onClick="openGooglePlayStore"
         android:textAlignment="center" />
 
     <TextView
@@ -52,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Thanks to"
+        android:text="@string/ma_button_thanksto"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -69,19 +70,19 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignLeft="@+id/ma_title_rateus"
         android:layout_centerVertical="true"
-        android:text="If you like this application, please give rate us on Google Play Store"
+        android:text="@string/ma_content_rate_us"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/ma_title_rateus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView1"
         android:layout_alignLeft="@+id/tv_rateUs"
         android:layout_marginBottom="18dp"
-        android:text="Rate us !"
+        android:text="@string/ma_title_rate_us"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

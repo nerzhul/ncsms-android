@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Add an account"
+        android:text="@string/ma_title_add_account"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
@@ -51,7 +51,8 @@
         android:layout_below="@+id/main_tv_accounts"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
-        android:text="Go to Accounts and Sync" />
+        android:onClick="openAddAccount"
+        android:text="@string/ma_button_goto_sync" />
 
     <TextView
         android:id="@+id/textView1"
@@ -60,7 +61,7 @@
         android:layout_above="@+id/main_button_settings"
         android:layout_alignLeft="@+id/main_tv_accounts"
         android:layout_marginBottom="25dp"
-        android:text="Change app settings"
+        android:text="@string/ma_title_change_settings"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
@@ -70,6 +71,6 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
 		android:onClick="openAppSettings"
-        android:text="Go to Settings" />
+        android:text="@string/ma_button_goto_settings" />
 
 </RelativeLayout>

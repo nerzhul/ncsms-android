@@ -115,6 +115,18 @@
         <item>https://</item>
         <item>http://</item>
     </string-array>
+    
+    <!-- Main activity -->
+    <string name="ma_button_rate_us">Rate us !</string>
+    <string name="ma_button_thanksto">Thanks to</string>
+    <string name="ma_title_rate_us">Rate us !</string>
+    <string name="ma_content_rate_us">If you like this application, please give rate us on Google Play Store</string>
+    <string name="ma_title_add_account">Add an account</string>
+    <string name="ma_button_goto_sync">Go to Accounts and Sync</string>
+    <string name="ma_title_change_settings">Change app settings</string>
+    <string name="ma_button_goto_settings">Go to Settings</string>
+    <string name="ma_title_welcome">Welcome</string>
+    <string name="ma_content_welcome">Welcome to ownCloud SMS application. This application let you synchronise your SMS to your ownCloud instance using SMS app.</string>
 
     <!-- Notifications -->
     <string name="sync_title">Sync process</string>

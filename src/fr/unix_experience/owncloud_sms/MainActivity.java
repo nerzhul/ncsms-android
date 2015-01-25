@@ -34,7 +34,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -164,8 +166,22 @@ public class MainActivity extends ActionBarActivity {
 	}
 	
 	public void openAppSettings(View view) {
-		Intent intent = new Intent(this, GeneralSettingsActivity.class);
-		startActivity(intent);
+		startActivity(new Intent(this, GeneralSettingsActivity.class));
+	}
+	
+	public void openAddAccount(View view) {
+		startActivity(new Intent(Settings.ACTION_ADD_ACCOUNT));
 	}
 
+	public void openGooglePlayStore(View view) {
+		Intent intent;
+		try {
+			intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName()));
+		    
+		} catch (android.content.ActivityNotFoundException anfe) {
+		    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName()));
+		}
+		
+		startActivity(intent);
+	}
 }

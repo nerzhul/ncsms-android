@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="Welcome"
+        android:text="@string/ma_title_welcome"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
@@ -55,7 +55,7 @@
         android:layout_alignLeft="@+id/section_label"
         android:layout_below="@+id/section_label"
         android:layout_marginTop="16dp"
-        android:text="Welcome to ownCloud SMS application. This application let you synchronise your SMS to your ownCloud instance using SMS app."
+        android:text="@string/ma_content_welcome"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
