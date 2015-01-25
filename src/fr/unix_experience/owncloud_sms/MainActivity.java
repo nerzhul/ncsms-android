@@ -28,10 +28,12 @@ package fr.unix_experience.owncloud_sms;
 import java.util.List;
 import java.util.Vector;
 
+import fr.unix_experience.owncloud_sms.activities.GeneralSettingsActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -159,6 +161,11 @@ public class MainActivity extends ActionBarActivity {
 					false);
 			return rootView;
 		}
+	}
+	
+	public void openAppSettings(View view) {
+		Intent intent = new Intent(this, GeneralSettingsActivity.class);
+		startActivity(intent);
 	}
 
 }
