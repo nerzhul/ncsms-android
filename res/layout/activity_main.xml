@@ -30,4 +30,4 @@
     android:id="@+id/pager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fr.unix_experience.owncloud_sms.MainActivity" />
+    tools:context="fr.unix_experience.owncloud_sms.activities.MainActivity" />

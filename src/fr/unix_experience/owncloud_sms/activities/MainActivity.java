@@ -1,4 +1,4 @@
-package fr.unix_experience.owncloud_sms;
+package fr.unix_experience.owncloud_sms.activities;
 
 /*
  * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
@@ -28,7 +28,10 @@ package fr.unix_experience.owncloud_sms;
 import java.util.List;
 import java.util.Vector;
 
-import fr.unix_experience.owncloud_sms.activities.GeneralSettingsActivity;
+import fr.unix_experience.owncloud_sms.R;
+import fr.unix_experience.owncloud_sms.R.id;
+import fr.unix_experience.owncloud_sms.R.layout;
+import fr.unix_experience.owncloud_sms.R.menu;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

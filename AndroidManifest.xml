@@ -111,7 +111,7 @@
             android:label="@string/title_activity_general_settings" >
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="fr.unix_experience.owncloud_sms.activities.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
