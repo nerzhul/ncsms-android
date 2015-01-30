@@ -26,25 +26,27 @@
  */
 -->
 <resources>
+
     <!-- Translation version, reference for translators -->
-	<string name="translation_version">1</string>
-	
+    <string name="translation_version">3</string>
+
     <!-- Translations must begin there -->
     <!-- Preferences -->
-    <string name="pref_title_sync_frequency">Frekvence synchronizace</string>
+    <string name="pref_title_sync">SMS - rychle</string>
+    <string name="pref_title_sync_frequency">Frekvence rychlé synchronizace</string>
+    <string name="pref_title_slow_sync">SMS - pomalu a bezpečně</string>
+    <string name="pref_title_slow_sync_frequency">Frekvence bezpečné pomalé synchronizace</string>
     <string name="action_settings">Nastavení</string>
     <string name="sync_now">Synchronizovat teď</string>
     <string name="pref_category_sync">Synchronizace</string>
-
-	<string name="title_global_pref_to_general_prefs">Všeobecné možnosti</string>
-	<string name="summary_global_pref_to_general_prefs">Nastavení synchronizace</string>
-	<string name="summary_notif_prefs">Upozornění</string>
-	
-    <string name="pref_header_data_sync">Data &amp; synchronizace</string>
-
-	<string name="title_activity_general_settings">Všeobecná nastavení</string>
+    <string name="title_global_pref_to_general_prefs">Všeobecné možnosti</string>
+    <string name="summary_global_pref_to_general_prefs">Možnosti synchronizace</string>
+    <string name="summary_notif_prefs">Upozornění</string>
+    <string name="pref_header_data_sync">Data a synchronizace</string>
+    <string name="title_activity_general_settings">Hlavní nastavení</string>
 
     <string-array name="pref_sync_frequency_titles">
+        <item>5 minut</item>
         <item>15 minut</item>
         <item>30 minut</item>
         <item>1 hodina</item>
@@ -55,6 +57,7 @@
         <item>Nikdy</item>
     </string-array>
     <string-array name="pref_sync_frequency_values">
+        <item>5</item>
         <item>15</item>
         <item>30</item>
         <item>60</item>
@@ -64,33 +67,60 @@
         <item>1440</item>
         <item>-1</item>
     </string-array>
-    
-    <string name="title_activity_login">Přihlásit</string>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 hodina</item>
+        <item>3 hodiny</item>
+        <item>6 hodin</item>
+        <item>12 hodin</item>
+        <item>24 hodin</item>
+        <item>Nikdy</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_values">
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="title_activity_login">Přihlášení</string>
 
     <!-- Login -->
     <string name="prompt_login">Login</string>
-    <string name="prompt_password">Heslo </string>
-    <string name="action_sign_in">Přihlásit nebo registrovat</string>
-    <string name="action_sign_in_short">Přihlásit</string>
-    <string name="error_invalid_login">Nesprávný login nebo heslo</string>
+    <string name="prompt_password">Heslo</string>
+    <string name="action_sign_in">Přihlásit se nebo registrovat</string>
+    <string name="action_sign_in_short">Přihlášení</string>
+    <string name="error_invalid_login">Nesprávné jméno nebo heslo</string>
     <string name="error_invalid_password">Toto heslo je příliš krátké</string>
     <string name="error_field_required">Toto pole je vyžadováno</string>
     <string name="prompt_serverURI">Adresa serveru</string>
     <string name="error_invalid_server_address">Neplatná adresa serveru</string>
-    <string name="error_connection_failed">Připojení selhalo. Ujistěte se, že je to správný server</string>
-    <string name="error_http_connection_failed">Nelze provést HTTP připojení. Ujistěte se, že web server existuje</string>
-    
+    <string name="error_connection_failed">Připojení selhalo, ujistěte se, že máte správný server</string>
+    <string name="error_http_connection_failed">Nelze provést připojení přes HTTP. Ujistěte se, že je webový server dostupný</string>
+
     <string-array name="protocol_array">
-    	<item>https://</item>
+        <item>https://</item>
         <item>http://</item>
     </string-array>
     
+    <!-- Main activity -->
+    <string name="ma_button_rate_us">Ohodnoťit!</string>
+    <string name="ma_button_thanksto">Poděkování</string>
+    <string name="ma_title_rate_us">Ohodnoťit!</string>
+    <string name="ma_content_rate_us">Pokud se vám tato aplikace líbí, ohodnoťte ji v Obchodě Google Play</string>
+    <string name="ma_title_add_account">Přidat účet</string>
+    <string name="ma_button_goto_sync">Přejít na Účty a synchronizaci</string>
+    <string name="ma_title_change_settings">Změnit nastavení aplikace</string>
+    <string name="ma_button_goto_settings">Přejít do Nastavení</string>
+    <string name="ma_title_welcome">Vítejte</string>
+    <string name="ma_content_welcome">Vítejte v aplikaci ownCloud SMS. Tato aplikace umožnuje sychronizovat SMS do vašeho účtu na serveru ownCloud. </string>
+
     <!-- Notifications -->
     <string name="sync_title">Proces synchronizace</string>
     <string name="sync_inprogress">Probíhá synchronizace...</string>
-    <string name="fatal_error">Chyba ! </string>
-    
-    
+    <string name="fatal_error">Chyba !</string>
+
     <!-- Errors -->
     <string name="err_sync_get_smslist">Chyba #1: Přijata neplatná data ze serveru při přijímání předchozích zpráv</string>
     <string name="err_sync_craft_http_request">Chyba #2: Chyba při vytváření HTTP požadavku</string>
@@ -106,5 +136,11 @@
     <string name="err_sync_http_request_ioexception">Chyba #13: Nelze se připojit k ownCloud serveru</string>
     <string name="err_sync_http_request_resp">Chyba #14: Nelze zpracovat odpověď serveru</string>
     <string name="err_sync_http_request_parse_resp">Chyba #15: Nelze zpracovat odpověď serveru</string>
-    
+    <string name="err_sync_no_connection_available">Chyba #16: Není dostupné datové připojení</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_section1">Sekce 1</string>
+    <string name="title_section2">Sekce 2</string>
+    <string name="title_section3">Sekce 3</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>
