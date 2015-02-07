@@ -40,6 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="@string/ma_title_add_account"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -52,15 +53,18 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
         android:onClick="openAddAccount"
+        android:background="@drawable/standard_button"
+        style="@style/StandardButton"
         android:text="@string/ma_button_goto_sync" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/main_button_settings"
         android:layout_alignLeft="@+id/main_tv_accounts"
-        android:layout_marginBottom="25dp"
+        android:layout_alignStart="@+id/main_tv_accounts"
+        android:layout_below="@+id/mail_button_accounts"
+        android:layout_marginTop="18dp"
         android:text="@string/ma_title_change_settings"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -68,9 +72,12 @@
         android:id="@+id/main_button_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-		android:onClick="openAppSettings"
+        android:layout_marginTop="19dp"
+        android:onClick="openAppSettings"
+        android:background="@drawable/standard_button"
+        style="@style/StandardButton"
         android:text="@string/ma_button_goto_settings" />
 
 </RelativeLayout>

@@ -45,6 +45,8 @@
         android:minHeight="36dp"
         android:text="@string/ma_button_rate_us"
         android:onClick="openGooglePlayStore"
+        android:background="@drawable/standard_button"
+        style="@style/StandardButton"
         android:textAlignment="center" />
 
     <TextView
@@ -52,6 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="@string/ma_button_thanksto"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -61,6 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/TextView01"
         android:layout_marginTop="14dp"
         android:text="ownCloud developpers"
@@ -71,6 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/ma_title_rateus"
+        android:layout_alignStart="@+id/ma_title_rateus"
         android:layout_centerVertical="true"
         android:text="@string/ma_content_rate_us"
         android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -81,6 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView1"
         android:layout_alignLeft="@+id/tv_rateUs"
+        android:layout_alignStart="@+id/tv_rateUs"
         android:layout_marginBottom="18dp"
         android:text="@string/ma_title_rate_us"
         android:textAppearance="?android:attr/textAppearanceLarge" />

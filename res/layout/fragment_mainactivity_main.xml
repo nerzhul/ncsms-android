@@ -44,6 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="@string/ma_title_welcome"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -53,6 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/section_label"
+        android:layout_alignStart="@+id/section_label"
         android:layout_below="@+id/section_label"
         android:layout_marginTop="16dp"
         android:text="@string/ma_content_welcome"
