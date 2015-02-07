@@ -115,7 +115,7 @@
         <item>https://</item>
         <item>http://</item>
     </string-array>
-    
+
     <!-- Main activity -->
     <string name="ma_button_rate_us">Rate us !</string>
     <string name="ma_button_thanksto">Thanks to</string>
@@ -154,5 +154,6 @@
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main_activity2">MainActivity2</string>
 
 </resources>
