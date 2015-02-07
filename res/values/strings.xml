@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
  /*
- * Copyright (c) 2014, Loic Blot <loic.blot@unix-experience.fr>
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
  * All rights reserved.
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -28,7 +28,7 @@
 <resources>
 
     <!-- Translation version, reference for translators -->
-    <string name="translation_version">3</string>
+    <string name="translation_version">4</string>
 
     <!-- System strings, do not translate -->
     <string name="app_name">ownCloud-SMS</string>
@@ -126,7 +126,9 @@
     <string name="ma_title_change_settings">Change app settings</string>
     <string name="ma_button_goto_settings">Go to Settings</string>
     <string name="ma_title_welcome">Welcome</string>
-    <string name="ma_content_welcome">Welcome to ownCloud SMS application. This application let you synchronise your SMS to your ownCloud instance using SMS app.</string>
+    <string name="ma_content_welcome">Welcome to ownCloud SMS application. This application let you synchronize your SMS to your ownCloud instance using SMS app.</string>
+    <string name="ma_thanksto_people">ownCloud developers\n\
+Contributors and issue\'s reporters</string>
 
     <!-- Notifications -->
     <string name="sync_title">Sync process</string>
@@ -138,7 +140,7 @@
     <string name="err_sync_craft_http_request">Error #2: Error while crafting HTTP request</string>
     <string name="err_sync_push_request">Error #3: Push request failed</string>
     <string name="err_sync_push_request_resp">Error #4: Invalid datas received from server when pushing datas</string>
-    <string name="err_sync_create_json_null_smslist">Error #5: NULL Sms List</string>
+    <string name="err_sync_create_json_null_smslist">Error #5: NULL SMS List</string>
     <string name="err_sync_create_json_put_smslist">Error #6: Error while crafting push request</string>
     <string name="err_sync_create_json_request_encoding">Error #7: Unsupported encoding when generating request</string>
     <string name="err_sync_auth_failed">Error #8: Authentication failed</string>
