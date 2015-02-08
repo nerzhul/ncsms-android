@@ -42,7 +42,7 @@
 	<string name="summary_global_pref_to_general_prefs">Opciones de sincronización</string>
 	<string name="summary_notif_prefs">Notificaciones</string>
 	
-	<string name="pref_header_data_sync">Data &amp; sync</string>
+	<string name="pref_header_data_sync">Sincronizar &amp; datos</string>
 	
 	<string name="title_activity_general_settings">Configuración general</string>
 	
