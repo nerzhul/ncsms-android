@@ -28,7 +28,12 @@
 <resources>
     <!-- Translation version, reference for translators -->
 	<string name="translation_version">0</string>
-	
-	<!-- Translations must begin here -->
-    <!-- Missing translations ! -->
+ <string name="gp_short_description">ownCloud SMS sincroniza sus mensajes SMS locales en su servidor ownCloud</string>
+ <string name="gp_description">	
+	La aplicación ownCloud SMS sincroniza sus mensajes SMS en un servidor ownCloud remoto y le permite leer sus mensajes desde él.
+
+	El envio de SMS desde el servidor ownCloud será implementado en futuras versiones.
+
+	La aplicación es totalmente compatible con Android 4.0 a 5.0
+ </string>
 </resources>
