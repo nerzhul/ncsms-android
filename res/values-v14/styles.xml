@@ -1,4 +1,3 @@
-<resources>
 <!--
  /*
  * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
@@ -25,6 +24,9 @@
  * SUCH DAMAGE.
  */
 -->
+
+<resources>
+
     <style name="OcSmsTheme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
         <item name="android:actionBarStyle">@style/OcSmsActionBar</item>
 	</style>
