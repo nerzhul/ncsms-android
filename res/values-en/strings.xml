@@ -27,7 +27,7 @@
 -->
 <resources>
     <!-- Translation version, reference for translators -->
-	<string name="translation_version">3</string>
+	<string name="translation_version">5</string>
 	
     <!-- Translations must begin there -->
     <!-- Preferences -->
@@ -111,6 +111,20 @@
         <item>http://</item>
     </string-array>
     
+    <!-- Main activity -->
+    <string name="ma_button_rate_us">Rate us !</string>
+    <string name="ma_button_thanksto">Thanks to</string>
+    <string name="ma_title_rate_us">Rate us !</string>
+    <string name="ma_content_rate_us">If you like this application, please give rate us on Google Play Store</string>
+    <string name="ma_title_add_account">Add an account</string>
+    <string name="ma_button_goto_sync">Go to Accounts and Sync</string>
+    <string name="ma_title_change_settings">Change app settings</string>
+    <string name="ma_button_goto_settings">Go to Settings</string>
+    <string name="ma_title_welcome">Welcome</string>
+    <string name="ma_content_welcome">Welcome to ownCloud SMS application. This application let you synchronize your SMS to your ownCloud instance using SMS app.</string>
+    <string name="ma_thanksto_people">ownCloud developers\n\
+Contributors and issue\'s reporters</string>
+    
     <!-- Notifications -->
     <string name="sync_title">Sync process</string>
     <string name="sync_inprogress">Sync in progress...</string>
@@ -132,5 +146,6 @@
     <string name="err_sync_http_request_resp">Error #14: Unable to parse server response</string>
     <string name="err_sync_http_request_parse_resp">Error #15: Unable to parse server response</string>
     <string name="err_sync_no_connection_available">Error #16: No data connection available</string>
+    <string name="err_sync_account_unparsable">Error #17: malformed account. Please reconfigure it</string>
     
 </resources>
