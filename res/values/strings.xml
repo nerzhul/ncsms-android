@@ -28,7 +28,7 @@
 <resources>
 
     <!-- Translation version, reference for translators -->
-    <string name="translation_version">4</string>
+    <string name="translation_version">5</string>
 
     <!-- System strings, do not translate -->
     <string name="app_name">ownCloud-SMS</string>
@@ -151,6 +151,7 @@ Contributors and issue\'s reporters</string>
     <string name="err_sync_http_request_resp">Error #14: Unable to parse server response</string>
     <string name="err_sync_http_request_parse_resp">Error #15: Unable to parse server response</string>
     <string name="err_sync_no_connection_available">Error #16: No data connection available</string>
+    <string name="err_sync_account_unparsable">Error #17: malformed account. Please reconfigure it</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>

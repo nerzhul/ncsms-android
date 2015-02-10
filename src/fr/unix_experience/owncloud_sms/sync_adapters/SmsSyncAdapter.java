@@ -17,6 +17,7 @@ package fr.unix_experience.owncloud_sms.sync_adapters;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.engine.OCSMSOwnCloudClient;
 import fr.unix_experience.owncloud_sms.enums.OCSyncErrorType;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
@@ -43,10 +44,16 @@ public class SmsSyncAdapter extends AbstractThreadedSyncAdapter {
 			ContentProviderClient provider, SyncResult syncResult) {
 		
 		OCSMSNotificationManager nMgr = new OCSMSNotificationManager(getContext());
-		nMgr.setSyncProcessMsg();
 		
 		// Create client
-		Uri serverURI = Uri.parse(_accountMgr.getUserData(account, "ocURI"));
+		String ocURI = _accountMgr.getUserData(account, "ocURI");
+		if (ocURI == null) {
+			nMgr.setSyncErrorMsg(getContext().getString(R.string.err_sync_account_unparsable));
+			return;
+		}
+		
+		Uri serverURI = Uri.parse(ocURI);
+		nMgr.setSyncProcessMsg();		
 		
 		OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(getContext(),
 				serverURI, _accountMgr.getUserData(account, "ocLogin"),

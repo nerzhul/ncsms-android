@@ -80,4 +80,14 @@
         style="@style/StandardButton"
         android:text="@string/ma_button_goto_settings" />
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignStart="@+id/textView1"
+        android:layout_below="@+id/main_button_settings"
+        android:layout_marginTop="33dp"
+        android:src="@drawable/next_arrow" />
+
 </RelativeLayout>
