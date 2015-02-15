@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
  /*
- * Copyright (c) 2014, Loic Blot <loic.blot@unix-experience.fr>
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
  * All rights reserved.
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -28,7 +28,7 @@
 <resources>
 
     <!-- Translation version, reference for translators -->
-    <string name="translation_version">3</string>
+    <string name="translation_version">5</string>
 
     <!-- Translations must begin there -->
     <!-- Preferences -->
@@ -103,7 +103,7 @@
         <item>https://</item>
         <item>http://</item>
     </string-array>
-    
+
     <!-- Main activity -->
     <string name="ma_button_rate_us">Ohodnoťit!</string>
     <string name="ma_button_thanksto">Poděkování</string>
@@ -114,7 +114,8 @@
     <string name="ma_title_change_settings">Změnit nastavení aplikace</string>
     <string name="ma_button_goto_settings">Přejít do Nastavení</string>
     <string name="ma_title_welcome">Vítejte</string>
-    <string name="ma_content_welcome">Vítejte v aplikaci ownCloud SMS. Tato aplikace umožnuje sychronizovat SMS do vašeho účtu na serveru ownCloud. </string>
+    <string name="ma_content_welcome">Vítejte v aplikaci ownCloud SMS. Tato aplikace umožnuje sychronizovat SMS do vašeho účtu na serveru ownCloud za pomoci aplikace pro SMS.</string>
+    <string name="ma_thanksto_people">ownCloud vývojáři\n\ přispěvatelé a ti co hlásí chyby</string>
 
     <!-- Notifications -->
     <string name="sync_title">Proces synchronizace</string>
@@ -126,7 +127,7 @@
     <string name="err_sync_craft_http_request">Chyba #2: Chyba při vytváření HTTP požadavku</string>
     <string name="err_sync_push_request">Chyba #3: Požadavek Push selhal</string>
     <string name="err_sync_push_request_resp">Chyba #4: Přijata neplatná data ze serveru při jejich odesílání</string>
-    <string name="err_sync_create_json_null_smslist">Chyba #5: NULL Sms List</string>
+    <string name="err_sync_create_json_null_smslist">Chyba #5: NULL SMS List</string>
     <string name="err_sync_create_json_put_smslist">Chyba #6: Chyba při vytváření Push požadavku</string>
     <string name="err_sync_create_json_request_encoding">Chyba #7: Nepodporované kódování při vytváření požadavku</string>
     <string name="err_sync_auth_failed">Chyba #8: Ověření selhalo</string>
@@ -137,10 +138,11 @@
     <string name="err_sync_http_request_resp">Chyba #14: Nelze zpracovat odpověď serveru</string>
     <string name="err_sync_http_request_parse_resp">Chyba #15: Nelze zpracovat odpověď serveru</string>
     <string name="err_sync_no_connection_available">Chyba #16: Není dostupné datové připojení</string>
+    <string name="err_sync_account_unparsable">Chyba #17: účet poškozený Znovu nakonfigurovat</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_section1">Sekce 1</string>
     <string name="title_section2">Sekce 2</string>
     <string name="title_section3">Sekce 3</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main_activity2">MainActivity2</string>
 
 </resources>
