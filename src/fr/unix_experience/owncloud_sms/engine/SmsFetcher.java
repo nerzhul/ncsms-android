@@ -142,30 +142,34 @@ public class SmsFetcher {
 		JSONObject entry = new JSONObject();
 
 		try {
-			for(int idx=0;idx<c.getColumnCount();idx++) {
+			Integer mboxId = -1;
+			for(int idx = 0;idx < c.getColumnCount(); idx++) {
 				String colName = c.getColumnName(idx);
 				
 				// Id column is must be an integer
 				if (colName.equals(new String("_id")) ||
 					colName.equals(new String("type"))) {
 					entry.put(colName, c.getInt(idx));
-					
-					// bufferize Id for future use
-					if (colName.equals(new String("_id"))) {
-					}
 				}
 				// Seen and read must be pseudo boolean
 				else if (colName.equals(new String("read")) ||
 						colName.equals(new String("seen"))) {
 					entry.put(colName, c.getInt(idx) > 0 ? "true" : "false");
 				}
+				else if (colName.equals(new String("type"))) {
+					mboxId = c.getInt(idx);
+				}
 				else {
 					entry.put(colName, c.getString(idx));
 				}
 			}
 			
-			// Mailbox ID is required by server
-			entry.put("mbox", mbID.ordinal());
+			/*
+			* Mailbox ID is required by server
+			* mboxId is greater than server mboxId by 1 because types 
+			* aren't indexed in the same mean
+			*/
+			entry.put("mbox", (mboxId - 1));
 			
 			results.put(entry);
 		} catch (JSONException e) {
