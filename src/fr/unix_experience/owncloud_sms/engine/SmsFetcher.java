@@ -83,10 +83,6 @@ public class SmsFetcher {
 						if (colName.equals(new String("_id")) ||
 							colName.equals(new String("type"))) {
 							entry.put(colName, c.getInt(idx));
-							
-							// bufferize Id for future use
-							if (colName.equals(new String("_id"))) {
-							}
 						}
 						// Seen and read must be pseudo boolean
 						else if (colName.equals(new String("read")) ||
@@ -147,8 +143,7 @@ public class SmsFetcher {
 				String colName = c.getColumnName(idx);
 				
 				// Id column is must be an integer
-				if (colName.equals(new String("_id")) ||
-					colName.equals(new String("type"))) {
+				if (colName.equals(new String("_id"))) {
 					entry.put(colName, c.getInt(idx));
 				}
 				// Seen and read must be pseudo boolean
@@ -158,6 +153,7 @@ public class SmsFetcher {
 				}
 				else if (colName.equals(new String("type"))) {
 					mboxId = c.getInt(idx);
+					entry.put(colName, c.getInt(idx));
 				}
 				else {
 					entry.put(colName, c.getString(idx));
