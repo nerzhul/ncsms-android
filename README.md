@@ -56,3 +56,8 @@ https://github.com/nerzhul/ocsms/issues
 ## Developpers
 
 You can found our continuous integration here: http://jenkins.unix-experience.fr/job/ownCloud%20SMS%20%28Android%29/
+
+### Coding guidelines
+
+- No empty lines at EOF
+- No trailing whitespaces
