@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources>
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">5</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">ownCloud-SMS</string>
+    <string name="account_type">fr.unix_experience.owncloud_sms</string>
+    <string name="account_authority">fr.unix_experience.owncloud_sms.datasync.provider</string>
+    <string name="slowsync_account_authority">fr.unix_experience.owncloud_sms.datasync.slowsync_provider</string>
+    <string name="target_package">fr.unix_experience.owncloud_sms</string>
+    <string name="login_logo">Login logo</string>
+
+    <!-- System strings: preferences -->
+    <string name="shared_preference_file">ownCloudSMSPrefs</string>
+    <string name="pref_lastmsgdate">last_message_date</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS- Snabb * SMS - Fast</string>
+    <string name="pref_title_sync_frequency">Intervall Snabb sync* Fast Sync frequency</string>
+    <string name="pref_title_slow_sync">SMS - Långsamt Säkert * SMS - Slow and Secure</string>
+    <string name="pref_title_slow_sync_frequency">SMS -  Intervall Säker Långsam * Secure Slow Sync frequency</string>
+    <string name="action_settings">Inställningar</string>
+    <string name="sync_now">Synkronisera nu</string>
+    <string name="pref_category_sync">Synkronisation</string>
+    <string name="title_global_pref_to_general_prefs">Globala inställningar</string>
+    <string name="summary_global_pref_to_general_prefs">Synkroniseringsalternativ</string>
+    <string name="summary_notif_prefs">Notifikationer</string>
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+    <string name="title_activity_general_settings">Generella inställningar</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 minuter</item>
+        <item>15 minuter</item>
+        <item>30 minuter</item>
+        <item>1 timme</item>
+        <item>3 timmar</item>
+        <item>6 timmar</item>
+        <item>12 timmar</item>
+        <item>24 timmar</item>
+        <item>Aldrig</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>5</item>
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>-1</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 timme</item>
+        <item>3 timmar</item>
+        <item>6 timmar</item>
+        <item>12 timmar</item>
+        <item>24 timmar</item>
+        <item>Aldrig</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_values">
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="title_activity_login">Logga in</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Login</string>
+    <string name="prompt_password">Lösenord</string>
+    <string name="action_sign_in">Logga in eller registrera</string>
+    <string name="action_sign_in_short">Logga in</string>
+    <string name="error_invalid_login">Login eller lösenord felaktigt</string>
+    <string name="error_invalid_password">Lösenordet är för kort</string>
+    <string name="error_field_required">Detta fält är obligatoriskt</string>
+    <string name="prompt_serverURI">Server adress</string>
+    <string name="error_invalid_server_address">Felaktig server adress</string>
+    <string name="error_connection_failed">Anslutning misslyckades, vänligen säkerställ att detta är rätt server</string>
+    <string name="error_http_connection_failed">Det gick inte att genomföra en HTTP-anslutning. Vänligen säkerställ att det finns en web-server</string>
+
+    <string-array name="protocol_array">
+        <item>https://</item>
+        <item>http://</item>
+    </string-array>
+
+    <!-- Main activity -->
+    <string name="ma_button_rate_us">Skriv en recension!</string>
+    <string name="ma_button_thanksto">Tack till</string>
+    <string name="ma_title_rate_us">Skriv en recension!</string>
+    <string name="ma_content_rate_us">Om du gillar den här applikationen, ge oss ett omdömme på Google Play Butiken</string>
+    <string name="ma_title_add_account">Lägg till ett konto</string>
+    <string name="ma_button_goto_sync">Gå till Konto och Inställningar</string>
+    <string name="ma_title_change_settings">Ändra applikationsinställningar</string>
+    <string name="ma_button_goto_settings">Gå till inställningar</string>
+    <string name="ma_title_welcome">Välkommen</string>
+    <string name="ma_content_welcome">Välkommen till ownCloud SMS applikationen. Den här applikationen gör det möjligt att synkronisera dina SMS till din ownCloud Server.</string>
+    <string name="ma_thanksto_people">Utvecklarna utav ownCloud\n\
+De som bidragit, och som anmält buggar</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">Synkroniseringsprocesss</string>
+    <string name="sync_inprogress">Pågående synkronisering</string>
+    <string name="fatal_error">Allvarligt fel! </string>
+
+    <!-- Errors -->
+    <string name="err_sync_get_smslist">Error #1: Invalid data received from server when getting previous messages</string>
+    <string name="err_sync_craft_http_request">Error #2: Error while crafting HTTP request</string>
+    <string name="err_sync_push_request">Error #3: Push request failed</string>
+    <string name="err_sync_push_request_resp">Error #4: Invalid datas received from server when pushing datas</string>
+    <string name="err_sync_create_json_null_smslist">Error #5: NULL SMS List</string>
+    <string name="err_sync_create_json_put_smslist">Error #6: Error while crafting push request</string>
+    <string name="err_sync_create_json_request_encoding">Error #7: Unsupported encoding when generating request</string>
+    <string name="err_sync_auth_failed">Error #8: Authentication failed</string>
+    <string name="err_sync_http_request_returncode_unhandled">Error #9: Server set unhandled HTTP return code</string>
+    <string name="err_sync_http_request_connect">Error #11: Unable to perform a connection to ownCloud instance</string>
+    <string name="err_sync_http_request_httpexception">Error #12: Unable to perform a connection to ownCloud instance</string>
+    <string name="err_sync_http_request_ioexception">Error #13: Unable to perform a connection to ownCloud instance</string>
+    <string name="err_sync_http_request_resp">Error #14: Unable to parse server response</string>
+    <string name="err_sync_http_request_parse_resp">Error #15: Unable to parse server response</string>
+    <string name="err_sync_no_connection_available">Error #16: No data connection available</string>
+    <string name="err_sync_account_unparsable">Error #17: malformed account. Please reconfigure it</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_activity_main_activity2">MainActivity2</string>
+
+</resources>
