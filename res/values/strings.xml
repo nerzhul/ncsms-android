@@ -44,29 +44,29 @@
 
     <!-- Translations must begin there -->
     <!-- Preferences -->
-    <string name="pref_title_sync">SMS - Fast</string>
-    <string name="pref_title_sync_frequency">Fast Sync frequency</string>
-    <string name="pref_title_slow_sync">SMS - Slow and Secure</string>
-    <string name="pref_title_slow_sync_frequency">Secure Slow Sync frequency</string>
-    <string name="action_settings">Settings</string>
-    <string name="sync_now">Synchronize now</string>
-    <string name="pref_category_sync">Synchronization</string>
-    <string name="title_global_pref_to_general_prefs">General preferences</string>
-    <string name="summary_global_pref_to_general_prefs">Sync options</string>
-    <string name="summary_notif_prefs">Notifications</string>
+    <string name="pref_title_sync">SMS- Snabb</string>
+    <string name="pref_title_sync_frequency">Intervall Snabb sync</string>
+    <string name="pref_title_slow_sync">SMS - Långsamt & Säkert</string>
+    <string name="pref_title_slow_sync_frequency">SMS -  Intervall Säker & Långsam</string>
+    <string name="action_settings">Inställningar</string>
+    <string name="sync_now">Synkronisera nu</string>
+    <string name="pref_category_sync">Synkronisation</string>
+    <string name="title_global_pref_to_general_prefs">Globala inställningar</string>
+    <string name="summary_global_pref_to_general_prefs">Synkroniseringsalternativ</string>
+    <string name="summary_notif_prefs">Notifikationer</string>
     <string name="pref_header_data_sync">Data &amp; sync</string>
-    <string name="title_activity_general_settings">General Settings</string>
+    <string name="title_activity_general_settings">Generella inställningar</string>
 
     <string-array name="pref_sync_frequency_titles">
-        <item>5 minutes</item>
-        <item>15 minutes</item>
-        <item>30 minutes</item>
-        <item>1 hour</item>
-        <item>3 hours</item>
-        <item>6 hours</item>
-        <item>12 hours</item>
-        <item>24 hours</item>
-        <item>Never</item>
+        <item>5 minuter</item>
+        <item>15 minuter</item>
+        <item>30 minuter</item>
+        <item>1 timme</item>
+        <item>3 timmar</item>
+        <item>6 timmar</item>
+        <item>12 timmar</item>
+        <item>24 timmar</item>
+        <item>Aldrig</item>
     </string-array>
     <string-array name="pref_sync_frequency_values">
         <item>5</item>
@@ -80,12 +80,12 @@
         <item>-1</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
-        <item>1 hour</item>
-        <item>3 hours</item>
-        <item>6 hours</item>
-        <item>12 hours</item>
-        <item>24 hours</item>
-        <item>Never</item>
+        <item>1 timme</item>
+        <item>3 timmar</item>
+        <item>6 timmar</item>
+        <item>12 timmar</item>
+        <item>24 timmar</item>
+        <item>Aldrig</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_values">
         <item>60</item>
@@ -96,20 +96,20 @@
         <item>-1</item>
     </string-array>
 
-    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_login">Logga in</string>
 
     <!-- Login -->
     <string name="prompt_login">Login</string>
-    <string name="prompt_password">Password </string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_login">Login or password incorrect</string>
-    <string name="error_invalid_password">This password is too short</string>
-    <string name="error_field_required">This field is required</string>
-    <string name="prompt_serverURI">Server address</string>
-    <string name="error_invalid_server_address">Invalid server address</string>
-    <string name="error_connection_failed">Connection failed, ensure this is the right server</string>
-    <string name="error_http_connection_failed">Unable to perform a HTTP connection. Please ensure there is a web server</string>
+    <string name="prompt_password">Lösenord</string>
+    <string name="action_sign_in">Logga in eller registrera</string>
+    <string name="action_sign_in_short">Logga in</string>
+    <string name="error_invalid_login">Login eller lösenord felaktigt</string>
+    <string name="error_invalid_password">Lösenordet är för kort</string>
+    <string name="error_field_required">Detta fält är obligatoriskt</string>
+    <string name="prompt_serverURI">Server adress</string>
+    <string name="error_invalid_server_address">Felaktig server adress</string>
+    <string name="error_connection_failed">Anslutning misslyckades, vänligen säkreställ att detta är rätt server</string>
+    <string name="error_http_connection_failed">Det gick inte att genomföra en HTTP-anslutning. Vänsligen säkreställ att det finns en web-server</string>
 
     <string-array name="protocol_array">
         <item>https://</item>
@@ -117,23 +117,23 @@
     </string-array>
 
     <!-- Main activity -->
-    <string name="ma_button_rate_us">Rate us !</string>
-    <string name="ma_button_thanksto">Thanks to</string>
-    <string name="ma_title_rate_us">Rate us !</string>
-    <string name="ma_content_rate_us">If you like this application, please give rate us on Google Play Store</string>
-    <string name="ma_title_add_account">Add an account</string>
-    <string name="ma_button_goto_sync">Go to Accounts and Sync</string>
-    <string name="ma_title_change_settings">Change app settings</string>
-    <string name="ma_button_goto_settings">Go to Settings</string>
-    <string name="ma_title_welcome">Welcome</string>
-    <string name="ma_content_welcome">Welcome to ownCloud SMS application. This application let you synchronize your SMS to your ownCloud instance using SMS app.</string>
-    <string name="ma_thanksto_people">ownCloud developers\n\
-Contributors and issue\'s reporters</string>
+    <string name="ma_button_rate_us">Skriv en recension!</string>
+    <string name="ma_button_thanksto">Tack till</string>
+    <string name="ma_title_rate_us">Skriv en recension!</string>
+    <string name="ma_content_rate_us">Om du gillar den här applikationen, ge oss ett omdömme på Google Play Butiken</string>
+    <string name="ma_title_add_account">Lägg till ett konto</string>
+    <string name="ma_button_goto_sync">Gå till Konto och Inställningar</string>
+    <string name="ma_title_change_settings">Ändra applikationsinställningar</string>
+    <string name="ma_button_goto_settings">Gå till inställningar</string>
+    <string name="ma_title_welcome">Välkommen</string>
+    <string name="ma_content_welcome">Välkommen till ownCloud SMS applikationen. Den här applikationen gör det möjligt att synkronisera dina SMS till din ownCloud Server.</string>
+    <string name="ma_thanksto_people">Utvecklarna utav ownCloud\n\
+De som bidragit, och som anmält buggar</string>
 
     <!-- Notifications -->
-    <string name="sync_title">Sync process</string>
-    <string name="sync_inprogress">Sync in progress...</string>
-    <string name="fatal_error">Fatal error ! </string>
+    <string name="sync_title">Synkroniseringsprocesss</string>
+    <string name="sync_inprogress">Pågående synkronisering</string>
+    <string name="fatal_error">Allvarligt fel! </string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Error #1: Invalid data received from server when getting previous messages</string>
