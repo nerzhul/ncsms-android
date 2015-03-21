@@ -23,6 +23,8 @@ import android.annotation.TargetApi;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.PeriodicSync;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -31,12 +33,14 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+
 import java.util.List;
 
 import fr.unix_experience.owncloud_sms.R;
 
 public class GeneralSettingsActivity extends PreferenceActivity {
 	private static final boolean ALWAYS_SIMPLE_PREFS = false;
+	private static Context mContext;
 	static AccountManager mAccountMgr;
 	static String mAccountAuthority;
 	static String mSlowSyncAccountAuthority;
@@ -66,6 +70,8 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 		// In the simplified UI, fragments are not used at all and we instead
 		// use the older PreferenceActivity APIs.
 		addPreferencesFromResource(R.xml.pref_data_sync);
+		
+		mContext = getBaseContext();
 
 		// Bind the summaries of EditText/List/Dialog/Ringtone preferences to
 		// their values. When their values change, their summaries are updated
@@ -124,12 +130,13 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 				
 				String prefKey = preference.getKey();
 				
+				Account[] myAccountList = mAccountMgr.getAccountsByType(mAccountType);
+				
 				// Handle sync frequency change
-				if (prefKey.equals(new String("sync_frequency"))) {
-					long syncFreq = Long.parseLong((String)value);
+				if (prefKey.equals("sync_frequency")) {
+					long syncFreq = Long.parseLong(stringValue);
 
 					// Get ownCloud SMS account list
-					Account[] myAccountList = mAccountMgr.getAccountsByType(mAccountType);
 					for (int i = 0; i < myAccountList.length; i++) {
 						// And get all authorities for this account
 						List<PeriodicSync> syncList = ContentResolver.getPeriodicSyncs(myAccountList[i], mAccountAuthority);
@@ -153,8 +160,19 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 				                mAccountAuthority, b, syncFreq * 60);
 						}
 					}
+				}
+				// Network types allowed for sync
+				else if(prefKey.equals("sync_wifi") || prefKey.equals("sync_2g") ||
+					prefKey.equals("sync_3g") || prefKey.equals("sync_gprs") ||
+					prefKey.equals("sync_4g") || prefKey.equals("sync_others")) {
+					SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
+
+					Editor edit = prefs.edit();
+					edit.putBoolean(prefKey, Boolean.parseBoolean(stringValue));
+					edit.commit();
+				}
 				// Slow Sync frequency 
-				} /*else if (prefKey.equals(new String("slow_sync_frequency"))) {
+				/*else if (prefKey.equals(new String("slow_sync_frequency"))) {
 					long syncFreq = Long.parseLong((String)value);
 
 					// Get ownCloud SMS account list

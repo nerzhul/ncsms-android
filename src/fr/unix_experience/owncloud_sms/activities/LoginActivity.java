@@ -46,6 +46,7 @@ import com.owncloud.android.lib.common.OwnCloudCredentialsFactory;
 
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.authenticators.OwnCloudAuthenticator;
+import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
 import fr.unix_experience.owncloud_sms.enums.LoginReturnCode;
 
 /**
@@ -282,7 +283,7 @@ public class LoginActivity extends Activity {
 				Bundle b = new Bundle();
 				b.putInt("synctype", 1);
 				
-				ContentResolver.addPeriodicSync(account, getString(R.string.account_authority), b, 15 * 60);
+				ContentResolver.addPeriodicSync(account, getString(R.string.account_authority), b, DefaultPrefs.syncInterval * 60);
 				// Then it's finished
 				finish();
 				

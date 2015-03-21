@@ -33,11 +33,13 @@ public class ConnectivityChanged extends BroadcastReceiver implements ASyncTask 
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		ConnectivityMonitor cMon = new ConnectivityMonitor(context);
+		
+		Log.d(TAG, "test");
 		// If data is available and previous dataConnectionState was false, then we need to sync
 		if (cMon.isValid() && dataConnectionAvailable == false) {
 			dataConnectionAvailable = true;
 			Log.d(TAG,"ConnectivityChanged.onReceive, data conn available");
-			checkMessagesToSent(context);
+			checkMessagesToSend(context);
 		}
 		// No data available and previous dataConnectionState was true
 		else if (dataConnectionAvailable == true && !cMon.isValid()) {
@@ -46,7 +48,7 @@ public class ConnectivityChanged extends BroadcastReceiver implements ASyncTask 
 		}
 	}
 	
-	private void checkMessagesToSent(Context context) {
+	private void checkMessagesToSend(Context context) {
 		// Get last message synced from preferences
 		Long lastMessageSynced = (new OCSMSSharedPrefs(context)).getLastMessageDate();
 		Log.d(TAG,"Synced Last:" + lastMessageSynced);

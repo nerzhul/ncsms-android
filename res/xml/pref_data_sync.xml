@@ -2,12 +2,49 @@
     <PreferenceCategory
         android:title="@string/summary_global_pref_to_general_prefs">
     <ListPreference
-        android:defaultValue="10"
+        android:defaultValue="15"
         android:entries="@array/pref_sync_frequency_titles"
         android:entryValues="@array/pref_sync_frequency_values"
         android:key="sync_frequency"
         android:negativeButtonText="@null"
         android:positiveButtonText="@null"
         android:title="@string/pref_title_sync_frequency" />
+    <CheckBoxPreference android:id="@+id/checkbox_sync_wifi"
+        android:defaultValue="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:key="sync_wifi"
+        android:title="@string/pref_sync_wifi" />
+    <CheckBoxPreference android:id="@+id/checkbox_sync_4g"
+        android:defaultValue="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:key="sync_4g"
+        android:title="@string/pref_sync_4g" />
+    <CheckBoxPreference android:id="@+id/checkbox_sync_3g"
+        android:defaultValue="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:key="sync_3g"
+        android:title="@string/pref_sync_3g" />
+    <CheckBoxPreference android:id="@+id/checkbox_sync_2g"
+        android:defaultValue="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:key="sync_2g"
+        android:title="@string/pref_sync_2g" />
+    <CheckBoxPreference android:id="@+id/checkbox_sync_gprs"
+        android:defaultValue="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:key="sync_gprs"
+        android:title="@string/pref_sync_gprs" />
+    <CheckBoxPreference android:id="@+id/checkbox_sync_others"
+        android:defaultValue="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:key="sync_others"
+        android:title="@string/pref_sync_others" />
+    
 	</PreferenceCategory>
 </PreferenceScreen>
