@@ -28,15 +28,19 @@ import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 import java.util.List;
 
 import fr.unix_experience.owncloud_sms.R;
+import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
+import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
 public class GeneralSettingsActivity extends PreferenceActivity {
 	private static final boolean ALWAYS_SIMPLE_PREFS = false;
@@ -73,11 +77,7 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 		
 		mContext = getBaseContext();
 
-		// Bind the summaries of EditText/List/Dialog/Ringtone preferences to
-		// their values. When their values change, their summaries are updated
-		// to reflect the new value, per the Android Design guidelines.
-		bindPreferenceSummaryToValue(findPreference("sync_frequency"));
-		//bindPreferenceSummaryToValue(findPreference("slow_sync_frequency"));
+		bindPreferences();
 	}
 
 	/** {@inheritDoc} */
@@ -114,9 +114,9 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 	private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
 		@Override
 		public boolean onPreferenceChange(Preference preference, Object value) {
-			String stringValue = value.toString();
-			
 			if (preference instanceof ListPreference) {
+				String prefKey = preference.getKey();
+				String stringValue = value.toString();
 				// For list preferences, look up the correct display value in
 				// the preference's 'entries' list.
 				ListPreference listPreference = (ListPreference) preference;
@@ -126,9 +126,6 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 				preference
 					.setSummary(index >= 0 ? listPreference.getEntries()[index]
 					: null);
-				
-				
-				String prefKey = preference.getKey();
 				
 				Account[] myAccountList = mAccountMgr.getAccountsByType(mAccountType);
 				
@@ -161,16 +158,6 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 						}
 					}
 				}
-				// Network types allowed for sync
-				else if(prefKey.equals("sync_wifi") || prefKey.equals("sync_2g") ||
-					prefKey.equals("sync_3g") || prefKey.equals("sync_gprs") ||
-					prefKey.equals("sync_4g") || prefKey.equals("sync_others")) {
-					SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
-
-					Editor edit = prefs.edit();
-					edit.putBoolean(prefKey, Boolean.parseBoolean(stringValue));
-					edit.commit();
-				}
 				// Slow Sync frequency 
 				/*else if (prefKey.equals(new String("slow_sync_frequency"))) {
 					long syncFreq = Long.parseLong((String)value);
@@ -201,10 +188,22 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 						}
 					}
 				}*/
+			} else if (preference instanceof CheckBoxPreference) {
+				String prefKey = preference.getKey();
+				Boolean boolValue = (Boolean)value;
+				// Network types allowed for sync
+				if(prefKey.equals(new String("sync_wifi")) || prefKey.equals("sync_2g") ||
+					prefKey.equals(new String("sync_3g")) || prefKey.equals("sync_gprs") ||
+					prefKey.equals("sync_4g") || prefKey.equals("sync_others")) {
+					Log.d("FUCK",prefKey + " " + boolValue.toString());
+					
+					OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(mContext);
+					prefs.putBoolean(prefKey, boolValue);
+				}
 			} else {
 				// For all other preferences, set the summary to the value's
 				// simple string representation.
-				preference.setSummary(stringValue);
+				//preference.setSummary(boolValue);
 			}
 			return true;
 		}
@@ -219,7 +218,24 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 	 *
 	 * @see #sBindPreferenceSummaryToValueListener
 	 */
-	private static void bindPreferenceSummaryToValue(Preference preference) {
+	private static void bindPreferenceBooleanToValue(Preference preference, Boolean defValue) {
+		// Set the listener to watch for value changes.
+		preference
+				.setOnPreferenceChangeListener(sBindPreferenceSummaryToValueListener);
+
+		// Trigger the listener immediately with the preference's
+		// current value.
+		sBindPreferenceSummaryToValueListener.onPreferenceChange(
+			preference,
+			PreferenceManager.getDefaultSharedPreferences(
+				preference.getContext()).getBoolean(
+				preference.getKey(),
+				defValue
+			)
+		);
+	}
+	
+	private static void bindPreferenceStringToValue(Preference preference) {
 		// Set the listener to watch for value changes.
 		preference
 				.setOnPreferenceChangeListener(sBindPreferenceSummaryToValueListener);
@@ -251,8 +267,29 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 			// to their values. When their values change, their summaries are
 			// updated to reflect the new value, per the Android Design
 			// guidelines.
-			bindPreferenceSummaryToValue(findPreference("sync_frequency"));
+			bindPreferenceStringToValue(findPreference("sync_frequency"));
+			bindPreferenceBooleanToValue(findPreference("sync_wifi"), DefaultPrefs.syncWifi);
+			bindPreferenceBooleanToValue(findPreference("sync_4g"), DefaultPrefs.sync4G);
+			bindPreferenceBooleanToValue(findPreference("sync_3g"), DefaultPrefs.sync3G);
+			bindPreferenceBooleanToValue(findPreference("sync_gprs"), DefaultPrefs.syncGPRS);
+			bindPreferenceBooleanToValue(findPreference("sync_2g"), DefaultPrefs.sync2G);
+			bindPreferenceBooleanToValue(findPreference("sync_others"), DefaultPrefs.syncOthers);
 			//bindPreferenceSummaryToValue(findPreference("slow_sync_frequency"));
 		}
+	}
+	
+	private void bindPreferences() {
+		mContext = getBaseContext();
+
+		// Bind the summaries of EditText/List/Dialog/Ringtone preferences to
+		// their values. When their values change, their summaries are updated
+		// to reflect the new value, per the Android Design guidelines.
+		bindPreferenceStringToValue(findPreference("sync_frequency"));
+		bindPreferenceBooleanToValue(findPreference("sync_wifi"), DefaultPrefs.syncWifi);
+		bindPreferenceBooleanToValue(findPreference("sync_4g"), DefaultPrefs.sync4G);
+		bindPreferenceBooleanToValue(findPreference("sync_3g"), DefaultPrefs.sync3G);
+		bindPreferenceBooleanToValue(findPreference("sync_gprs"), DefaultPrefs.syncGPRS);
+		bindPreferenceBooleanToValue(findPreference("sync_2g"), DefaultPrefs.sync2G);
+		bindPreferenceBooleanToValue(findPreference("sync_others"), DefaultPrefs.syncOthers);
 	}
 }

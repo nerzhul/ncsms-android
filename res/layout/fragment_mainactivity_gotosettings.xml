@@ -46,7 +46,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/mail_button_accounts"
+        android:id="@+id/main_button_accounts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/main_tv_accounts"
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/main_tv_accounts"
         android:layout_alignStart="@+id/main_tv_accounts"
-        android:layout_below="@+id/mail_button_accounts"
+        android:layout_below="@+id/main_button_accounts"
         android:layout_marginTop="18dp"
         android:text="@string/ma_title_change_settings"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -79,6 +79,29 @@
         android:background="@drawable/standard_button"
         style="@style/StandardButton"
         android:text="@string/ma_button_goto_settings" />
+    
+    <TextView
+        android:id="@+id/tv_launchsync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/main_tv_accounts"
+        android:layout_alignStart="@+id/main_tv_accounts"
+        android:layout_below="@+id/main_button_settings"
+        android:layout_marginTop="18dp"
+        android:text="@string/ma_title_sync_all"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/main_button_sync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_launchsync"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:onClick="syncAllMessages"
+        android:background="@drawable/standard_button"
+        style="@style/StandardButton"
+        android:text="@string/ma_button_sync_accounts_now" />
 
     <ImageView
         android:id="@+id/imageView1"
@@ -86,7 +109,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
         android:layout_alignStart="@+id/textView1"
-        android:layout_below="@+id/main_button_settings"
+        android:layout_below="@+id/main_button_sync"
         android:layout_marginTop="33dp"
         android:src="@drawable/next_arrow" />
 

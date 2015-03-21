@@ -18,8 +18,10 @@ package fr.unix_experience.owncloud_sms.prefs;
  */
 
 import fr.unix_experience.owncloud_sms.R;
+import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 
 public class OCSMSSharedPrefs {
 
@@ -27,6 +29,12 @@ public class OCSMSSharedPrefs {
 		_context = context;
 		
 		_sPrefs = _context.getSharedPreferences(_context.getString(R.string.shared_preference_file), Context.MODE_PRIVATE);
+	}
+	
+	public void putBoolean(String prefKey, Boolean boolValue) {
+		Editor edit = _sPrefs.edit();
+		edit.putBoolean(prefKey, boolValue);
+		edit.commit();
 	}
 	
 	public void setLastMessageDate(Long msgDate) {
@@ -37,6 +45,30 @@ public class OCSMSSharedPrefs {
 	
 	public Long getLastMessageDate() {
 		return _sPrefs.getLong(_context.getString(R.string.pref_lastmsgdate), 0);
+	}
+	
+	public Boolean syncInWifi() {
+		return _sPrefs.getBoolean("sync_wifi", DefaultPrefs.syncWifi);
+	}
+	
+	public Boolean syncIn2G() {
+		return _sPrefs.getBoolean("sync_2g", DefaultPrefs.sync2G);
+	}
+	
+	public Boolean syncInGPRS() {
+		return _sPrefs.getBoolean("sync_gprs", DefaultPrefs.syncGPRS);
+	}
+	
+	public Boolean syncIn3G() {
+		return _sPrefs.getBoolean("sync_3g", DefaultPrefs.sync3G);
+	}
+	
+	public Boolean syncIn4G() {
+		return _sPrefs.getBoolean("sync_4g", DefaultPrefs.sync4G);
+	}
+	
+	public Boolean syncInOtherModes() {
+		return _sPrefs.getBoolean("sync_others", DefaultPrefs.syncOthers);
 	}
 	
 	private SharedPreferences _sPrefs;

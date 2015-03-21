@@ -20,6 +20,7 @@ package fr.unix_experience.owncloud_sms.observers;
 import org.json.JSONArray;
 
 import fr.unix_experience.owncloud_sms.engine.ASyncTask;
+import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.engine.OCSMSOwnCloudClient;
 import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
@@ -46,7 +47,10 @@ public class SmsObserver extends ContentObserver implements ASyncTask {
 		SmsFetcher fetcher = new SmsFetcher(_context);
 		JSONArray smsList = fetcher.getLastMessage(MailboxID.ALL);
 		
-		if (smsList != null) {
+		ConnectivityMonitor cMon = new ConnectivityMonitor(_context);
+		
+		// Synchronize if network is valid and there are SMS
+		if (cMon.isValid() && smsList != null) {
 			new SyncTask(_context, smsList).execute();
 		}
 	}

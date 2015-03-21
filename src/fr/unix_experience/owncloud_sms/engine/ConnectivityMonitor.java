@@ -16,12 +16,10 @@ package fr.unix_experience.owncloud_sms.engine;
  *  You should have received a copy of the GNU Affero General Public License
  */ 
 
-import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
+import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.preference.PreferenceManager;
 import android.telephony.TelephonyManager;
 
 public class ConnectivityMonitor {
@@ -42,21 +40,21 @@ public class ConnectivityMonitor {
 			// Load the connectivity manager to determine on which network we are connected
 			NetworkInfo netInfo = _cMgr.getActiveNetworkInfo();
 			
-			SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(_context);
+			OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
 			
 			// Check
 			switch (netInfo.getType()) {
 			case ConnectivityManager.TYPE_WIFI:
-				return prefs.getBoolean("sync_wifi", DefaultPrefs.syncWifi);
+				return prefs.syncInWifi();
 			case ConnectivityManager.TYPE_MOBILE:
 				switch (netInfo.getSubtype()) {
 				case TelephonyManager.NETWORK_TYPE_EDGE:
 				case TelephonyManager.NETWORK_TYPE_CDMA:
 				case TelephonyManager.NETWORK_TYPE_1xRTT:
 				case TelephonyManager.NETWORK_TYPE_IDEN:
-					return prefs.getBoolean("sync_2g", DefaultPrefs.sync2G);
+					return prefs.syncIn2G();
 				case TelephonyManager.NETWORK_TYPE_GPRS:
-					return prefs.getBoolean("sync_gprs", DefaultPrefs.syncGPRS);
+					return prefs.syncInGPRS();
 				case TelephonyManager.NETWORK_TYPE_HSDPA:
 				case TelephonyManager.NETWORK_TYPE_HSPA:
 				case TelephonyManager.NETWORK_TYPE_HSUPA:
@@ -64,14 +62,14 @@ public class ConnectivityMonitor {
 				case TelephonyManager.NETWORK_TYPE_EHRPD:
 				case TelephonyManager.NETWORK_TYPE_EVDO_B:
 				case TelephonyManager.NETWORK_TYPE_HSPAP:
-					return prefs.getBoolean("sync_3g", DefaultPrefs.sync3G);
+					return prefs.syncIn3G();
 				case TelephonyManager.NETWORK_TYPE_LTE:
-					return prefs.getBoolean("sync_4g", DefaultPrefs.sync3G);
+					return prefs.syncIn4G();
 				default:
-					return prefs.getBoolean("sync_others", DefaultPrefs.syncOthers);
+					return prefs.syncInOtherModes();
 				}
 			default:
-				return prefs.getBoolean("sync_others", DefaultPrefs.syncOthers);
+				return prefs.syncInOtherModes();
 			}
 			
 			

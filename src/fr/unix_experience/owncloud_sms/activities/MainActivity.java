@@ -28,7 +28,13 @@ package fr.unix_experience.owncloud_sms.activities;
 import java.util.List;
 import java.util.Vector;
 
+import org.json.JSONArray;
+
 import fr.unix_experience.owncloud_sms.R;
+import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
+import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
+import fr.unix_experience.owncloud_sms.engine.ASyncTask.SyncTask;
+import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -39,6 +45,7 @@ import android.provider.Settings;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -150,6 +157,20 @@ public class MainActivity extends Activity {
 	
 	public void openAddAccount(View view) {
 		startActivity(new Intent(Settings.ACTION_ADD_ACCOUNT));
+	}
+	
+	public void syncAllMessages(View view) {
+		ConnectivityMonitor cMon = new ConnectivityMonitor(getApplicationContext());
+		
+		if (cMon.isValid()) {
+			// Now fetch messages since last stored date
+			JSONArray smsList = new SmsFetcher(getApplicationContext())
+					.bufferizeMessagesSinceDate((long) 0);
+			
+			if (smsList != null) {
+				new SyncTask(getApplicationContext(), smsList).execute();
+			}
+		}
 	}
 
 	public void openGooglePlayStore(View view) {

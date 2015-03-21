@@ -136,6 +136,8 @@
     <string name="ma_content_welcome">Welcome to ownCloud SMS application. This application let you synchronize your SMS to your ownCloud instance using SMS app.</string>
     <string name="ma_thanksto_people">ownCloud developers\n\
 Contributors and issue\'s reporters</string>
+	<string name="ma_title_sync_all">Synchronize all messages</string>
+	<string name="ma_button_sync_accounts_now">Launch synchronization now</string>
 
     <!-- Notifications -->
     <string name="sync_title">Sync process</string>

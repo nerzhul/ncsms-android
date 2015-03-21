@@ -34,12 +34,11 @@ public class ConnectivityChanged extends BroadcastReceiver implements ASyncTask 
 	public void onReceive(Context context, Intent intent) {
 		ConnectivityMonitor cMon = new ConnectivityMonitor(context);
 		
-		Log.d(TAG, "test");
 		// If data is available and previous dataConnectionState was false, then we need to sync
 		if (cMon.isValid() && dataConnectionAvailable == false) {
 			dataConnectionAvailable = true;
 			Log.d(TAG,"ConnectivityChanged.onReceive, data conn available");
-			checkMessagesToSend(context);
+			checkMessagesAndSend(context);
 		}
 		// No data available and previous dataConnectionState was true
 		else if (dataConnectionAvailable == true && !cMon.isValid()) {
@@ -48,7 +47,7 @@ public class ConnectivityChanged extends BroadcastReceiver implements ASyncTask 
 		}
 	}
 	
-	private void checkMessagesToSend(Context context) {
+	private void checkMessagesAndSend(Context context) {
 		// Get last message synced from preferences
 		Long lastMessageSynced = (new OCSMSSharedPrefs(context)).getLastMessageDate();
 		Log.d(TAG,"Synced Last:" + lastMessageSynced);
@@ -56,7 +55,10 @@ public class ConnectivityChanged extends BroadcastReceiver implements ASyncTask 
 		// Now fetch messages since last stored date
 		JSONArray smsList = new SmsFetcher(context).bufferizeMessagesSinceDate(lastMessageSynced);
 		
-		if (smsList != null) {
+		ConnectivityMonitor cMon = new ConnectivityMonitor(context);
+		
+		// Synchronize if network is valid and there are SMS
+		if (cMon.isValid() && smsList != null) {
 			new SyncTask(context, smsList).execute();
 		}
 	}
