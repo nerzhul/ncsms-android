@@ -30,12 +30,12 @@
 	<!-- Translation version, reference for translators -->
 	<string name="translation_version">4</string>
 	<!-- Translations must begin here -->
-	<string name="gp_short_description">ownCloud SMS synkroniserar dina lokala SMS till din ownCloud instans.</string>
+	<string name="gp_short_description">ownCloud SMS synkroniserar dina lokala SMS till din ownCloudinstans.</string>
 	<string name="gp_description">
-		ownCloud SMS-applikationen synkroniserar dina SMS-meddelanden till din ownCloud instans och gör det möjligt att läsa dina meddelanden på den.
+		ownCloud SMS-applikationen synkroniserar dina SMS-meddelanden till din ownCloudinstans och gör det möjligt att läsa dina meddelanden på den.
 		
-		Skicka meddelanden från din ownCloud instans kommer att bli möjligt i en kommande version.
+		Skicka meddelanden från din ownCloudinstans kommer att bli möjligt i en kommande version.
 		
-		Applikationen är fullt kompatibel från Android 4.0 till 5.0
+		Applikationen är fullt kompatibel från Android 4.0 till 5.1
 	</string>
 </resources>
