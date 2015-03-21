@@ -12,65 +12,65 @@ package fr.unix_experience.owncloud_sms.prefs;
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU Affero General Public License for more details.
- *  
+ *
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import fr.unix_experience.owncloud_sms.R;
-import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import fr.unix_experience.owncloud_sms.R;
+import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
 
 public class OCSMSSharedPrefs {
 
-	public OCSMSSharedPrefs(Context context) {
+	public OCSMSSharedPrefs(final Context context) {
 		_context = context;
-		
+
 		_sPrefs = _context.getSharedPreferences(_context.getString(R.string.shared_preference_file), Context.MODE_PRIVATE);
 	}
-	
-	public void putBoolean(String prefKey, Boolean boolValue) {
-		Editor edit = _sPrefs.edit();
+
+	public void putBoolean(final String prefKey, final Boolean boolValue) {
+		final Editor edit = _sPrefs.edit();
 		edit.putBoolean(prefKey, boolValue);
 		edit.commit();
 	}
-	
-	public void setLastMessageDate(Long msgDate) {
-		SharedPreferences.Editor editor = _sPrefs.edit();
+
+	public void setLastMessageDate(final Long msgDate) {
+		final SharedPreferences.Editor editor = _sPrefs.edit();
 		editor.putLong(_context.getString(R.string.pref_lastmsgdate), msgDate);
 		editor.commit();
 	}
-	
+
 	public Long getLastMessageDate() {
 		return _sPrefs.getLong(_context.getString(R.string.pref_lastmsgdate), 0);
 	}
-	
+
 	public Boolean syncInWifi() {
 		return _sPrefs.getBoolean("sync_wifi", DefaultPrefs.syncWifi);
 	}
-	
+
 	public Boolean syncIn2G() {
 		return _sPrefs.getBoolean("sync_2g", DefaultPrefs.sync2G);
 	}
-	
+
 	public Boolean syncInGPRS() {
 		return _sPrefs.getBoolean("sync_gprs", DefaultPrefs.syncGPRS);
 	}
-	
+
 	public Boolean syncIn3G() {
 		return _sPrefs.getBoolean("sync_3g", DefaultPrefs.sync3G);
 	}
-	
+
 	public Boolean syncIn4G() {
 		return _sPrefs.getBoolean("sync_4g", DefaultPrefs.sync4G);
 	}
-	
+
 	public Boolean syncInOtherModes() {
 		return _sPrefs.getBoolean("sync_others", DefaultPrefs.syncOthers);
 	}
-	
-	private SharedPreferences _sPrefs;
-	private Context _context;
+
+	private final SharedPreferences _sPrefs;
+	private final Context _context;
 }

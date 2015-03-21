@@ -12,7 +12,7 @@ package fr.unix_experience.owncloud_sms.engine;
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU Affero General Public License for more details.
- *  
+ *
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -27,39 +27,43 @@ import android.os.AsyncTask;
 import android.util.Log;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
+import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationManager;
 
 public interface ASyncTask {
 	class SyncTask extends AsyncTask<Void, Void, Void>{
-		public SyncTask(Context context, JSONArray smsList) {
+		public SyncTask(final Context context, final JSONArray smsList) {
 			_context = context;
 			_smsList = smsList;
 		}
-		
+
 		@Override
-		protected Void doInBackground(Void... params) {
+		protected Void doInBackground(final Void... params) {
+			final OCSMSNotificationManager nMgr = new OCSMSNotificationManager(_context);
+
 			// Get ownCloud SMS account list
-			AccountManager _accountMgr = AccountManager.get(_context);
-			
-			Account[] myAccountList = _accountMgr.getAccountsByType(_context.getString(R.string.account_type));
-			for (int i = 0; i < myAccountList.length; i++) {
-				Uri serverURI = Uri.parse(_accountMgr.getUserData(myAccountList[i], "ocURI"));
-				
-				OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(_context,
-					serverURI, _accountMgr.getUserData(myAccountList[i], "ocLogin"),
-					_accountMgr.getPassword(myAccountList[i]));
-				
+			final AccountManager _accountMgr = AccountManager.get(_context);
+
+			final Account[] myAccountList = _accountMgr.getAccountsByType(_context.getString(R.string.account_type));
+			for (final Account element : myAccountList) {
+				final Uri serverURI = Uri.parse(_accountMgr.getUserData(element, "ocURI"));
+
+				final OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(_context,
+						serverURI, _accountMgr.getUserData(element, "ocLogin"),
+						_accountMgr.getPassword(element));
+
 				try {
 					_client.doPushRequest(_smsList);
-				} catch (OCSyncException e) {
+				} catch (final OCSyncException e) {
 					Log.e(TAG, _context.getString(e.getErrorId()));
 				}
 			}
+			nMgr.dropSyncProcessMsg();
 			return null;
 		}
-		
-		private Context _context;
-		private JSONArray _smsList;
+
+		private final Context _context;
+		private final JSONArray _smsList;
 	}
-	
+
 	static final String TAG = ASyncTask.class.getSimpleName();
 }

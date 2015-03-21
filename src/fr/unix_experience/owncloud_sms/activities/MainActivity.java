@@ -30,11 +30,6 @@ import java.util.Vector;
 
 import org.json.JSONArray;
 
-import fr.unix_experience.owncloud_sms.R;
-import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
-import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
-import fr.unix_experience.owncloud_sms.engine.ASyncTask.SyncTask;
-import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -45,10 +40,14 @@ import android.provider.Settings;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import fr.unix_experience.owncloud_sms.R;
+import fr.unix_experience.owncloud_sms.engine.ASyncTask.SyncTask;
+import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
+import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
+import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationManager;
 
 public class MainActivity extends Activity {
 
@@ -67,23 +66,23 @@ public class MainActivity extends Activity {
 	ViewPager mViewPager;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the activity.
-		
-		List<Fragment> fragments = new Vector<Fragment>();
-		
+
+		final List<Fragment> fragments = new Vector<Fragment>();
+
 		/*
 		 * Add the Main tabs here
 		 */
-		
+
 		fragments.add(Fragment.instantiate(this,StarterFragment.class.getName()));
 		fragments.add(Fragment.instantiate(this,SecondTestFragment.class.getName()));
 		fragments.add(Fragment.instantiate(this,ThanksAndRateFragment.class.getName()));
-		
+
 		mPagerAdapter = new MainPagerAdapter(getFragmentManager(), fragments);
 
 		// Set up the ViewPager with the sections adapter.
@@ -98,13 +97,14 @@ public class MainActivity extends Activity {
 	public class MainPagerAdapter extends FragmentPagerAdapter {
 
 		private final List<Fragment> mFragments;
-		
-		public MainPagerAdapter(FragmentManager fragmentManager, List<Fragment> fragments) {
+
+		public MainPagerAdapter(final FragmentManager fragmentManager, final List<Fragment> fragments) {
 			super(fragmentManager);
 			mFragments = fragments;
 		}
 
-		public Fragment getItem(int position) {
+		@Override
+		public Fragment getItem(final int position) {
 			// getItem is called to instantiate the fragment for the given page.
 			// Return a PlaceholderFragment (defined as a static inner class
 			// below).
@@ -123,65 +123,67 @@ public class MainActivity extends Activity {
 	 */
 	public static class StarterFragment extends Fragment {
 		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_mainactivity_main, container,
+		public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
+				final Bundle savedInstanceState) {
+			final View rootView = inflater.inflate(R.layout.fragment_mainactivity_main, container,
 					false);
 			return rootView;
 		}
 	}
-	
+
 	public static class SecondTestFragment extends Fragment {
 		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_mainactivity_gotosettings, container,
+		public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
+				final Bundle savedInstanceState) {
+			final View rootView = inflater.inflate(R.layout.fragment_mainactivity_gotosettings, container,
 					false);
 			return rootView;
 		}
 	}
-	
+
 	public static class ThanksAndRateFragment extends Fragment {
 		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(R.layout.fragment_mainactivity_thanks_note, container,
+		public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
+				final Bundle savedInstanceState) {
+			final View rootView = inflater.inflate(R.layout.fragment_mainactivity_thanks_note, container,
 					false);
 			return rootView;
 		}
 	}
-	
-	public void openAppSettings(View view) {
+
+	public void openAppSettings(final View view) {
 		startActivity(new Intent(this, GeneralSettingsActivity.class));
 	}
-	
-	public void openAddAccount(View view) {
+
+	public void openAddAccount(final View view) {
 		startActivity(new Intent(Settings.ACTION_ADD_ACCOUNT));
 	}
-	
-	public void syncAllMessages(View view) {
-		ConnectivityMonitor cMon = new ConnectivityMonitor(getApplicationContext());
-		
+
+	public void syncAllMessages(final View view) {
+		final ConnectivityMonitor cMon = new ConnectivityMonitor(getApplicationContext());
+
 		if (cMon.isValid()) {
 			// Now fetch messages since last stored date
-			JSONArray smsList = new SmsFetcher(getApplicationContext())
-					.bufferizeMessagesSinceDate((long) 0);
-			
+			final JSONArray smsList = new SmsFetcher(getApplicationContext())
+			.bufferizeMessagesSinceDate((long) 0);
+
 			if (smsList != null) {
+				final OCSMSNotificationManager nMgr = new OCSMSNotificationManager(getApplicationContext());
+				nMgr.setSyncProcessMsg();
 				new SyncTask(getApplicationContext(), smsList).execute();
 			}
 		}
 	}
 
-	public void openGooglePlayStore(View view) {
+	public void openGooglePlayStore(final View view) {
 		Intent intent;
 		try {
 			intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName()));
-		    
-		} catch (android.content.ActivityNotFoundException anfe) {
-		    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName()));
+
+		} catch (final android.content.ActivityNotFoundException anfe) {
+			intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName()));
 		}
-		
+
 		startActivity(intent);
 	}
 }
