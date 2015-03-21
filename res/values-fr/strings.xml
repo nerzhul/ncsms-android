@@ -27,7 +27,7 @@
 -->
 <resources>
 	<!-- Translation version, reference for translators -->
-	<string name="translation_version">3</string>
+	<string name="translation_version">6</string>
 	
     <!-- Translations must begin there -->
 
@@ -71,6 +71,13 @@
         <item>-1</item>
     </string-array>
     
+    <string name="pref_sync_wifi">Synchroniser en Wi-Fi</string>
+    <string name="pref_sync_4g">Synchroniser en 4G</string>
+    <string name="pref_sync_3g">Synchroniser en 3G</string>
+    <string name="pref_sync_gprs">Synchroniser en 2.5G (GPRS)</string>
+    <string name="pref_sync_2g">Synchroniser en 2G</string>
+    <string name="pref_sync_others">Synchroniser dans les autres modes</string>
+    
     <string name="title_activity_login">Connexion</string>
 
     <!-- Login -->
@@ -99,6 +106,8 @@
     <string name="ma_content_welcome">Bienvenue sur l\'application ownCloud SMS. Cette application va vous permettre de synchroniser vos SMS au sein de votre instance ownCloud en utilisant l\'application dédiée.</string>
     <string name="ma_thanksto_people">L\'équipe de développement ownCloud\n\
 Les contributeurs et rapporteurs de bugs</string>
+	<string name="ma_title_sync_all">Synchroniser tous les messages</string>
+	<string name="ma_button_sync_accounts_now">Lancer la synchronisation</string>
     
     <!-- Notifications -->
     <string name="sync_title">Processus de synchronisation</string>
