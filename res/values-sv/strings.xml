@@ -118,8 +118,8 @@
 	<string name="ma_title_welcome">Välkommen</string>
 	<string name="ma_content_welcome">Välkommen till ownCloud SMS. Den här applikationen gör det möjligt att synkronisera dina SMS till din ownCloud-server.</string>
 	<string name="ma_thanksto_people">Utvecklarna utav ownCloud\n\De som bidragit, och som anmält buggar</string>
-	<string name="ma_title_sync_all">Synchronize all messages</string>
-	<string name="ma_button_sync_accounts_now">Launch synchronization now</string>
+	<string name="ma_title_sync_all">Synkronisera alla meddelanden</string>
+	<string name="ma_button_sync_accounts_now">Starta synkronisering nu</string>
 	
 	<!-- Notifications -->
 	<string name="sync_title">Synkroniseringsprocesss</string>
