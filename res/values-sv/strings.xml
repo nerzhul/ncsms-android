@@ -91,7 +91,7 @@
     	<string name="pref_sync_3g">Synkronisera med 3G</string>
     	<string name="pref_sync_gprs">Synkronisera med 2.5G (GPRS)</string>
     	<string name="pref_sync_2g">Synkronisera med 2G</string>
-    	<string name="pref_sync_others">Synkronisera med andra lägen</string>
+    	<string name="pref_sync_others">Synkronisera med andra anslutningar</string>
 	
 	<!-- Login -->
 	<string name="prompt_login">Användarnamn</string>
