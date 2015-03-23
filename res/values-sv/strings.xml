@@ -28,14 +28,14 @@
 -->
 <resources>
     <!-- Translation version, reference for translators -->
-	<string name="translation_version">5</string>
+	<string name="translation_version">6</string>
 	
 	<!-- Translations must begin there -->
 	<!-- Preferences -->
 	<string name="pref_title_sync">SMS - Snabb</string>
-	<string name="pref_title_sync_frequency">Intervall Snabb synk</string>
-	<string name="pref_title_slow_sync">SMS - Långsamt Säkert</string>
-	<string name="pref_title_slow_sync_frequency">SMS - Intervall Säker Långsam</string>
+	<string name="pref_title_sync_frequency">Intervall mellan synkorniseringar</string>
+	<string name="pref_title_slow_sync">SMS - Långsam och Säker</string>
+	<string name="pref_title_slow_sync_frequency">Intervall mellan synkorniseringar</string>
 	<string name="action_settings">Inställningar</string>
 	<string name="sync_now">Synkronisera nu</string>
 	<string name="pref_category_sync">Synkronisering</string>
@@ -86,16 +86,23 @@
 	
 	<string name="title_activity_login">Logga in</string>
 	
+	<string name="pref_sync_wifi">Synkronisera med Wi-Fi</string>
+    	<string name="pref_sync_4g">Synkronisera med 4G</string>
+    	<string name="pref_sync_3g">Synkronisera med 3G</string>
+    	<string name="pref_sync_gprs">Synkronisera med 2.5G (GPRS)</string>
+    	<string name="pref_sync_2g">Synkronisera med 2G</string>
+    	<string name="pref_sync_others">Synkronisera med andra anslutningar</string>
+	
 	<!-- Login -->
-	<string name="prompt_login">Login</string>
+	<string name="prompt_login">Användarnamn</string>
 	<string name="prompt_password">Lösenord</string>
 	<string name="action_sign_in">Logga in eller registrera</string>
 	<string name="action_sign_in_short">Logga in</string>
-	<string name="error_invalid_login">Login eller lösenord felaktigt</string>
+	<string name="error_invalid_login">Användarnamn eller lösenord felaktigt</string>
 	<string name="error_invalid_password">Lösenordet är för kort</string>
 	<string name="error_field_required">Detta fält är obligatoriskt</string>
-	<string name="prompt_serverURI">Server adress</string>
-	<string name="error_invalid_server_address">Felaktig server adress</string>
+	<string name="prompt_serverURI">Serveradress</string>
+	<string name="error_invalid_server_address">Felaktig serveradress</string>
 	<string name="error_connection_failed">Anslutning misslyckades, vänligen säkerställ att detta är rätt server</string>
 	<string name="error_http_connection_failed">Det gick inte att genomföra en HTTP-anslutning. Vänligen säkerställ att det finns en web-server</string>
 	
@@ -107,11 +114,12 @@
 	<string name="ma_title_add_account">Lägg till ett konto</string>
 	<string name="ma_button_goto_sync">Gå till Konto och Inställningar</string>
 	<string name="ma_title_change_settings">Ändra applikationsinställningar</string>
-	<string name="ma_button_goto_settings">Gå till inställningar</string>
+	<string name="ma_button_goto_settings">Gå till Inställningar</string>
 	<string name="ma_title_welcome">Välkommen</string>
-	<string name="ma_content_welcome">Välkommen till ownCloud SMS-applikationen. Den här applikationen gör det möjligt att synkronisera dina SMS till din ownCloud Server.</string>
-	<string name="ma_thanksto_people">Utvecklarna utav ownCloud\n\
-	De som bidragit, och som anmält buggar</string>
+	<string name="ma_content_welcome">Välkommen till ownCloud SMS. Den här applikationen gör det möjligt att synkronisera dina SMS till din ownCloud-server.</string>
+	<string name="ma_thanksto_people">Utvecklarna utav ownCloud\n\De som bidragit, och som anmält buggar</string>
+	<string name="ma_title_sync_all">Synkronisera alla meddelanden</string>
+	<string name="ma_button_sync_accounts_now">Starta synkronisering nu</string>
 	
 	<!-- Notifications -->
 	<string name="sync_title">Synkroniseringsprocesss</string>
