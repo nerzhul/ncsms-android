@@ -33,6 +33,7 @@ import org.json.JSONArray;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -43,6 +44,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.engine.ASyncTask.SyncTask;
 import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
@@ -160,18 +162,22 @@ public class MainActivity extends Activity {
 	}
 
 	public void syncAllMessages(final View view) {
-		final ConnectivityMonitor cMon = new ConnectivityMonitor(getApplicationContext());
+		final Context ctx = getApplicationContext();
+		final ConnectivityMonitor cMon = new ConnectivityMonitor(ctx);
 
 		if (cMon.isValid()) {
 			// Now fetch messages since last stored date
-			final JSONArray smsList = new SmsFetcher(getApplicationContext())
+			final JSONArray smsList = new SmsFetcher(ctx)
 			.bufferizeMessagesSinceDate((long) 0);
 
 			if (smsList != null) {
-				final OCSMSNotificationManager nMgr = new OCSMSNotificationManager(getApplicationContext());
+				final OCSMSNotificationManager nMgr = new OCSMSNotificationManager(ctx);
 				nMgr.setSyncProcessMsg();
 				new SyncTask(getApplicationContext(), smsList).execute();
 			}
+		}
+		else {
+			Toast.makeText(ctx, ctx.getString(R.string.err_sync_no_connection_available), Toast.LENGTH_SHORT).show();
 		}
 	}
 
