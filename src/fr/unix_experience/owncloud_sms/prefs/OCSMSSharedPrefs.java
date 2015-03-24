@@ -19,22 +19,14 @@ package fr.unix_experience.owncloud_sms.prefs;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
+import fr.nrz.androidlib.common.SharedPrefs;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
 
-public class OCSMSSharedPrefs {
+public class OCSMSSharedPrefs extends SharedPrefs {
 
 	public OCSMSSharedPrefs(final Context context) {
-		_context = context;
-
-		_sPrefs = _context.getSharedPreferences(_context.getString(R.string.shared_preference_file), Context.MODE_PRIVATE);
-	}
-
-	public void putBoolean(final String prefKey, final Boolean boolValue) {
-		final Editor edit = _sPrefs.edit();
-		edit.putBoolean(prefKey, boolValue);
-		edit.commit();
+		super(context, R.string.shared_preference_file);
 	}
 
 	public void setLastMessageDate(final Long msgDate) {
@@ -70,7 +62,4 @@ public class OCSMSSharedPrefs {
 	public Boolean syncInOtherModes() {
 		return _sPrefs.getBoolean("sync_others", DefaultPrefs.syncOthers);
 	}
-
-	private final SharedPreferences _sPrefs;
-	private final Context _context;
 }
