@@ -91,7 +91,7 @@
     	<string name="pref_sync_3g">Synkronisera med 3G</string>
     	<string name="pref_sync_gprs">Synkronisera med 2.5G (GPRS)</string>
     	<string name="pref_sync_2g">Synkronisera med 2G</string>
-    	<string name="pref_sync_others">Synkronisera med andra anslutningar</string>
+    	<string name="pref_sync_others">Synkronisera med övriga</string>
 	
 	<!-- Login -->
 	<string name="prompt_login">Användarnamn</string>
@@ -112,12 +112,12 @@
 	<string name="ma_title_rate_us">Skriv en recension!</string>
 	<string name="ma_content_rate_us">Om du gillar den här applikationen, ge oss ett omdömme i Google Play butiken</string>
 	<string name="ma_title_add_account">Lägg till ett konto</string>
-	<string name="ma_button_goto_sync">Gå till Konto och Inställningar</string>
+	<string name="ma_button_goto_sync">Gå till Konto och Synkronisering</string>
 	<string name="ma_title_change_settings">Ändra applikationsinställningar</string>
 	<string name="ma_button_goto_settings">Gå till Inställningar</string>
 	<string name="ma_title_welcome">Välkommen</string>
 	<string name="ma_content_welcome">Välkommen till ownCloud SMS. Den här applikationen gör det möjligt att synkronisera dina SMS till din ownCloud-server.</string>
-	<string name="ma_thanksto_people">Utvecklarna utav ownCloud\n\De som bidragit, och som anmält buggar</string>
+	<string name="ma_thanksto_people">- Utvecklarna utav ownCloud\n\ - De som bidragit, och som anmält buggar</string>
 	<string name="ma_title_sync_all">Synkronisera alla meddelanden</string>
 	<string name="ma_button_sync_accounts_now">Starta synkronisering nu</string>
 	
