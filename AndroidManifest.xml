@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.unix_experience.owncloud_sms"
-    android:versionCode="24"
-    android:versionName="0.18.1">
+    android:versionCode="26"
+    android:versionName="0.18.2">
 
     <!-- From Android 4.0 to 5.1 -->
     <uses-sdk

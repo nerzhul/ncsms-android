@@ -23,84 +23,31 @@ import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.annotation.TargetApi;
 import android.content.ContentResolver;
-import android.content.Context;
 import android.content.PeriodicSync;
-import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
+import fr.nrz.androidlib.activities.NrzSettingsActivity;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
-public class GeneralSettingsActivity extends PreferenceActivity {
-	private static final boolean ALWAYS_SIMPLE_PREFS = false;
-	private static Context mContext;
-	static AccountManager mAccountMgr;
-	static String mAccountAuthority;
-	static String mSlowSyncAccountAuthority;
-	static String mAccountType;
+public class GeneralSettingsActivity extends NrzSettingsActivity {
+	private static AccountManager _accountMgr;
+	private static String _accountAuthority;
+	private static String _accountType;
 
 	@Override
 	protected void onPostCreate(final Bundle savedInstanceState) {
+		_accountMgr = AccountManager.get(getBaseContext());
+		_accountAuthority = getString(R.string.account_authority);
+		_accountType = getString(R.string.account_type);
+		_prefsRessourceFile = R.xml.pref_data_sync;
+		sBindPreferenceListener = sBindPreferenceSummaryToValueListener;
 		super.onPostCreate(savedInstanceState);
-
-		mAccountMgr = AccountManager.get(getBaseContext());
-		mAccountAuthority = getString(R.string.account_authority);
-		mSlowSyncAccountAuthority = getString(R.string.slowsync_account_authority);
-		mAccountType = getString(R.string.account_type);
-		setupSimplePreferencesScreen();
-	}
-
-	/**
-	 * Shows the simplified settings UI if the device configuration if the
-	 * device configuration dictates that a simplified, single-pane UI should be
-	 * shown.
-	 */
-	private void setupSimplePreferencesScreen() {
-		if (!isSimplePreferences(this)) {
-			return;
-		}
-
-		// In the simplified UI, fragments are not used at all and we instead
-		// use the older PreferenceActivity APIs.
-		addPreferencesFromResource(R.xml.pref_data_sync);
-
-		mContext = getBaseContext();
-
-		bindPreferences();
-	}
-
-	/** {@inheritDoc} */
-	@Override
-	public boolean onIsMultiPane() {
-		return isXLargeTablet(this) && !isSimplePreferences(this);
-	}
-
-	/**
-	 * Helper method to determine if the device has an extra-large screen. For
-	 * example, 10" tablets are extra-large.
-	 */
-	private static boolean isXLargeTablet(final Context context) {
-		return (context.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) >= Configuration.SCREENLAYOUT_SIZE_XLARGE;
-	}
-
-	/**
-	 * Determines whether the simplified settings UI should be shown. This is
-	 * true if this is forced via {@link #ALWAYS_SIMPLE_PREFS}, or the device
-	 * doesn't have newer APIs like {@link PreferenceFragment}, or the device
-	 * doesn't have an extra-large screen. In these cases, a single-pane
-	 * "simplified" settings UI should be shown.
-	 */
-	private static boolean isSimplePreferences(final Context context) {
-		return ALWAYS_SIMPLE_PREFS
-				|| Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB
-				|| !isXLargeTablet(context);
 	}
 
 	/**
@@ -123,7 +70,7 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 				.setSummary(index >= 0 ? listPreference.getEntries()[index]
 						: null);
 
-				final Account[] myAccountList = mAccountMgr.getAccountsByType(mAccountType);
+				final Account[] myAccountList = _accountMgr.getAccountsByType(_accountType);
 
 				// Handle sync frequency change
 				if (prefKey.equals("sync_frequency")) {
@@ -132,7 +79,7 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 					// Get ownCloud SMS account list
 					for (int i = 0; i < myAccountList.length; i++) {
 						// And get all authorities for this account
-						final List<PeriodicSync> syncList = ContentResolver.getPeriodicSyncs(myAccountList[i], mAccountAuthority);
+						final List<PeriodicSync> syncList = ContentResolver.getPeriodicSyncs(myAccountList[i], _accountAuthority);
 
 						boolean foundSameSyncCycle = false;
 						for (int j = 0; j < syncList.size(); j++) {
@@ -148,42 +95,12 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 							b.putInt("synctype", 1);
 
 							ContentResolver.removePeriodicSync(myAccountList[i],
-									mAccountAuthority, b);
+									_accountAuthority, b);
 							ContentResolver.addPeriodicSync(myAccountList[i],
-									mAccountAuthority, b, syncFreq * 60);
+									_accountAuthority, b, syncFreq * 60);
 						}
 					}
 				}
-				// Slow Sync frequency
-				/*else if (prefKey.equals(new String("slow_sync_frequency"))) {
-					long syncFreq = Long.parseLong((String)value);
-
-					// Get ownCloud SMS account list
-					Account[] myAccountList = mAccountMgr.getAccountsByType(mAccountType);
-					for (int i = 0; i < myAccountList.length; i++) {
-						// And get all authorities for this account
-						List<PeriodicSync> syncList = ContentResolver.getPeriodicSyncs(myAccountList[i], mSlowSyncAccountAuthority);
-
-						boolean foundSameSyncCycle = false;
-						for (int j = 0; j < syncList.size(); j++) {
-							PeriodicSync ps = syncList.get(i);
-
-							if (ps.period == syncFreq && ps.extras.getInt("synctype") == 2) {
-								foundSameSyncCycle = true;
-							}
-						}
-
-						if (foundSameSyncCycle == false) {
-							Bundle b = new Bundle();
-							b.putInt("synctype", 2);
-
-							ContentResolver.removePeriodicSync(myAccountList[i],
-								mSlowSyncAccountAuthority, b);
-							ContentResolver.addPeriodicSync(myAccountList[i],
-								mSlowSyncAccountAuthority, b, syncFreq * 60);
-						}
-					}
-				}*/
 			} else if (preference instanceof CheckBoxPreference) {
 				final String prefKey = preference.getKey();
 				final Boolean boolValue = (Boolean)value;
@@ -192,7 +109,7 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 						prefKey.equals(new String("sync_3g")) || prefKey.equals("sync_gprs") ||
 						prefKey.equals("sync_4g") || prefKey.equals("sync_others")) {
 
-					final OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(mContext);
+					final OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
 					prefs.putBoolean(prefKey, boolValue);
 				}
 			} else {
@@ -205,49 +122,6 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 	};
 
 	/**
-	 * Binds a preference's summary to its value. More specifically, when the
-	 * preference's value is changed, its summary (line of text below the
-	 * preference title) is updated to reflect the value. The summary is also
-	 * immediately updated upon calling this method. The exact display format is
-	 * dependent on the type of preference.
-	 *
-	 * @see #sBindPreferenceSummaryToValueListener
-	 */
-	private static void bindPreferenceBooleanToValue(final Preference preference, final Boolean defValue) {
-		// Set the listener to watch for value changes.
-		preference
-		.setOnPreferenceChangeListener(sBindPreferenceSummaryToValueListener);
-
-		// Trigger the listener immediately with the preference's
-		// current value.
-		sBindPreferenceSummaryToValueListener.onPreferenceChange(
-				preference,
-				PreferenceManager.getDefaultSharedPreferences(
-						preference.getContext()).getBoolean(
-								preference.getKey(),
-								defValue
-								)
-				);
-	}
-
-	private static void bindPreferenceStringToValue(final Preference preference) {
-		// Set the listener to watch for value changes.
-		preference
-		.setOnPreferenceChangeListener(sBindPreferenceSummaryToValueListener);
-
-		// Trigger the listener immediately with the preference's
-		// current value.
-		sBindPreferenceSummaryToValueListener.onPreferenceChange(
-				preference,
-				PreferenceManager.getDefaultSharedPreferences(
-						preference.getContext()).getString(
-								preference.getKey(),
-								""
-								)
-				);
-	}
-
-	/**
 	 * This fragment shows data and sync preferences only. It is used when the
 	 * activity is showing a two-pane settings UI.
 	 */
@@ -256,7 +130,7 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 		@Override
 		public void onCreate(final Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
-			addPreferencesFromResource(R.xml.pref_data_sync);
+			addPreferencesFromResource(_prefsRessourceFile);
 
 			// Bind the summaries of EditText/List/Dialog/Ringtone preferences
 			// to their values. When their values change, their summaries are
@@ -269,13 +143,11 @@ public class GeneralSettingsActivity extends PreferenceActivity {
 			bindPreferenceBooleanToValue(findPreference("sync_gprs"), DefaultPrefs.syncGPRS);
 			bindPreferenceBooleanToValue(findPreference("sync_2g"), DefaultPrefs.sync2G);
 			bindPreferenceBooleanToValue(findPreference("sync_others"), DefaultPrefs.syncOthers);
-			//bindPreferenceSummaryToValue(findPreference("slow_sync_frequency"));
 		}
 	}
 
-	private void bindPreferences() {
-		mContext = getBaseContext();
-
+	@Override
+	protected void bindPreferences() {
 		// Bind the summaries of EditText/List/Dialog/Ringtone preferences to
 		// their values. When their values change, their summaries are updated
 		// to reflect the new value, per the Android Design guidelines.

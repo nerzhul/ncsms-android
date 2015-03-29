@@ -12,55 +12,56 @@ package fr.unix_experience.owncloud_sms.notifications;
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU Affero General Public License for more details.
- *  
+ *
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import android.content.Context;
+import fr.nrz.androidlib.notifications.NrzNotification;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.enums.OCSMSNotificationType;
-import android.content.Context;
 
 public class OCSMSNotificationManager {
 
-	public OCSMSNotificationManager(Context context) {
+	public OCSMSNotificationManager(final Context context) {
 		_context = context;
-		_notification = new OCSMSNotification(_context);
+		_notification = new NrzNotification(_context, R.drawable.ic_launcher);
 	}
 
 	public void setSyncProcessMsg() {
-		createNotificationIfPossible(OCSMSNotificationType.SYNC, 
-			_context.getString(R.string.sync_title), 
-			_context.getString(R.string.sync_inprogress)
-		);
+		createNotificationIfPossible(OCSMSNotificationType.SYNC,
+				_context.getString(R.string.sync_title),
+				_context.getString(R.string.sync_inprogress)
+				);
 	}
-	
+
 	public void dropSyncProcessMsg() {
-		_notification.cancelNotify(OCSMSNotificationType.SYNC);
+		_notification.cancelNotify(OCSMSNotificationType.SYNC.ordinal());
 	}
-	
-	public void setSyncErrorMsg(String errMsg) {
-		createNotificationIfPossible(OCSMSNotificationType.SYNC_FAILED, 
-			_context.getString(R.string.sync_title), 
-			_context.getString(R.string.fatal_error) + "\n" + errMsg
-		);
+
+	public void setSyncErrorMsg(final String errMsg) {
+		createNotificationIfPossible(OCSMSNotificationType.SYNC_FAILED,
+				_context.getString(R.string.sync_title),
+				_context.getString(R.string.fatal_error) + "\n" + errMsg
+				);
 	}
-	
+
 	public void dropSyncErrorMsg() {
-		_notification.cancelNotify(OCSMSNotificationType.SYNC_FAILED);
+		_notification.cancelNotify(OCSMSNotificationType.SYNC_FAILED.ordinal());
 	}
-	
-	public void setDebugMsg(String errMsg) {
-		createNotificationIfPossible(OCSMSNotificationType.DEBUG, 
-			"DEBUG", errMsg
-		);
+
+	public void setDebugMsg(final String errMsg) {
+		createNotificationIfPossible(OCSMSNotificationType.DEBUG,
+				"DEBUG", errMsg
+				);
 	}
-	
-	private void createNotificationIfPossible(OCSMSNotificationType nType, String nTitle, String nMsg) {
-		_notification.createNotify(nType, nTitle, nMsg);
+
+	private void createNotificationIfPossible(final OCSMSNotificationType nType, final String nTitle, final String nMsg) {
+		_notification.createNotify(nType.ordinal(), nTitle, nMsg);
 	}
-	
-	private Context _context;
-	private OCSMSNotification _notification;
-	
+
+	private final Context _context;
+	private final NrzNotification _notification;
+
 }
