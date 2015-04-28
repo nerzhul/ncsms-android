@@ -28,7 +28,7 @@
 <resources>
 
     <!-- Translation version, reference for translators -->
-    <string name="translation_version">5</string>
+    <string name="translation_version">6</string>
 
     <!-- In Serbian language there's a rule to transliterate app names -->
     <string name="app_name">Оунклауд-СМС</string>
@@ -67,6 +67,13 @@
         <item>24 сата</item>
         <item>Никад</item>
     </string-array>
+    
+    <string name="pref_sync_wifi">Синх. преко бежичног</string>
+    <string name="pref_sync_4g">Синх. преко 4G</string>
+    <string name="pref_sync_3g">Синх. преко 3G</string>
+    <string name="pref_sync_gprs">Синх. преко 2.5G (ГПРС)</string>
+    <string name="pref_sync_2g">Синх. преко 2G</string>
+    <string name="pref_sync_others">Синх. у осталим режимима</string>
 
     <string name="title_activity_login">Пријављивање</string>
 
@@ -96,6 +103,8 @@
     <string name="ma_content_welcome">Добро дошли у Оунклауд СМС. Ова апликација синхронизује ваше СМС поруке на СМС апликацију вашег Оунклауд сервера.</string>
     <string name="ma_thanksto_people">Оунклауд програмерима\n\
 Доприносиоцима и људима који пријављују грешке</string>
+	<string name="ma_title_sync_all">Синхронизујте све поруке</string>
+	<string name="ma_button_sync_accounts_now">Почни синхронизацију сада</string>
 
     <!-- Notifications -->
     <string name="sync_title">Синхронизација</string>
