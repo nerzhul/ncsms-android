@@ -6,8 +6,8 @@ import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.ListActivity;
 import android.os.Bundle;
+import fr.nrz.androidlib.adapters.AndroidAccountAdapter;
 import fr.unix_experience.owncloud_sms.R;
-import fr.unix_experience.owncloud_sms.adapters.AndroidAccountAdapter;
 
 public class RestoreSMSAccountListActivity extends ListActivity {
 	ArrayList<Account> listItems = new ArrayList<Account>();
