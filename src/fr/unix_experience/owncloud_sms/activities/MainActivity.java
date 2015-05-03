@@ -181,6 +181,10 @@ public class MainActivity extends Activity {
 		}
 	}
 
+	public void selectAccountForRestauration(final View view) {
+		startActivity(new Intent(this, RestoreSMSAccountListActivity.class));
+	}
+
 	public void openGooglePlayStore(final View view) {
 		Intent intent;
 		try {

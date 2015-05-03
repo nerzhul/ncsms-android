@@ -102,6 +102,29 @@
         android:background="@drawable/standard_button"
         style="@style/StandardButton"
         android:text="@string/ma_button_sync_accounts_now" />
+    
+    <TextView
+        android:id="@+id/tv_restoremsgs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/main_tv_accounts"
+        android:layout_alignStart="@+id/main_tv_accounts"
+        android:layout_below="@+id/main_button_sync"
+        android:layout_marginTop="18dp"
+        android:text="@string/ma_title_restore_messages"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/main_button_restore_choose_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_restoremsgs"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:onClick="selectAccountForRestauration"
+        android:background="@drawable/standard_button"
+        style="@style/StandardButton"
+        android:text="@string/ma_button_restore_messages" />
 
     <ImageView
         android:id="@+id/imageView1"
@@ -109,7 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
         android:layout_alignStart="@+id/textView1"
-        android:layout_below="@+id/main_button_sync"
+        android:layout_below="@+id/main_button_restore_choose_account"
         android:layout_marginTop="33dp"
         android:src="@drawable/next_arrow" />
 

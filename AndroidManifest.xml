@@ -107,6 +107,10 @@
             android:label="@string/title_activity_login" >
         </activity>
         <activity
+            android:name=".activities.RestoreSMSAccountListActivity"
+            android:label="@string/title_activity_select_account" >
+        </activity>
+        <activity
             android:name=".activities.GeneralSettingsActivity"
             android:label="@string/title_activity_general_settings" >
         </activity>
@@ -119,10 +123,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
+        <!--<activity
             android:name=".MainActivity2"
             android:label="@string/title_activity_main_activity2" >
-        </activity>
+        </activity>-->
     </application>
 
 </manifest>

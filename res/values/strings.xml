@@ -138,6 +138,11 @@
 Contributors and issue\'s reporters</string>
 	<string name="ma_title_sync_all">Synchronize all messages</string>
 	<string name="ma_button_sync_accounts_now">Launch synchronization now</string>
+	<string name="ma_title_restore_messages">Restore messages</string>
+	<string name="ma_button_restore_messages">Choose account</string>
+	
+	<!-- Restauration -->
+	<string name="title_activity_select_account">Select account</string>
 
     <!-- Notifications -->
     <string name="sync_title">Sync process</string>
