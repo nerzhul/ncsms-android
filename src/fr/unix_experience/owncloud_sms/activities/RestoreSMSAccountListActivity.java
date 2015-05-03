@@ -2,28 +2,41 @@ package fr.unix_experience.owncloud_sms.activities;
 
 import java.util.ArrayList;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import fr.unix_experience.owncloud_sms.R;
+import fr.unix_experience.owncloud_sms.adapters.AndroidAccountAdapter;
 
 public class RestoreSMSAccountListActivity extends ListActivity {
-	ArrayList<String> listItems = new ArrayList<String>();
-	ArrayAdapter<String> adapter;
+	ArrayList<Account> listItems = new ArrayList<Account>();
+	AndroidAccountAdapter adapter;
+
+	private static String _accountType;
+	private static AccountManager _accountMgr;
 
 	@Override
 	public void onCreate(final Bundle icicle) {
 		super.onCreate(icicle);
+
+		_accountType = getString(R.string.account_type);
+		_accountMgr = AccountManager.get(getBaseContext());
+
 		setContentView(R.layout.restore_activity_accountlist);
-		adapter = new ArrayAdapter<String>(this,
+		adapter = new AndroidAccountAdapter(this,
 				android.R.layout.simple_list_item_1,
-				listItems);
+				listItems,
+				R.layout.account_list_item,
+				R.id.accountname);
 		setListAdapter(adapter);
 
-		listItems.add("test");
-		listItems.add("test2");
-		listItems.add("test3");
-		listItems.add("test4s");
+		final Account[] myAccountList = _accountMgr.getAccountsByType(_accountType);
+		for (final Account element : myAccountList) {
+			listItems.add(element);
+		}
+
+
 		adapter.notifyDataSetChanged();
 	}
 }
