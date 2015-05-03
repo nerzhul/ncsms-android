@@ -6,6 +6,8 @@ import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import fr.nrz.androidlib.adapters.AndroidAccountAdapter;
 import fr.unix_experience.owncloud_sms.R;
 
@@ -36,8 +38,12 @@ public class RestoreSMSAccountListActivity extends ListActivity {
 			listItems.add(element);
 		}
 
-
 		adapter.notifyDataSetChanged();
+	}
+
+	// User select an account
+	public void accountSelected(final View view) {
+		Log.d("BURP","accountSelected !");
 	}
 }
 
