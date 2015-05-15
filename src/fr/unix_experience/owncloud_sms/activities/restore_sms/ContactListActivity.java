@@ -12,7 +12,9 @@ public class ContactListActivity extends ListActivity {
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		final String accountName = savedInstanceState.getString("account");
+		assert getIntent().getExtras() != null;
+
+		final String accountName = getIntent().getExtras().getString("account");
 
 		// accountName cannot be null, devel error
 		assert accountName != null;
