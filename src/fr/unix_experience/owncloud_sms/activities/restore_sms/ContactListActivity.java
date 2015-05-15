@@ -13,10 +13,9 @@ public class ContactListActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 
 		final String accountName = savedInstanceState.getString("account");
-		// Impossible... need to handle this later, in case of
-		if (accountName == null) {
-			return;
-		}
+
+		// accountName cannot be null, devel error
+		assert accountName != null;
 
 		final AccountManager _accountMgr = AccountManager.get(getBaseContext());
 		final Account[] myAccountList =
