@@ -13,15 +13,11 @@ public class AccountListActivity extends ListActivity {
 	ArrayList<Account> listItems = new ArrayList<Account>();
 	AndroidAccountAdapter adapter;
 
-	private static String _accountType;
-	private static AccountManager _accountMgr;
-
 	@Override
 	public void onCreate(final Bundle icicle) {
 		super.onCreate(icicle);
 
-		_accountType = getString(R.string.account_type);
-		_accountMgr = AccountManager.get(getBaseContext());
+		final AccountManager _accountMgr = AccountManager.get(getBaseContext());
 
 		setContentView(R.layout.restore_activity_accountlist);
 		adapter = new AndroidAccountAdapter(this,
@@ -31,8 +27,9 @@ public class AccountListActivity extends ListActivity {
 				R.id.accountname, ContactListActivity.class);
 		setListAdapter(adapter);
 
-		final Account[] myAccountList = _accountMgr.getAccountsByType(_accountType);
-		for (final Account element : myAccountList) {
+		final Account[] accountList =
+				_accountMgr.getAccountsByType(getString(R.string.account_type));
+		for (final Account element : accountList) {
 			listItems.add(element);
 		}
 
