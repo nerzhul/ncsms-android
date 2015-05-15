@@ -107,7 +107,7 @@
             android:label="@string/title_activity_login" >
         </activity>
         <activity
-            android:name=".activities.RestoreSMS_AccountListActivity"
+            android:name=".activities.restore_sms.AccountListActivity"
             android:label="@string/title_activity_select_account" >
         </activity>
         <activity
@@ -130,8 +130,8 @@
         </activity>
         -->
         <activity
-            android:name=".activities.RestoreSMS_ContactListActivity"
-            android:label="@string/title_activity_restore_sms__contact_list" >
+            android:name=".activities.restore_sms.ContactListActivity"
+            android:label="@string/title_activity_select_contact" >
         </activity>
     </application>
 

@@ -1,4 +1,4 @@
-package fr.unix_experience.owncloud_sms.activities;
+package fr.unix_experience.owncloud_sms.activities.restore_sms;
 
 import java.util.ArrayList;
 
@@ -9,7 +9,7 @@ import android.os.Bundle;
 import fr.nrz.androidlib.adapters.AndroidAccountAdapter;
 import fr.unix_experience.owncloud_sms.R;
 
-public class RestoreSMS_AccountListActivity extends ListActivity {
+public class AccountListActivity extends ListActivity {
 	ArrayList<Account> listItems = new ArrayList<Account>();
 	AndroidAccountAdapter adapter;
 
@@ -28,7 +28,7 @@ public class RestoreSMS_AccountListActivity extends ListActivity {
 				android.R.layout.simple_list_item_1,
 				listItems,
 				R.layout.account_list_item,
-				R.id.accountname, RestoreSMS_ContactListActivity.class);
+				R.id.accountname, ContactListActivity.class);
 		setListAdapter(adapter);
 
 		final Account[] myAccountList = _accountMgr.getAccountsByType(_accountType);
