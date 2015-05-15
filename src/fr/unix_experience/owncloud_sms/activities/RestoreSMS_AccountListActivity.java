@@ -6,12 +6,10 @@ import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import fr.nrz.androidlib.adapters.AndroidAccountAdapter;
 import fr.unix_experience.owncloud_sms.R;
 
-public class RestoreSMSAccountListActivity extends ListActivity {
+public class RestoreSMS_AccountListActivity extends ListActivity {
 	ArrayList<Account> listItems = new ArrayList<Account>();
 	AndroidAccountAdapter adapter;
 
@@ -30,7 +28,7 @@ public class RestoreSMSAccountListActivity extends ListActivity {
 				android.R.layout.simple_list_item_1,
 				listItems,
 				R.layout.account_list_item,
-				R.id.accountname);
+				R.id.accountname, RestoreSMS_ContactListActivity.class);
 		setListAdapter(adapter);
 
 		final Account[] myAccountList = _accountMgr.getAccountsByType(_accountType);
@@ -39,11 +37,6 @@ public class RestoreSMSAccountListActivity extends ListActivity {
 		}
 
 		adapter.notifyDataSetChanged();
-	}
-
-	// User select an account
-	public void accountSelected(final View view) {
-		Log.d("BURP","accountSelected !");
 	}
 }
 

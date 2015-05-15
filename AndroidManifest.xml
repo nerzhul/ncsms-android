@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.unix_experience.owncloud_sms"
     android:versionCode="26"
-    android:versionName="0.18.2">
+    android:versionName="0.18.2" >
 
     <!-- From Android 4.0 to 5.1 -->
     <uses-sdk
@@ -107,7 +107,7 @@
             android:label="@string/title_activity_login" >
         </activity>
         <activity
-            android:name=".activities.RestoreSMSAccountListActivity"
+            android:name=".activities.RestoreSMS_AccountListActivity"
             android:label="@string/title_activity_select_account" >
         </activity>
         <activity
@@ -123,10 +123,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--<activity
+        <!--
+        <activity
             android:name=".MainActivity2"
             android:label="@string/title_activity_main_activity2" >
-        </activity>-->
+        </activity>
+        -->
+        <activity
+            android:name=".activities.RestoreSMS_ContactListActivity"
+            android:label="@string/title_activity_restore_sms__contact_list" >
+        </activity>
     </application>
 
 </manifest>
