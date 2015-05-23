@@ -26,7 +26,7 @@ public class OCSMSNotificationManager {
 
 	public OCSMSNotificationManager(final Context context) {
 		_context = context;
-		_notification = new NrzNotification(_context, R.drawable.ic_launcher);
+		_notification = new NrzNotification(_context, R.drawable.ic_stat_ocsms);
 	}
 
 	public void setSyncProcessMsg() {

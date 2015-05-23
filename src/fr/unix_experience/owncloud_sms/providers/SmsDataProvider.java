@@ -12,7 +12,7 @@ package fr.unix_experience.owncloud_sms.providers;
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU Affero General Public License for more details.
- *  
+ *
  *  You should have received a copy of the GNU Affero General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -25,8 +25,8 @@ import android.net.Uri;
 
 public class SmsDataProvider extends ContentProvider {
 	public SmsDataProvider () {}
-	
-	public SmsDataProvider (Context ct) {
+
+	public SmsDataProvider (final Context ct) {
 		super();
 		_context = ct;
 	}
@@ -36,60 +36,58 @@ public class SmsDataProvider extends ContentProvider {
 		return false;
 	}
 
-	public Cursor query(String mailBox) {
+	public Cursor query(final String mailBox) {
 		return query(Uri.parse(mailBox),
-			new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
-			null, null, null
-		);
+				new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
+				null, null, null
+				);
 	}
-	
-	public Cursor query(String mailBox, String selection) {
+
+	public Cursor query(final String mailBox, final String selection) {
 		return query(Uri.parse(mailBox),
-			new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
-			selection, null, null
-		);
+				new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
+				selection, null, null
+				);
 	}
-	
-	public Cursor query(String mailBox, String selection, String[] selectionArgs) {
+
+	public Cursor query(final String mailBox, final String selection, final String[] selectionArgs) {
 		return query(Uri.parse(mailBox),
-			new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
-			selection, selectionArgs, null
-		);
+				new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
+				selection, selectionArgs, null
+				);
 	}
 
 	@Override
-	public Cursor query(Uri uri, String[] projection, String selection,
-			String[] selectionArgs, String sortOrder) {
+	public Cursor query(final Uri uri, final String[] projection, final String selection,
+			final String[] selectionArgs, final String sortOrder) {
 		if (_context != null && _context.getContentResolver() != null) {
 			return _context.getContentResolver().query(uri, projection, selection, selectionArgs, sortOrder);
 		}
-		
+
 		return null;
 	}
-	
-	
 
 	@Override
-	public String getType(Uri uri) {
+	public String getType(final Uri uri) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Uri insert(Uri uri, ContentValues values) {
+	public Uri insert(final Uri uri, final ContentValues values) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int delete(Uri uri, String selection, String[] selectionArgs) {
+	public int delete(final Uri uri, final String selection, final String[] selectionArgs) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int update(Uri uri, ContentValues values, String selection,
-			String[] selectionArgs) {
+	public int update(final Uri uri, final ContentValues values, final String selection,
+			final String[] selectionArgs) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
