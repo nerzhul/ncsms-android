@@ -30,7 +30,7 @@ public class ContactListActivity extends ListActivity {
 
 		for (final Account element : myAccountList) {
 			if (element.name.equals(accountName)) {
-				loadContacts(element);
+				new ContactLoadTask().execute(); loadContacts(element);
 				return;
 			}
 		}

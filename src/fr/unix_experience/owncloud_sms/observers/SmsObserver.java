@@ -19,7 +19,7 @@ package fr.unix_experience.owncloud_sms.observers;
 
 import org.json.JSONArray;
 
-import fr.unix_experience.owncloud_sms.engine.ASyncTask;
+import fr.unix_experience.owncloud_sms.engine.ASyncSMSSync;
 import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.engine.OCSMSOwnCloudClient;
 import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
@@ -29,7 +29,7 @@ import android.database.ContentObserver;
 import android.os.Handler;
 import android.util.Log;
 
-public class SmsObserver extends ContentObserver implements ASyncTask {
+public class SmsObserver extends ContentObserver implements ASyncSMSSync {
 
 	public SmsObserver(Handler handler) {
 		super(handler);

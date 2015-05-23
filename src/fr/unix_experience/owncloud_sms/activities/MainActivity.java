@@ -47,7 +47,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.activities.remote_account.AccountListActivity;
-import fr.unix_experience.owncloud_sms.engine.ASyncTask.SyncTask;
+import fr.unix_experience.owncloud_sms.engine.ASyncSMSSync.SyncTask;
 import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
 import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationManager;

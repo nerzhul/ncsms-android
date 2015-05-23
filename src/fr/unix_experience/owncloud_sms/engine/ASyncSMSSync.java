@@ -29,8 +29,8 @@ import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
 import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationManager;
 
-public interface ASyncTask {
-	class SyncTask extends AsyncTask<Void, Void, Void>{
+public interface ASyncSMSSync {
+	class SyncTask extends AsyncTask<Void, Void, Void> {
 		public SyncTask(final Context context, final JSONArray smsList) {
 			_context = context;
 			_smsList = smsList;
@@ -65,5 +65,5 @@ public interface ASyncTask {
 		private final JSONArray _smsList;
 	}
 
-	static final String TAG = ASyncTask.class.getSimpleName();
+	static final String TAG = ASyncSMSSync.class.getSimpleName();
 }

@@ -19,7 +19,7 @@ package fr.unix_experience.owncloud_sms.broadcast_receivers;
 
 import org.json.JSONArray;
 
-import fr.unix_experience.owncloud_sms.engine.ASyncTask;
+import fr.unix_experience.owncloud_sms.engine.ASyncSMSSync;
 import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
@@ -28,7 +28,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-public class ConnectivityChanged extends BroadcastReceiver implements ASyncTask {
+public class ConnectivityChanged extends BroadcastReceiver implements ASyncSMSSync {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
