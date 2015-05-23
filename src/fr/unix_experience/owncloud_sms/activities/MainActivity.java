@@ -46,7 +46,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 import fr.unix_experience.owncloud_sms.R;
-import fr.unix_experience.owncloud_sms.activities.restore_sms.AccountListActivity;
+import fr.unix_experience.owncloud_sms.activities.remote_account.AccountListActivity;
 import fr.unix_experience.owncloud_sms.engine.ASyncTask.SyncTask;
 import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
@@ -182,7 +182,7 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	public void selectAccountForRestauration(final View view) {
+	public void selectRemoteAccount(final View view) {
 		startActivity(new Intent(this, AccountListActivity.class));
 	}
 

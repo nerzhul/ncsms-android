@@ -1,4 +1,4 @@
-package fr.unix_experience.owncloud_sms.activities.restore_sms;
+package fr.unix_experience.owncloud_sms.activities.remote_account;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;

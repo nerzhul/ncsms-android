@@ -107,7 +107,7 @@
             android:label="@string/title_activity_login" >
         </activity>
         <activity
-            android:name=".activities.restore_sms.AccountListActivity"
+            android:name="fr.unix_experience.owncloud_sms.activities.remote_account.AccountListActivity"
             android:label="@string/title_activity_select_account" >
         </activity>
         <activity
@@ -130,7 +130,7 @@
         </activity>
         -->
         <activity
-            android:name=".activities.restore_sms.ContactListActivity"
+            android:name="fr.unix_experience.owncloud_sms.activities.remote_account.ContactListActivity"
             android:label="@string/title_activity_select_contact" >
         </activity>
     </application>
