@@ -53,8 +53,10 @@ public interface ASyncSMSSync {
 
 				try {
 					_client.doPushRequest(_smsList);
+					nMgr.dropSyncErrorMsg();
 				} catch (final OCSyncException e) {
 					Log.e(TAG, _context.getString(e.getErrorId()));
+					nMgr.setSyncErrorMsg(_context.getString(e.getErrorId()));
 				}
 			}
 			nMgr.dropSyncProcessMsg();
