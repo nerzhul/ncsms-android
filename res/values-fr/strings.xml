@@ -117,4 +117,5 @@ Les contributeurs et rapporteurs de bugs</string>
     
     <string name="err_sync_no_connection_available">Erreur #16: Aucune connexion data disponible</string>
     <string name="err_sync_account_unparsable">Error #17: Compte mal configuré. Merci de bien vouloir le reconfigurer.</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: L\'application OcSMS n\'est pas installée ou ownCloud attend d\'être mis à niveau.</string>
 </resources>

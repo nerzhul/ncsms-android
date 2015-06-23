@@ -354,8 +354,15 @@ public class OCSMSOwnCloudClient {
 				respJSON = new JSONObject(response);
 			} catch (final JSONException e) {
 				if (skipError == false) {
-					Log.e(TAG, "Unable to parse server response", e);
-					throw new OCSyncException(R.string.err_sync_http_request_parse_resp, OCSyncErrorType.PARSE);
+					if (response.contains("ownCloud") && response.contains("DOCTYPE")) {
+						Log.e(TAG, "OcSMS app not enabled or ownCloud upgrade is required");
+						throw new OCSyncException(R.string.err_sync_ocsms_not_installed_or_oc_upgrade_required,
+								OCSyncErrorType.SERVER_ERROR);
+					}
+					else {
+						Log.e(TAG, "Unable to parse server response", e);
+						throw new OCSyncException(R.string.err_sync_http_request_parse_resp, OCSyncErrorType.PARSE);
+					}
 				}
 				return null;
 			}
