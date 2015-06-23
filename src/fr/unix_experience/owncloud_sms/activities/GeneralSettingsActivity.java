@@ -25,12 +25,15 @@ import android.content.ContentResolver;
 import android.content.PeriodicSync;
 import android.os.Bundle;
 import android.preference.ListPreference;
+import android.util.Log;
 import fr.nrz.androidlib.activities.NrzSettingsActivity;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
 public class GeneralSettingsActivity extends NrzSettingsActivity {
+	private static final String TAG = GeneralSettingsActivity.class.getSimpleName();
+
 	private static AccountManager _accountMgr;
 	private static String _accountAuthority;
 	private static String _accountType;
@@ -65,6 +68,8 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
 				key.equals(new String("sync_3g")) || key.equals("sync_gprs") ||
 				key.equals("sync_4g") || key.equals("sync_others")) {
 			final OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
+			Log.d(TAG,"GeneralSettingsActivity.handleCheckboxPreference: set " + key + " to "
+					+ value.toString());
 			prefs.putBoolean(key, value);
 		}
 		else {

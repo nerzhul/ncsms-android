@@ -27,7 +27,7 @@
 -->
 <resources>
 	<!-- Translation version, reference for translators -->
-	<string name="translation_version">6</string>
+	<string name="translation_version">7</string>
 	
     <!-- Translations must begin there -->
 
@@ -71,6 +71,7 @@
         <item>-1</item>
     </string-array>
     
+    <string name="pref_push_on_receive">Pousser le SMS à la réception</string>
     <string name="pref_sync_wifi">Synchroniser en Wi-Fi</string>
     <string name="pref_sync_4g">Synchroniser en 4G</string>
     <string name="pref_sync_3g">Synchroniser en 3G</string>

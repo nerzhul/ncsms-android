@@ -39,6 +39,10 @@ public class OCSMSSharedPrefs extends SharedPrefs {
 		return _sPrefs.getLong(_context.getString(R.string.pref_lastmsgdate), 0);
 	}
 
+	public Boolean pushOnReceive() {
+		return _sPrefs.getBoolean("push_on_receive", DefaultPrefs.pushOnReceive);
+	}
+
 	public Boolean syncInWifi() {
 		return _sPrefs.getBoolean("sync_wifi", DefaultPrefs.syncWifi);
 	}
