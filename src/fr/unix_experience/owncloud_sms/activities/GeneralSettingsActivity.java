@@ -43,6 +43,7 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
 		_prefsRessourceFile = R.xml.pref_data_sync;
 
 		// Bind our boolean preferences
+		_boolPrefs.add(new BindObjectPref("push_on_receive", DefaultPrefs.pushOnReceive));
 		_boolPrefs.add(new BindObjectPref("sync_wifi", DefaultPrefs.syncWifi));
 		_boolPrefs.add(new BindObjectPref("sync_4g", DefaultPrefs.sync4G));
 		_boolPrefs.add(new BindObjectPref("sync_3g", DefaultPrefs.sync3G));
@@ -59,7 +60,8 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
 
 	protected static void handleCheckboxPreference(final String key, final Boolean value) {
 		// Network types allowed for sync
-		if(key.equals(new String("sync_wifi")) || key.equals("sync_2g") ||
+		if(key.equals(new String("push_on_receive")) ||
+				key.equals(new String("sync_wifi")) || key.equals("sync_2g") ||
 				key.equals(new String("sync_3g")) || key.equals("sync_gprs") ||
 				key.equals("sync_4g") || key.equals("sync_others")) {
 			final OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);

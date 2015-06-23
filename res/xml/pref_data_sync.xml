@@ -9,6 +9,12 @@
         android:negativeButtonText="@null"
         android:positiveButtonText="@null"
         android:title="@string/pref_title_sync_frequency" />
+    <CheckBoxPreference android:id="@+id/checkbox_push_on_receive"
+        android:defaultValue="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:key="push_on_receive"
+        android:title="@string/pref_push_on_receive" />
     <CheckBoxPreference android:id="@+id/checkbox_sync_wifi"
         android:defaultValue="true"
         android:layout_width="wrap_content"
