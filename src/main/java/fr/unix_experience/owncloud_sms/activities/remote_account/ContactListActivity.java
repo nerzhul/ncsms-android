@@ -66,13 +66,13 @@ public class ContactListActivity extends ListActivity implements ASyncContactLoa
 					@Override
 					public void onRefresh() {
 						_layout.setRefreshing(true);
-						(new Handler()).postDelayed(new Runnable() {
+						(new Handler()).post(new Runnable() {
 							@Override
 							public void run() {
 								_layout.setRefreshing(false);
 								new ContactLoadTask(element, getBaseContext(), adapter, objects).execute();
 							}
-						}, 3000);
+						});
 					}
 				});
 				return;
