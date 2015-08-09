@@ -30,6 +30,9 @@ You can also contribute by adding patches in Java code or cleanups.
 ## Requirements
 - An ownCloud instance with ocsms app
 
+## Build requirements
+- nrz-androidlib (last version)
+- Owncloud-Android-Library v1.0
 
 ## Issue template
 
@@ -43,7 +46,6 @@ Client
 - Android version: X.X.X
 - Phone: <phone-model>
 - ownCloud SMS app version: X.X.X
-
 
 Please create your issues for the client here:
 
