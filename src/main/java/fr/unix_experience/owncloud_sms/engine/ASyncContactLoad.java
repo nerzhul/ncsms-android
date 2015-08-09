@@ -50,6 +50,8 @@ public interface ASyncContactLoad {
 					serverURI, _accountMgr.getUserData(_account, "ocLogin"),
 					_accountMgr.getPassword(_account));
 
+			// Remove all objects, due to refreshing handling
+			_objects.clear();
 			try {
 				if (_client.getServerAPIVersion() < 2) {
 					_objects.add(_context.getString(R.string.err_proto_v2));

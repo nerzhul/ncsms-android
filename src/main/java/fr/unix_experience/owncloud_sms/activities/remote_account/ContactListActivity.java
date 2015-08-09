@@ -1,5 +1,6 @@
 package fr.unix_experience.owncloud_sms.activities.remote_account;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import android.accounts.Account;
@@ -19,6 +20,7 @@ public class ContactListActivity extends ListActivity implements ASyncContactLoa
 	static AccountManager _accountMgr;
 	ContactListAdapter adapter;
 	SwipeRefreshLayout _layout;
+	ArrayList<String> objects;
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
@@ -36,11 +38,11 @@ public class ContactListActivity extends ListActivity implements ASyncContactLoa
 				_accountMgr.getAccountsByType(getString(R.string.account_type));
 		
 		// Init view
-		ArrayList<String> objects = new ArrayList<String>();
+		objects = new ArrayList<String>();
 		setContentView(R.layout.restore_activity_contactlist);
 
 		_layout = (SwipeRefreshLayout) findViewById(R.id.contactlist_swipe_container);
-		//_layout.setOnRefreshListener(this);
+
 		_layout.setColorScheme(android.R.color.holo_blue_bright,
 				android.R.color.holo_green_light,
 				android.R.color.holo_orange_light,
@@ -56,17 +58,25 @@ public class ContactListActivity extends ListActivity implements ASyncContactLoa
 
 		for (final Account element : myAccountList) {
 			if (element.name.equals(accountName)) {
+				// Load "contacts"
 				new ContactLoadTask(element, getBaseContext(), adapter, objects).execute();
+
+				// Add refresh handler
+				_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+					@Override
+					public void onRefresh() {
+						_layout.setRefreshing(true);
+						(new Handler()).postDelayed(new Runnable() {
+							@Override
+							public void run() {
+								_layout.setRefreshing(false);
+								new ContactLoadTask(element, getBaseContext(), adapter, objects).execute();
+							}
+						}, 3000);
+					}
+				});
 				return;
 			}
 		}
 	}
-
-	/*@Override public void onRefresh() {
-		new Handler().postDelayed(new Runnable() {
-			@Override public void run() {
-				_layout.setRefreshing(false);
-			}
-		}, 5000);
-	}*/
 }
