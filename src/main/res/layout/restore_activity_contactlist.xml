@@ -24,16 +24,23 @@
  * SUCH DAMAGE.
  */
 -->
-<LinearLayout
+
+<android.support.v4.widget.SwipeRefreshLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical"
-	android:layout_width="fill_parent"
-	android:layout_height="fill_parent" >
+	android:id="@+id/contactlist_swipe_container"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent" >
 
-	<ListView
-	    android:id="@android:id/list"
-	    android:layout_width="fill_parent"
-	    android:layout_height="fill_parent"
-	    android:drawSelectorOnTop="false" />
+		<ListView
+			android:id="@android:id/list"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:drawSelectorOnTop="false" />
 
-</LinearLayout>
+	</LinearLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

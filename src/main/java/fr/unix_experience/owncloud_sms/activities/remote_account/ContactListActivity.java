@@ -6,6 +6,9 @@ import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
+
 import fr.nrz.androidlib.adapters.AndroidAccountAdapter;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.adapters.ContactListAdapter;
@@ -15,6 +18,7 @@ public class ContactListActivity extends ListActivity implements ASyncContactLoa
 
 	static AccountManager _accountMgr;
 	ContactListAdapter adapter;
+	SwipeRefreshLayout _layout;
 
 	@Override
 	protected void onCreate(final Bundle savedInstanceState) {
@@ -34,6 +38,14 @@ public class ContactListActivity extends ListActivity implements ASyncContactLoa
 		// Init view
 		ArrayList<String> objects = new ArrayList<String>();
 		setContentView(R.layout.restore_activity_contactlist);
+
+		_layout = (SwipeRefreshLayout) findViewById(R.id.contactlist_swipe_container);
+		//_layout.setOnRefreshListener(this);
+		_layout.setColorScheme(android.R.color.holo_blue_bright,
+				android.R.color.holo_green_light,
+				android.R.color.holo_orange_light,
+				android.R.color.holo_red_light);
+		
 		adapter = new ContactListAdapter(getBaseContext(),
 				android.R.layout.simple_list_item_1,
 				objects,
@@ -50,8 +62,11 @@ public class ContactListActivity extends ListActivity implements ASyncContactLoa
 		}
 	}
 
-	// This function fetch contacts from the ownCloud instance and generate the list activity
-	private void loadContacts(final Account account) {
-
-	}
+	/*@Override public void onRefresh() {
+		new Handler().postDelayed(new Runnable() {
+			@Override public void run() {
+				_layout.setRefreshing(false);
+			}
+		}, 5000);
+	}*/
 }
