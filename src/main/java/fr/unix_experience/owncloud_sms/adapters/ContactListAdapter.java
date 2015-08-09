@@ -37,7 +37,7 @@ public class ContactListAdapter extends ArrayAdapter<String> {
 		if (element != null) {
 			final TextView label = (TextView) v.findViewById(_fieldId);
 			if (label != null) {
-				label.setText(element + " >");
+				label.setText(element);
 				label.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(final View v) {

@@ -1,17 +1,18 @@
 package fr.unix_experience.owncloud_sms.engine;
 
-import java.util.ArrayList;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.util.Log;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.adapters.ContactListAdapter;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
 
@@ -51,24 +52,23 @@ public interface ASyncContactLoad {
 
 			try {
 				if (_client.getServerAPIVersion() < 2) {
-					// @TODO: handle error
+					_objects.add(_context.getString(R.string.err_proto_v2));
 					return false;
 				}
 
 				JSONArray phoneNumbers = _client.getServerPhoneNumbers();
-				Log.d(TAG, phoneNumbers.toString());
 				for (int i = 0; i < phoneNumbers.length(); i++) {
 					String phone = phoneNumbers.getString(i);
 					_objects.add(phone);
 				}
 
+				// Sort phone numbers
+				Collections.sort(_objects);
 			} catch (JSONException e) {
-				// @TODO: handle error
-				e.printStackTrace();
+				_objects.add(_context.getString(R.string.err_fetch_phonelist));
 				return false;
 			} catch (final OCSyncException e) {
-				// @TODO: handle error
-				e.printStackTrace();
+				_objects.add(_context.getString(e.getErrorId()));
 				return false;
 			}
 			return true;
