@@ -2,9 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.unix_experience.owncloud_sms"
     android:versionCode="27"
-    android:versionName="0.18.5" >
-
-    <!-- From Android 4.0 to 5.1 -->
+    android:versionName="0.18.5" > <!-- From Android 4.0 to 5.1 -->
     <uses-sdk
         android:maxSdkVersion="22"
         android:minSdkVersion="14"
@@ -110,7 +108,7 @@
             android:label="@string/title_activity_login" >
         </activity>
         <activity
-            android:name="fr.unix_experience.owncloud_sms.activities.remote_account.AccountListActivity"
+            android:name=".activities.remote_account.AccountListActivity"
             android:label="@string/title_activity_select_account" >
         </activity>
         <activity
@@ -133,7 +131,7 @@
         </activity>
         -->
         <activity
-            android:name="fr.unix_experience.owncloud_sms.activities.remote_account.ContactListActivity"
+            android:name=".activities.remote_account.ContactListActivity"
             android:label="@string/title_activity_select_contact" >
         </activity>
     </application>

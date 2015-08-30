@@ -8,6 +8,10 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.ContactsContract;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.Spinner;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,9 +30,13 @@ public interface ASyncContactLoad {
 		private final Context _context;
 		private ContactListAdapter _adapter;
 		private ArrayList<String> _objects;
+		private SwipeRefreshLayout _layout;
+		private ProgressBar _pg;
+		private Spinner _contactSpinner;
 
 		public ContactLoadTask(final Account account, final Context context,
-				ContactListAdapter adapter, ArrayList<String> objects) {
+				ContactListAdapter adapter, ArrayList<String> objects, SwipeRefreshLayout layout,
+				ProgressBar pg, Spinner sp) {
 			if (_accountMgr == null) {
 				_accountMgr = AccountManager.get(context);
 			}
@@ -37,6 +45,9 @@ public interface ASyncContactLoad {
 			_context = context;
 			_adapter = adapter;
 			_objects = objects;
+			_layout = layout;
+			_pg = pg;
+			_contactSpinner = sp;
 		}
 		@Override
 		protected Boolean doInBackground(final Void... params) {
@@ -72,37 +83,37 @@ public interface ASyncContactLoad {
 				// Read all contacts
 				ContentResolver cr = _context.getContentResolver();
 				Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,
-				null, null, null, null);
+						null, null, null, null);
 				if (cur.getCount() > 0) {
 					while (cur.moveToNext()) {
 						String id = cur.getString(cur.getColumnIndex(ContactsContract.Contacts._ID));
 						String name = cur.getString(cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
 						if (Integer.parseInt(cur.getString(
-							cur.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0) {
+								cur.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0) {
 
 							// Fetch all phone numbers
 							Cursor pCur = cr.query(
-							ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-							null,
-							ContactsContract.CommonDataKinds.Phone.CONTACT_ID +" = ?",
-							new String[]{id}, null);
+									ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+									null,
+									ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?",
+									new String[]{id}, null);
 							while (pCur.moveToNext()) {
-							String phoneNo = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-							phoneNo = phoneNo.replaceAll(" ", "");
-							if (serverPhoneList.contains(phoneNo)) {
-								if (!_objects.contains(name)) {
-									_objects.add(name);
+								String phoneNo = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+								phoneNo = phoneNo.replaceAll(" ", "");
+								if (serverPhoneList.contains(phoneNo)) {
+									if (!_objects.contains(name)) {
+										_objects.add(name);
+									}
+									serverPhoneList.remove(phoneNo);
 								}
-								serverPhoneList.remove(phoneNo);
 							}
-						}
-						pCur.close();
+							pCur.close();
 						}
 					}
 				}
 				cur.close();
 
-				for (String phone: serverPhoneList) {
+				for (String phone : serverPhoneList) {
 					_objects.add(phone);
 				}
 
@@ -116,11 +127,18 @@ public interface ASyncContactLoad {
 				return false;
 			}
 			return true;
-
 		}
 
 		protected void onPostExecute(final Boolean success) {
 			_adapter.notifyDataSetChanged();
+			_layout.setRefreshing(false);
+			if (_pg != null) {
+				_pg.setVisibility(View.INVISIBLE);
+			}
+
+			if (_contactSpinner != null) {
+				_contactSpinner.setVisibility(View.VISIBLE);
+			}
 		}
 	}
 

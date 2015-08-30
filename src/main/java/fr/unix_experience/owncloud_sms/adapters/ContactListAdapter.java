@@ -1,7 +1,10 @@
 package fr.unix_experience.owncloud_sms.adapters;
 
 import java.util.ArrayList;
+
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,14 +16,16 @@ public class ContactListAdapter extends ArrayAdapter<String> {
 	private final ArrayList<String> _objects;
 	private static int _itemLayout;
 	private static int _fieldId;
+	private Activity _activity;
 	
 	public ContactListAdapter(final Context context, final int resource,
 				final ArrayList<String> objects, final int itemLayout,
-				final int fieldId) {
-		super(context, resource, resource, objects);
+				final int fieldId, final Activity activity) {
+		super(context, resource, objects);
 		_objects = objects;
 		_itemLayout = itemLayout;
 		_fieldId = fieldId;
+		_activity = activity;
 	}
 
 	@Override
@@ -42,15 +47,11 @@ public class ContactListAdapter extends ArrayAdapter<String> {
 			final TextView label = (TextView) v.findViewById(_fieldId);
 			if (label != null) {
 				label.setText(element);
-				label.setOnClickListener(new OnClickListener() {
-					@Override
-					public void onClick(final View v) {
-						// @TODO
-					}
-				});
 			}
 		}
 
 		return v;
 	}
+
+	private static final String TAG = ContactListAdapter.class.getSimpleName();
 }
