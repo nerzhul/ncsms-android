@@ -19,10 +19,14 @@ package fr.unix_experience.owncloud_sms.broadcast_receivers;
 
 import org.json.JSONArray;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+
+import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.engine.ASyncSMSSync;
 import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
@@ -32,6 +36,13 @@ public class ConnectivityChanged extends BroadcastReceiver implements ASyncSMSSy
 
 	@Override
 	public void onReceive(final Context context, final Intent intent) {
+		// No account: abort
+		final Account[] myAccountList = AccountManager.get(context).
+				getAccountsByType(context.getString(R.string.account_type));
+		if (myAccountList.length == 0) {
+			return;
+		}
+
 		final ConnectivityMonitor cMon = new ConnectivityMonitor(context);
 
 		final OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(context);
@@ -55,6 +66,7 @@ public class ConnectivityChanged extends BroadcastReceiver implements ASyncSMSSy
 	}
 
 	private void checkMessagesAndSend(final Context context) {
+
 		// Get last message synced from preferences
 		final Long lastMessageSynced = (new OCSMSSharedPrefs(context)).getLastMessageDate();
 		Log.d(TAG,"Synced Last:" + lastMessageSynced);

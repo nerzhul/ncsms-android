@@ -19,11 +19,15 @@ package fr.unix_experience.owncloud_sms.observers;
 
 import org.json.JSONArray;
 
+import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.engine.ASyncSMSSync;
 import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.engine.OCSMSOwnCloudClient;
 import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
+
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.content.Context;
 import android.database.ContentObserver;
 import android.os.Handler;
@@ -43,6 +47,13 @@ public class SmsObserver extends ContentObserver implements ASyncSMSSync {
 	public void onChange(boolean selfChange) {
 		super.onChange(selfChange);
 		Log.d(TAG, "onChange SmsObserver");
+
+		// No account, abort
+		final Account[] myAccountList = AccountManager.get(_context).
+				getAccountsByType(_context.getString(R.string.account_type));
+		if (myAccountList.length == 0) {
+			return;
+		}
 	
 		SmsFetcher fetcher = new SmsFetcher(_context);
 		JSONArray smsList = fetcher.getLastMessage(MailboxID.ALL);

@@ -38,12 +38,12 @@ public interface ASyncSMSSync {
 
 		@Override
 		protected Void doInBackground(final Void... params) {
-			final OCSMSNotificationManager nMgr = new OCSMSNotificationManager(_context);
-
 			// Get ownCloud SMS account list
 			final AccountManager _accountMgr = AccountManager.get(_context);
-
 			final Account[] myAccountList = _accountMgr.getAccountsByType(_context.getString(R.string.account_type));
+
+			// Notify that we are syncing SMS
+			final OCSMSNotificationManager nMgr = new OCSMSNotificationManager(_context);
 			for (final Account element : myAccountList) {
 				final Uri serverURI = Uri.parse(_accountMgr.getUserData(element, "ocURI"));
 
