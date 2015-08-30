@@ -32,6 +32,10 @@ public class ContactListAdapter extends ArrayAdapter<String> {
 			v = inflater.inflate(_itemLayout, null);
 		}
 
+		if (_objects.size() == 0) {
+			return null;
+		}
+
 		final String element = _objects.get(position);
 
 		if (element != null) {

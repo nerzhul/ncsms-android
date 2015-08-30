@@ -87,7 +87,6 @@ public class OCSMSOwnCloudClient {
 			return null;
 		}
 
-		Log.d(TAG, obj.toString());
 		try {
 			return obj.getJSONArray("phoneList");
 		} catch (final JSONException e) {

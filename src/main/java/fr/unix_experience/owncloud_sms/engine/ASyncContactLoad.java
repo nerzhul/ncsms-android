@@ -2,9 +2,12 @@ package fr.unix_experience.owncloud_sms.engine;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
+import android.content.ContentResolver;
 import android.content.Context;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.provider.ContactsContract;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -58,9 +61,48 @@ public interface ASyncContactLoad {
 					return false;
 				}
 
+				ArrayList<String> serverPhoneList = new ArrayList<>();
+
 				JSONArray phoneNumbers = _client.getServerPhoneNumbers();
 				for (int i = 0; i < phoneNumbers.length(); i++) {
 					String phone = phoneNumbers.getString(i);
+					serverPhoneList.add(phone);
+				}
+
+				// Read all contacts
+				ContentResolver cr = _context.getContentResolver();
+				Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,
+				null, null, null, null);
+				if (cur.getCount() > 0) {
+					while (cur.moveToNext()) {
+						String id = cur.getString(cur.getColumnIndex(ContactsContract.Contacts._ID));
+						String name = cur.getString(cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+						if (Integer.parseInt(cur.getString(
+							cur.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0) {
+
+							// Fetch all phone numbers
+							Cursor pCur = cr.query(
+							ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+							null,
+							ContactsContract.CommonDataKinds.Phone.CONTACT_ID +" = ?",
+							new String[]{id}, null);
+							while (pCur.moveToNext()) {
+							String phoneNo = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+							phoneNo = phoneNo.replaceAll(" ", "");
+							if (serverPhoneList.contains(phoneNo)) {
+								if (!_objects.contains(name)) {
+									_objects.add(name);
+								}
+								serverPhoneList.remove(phoneNo);
+							}
+						}
+						pCur.close();
+						}
+					}
+				}
+				cur.close();
+
+				for (String phone: serverPhoneList) {
 					_objects.add(phone);
 				}
 
