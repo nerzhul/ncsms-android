@@ -160,5 +160,8 @@ Contributors and issue\'s reporters</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: OcSMS app is not installed or ownCloud awaiting for an upgrade</string>
     <string name="err_fetch_phonelist">Invalid phonelist received from server.</string>
     <string name="err_proto_v2">Server doesn\'t support this feature. Ensure server version is at least 1.6.</string>
-    
+    <string name="contactinfos_title">Contact informations</string>
+    <string name="choose_account">Choose account</string>
+    <string name="subtitle_contact_phones">> Contact phones</string>
+
 </resources>

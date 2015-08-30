@@ -2,23 +2,35 @@ package fr.unix_experience.owncloud_sms.activities.remote_account;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Vector;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.ContentResolver;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.ContactsContract;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import fr.nrz.androidlib.adapters.AndroidAccountAdapter;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.adapters.ContactListAdapter;
 import fr.unix_experience.owncloud_sms.engine.ASyncContactLoad;
+import fr.unix_experience.owncloud_sms.engine.OCSMSOwnCloudClient;
 
 public class ContactListActivity extends Activity implements ASyncContactLoad {
 
@@ -60,10 +72,71 @@ public class ContactListActivity extends Activity implements ASyncContactLoad {
 				R.id.contactname, this);
 		
 		final Spinner sp = (Spinner) findViewById(R.id.contact_spinner);
-		sp.setVisibility(View.INVISIBLE);
-		sp.setAdapter(adapter);
-
+		final LinearLayout contactInfos = (LinearLayout) findViewById(R.id.contactinfos_layout);
 		final ProgressBar contactProgressBar = (ProgressBar) findViewById(R.id.contactlist_pgbar);
+		final TextView contactPhoneList = (TextView) findViewById(R.id.contact_phonelist);
+
+		sp.setVisibility(View.INVISIBLE);
+		contactInfos.setVisibility(View.INVISIBLE);
+
+		sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+				contactInfos.setVisibility(View.INVISIBLE);
+
+				String contactName = sp.getSelectedItem().toString();
+				Vector<String> phoneList = fetchContact(contactName);
+				Integer smsCount = 0;
+				// @TODO asynctask to load more datas
+
+				if (phoneList.size() > 0) {
+					String res = new String("");
+					for (String pn: phoneList) {
+						res += "- " + pn + "\n";
+					}
+					contactPhoneList.setText(res);
+				} else {
+					contactPhoneList.setText(contactName);
+				}
+
+				contactInfos.setVisibility(View.VISIBLE);
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+				// Nothing to do there
+			}
+
+			private Vector<String> fetchContact(String name) {
+				Cursor people = getContentResolver().query(ContactsContract.Contacts.CONTENT_URI,
+						null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " = ?",
+						new String[]{name}, null);
+				people.moveToFirst();
+
+				Vector<String> r = new Vector<>();
+				if (people.getCount() == 0) {
+					return r;
+				}
+
+				String contactId = people.getString(people.getColumnIndex(ContactsContract.Contacts._ID));
+
+				if (people.getString(people.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))
+						.equalsIgnoreCase("1")) {
+					Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+							null,
+							ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?",
+							new String[]{contactId}, null);
+					while (phones.moveToNext()) {
+						String phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
+								.replaceAll(" ", "");
+						r.add(phoneNumber);
+					}
+					phones.close();
+				}
+				return r;
+			}
+		});
+		sp.setAdapter(adapter);
 
 		for (final Account element : myAccountList) {
 			if (element.name.equals(accountName)) {

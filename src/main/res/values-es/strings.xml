@@ -91,4 +91,6 @@
 	<string name="sync_title">Proceso de sincronización</string>
 	<string name="sync_inprogress">Sincronización en progreso...</string>
 	<string name="fatal_error">Error Fatal ! </string>
+	<string name="choose_account">Choisissez un compte</string>
+	<string name="contactinfos_title">Informations sur le contact</string>
 </resources>

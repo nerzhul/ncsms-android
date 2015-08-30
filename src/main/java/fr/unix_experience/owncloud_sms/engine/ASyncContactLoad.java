@@ -98,8 +98,8 @@ public interface ASyncContactLoad {
 									ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?",
 									new String[]{id}, null);
 							while (pCur.moveToNext()) {
-								String phoneNo = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-								phoneNo = phoneNo.replaceAll(" ", "");
+								String phoneNo = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
+										.replaceAll(" ", "");
 								if (serverPhoneList.contains(phoneNo)) {
 									if (!_objects.contains(name)) {
 										_objects.add(name);
