@@ -28,7 +28,7 @@
 <resources>
 
     <!-- Translation version, reference for translators -->
-    <string name="translation_version">5</string>
+    <string name="translation_version">7</string>
 
     <!-- Translations must begin there -->
     <!-- Preferences -->
@@ -84,6 +84,13 @@
         <item>-1</item>
     </string-array>
 
+	<string name="pref_push_on_receive">Oznámit SMS při přijetí</string>
+    <string name="pref_sync_wifi">Synchronizovat přes Wi-Fi</string>
+    <string name="pref_sync_4g">Synchronizovat přes 4G</string>
+    <string name="pref_sync_3g">Synchronizovat přes 3G</string>
+    <string name="pref_sync_gprs">Synchronizovat přes 2.5G (GPRS)</string>
+    <string name="pref_sync_2g">Synchronizovat přes 2G</string>
+    <string name="pref_sync_others">Synchronizovat přes jiná připojení</string>
     <string name="title_activity_login">Přihlášení</string>
 
     <!-- Login -->
@@ -116,6 +123,14 @@
     <string name="ma_title_welcome">Vítejte</string>
     <string name="ma_content_welcome">Vítejte v aplikaci ownCloud SMS. Tato aplikace umožnuje sychronizovat SMS do vašeho účtu na serveru ownCloud za pomoci aplikace pro SMS.</string>
     <string name="ma_thanksto_people">ownCloud vývojáři\n\ přispěvatelé a ti co hlásí chyby</string>
+    <string name="ma_title_sync_all">Synchronizovat všechny zprávy</string>
+    <string name="ma_button_sync_accounts_now">Spustit synchronizaci</string>
+    <string name="ma_title_remote_account">Vzdálený účet</string>
+    <string name="choose_account">Vybrat účet</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Vybrat účet</string>
+    <string name="title_activity_select_contact">Vybrat kontakt</string>
 
     <!-- Notifications -->
     <string name="sync_title">Proces synchronizace</string>
@@ -139,10 +154,9 @@
     <string name="err_sync_http_request_parse_resp">Chyba #15: Nelze zpracovat odpověď serveru</string>
     <string name="err_sync_no_connection_available">Chyba #16: Není dostupné datové připojení</string>
     <string name="err_sync_account_unparsable">Chyba #17: účet poškozený Znovu nakonfigurovat</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_section1">Sekce 1</string>
-    <string name="title_section2">Sekce 2</string>
-    <string name="title_section3">Sekce 3</string>
-    <string name="title_activity_main_activity2">MainActivity2</string>
-
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Chyba #18: OcSMS aplikace není nainstalována nebo ownCloud čeká na aktualizaci</string>
+    <string name="err_fetch_phonelist">Přijat neplatný seznam telefoních čísel ze serveru.</string>
+    <string name="err_proto_v2">Server nepodporuje tuto funkci. Zajistěte verzi na serveru alespoň 1.6.</string>
+    <string name="contactinfos_title">Informace kontaktu</string>
+    <string name="subtitle_contact_phones">> Telefony kontaktu</string>
 </resources>
