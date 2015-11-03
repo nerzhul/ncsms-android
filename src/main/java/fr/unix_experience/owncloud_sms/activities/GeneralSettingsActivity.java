@@ -56,13 +56,14 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
         NrzSettingsActivity._boolPrefs.add(new BindObjectPref("sync_others", DefaultPrefs.syncOthers));
 
 		// Bind our string preferences
-        NrzSettingsActivity._stringPrefs.add(new BindObjectPref("sync_frequency", ""));
+        NrzSettingsActivity._stringPrefs.add(new BindObjectPref("sync_frequency", "15"));
+        NrzSettingsActivity._intPrefs.add(new BindObjectPref("sync_bulk_messages", -1));
 
 		// Must be at the end, after preference bind
 		super.onPostCreate(savedInstanceState);
 	}
 
-	protected static void handleCheckboxPreference(String key, Boolean value) {
+	protected void handleCheckboxPreference(String key, Boolean value) {
 		// Network types allowed for sync
 		if("push_on_receive".equals(key) ||
                 "sync_wifi".equals(key) || "sync_2g".equals(key) ||
@@ -75,7 +76,7 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
 		}
 	}
 
-	protected static void handleListPreference(String key, String value,
+	protected void handleListPreference(String key, String value,
 			ListPreference preference) {
 		// For list preferences, look up the correct display value in
 		// the preference's 'entries' list.
@@ -85,6 +86,10 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
 		preference
 		.setSummary((index >= 0) ? preference.getEntries()[index]
                 : null);
+
+        Log.d(TAG, "Modifying listPreference " + key);
+
+        OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(NrzSettingsActivity._context);
 
 		// Handle sync frequency change
 		if ("sync_frequency".equals(key)) {
@@ -114,7 +119,12 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
 					ContentResolver.addPeriodicSync(myAccountList[i],
                             GeneralSettingsActivity._accountAuthority, b, syncFreq * 60);
 				}
+
+                prefs.putLong(key, syncFreq);
 			}
 		}
+        else if ("sync_bulk_messages".equals(key)) {
+            prefs.putInteger(key, Integer.parseInt(value));
+        }
 	}
 }

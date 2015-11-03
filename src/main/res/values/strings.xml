@@ -79,6 +79,24 @@
         <item>1440</item>
         <item>-1</item>
     </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Every SMS not synced</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages">
+        <item>100</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>25000</item>
+        <item>-1</item>
+    </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 hour</item>
         <item>3 hours</item>
@@ -172,4 +190,5 @@ Contributors and issue\'s reporters</string>
     <string name="err_proto_v2">Server doesn\'t support this feature. Ensure server version is at least 1.6.</string>
     <string name="contactinfos_title">Contact informations</string>
     <string name="subtitle_contact_phones">> Contact phones</string>
+    <string name="pref_title_bulk_messages">Max messages to send per sync</string>
 </resources>

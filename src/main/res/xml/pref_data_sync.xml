@@ -9,6 +9,14 @@
         android:negativeButtonText="@null"
         android:positiveButtonText="@null"
         android:title="@string/pref_title_sync_frequency" />
+    <ListPreference
+        android:defaultValue="1000"
+        android:entries="@array/pref_sync_bulk_max_messages_titles"
+        android:entryValues="@array/pref_sync_bulk_max_messages"
+        android:key="sync_bulk_messages"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_bulk_messages" />
     <CheckBoxPreference android:id="@+id/checkbox_push_on_receive"
         android:defaultValue="true"
         android:layout_width="wrap_content"

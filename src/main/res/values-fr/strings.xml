@@ -70,6 +70,15 @@
         <item>1440</item>
         <item>-1</item>
     </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Tous les SMS non synchronisés</item>
+    </string-array>
     
     <string name="pref_push_on_receive">Pousser le SMS à la réception</string>
     <string name="pref_sync_wifi">Synchroniser en Wi-Fi</string>
@@ -132,4 +141,12 @@ Les contributeurs et rapporteurs de bugs</string>
     <string name="err_sync_http_request_httpexception">Erreur #12: Impossible de se connecter à l\'instance ownCloud</string>
     <string name="err_sync_http_request_ioexception">Erreur #13: Impossible de se connecter à l\'instance ownCloud</string>
     <string name="subtitle_contact_phones">> Numéros de téléphone associés</string>
+    <string name="choose_account">Choisissez un compte</string>
+    <string name="ma_title_remote_account">Compte distant</string>
+    <string name="title_activity_select_account">Chosissez un compte</string>
+    <string name="title_activity_select_contact">Choisissez un contact</string>
+    <string name="err_sync_push_request_resp">Erreur #4: Données invalides reçues lors de la synchronisation.</string>
+    <string name="err_sync_create_json_request_encoding">Erreur #7: Encodage inconnu à la conversion</string>
+    <string name="err_sync_craft_http_request">Erreur #2: Echec de la création de la requête</string>
+    <string name="pref_title_bulk_messages">Nombre maximum de messages à envoyer par synchronisation</string>
 </resources>

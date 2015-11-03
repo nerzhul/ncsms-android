@@ -23,6 +23,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.util.Log;
+
+import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
 public class SmsDataProvider extends ContentProvider {
 	public SmsDataProvider () {}
@@ -52,12 +55,22 @@ public class SmsDataProvider extends ContentProvider {
 	}
 
 	public Cursor queryNonExistingMessages(String mailBox, String existingIds) {
+        OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
+        Integer bulkLimit = prefs.getSyncBulkLimit();
+        Log.d(TAG, "Bulk limit is " + bulkLimit.toString());
 		if (!existingIds.isEmpty()) {
-			return query(mailBox, "_id NOT IN (" + existingIds + ")");
+            return query(mailBox, "_id NOT IN (" + existingIds + ")");
 		}
 
 		return query(mailBox);
 	}
+
+    public Cursor queryMessagesSinceDate(String mailBox, Long sinceDate) {
+        OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
+        Integer bulkLimit = prefs.getSyncBulkLimit();
+        Log.d(TAG, "Bulk limit is " + bulkLimit.toString());
+        return query(mailBox, "date > ?", new String[] { sinceDate.toString() });
+    }
 
 	public Cursor query(String mailBox, String selection, String[] selectionArgs) {
 		return query(Uri.parse(mailBox),
@@ -102,4 +115,5 @@ public class SmsDataProvider extends ContentProvider {
 	}
 
 	private Context _context;
+    private static final String TAG = SmsDataProvider.class.getSimpleName();
 }

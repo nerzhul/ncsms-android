@@ -66,4 +66,8 @@ public class OCSMSSharedPrefs extends SharedPrefs {
 	public Boolean syncInOtherModes() {
 		return _sPrefs.getBoolean("sync_others", DefaultPrefs.syncOthers);
 	}
+
+    public Integer getSyncBulkLimit() {
+        return _sPrefs.getInt("sync_bulk_messages", -1);
+    }
 }
