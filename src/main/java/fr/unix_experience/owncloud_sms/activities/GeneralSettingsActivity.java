@@ -116,8 +116,10 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
 
 					ContentResolver.removePeriodicSync(myAccountList[i],
                             GeneralSettingsActivity._accountAuthority, b);
-					ContentResolver.addPeriodicSync(myAccountList[i],
-                            GeneralSettingsActivity._accountAuthority, b, syncFreq * 60);
+                    if (syncFreq > 0) {
+                        ContentResolver.addPeriodicSync(myAccountList[i],
+                                GeneralSettingsActivity._accountAuthority, b, syncFreq * 60);
+                    }
 				}
 
                 prefs.putLong(key, syncFreq);
