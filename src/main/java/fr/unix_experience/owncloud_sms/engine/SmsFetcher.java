@@ -39,13 +39,13 @@ public class SmsFetcher {
 	
 	public JSONArray fetchAllMessages() {
 		_jsonDataDump = new JSONArray();
-		bufferizeMailboxMessages(MailboxID.INBOX);
-		bufferizeMailboxMessages(MailboxID.SENT);
-		bufferizeMailboxMessages(MailboxID.DRAFTS);
+		bufferMailboxMessages(MailboxID.INBOX);
+		bufferMailboxMessages(MailboxID.SENT);
+		bufferMailboxMessages(MailboxID.DRAFTS);
 		return _jsonDataDump;
 	}
 	
-	private void bufferizeMailboxMessages(MailboxID mbID) {
+	private void bufferMailboxMessages(MailboxID mbID) {
 		String mbURI = mapMailboxIDToURI(mbID);
 		
 		if (_context == null || mbURI == null) {
@@ -60,16 +60,10 @@ public class SmsFetcher {
 
 		// We generate a ID list for this message box
 		String existingIDs = buildExistingMessagesString(mbID);
-		
-		Cursor c = null;
-		if (existingIDs.length() > 0) {
-			c = (new SmsDataProvider(_context)).query(mbURI, "_id NOT IN (" + existingIDs + ")");
-		}
-		else {
-			c = (new SmsDataProvider(_context)).query(mbURI);
-		}
-		
-		// Reading mailbox
+
+		Cursor c = new SmsDataProvider(_context).queryNonExistingMessages(mbURI, existingIDs);
+
+        // Reading mailbox
 		if (c != null && c.getCount() > 0) {
 			c.moveToFirst();
 			do {
@@ -78,43 +72,45 @@ public class SmsFetcher {
 				try {
 					for(int idx=0;idx<c.getColumnCount();idx++) {
 						String colName = c.getColumnName(idx);
-						
+
 						// Id column is must be an integer
-						if (colName.equals(new String("_id")) ||
-							colName.equals(new String("type"))) {
-							entry.put(colName, c.getInt(idx));
-						}
-						// Seen and read must be pseudo boolean
-						else if (colName.equals(new String("read")) ||
-								colName.equals(new String("seen"))) {
-							entry.put(colName, c.getInt(idx) > 0 ? "true" : "false");
-						}
-						else {
-							// Special case for date, we need to record last without searching
-							if (colName.equals(new String("date"))) {
-								final Long tmpDate = c.getLong(idx);
-								if (tmpDate > _lastMsgDate) {
-									_lastMsgDate = tmpDate;
-								}
-							}
-							entry.put(colName, c.getString(idx));
-						}
+                        switch (colName) {
+                            case "_id":
+                            case "type":
+                                entry.put(colName, c.getInt(idx));
+                                break;
+                            // Seen and read must be pseudo boolean
+                            case "read":
+                            case "seen":
+                                entry.put(colName, c.getInt(idx) > 0 ? "true" : "false");
+                                break;
+                            default:
+                                // Special case for date, we need to record last without searching
+                                if (colName.equals("date")) {
+                                    final Long tmpDate = c.getLong(idx);
+                                    if (tmpDate > _lastMsgDate) {
+                                        _lastMsgDate = tmpDate;
+                                    }
+                                }
+                                entry.put(colName, c.getString(idx));
+                                break;
+                        }
 					}
-					
+
 					// Mailbox ID is required by server
 					entry.put("mbox", mbID.ordinal());
-					
+
 					_jsonDataDump.put(entry);
-					
+
 				} catch (JSONException e) {
 					Log.e(TAG, "JSON Exception when reading SMS Mailbox", e);
 					c.close();
 				}
 			}
 			while(c.moveToNext());
-			
+
 			Log.d(TAG, c.getCount() + " messages read from " + mbURI);
-			
+
 			c.close();
 		}
 	}
@@ -143,21 +139,23 @@ public class SmsFetcher {
 				String colName = c.getColumnName(idx);
 				
 				// Id column is must be an integer
-				if (colName.equals(new String("_id"))) {
-					entry.put(colName, c.getInt(idx));
-				}
-				// Seen and read must be pseudo boolean
-				else if (colName.equals(new String("read")) ||
-						colName.equals(new String("seen"))) {
-					entry.put(colName, c.getInt(idx) > 0 ? "true" : "false");
-				}
-				else if (colName.equals(new String("type"))) {
-					mboxId = c.getInt(idx);
-					entry.put(colName, c.getInt(idx));
-				}
-				else {
-					entry.put(colName, c.getString(idx));
-				}
+                switch (colName) {
+                    case "_id":
+                        entry.put(colName, c.getInt(idx));
+                        break;
+                    // Seen and read must be pseudo boolean
+                    case "read":
+                    case "seen":
+                        entry.put(colName, c.getInt(idx) > 0 ? "true" : "false");
+                        break;
+                    case "type":
+                        mboxId = c.getInt(idx);
+                        entry.put(colName, c.getInt(idx));
+                        break;
+                    default:
+                        entry.put(colName, c.getString(idx));
+                        break;
+                }
 			}
 			
 			/*
@@ -179,16 +177,16 @@ public class SmsFetcher {
 	}
 	
 	// Used by ConnectivityChanged Event
-	public JSONArray bufferizeMessagesSinceDate(Long sinceDate) {
+	public JSONArray bufferMessagesSinceDate(Long sinceDate) {
 		_jsonDataDump = new JSONArray();
-		bufferizeMessagesSinceDate(MailboxID.INBOX, sinceDate);
-		bufferizeMessagesSinceDate(MailboxID.SENT, sinceDate);
-		bufferizeMessagesSinceDate(MailboxID.DRAFTS, sinceDate);
+		bufferMessagesSinceDate(MailboxID.INBOX, sinceDate);
+		bufferMessagesSinceDate(MailboxID.SENT, sinceDate);
+		bufferMessagesSinceDate(MailboxID.DRAFTS, sinceDate);
 		return _jsonDataDump;
 	}
 	
 	// Used by ConnectivityChanged Event
-	public void bufferizeMessagesSinceDate(MailboxID mbID, Long sinceDate) {
+	public void bufferMessagesSinceDate(MailboxID mbID, Long sinceDate) {
 		String mbURI = mapMailboxIDToURI(mbID);
 		
 		if (_context == null || mbURI == null) {
@@ -208,29 +206,27 @@ public class SmsFetcher {
 						String colName = c.getColumnName(idx);
 						
 						// Id column is must be an integer
-						if (colName.equals(new String("_id")) ||
-							colName.equals(new String("type"))) {
-							entry.put(colName, c.getInt(idx));
-							
-							// bufferize Id for future use
-							if (colName.equals(new String("_id"))) {
-							}
-						}
-						// Seen and read must be pseudo boolean
-						else if (colName.equals(new String("read")) ||
-								colName.equals(new String("seen"))) {
-							entry.put(colName, c.getInt(idx) > 0 ? "true" : "false");
-						}
-						else {
-							// Special case for date, we need to record last without searching
-							if (colName.equals(new String("date"))) {
-								final Long tmpDate = c.getLong(idx);
-								if (tmpDate > _lastMsgDate) {
-									_lastMsgDate = tmpDate;
-								}
-							}
-							entry.put(colName, c.getString(idx));
-						}
+                        switch (colName) {
+                            case "_id":
+                            case "type":
+                                entry.put(colName, c.getInt(idx));
+                                break;
+                            // Seen and read must be pseudo boolean
+                            case "read":
+                            case "seen":
+                                entry.put(colName, c.getInt(idx) > 0 ? "true" : "false");
+                                break;
+                            default:
+                                // Special case for date, we need to record last without searching
+                                if (colName.equals("date")) {
+                                    final Long tmpDate = c.getLong(idx);
+                                    if (tmpDate > _lastMsgDate) {
+                                        _lastMsgDate = tmpDate;
+                                    }
+                                }
+                                entry.put(colName, c.getString(idx));
+                                break;
+                        }
 					}
 					
 					// Mailbox ID is required by server
@@ -288,7 +284,7 @@ public class SmsFetcher {
 	        			sb.append(",");
 	        		}
 	        		sb.append(existingMessages.getInt(i));
-				} catch (JSONException e) {
+				} catch (JSONException ignored) {
 					
 				}
 	        }

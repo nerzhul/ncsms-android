@@ -17,14 +17,16 @@ package fr.unix_experience.owncloud_sms.broadcast_receivers;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import org.json.JSONArray;
-
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+
+import org.json.JSONArray;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.engine.ASyncSMSSync;
@@ -35,49 +37,49 @@ import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 public class ConnectivityChanged extends BroadcastReceiver implements ASyncSMSSync {
 
 	@Override
-	public void onReceive(final Context context, final Intent intent) {
+	public void onReceive(Context context, Intent intent) {
 		// No account: abort
-		final Account[] myAccountList = AccountManager.get(context).
+		Account[] myAccountList = AccountManager.get(context).
 				getAccountsByType(context.getString(R.string.account_type));
 		if (myAccountList.length == 0) {
 			return;
 		}
 
-		final ConnectivityMonitor cMon = new ConnectivityMonitor(context);
+		ConnectivityMonitor cMon = new ConnectivityMonitor(context);
 
-		final OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(context);
+		OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(context);
 
 		if (!prefs.pushOnReceive()) {
-			Log.d(TAG,"ConnectivityChanges.onReceive: pushOnReceive is disabled");
+			Log.d(ConnectivityChanged.TAG,"ConnectivityChanges.onReceive: pushOnReceive is disabled");
 			return;
 		}
 
 		// If data is available and previous dataConnectionState was false, then we need to sync
-		if (cMon.isValid() && dataConnectionAvailable == false) {
-			dataConnectionAvailable = true;
-			Log.d(TAG,"ConnectivityChanged.onReceive, data conn available");
+		if (cMon.isValid() && !ConnectivityChanged.dataConnectionAvailable) {
+            ConnectivityChanged.dataConnectionAvailable = true;
+			Log.d(ConnectivityChanged.TAG,"ConnectivityChanged.onReceive, data conn available");
 			checkMessagesAndSend(context);
 		}
 		// No data available and previous dataConnectionState was true
-		else if (dataConnectionAvailable == true && !cMon.isValid()) {
-			dataConnectionAvailable = false;
-			Log.d(TAG,"ConnectivityChanges.onReceive: data conn is off");
+		else if (ConnectivityChanged.dataConnectionAvailable && !cMon.isValid()) {
+            ConnectivityChanged.dataConnectionAvailable = false;
+			Log.d(ConnectivityChanged.TAG,"ConnectivityChanges.onReceive: data conn is off");
 		}
 	}
 
-	private void checkMessagesAndSend(final Context context) {
+	private void checkMessagesAndSend(Context context) {
 
 		// Get last message synced from preferences
-		final Long lastMessageSynced = (new OCSMSSharedPrefs(context)).getLastMessageDate();
-		Log.d(TAG,"Synced Last:" + lastMessageSynced);
+		Long lastMessageSynced = (new OCSMSSharedPrefs(context)).getLastMessageDate();
+		Log.d(ConnectivityChanged.TAG,"Synced Last:" + lastMessageSynced);
 
 		// Now fetch messages since last stored date
-		final JSONArray smsList = new SmsFetcher(context).bufferizeMessagesSinceDate(lastMessageSynced);
+		JSONArray smsList = new SmsFetcher(context).bufferMessagesSinceDate(lastMessageSynced);
 
-		final ConnectivityMonitor cMon = new ConnectivityMonitor(context);
+		AtomicReference<ConnectivityMonitor> cMon = new AtomicReference<>(new ConnectivityMonitor(context));
 
 		// Synchronize if network is valid and there are SMS
-		if (cMon.isValid() && smsList != null) {
+		if (cMon.get().isValid() && (smsList != null)) {
 			new SyncTask(context, smsList).execute();
 		}
 	}

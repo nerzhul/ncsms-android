@@ -50,6 +50,14 @@ public class SmsDataProvider extends ContentProvider {
 				);
 	}
 
+	public Cursor queryNonExistingMessages(final String mailBox, final String existingIds) {
+		if (existingIds.length() > 0) {
+			return query(mailBox, "_id NOT IN (" + existingIds + ")");
+		}
+
+		return query(mailBox);
+	}
+
 	public Cursor query(final String mailBox, final String selection, final String[] selectionArgs) {
 		return query(Uri.parse(mailBox),
 				new String[] { "read", "date", "address", "seen", "body", "_id", "type", },

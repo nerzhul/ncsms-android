@@ -17,7 +17,6 @@ package fr.unix_experience.owncloud_sms.broadcast_receivers;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import fr.unix_experience.owncloud_sms.observers.SmsObserver;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -25,15 +24,17 @@ import android.net.Uri;
 import android.os.Handler;
 import android.util.Log;
 
+import fr.unix_experience.owncloud_sms.observers.SmsObserver;
+
 public class IncomingSms extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		if (_mboxObserver == null) {
-			Log.d(TAG,"_mboxObserver == null");
-			_mboxObserver = new SmsObserver(new Handler(), context);
+		if (IncomingSms._mboxObserver == null) {
+			Log.d(IncomingSms.TAG,"_mboxObserver == null");
+            IncomingSms._mboxObserver = new SmsObserver(new Handler(), context);
 			context.getContentResolver().
-	    		registerContentObserver(Uri.parse("content://sms"), true, _mboxObserver);  
+	    		registerContentObserver(Uri.parse("content://sms"), true, IncomingSms._mboxObserver);
 		}
 	}
 	

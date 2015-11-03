@@ -1,36 +1,26 @@
 package fr.unix_experience.owncloud_sms.activities.remote_account;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Vector;
-
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.Activity;
-import android.app.ListActivity;
-import android.content.ContentResolver;
 import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.ContactsContract;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import java.util.ArrayList;
+import java.util.Vector;
 
-import fr.nrz.androidlib.adapters.AndroidAccountAdapter;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.adapters.ContactListAdapter;
 import fr.unix_experience.owncloud_sms.engine.ASyncContactLoad;
-import fr.unix_experience.owncloud_sms.engine.OCSMSOwnCloudClient;
 
 public class ContactListActivity extends Activity implements ASyncContactLoad {
 
@@ -55,7 +45,7 @@ public class ContactListActivity extends Activity implements ASyncContactLoad {
 				_accountMgr.getAccountsByType(getString(R.string.account_type));
 		
 		// Init view
-		objects = new ArrayList<String>();
+		objects = new ArrayList<>();
 		setContentView(R.layout.restore_activity_contactlist);
 
 		_layout = (SwipeRefreshLayout) findViewById(R.id.contactlist_swipe_container);
