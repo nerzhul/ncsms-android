@@ -23,7 +23,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
@@ -55,9 +54,6 @@ public class SmsDataProvider extends ContentProvider {
 	}
 
 	public Cursor queryNonExistingMessages(String mailBox, String existingIds) {
-        OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
-        Integer bulkLimit = prefs.getSyncBulkLimit();
-        Log.d(TAG, "Bulk limit is " + bulkLimit.toString());
 		if (!existingIds.isEmpty()) {
             return query(mailBox, "_id NOT IN (" + existingIds + ")");
 		}
@@ -68,7 +64,11 @@ public class SmsDataProvider extends ContentProvider {
     public Cursor queryMessagesSinceDate(String mailBox, Long sinceDate) {
         OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
         Integer bulkLimit = prefs.getSyncBulkLimit();
-        Log.d(TAG, "Bulk limit is " + bulkLimit.toString());
+        String bulkStr = "";
+        if (bulkLimit > 0) {
+            bulkStr = "LIMIT " + bulkLimit.toString();
+        }
+
         return query(mailBox, "date > ?", new String[] { sinceDate.toString() });
     }
 
@@ -82,6 +82,14 @@ public class SmsDataProvider extends ContentProvider {
 	@Override
 	public Cursor query(@NonNull Uri uri, String[] projection, String selection,
 			String[] selectionArgs, String sortOrder) {
+        OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
+        Integer bulkLimit = prefs.getSyncBulkLimit();
+        if (bulkLimit > 0) {
+            if (sortOrder == null)
+                sortOrder = "_id ";
+            sortOrder += " LIMIT " + bulkLimit.toString();
+        }
+
 		if ((_context != null) && (_context.getContentResolver() != null)) {
 			return _context.getContentResolver().query(uri, projection, selection, selectionArgs, sortOrder);
 		}
