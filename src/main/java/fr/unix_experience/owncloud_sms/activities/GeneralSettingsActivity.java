@@ -57,7 +57,7 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
 
 		// Bind our string preferences
         NrzSettingsActivity._stringPrefs.add(new BindObjectPref("sync_frequency", "15"));
-        NrzSettingsActivity._intPrefs.add(new BindObjectPref("sync_bulk_messages", -1));
+        NrzSettingsActivity._stringPrefs.add(new BindObjectPref("sync_bulk_messages", "-1"));
 
 		// Must be at the end, after preference bind
 		super.onPostCreate(savedInstanceState);
