@@ -44,9 +44,9 @@ public class SmsSyncService extends Service {
          * Set the sync adapter as syncable
          * Disallow parallel syncs
          */
-        synchronized (sSyncAdapterLock) {
-            if (_adapter == null) {
-            	_adapter = new SmsSyncAdapter(getApplicationContext(), true);
+        synchronized (SmsSyncService.sSyncAdapterLock) {
+            if (SmsSyncService._adapter == null) {
+                SmsSyncService._adapter = new SmsSyncAdapter(getApplicationContext(), true);
             }
         }
     }
@@ -63,6 +63,6 @@ public class SmsSyncService extends Service {
          * in the base class code when the SyncAdapter
          * constructors call super()
          */
-        return _adapter.getSyncAdapterBinder();
+        return SmsSyncService._adapter.getSyncAdapterBinder();
     }
 }

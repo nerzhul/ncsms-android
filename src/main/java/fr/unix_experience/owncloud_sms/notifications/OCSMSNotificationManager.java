@@ -24,7 +24,7 @@ import fr.unix_experience.owncloud_sms.enums.OCSMSNotificationType;
 
 public class OCSMSNotificationManager {
 
-	public OCSMSNotificationManager(final Context context) {
+	public OCSMSNotificationManager(Context context) {
 		_context = context;
 		_notification = new NrzNotification(_context, R.drawable.ic_stat_ocsms);
 	}
@@ -40,7 +40,7 @@ public class OCSMSNotificationManager {
 		_notification.cancelNotify(OCSMSNotificationType.SYNC.ordinal());
 	}
 
-	public void setSyncErrorMsg(final String errMsg) {
+	public void setSyncErrorMsg(String errMsg) {
 		createNotificationIfPossible(OCSMSNotificationType.SYNC_FAILED,
 				_context.getString(R.string.sync_title),
 				_context.getString(R.string.fatal_error) + "\n" + errMsg
@@ -51,13 +51,13 @@ public class OCSMSNotificationManager {
 		_notification.cancelNotify(OCSMSNotificationType.SYNC_FAILED.ordinal());
 	}
 
-	public void setDebugMsg(final String errMsg) {
+	public void setDebugMsg(String errMsg) {
 		createNotificationIfPossible(OCSMSNotificationType.DEBUG,
 				"DEBUG", errMsg
 				);
 	}
 
-	private void createNotificationIfPossible(final OCSMSNotificationType nType, final String nTitle, final String nMsg) {
+	private void createNotificationIfPossible(OCSMSNotificationType nType, String nTitle, String nMsg) {
 		_notification.createNotify(nType.ordinal(), nTitle, nMsg);
 	}
 

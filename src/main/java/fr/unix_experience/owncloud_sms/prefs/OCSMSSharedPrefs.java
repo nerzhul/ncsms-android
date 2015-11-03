@@ -25,14 +25,14 @@ import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
 
 public class OCSMSSharedPrefs extends SharedPrefs {
 
-	public OCSMSSharedPrefs(final Context context) {
+	public OCSMSSharedPrefs(Context context) {
 		super(context, R.string.shared_preference_file);
 	}
 
-	public void setLastMessageDate(final Long msgDate) {
-		final SharedPreferences.Editor editor = _sPrefs.edit();
+	public void setLastMessageDate(Long msgDate) {
+		SharedPreferences.Editor editor = _sPrefs.edit();
 		editor.putLong(_context.getString(R.string.pref_lastmsgdate), msgDate);
-		editor.commit();
+		editor.apply();
 	}
 
 	public Long getLastMessageDate() {

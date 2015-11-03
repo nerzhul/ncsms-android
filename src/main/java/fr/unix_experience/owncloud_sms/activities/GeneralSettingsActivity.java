@@ -17,8 +17,6 @@ package fr.unix_experience.owncloud_sms.activities;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import java.util.List;
-
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.ContentResolver;
@@ -26,6 +24,9 @@ import android.content.PeriodicSync;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.util.Log;
+
+import java.util.List;
+
 import fr.nrz.androidlib.activities.NrzSettingsActivity;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
@@ -39,87 +40,81 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
 	private static String _accountType;
 
 	@Override
-	protected void onPostCreate(final Bundle savedInstanceState) {
-		_accountMgr = AccountManager.get(getBaseContext());
-		_accountAuthority = getString(R.string.account_authority);
-		_accountType = getString(R.string.account_type);
-		_prefsRessourceFile = R.xml.pref_data_sync;
+	protected void onPostCreate(Bundle savedInstanceState) {
+        GeneralSettingsActivity._accountMgr = AccountManager.get(getBaseContext());
+        GeneralSettingsActivity._accountAuthority = getString(R.string.account_authority);
+        GeneralSettingsActivity._accountType = getString(R.string.account_type);
+        NrzSettingsActivity._prefsRessourceFile = R.xml.pref_data_sync;
 
 		// Bind our boolean preferences
-		_boolPrefs.add(new BindObjectPref("push_on_receive", DefaultPrefs.pushOnReceive));
-		_boolPrefs.add(new BindObjectPref("sync_wifi", DefaultPrefs.syncWifi));
-		_boolPrefs.add(new BindObjectPref("sync_4g", DefaultPrefs.sync4G));
-		_boolPrefs.add(new BindObjectPref("sync_3g", DefaultPrefs.sync3G));
-		_boolPrefs.add(new BindObjectPref("sync_gprs", DefaultPrefs.syncGPRS));
-		_boolPrefs.add(new BindObjectPref("sync_2g", DefaultPrefs.sync2G));
-		_boolPrefs.add(new BindObjectPref("sync_others", DefaultPrefs.syncOthers));
+        NrzSettingsActivity._boolPrefs.add(new BindObjectPref("push_on_receive", DefaultPrefs.pushOnReceive));
+        NrzSettingsActivity._boolPrefs.add(new BindObjectPref("sync_wifi", DefaultPrefs.syncWifi));
+        NrzSettingsActivity._boolPrefs.add(new BindObjectPref("sync_4g", DefaultPrefs.sync4G));
+        NrzSettingsActivity._boolPrefs.add(new BindObjectPref("sync_3g", DefaultPrefs.sync3G));
+        NrzSettingsActivity._boolPrefs.add(new BindObjectPref("sync_gprs", DefaultPrefs.syncGPRS));
+        NrzSettingsActivity._boolPrefs.add(new BindObjectPref("sync_2g", DefaultPrefs.sync2G));
+        NrzSettingsActivity._boolPrefs.add(new BindObjectPref("sync_others", DefaultPrefs.syncOthers));
 
 		// Bind our string preferences
-		_stringPrefs.add(new BindObjectPref("sync_frequency", ""));
+        NrzSettingsActivity._stringPrefs.add(new BindObjectPref("sync_frequency", ""));
 
 		// Must be at the end, after preference bind
 		super.onPostCreate(savedInstanceState);
 	}
 
-	protected static void handleCheckboxPreference(final String key, final Boolean value) {
+	protected static void handleCheckboxPreference(String key, Boolean value) {
 		// Network types allowed for sync
-		if(key.equals(new String("push_on_receive")) ||
-				key.equals(new String("sync_wifi")) || key.equals("sync_2g") ||
-				key.equals(new String("sync_3g")) || key.equals("sync_gprs") ||
-				key.equals("sync_4g") || key.equals("sync_others")) {
-			final OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
-			Log.d(TAG,"GeneralSettingsActivity.handleCheckboxPreference: set " + key + " to "
+		if("push_on_receive".equals(key) ||
+                "sync_wifi".equals(key) || "sync_2g".equals(key) ||
+                "sync_3g".equals(key) || "sync_gprs".equals(key) ||
+                "sync_4g".equals(key) || "sync_others".equals(key)) {
+			OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(NrzSettingsActivity._context);
+			Log.d(GeneralSettingsActivity.TAG,"GeneralSettingsActivity.handleCheckboxPreference: set " + key + " to "
 					+ value.toString());
 			prefs.putBoolean(key, value);
 		}
-		else {
-			// Unknown option
-		}
 	}
 
-	protected static void handleListPreference(final String key, final String value,
-			final ListPreference preference) {
+	protected static void handleListPreference(String key, String value,
+			ListPreference preference) {
 		// For list preferences, look up the correct display value in
 		// the preference's 'entries' list.
-		final int index = preference.findIndexOfValue(value);
+		int index = preference.findIndexOfValue(value);
 
 		// Set the summary to reflect the new value.
 		preference
-		.setSummary(index >= 0 ? preference.getEntries()[index]
-				: null);
+		.setSummary((index >= 0) ? preference.getEntries()[index]
+                : null);
 
 		// Handle sync frequency change
-		if (key.equals("sync_frequency")) {
-			final Account[] myAccountList = _accountMgr.getAccountsByType(_accountType);
-			final long syncFreq = Long.parseLong(value);
+		if ("sync_frequency".equals(key)) {
+			Account[] myAccountList = GeneralSettingsActivity._accountMgr.getAccountsByType(GeneralSettingsActivity._accountType);
+			long syncFreq = Long.parseLong(value);
 
 			// Get ownCloud SMS account list
 			for (int i = 0; i < myAccountList.length; i++) {
 				// And get all authorities for this account
-				final List<PeriodicSync> syncList = ContentResolver.getPeriodicSyncs(myAccountList[i], _accountAuthority);
+				List<PeriodicSync> syncList = ContentResolver.getPeriodicSyncs(myAccountList[i], GeneralSettingsActivity._accountAuthority);
 
 				boolean foundSameSyncCycle = false;
 				for (int j = 0; j < syncList.size(); j++) {
-					final PeriodicSync ps = syncList.get(i);
+					PeriodicSync ps = syncList.get(i);
 
-					if (ps.period == syncFreq && ps.extras.getInt("synctype") == 1) {
+					if ((ps.period == syncFreq) && (ps.extras.getInt("synctype") == 1)) {
 						foundSameSyncCycle = true;
 					}
 				}
 
-				if (foundSameSyncCycle == false) {
-					final Bundle b = new Bundle();
+				if (!foundSameSyncCycle) {
+					Bundle b = new Bundle();
 					b.putInt("synctype", 1);
 
 					ContentResolver.removePeriodicSync(myAccountList[i],
-							_accountAuthority, b);
+                            GeneralSettingsActivity._accountAuthority, b);
 					ContentResolver.addPeriodicSync(myAccountList[i],
-							_accountAuthority, b, syncFreq * 60);
+                            GeneralSettingsActivity._accountAuthority, b, syncFreq * 60);
 				}
 			}
-		}
-		else {
-			// Unhandled option
 		}
 	}
 }

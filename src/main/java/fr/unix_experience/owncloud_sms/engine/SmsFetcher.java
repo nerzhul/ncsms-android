@@ -17,15 +17,16 @@ package fr.unix_experience.owncloud_sms.engine;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import android.content.Context;
+import android.database.Cursor;
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
 import fr.unix_experience.owncloud_sms.providers.SmsDataProvider;
-import android.content.Context;
-import android.database.Cursor;
-import android.util.Log;
 
 public class SmsFetcher {
 	public SmsFetcher(Context ct) {
@@ -48,13 +49,13 @@ public class SmsFetcher {
 	private void bufferMailboxMessages(MailboxID mbID) {
 		String mbURI = mapMailboxIDToURI(mbID);
 		
-		if (_context == null || mbURI == null) {
+		if ((_context == null) || (mbURI == null)) {
 			return;
 		}
 		
-		if (mbID != MailboxID.INBOX && mbID != MailboxID.SENT &&
-			mbID != MailboxID.DRAFTS) {
-			Log.e(TAG,"Unhandled MailboxID " + mbID.ordinal());
+		if ((mbID != MailboxID.INBOX) && (mbID != MailboxID.SENT) &&
+                (mbID != MailboxID.DRAFTS)) {
+			Log.e(SmsFetcher.TAG,"Unhandled MailboxID " + mbID.ordinal());
 			return;
 		}
 
@@ -64,7 +65,7 @@ public class SmsFetcher {
 		Cursor c = new SmsDataProvider(_context).queryNonExistingMessages(mbURI, existingIDs);
 
         // Reading mailbox
-		if (c != null && c.getCount() > 0) {
+		if ((c != null) && (c.getCount() > 0)) {
 			c.moveToFirst();
 			do {
 				JSONObject entry = new JSONObject();
@@ -82,12 +83,12 @@ public class SmsFetcher {
                             // Seen and read must be pseudo boolean
                             case "read":
                             case "seen":
-                                entry.put(colName, c.getInt(idx) > 0 ? "true" : "false");
+                                entry.put(colName, (c.getInt(idx) > 0) ? "true" : "false");
                                 break;
                             default:
                                 // Special case for date, we need to record last without searching
-                                if (colName.equals("date")) {
-                                    final Long tmpDate = c.getLong(idx);
+                                if ("date".equals(colName)) {
+                                    Long tmpDate = c.getLong(idx);
                                     if (tmpDate > _lastMsgDate) {
                                         _lastMsgDate = tmpDate;
                                     }
@@ -103,13 +104,13 @@ public class SmsFetcher {
 					_jsonDataDump.put(entry);
 
 				} catch (JSONException e) {
-					Log.e(TAG, "JSON Exception when reading SMS Mailbox", e);
+					Log.e(SmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
 					c.close();
 				}
 			}
 			while(c.moveToNext());
 
-			Log.d(TAG, c.getCount() + " messages read from " + mbURI);
+			Log.d(SmsFetcher.TAG, c.getCount() + " messages read from " + mbURI);
 
 			c.close();
 		}
@@ -119,7 +120,7 @@ public class SmsFetcher {
 	public JSONArray getLastMessage(MailboxID mbID) {
 		String mbURI = mapMailboxIDToURI(mbID);
 		
-		if (_context == null || mbURI == null) {
+		if ((_context == null) || (mbURI == null)) {
 			return null;
 		}
 		
@@ -146,7 +147,7 @@ public class SmsFetcher {
                     // Seen and read must be pseudo boolean
                     case "read":
                     case "seen":
-                        entry.put(colName, c.getInt(idx) > 0 ? "true" : "false");
+                        entry.put(colName, (c.getInt(idx) > 0) ? "true" : "false");
                         break;
                     case "type":
                         mboxId = c.getInt(idx);
@@ -167,7 +168,7 @@ public class SmsFetcher {
 			
 			results.put(entry);
 		} catch (JSONException e) {
-			Log.e(TAG, "JSON Exception when reading SMS Mailbox", e);
+			Log.e(SmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
 			c.close();
 		}
 		
@@ -189,14 +190,14 @@ public class SmsFetcher {
 	public void bufferMessagesSinceDate(MailboxID mbID, Long sinceDate) {
 		String mbURI = mapMailboxIDToURI(mbID);
 		
-		if (_context == null || mbURI == null) {
+		if ((_context == null) || (mbURI == null)) {
 			return;
 		}
 		
 		Cursor c = new SmsDataProvider(_context).query(mbURI, "date > ?", new String[] { sinceDate.toString() });
 		
 		// Reading mailbox
-		if (c != null && c.getCount() > 0) {
+		if ((c != null) && (c.getCount() > 0)) {
 			c.moveToFirst();
 			do {
 				JSONObject entry = new JSONObject();
@@ -214,12 +215,12 @@ public class SmsFetcher {
                             // Seen and read must be pseudo boolean
                             case "read":
                             case "seen":
-                                entry.put(colName, c.getInt(idx) > 0 ? "true" : "false");
+                                entry.put(colName, (c.getInt(idx) > 0) ? "true" : "false");
                                 break;
                             default:
                                 // Special case for date, we need to record last without searching
-                                if (colName.equals("date")) {
-                                    final Long tmpDate = c.getLong(idx);
+                                if ("date".equals(colName)) {
+                                    Long tmpDate = c.getLong(idx);
                                     if (tmpDate > _lastMsgDate) {
                                         _lastMsgDate = tmpDate;
                                     }
@@ -235,13 +236,13 @@ public class SmsFetcher {
 					_jsonDataDump.put(entry);
 					
 				} catch (JSONException e) {
-					Log.e(TAG, "JSON Exception when reading SMS Mailbox", e);
+					Log.e(SmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
 					c.close();
 				}
 			}
 			while(c.moveToNext());
 			
-			Log.d(TAG, c.getCount() + " messages read from " + mbURI);
+			Log.d(SmsFetcher.TAG, c.getCount() + " messages read from " + mbURI);
 			
 			c.close();
 		}
@@ -309,7 +310,7 @@ public class SmsFetcher {
 		return _lastMsgDate;
 	}
 	
-	private Context _context;
+	private final Context _context;
 	private JSONArray _jsonDataDump;
 	private JSONArray _existingInboxMessages;
 	private JSONArray _existingSentMessages;

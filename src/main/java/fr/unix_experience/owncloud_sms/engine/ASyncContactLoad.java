@@ -28,20 +28,20 @@ public interface ASyncContactLoad {
 		private static AccountManager _accountMgr = null;
 		private static Account _account;
 		private final Context _context;
-		private ContactListAdapter _adapter;
-		private ArrayList<String> _objects;
-		private SwipeRefreshLayout _layout;
-		private ProgressBar _pg;
-		private Spinner _contactSpinner;
+		private final ContactListAdapter _adapter;
+		private final ArrayList<String> _objects;
+		private final SwipeRefreshLayout _layout;
+		private final ProgressBar _pg;
+		private final Spinner _contactSpinner;
 
-		public ContactLoadTask(final Account account, final Context context,
+		public ContactLoadTask(Account account, Context context,
 				ContactListAdapter adapter, ArrayList<String> objects, SwipeRefreshLayout layout,
 				ProgressBar pg, Spinner sp) {
-			if (_accountMgr == null) {
-				_accountMgr = AccountManager.get(context);
+			if (ContactLoadTask._accountMgr == null) {
+                ContactLoadTask._accountMgr = AccountManager.get(context);
 			}
 
-			_account = account;
+            ContactLoadTask._account = account;
 			_context = context;
 			_adapter = adapter;
 			_objects = objects;
@@ -50,19 +50,19 @@ public interface ASyncContactLoad {
 			_contactSpinner = sp;
 		}
 		@Override
-		protected Boolean doInBackground(final Void... params) {
+		protected Boolean doInBackground(Void... params) {
 			// Create client
-			final String ocURI = _accountMgr.getUserData(_account, "ocURI");
+			String ocURI = ContactLoadTask._accountMgr.getUserData(ContactLoadTask._account, "ocURI");
 			if (ocURI == null) {
 				// @TODO: Handle the problem
 				return false;
 			}
 
-			final Uri serverURI = Uri.parse(ocURI);
+			Uri serverURI = Uri.parse(ocURI);
 
-			final OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(_context,
-					serverURI, _accountMgr.getUserData(_account, "ocLogin"),
-					_accountMgr.getPassword(_account));
+			OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(_context,
+					serverURI, ContactLoadTask._accountMgr.getUserData(ContactLoadTask._account, "ocLogin"),
+                    ContactLoadTask._accountMgr.getPassword(ContactLoadTask._account));
 
 			// Remove all objects, due to refreshing handling
 			_objects.clear();
@@ -84,8 +84,8 @@ public interface ASyncContactLoad {
 				ContentResolver cr = _context.getContentResolver();
 				Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,
 						null, null, null, null);
-				if (cur.getCount() > 0) {
-					while (cur.moveToNext()) {
+				if (((cur != null) ? cur.getCount() : 0) > 0) {
+					while ((cur != null) && cur.moveToNext()) {
 						String id = cur.getString(cur.getColumnIndex(ContactsContract.Contacts._ID));
 						String name = cur.getString(cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
 						if (Integer.parseInt(cur.getString(
@@ -97,7 +97,7 @@ public interface ASyncContactLoad {
 									null,
 									ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?",
 									new String[]{id}, null);
-							while (pCur.moveToNext()) {
+							while ((pCur != null) && pCur.moveToNext()) {
 								String phoneNo = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
 										.replaceAll(" ", "");
 								if (serverPhoneList.contains(phoneNo)) {
@@ -107,13 +107,17 @@ public interface ASyncContactLoad {
 									serverPhoneList.remove(phoneNo);
 								}
 							}
-							pCur.close();
-						}
+                            if (pCur != null) {
+                                pCur.close();
+                            }
+                        }
 					}
 				}
-				cur.close();
+                if (cur != null) {
+                    cur.close();
+                }
 
-				for (String phone : serverPhoneList) {
+                for (String phone : serverPhoneList) {
 					_objects.add(phone);
 				}
 
@@ -122,14 +126,14 @@ public interface ASyncContactLoad {
 			} catch (JSONException e) {
 				_objects.add(_context.getString(R.string.err_fetch_phonelist));
 				return false;
-			} catch (final OCSyncException e) {
+			} catch (OCSyncException e) {
 				_objects.add(_context.getString(e.getErrorId()));
 				return false;
 			}
 			return true;
 		}
 
-		protected void onPostExecute(final Boolean success) {
+		protected void onPostExecute(Boolean success) {
 			_adapter.notifyDataSetChanged();
 			_layout.setRefreshing(false);
 			if (_pg != null) {
@@ -142,5 +146,5 @@ public interface ASyncContactLoad {
 		}
 	}
 
-	static final String TAG = ASyncContactLoad.class.getSimpleName();
+	String TAG = ASyncContactLoad.class.getSimpleName();
 }

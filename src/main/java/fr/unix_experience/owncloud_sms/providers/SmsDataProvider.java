@@ -22,11 +22,12 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.support.annotation.NonNull;
 
 public class SmsDataProvider extends ContentProvider {
 	public SmsDataProvider () {}
 
-	public SmsDataProvider (final Context ct) {
+	public SmsDataProvider (Context ct) {
 		super();
 		_context = ct;
 	}
@@ -36,29 +37,29 @@ public class SmsDataProvider extends ContentProvider {
 		return false;
 	}
 
-	public Cursor query(final String mailBox) {
+	public Cursor query(String mailBox) {
 		return query(Uri.parse(mailBox),
 				new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
 				null, null, null
 				);
 	}
 
-	public Cursor query(final String mailBox, final String selection) {
+	public Cursor query(String mailBox, String selection) {
 		return query(Uri.parse(mailBox),
 				new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
 				selection, null, null
 				);
 	}
 
-	public Cursor queryNonExistingMessages(final String mailBox, final String existingIds) {
-		if (existingIds.length() > 0) {
+	public Cursor queryNonExistingMessages(String mailBox, String existingIds) {
+		if (!existingIds.isEmpty()) {
 			return query(mailBox, "_id NOT IN (" + existingIds + ")");
 		}
 
 		return query(mailBox);
 	}
 
-	public Cursor query(final String mailBox, final String selection, final String[] selectionArgs) {
+	public Cursor query(String mailBox, String selection, String[] selectionArgs) {
 		return query(Uri.parse(mailBox),
 				new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
 				selection, selectionArgs, null
@@ -66,9 +67,9 @@ public class SmsDataProvider extends ContentProvider {
 	}
 
 	@Override
-	public Cursor query(final Uri uri, final String[] projection, final String selection,
-			final String[] selectionArgs, final String sortOrder) {
-		if (_context != null && _context.getContentResolver() != null) {
+	public Cursor query(@NonNull Uri uri, String[] projection, String selection,
+			String[] selectionArgs, String sortOrder) {
+		if ((_context != null) && (_context.getContentResolver() != null)) {
 			return _context.getContentResolver().query(uri, projection, selection, selectionArgs, sortOrder);
 		}
 
@@ -76,26 +77,26 @@ public class SmsDataProvider extends ContentProvider {
 	}
 
 	@Override
-	public String getType(final Uri uri) {
+	public String getType(@NonNull Uri uri) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Uri insert(final Uri uri, final ContentValues values) {
+	public Uri insert(@NonNull Uri uri, ContentValues values) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public int delete(final Uri uri, final String selection, final String[] selectionArgs) {
+	public int delete(@NonNull Uri uri, String selection, String[] selectionArgs) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int update(final Uri uri, final ContentValues values, final String selection,
-			final String[] selectionArgs) {
+	public int update(@NonNull Uri uri, ContentValues values, String selection,
+			String[] selectionArgs) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

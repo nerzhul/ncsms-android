@@ -83,7 +83,7 @@ public class LoginActivity extends Activity {
 					@Override
 					public boolean onEditorAction(TextView textView, int id,
 							KeyEvent keyEvent) {
-						if (id == R.id.oc_login || id == EditorInfo.IME_NULL) {
+						if ((id == R.id.oc_login) || (id == EditorInfo.IME_NULL)) {
 							attemptLogin();
 							return true;
 						}
@@ -161,12 +161,14 @@ public class LoginActivity extends Activity {
 		if (cancel) {
 			// There was an error; don't attempt login and focus the first
 			// form field with an error.
-			focusView.requestFocus();
-		} else {
+            if (focusView != null) {
+                focusView.requestFocus();
+            }
+        } else {
 			// Show a progress spinner, and kick off a background task to
 			// perform the user login attempt.
 			showProgress(true);
-			String serverURL = new String(protocol + serverAddr);
+			String serverURL = protocol + serverAddr;
 			mAuthTask = new UserLoginTask(serverURL, login, password);
 			mAuthTask.execute((Void) null);
 		}
@@ -254,12 +256,12 @@ public class LoginActivity extends Activity {
 		}
 
 		@Override
-		protected void onPostExecute(final Boolean success) {
+		protected void onPostExecute(Boolean success) {
 			mAuthTask = null;
 			showProgress(false);
 
 			if (success) {
-				String accountType = getIntent().getStringExtra(PARAM_AUTHTOKEN_TYPE);
+				String accountType = getIntent().getStringExtra(UserLoginTask.PARAM_AUTHTOKEN_TYPE);
 				if (accountType == null) {  
 		            accountType = getString(R.string.account_type);  
 		        }
@@ -268,7 +270,7 @@ public class LoginActivity extends Activity {
 				String accountLabel = _login + "@" + _serverURI.getHost();
 				
 				// We create the account
-				final Account account = new Account(accountLabel, accountType);
+				Account account = new Account(accountLabel, accountType);
 				Bundle accountBundle = new Bundle();
 				accountBundle.putString("ocLogin", _login);
 				accountBundle.putString("ocURI", _serverURI.toString());
@@ -293,7 +295,9 @@ public class LoginActivity extends Activity {
 				getApplicationContext().startActivity(settingsIntent);
 			} else {
 				switch (_returnCode) {
-					case INVALID_ADDR:
+                    case OK:
+                        break;
+                    case INVALID_ADDR:
 						_serverView.setError(getString(R.string.error_invalid_server_address));
 						_serverView.requestFocus();
 						break;
@@ -331,7 +335,6 @@ public class LoginActivity extends Activity {
 		private final String _password;
 		private LoginReturnCode _returnCode;
 		
-		public static final String PARAM_AUTHTOKEN_TYPE = "auth.token";  
-	    public static final String PARAM_CREATE = "create"; 
-	}
+		public static final String PARAM_AUTHTOKEN_TYPE = "auth.token";
+    }
 }

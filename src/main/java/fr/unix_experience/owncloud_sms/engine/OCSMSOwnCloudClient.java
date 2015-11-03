@@ -17,9 +17,13 @@ package fr.unix_experience.owncloud_sms.engine;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.ConnectException;
+import android.content.Context;
+import android.net.Uri;
+import android.util.Log;
+
+import com.owncloud.android.lib.common.OwnCloudClient;
+import com.owncloud.android.lib.common.OwnCloudClientFactory;
+import com.owncloud.android.lib.common.OwnCloudCredentialsFactory;
 
 import org.apache.commons.httpclient.HttpException;
 import org.apache.commons.httpclient.HttpMethod;
@@ -31,13 +35,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.content.Context;
-import android.net.Uri;
-import android.util.Log;
-
-import com.owncloud.android.lib.common.OwnCloudClient;
-import com.owncloud.android.lib.common.OwnCloudClientFactory;
-import com.owncloud.android.lib.common.OwnCloudCredentialsFactory;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.ConnectException;
 
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.enums.OCSyncErrorType;
@@ -47,7 +47,7 @@ import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 @SuppressWarnings("deprecation")
 public class OCSMSOwnCloudClient {
 
-	public OCSMSOwnCloudClient(final Context context, final Uri serverURI, final String accountName, final String accountPassword) {
+	public OCSMSOwnCloudClient(Context context, Uri serverURI, String accountName, String accountPassword) {
 		_context = context;
 
 		_ocClient = OwnCloudClientFactory.createOwnCloudClient(
@@ -62,8 +62,8 @@ public class OCSMSOwnCloudClient {
 	}
 
 	public Integer getServerAPIVersion() throws OCSyncException {
-		final GetMethod get = createGetVersionRequest();
-		final JSONObject obj = doHttpRequest(get, true);
+		GetMethod get = createGetVersionRequest();
+		JSONObject obj = doHttpRequest(get, true);
 		if (obj == null) {
 			// Return default version
 			return 1;
@@ -72,8 +72,8 @@ public class OCSMSOwnCloudClient {
 		try {
 			_serverAPIVersion = obj.getInt("version");
 		}
-		catch (final JSONException e) {
-			Log.e(TAG, "No version received from server, assuming version 1", e);
+		catch (JSONException e) {
+			Log.e(OCSMSOwnCloudClient.TAG, "No version received from server, assuming version 1", e);
 			_serverAPIVersion = 1;
 		}
 
@@ -81,21 +81,21 @@ public class OCSMSOwnCloudClient {
 	}
 
 	public JSONArray getServerPhoneNumbers() throws OCSyncException {
-		final GetMethod get = createGetPhoneListRequest();
-		final JSONObject obj = doHttpRequest(get, true);
+		GetMethod get = createGetPhoneListRequest();
+		JSONObject obj = doHttpRequest(get, true);
 		if (obj == null) {
 			return null;
 		}
 
 		try {
 			return obj.getJSONArray("phoneList");
-		} catch (final JSONException e) {
-			Log.e(TAG, "No phonelist received from server, empty it", e);
+		} catch (JSONException e) {
+			Log.e(OCSMSOwnCloudClient.TAG, "No phonelist received from server, empty it", e);
 			return null;
 		}
 	}
 
-	public void doPushRequest(final JSONArray smsList) throws OCSyncException {
+	public void doPushRequest(JSONArray smsList) throws OCSyncException {
 		/**
 		 * If we need other API push, set it here
 		 */
@@ -110,8 +110,8 @@ public class OCSMSOwnCloudClient {
 		Long lastMsgDate = (long) 0;
 
 		if (smsList == null) {
-			final GetMethod get = createGetSmsIdListRequest();
-			final JSONObject smsGetObj = doHttpRequest(get);
+			GetMethod get = createGetSmsIdListRequest();
+			JSONObject smsGetObj = doHttpRequest(get);
 			if (smsGetObj == null) {
 				return;
 			}
@@ -120,34 +120,34 @@ public class OCSMSOwnCloudClient {
 			JSONArray inboxSmsList = null, sentSmsList = null, draftsSmsList = null;
 			try {
 				smsBoxes = smsGetObj.getJSONObject("smslist");
-			} catch (final JSONException e) {
+			} catch (JSONException e) {
 				try {
 					smsGetObj.getJSONArray("smslist");
-				} catch (final JSONException e2) {
-					Log.e(TAG, "Invalid datas received from server (doPushRequest, get SMS list)", e);
+				} catch (JSONException e2) {
+					Log.e(OCSMSOwnCloudClient.TAG, "Invalid datas received from server (doPushRequest, get SMS list)", e);
 					throw new OCSyncException(R.string.err_sync_get_smslist, OCSyncErrorType.PARSE);
 				}
 			}
 
 			try {
 				inboxSmsList = smsBoxes.getJSONArray("inbox");
-			} catch (final JSONException e) {
-				Log.d(TAG, "No inbox Sms received from server (doPushRequest, get SMS list)");
+			} catch (JSONException e) {
+				Log.d(OCSMSOwnCloudClient.TAG, "No inbox Sms received from server (doPushRequest, get SMS list)");
 			}
 
 			try {
 				sentSmsList = smsBoxes.getJSONArray("sent");
-			} catch (final JSONException e) {
-				Log.d(TAG, "No sent Sms received from server (doPushRequest, get SMS list)");
+			} catch (JSONException e) {
+				Log.d(OCSMSOwnCloudClient.TAG, "No sent Sms received from server (doPushRequest, get SMS list)");
 			}
 
 			try {
 				draftsSmsList = smsBoxes.getJSONArray("drafts");
-			} catch (final JSONException e) {
-				Log.d(TAG, "No drafts Sms received from server (doPushRequest, get SMS list)");
+			} catch (JSONException e) {
+				Log.d(OCSMSOwnCloudClient.TAG, "No drafts Sms received from server (doPushRequest, get SMS list)");
 			}
 
-			final SmsFetcher fetcher = new SmsFetcher(_context);
+			SmsFetcher fetcher = new SmsFetcher(_context);
 			fetcher.setExistingInboxMessages(inboxSmsList);
 			fetcher.setExistingSentMessages(sentSmsList);
 			fetcher.setExistingDraftsMessages(draftsSmsList);
@@ -159,19 +159,19 @@ public class OCSMSOwnCloudClient {
 		}
 
 		if (smsList.length() == 0) {
-			Log.d(TAG, "No new SMS to sync, sync done");
+			Log.d(OCSMSOwnCloudClient.TAG, "No new SMS to sync, sync done");
 			return;
 		}
 
-		final PostMethod post = createPushRequest(smsList);
+		PostMethod post = createPushRequest(smsList);
 		if (post == null) {
-			Log.e(TAG,"Push request for POST is null");
+			Log.e(OCSMSOwnCloudClient.TAG,"Push request for POST is null");
 			throw new OCSyncException(R.string.err_sync_craft_http_request, OCSyncErrorType.IO);
 		}
 
-		final JSONObject obj = doHttpRequest(post);
+		JSONObject obj = doHttpRequest(post);
 		if (obj == null) {
-			Log.e(TAG,"Request failed. It doesn't return a valid JSON Object");
+			Log.e(OCSMSOwnCloudClient.TAG,"Request failed. It doesn't return a valid JSON Object");
 			throw new OCSyncException(R.string.err_sync_push_request, OCSyncErrorType.IO);
 		}
 
@@ -181,87 +181,81 @@ public class OCSMSOwnCloudClient {
 			pushStatus = obj.getBoolean("status");
 			pushMessage = obj.getString("msg");
 		}
-		catch (final JSONException e) {
-			Log.e(TAG, "Invalid datas received from server", e);
+		catch (JSONException e) {
+			Log.e(OCSMSOwnCloudClient.TAG, "Invalid datas received from server", e);
 			throw new OCSyncException(R.string.err_sync_push_request_resp, OCSyncErrorType.PARSE);
 		}
 
 		// Push was OK, we can save the lastMessageDate which was saved to server
 		(new OCSMSSharedPrefs(_context)).setLastMessageDate(lastMsgDate);
 
-		Log.d(TAG, "SMS Push request said: status " + pushStatus + " - " + pushMessage);
+		Log.d(OCSMSOwnCloudClient.TAG, "SMS Push request said: status " + pushStatus + " - " + pushMessage);
 	}
 
 	public GetMethod createGetVersionRequest() {
-		return createGetRequest(OC_GET_VERSION);
+		return createGetRequest(OCSMSOwnCloudClient.OC_GET_VERSION);
 	}
 
 	public GetMethod createGetPhoneListRequest() {
-		return createGetRequest(OC_GET_PHONELIST);
+		return createGetRequest(OCSMSOwnCloudClient.OC_GET_PHONELIST);
 	}
 
 	public GetMethod createGetSmsIdListRequest() {
-		return createGetRequest(OC_GET_ALL_SMS_IDS);
+		return createGetRequest(OCSMSOwnCloudClient.OC_GET_ALL_SMS_IDS);
 	}
 
 	public GetMethod createGetSmsIdListWithStateRequest() {
-		return createGetRequest(OC_GET_ALL_SMS_IDS_WITH_STATUS);
+		return createGetRequest(OCSMSOwnCloudClient.OC_GET_ALL_SMS_IDS_WITH_STATUS);
 	}
 
 	public GetMethod createGetLastSmsTimestampRequest() {
-		return createGetRequest(OC_GET_LAST_MSG_TIMESTAMP);
+		return createGetRequest(OCSMSOwnCloudClient.OC_GET_LAST_MSG_TIMESTAMP);
 	}
 
-	private GetMethod createGetRequest(final String oc_call) {
-		final GetMethod get = new GetMethod(_ocClient.getBaseUri() + oc_call);
+	private GetMethod createGetRequest(String oc_call) {
+		GetMethod get = new GetMethod(_ocClient.getBaseUri() + oc_call);
 		get.addRequestHeader("OCS-APIREQUEST", "true");
 		return get;
 	}
 
-	public PostMethod createPushRequest() throws OCSyncException {
-		final SmsFetcher fetcher = new SmsFetcher(_context);
-		final JSONArray smsList = fetcher.fetchAllMessages();
-		return createPushRequest(smsList);
-	}
-
-	public PostMethod createPushRequest(final JSONArray smsList) throws OCSyncException {
-		final JSONObject obj = createPushJSONObject(smsList);
+    public PostMethod createPushRequest(JSONArray smsList) throws OCSyncException {
+		JSONObject obj = createPushJSONObject(smsList);
 		if (obj == null) {
 			return null;
 		}
 
-		final StringRequestEntity ent = createJSONRequestEntity(obj);
+		StringRequestEntity ent = createJSONRequestEntity(obj);
 		if (ent == null) {
 			return null;
 		}
 
-		final PostMethod post = new PostMethod(_ocClient.getBaseUri() + OC_PUSH_ROUTE);
+		PostMethod post = new PostMethod(_ocClient.getBaseUri() + OCSMSOwnCloudClient.OC_PUSH_ROUTE);
 		post.addRequestHeader("OCS-APIREQUEST", "true");
 		post.setRequestEntity(ent);
 
 		return post;
 	}
 
-	private JSONObject createPushJSONObject(final JSONArray smsList) throws OCSyncException {
+	private JSONObject createPushJSONObject(JSONArray smsList) throws OCSyncException {
 		if (smsList == null) {
-			Log.e(TAG,"NULL SMS List");
+			Log.e(OCSMSOwnCloudClient.TAG,"NULL SMS List");
 			throw new OCSyncException(R.string.err_sync_create_json_null_smslist, OCSyncErrorType.IO);
 		}
 
-		final JSONObject reqJSON = new JSONObject();
+		JSONObject reqJSON = new JSONObject();
 
 		try {
 			reqJSON.put("smsDatas", smsList);
-			reqJSON.put("smsCount", smsList == null ? 0 : smsList.length());
-		} catch (final JSONException e) {
-			Log.e(TAG,"JSON Exception when creating JSON request object");
+			reqJSON.put("smsCount", smsList.length());
+		} catch (JSONException e) {
+			Log.e(OCSMSOwnCloudClient.TAG,"JSON Exception when creating JSON request object");
 			throw new OCSyncException(R.string.err_sync_create_json_put_smslist, OCSyncErrorType.PARSE);
 		}
 
 		return reqJSON;
 	}
 
-	private StringRequestEntity createJSONRequestEntity(final JSONObject obj) throws OCSyncException {
+	private StringRequestEntity createJSONRequestEntity(JSONObject obj) throws OCSyncException {
 		StringRequestEntity requestEntity;
 		try {
 			requestEntity = new StringRequestEntity(
@@ -269,32 +263,32 @@ public class OCSMSOwnCloudClient {
 					"application/json",
 					"UTF-8");
 
-		} catch (final UnsupportedEncodingException e) {
-			Log.e(TAG,"Unsupported encoding when generating request");
+		} catch (UnsupportedEncodingException e) {
+			Log.e(OCSMSOwnCloudClient.TAG,"Unsupported encoding when generating request");
 			throw new OCSyncException(R.string.err_sync_create_json_request_encoding, OCSyncErrorType.PARSE);
 		}
 
 		return requestEntity;
 	}
 
-	private JSONObject doHttpRequest(final HttpMethod req) throws OCSyncException {
+	private JSONObject doHttpRequest(HttpMethod req) throws OCSyncException {
 		return doHttpRequest(req, false);
 	}
 
 	// skipError permit to skip invalid JSON datas
-	private JSONObject doHttpRequest(final HttpMethod req, final Boolean skipError) throws OCSyncException {
-		JSONObject respJSON = null;
+	private JSONObject doHttpRequest(HttpMethod req, Boolean skipError) throws OCSyncException {
+		JSONObject respJSON;
 		int status = 0;
 
 		// We try maximumHttpReqTries because sometimes network is slow or unstable
 		int tryNb = 0;
-		final ConnectivityMonitor cMon = new ConnectivityMonitor(_context);
+		ConnectivityMonitor cMon = new ConnectivityMonitor(_context);
 
-		while (tryNb < maximumHttpReqTries) {
+		while (tryNb < OCSMSOwnCloudClient.maximumHttpReqTries) {
 			tryNb++;
 
 			if (!cMon.isValid()) {
-				if (tryNb == maximumHttpReqTries) {
+				if (tryNb == OCSMSOwnCloudClient.maximumHttpReqTries) {
 					req.releaseConnection();
 					throw new OCSyncException(R.string.err_sync_no_connection_available, OCSyncErrorType.IO);
 				}
@@ -304,31 +298,31 @@ public class OCSMSOwnCloudClient {
 			try {
 				status = _ocClient.executeMethod(req);
 
-				Log.d(TAG, "HTTP Request done at try " + tryNb);
+				Log.d(OCSMSOwnCloudClient.TAG, "HTTP Request done at try " + tryNb);
 
 				// Force loop exit
-				tryNb = maximumHttpReqTries;
-			} catch (final ConnectException e) {
-				Log.e(TAG, "Unable to perform a connection to ownCloud instance", e);
+				tryNb = OCSMSOwnCloudClient.maximumHttpReqTries;
+			} catch (ConnectException e) {
+				Log.e(OCSMSOwnCloudClient.TAG, "Unable to perform a connection to ownCloud instance", e);
 
 				// If it's the last try
-				if (tryNb == maximumHttpReqTries) {
+				if (tryNb == OCSMSOwnCloudClient.maximumHttpReqTries) {
 					req.releaseConnection();
 					throw new OCSyncException(R.string.err_sync_http_request_connect, OCSyncErrorType.IO);
 				}
-			} catch (final HttpException e) {
-				Log.e(TAG, "Unable to perform a connection to ownCloud instance", e);
+			} catch (HttpException e) {
+				Log.e(OCSMSOwnCloudClient.TAG, "Unable to perform a connection to ownCloud instance", e);
 
 				// If it's the last try
-				if (tryNb == maximumHttpReqTries) {
+				if (tryNb == OCSMSOwnCloudClient.maximumHttpReqTries) {
 					req.releaseConnection();
 					throw new OCSyncException(R.string.err_sync_http_request_httpexception, OCSyncErrorType.IO);
 				}
-			} catch (final IOException e) {
-				Log.e(TAG, "Unable to perform a connection to ownCloud instance", e);
+			} catch (IOException e) {
+				Log.e(OCSMSOwnCloudClient.TAG, "Unable to perform a connection to ownCloud instance", e);
 
 				// If it's the last try
-				if (tryNb == maximumHttpReqTries) {
+				if (tryNb == OCSMSOwnCloudClient.maximumHttpReqTries) {
 					req.releaseConnection();
 					throw new OCSyncException(R.string.err_sync_http_request_ioexception, OCSyncErrorType.IO);
 				}
@@ -336,11 +330,11 @@ public class OCSMSOwnCloudClient {
 		}
 
 		if(status == HttpStatus.SC_OK) {
-			String response = null;
+			String response;
 			try {
 				response = req.getResponseBodyAsString();
-			} catch (final IOException e) {
-				Log.e(TAG, "Unable to parse server response", e);
+			} catch (IOException e) {
+				Log.e(OCSMSOwnCloudClient.TAG, "Unable to parse server response", e);
 				throw new OCSyncException(R.string.err_sync_http_request_resp, OCSyncErrorType.IO);
 			}
 			//Log.d(TAG, "Successful response: " + response);
@@ -348,15 +342,15 @@ public class OCSMSOwnCloudClient {
 			// Parse the response
 			try {
 				respJSON = new JSONObject(response);
-			} catch (final JSONException e) {
-				if (skipError == false) {
+			} catch (JSONException e) {
+				if (!skipError) {
 					if (response.contains("ownCloud") && response.contains("DOCTYPE")) {
-						Log.e(TAG, "OcSMS app not enabled or ownCloud upgrade is required");
+						Log.e(OCSMSOwnCloudClient.TAG, "OcSMS app not enabled or ownCloud upgrade is required");
 						throw new OCSyncException(R.string.err_sync_ocsms_not_installed_or_oc_upgrade_required,
 								OCSyncErrorType.SERVER_ERROR);
 					}
 					else {
-						Log.e(TAG, "Unable to parse server response", e);
+						Log.e(OCSMSOwnCloudClient.TAG, "Unable to parse server response", e);
 						throw new OCSyncException(R.string.err_sync_http_request_parse_resp, OCSyncErrorType.PARSE);
 					}
 				}
@@ -368,40 +362,38 @@ public class OCSMSOwnCloudClient {
 			throw new OCSyncException(R.string.err_sync_auth_failed, OCSyncErrorType.AUTH);
 		} else {
 			// Unk error
-			String response = null;
+			String response;
 			try {
 				response = req.getResponseBodyAsString();
-			} catch (final IOException e) {
-				Log.e(TAG, "Unable to parse server response", e);
+			} catch (IOException e) {
+				Log.e(OCSMSOwnCloudClient.TAG, "Unable to parse server response", e);
 				throw new OCSyncException(R.string.err_sync_http_request_resp, OCSyncErrorType.PARSE);
 			}
 
-			Log.e(TAG, "Server set unhandled HTTP return code " + status);
+			Log.e(OCSMSOwnCloudClient.TAG, "Server set unhandled HTTP return code " + status);
 			if (response != null) {
-				Log.e(TAG, "Status code: " + status + ". Response message: " + response);
+				Log.e(OCSMSOwnCloudClient.TAG, "Status code: " + status + ". Response message: " + response);
 			} else {
-				Log.e(TAG, "Status code: " + status);
+				Log.e(OCSMSOwnCloudClient.TAG, "Status code: " + status);
 			}
 			throw new OCSyncException(R.string.err_sync_http_request_returncode_unhandled, OCSyncErrorType.SERVER_ERROR);
 		}
 		return respJSON;
 	}
 
-	public OwnCloudClient getOCClient() { return _ocClient; }
-
-	private static int maximumHttpReqTries = 3;
+    private static final int maximumHttpReqTries = 3;
 
 	private final OwnCloudClient _ocClient;
 	private final Context _context;
 
 	private Integer _serverAPIVersion;
 
-	private static String OC_GET_VERSION = "/index.php/apps/ocsms/get/apiversion?format=json";
-	private static String OC_GET_ALL_SMS_IDS = "/index.php/apps/ocsms/get/smsidlist?format=json";
-	private static String OC_GET_ALL_SMS_IDS_WITH_STATUS = "/index.php/apps/ocsms/get/smsidstate?format=json";
-	private static String OC_GET_LAST_MSG_TIMESTAMP = "/index.php/apps/ocsms/get/lastmsgtime?format=json";
-	private static String OC_PUSH_ROUTE = "/index.php/apps/ocsms/push?format=json";
-	private static String OC_GET_PHONELIST = "/index.php/apps/ocsms/get/phones/numberlist?format=json";
+	private static final String OC_GET_VERSION = "/index.php/apps/ocsms/get/apiversion?format=json";
+	private static final String OC_GET_ALL_SMS_IDS = "/index.php/apps/ocsms/get/smsidlist?format=json";
+	private static final String OC_GET_ALL_SMS_IDS_WITH_STATUS = "/index.php/apps/ocsms/get/smsidstate?format=json";
+	private static final String OC_GET_LAST_MSG_TIMESTAMP = "/index.php/apps/ocsms/get/lastmsgtime?format=json";
+	private static final String OC_PUSH_ROUTE = "/index.php/apps/ocsms/push?format=json";
+	private static final String OC_GET_PHONELIST = "/index.php/apps/ocsms/get/phones/numberlist?format=json";
 
 	private static final String TAG = OCSMSOwnCloudClient.class.getSimpleName();
 

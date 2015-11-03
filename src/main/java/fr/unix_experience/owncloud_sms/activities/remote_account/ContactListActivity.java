@@ -30,19 +30,19 @@ public class ContactListActivity extends Activity implements ASyncContactLoad {
 	ArrayList<String> objects;
 
 	@Override
-	protected void onCreate(final Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		assert getIntent().getExtras() != null;
 
-		final String accountName = getIntent().getExtras().getString("account");
+		String accountName = getIntent().getExtras().getString("account");
 
 		// accountName cannot be null, devel error
 		assert accountName != null;
 
-		_accountMgr = AccountManager.get(getBaseContext());
-		final Account[] myAccountList =
-				_accountMgr.getAccountsByType(getString(R.string.account_type));
+        ContactListActivity._accountMgr = AccountManager.get(getBaseContext());
+		Account[] myAccountList =
+                ContactListActivity._accountMgr.getAccountsByType(getString(R.string.account_type));
 		
 		// Init view
 		objects = new ArrayList<>();
@@ -79,8 +79,8 @@ public class ContactListActivity extends Activity implements ASyncContactLoad {
 				Integer smsCount = 0;
 				// @TODO asynctask to load more datas
 
-				if (phoneList.size() > 0) {
-					String res = new String("");
+				if (!phoneList.isEmpty()) {
+					String res = "";
 					for (String pn: phoneList) {
 						res += "- " + pn + "\n";
 					}
@@ -101,28 +101,34 @@ public class ContactListActivity extends Activity implements ASyncContactLoad {
 				Cursor people = getContentResolver().query(ContactsContract.Contacts.CONTENT_URI,
 						null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " = ?",
 						new String[]{name}, null);
-				people.moveToFirst();
+                if (people == null) {
+                    return new Vector<>();
+                }
 
-				Vector<String> r = new Vector<>();
+                people.moveToFirst();
+
+                Vector<String> r = new Vector<>();
 				if (people.getCount() == 0) {
 					return r;
 				}
 
 				String contactId = people.getString(people.getColumnIndex(ContactsContract.Contacts._ID));
 
-				if (people.getString(people.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))
-						.equalsIgnoreCase("1")) {
+				if ("1".equalsIgnoreCase(people.getString(people.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER)))) {
 					Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
 							null,
 							ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?",
 							new String[]{contactId}, null);
-					while (phones.moveToNext()) {
+					while ((phones != null) && phones.moveToNext()) {
 						String phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
 								.replaceAll(" ", "");
 						r.add(phoneNumber);
 					}
-					phones.close();
-				}
+
+                    if (phones != null) {
+                        phones.close();
+                    }
+                }
 				return r;
 			}
 		});

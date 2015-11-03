@@ -17,16 +17,6 @@ package fr.unix_experience.owncloud_sms.authenticators;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import java.io.IOException;
-import org.apache.commons.httpclient.HttpException;
-import org.apache.commons.httpclient.methods.GetMethod;
-import org.apache.http.HttpStatus;
-import org.json.JSONObject;
-
-import com.owncloud.android.lib.common.OwnCloudClient;
-
-import fr.unix_experience.owncloud_sms.activities.LoginActivity;
-import fr.unix_experience.owncloud_sms.enums.LoginReturnCode;
 import android.accounts.AbstractAccountAuthenticator;
 import android.accounts.Account;
 import android.accounts.AccountAuthenticatorResponse;
@@ -36,6 +26,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.owncloud.android.lib.common.OwnCloudClient;
+
+import org.apache.commons.httpclient.HttpException;
+import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.http.HttpStatus;
+import org.json.JSONObject;
+
+import java.io.IOException;
+
+import fr.unix_experience.owncloud_sms.activities.LoginActivity;
+import fr.unix_experience.owncloud_sms.enums.LoginReturnCode;
 
 public class OwnCloudAuthenticator extends AbstractAccountAuthenticator {
     // Simple constructor
@@ -56,8 +58,8 @@ public class OwnCloudAuthenticator extends AbstractAccountAuthenticator {
 			String accountType, String authTokenType,
 			String[] requiredFeatures, Bundle options)
 			throws NetworkErrorException {
-		final Bundle result;  
-		final Intent intent;  
+		Bundle result;
+		Intent intent;
 		                
 		intent = new Intent(_context, LoginActivity.class);  
 		
@@ -112,11 +114,11 @@ public class OwnCloudAuthenticator extends AbstractAccountAuthenticator {
 	 */
 	public LoginReturnCode testCredentials() {
 		LoginReturnCode bRet = LoginReturnCode.OK;
-		GetMethod get = null;
-		int status = -1;
+		GetMethod get;
+		int status;
 		
 		try {
-		get = new GetMethod(_client.getBaseUri() + "/index.php/ocs/cloud/user?format=json");
+		    get = new GetMethod(_client.getBaseUri() + "/index.php/ocs/cloud/user?format=json");
 		} catch (IllegalArgumentException e) {
 			return LoginReturnCode.INVALID_ADDR;
 		}
@@ -136,37 +138,32 @@ public class OwnCloudAuthenticator extends AbstractAccountAuthenticator {
 		try {
 			if(isSuccess(status)) {
 				 String response = get.getResponseBodyAsString();
-				 Log.d(TAG, "Successful response: " + response);
+				 Log.d(OwnCloudAuthenticator.TAG, "Successful response: " + response);
 
 				 // Parse the response
 				 JSONObject respJSON = new JSONObject(response);
-				 JSONObject respOCS = respJSON.getJSONObject(NODE_OCS);
-				 JSONObject respData = respOCS.getJSONObject(NODE_DATA);
-				 String id = respData.getString(NODE_ID);
-				 String displayName = respData.getString(NODE_DISPLAY_NAME);
-				 String email = respData.getString(NODE_EMAIL);
+				 JSONObject respOCS = respJSON.getJSONObject(OwnCloudAuthenticator.NODE_OCS);
+				 JSONObject respData = respOCS.getJSONObject(OwnCloudAuthenticator.NODE_DATA);
+				 String id = respData.getString(OwnCloudAuthenticator.NODE_ID);
+				 String displayName = respData.getString(OwnCloudAuthenticator.NODE_DISPLAY_NAME);
+				 String email = respData.getString(OwnCloudAuthenticator.NODE_EMAIL);
 				 
-				 Log.d(TAG, "*** Parsed user information: " + id + " - " + displayName + " - " + email);
+				 Log.d(OwnCloudAuthenticator.TAG, "*** Parsed user information: " + id + " - " + displayName + " - " + email);
 				 
 			} else {
 				String response = get.getResponseBodyAsString();
-				Log.e(TAG, "Failed response while getting user information ");
+				Log.e(OwnCloudAuthenticator.TAG, "Failed response while getting user information ");
 				if (response != null) {
-					Log.e(TAG, "*** status code: " + status + " ; response message: " + response);
+					Log.e(OwnCloudAuthenticator.TAG, "*** status code: " + status + " ; response message: " + response);
 				} else {
-					Log.e(TAG, "*** status code: " + status);
+					Log.e(OwnCloudAuthenticator.TAG, "*** status code: " + status);
 				}
-				
-				if (status == 401) {
-					bRet = LoginReturnCode.INVALID_LOGIN;
-				}
-				else {
-					bRet = LoginReturnCode.UNKNOWN_ERROR;
-				}
+
+                bRet = (status == 401) ? LoginReturnCode.INVALID_LOGIN : LoginReturnCode.UNKNOWN_ERROR;
 			}
 			
 		} catch (Exception e) {
-			Log.e(TAG, "Exception while getting OC user information", e);
+			Log.e(OwnCloudAuthenticator.TAG, "Exception while getting OC user information", e);
 			bRet = LoginReturnCode.UNKNOWN_ERROR;
 			
 		} finally {
@@ -183,7 +180,7 @@ public class OwnCloudAuthenticator extends AbstractAccountAuthenticator {
 		_client = oc;
 	}
 
-	private Context _context;
+	private final Context _context;
 	private OwnCloudClient _client;
 	
 	private static final String TAG = OwnCloudAuthenticator.class.getSimpleName();

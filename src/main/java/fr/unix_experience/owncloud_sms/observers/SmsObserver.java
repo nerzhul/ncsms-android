@@ -17,6 +17,13 @@ package fr.unix_experience.owncloud_sms.observers;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
+import android.content.Context;
+import android.database.ContentObserver;
+import android.os.Handler;
+import android.util.Log;
+
 import org.json.JSONArray;
 
 import fr.unix_experience.owncloud_sms.R;
@@ -25,13 +32,6 @@ import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.engine.OCSMSOwnCloudClient;
 import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
-
-import android.accounts.Account;
-import android.accounts.AccountManager;
-import android.content.Context;
-import android.database.ContentObserver;
-import android.os.Handler;
-import android.util.Log;
 
 public class SmsObserver extends ContentObserver implements ASyncSMSSync {
 
@@ -46,10 +46,10 @@ public class SmsObserver extends ContentObserver implements ASyncSMSSync {
 	
 	public void onChange(boolean selfChange) {
 		super.onChange(selfChange);
-		Log.d(TAG, "onChange SmsObserver");
+		Log.d(SmsObserver.TAG, "onChange SmsObserver");
 
 		// No account, abort
-		final Account[] myAccountList = AccountManager.get(_context).
+		Account[] myAccountList = AccountManager.get(_context).
 				getAccountsByType(_context.getString(R.string.account_type));
 		if (myAccountList.length == 0) {
 			return;
@@ -61,7 +61,7 @@ public class SmsObserver extends ContentObserver implements ASyncSMSSync {
 		ConnectivityMonitor cMon = new ConnectivityMonitor(_context);
 		
 		// Synchronize if network is valid and there are SMS
-		if (cMon.isValid() && smsList != null) {
+		if (cMon.isValid() && (smsList != null)) {
 			new SyncTask(_context, smsList).execute();
 		}
 	}

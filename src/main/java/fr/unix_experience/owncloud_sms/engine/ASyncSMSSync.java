@@ -17,45 +17,46 @@ package fr.unix_experience.owncloud_sms.engine;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import org.json.JSONArray;
-
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
+
+import org.json.JSONArray;
+
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
 import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationManager;
 
 public interface ASyncSMSSync {
 	class SyncTask extends AsyncTask<Void, Void, Void> {
-		public SyncTask(final Context context, final JSONArray smsList) {
+		public SyncTask(Context context, JSONArray smsList) {
 			_context = context;
 			_smsList = smsList;
 		}
 
 		@Override
-		protected Void doInBackground(final Void... params) {
+		protected Void doInBackground(Void... params) {
 			// Get ownCloud SMS account list
-			final AccountManager _accountMgr = AccountManager.get(_context);
-			final Account[] myAccountList = _accountMgr.getAccountsByType(_context.getString(R.string.account_type));
+			AccountManager _accountMgr = AccountManager.get(_context);
+			Account[] myAccountList = _accountMgr.getAccountsByType(_context.getString(R.string.account_type));
 
 			// Notify that we are syncing SMS
-			final OCSMSNotificationManager nMgr = new OCSMSNotificationManager(_context);
-			for (final Account element : myAccountList) {
-				final Uri serverURI = Uri.parse(_accountMgr.getUserData(element, "ocURI"));
+			OCSMSNotificationManager nMgr = new OCSMSNotificationManager(_context);
+			for (Account element : myAccountList) {
+				Uri serverURI = Uri.parse(_accountMgr.getUserData(element, "ocURI"));
 
-				final OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(_context,
+				OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(_context,
 						serverURI, _accountMgr.getUserData(element, "ocLogin"),
 						_accountMgr.getPassword(element));
 
 				try {
 					_client.doPushRequest(_smsList);
 					nMgr.dropSyncErrorMsg();
-				} catch (final OCSyncException e) {
-					Log.e(TAG, _context.getString(e.getErrorId()));
+				} catch (OCSyncException e) {
+					Log.e(ASyncSMSSync.TAG, _context.getString(e.getErrorId()));
 					nMgr.setSyncErrorMsg(_context.getString(e.getErrorId()));
 				}
 			}
@@ -67,5 +68,5 @@ public interface ASyncSMSSync {
 		private final JSONArray _smsList;
 	}
 
-	static final String TAG = ASyncSMSSync.class.getSimpleName();
+	String TAG = ASyncSMSSync.class.getSimpleName();
 }

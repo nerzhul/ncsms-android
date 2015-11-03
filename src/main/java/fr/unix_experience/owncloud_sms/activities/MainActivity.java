@@ -25,11 +25,6 @@ package fr.unix_experience.owncloud_sms.activities;
  * SUCH DAMAGE.
  */
 
-import java.util.List;
-import java.util.Vector;
-
-import org.json.JSONArray;
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -45,6 +40,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import org.json.JSONArray;
+
+import java.util.List;
+import java.util.Vector;
+
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.activities.remote_account.AccountListActivity;
 import fr.unix_experience.owncloud_sms.engine.ASyncSMSSync.SyncTask;
@@ -69,14 +70,14 @@ public class MainActivity extends Activity {
 	ViewPager mViewPager;
 
 	@Override
-	protected void onCreate(final Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the activity.
 
-		final List<Fragment> fragments = new Vector<Fragment>();
+		List<Fragment> fragments = new Vector<>();
 
 		/*
 		 * Add the Main tabs here
@@ -101,13 +102,13 @@ public class MainActivity extends Activity {
 
 		private final List<Fragment> mFragments;
 
-		public MainPagerAdapter(final FragmentManager fragmentManager, final List<Fragment> fragments) {
+		public MainPagerAdapter(FragmentManager fragmentManager, List<Fragment> fragments) {
 			super(fragmentManager);
 			mFragments = fragments;
 		}
 
 		@Override
-		public Fragment getItem(final int position) {
+		public Fragment getItem(int position) {
 			// getItem is called to instantiate the fragment for the given page.
 			// Return a PlaceholderFragment (defined as a static inner class
 			// below).
@@ -126,53 +127,50 @@ public class MainActivity extends Activity {
 	 */
 	public static class StarterFragment extends Fragment {
 		@Override
-		public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
-				final Bundle savedInstanceState) {
-			final View rootView = inflater.inflate(R.layout.fragment_mainactivity_main, container,
-					false);
-			return rootView;
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+            return inflater.inflate(R.layout.fragment_mainactivity_main, container,
+                    false);
 		}
 	}
 
 	public static class SecondTestFragment extends Fragment {
 		@Override
-		public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
-				final Bundle savedInstanceState) {
-			final View rootView = inflater.inflate(R.layout.fragment_mainactivity_gotosettings, container,
-					false);
-			return rootView;
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+            return inflater.inflate(R.layout.fragment_mainactivity_gotosettings, container,
+                    false);
 		}
 	}
 
 	public static class ThanksAndRateFragment extends Fragment {
 		@Override
-		public View onCreateView(final LayoutInflater inflater, final ViewGroup container,
-				final Bundle savedInstanceState) {
-			final View rootView = inflater.inflate(R.layout.fragment_mainactivity_thanks_note, container,
-					false);
-			return rootView;
+		public View onCreateView(LayoutInflater inflater, ViewGroup container,
+				Bundle savedInstanceState) {
+            return inflater.inflate(R.layout.fragment_mainactivity_thanks_note, container,
+                    false);
 		}
 	}
 
-	public void openAppSettings(final View view) {
+	public void openAppSettings(View view) {
 		startActivity(new Intent(this, GeneralSettingsActivity.class));
 	}
 
-	public void openAddAccount(final View view) {
+	public void openAddAccount(View view) {
 		startActivity(new Intent(Settings.ACTION_ADD_ACCOUNT));
 	}
 
-	public void syncAllMessages(final View view) {
-		final Context ctx = getApplicationContext();
-		final ConnectivityMonitor cMon = new ConnectivityMonitor(ctx);
+	public void syncAllMessages(View view) {
+		Context ctx = getApplicationContext();
+		ConnectivityMonitor cMon = new ConnectivityMonitor(ctx);
 
 		if (cMon.isValid()) {
 			// Now fetch messages since last stored date
-			final JSONArray smsList = new SmsFetcher(ctx)
+			JSONArray smsList = new SmsFetcher(ctx)
 			.bufferMessagesSinceDate((long) 0);
 
 			if (smsList != null) {
-				final OCSMSNotificationManager nMgr = new OCSMSNotificationManager(ctx);
+				OCSMSNotificationManager nMgr = new OCSMSNotificationManager(ctx);
 				nMgr.setSyncProcessMsg();
 				new SyncTask(getApplicationContext(), smsList).execute();
 			}
@@ -182,16 +180,16 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	public void selectRemoteAccount(final View view) {
+	public void selectRemoteAccount(View view) {
 		startActivity(new Intent(this, AccountListActivity.class));
 	}
 
-	public void openGooglePlayStore(final View view) {
+	public void openGooglePlayStore(View view) {
 		Intent intent;
 		try {
 			intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName()));
 
-		} catch (final android.content.ActivityNotFoundException anfe) {
+		} catch (android.content.ActivityNotFoundException anfe) {
 			intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName()));
 		}
 

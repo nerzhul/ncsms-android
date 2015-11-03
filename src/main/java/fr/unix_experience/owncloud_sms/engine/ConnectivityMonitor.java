@@ -23,7 +23,7 @@ import android.telephony.TelephonyManager;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
 public class ConnectivityMonitor {
-	public ConnectivityMonitor(final Context context) {
+	public ConnectivityMonitor(Context context) {
 		_context = context;
 	}
 
@@ -33,17 +33,17 @@ public class ConnectivityMonitor {
 			_cMgr = (ConnectivityManager) _context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		}
 
-		final android.net.NetworkInfo niWiFi = _cMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-		final android.net.NetworkInfo niMobile = _cMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+		android.net.NetworkInfo niWiFi = _cMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+		android.net.NetworkInfo niMobile = _cMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
 		if (niWiFi.isAvailable() || niMobile.isAvailable()) {
 			// Load the connectivity manager to determine on which network we are connected
-			final NetworkInfo netInfo = _cMgr.getActiveNetworkInfo();
+			NetworkInfo netInfo = _cMgr.getActiveNetworkInfo();
 			if (netInfo == null) {
 				return false;
 			}
 
-			final OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
+			OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
 
 			// Check
 			switch (netInfo.getType()) {

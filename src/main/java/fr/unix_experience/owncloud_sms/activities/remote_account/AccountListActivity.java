@@ -1,23 +1,25 @@
 package fr.unix_experience.owncloud_sms.activities.remote_account;
 
-import java.util.ArrayList;
-
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.ListActivity;
 import android.os.Bundle;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
 import fr.nrz.androidlib.adapters.AndroidAccountAdapter;
 import fr.unix_experience.owncloud_sms.R;
 
 public class AccountListActivity extends ListActivity {
-	ArrayList<Account> listItems = new ArrayList<Account>();
+	ArrayList<Account> listItems = new ArrayList<>();
 	AndroidAccountAdapter adapter;
 
 	@Override
-	public void onCreate(final Bundle icicle) {
+	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 
-		final AccountManager _accountMgr = AccountManager.get(getBaseContext());
+		AccountManager _accountMgr = AccountManager.get(getBaseContext());
 
 		setContentView(R.layout.restore_activity_accountlist);
 		adapter = new AndroidAccountAdapter(this,
@@ -27,11 +29,9 @@ public class AccountListActivity extends ListActivity {
 				R.id.accountname, ContactListActivity.class);
 		setListAdapter(adapter);
 
-		final Account[] accountList =
+		Account[] accountList =
 				_accountMgr.getAccountsByType(getString(R.string.account_type));
-		for (final Account element : accountList) {
-			listItems.add(element);
-		}
+        Collections.addAll(listItems, accountList);
 
 		adapter.notifyDataSetChanged();
 	}
