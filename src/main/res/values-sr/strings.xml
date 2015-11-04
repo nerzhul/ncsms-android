@@ -128,10 +128,5 @@
     <string name="err_sync_http_request_parse_resp">Грешка #15: не могу да рашчланим одговор сервера</string>
     <string name="err_sync_no_connection_available">Грешка #16: нема везе на интернет</string>
     <string name="err_sync_account_unparsable">Грешка #17: деформисан налог. Поставите га поново</string>
-    <string name="title_activity_main">Главна активност</string>
-    <string name="title_section1">Одељак 1</string>
-    <string name="title_section2">Одељак 2</string>
-    <string name="title_section3">Одељак 3</string>
-    <string name="title_activity_main_activity2">Главна активност 2</string>
 
 </resources>
