@@ -97,14 +97,12 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
 			long syncFreq = Long.parseLong(value);
 
 			// Get ownCloud SMS account list
-			for (int i = 0; i < myAccountList.length; i++) {
+			for (Account acct: myAccountList) {
 				// And get all authorities for this account
-				List<PeriodicSync> syncList = ContentResolver.getPeriodicSyncs(myAccountList[i], GeneralSettingsActivity._accountAuthority);
+				List<PeriodicSync> syncList = ContentResolver.getPeriodicSyncs(acct, GeneralSettingsActivity._accountAuthority);
 
 				boolean foundSameSyncCycle = false;
-				for (int j = 0; j < syncList.size(); j++) {
-					PeriodicSync ps = syncList.get(i);
-
+				for (PeriodicSync ps: syncList) {
 					if ((ps.period == syncFreq) && (ps.extras.getInt("synctype") == 1)) {
 						foundSameSyncCycle = true;
 					}
@@ -114,11 +112,9 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
 					Bundle b = new Bundle();
 					b.putInt("synctype", 1);
 
-					ContentResolver.removePeriodicSync(myAccountList[i],
-                            GeneralSettingsActivity._accountAuthority, b);
+					ContentResolver.removePeriodicSync(acct, GeneralSettingsActivity._accountAuthority, b);
                     if (syncFreq > 0) {
-                        ContentResolver.addPeriodicSync(myAccountList[i],
-                                GeneralSettingsActivity._accountAuthority, b, syncFreq * 60);
+                        ContentResolver.addPeriodicSync(acct, GeneralSettingsActivity._accountAuthority, b, syncFreq * 60);
                     }
 				}
 
