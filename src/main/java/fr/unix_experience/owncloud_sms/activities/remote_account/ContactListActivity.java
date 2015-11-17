@@ -119,10 +119,11 @@ public class ContactListActivity extends Activity implements ASyncContactLoad {
 							null,
 							ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?",
 							new String[]{contactId}, null);
+
 					while ((phones != null) && phones.moveToNext()) {
-						String phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
-								.replaceAll(" ", "");
-						r.add(phoneNumber);
+                        r.add(phones.getString(phones.getColumnIndex(
+                                ContactsContract.CommonDataKinds.Phone.NUMBER))
+                                .replaceAll(" ", ""));
 					}
 
                     if (phones != null) {

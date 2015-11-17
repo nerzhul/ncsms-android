@@ -166,10 +166,10 @@ public class MainActivity extends Activity {
 
 		if (cMon.isValid()) {
 			// Now fetch messages since last stored date
-			JSONArray smsList = new SmsFetcher(ctx)
-			.bufferMessagesSinceDate((long) 0);
+			JSONArray smsList = new JSONArray();
+            new SmsFetcher(ctx).bufferMessagesSinceDate(smsList, (long) 0);
 
-			if (smsList != null) {
+			if (smsList.length() > 0) {
 				OCSMSNotificationManager nMgr = new OCSMSNotificationManager(ctx);
 				nMgr.setSyncProcessMsg();
 				new SyncTask(getApplicationContext(), smsList).execute();

@@ -85,9 +85,10 @@ public interface ASyncContactLoad {
 				Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,
 						null, null, null, null);
 				if (((cur != null) ? cur.getCount() : 0) > 0) {
+                    String id, name;
 					while ((cur != null) && cur.moveToNext()) {
-						String id = cur.getString(cur.getColumnIndex(ContactsContract.Contacts._ID));
-						String name = cur.getString(cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+						id = cur.getString(cur.getColumnIndex(ContactsContract.Contacts._ID));
+						name = cur.getString(cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
 						if (Integer.parseInt(cur.getString(
 								cur.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0) {
 

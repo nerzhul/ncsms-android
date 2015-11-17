@@ -74,12 +74,13 @@ public class ConnectivityChanged extends BroadcastReceiver implements ASyncSMSSy
 		Log.d(ConnectivityChanged.TAG,"Synced Last:" + lastMessageSynced);
 
 		// Now fetch messages since last stored date
-		JSONArray smsList = new SmsFetcher(context).bufferMessagesSinceDate(lastMessageSynced);
+        JSONArray smsList = new JSONArray();
+		new SmsFetcher(context).bufferMessagesSinceDate(smsList, lastMessageSynced);
 
 		AtomicReference<ConnectivityMonitor> cMon = new AtomicReference<>(new ConnectivityMonitor(context));
 
 		// Synchronize if network is valid and there are SMS
-		if (cMon.get().isValid() && (smsList != null)) {
+		if (cMon.get().isValid() && (smsList.length() > 0)) {
 			new SyncTask(context, smsList).execute();
 		}
 	}

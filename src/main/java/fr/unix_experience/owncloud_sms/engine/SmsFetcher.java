@@ -38,15 +38,13 @@ public class SmsFetcher {
 		_existingDraftsMessages = null;
 	}
 	
-	public JSONArray fetchAllMessages() {
-		_jsonDataDump = new JSONArray();
-		bufferMailboxMessages(MailboxID.INBOX);
-		bufferMailboxMessages(MailboxID.SENT);
-		bufferMailboxMessages(MailboxID.DRAFTS);
-		return _jsonDataDump;
+	public void fetchAllMessages(JSONArray result) {
+		bufferMailboxMessages(result, MailboxID.INBOX);
+		bufferMailboxMessages(result, MailboxID.SENT);
+		bufferMailboxMessages(result, MailboxID.DRAFTS);
 	}
 	
-	private void bufferMailboxMessages(MailboxID mbID) {
+	private void bufferMailboxMessages(JSONArray result, MailboxID mbID) {
 		String mbURI = mapMailboxIDToURI(mbID);
 		
 		if ((_context == null) || (mbURI == null)) {
@@ -71,8 +69,9 @@ public class SmsFetcher {
 				JSONObject entry = new JSONObject();
 
 				try {
+                    String colName;
 					for(int idx=0;idx<c.getColumnCount();idx++) {
-						String colName = c.getColumnName(idx);
+						colName = c.getColumnName(idx);
 
 						// Id column is must be an integer
                         switch (colName) {
@@ -101,14 +100,14 @@ public class SmsFetcher {
 					// Mailbox ID is required by server
 					entry.put("mbox", mbID.ordinal());
 
-					_jsonDataDump.put(entry);
+                    result.put(entry);
 
 				} catch (JSONException e) {
 					Log.e(SmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
 					c.close();
 				}
 			}
-			while(c.moveToNext());
+			while (c.moveToNext());
 
 			Log.d(SmsFetcher.TAG, c.getCount() + " messages read from " + mbURI);
 
@@ -136,8 +135,9 @@ public class SmsFetcher {
 
 		try {
 			Integer mboxId = -1;
+            String colName;
 			for(int idx = 0;idx < c.getColumnCount(); idx++) {
-				String colName = c.getColumnName(idx);
+				colName = c.getColumnName(idx);
 				
 				// Id column is must be an integer
                 switch (colName) {
@@ -178,16 +178,14 @@ public class SmsFetcher {
 	}
 	
 	// Used by ConnectivityChanged Event
-	public JSONArray bufferMessagesSinceDate(Long sinceDate) {
-		_jsonDataDump = new JSONArray();
-		bufferMessagesSinceDate(MailboxID.INBOX, sinceDate);
-		bufferMessagesSinceDate(MailboxID.SENT, sinceDate);
-		bufferMessagesSinceDate(MailboxID.DRAFTS, sinceDate);
-		return _jsonDataDump;
+	public void bufferMessagesSinceDate(JSONArray result, Long sinceDate) {
+		bufferMessagesSinceDate(result, MailboxID.INBOX, sinceDate);
+		bufferMessagesSinceDate(result, MailboxID.SENT, sinceDate);
+		bufferMessagesSinceDate(result, MailboxID.DRAFTS, sinceDate);
 	}
 	
 	// Used by ConnectivityChanged Event
-	public void bufferMessagesSinceDate(MailboxID mbID, Long sinceDate) {
+	public void bufferMessagesSinceDate(JSONArray result, MailboxID mbID, Long sinceDate) {
 		String mbURI = mapMailboxIDToURI(mbID);
 		
 		if ((_context == null) || (mbURI == null)) {
@@ -203,8 +201,9 @@ public class SmsFetcher {
 				JSONObject entry = new JSONObject();
 
 				try {
-					for(int idx=0;idx<c.getColumnCount();idx++) {
-						String colName = c.getColumnName(idx);
+                    String colName;
+					for (int idx = 0; idx < c.getColumnCount(); idx++) {
+						colName = c.getColumnName(idx);
 						
 						// Id column is must be an integer
                         switch (colName) {
@@ -232,15 +231,15 @@ public class SmsFetcher {
 					
 					// Mailbox ID is required by server
 					entry.put("mbox", mbID.ordinal());
-					
-					_jsonDataDump.put(entry);
+
+                    result.put(entry);
 					
 				} catch (JSONException e) {
 					Log.e(SmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
 					c.close();
 				}
 			}
-			while(c.moveToNext());
+			while (c.moveToNext());
 			
 			Log.d(SmsFetcher.TAG, c.getCount() + " messages read from " + mbURI);
 			
@@ -273,23 +272,23 @@ public class SmsFetcher {
 			existingMessages = _existingDraftsMessages;
 		} else if (_mbID == MailboxID.SENT) {
 			existingMessages = _existingSentMessages;
-		}
+		} else {
+            return "";
+        }
+
 		// Note: The default case isn't possible, we check the mailbox before
-		
 		StringBuilder sb = new StringBuilder();
-		if (existingMessages != null) {
-			int len = existingMessages.length(); 
-	        for (int i = 0; i < len; i++) {
-	        	try {
-	        		if (sb.length() > 0) {
-	        			sb.append(",");
-	        		}
-	        		sb.append(existingMessages.getInt(i));
-				} catch (JSONException ignored) {
-					
-				}
-	        }
-		}
+        int len = existingMessages.length();
+        for (int i = 0; i < len; i++) {
+            try {
+                if (sb.length() > 0) {
+                    sb.append(",");
+                }
+                sb.append(existingMessages.getInt(i));
+            } catch (JSONException ignored) {
+
+            }
+        }
 		
 		return sb.toString();
 	}
@@ -311,7 +310,6 @@ public class SmsFetcher {
 	}
 	
 	private final Context _context;
-	private JSONArray _jsonDataDump;
 	private JSONArray _existingInboxMessages;
 	private JSONArray _existingSentMessages;
 	private JSONArray _existingDraftsMessages;

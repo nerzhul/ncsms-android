@@ -152,7 +152,8 @@ public class OCSMSOwnCloudClient {
 			fetcher.setExistingSentMessages(sentSmsList);
 			fetcher.setExistingDraftsMessages(draftsSmsList);
 
-			smsList = fetcher.fetchAllMessages();
+            smsList = new JSONArray();
+			fetcher.fetchAllMessages(smsList);
 
 			// Get maximum message date present in smsList to keep a step when connectivity changes
 			lastMsgDate = fetcher.getLastMessageDate();
@@ -329,7 +330,7 @@ public class OCSMSOwnCloudClient {
 			}
 		}
 
-		if(status == HttpStatus.SC_OK) {
+		if (status == HttpStatus.SC_OK) {
 			String response;
 			try {
 				response = req.getResponseBodyAsString();
