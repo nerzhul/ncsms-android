@@ -59,28 +59,6 @@
             android:label="@string/pref_title_sync" >
         </provider>
 
-        <!--
-        <service
-            android:name=".sync_adapters.SmsSlowSyncService"
-            android:exported="true"
-            android:process=":sync">
-            <intent-filter>
-                <action android:name="android.content.SyncAdapter" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.content.SyncAdapter"
-                android:resource="@xml/slow_sync_adapter" />
-        </service>
-        
-        <provider
-            android:name=".providers.SmsDataProvider"
-            android:label="@string/pref_title_slow_sync"
-            android:authorities="@string/slowsync_account_authority">
-        </provider>
-        -->
-
-
         <!-- Related to Login -->
         <service android:name=".authenticators.OwnCloudAuthenticatorService" >
             <intent-filter>
@@ -124,12 +102,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--
-        <activity
-            android:name=".MainActivity2"
-            android:label="@string/title_activity_main_activity2" >
-        </activity>
-        -->
         <activity
             android:name=".activities.remote_account.ContactListActivity"
             android:label="@string/title_activity_select_contact" >
