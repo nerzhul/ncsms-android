@@ -11,15 +11,16 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Vector;
 
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.adapters.ContactListAdapter;
+import fr.unix_experience.owncloud_sms.adapters.RecoveryPhoneNumberListViewAdapter;
 import fr.unix_experience.owncloud_sms.engine.ASyncContactLoad;
 
 public class ContactListActivity extends Activity implements ASyncContactLoad {
@@ -55,16 +56,15 @@ public class ContactListActivity extends Activity implements ASyncContactLoad {
 				android.R.color.holo_orange_light,
 				android.R.color.holo_red_light);
 
-		adapter = new ContactListAdapter(getBaseContext(),
-				android.R.layout.simple_spinner_item,
-				objects,
-				R.layout.contact_list_item,
-				R.id.contactname, this);
+		adapter = new ContactListAdapter(getBaseContext(), objects);
 
 		final Spinner sp = (Spinner) findViewById(R.id.contact_spinner);
 		final LinearLayout contactInfos = (LinearLayout) findViewById(R.id.contactinfos_layout);
 		final ProgressBar contactProgressBar = (ProgressBar) findViewById(R.id.contactlist_pgbar);
-		final TextView contactPhoneList = (TextView) findViewById(R.id.contact_phonelist);
+        final ListView contactPhoneListView = (ListView) findViewById(R.id.contact_phonelistView);
+        final RecoveryPhoneNumberListViewAdapter contactPhoneListAdapter =
+                new RecoveryPhoneNumberListViewAdapter(getBaseContext());
+        contactPhoneListView.setAdapter(contactPhoneListAdapter);
 
 		contactInfos.setVisibility(View.INVISIBLE);
 
@@ -72,6 +72,7 @@ public class ContactListActivity extends Activity implements ASyncContactLoad {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 				contactInfos.setVisibility(View.INVISIBLE);
+                contactPhoneListAdapter.clear();
 
 				String contactName = sp.getSelectedItem().toString();
 				Vector<String> phoneList = fetchContact(contactName);
@@ -79,16 +80,15 @@ public class ContactListActivity extends Activity implements ASyncContactLoad {
 				// @TODO asynctask to load more datas
 
 				if (!phoneList.isEmpty()) {
-					String res = "";
 					for (String pn: phoneList) {
-						res += "- " + pn + "\n";
+                        contactPhoneListAdapter.add(pn);
 					}
-					contactPhoneList.setText(res);
 				} else {
-					contactPhoneList.setText(contactName);
+                    contactPhoneListAdapter.add(contactName);
 				}
 
 				contactInfos.setVisibility(View.VISIBLE);
+                contactPhoneListAdapter.notifyDataSetChanged();
 			}
 
 			@Override

@@ -1,6 +1,5 @@
 package fr.unix_experience.owncloud_sms.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,20 +9,18 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import fr.unix_experience.owncloud_sms.R;
+
 public class ContactListAdapter extends ArrayAdapter<String> {
 	private final ArrayList<String> _objects;
-	private static int _itemLayout;
-	private static int _fieldId;
-	private final Activity _activity;
+
+    // Design
+    private final static int _itemLayout = R.layout.contact_list_item;
+    private final static int _fieldId = R.id.contactname;
 	
-	public ContactListAdapter(Context context, int resource,
-				ArrayList<String> objects, int itemLayout,
-				int fieldId, Activity activity) {
-		super(context, resource, objects);
+	public ContactListAdapter(Context context, ArrayList<String> objects) {
+		super(context, android.R.layout.simple_spinner_item, objects);
 		_objects = objects;
-        ContactListAdapter._itemLayout = itemLayout;
-        ContactListAdapter._fieldId = fieldId;
-		_activity = activity;
 	}
 
 	@Override

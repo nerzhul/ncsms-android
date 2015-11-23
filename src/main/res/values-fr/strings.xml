@@ -140,7 +140,7 @@ Les contributeurs et rapporteurs de bugs</string>
     <string name="err_sync_http_request_parse_resp">Erreur #15: Impossible d\'interpréter la réponse du serveur</string>
     <string name="err_sync_http_request_httpexception">Erreur #12: Impossible de se connecter à l\'instance ownCloud</string>
     <string name="err_sync_http_request_ioexception">Erreur #13: Impossible de se connecter à l\'instance ownCloud</string>
-    <string name="subtitle_contact_phones">> Numéros de téléphone associés</string>
+    <string name="subtitle_contact_phones">- Numéros de téléphone associés</string>
     <string name="choose_account">Choisissez un compte</string>
     <string name="ma_title_remote_account">Compte distant</string>
     <string name="title_activity_select_account">Chosissez un compte</string>

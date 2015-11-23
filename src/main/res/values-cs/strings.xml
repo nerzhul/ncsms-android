@@ -158,5 +158,5 @@
     <string name="err_fetch_phonelist">Přijat neplatný seznam telefoních čísel ze serveru.</string>
     <string name="err_proto_v2">Server nepodporuje tuto funkci. Zajistěte verzi na serveru alespoň 1.6.</string>
     <string name="contactinfos_title">Informace kontaktu</string>
-    <string name="subtitle_contact_phones">> Telefony kontaktu</string>
+    <string name="subtitle_contact_phones">- Telefony kontaktu</string>
 </resources>
