@@ -103,7 +103,7 @@
         style="@style/StandardButton"
         android:text="@string/ma_button_sync_accounts_now" />
     
-   <!--<TextView
+   <TextView
         android:id="@+id/tv_remoteaccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -124,7 +124,7 @@
         android:onClick="selectRemoteAccount"
         android:background="@drawable/standard_button"
         style="@style/StandardButton"
-        android:text="@string/choose_account" />-->
+        android:text="@string/choose_account" />
 
     <ImageView
         android:id="@+id/imageView1"
@@ -132,9 +132,9 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
         android:layout_alignStart="@+id/textView1"
-        android:layout_below="@+id/main_button_sync"
+        android:layout_below="@+id/main_button_choose_account"
         android:layout_marginTop="33dp"
         android:src="@drawable/next_arrow" />
-    <!--  android:layout_below="@+id/main_button_choose_account" -->
+    <!--  android:layout_below="@+id/main_button_sync" -->
 
 </RelativeLayout>

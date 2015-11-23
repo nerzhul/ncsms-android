@@ -193,4 +193,5 @@ Contributors and issue\'s reporters</string>
     <string name="contactinfos_title">Contact informations</string>
     <string name="subtitle_contact_phones">> Contact phones</string>
     <string name="pref_title_bulk_messages">Max messages to send per sync</string>
+    <string name="contactinfos_list">Contact list</string>
 </resources>

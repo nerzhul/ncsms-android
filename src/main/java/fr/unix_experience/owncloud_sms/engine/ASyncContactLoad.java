@@ -10,8 +10,8 @@ import android.os.AsyncTask;
 import android.provider.ContactsContract;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.Spinner;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,11 +32,11 @@ public interface ASyncContactLoad {
 		private final ArrayList<String> _objects;
 		private final SwipeRefreshLayout _layout;
 		private final ProgressBar _pg;
-		private final Spinner _contactSpinner;
+		private final LinearLayout _contactLayout;
 
 		public ContactLoadTask(Account account, Context context,
 				ContactListAdapter adapter, ArrayList<String> objects, SwipeRefreshLayout layout,
-				ProgressBar pg, Spinner sp) {
+				ProgressBar pg, LinearLayout sp) {
 			if (ContactLoadTask._accountMgr == null) {
                 ContactLoadTask._accountMgr = AccountManager.get(context);
 			}
@@ -47,7 +47,7 @@ public interface ASyncContactLoad {
 			_objects = objects;
 			_layout = layout;
 			_pg = pg;
-			_contactSpinner = sp;
+            _contactLayout = sp;
 		}
 		@Override
 		protected Boolean doInBackground(Void... params) {
@@ -141,8 +141,8 @@ public interface ASyncContactLoad {
 				_pg.setVisibility(View.INVISIBLE);
 			}
 
-			if (_contactSpinner != null) {
-				_contactSpinner.setVisibility(View.VISIBLE);
+			if (_contactLayout != null) {
+                _contactLayout.setVisibility(View.VISIBLE);
 			}
 		}
 	}

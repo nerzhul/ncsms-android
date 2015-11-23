@@ -149,4 +149,5 @@ Les contributeurs et rapporteurs de bugs</string>
     <string name="err_sync_create_json_request_encoding">Erreur #7: Encodage inconnu à la conversion</string>
     <string name="err_sync_craft_http_request">Erreur #2: Echec de la création de la requête</string>
     <string name="pref_title_bulk_messages">Nombre maximum de messages à envoyer par synchronisation</string>
+    <string name="contactinfos_list">Liste des contacts</string>
 </resources>

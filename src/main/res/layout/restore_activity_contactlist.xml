@@ -35,27 +35,26 @@
 		android:orientation="vertical"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent" >
-
-		<Spinner
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:id="@+id/contact_spinner"
-			/>
-
-		<ProgressBar
-			style="?android:attr/progressBarStyleLarge"
-			android:layout_width="match_parent"
-			android:id="@+id/contactlist_pgbar"
-			android:layout_gravity="center_horizontal"
-			android:indeterminateOnly="true"
-			android:indeterminate="true"
-			android:layout_height="wrap_content"/>
-
 		<LinearLayout
 			android:orientation="vertical"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:id="@+id/contactinfos_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/contactinfos_list"
+                android:id="@+id/contactinfos_list"
+                android:paddingLeft="10dp"
+                android:textColor="@android:color/holo_blue_dark"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/contact_spinner"
+                />
 
 			<TextView
                 android:layout_width="wrap_content"
@@ -83,7 +82,13 @@
 				android:autoText="false"
 				android:paddingLeft="40dp"/>
 		</LinearLayout>
-
-
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="match_parent"
+            android:id="@+id/contactlist_pgbar"
+            android:layout_gravity="center_horizontal"
+            android:indeterminateOnly="true"
+            android:indeterminate="true"
+            android:layout_height="wrap_content"/>
 	</LinearLayout>
 </android.support.v4.widget.SwipeRefreshLayout>

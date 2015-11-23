@@ -43,7 +43,7 @@ public class ContactListActivity extends Activity implements ASyncContactLoad {
         ContactListActivity._accountMgr = AccountManager.get(getBaseContext());
 		Account[] myAccountList =
                 ContactListActivity._accountMgr.getAccountsByType(getString(R.string.account_type));
-		
+
 		// Init view
 		objects = new ArrayList<>();
 		setContentView(R.layout.restore_activity_contactlist);
@@ -54,19 +54,18 @@ public class ContactListActivity extends Activity implements ASyncContactLoad {
 				android.R.color.holo_green_light,
 				android.R.color.holo_orange_light,
 				android.R.color.holo_red_light);
-		
+
 		adapter = new ContactListAdapter(getBaseContext(),
 				android.R.layout.simple_spinner_item,
 				objects,
 				R.layout.contact_list_item,
 				R.id.contactname, this);
-		
+
 		final Spinner sp = (Spinner) findViewById(R.id.contact_spinner);
 		final LinearLayout contactInfos = (LinearLayout) findViewById(R.id.contactinfos_layout);
 		final ProgressBar contactProgressBar = (ProgressBar) findViewById(R.id.contactlist_pgbar);
 		final TextView contactPhoneList = (TextView) findViewById(R.id.contact_phonelist);
 
-		sp.setVisibility(View.INVISIBLE);
 		contactInfos.setVisibility(View.INVISIBLE);
 
 		sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -139,22 +138,21 @@ public class ContactListActivity extends Activity implements ASyncContactLoad {
 			if (element.name.equals(accountName)) {
 				// Load "contacts"
 				contactProgressBar.setVisibility(View.VISIBLE);
-				sp.setVisibility(View.INVISIBLE);
-				new ContactLoadTask(element, getBaseContext(), adapter, objects, _layout, contactProgressBar, sp).execute();
+				new ContactLoadTask(element, getBaseContext(), adapter, objects, _layout, contactProgressBar, contactInfos).execute();
 
 				// Add refresh handler
 				_layout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
 					@Override
 					public void onRefresh() {
 						_layout.setRefreshing(true);
-						sp.setVisibility(View.INVISIBLE);
+						contactInfos.setVisibility(View.INVISIBLE);
 						contactProgressBar.setVisibility(View.VISIBLE);
 						(new Handler()).post(new Runnable() {
 							@Override
 							public void run() {
 								objects.clear();
 								adapter.notifyDataSetChanged();
-								new ContactLoadTask(element, getBaseContext(), adapter, objects, _layout, contactProgressBar, sp).execute();
+								new ContactLoadTask(element, getBaseContext(), adapter, objects, _layout, contactProgressBar, contactInfos).execute();
 							}
 						});
 					}
