@@ -25,7 +25,9 @@
  * SUCH DAMAGE.
  */
 -->
-<resources>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
 
     <!-- Translation version, reference for translators -->
     <string name="translation_version">7</string>
@@ -65,6 +67,24 @@
         <item>360</item>
         <item>720</item>
         <item>1440</item>
+        <item>-1</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Všechny nesynchronizované SMS</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages">
+        <item>100</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>25000</item>
         <item>-1</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
@@ -159,4 +179,6 @@
     <string name="err_proto_v2">Server nepodporuje tuto funkci. Zajistěte verzi na serveru alespoň 1.6.</string>
     <string name="contactinfos_title">Informace kontaktu</string>
     <string name="subtitle_contact_phones">- Telefony kontaktu</string>
+    <string name="pref_title_bulk_messages">Maximální počet zpráv pro odeslání na synchronizaci</string>
+    <string name="contactinfos_list">Adresář</string>
 </resources>
