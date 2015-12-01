@@ -272,9 +272,11 @@ public class SmsFetcher {
 			existingMessages = _existingDraftsMessages;
 		} else if (_mbID == MailboxID.SENT) {
 			existingMessages = _existingSentMessages;
-		} else {
-            return "";
-        }
+		}
+        
+	        if (existingMessages == null) {
+	        	return "";
+	        }
 
 		// Note: The default case isn't possible, we check the mailbox before
 		StringBuilder sb = new StringBuilder();
