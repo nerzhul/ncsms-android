@@ -135,6 +135,6 @@
         android:layout_below="@+id/main_button_choose_account"
         android:layout_marginTop="33dp"
         android:src="@drawable/next_arrow" />
-    <!--  android:layout_below="@+id/main_button_sync" -->
+    <!--  android:layout_below="@+id/main_button_syncruir" -->
 
 </RelativeLayout>

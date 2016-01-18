@@ -274,9 +274,9 @@ public class SmsFetcher {
 			existingMessages = _existingSentMessages;
 		}
         
-	        if (existingMessages == null) {
-	        	return "";
-	        }
+        if (existingMessages == null) {
+            return "";
+        }
 
 		// Note: The default case isn't possible, we check the mailbox before
 		StringBuilder sb = new StringBuilder();
@@ -292,7 +292,7 @@ public class SmsFetcher {
             }
         }
 		
-		return sb.toString();
+        return sb.toString();
 	}
 	
 	public void setExistingInboxMessages(JSONArray inboxMessages) {
