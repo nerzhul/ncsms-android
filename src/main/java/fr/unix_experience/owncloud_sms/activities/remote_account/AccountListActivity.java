@@ -6,6 +6,7 @@ import android.app.ListActivity;
 import android.os.Bundle;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import fr.nrz.androidlib.adapters.AndroidAccountAdapter;
 import fr.unix_experience.owncloud_sms.R;
@@ -21,7 +22,7 @@ public class AccountListActivity extends ListActivity {
 		AccountManager _accountMgr = AccountManager.get(getBaseContext());
 
 		setContentView(R.layout.restore_activity_accountlist);
-        /*
+
 		adapter = new AndroidAccountAdapter(this,
 				android.R.layout.simple_list_item_1,
 				listItems,
@@ -34,7 +35,7 @@ public class AccountListActivity extends ListActivity {
         Collections.addAll(listItems, accountList);
 
 		adapter.notifyDataSetChanged();
-        */
+
 	}
 }
 

@@ -108,12 +108,14 @@
                 android:maxLines="1"
                 android:singleLine="true" />
 
-            <Button
+           <com.dd.processbutton.iml.ActionProcessButton
                 android:id="@+id/oc_signin_button"
-                style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
                 android:text="@string/action_sign_in_short"
                 android:textStyle="bold" />
         </LinearLayout>

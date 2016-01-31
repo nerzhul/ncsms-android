@@ -35,11 +35,11 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.dd.processbutton.iml.ActionProcessButton;
 import com.owncloud.android.lib.common.OwnCloudClient;
 import com.owncloud.android.lib.common.OwnCloudClientFactory;
 import com.owncloud.android.lib.common.OwnCloudCredentialsFactory;
@@ -64,6 +64,7 @@ public class LoginActivity extends Activity {
 	private EditText _loginView;
 	private EditText _passwordView;
 	private EditText _serverView;
+    private ActionProcessButton _signInButton;
 	private View mProgressView;
 	private View mLoginFormView;
 
@@ -91,7 +92,7 @@ public class LoginActivity extends Activity {
 					}
 				});
 
-		Button _signInButton = (Button) findViewById(R.id.oc_signin_button);
+        _signInButton = (ActionProcessButton) findViewById(R.id.oc_signin_button);
 		_signInButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -161,12 +162,15 @@ public class LoginActivity extends Activity {
 		if (cancel) {
 			// There was an error; don't attempt login and focus the first
 			// form field with an error.
+            // reset the button progress
+            _signInButton.setProgress(0);
             if (focusView != null) {
                 focusView.requestFocus();
             }
         } else {
 			// Show a progress spinner, and kick off a background task to
 			// perform the user login attempt.
+            _signInButton.setProgress(25);
 			showProgress(true);
 			String serverURL = protocol + serverAddr;
 			mAuthTask = new UserLoginTask(serverURL, login, password);
@@ -259,8 +263,10 @@ public class LoginActivity extends Activity {
 		protected void onPostExecute(Boolean success) {
 			mAuthTask = null;
 			showProgress(false);
+            _signInButton.setProgress(90);
 
 			if (success) {
+                _signInButton.setProgress(100);
 				String accountType = getIntent().getStringExtra(UserLoginTask.PARAM_AUTHTOKEN_TYPE);
 				if (accountType == null) {  
 		            accountType = getString(R.string.account_type);  
@@ -314,13 +320,17 @@ public class LoginActivity extends Activity {
 						_passwordView.requestFocus();
 						break;
 					case UNKNOWN_ERROR:
-						_serverView.setError("UNK");
-						_serverView.requestFocus();
+                        _serverView.setError("UNK");
+                        _serverView.requestFocus();
 						break;
 				default:
 					break;
 				}
-				
+
+                // If not ok, reset the progress
+                if (_returnCode != LoginReturnCode.OK) {
+                    _signInButton.setProgress(0);
+                }
 			}
 		}
 
