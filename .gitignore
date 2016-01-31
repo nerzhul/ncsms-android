@@ -1,1 +1,5 @@
 /bin/
+ownCloudSMS.iml
+/build/
+ownCloudSMS-release.apk
+lint.xml
