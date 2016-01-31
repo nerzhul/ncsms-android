@@ -25,7 +25,6 @@ package fr.unix_experience.owncloud_sms.activities;
  * SUCH DAMAGE.
  */
 
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
@@ -36,6 +35,7 @@ import android.provider.Settings;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,7 +53,7 @@ import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
 import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationManager;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide

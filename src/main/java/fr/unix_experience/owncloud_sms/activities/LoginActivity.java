@@ -22,7 +22,6 @@ import android.accounts.AccountManager;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
@@ -30,6 +29,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
@@ -53,7 +53,7 @@ import fr.unix_experience.owncloud_sms.enums.LoginReturnCode;
  * A login screen that offers login via email/password.
  */
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-public class LoginActivity extends Activity {
+public class LoginActivity extends AppCompatActivity {
 	/**
 	 * Keep track of the login task to ensure we can cancel it if requested.
 	 */

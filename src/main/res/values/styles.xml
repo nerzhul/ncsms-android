@@ -26,7 +26,7 @@
 -->
 
 <resources>
-    <style name="AppBaseTheme" parent="@android:style/Theme.Holo.Light">
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
     </style>
 
     <!-- Application theme. -->
