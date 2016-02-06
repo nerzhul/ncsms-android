@@ -2,12 +2,12 @@ package fr.unix_experience.owncloud_sms.activities.remote_account;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
-import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.ContactsContract;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.LinearLayout;
@@ -23,7 +23,7 @@ import fr.unix_experience.owncloud_sms.adapters.ContactListAdapter;
 import fr.unix_experience.owncloud_sms.adapters.RecoveryPhoneNumberListViewAdapter;
 import fr.unix_experience.owncloud_sms.engine.ASyncContactLoad;
 
-public class ContactListActivity extends Activity implements ASyncContactLoad {
+public class ContactListActivity extends AppCompatActivity implements ASyncContactLoad {
 
 	static AccountManager _accountMgr;
 	ContactListAdapter adapter;
@@ -50,11 +50,6 @@ public class ContactListActivity extends Activity implements ASyncContactLoad {
 		setContentView(R.layout.restore_activity_contactlist);
 
 		_layout = (SwipeRefreshLayout) findViewById(R.id.contactlist_swipe_container);
-
-		_layout.setColorScheme(android.R.color.holo_blue_bright,
-				android.R.color.holo_green_light,
-				android.R.color.holo_orange_light,
-				android.R.color.holo_red_light);
 
 		adapter = new ContactListAdapter(getBaseContext(), objects);
 

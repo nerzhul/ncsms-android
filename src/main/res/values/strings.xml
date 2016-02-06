@@ -164,6 +164,7 @@ Contributors and issue\'s reporters</string>
     <!-- Restauration -->
     <string name="title_activity_select_account">Select account</string>
     <string name="title_activity_select_contact">Select contact</string>
+    <string name="no_account_configured">No account configured.</string>
 
     <!-- Notifications -->
     <string name="sync_title">Sync process</string>

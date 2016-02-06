@@ -37,13 +37,11 @@
 
     <TextView
         android:id="@+id/tv_title_thanksto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:text="@string/ma_button_thanksto"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        style="@style/h1" />
 
     <TextView
         android:id="@+id/tv_thankspeople"
@@ -61,25 +59,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_rateUs"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:minHeight="36dp"
         android:text="@string/ma_button_rate_us"
         android:onClick="openGooglePlayStore"
-        android:background="@drawable/standard_button"
-        style="@style/StandardButton"
-        android:textAlignment="center" />
+        style="@style/StandardButton" />
 
     <TextView
         android:id="@+id/ma_title_rateus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/tv_thankspeople"
         android:layout_alignStart="@+id/tv_rateUs"
         android:layout_below="@+id/tv_thankspeople"
-        android:layout_marginTop="25dp"
-        android:text="@string/ma_title_rate_us"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        style="@style/h1"
+        android:text="@string/ma_title_rate_us" />
 
     <TextView
         android:id="@+id/tv_rateUs"

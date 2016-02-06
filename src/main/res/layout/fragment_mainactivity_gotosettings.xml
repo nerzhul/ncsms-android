@@ -37,69 +37,52 @@
 
     <TextView
         android:id="@+id/main_tv_accounts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="@string/ma_title_add_account"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        style="@style/h1"
+        android:text="@string/ma_title_add_account" />
 
     <Button
         android:id="@+id/main_button_accounts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/main_tv_accounts"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
         android:onClick="openAddAccount"
-        android:background="@drawable/standard_button"
         style="@style/StandardButton"
         android:text="@string/ma_button_goto_sync" />
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/main_tv_accounts"
         android:layout_alignStart="@+id/main_tv_accounts"
         android:layout_below="@+id/main_button_accounts"
-        android:layout_marginTop="18dp"
-        android:text="@string/ma_title_change_settings"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        style="@style/h1"
+        android:text="@string/ma_title_change_settings" />
 
     <Button
         android:id="@+id/main_button_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
         android:onClick="openAppSettings"
-        android:background="@drawable/standard_button"
         style="@style/StandardButton"
         android:text="@string/ma_button_goto_settings" />
     
     <TextView
         android:id="@+id/tv_launchsync"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/main_tv_accounts"
         android:layout_alignStart="@+id/main_tv_accounts"
         android:layout_below="@+id/main_button_settings"
-        android:layout_marginTop="18dp"
-        android:text="@string/ma_title_sync_all"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        style="@style/h1"
+        android:text="@string/ma_title_sync_all" />
 
     <Button
         android:id="@+id/main_button_sync"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_launchsync"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
         android:onClick="syncAllMessages"
-        android:background="@drawable/standard_button"
         style="@style/StandardButton"
         android:text="@string/ma_button_sync_accounts_now" />
     
@@ -119,10 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_remoteaccount"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="19dp"
         android:onClick="selectRemoteAccount"
-        android:background="@drawable/standard_button"
         style="@style/StandardButton"
         android:text="@string/choose_account" />
 

@@ -28,12 +28,7 @@
 <resources>
 
     <style name="OcSmsTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:actionBarStyle">@style/OcSmsActionBar</item>
-	</style>
-	
-    <style name="OcSmsActionBar"
-           parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-        <item name="android:background">#56a6cf</item>
+        <item name="colorPrimary">@color/oc_primary</item>
+        <item name="colorPrimaryDark">@color/oc_primary_dark</item>
     </style>
-
 </resources>

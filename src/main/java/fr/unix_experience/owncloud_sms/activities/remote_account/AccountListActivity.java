@@ -2,19 +2,18 @@ package fr.unix_experience.owncloud_sms.activities.remote_account;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
-import android.app.ListActivity;
 import android.os.Bundle;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 import fr.nrz.androidlib.adapters.AndroidAccountAdapter;
+import fr.unix_experience.android_lib.AppCompatListActivity;
 import fr.unix_experience.owncloud_sms.R;
 
-public class AccountListActivity extends ListActivity {
+public class AccountListActivity extends AppCompatListActivity {
 	ArrayList<Account> listItems = new ArrayList<>();
 	AndroidAccountAdapter adapter;
-
 	@Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);

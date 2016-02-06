@@ -30,19 +30,20 @@
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent" >
 
-    <!--<TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/function_not_available"
-        android:id="@+id/textView"
-        android:layout_gravity="center_horizontal"/>-->
-
     <ListView
-	    android:id="@android:id/list"
+	    android:id="@+id/list"
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
 	    android:drawSelectorOnTop="true"
         android:clickable="false"/>
+
+    <TextView android:id="@+id/empty"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@android:color/white"
+          android:text="@string/no_account_configured"
+          android:padding="32dp"
+          android:gravity="center"
+          android:visibility="gone" />
 
 </LinearLayout>

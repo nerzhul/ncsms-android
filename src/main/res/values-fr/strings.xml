@@ -151,4 +151,5 @@ Les contributeurs et rapporteurs de bugs</string>
     <string name="pref_title_bulk_messages">Nombre maximum de messages à envoyer par synchronisation</string>
     <string name="contactinfos_list">Liste des contacts</string>
     <string name="function_not_available">Cette fonctionnalité n\'est pas encore disponibleeems.</string>
+    <string name="no_account_configured">Vous n\'avez pas configuré de compte.</string>
 </resources>
