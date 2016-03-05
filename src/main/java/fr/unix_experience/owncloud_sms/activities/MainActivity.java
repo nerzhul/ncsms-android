@@ -51,7 +51,8 @@ import fr.unix_experience.owncloud_sms.activities.remote_account.AccountListActi
 import fr.unix_experience.owncloud_sms.engine.ASyncSMSSync.SyncTask;
 import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
-import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationManager;
+import fr.unix_experience.owncloud_sms.enums.OCSMSNotificationType;
+import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationUI;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -170,8 +171,8 @@ public class MainActivity extends AppCompatActivity {
             new SmsFetcher(ctx).bufferMessagesSinceDate(smsList, (long) 0);
 
 			if (smsList.length() > 0) {
-				OCSMSNotificationManager nMgr = new OCSMSNotificationManager(ctx);
-				nMgr.setSyncProcessMsg();
+                OCSMSNotificationUI.notify(ctx, ctx.getString(R.string.sync_title),
+                        ctx.getString(R.string.sync_inprogress), OCSMSNotificationType.SYNC.ordinal());
 				new SyncTask(getApplicationContext(), smsList).execute();
 			}
 		}

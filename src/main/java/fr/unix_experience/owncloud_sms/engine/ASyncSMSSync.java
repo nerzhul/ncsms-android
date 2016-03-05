@@ -27,8 +27,9 @@ import android.util.Log;
 import org.json.JSONArray;
 
 import fr.unix_experience.owncloud_sms.R;
+import fr.unix_experience.owncloud_sms.enums.OCSMSNotificationType;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
-import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationManager;
+import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationUI;
 
 public interface ASyncSMSSync {
 	class SyncTask extends AsyncTask<Void, Void, Void> {
@@ -44,7 +45,6 @@ public interface ASyncSMSSync {
 			Account[] myAccountList = _accountMgr.getAccountsByType(_context.getString(R.string.account_type));
 
 			// Notify that we are syncing SMS
-			OCSMSNotificationManager nMgr = new OCSMSNotificationManager(_context);
 			for (Account element : myAccountList) {
 				Uri serverURI = Uri.parse(_accountMgr.getUserData(element, "ocURI"));
 
@@ -54,13 +54,14 @@ public interface ASyncSMSSync {
 
 				try {
 					_client.doPushRequest(_smsList);
-					nMgr.dropSyncErrorMsg();
+					OCSMSNotificationUI.cancel(_context);
 				} catch (OCSyncException e) {
 					Log.e(ASyncSMSSync.TAG, _context.getString(e.getErrorId()));
-					nMgr.setSyncErrorMsg(_context.getString(e.getErrorId()));
+                    OCSMSNotificationUI.notify(_context, _context.getString(R.string.fatal_error),
+                             e.getMessage(), OCSMSNotificationType.SYNC_FAILED.ordinal());
 				}
 			}
-			nMgr.dropSyncProcessMsg();
+            OCSMSNotificationUI.cancel(_context);
 			return null;
 		}
 

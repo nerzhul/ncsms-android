@@ -116,7 +116,7 @@
         <item>-1</item>
     </string-array>
 
-	<string name="pref_push_on_receive">Push SMS on reception</string>
+    <string name="pref_push_on_receive">Push SMS on reception</string>
     <string name="pref_sync_wifi">Synchronize in Wi-Fi</string>
     <string name="pref_sync_4g">Synchronize in 4G</string>
     <string name="pref_sync_3g">Synchronize in 3G</string>
@@ -196,4 +196,9 @@ Contributors and issue\'s reporters</string>
     <string name="pref_title_bulk_messages">Max messages to send per sync</string>
     <string name="contactinfos_list">Contact list</string>
     <string name="function_not_available">This function is not available yet.</string>
+
+    <string name="ui_notification_title_template">OcSMS: %1$s</string>
+
+    <string name="action_share">Share</string>
+    <string name="action_reply">Reply</string>
 </resources>

@@ -1,110 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="fr.unix_experience.owncloud_sms"
-    android:versionCode="34"
-    android:versionName="0.20.1"> <!-- From Android 4.0 to 6.0 -->
+<manifest package="fr.unix_experience.owncloud_sms"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:versionCode="34"
+          android:versionName="0.20.1"> <!-- From Android 4.0 to 6.0 -->
     <uses-sdk
         android:maxSdkVersion="23"
         android:minSdkVersion="14"
-        android:targetSdkVersion="23" />
+        android:targetSdkVersion="23"/>
 
-    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS"/>
     <!-- For SMS Broadcaster -->
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <!-- For syncer -->
-    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
-    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
-    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_SYNC_STATS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <!-- For account management -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
-    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
-    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
 
     <!-- For backup restauration -->
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/OcSmsTheme" >
+        android:theme="@style/OcSmsTheme">
 
         <!-- Related to periodic sync -->
         <service
             android:name=".observers.SmsObserverService"
-            android:exported="false" />
+            android:exported="false"/>
         <service
             android:name=".sync_adapters.SmsSyncService"
             android:exported="true"
-            android:process=":sync" >
+            android:process=":sync">
             <intent-filter>
-                <action android:name="android.content.SyncAdapter" />
+                <action android:name="android.content.SyncAdapter"/>
             </intent-filter>
 
             <meta-data
                 android:name="android.content.SyncAdapter"
-                android:resource="@xml/sync_adapter" />
+                android:resource="@xml/sync_adapter"/>
         </service>
 
         <provider
             android:name=".providers.SmsDataProvider"
             android:authorities="@string/account_authority"
-            android:label="@string/pref_title_sync" >
+            android:label="@string/pref_title_sync">
         </provider>
 
         <!-- Related to Login -->
-        <service android:name=".authenticators.OwnCloudAuthenticatorService" >
+        <service android:name=".authenticators.OwnCloudAuthenticatorService">
             <intent-filter>
-                <action android:name="android.accounts.AccountAuthenticator" />
+                <action android:name="android.accounts.AccountAuthenticator"/>
             </intent-filter>
 
             <meta-data
                 android:name="android.accounts.AccountAuthenticator"
-                android:resource="@xml/owncloud_account_authenticator" />
+                android:resource="@xml/owncloud_account_authenticator"/>
         </service>
 
-        <receiver android:name=".broadcast_receivers.IncomingSms" >
+        <receiver android:name=".broadcast_receivers.IncomingSms">
             <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
             </intent-filter>
         </receiver>
-        <receiver android:name=".broadcast_receivers.ConnectivityChanged" >
+        <receiver android:name=".broadcast_receivers.ConnectivityChanged">
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
             </intent-filter>
         </receiver>
 
         <activity
             android:name=".activities.LoginActivity"
-            android:label="@string/title_activity_login" >
+            android:label="@string/title_activity_login">
         </activity>
         <activity
             android:name=".activities.remote_account.AccountListActivity"
-            android:label="@string/title_activity_select_account" >
+            android:label="@string/title_activity_select_account">
         </activity>
         <activity
             android:name=".activities.GeneralSettingsActivity"
-            android:label="@string/title_activity_general_settings" >
+            android:label="@string/title_activity_general_settings">
         </activity>
         <activity
             android:name=".activities.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".activities.remote_account.ContactListActivity"
-            android:label="@string/title_activity_select_contact" >
+            android:label="@string/title_activity_select_contact">
         </activity>
     </application>
 
