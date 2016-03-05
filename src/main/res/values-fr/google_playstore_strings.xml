@@ -36,6 +36,6 @@ L\'application ownCloud SMS vous permet de synchroniser vos messages SMS sur une
 
 Il est prévu d\'ajouter le support de l\'envoi de SMS depuis l\'instance ownCloud dans une future mise à jour, vous permettant d\'envoyer des SMS depuis n\'importe où dans le monde, en laissant votre téléphone Android à portée d\'un accès DATA et GSM
 
-L\'application est pleinement compatible des versions Android 4.0 à 5.0
+L\'application est pleinement compatible des versions Android 4.0 à 6.0
 	</string>
 </resources>
