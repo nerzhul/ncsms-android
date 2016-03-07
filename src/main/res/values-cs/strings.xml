@@ -132,19 +132,11 @@
     </string-array>
 
     <!-- Main activity -->
-    <string name="ma_button_rate_us">Ohodnoťit!</string>
-    <string name="ma_button_thanksto">Poděkování</string>
     <string name="ma_title_rate_us">Ohodnoťit!</string>
-    <string name="ma_content_rate_us">Pokud se vám tato aplikace líbí, ohodnoťte ji v Obchodě Google Play</string>
     <string name="ma_title_add_account">Přidat účet</string>
-    <string name="ma_button_goto_sync">Přejít na Účty a synchronizaci</string>
     <string name="ma_title_change_settings">Změnit nastavení aplikace</string>
-    <string name="ma_button_goto_settings">Přejít do Nastavení</string>
     <string name="ma_title_welcome">Vítejte</string>
     <string name="ma_content_welcome">Vítejte v aplikaci ownCloud SMS. Tato aplikace umožnuje sychronizovat SMS do vašeho účtu na serveru ownCloud za pomoci aplikace pro SMS.</string>
-    <string name="ma_thanksto_people">ownCloud vývojáři\n\ přispěvatelé a ti co hlásí chyby</string>
-    <string name="ma_title_sync_all">Synchronizovat všechny zprávy</string>
-    <string name="ma_button_sync_accounts_now">Spustit synchronizaci</string>
     <string name="ma_title_remote_account">Vzdálený účet</string>
     <string name="choose_account">Vybrat účet</string>
 
@@ -182,4 +174,5 @@
     <string name="pref_title_bulk_messages">Maximální počet zpráv pro odeslání na synchronizaci</string>
     <string name="contactinfos_list">Adresář</string>
     <string name="no_account_configured"></string>
+    <string name="ma_button_goto_settings"></string>
 </resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_sync"
+            android:icon="@drawable/ic_menu_send"
+            android:title="@string/sync_now"/>
+        <item
+            android:id="@+id/nav_add_account"
+            android:icon="@drawable/ic_menu_add"
+            android:title="@string/ma_title_add_account"/>
+        <item
+            android:id="@+id/nav_my_accounts"
+            android:icon="@drawable/ic_menu_edit"
+            android:title="@string/ma_title_my_accounts"/>
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/action_settings"/>
+    </group>
+
+    <item android:title="@string/communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_rateus"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/ma_title_rate_us"/>
+        </menu>
+    </item>
+
+</menu>

@@ -25,26 +25,20 @@ package fr.unix_experience.owncloud_sms.activities;
  * SUCH DAMAGE.
  */
 
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.v13.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import org.json.JSONArray;
-
-import java.util.List;
-import java.util.Vector;
 
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.activities.remote_account.AccountListActivity;
@@ -54,114 +48,63 @@ import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
 import fr.unix_experience.owncloud_sms.enums.OCSMSNotificationType;
 import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationUI;
 
-public class MainActivity extends AppCompatActivity {
-
-	/**
-	 * The {@link android.support.v4.view.PagerAdapter} that will provide
-	 * fragments for each of the sections. We use a {@link FragmentPagerAdapter}
-	 * derivative, which will keep every loaded fragment in memory. If this
-	 * becomes too memory intensive, it may be best to switch to a
-	 * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-	 */
-	PagerAdapter mPagerAdapter;
-
-	/**
-	 * The {@link ViewPager} that will host the section contents.
-	 */
-	ViewPager mViewPager;
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, null, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
 
-		// Create the adapter that will return a fragment for each of the three
-		// primary sections of the activity.
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
-		List<Fragment> fragments = new Vector<>();
-
-		/*
-		 * Add the Main tabs here
-		 */
-
-		fragments.add(Fragment.instantiate(this,StarterFragment.class.getName()));
-		fragments.add(Fragment.instantiate(this,SecondTestFragment.class.getName()));
-		fragments.add(Fragment.instantiate(this,ThanksAndRateFragment.class.getName()));
-
-		mPagerAdapter = new MainPagerAdapter(getFragmentManager(), fragments);
-
-		// Set up the ViewPager with the sections adapter.
-		mViewPager = (ViewPager) findViewById(R.id.pager);
-		mViewPager.setAdapter(mPagerAdapter);
+        drawer.openDrawer(GravityCompat.START);
 	}
 
-	/**
-	 * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-	 * one of the sections/tabs/pages.
-	 */
-	public class MainPagerAdapter extends FragmentPagerAdapter {
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 
-		private final List<Fragment> mFragments;
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        boolean res = true;
 
-		public MainPagerAdapter(FragmentManager fragmentManager, List<Fragment> fragments) {
-			super(fragmentManager);
-			mFragments = fragments;
-		}
+        switch (id) {
+            case R.id.nav_sync: res = syncAllMessages(); break;
+            case R.id.nav_manage: res = openAppSettings(); break;
+            case R.id.nav_rateus: res = openGooglePlayStore(); break;
+            case R.id.nav_add_account: res = openAddAccount(); break;
+            case R.id.nav_my_accounts: res = openMyAccounts(); break;
+        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return res;
+    }
 
-		@Override
-		public Fragment getItem(int position) {
-			// getItem is called to instantiate the fragment for the given page.
-			// Return a PlaceholderFragment (defined as a static inner class
-			// below).
-			return mFragments.get(position);
-		}
-
-		@Override
-		public int getCount() {
-			// Show 3 total pages.
-			return mFragments.size();
-		}
-	}
-
-	/**
-	 * Fragments for activity must be there
-	 */
-	public static class StarterFragment extends Fragment {
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.fragment_mainactivity_main, container,
-                    false);
-		}
-	}
-
-	public static class SecondTestFragment extends Fragment {
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.fragment_mainactivity_gotosettings, container,
-                    false);
-		}
-	}
-
-	public static class ThanksAndRateFragment extends Fragment {
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-            return inflater.inflate(R.layout.fragment_mainactivity_thanks_note, container,
-                    false);
-		}
-	}
-
-	public void openAppSettings(View view) {
+	private boolean openAppSettings () {
 		startActivity(new Intent(this, GeneralSettingsActivity.class));
+        return true;
 	}
 
-	public void openAddAccount(View view) {
+    private boolean openAddAccount () {
 		startActivity(new Intent(Settings.ACTION_ADD_ACCOUNT));
+        return true;
 	}
 
-	public void syncAllMessages(View view) {
+    private boolean syncAllMessages () {
 		Context ctx = getApplicationContext();
 		ConnectivityMonitor cMon = new ConnectivityMonitor(ctx);
 
@@ -179,21 +122,23 @@ public class MainActivity extends AppCompatActivity {
 		else {
 			Toast.makeText(ctx, ctx.getString(R.string.err_sync_no_connection_available), Toast.LENGTH_SHORT).show();
 		}
+        return true;
 	}
 
-	public void selectRemoteAccount(View view) {
+    private boolean openMyAccounts () {
 		startActivity(new Intent(this, AccountListActivity.class));
+        return true;
 	}
 
-	public void openGooglePlayStore(View view) {
+    private boolean openGooglePlayStore () {
 		Intent intent;
 		try {
 			intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName()));
-
 		} catch (android.content.ActivityNotFoundException anfe) {
 			intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName()));
 		}
 
 		startActivity(intent);
+        return true;
 	}
 }

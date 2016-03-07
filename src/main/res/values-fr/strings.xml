@@ -104,21 +104,14 @@
     <string name="error_http_connection_failed">Impossible d\'effectuer la connexion HTTP. Assurez vous qu\'il s\'agit d\'un serveur HTTP</string>
     
     <!-- Main activity -->
-    <string name="ma_button_rate_us">Notez nous !</string>
-    <string name="ma_button_thanksto">Remerciements</string>
     <string name="ma_title_rate_us">Notez nous !</string>
-    <string name="ma_content_rate_us">Si vous aimez cette application, n\'hésitez pas à nous noter sur le Google Play Store</string>
     <string name="ma_title_add_account">Ajouter un compte</string>
-    <string name="ma_button_goto_sync">Ouvrir comptes et synchronisation</string>
     <string name="ma_title_change_settings">Changer les paramètres de l\'application</string>
-    <string name="ma_button_goto_settings">Aller dans les paramètres</string>
     <string name="ma_title_welcome">Bienvenue</string>
     <string name="ma_content_welcome">Bienvenue sur l\'application ownCloud SMS. Cette application va vous permettre de synchroniser vos SMS au sein de votre instance ownCloud en utilisant l\'application dédiée.</string>
     <string name="ma_thanksto_people">L\'équipe de développement ownCloud\n\
 Les contributeurs et rapporteurs de bugs</string>
-	<string name="ma_title_sync_all">Synchroniser tous les messages</string>
-	<string name="ma_button_sync_accounts_now">Lancer la synchronisation</string>
-    
+
     <!-- Notifications -->
     <string name="sync_title">Processus de synchronisation</string>
     <string name="sync_inprogress">Synchonisation en cours...</string>
@@ -152,4 +145,7 @@ Les contributeurs et rapporteurs de bugs</string>
     <string name="contactinfos_list">Liste des contacts</string>
     <string name="function_not_available">Cette fonctionnalité n\'est pas encore disponibleeems.</string>
     <string name="no_account_configured">Vous n\'avez pas configuré de compte.</string>
+    <string name="communicate">Parlez de nous</string>
+    <string name="ma_title_my_accounts">Mes comptes</string>
+    <string name="ma_button_goto_settings"></string>
 </resources>

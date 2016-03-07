@@ -26,6 +26,7 @@
 -->
 
 <resources>
+
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimaryDark">@color/oc_primary_dark</item>
         <item name="colorPrimary">@color/oc_primary</item>
@@ -34,6 +35,7 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+
     <style name="StandardButton">
         <item name="android:background">@color/oc_primary</item>
         <item name="android:layout_marginTop">15dp</item>
@@ -41,6 +43,7 @@
         <item name="android:textColor">#ffffff</item>
         <item name="android:padding">10dp</item>
     </style>
+
     <style name="h1">
         <item name="android:textColor">@color/oc_primary_dark</item>
         <item name="android:layout_marginTop">18dp</item>
@@ -48,5 +51,14 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
     </style>
-    
+
+    <style name="OcSmsTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="OcSmsTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="OcSmsTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
 </resources>

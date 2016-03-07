@@ -129,5 +129,6 @@
 	<string name="err_sync_http_request_ioexception">Fehler #13: Konnte nicht mit der ownCloud-Instanz verbinden (IO-Fehler)</string>
 	<string name="err_sync_http_request_resp">Fehler #14: Konnte Server-Antwort nicht parsen</string>
 	<string name="err_sync_http_request_parse_resp">Fehler #15: Konnte Server-Antwort nicht parsen</string>
-	
+    <string name="ma_button_goto_settings"></string>
+
 </resources>

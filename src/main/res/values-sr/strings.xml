@@ -91,20 +91,13 @@
     <string name="error_http_connection_failed">Не могу да установим ХТТП везу. Проверите да ли веб сервер постоји</string>
 
     <!-- Main activity -->
-    <string name="ma_button_rate_us">Оцените!</string>
-    <string name="ma_button_thanksto">Хвала</string>
     <string name="ma_title_rate_us">Оцените нас!</string>
-    <string name="ma_content_rate_us">Ако вам се свиђа ова апликација оцените нас на Гугловој Плеј продавници</string>
     <string name="ma_title_add_account">Додајте налог</string>
-    <string name="ma_button_goto_sync">Налози и синхронизација</string>
     <string name="ma_title_change_settings">Измените поставке апликације</string>
-    <string name="ma_button_goto_settings">Поставке</string>
     <string name="ma_title_welcome">Добро дошли</string>
     <string name="ma_content_welcome">Добро дошли у Оунклауд СМС. Ова апликација синхронизује ваше СМС поруке на СМС апликацију вашег Оунклауд сервера.</string>
     <string name="ma_thanksto_people">Оунклауд програмерима\n\
 Доприносиоцима и људима који пријављују грешке</string>
-	<string name="ma_title_sync_all">Синхронизујте све поруке</string>
-	<string name="ma_button_sync_accounts_now">Почни синхронизацију сада</string>
 
     <!-- Notifications -->
     <string name="sync_title">Синхронизација</string>
@@ -128,5 +121,6 @@
     <string name="err_sync_http_request_parse_resp">Грешка #15: не могу да рашчланим одговор сервера</string>
     <string name="err_sync_no_connection_available">Грешка #16: нема везе на интернет</string>
     <string name="err_sync_account_unparsable">Грешка #17: деформисан налог. Поставите га поново</string>
+    <string name="ma_button_goto_settings"></string>
 
 </resources>
