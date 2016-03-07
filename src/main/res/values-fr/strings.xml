@@ -148,4 +148,5 @@ Les contributeurs et rapporteurs de bugs</string>
     <string name="communicate">Parlez de nous</string>
     <string name="ma_title_my_accounts">Mes comptes</string>
     <string name="ma_button_goto_settings"></string>
+    <string name="ma_content_swipeaction">Glissez votre doigt de gauche à droite pour afficher le menu.</string>
 </resources>

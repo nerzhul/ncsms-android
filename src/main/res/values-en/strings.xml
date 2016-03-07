@@ -163,5 +163,6 @@ Contributors and issue\'s reporters</string>
     <string name="communicate">Communicate</string>
     <string name="ma_title_my_accounts">My accounts</string>
     <string name="ma_button_goto_settings"></string>
+    <string name="ma_content_swipeaction">Swipe from left to right to access to action menu.</string>
 
 </resources>
