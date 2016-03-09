@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="utf-8"?>
 <!--
  /*
@@ -103,27 +102,18 @@
     </string-array>
     
     <!-- Main activity -->
-    <string name="ma_button_rate_us">Оцените нас !</string>
-    <string name="ma_button_thanksto">Спасибо</string>
-    <string name="ma_title_rate_us">Оцените нас !</string>
-    <string name="ma_content_rate_us">Если вам нравится это приложение, пожалуйста оцените нас на Google Play Store</string>
+    <string name="ma_title_rate_us">Сказать спасибо!</string>
     <string name="ma_title_add_account">Добавить учетную запись</string>
-    <string name="ma_button_goto_sync">Перейти к Аккаунтам</string>
-    <string name="ma_title_change_settings">Изменение настроек</string>
-    <string name="ma_button_goto_settings">Перейти к настройкам</string>
     <string name="ma_title_welcome">Добро пожаловат</string>
     <string name="ma_content_welcome">Добро пожаловать в приложение ownCloud SMS. Оно позволит синхронизировать ваши SMS с экземпляром OwnCloud используя SMS app.</string>
-    <string name="ma_thanksto_people">Разработчикам OwnCloud\n\
-Участникам и issue\'s reporters</string>
-    <string name="ma_title_sync_all">Синхрон. всех сообщений</string>
-    <string name="ma_button_sync_accounts_now">Запуск синхронизации</string>
-    <string name="ma_title_remote_account">Удаленный аккаунт</string>
-<!--    <string name="choose_account">Выбрать аккаунт</string> -->
+    <string name="ma_title_remote_account">Удаленные учетные записи</string>
+    <string name="choose_account">Выберите учетную запись</string>
 
     <!-- Restauration -->
     <string name="title_activity_select_account">Выбор учетной записи</string>
     <string name="title_activity_select_contact">Выберите контакт</string>
-<!--    <string name="no_account_configured">Нет настроенных аккаунтов.</string> -->
+    <string name="no_account_configured">Нет настроенных аккаунтов.</string>
+    <!-- Restauration -->
 
     <!-- Notifications -->
     <string name="sync_title">Процесс синхронизации</string>
@@ -135,7 +125,7 @@
     <string name="err_sync_craft_http_request">Error #2: Error while crafting HTTP request</string>
     <string name="err_sync_push_request">Error #3: Push request failed</string>
     <string name="err_sync_push_request_resp">Error #4: Invalid datas received from server when pushing datas</string>
-    <string name="err_sync_create_json_null_smslist">Error #5: NULL Sms List</string>
+    <string name="err_sync_create_json_null_smslist">Error #5: NULL SMS List</string>
     <string name="err_sync_create_json_put_smslist">Error #6: Error while crafting push request</string>
     <string name="err_sync_create_json_request_encoding">Error #7: Unsupported encoding when generating request</string>
     <string name="err_sync_auth_failed">Error #8: Authentication failed</string>
@@ -148,14 +138,21 @@
     <string name="err_sync_no_connection_available">Error #16: No data connection available</string>
     <string name="err_sync_account_unparsable">Error #17: malformed account. Please reconfigure it</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: OcSMS app is not installed or ownCloud awaiting for an upgrade</string>
+
     <string name="err_fetch_phonelist">Неверный список телефонов, полученных от сервера.</string>
     <string name="err_proto_v2">Сервер не поддерживает эту функцию. Убедитесь, что версия сервера не ниже 1.6.</string>
     <string name="contactinfos_title">Контактная информация</string>
-    <string name="choose_account">Выберите учетную запись</string>
     <string name="subtitle_contact_phones">- Контактный телефон</string>
     <string name="pref_title_bulk_messages">Максимальное количество сообщений для отправки</string>
     <string name="contactinfos_list">Список контактов</string>
     <string name="function_not_available">Эта функция пока не доступна.</string>
-    <string name="no_account_configured">Нет настроенных аккаунтов.</string>
 
+    <string name="ui_notification_title_template">OcSMS: %1$s</string>
+    <string name="communicate">Communicate</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Открыть панель навигации</string>
+    <string name="navigation_drawer_close">Закрыть панель навигации</string>
+    <string name="ma_title_my_accounts">Мои учетные записи</string>
+    <string name="ma_content_swipeaction">Проведите по экрану слева направо, чтобы получить доступ к меню.</string>
 </resources>
