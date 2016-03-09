@@ -1,6 +1,5 @@
-This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<?xml version="1.0" encoding="utf-8"?>
 <!--
-
  /*
  * Copyright (c) 2014, Loic Blot <loic.blot@unix-experience.fr>
  * All rights reserved.
@@ -27,13 +26,16 @@ This XML file does not appear to have any style information associated with it. 
  */
 -->
 <resources>
-<!--  Translation version, reference for translators  -->
-<string name="gp_translation_version">3</string>
-<!--  Translations must begin here  -->
-<string name="gp_short_description">
-ownCloud SMS выполнить синхронизацию SMS на ваш экземпляре ownCloud
-</string>
-<string name="gp_description">
-Приложение ownCloud SMS выполнить синхронизацию SMS-сообщений на удаленный экземпляре OwnCloud и позволяет читать сообщения из него. Отправка SMS из экземпляра OwnCloud будет добавлена в будущих версиях. Программа полностью совместима с Android 4.0 до 5.0
-</string>
+	<!--  Translation version, reference for translators  -->
+	<string name="gp_translation_version">3</string>
+
+	<!--  Translations must begin here  -->
+	<string name="gp_short_description">ownCloud SMS выполняет синхронизацию SMS на ваш экземпляр ownCloud</string>
+	<string name="gp_description">
+Приложение ownCloud SMS выполнит синхронизацию SMS-сообщений на удаленный экземпляре OwnCloud и позволяет читать сообщения из него.
+
+Отправка SMS из OwnCloud будет добавлена в будущих версиях.
+
+Программа полностью совместима с Android 4.0 до 6.0
+	</string>
 </resources>
