@@ -51,25 +51,25 @@ public class ConnectivityMonitor {
 				return prefs.syncInWifi();
 			case ConnectivityManager.TYPE_MOBILE:
 				switch (netInfo.getSubtype()) {
-				case TelephonyManager.NETWORK_TYPE_EDGE:
-				case TelephonyManager.NETWORK_TYPE_CDMA:
-				case TelephonyManager.NETWORK_TYPE_1xRTT:
-				case TelephonyManager.NETWORK_TYPE_IDEN:
-					return prefs.syncIn2G();
-				case TelephonyManager.NETWORK_TYPE_GPRS:
-					return prefs.syncInGPRS();
-				case TelephonyManager.NETWORK_TYPE_HSDPA:
-				case TelephonyManager.NETWORK_TYPE_HSPA:
-				case TelephonyManager.NETWORK_TYPE_HSUPA:
-				case TelephonyManager.NETWORK_TYPE_UMTS:
-				case TelephonyManager.NETWORK_TYPE_EHRPD:
-				case TelephonyManager.NETWORK_TYPE_EVDO_B:
-				case TelephonyManager.NETWORK_TYPE_HSPAP:
-					return prefs.syncIn3G();
-				case TelephonyManager.NETWORK_TYPE_LTE:
-					return prefs.syncIn4G();
-				default:
-					return prefs.syncInOtherModes();
+                    case TelephonyManager.NETWORK_TYPE_EDGE:
+                    case TelephonyManager.NETWORK_TYPE_CDMA:
+                    case TelephonyManager.NETWORK_TYPE_1xRTT:
+                    case TelephonyManager.NETWORK_TYPE_IDEN:
+                        return prefs.syncIn2G();
+                    case TelephonyManager.NETWORK_TYPE_GPRS:
+                        return prefs.syncInGPRS();
+                    case TelephonyManager.NETWORK_TYPE_HSDPA:
+                    case TelephonyManager.NETWORK_TYPE_HSPA:
+                    case TelephonyManager.NETWORK_TYPE_HSUPA:
+                    case TelephonyManager.NETWORK_TYPE_UMTS:
+                    case TelephonyManager.NETWORK_TYPE_EHRPD:
+                    case TelephonyManager.NETWORK_TYPE_EVDO_B:
+                    case TelephonyManager.NETWORK_TYPE_HSPAP:
+                        return prefs.syncIn3G();
+                    case TelephonyManager.NETWORK_TYPE_LTE:
+                        return prefs.syncIn4G();
+                    default:
+                        return prefs.syncInOtherModes();
 				}
 			default:
 				return prefs.syncInOtherModes();
