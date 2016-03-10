@@ -63,12 +63,13 @@ public class SmsSyncAdapter extends AbstractThreadedSyncAdapter {
 
 		try {
 			// getServerAPI version
-			Log.d(TAG,"Server API version: " + _client.getServerAPIVersion());
+			Log.d(TAG, "Server API version: " + _client.getServerAPIVersion());
 
 			// and push datas
 			_client.doPushRequest(null);
             OCSMSNotificationUI.cancel(getContext());
 		} catch (final OCSyncException e) {
+            OCSMSNotificationUI.cancel(getContext());
             OCSMSNotificationUI.notify(getContext(), getContext().getString(R.string.fatal_error),
                     getContext().getString(e.getErrorId()), OCSMSNotificationType.SYNC_FAILED.ordinal());
 			if (e.getErrorType() == OCSyncErrorType.IO) {
@@ -84,8 +85,6 @@ public class SmsSyncAdapter extends AbstractThreadedSyncAdapter {
 				// UNHANDLED
 			}
 		}
-
-        OCSMSNotificationUI.cancel(getContext());
 	}
 
 	private final AccountManager _accountMgr;
