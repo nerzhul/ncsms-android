@@ -39,18 +39,7 @@ You can also contribute by adding patches in Java code or cleanups.
 - nrz-androidlib (last version)
 - ownCloud-Android-Library v1.0
 
-## Issue template
-
-Server
-- ownCloud version: X.X.X
-- PHP version: X.X
-- HTTPd server: <apache|nginx...>
-- HTTPS: <yes|no>
-
-Client
-- Android version: X.X.X
-- Phone: <phone-model>
-- ownCloud SMS app version: X.X.X
+## Reporting issues
 
 Please create your issues for the **client** here:
 
