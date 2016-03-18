@@ -7,7 +7,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import fr.nrz.androidlib.adapters.AndroidAccountAdapter;
+import fr.unix_experience.owncloud_sms.adapters.AndroidAccountAdapter;
 import fr.unix_experience.android_lib.AppCompatListActivity;
 import fr.unix_experience.owncloud_sms.R;
 

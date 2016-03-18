@@ -27,9 +27,8 @@ import android.support.annotation.NonNull;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
 public class SmsDataProvider extends ContentProvider {
-	public SmsDataProvider () {}
 
-	public SmsDataProvider (Context ct) {
+    public SmsDataProvider (Context ct) {
 		super();
 		_context = ct;
 	}

@@ -19,7 +19,7 @@ package fr.unix_experience.owncloud_sms.prefs;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import fr.nrz.androidlib.common.SharedPrefs;
+
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
 

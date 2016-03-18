@@ -27,13 +27,13 @@ import android.util.Log;
 
 import java.util.List;
 
-import fr.nrz.androidlib.activities.NrzSettingsActivity;
+import fr.unix_experience.owncloud_sms.activities.virtual.VirtualSettingsActivity;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
-public class GeneralSettingsActivity extends NrzSettingsActivity {
-	private static final String TAG = GeneralSettingsActivity.class.getSimpleName();
+public class OCSMSSettingsActivity extends VirtualSettingsActivity {
+	private static final String TAG = OCSMSSettingsActivity.class.getSimpleName();
 
 	private static AccountManager _accountMgr;
 	private static String _accountAuthority;
@@ -41,23 +41,23 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
 
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
-        GeneralSettingsActivity._accountMgr = AccountManager.get(getBaseContext());
-        GeneralSettingsActivity._accountAuthority = getString(R.string.account_authority);
-        GeneralSettingsActivity._accountType = getString(R.string.account_type);
-        NrzSettingsActivity._prefsRessourceFile = R.xml.pref_data_sync;
+        _accountMgr = AccountManager.get(getBaseContext());
+        _accountAuthority = getString(R.string.account_authority);
+        _accountType = getString(R.string.account_type);
+        _prefsRessourceFile = R.xml.pref_data_sync;
 
 		// Bind our boolean preferences
-        NrzSettingsActivity._boolPrefs.add(new BindObjectPref("push_on_receive", DefaultPrefs.pushOnReceive));
-        NrzSettingsActivity._boolPrefs.add(new BindObjectPref("sync_wifi", DefaultPrefs.syncWifi));
-        NrzSettingsActivity._boolPrefs.add(new BindObjectPref("sync_4g", DefaultPrefs.sync4G));
-        NrzSettingsActivity._boolPrefs.add(new BindObjectPref("sync_3g", DefaultPrefs.sync3G));
-        NrzSettingsActivity._boolPrefs.add(new BindObjectPref("sync_gprs", DefaultPrefs.syncGPRS));
-        NrzSettingsActivity._boolPrefs.add(new BindObjectPref("sync_2g", DefaultPrefs.sync2G));
-        NrzSettingsActivity._boolPrefs.add(new BindObjectPref("sync_others", DefaultPrefs.syncOthers));
+        _boolPrefs.add(new BindObjectPref("push_on_receive", DefaultPrefs.pushOnReceive));
+        _boolPrefs.add(new BindObjectPref("sync_wifi", DefaultPrefs.syncWifi));
+        _boolPrefs.add(new BindObjectPref("sync_4g", DefaultPrefs.sync4G));
+        _boolPrefs.add(new BindObjectPref("sync_3g", DefaultPrefs.sync3G));
+        _boolPrefs.add(new BindObjectPref("sync_gprs", DefaultPrefs.syncGPRS));
+        _boolPrefs.add(new BindObjectPref("sync_2g", DefaultPrefs.sync2G));
+        _boolPrefs.add(new BindObjectPref("sync_others", DefaultPrefs.syncOthers));
 
 		// Bind our string preferences
-        NrzSettingsActivity._stringPrefs.add(new BindObjectPref("sync_frequency", "15"));
-        NrzSettingsActivity._stringPrefs.add(new BindObjectPref("sync_bulk_messages", "-1"));
+        _stringPrefs.add(new BindObjectPref("sync_frequency", "15"));
+        _stringPrefs.add(new BindObjectPref("sync_bulk_messages", "-1"));
 
 		// Must be at the end, after preference bind
 		super.onPostCreate(savedInstanceState);
@@ -69,8 +69,8 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
                 "sync_wifi".equals(key) || "sync_2g".equals(key) ||
                 "sync_3g".equals(key) || "sync_gprs".equals(key) ||
                 "sync_4g".equals(key) || "sync_others".equals(key)) {
-			OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(NrzSettingsActivity._context);
-			Log.d(GeneralSettingsActivity.TAG,"GeneralSettingsActivity.handleCheckboxPreference: set " + key + " to "
+			OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
+			Log.d(TAG,"OCSMSSettingsActivity.handleCheckboxPreference: set " + key + " to "
 					+ value.toString());
 			prefs.putBoolean(key, value);
 		}
@@ -89,17 +89,17 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
 
         Log.d(TAG, "Modifying listPreference " + key);
 
-        OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(NrzSettingsActivity._context);
+        OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
 
 		// Handle sync frequency change
 		if ("sync_frequency".equals(key)) {
-			Account[] myAccountList = GeneralSettingsActivity._accountMgr.getAccountsByType(GeneralSettingsActivity._accountType);
+			Account[] myAccountList = _accountMgr.getAccountsByType(_accountType);
 			long syncFreq = Long.parseLong(value);
 
 			// Get ownCloud SMS account list
 			for (Account acct: myAccountList) {
 				// And get all authorities for this account
-				List<PeriodicSync> syncList = ContentResolver.getPeriodicSyncs(acct, GeneralSettingsActivity._accountAuthority);
+				List<PeriodicSync> syncList = ContentResolver.getPeriodicSyncs(acct, _accountAuthority);
 
 				boolean foundSameSyncCycle = false;
 				for (PeriodicSync ps: syncList) {
@@ -112,9 +112,9 @@ public class GeneralSettingsActivity extends NrzSettingsActivity {
 					Bundle b = new Bundle();
 					b.putInt("synctype", 1);
 
-					ContentResolver.removePeriodicSync(acct, GeneralSettingsActivity._accountAuthority, b);
+					ContentResolver.removePeriodicSync(acct, _accountAuthority, b);
                     if (syncFreq > 0) {
-                        ContentResolver.addPeriodicSync(acct, GeneralSettingsActivity._accountAuthority, b, syncFreq * 60);
+                        ContentResolver.addPeriodicSync(acct, _accountAuthority, b, syncFreq * 60);
                     }
 				}
 

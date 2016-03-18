@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity
     }
 
 	private boolean openAppSettings () {
-		startActivity(new Intent(this, GeneralSettingsActivity.class));
+		startActivity(new Intent(this, OCSMSSettingsActivity.class));
         return true;
 	}
 
