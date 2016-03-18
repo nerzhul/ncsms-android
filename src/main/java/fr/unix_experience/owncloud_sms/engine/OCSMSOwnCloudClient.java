@@ -59,18 +59,20 @@ public class OCSMSOwnCloudClient {
 				);
 
 		_serverAPIVersion = 1;
+
+        _connectivityMonitor = new ConnectivityMonitor(_context);
 	}
 
 	public Integer getServerAPIVersion() throws OCSyncException {
 		GetMethod get = createGetVersionRequest();
-		JSONObject obj = doHttpRequest(get, true);
-		if (obj == null) {
+		doHttpRequest(get, true);
+		if (_jsonQueryBuffer == null) {
 			// Return default version
 			return 1;
 		}
 
 		try {
-			_serverAPIVersion = obj.getInt("version");
+			_serverAPIVersion = _jsonQueryBuffer.getInt("version");
 		}
 		catch (JSONException e) {
 			Log.e(OCSMSOwnCloudClient.TAG, "No version received from server, assuming version 1", e);
@@ -82,13 +84,13 @@ public class OCSMSOwnCloudClient {
 
 	public JSONArray getServerPhoneNumbers() throws OCSyncException {
 		GetMethod get = createGetPhoneListRequest();
-		JSONObject obj = doHttpRequest(get, true);
-		if (obj == null) {
+		doHttpRequest(get, true);
+		if (_jsonQueryBuffer == null) {
 			return null;
 		}
 
 		try {
-			return obj.getJSONArray("phoneList");
+			return _jsonQueryBuffer.getJSONArray("phoneList");
 		} catch (JSONException e) {
 			Log.e(OCSMSOwnCloudClient.TAG, "No phonelist received from server, empty it", e);
 			return null;
@@ -111,18 +113,18 @@ public class OCSMSOwnCloudClient {
 
 		if (smsList == null) {
 			GetMethod get = createGetSmsIdListRequest();
-			JSONObject smsGetObj = doHttpRequest(get);
-			if (smsGetObj == null) {
+			doHttpRequest(get);
+			if (_jsonQueryBuffer == null) {
 				return;
 			}
 
 			JSONObject smsBoxes = new JSONObject();
 			JSONArray inboxSmsList = null, sentSmsList = null, draftsSmsList = null;
 			try {
-				smsBoxes = smsGetObj.getJSONObject("smslist");
+				smsBoxes = _jsonQueryBuffer.getJSONObject("smslist");
 			} catch (JSONException e) {
 				try {
-					smsGetObj.getJSONArray("smslist");
+                    _jsonQueryBuffer.getJSONArray("smslist");
 				} catch (JSONException e2) {
 					Log.e(OCSMSOwnCloudClient.TAG, "Invalid datas received from server (doPushRequest, get SMS list)", e);
 					throw new OCSyncException(R.string.err_sync_get_smslist, OCSyncErrorType.PARSE);
@@ -170,8 +172,8 @@ public class OCSMSOwnCloudClient {
 			throw new OCSyncException(R.string.err_sync_craft_http_request, OCSyncErrorType.IO);
 		}
 
-		JSONObject obj = doHttpRequest(post);
-		if (obj == null) {
+		doHttpRequest(post);
+		if (_jsonQueryBuffer == null) {
 			Log.e(OCSMSOwnCloudClient.TAG,"Request failed. It doesn't return a valid JSON Object");
 			throw new OCSyncException(R.string.err_sync_push_request, OCSyncErrorType.IO);
 		}
@@ -179,8 +181,8 @@ public class OCSMSOwnCloudClient {
 		Boolean pushStatus;
 		String pushMessage;
 		try {
-			pushStatus = obj.getBoolean("status");
-			pushMessage = obj.getString("msg");
+			pushStatus = _jsonQueryBuffer.getBoolean("status");
+			pushMessage = _jsonQueryBuffer.getString("msg");
 		}
 		catch (JSONException e) {
 			Log.e(OCSMSOwnCloudClient.TAG, "Invalid datas received from server", e);
@@ -272,23 +274,22 @@ public class OCSMSOwnCloudClient {
 		return requestEntity;
 	}
 
-	private JSONObject doHttpRequest(HttpMethod req) throws OCSyncException {
-		return doHttpRequest(req, false);
+	private void doHttpRequest(HttpMethod req) throws OCSyncException {
+		doHttpRequest(req, false);
 	}
 
 	// skipError permit to skip invalid JSON datas
-	private JSONObject doHttpRequest(HttpMethod req, Boolean skipError) throws OCSyncException {
-		JSONObject respJSON;
+	private void doHttpRequest(HttpMethod req, Boolean skipError) throws OCSyncException {
+        // Reinit the queryBuffer
+        _jsonQueryBuffer = null;
 		int status = 0;
-
 		// We try maximumHttpReqTries because sometimes network is slow or unstable
 		int tryNb = 0;
-		ConnectivityMonitor cMon = new ConnectivityMonitor(_context);
 
 		while (tryNb < OCSMSOwnCloudClient.maximumHttpReqTries) {
 			tryNb++;
 
-			if (!cMon.isValid()) {
+			if (!_connectivityMonitor.isValid()) {
 				if (tryNb == OCSMSOwnCloudClient.maximumHttpReqTries) {
 					req.releaseConnection();
 					throw new OCSyncException(R.string.err_sync_no_connection_available, OCSyncErrorType.IO);
@@ -342,7 +343,7 @@ public class OCSMSOwnCloudClient {
 
 			// Parse the response
 			try {
-				respJSON = new JSONObject(response);
+                _jsonQueryBuffer = new JSONObject(response);
 			} catch (JSONException e) {
 				if (!skipError) {
 					if (response.contains("ownCloud") && response.contains("DOCTYPE")) {
@@ -355,7 +356,7 @@ public class OCSMSOwnCloudClient {
 						throw new OCSyncException(R.string.err_sync_http_request_parse_resp, OCSyncErrorType.PARSE);
 					}
 				}
-				return null;
+				return;
 			}
 
 		} else if (status == HttpStatus.SC_FORBIDDEN) {
@@ -379,15 +380,16 @@ public class OCSMSOwnCloudClient {
 			}
 			throw new OCSyncException(R.string.err_sync_http_request_returncode_unhandled, OCSyncErrorType.SERVER_ERROR);
 		}
-		return respJSON;
 	}
 
     private static final int maximumHttpReqTries = 3;
 
 	private final OwnCloudClient _ocClient;
 	private final Context _context;
+    private final ConnectivityMonitor _connectivityMonitor;
 
 	private Integer _serverAPIVersion;
+    private JSONObject _jsonQueryBuffer;
 
 	private static final String OC_GET_VERSION = "/index.php/apps/ocsms/get/apiversion?format=json";
 	private static final String OC_GET_ALL_SMS_IDS = "/index.php/apps/ocsms/get/smsidlist?format=json";

@@ -20,65 +20,66 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
+
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
 public class ConnectivityMonitor {
-	public ConnectivityMonitor(Context context) {
-		_context = context;
-	}
+    public ConnectivityMonitor(Context context) {
+        _context = context;
+    }
 
-	// Valid connection = WiFi or Mobile data
-	public boolean isValid() {
-		if (_cMgr == null) {
-			_cMgr = (ConnectivityManager) _context.getSystemService(Context.CONNECTIVITY_SERVICE);
-		}
+    // Valid connection = WiFi or Mobile data
+    public boolean isValid() {
+        if (_cMgr == null) {
+            _cMgr = (ConnectivityManager) _context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        }
 
-		android.net.NetworkInfo niWiFi = _cMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-		android.net.NetworkInfo niMobile = _cMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+        android.net.NetworkInfo niWiFi = _cMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        android.net.NetworkInfo niMobile = _cMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-		if (niWiFi.isAvailable() || niMobile.isAvailable()) {
-			// Load the connectivity manager to determine on which network we are connected
-			NetworkInfo netInfo = _cMgr.getActiveNetworkInfo();
-			if (netInfo == null) {
-				return false;
-			}
+        if (niWiFi.isAvailable() || niMobile.isAvailable()) {
+            // Load the connectivity manager to determine on which network we are connected
+            NetworkInfo netInfo = _cMgr.getActiveNetworkInfo();
+            if (netInfo == null) {
+                return false;
+            }
 
-			OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
+            OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
 
-			// Check
-			switch (netInfo.getType()) {
-			case ConnectivityManager.TYPE_WIFI:
-				return prefs.syncInWifi();
-			case ConnectivityManager.TYPE_MOBILE:
-				switch (netInfo.getSubtype()) {
-                    case TelephonyManager.NETWORK_TYPE_EDGE:
-                    case TelephonyManager.NETWORK_TYPE_CDMA:
-                    case TelephonyManager.NETWORK_TYPE_1xRTT:
-                    case TelephonyManager.NETWORK_TYPE_IDEN:
-                        return prefs.syncIn2G();
-                    case TelephonyManager.NETWORK_TYPE_GPRS:
-                        return prefs.syncInGPRS();
-                    case TelephonyManager.NETWORK_TYPE_HSDPA:
-                    case TelephonyManager.NETWORK_TYPE_HSPA:
-                    case TelephonyManager.NETWORK_TYPE_HSUPA:
-                    case TelephonyManager.NETWORK_TYPE_UMTS:
-                    case TelephonyManager.NETWORK_TYPE_EHRPD:
-                    case TelephonyManager.NETWORK_TYPE_EVDO_B:
-                    case TelephonyManager.NETWORK_TYPE_HSPAP:
-                        return prefs.syncIn3G();
-                    case TelephonyManager.NETWORK_TYPE_LTE:
-                        return prefs.syncIn4G();
-                    default:
-                        return prefs.syncInOtherModes();
-				}
-			default:
-				return prefs.syncInOtherModes();
-			}
-		}
+            // Check
+            switch (netInfo.getType()) {
+                case ConnectivityManager.TYPE_WIFI:
+                    return prefs.syncInWifi();
+                case ConnectivityManager.TYPE_MOBILE:
+                    switch (netInfo.getSubtype()) {
+                        case TelephonyManager.NETWORK_TYPE_EDGE:
+                        case TelephonyManager.NETWORK_TYPE_CDMA:
+                        case TelephonyManager.NETWORK_TYPE_1xRTT:
+                        case TelephonyManager.NETWORK_TYPE_IDEN:
+                            return prefs.syncIn2G();
+                        case TelephonyManager.NETWORK_TYPE_GPRS:
+                            return prefs.syncInGPRS();
+                        case TelephonyManager.NETWORK_TYPE_HSDPA:
+                        case TelephonyManager.NETWORK_TYPE_HSPA:
+                        case TelephonyManager.NETWORK_TYPE_HSUPA:
+                        case TelephonyManager.NETWORK_TYPE_UMTS:
+                        case TelephonyManager.NETWORK_TYPE_EHRPD:
+                        case TelephonyManager.NETWORK_TYPE_EVDO_B:
+                        case TelephonyManager.NETWORK_TYPE_HSPAP:
+                            return prefs.syncIn3G();
+                        case TelephonyManager.NETWORK_TYPE_LTE:
+                            return prefs.syncIn4G();
+                        default:
+                            return prefs.syncInOtherModes();
+                    }
+                default:
+                    return prefs.syncInOtherModes();
+            }
+        }
 
-		return false;
-	}
+        return false;
+    }
 
-	private ConnectivityManager _cMgr;
-	private final Context _context;
+    private ConnectivityManager _cMgr;
+    private final Context _context;
 }

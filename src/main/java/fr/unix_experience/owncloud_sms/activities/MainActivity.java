@@ -51,8 +51,13 @@ import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationUI;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
+    private static ConnectivityMonitor mConnectivityMonitor = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+        if (mConnectivityMonitor == null) {
+            mConnectivityMonitor = new ConnectivityMonitor(getApplicationContext());
+        }
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -106,9 +111,8 @@ public class MainActivity extends AppCompatActivity
 
     private boolean syncAllMessages () {
 		Context ctx = getApplicationContext();
-		ConnectivityMonitor cMon = new ConnectivityMonitor(ctx);
 
-		if (cMon.isValid()) {
+		if (mConnectivityMonitor.isValid()) {
 			// Now fetch messages since last stored date
 			JSONArray smsList = new JSONArray();
             new SmsFetcher(ctx).bufferMessagesSinceDate(smsList, (long) 0);

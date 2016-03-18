@@ -35,11 +35,7 @@ import fr.unix_experience.owncloud_sms.enums.MailboxID;
 
 public class SmsObserver extends ContentObserver implements ASyncSMSSync {
 
-	public SmsObserver(Handler handler) {
-		super(handler);
-	}
-	
-	public SmsObserver(Handler handler, Context ct) {
+    public SmsObserver(Handler handler, Context ct) {
 		super(handler);
 		_context = ct;
 	}
