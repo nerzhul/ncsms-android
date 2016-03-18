@@ -4,7 +4,7 @@
           android:versionCode="34"
           android:versionName="0.20.1"> <!-- From Android 4.0 to 6.0 -->
     <uses-sdk
-        android:maxSdkVersion="24"
+        android:maxSdkVersion="23"
         android:minSdkVersion="14"
         android:targetSdkVersion="23"/>
 
