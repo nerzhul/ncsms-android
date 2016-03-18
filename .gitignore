@@ -3,3 +3,4 @@ ownCloudSMS.iml
 /build/
 ownCloudSMS-release.apk
 lint.xml
+.gradle/
