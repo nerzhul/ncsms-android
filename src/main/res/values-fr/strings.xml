@@ -106,11 +106,8 @@
     <!-- Main activity -->
     <string name="ma_title_rate_us">Notez nous !</string>
     <string name="ma_title_add_account">Ajouter un compte</string>
-    <string name="ma_title_change_settings">Changer les paramètres de l\'application</string>
     <string name="ma_title_welcome">Bienvenue</string>
     <string name="ma_content_welcome">Bienvenue sur l\'application ownCloud SMS. Cette application va vous permettre de synchroniser vos SMS au sein de votre instance ownCloud en utilisant l\'application dédiée.</string>
-    <string name="ma_thanksto_people">L\'équipe de développement ownCloud\n\
-Les contributeurs et rapporteurs de bugs</string>
 
     <!-- Notifications -->
     <string name="sync_title">Processus de synchronisation</string>
@@ -147,6 +144,5 @@ Les contributeurs et rapporteurs de bugs</string>
     <string name="no_account_configured">Vous n\'avez pas configuré de compte.</string>
     <string name="communicate">Parlez de nous</string>
     <string name="ma_title_my_accounts">Mes comptes</string>
-    <string name="ma_button_goto_settings"></string>
     <string name="ma_content_swipeaction">Glissez votre doigt de gauche à droite pour afficher le menu.</string>
 </resources>

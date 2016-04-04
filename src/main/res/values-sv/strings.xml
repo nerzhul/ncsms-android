@@ -109,10 +109,8 @@
 	<!-- Main activity -->
     <string name="ma_title_rate_us">Skriv en recension!</string>
     <string name="ma_title_add_account">Lägg till ett konto</string>
-    <string name="ma_title_change_settings">Ändra applikationsinställningar</string>
     <string name="ma_title_welcome">Välkommen</string>
 	<string name="ma_content_welcome">Välkommen till ownCloud SMS. Den här applikationen gör det möjligt att synkronisera dina SMS till din ownCloud-server.</string>
-	<string name="ma_thanksto_people">- Utvecklarna utav ownCloud\n\ - De som bidragit, och som anmält buggar</string>
 
     <!-- Notifications -->
 	<string name="sync_title">Synkroniseringsprocesss</string>
@@ -136,6 +134,4 @@
 	<string name="err_sync_http_request_parse_resp">Error #15: Unable to parse server response</string>
 	<string name="err_sync_no_connection_available">Error #16: No data connection available</string>
 	<string name="err_sync_account_unparsable">Error #17: malformed account. Please reconfigure it</string>
-    <string name="ma_button_goto_settings"></string>
-
 </resources>

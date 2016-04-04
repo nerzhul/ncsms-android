@@ -50,7 +50,7 @@ public class VirtualSettingsActivity extends PreferenceActivity {
 	protected static Vector<BindObjectPref> _boolPrefs = new Vector<>();
 	protected static Vector<BindObjectPref> _stringPrefs = new Vector<>();
 
-	@Override
+    @Override
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
         VirtualSettingsActivity._context = getBaseContext();
@@ -148,17 +148,18 @@ public class VirtualSettingsActivity extends PreferenceActivity {
 	 * activity is showing a two-pane settings UI.
 	 */
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)
-	public class DataSyncPreferenceFragment extends PreferenceFragment {
+	public static class DataSyncPreferenceFragment extends PreferenceFragment {
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			addPreferencesFromResource(VirtualSettingsActivity._prefsRessourceFile);
 
-            bindPreferences();
+            VirtualSettingsActivity a = (VirtualSettingsActivity) getActivity();
+            a.bindPreferences();
 		}
 	}
 
-	private void bindPreferences() {
+	public void bindPreferences() {
 		// Bind the summaries of EditText/List/Dialog/Ringtone preferences to
 		// their values. When their values change, their summaries are updated
 		// to reflect the new value, per the Android Design guidelines.
