@@ -43,7 +43,7 @@ public class OCSMSNotificationUI {
         final Bitmap picture = BitmapFactory.decodeResource(res, R.drawable.ic_launcher);
 
 
-        final String ticker = titleString.substring(0, 20);
+        final String ticker = (titleString.length() > 20) ? titleString.substring(0, 20) : titleString;
         final String title = res.getString(R.string.ui_notification_title_template, titleString);
 
         final NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
