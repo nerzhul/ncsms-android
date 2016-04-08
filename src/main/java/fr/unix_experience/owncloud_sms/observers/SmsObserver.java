@@ -17,6 +17,7 @@ package fr.unix_experience.owncloud_sms.observers;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import android.Manifest;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.Context;
@@ -32,6 +33,8 @@ import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.engine.OCSMSOwnCloudClient;
 import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
+import fr.unix_experience.owncloud_sms.enums.PermissionID;
+import fr.unix_experience.owncloud_sms.prefs.PermissionChecker;
 
 public class SmsObserver extends ContentObserver implements ASyncSMSSync {
 
@@ -41,6 +44,11 @@ public class SmsObserver extends ContentObserver implements ASyncSMSSync {
 	}
 	
 	public void onChange(boolean selfChange) {
+        if (!PermissionChecker.checkPermission(_context, Manifest.permission.READ_SMS,
+                PermissionID.REQUEST_SMS)) {
+            return;
+        }
+
 		super.onChange(selfChange);
 		Log.d(SmsObserver.TAG, "onChange SmsObserver");
 

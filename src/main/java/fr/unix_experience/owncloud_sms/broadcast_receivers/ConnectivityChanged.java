@@ -17,6 +17,7 @@ package fr.unix_experience.owncloud_sms.broadcast_receivers;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import android.Manifest;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.BroadcastReceiver;
@@ -32,7 +33,9 @@ import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.engine.ASyncSMSSync;
 import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
+import fr.unix_experience.owncloud_sms.enums.PermissionID;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
+import fr.unix_experience.owncloud_sms.prefs.PermissionChecker;
 
 public class ConnectivityChanged extends BroadcastReceiver implements ASyncSMSSync {
 
@@ -58,6 +61,12 @@ public class ConnectivityChanged extends BroadcastReceiver implements ASyncSMSSy
 		if (cMon.isValid() && !ConnectivityChanged.dataConnectionAvailable) {
             ConnectivityChanged.dataConnectionAvailable = true;
 			Log.d(ConnectivityChanged.TAG,"ConnectivityChanged.onReceive, data conn available");
+
+            if (!PermissionChecker.checkPermission(context, Manifest.permission.READ_SMS,
+                    PermissionID.REQUEST_SMS)) {
+                return;
+            }
+
 			checkMessagesAndSend(context);
 		}
 		// No data available and previous dataConnectionState was true
@@ -68,7 +77,6 @@ public class ConnectivityChanged extends BroadcastReceiver implements ASyncSMSSy
 	}
 
 	private void checkMessagesAndSend(Context context) {
-
 		// Get last message synced from preferences
 		Long lastMessageSynced = (new OCSMSSharedPrefs(context)).getLastMessageDate();
 		Log.d(ConnectivityChanged.TAG,"Synced Last:" + lastMessageSynced);

@@ -18,6 +18,10 @@
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="@string/action_settings"/>
+        <item
+            android:id="@+id/nav_appinfo_perms"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/action_appinfo_perms"/>
     </group>
 
     <item android:title="@string/communicate">

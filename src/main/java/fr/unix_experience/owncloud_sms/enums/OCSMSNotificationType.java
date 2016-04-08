@@ -21,4 +21,5 @@ public enum OCSMSNotificationType {
 	SYNC,
 	SYNC_FAILED,
 	DEBUG,
+    PERMISSION,
 }

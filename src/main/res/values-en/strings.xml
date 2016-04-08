@@ -160,5 +160,13 @@
     <string name="communicate">Communicate</string>
     <string name="ma_title_my_accounts">My accounts</string>
     <string name="ma_content_swipeaction">Swipe from left to right to access to action menu.</string>
+    <string name="cancel">Cancel</string>
+    <string name="understood">Understood</string>
+    <string name="notif_permission_required">Permissions required</string>
+    <string name="notif_permission_required_content">Some permissions are missing to perform the sync process. Please fix it in app settings</string>
+    <string name="please_fix_it">Please fix it.</string>
+    <string name="err_cannot_read_contacts">We cannot read your contacts.</string>
+    <string name="err_cannot_read_sms">We cannot read your SMS.</string>
+    <string name="action_appinfo_perms">App Infos and permissions</string>
 
 </resources>

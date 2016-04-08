@@ -145,4 +145,12 @@
     <string name="communicate">Parlez de nous</string>
     <string name="ma_title_my_accounts">Mes comptes</string>
     <string name="ma_content_swipeaction">Glissez votre doigt de gauche à droite pour afficher le menu.</string>
+    <string name="cancel">Annuler</string>
+    <string name="understood">J\'ai compris</string>
+    <string name="notif_permission_required">Permissions requises</string>
+    <string name="notif_permission_required_content">Certaines permissions essentielles sont manquantes, merci de les corriger dans les paramètres de l\'application.</string>
+    <string name="please_fix_it">Merci de bien vouloir le corriger.</string>
+    <string name="err_cannot_read_contacts">Nous ne pouvons lire vos contacts.</string>
+    <string name="err_cannot_read_sms">Nous ne pouvons pas lire vos SMS.</string>
+    <string name="action_appinfo_perms">Infos et permissions</string>
 </resources>
