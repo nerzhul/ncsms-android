@@ -22,6 +22,7 @@ android {
         applicationId "fr.unix_experience.owncloud_sms"
         minSdkVersion 14
         targetSdkVersion 23
+        maxSdkVersion 23
     }
 
     buildTypes {
