@@ -41,23 +41,23 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
 
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {
-        _accountMgr = AccountManager.get(getBaseContext());
-        _accountAuthority = getString(R.string.account_authority);
-        _accountType = getString(R.string.account_type);
-        _prefsRessourceFile = R.xml.pref_data_sync;
+        OCSMSSettingsActivity._accountMgr = AccountManager.get(getBaseContext());
+        OCSMSSettingsActivity._accountAuthority = getString(R.string.account_authority);
+        OCSMSSettingsActivity._accountType = getString(R.string.account_type);
+        VirtualSettingsActivity._prefsRessourceFile = R.xml.pref_data_sync;
 
 		// Bind our boolean preferences
-        _boolPrefs.add(new BindObjectPref("push_on_receive", DefaultPrefs.pushOnReceive));
-        _boolPrefs.add(new BindObjectPref("sync_wifi", DefaultPrefs.syncWifi));
-        _boolPrefs.add(new BindObjectPref("sync_4g", DefaultPrefs.sync4G));
-        _boolPrefs.add(new BindObjectPref("sync_3g", DefaultPrefs.sync3G));
-        _boolPrefs.add(new BindObjectPref("sync_gprs", DefaultPrefs.syncGPRS));
-        _boolPrefs.add(new BindObjectPref("sync_2g", DefaultPrefs.sync2G));
-        _boolPrefs.add(new BindObjectPref("sync_others", DefaultPrefs.syncOthers));
+        VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("push_on_receive", DefaultPrefs.pushOnReceive));
+        VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_wifi", DefaultPrefs.syncWifi));
+        VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_4g", DefaultPrefs.sync4G));
+        VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_3g", DefaultPrefs.sync3G));
+        VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_gprs", DefaultPrefs.syncGPRS));
+        VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_2g", DefaultPrefs.sync2G));
+        VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_others", DefaultPrefs.syncOthers));
 
 		// Bind our string preferences
-        _stringPrefs.add(new BindObjectPref("sync_frequency", "15"));
-        _stringPrefs.add(new BindObjectPref("sync_bulk_messages", "-1"));
+        VirtualSettingsActivity._stringPrefs.add(new BindObjectPref("sync_frequency", "15"));
+        VirtualSettingsActivity._stringPrefs.add(new BindObjectPref("sync_bulk_messages", "-1"));
 
 		// Must be at the end, after preference bind
 		super.onPostCreate(savedInstanceState);
@@ -69,8 +69,8 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
                 "sync_wifi".equals(key) || "sync_2g".equals(key) ||
                 "sync_3g".equals(key) || "sync_gprs".equals(key) ||
                 "sync_4g".equals(key) || "sync_others".equals(key)) {
-			OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
-			Log.d(TAG,"OCSMSSettingsActivity.handleCheckboxPreference: set " + key + " to "
+			OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(VirtualSettingsActivity._context);
+			Log.d(OCSMSSettingsActivity.TAG,"OCSMSSettingsActivity.handleCheckboxPreference: set " + key + " to "
 					+ value.toString());
 			prefs.putBoolean(key, value);
 		}
@@ -87,19 +87,19 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
 		.setSummary((index >= 0) ? preference.getEntries()[index]
                 : null);
 
-        Log.d(TAG, "Modifying listPreference " + key);
+        Log.d(OCSMSSettingsActivity.TAG, "Modifying listPreference " + key);
 
-        OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
+        OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(VirtualSettingsActivity._context);
 
 		// Handle sync frequency change
 		if ("sync_frequency".equals(key)) {
-			Account[] myAccountList = _accountMgr.getAccountsByType(_accountType);
+			Account[] myAccountList = OCSMSSettingsActivity._accountMgr.getAccountsByType(OCSMSSettingsActivity._accountType);
 			long syncFreq = Long.parseLong(value);
 
 			// Get ownCloud SMS account list
 			for (Account acct: myAccountList) {
 				// And get all authorities for this account
-				List<PeriodicSync> syncList = ContentResolver.getPeriodicSyncs(acct, _accountAuthority);
+				List<PeriodicSync> syncList = ContentResolver.getPeriodicSyncs(acct, OCSMSSettingsActivity._accountAuthority);
 
 				boolean foundSameSyncCycle = false;
 				for (PeriodicSync ps: syncList) {
@@ -112,9 +112,9 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
 					Bundle b = new Bundle();
 					b.putInt("synctype", 1);
 
-					ContentResolver.removePeriodicSync(acct, _accountAuthority, b);
+					ContentResolver.removePeriodicSync(acct, OCSMSSettingsActivity._accountAuthority, b);
                     if (syncFreq > 0) {
-                        ContentResolver.addPeriodicSync(acct, _accountAuthority, b, syncFreq * 60);
+                        ContentResolver.addPeriodicSync(acct, OCSMSSettingsActivity._accountAuthority, b, syncFreq * 60);
                     }
 				}
 
