@@ -200,15 +200,11 @@ public class OCSMSOwnCloudClient {
 	}
 
 	public GetMethod createGetPhoneListRequest() {
-		return createGetRequest(OCSMSOwnCloudClient.OC_GET_PHONELIST);
+		return createGetRequest(OCSMSOwnCloudClient.OC_V2_GET_PHONELIST);
 	}
 
 	public GetMethod createGetSmsIdListRequest() {
 		return createGetRequest(OCSMSOwnCloudClient.OC_GET_ALL_SMS_IDS);
-	}
-
-	public GetMethod createGetSmsIdListWithStateRequest() {
-		return createGetRequest(OCSMSOwnCloudClient.OC_GET_ALL_SMS_IDS_WITH_STATUS);
 	}
 
 	public GetMethod createGetLastSmsTimestampRequest() {
@@ -356,7 +352,7 @@ public class OCSMSOwnCloudClient {
 						throw new OCSyncException(R.string.err_sync_http_request_parse_resp, OCSyncErrorType.PARSE);
 					}
 				}
-				return;
+                return;
 			}
 
 		} else if (status == HttpStatus.SC_FORBIDDEN) {
@@ -391,12 +387,16 @@ public class OCSMSOwnCloudClient {
 	private Integer _serverAPIVersion;
     private JSONObject _jsonQueryBuffer;
 
+    // API v1 calls
 	private static final String OC_GET_VERSION = "/index.php/apps/ocsms/get/apiversion?format=json";
 	private static final String OC_GET_ALL_SMS_IDS = "/index.php/apps/ocsms/get/smsidlist?format=json";
-	private static final String OC_GET_ALL_SMS_IDS_WITH_STATUS = "/index.php/apps/ocsms/get/smsidstate?format=json";
 	private static final String OC_GET_LAST_MSG_TIMESTAMP = "/index.php/apps/ocsms/get/lastmsgtime?format=json";
 	private static final String OC_PUSH_ROUTE = "/index.php/apps/ocsms/push?format=json";
-	private static final String OC_GET_PHONELIST = "/index.php/apps/ocsms/get/phones/numberlist?format=json";
+
+    // API v2 calls
+	private static final String OC_V2_GET_PHONELIST = "/index.php/apps/ocsms/api/v2/phones/list?format=json";
+    private static final String OC_V2_GET_MESSAGES ="/index.php/apps/ocsms/api/v2/messages/[START]/[LIMIT]?format=json";
+    private static final String OC_V2_GET_MESSAGES_PHONE ="/index.php/apps/ocsms/api/v2/messages/[PHONENUMBER]/[START]/[LIMIT]?format=json";
 
 	private static final String TAG = OCSMSOwnCloudClient.class.getSimpleName();
 
