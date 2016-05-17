@@ -25,10 +25,13 @@
  * SUCH DAMAGE.
  */
 -->
-<resources>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
     <!-- Translation version, reference for translators -->
-	<string name="translation_version">7</string>
-	
+    <string name="translation_version">7</string>
+
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">Быстрая синхронизация</string>
@@ -81,7 +84,7 @@
     <string name="pref_sync_gprs">Синхронизировать по 2.5G (GPRS)</string>
     <string name="pref_sync_2g">Синхронизировать по 2G</string>
     <string name="pref_sync_others">Синхронизировать в других режимах</string>
-    <string name="title_activity_login">Войти в систему</string>
+    <string name="title_activity_login">Войти</string>
 
     <!-- Login -->
     <string name="prompt_login">Логин</string>
@@ -95,23 +98,18 @@
     <string name="error_invalid_server_address">Неверный адрес сервера</string>
     <string name="error_connection_failed">Не удалось установить соединение, убедитесь, что это верный сервер</string>
     <string name="error_http_connection_failed">Невозможно выполнить HTTP подключение. Пожалуйста, убедитесь, что это веб-сервер</string>
-    
-    <string-array name="protocol_array">
-    	<item>https://</item>
-        <item>http://</item>
-    </string-array>
-    
+
     <!-- Main activity -->
-    <string name="ma_title_rate_us">Сказать спасибо!</string>
-    <string name="ma_title_add_account">Добавить учетную запись</string>
+    <string name="ma_title_rate_us">Оцените нас !</string>
+    <string name="ma_title_add_account">Добавить аккаунт</string>
     <string name="ma_title_welcome">Добро пожаловат</string>
-    <string name="ma_content_welcome">Добро пожаловать в приложение ownCloud SMS. Оно позволит синхронизировать ваши SMS с экземпляром OwnCloud используя SMS app.</string>
-    <string name="ma_title_remote_account">Удаленные учетные записи</string>
+    <string name="ma_content_welcome">Добро пожаловать в приложение ownCloud SMS. Оно позволит синхронизировать ваши SMS с экземпляром OwnCloud используя эту программу.</string>
+    <string name="ma_title_remote_account">Удаленные аккаунты</string>
     <string name="choose_account">Выберите учетную запись</string>
 
     <!-- Restauration -->
-    <string name="title_activity_select_account">Выбор учетной записи</string>
-    <string name="title_activity_select_contact">Выберите контакт</string>
+    <string name="title_activity_select_account">Выбрать аккаунта</string>
+    <string name="title_activity_select_contact">Выбрать контакт</string>
     <string name="no_account_configured">Нет настроенных аккаунтов.</string>
     <!-- Restauration -->
 
@@ -138,7 +136,6 @@
     <string name="err_sync_no_connection_available">Error #16: No data connection available</string>
     <string name="err_sync_account_unparsable">Error #17: malformed account. Please reconfigure it</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: OcSMS app is not installed or ownCloud awaiting for an upgrade</string>
-
     <string name="err_fetch_phonelist">Неверный список телефонов, полученных от сервера.</string>
     <string name="err_proto_v2">Сервер не поддерживает эту функцию. Убедитесь, что версия сервера не ниже 1.6.</string>
     <string name="contactinfos_title">Контактная информация</string>
@@ -155,4 +152,13 @@
     <string name="navigation_drawer_close">Закрыть панель навигации</string>
     <string name="ma_title_my_accounts">Мои учетные записи</string>
     <string name="ma_content_swipeaction">Проведите по экрану слева направо, чтобы получить доступ к меню.</string>
-</resources>
+    <string name="cancel">Отмена</string>
+    <string name="understood">Понял</string>
+    <string name="notif_permission_required">Необходимые разрешения</string>
+    <string name="notif_permission_required_content">Некоторые разрешения отсутствует для выполнения синхронизации. Исправьте их в настройках приложения</string>
+    <string name="please_fix_it">Пожалуйста исправьте это.</string>
+    <string name="err_cannot_read_contacts">Мы не можем прочитать ваши контакты.</string>
+    <string name="err_cannot_read_sms">WМы не можем прочитать ваши SMS.</string>
+    <string name="action_appinfo_perms">Информация о приложение и разрешениях</string>
+
+    </resources>
