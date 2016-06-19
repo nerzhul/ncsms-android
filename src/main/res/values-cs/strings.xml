@@ -142,6 +142,7 @@
     <!-- Restauration -->
     <string name="title_activity_select_account">Vybrat účet</string>
     <string name="title_activity_select_contact">Vybrat kontakt</string>
+    <string name="no_account_configured">Není nakonfigurovaný žádný účet.</string>
 
     <!-- Notifications -->
     <string name="sync_title">Proces synchronizace</string>
@@ -172,4 +173,22 @@
     <string name="subtitle_contact_phones">- Telefony kontaktu</string>
     <string name="pref_title_bulk_messages">Maximální počet zpráv pro odeslání na synchronizaci</string>
     <string name="contactinfos_list">Adresář</string>
+    <string name="function_not_available">Tato funkce ještě není dostupná.</string>
+
+    <string name="ui_notification_title_template">OcSMS: %1$s</string>
+    <string name="communicate">Communicate</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Otevřít navigační panel</string>
+    <string name="navigation_drawer_close">Zavřít navigační panel</string>
+    <string name="ma_title_my_accounts">Moje účty</string>
+    <string name="ma_content_swipeaction">Tahem zleva doprava otevřít menu akcí.</string>
+    <string name="cancel">Zrušit</string>
+    <string name="understood">Rozumím</string>
+    <string name="notif_permission_required">Vyžadovaná oprávnění</string>
+    <string name="notif_permission_required_content">Některá oprávnění nutná pro provedení synchronizace chybí. Napravte toto v nastavení aplikace</string>
+    <string name="please_fix_it">Napravte to prosím.</string>
+    <string name="err_cannot_read_contacts">Nelze přistupovat ke kontaktům.</string>
+    <string name="err_cannot_read_sms">Nelze přistupovat ke zprávám SMS.</string>
+    <string name="action_appinfo_perms">Informace a oprávnění aplikace</string>
 </resources>
