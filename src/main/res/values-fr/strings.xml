@@ -153,4 +153,6 @@
     <string name="err_cannot_read_contacts">Nous ne pouvons lire vos contacts.</string>
     <string name="err_cannot_read_sms">Nous ne pouvons pas lire vos SMS.</string>
     <string name="action_appinfo_perms">Infos et permissions</string>
+    <string name="restore_all_messages">Restaurer tous les messages</string>
+    <string name="account_actions">Actions du compte</string>
 </resources>

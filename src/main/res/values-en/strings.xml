@@ -168,5 +168,7 @@
     <string name="err_cannot_read_contacts">We cannot read your contacts.</string>
     <string name="err_cannot_read_sms">We cannot read your SMS.</string>
     <string name="action_appinfo_perms">App Infos and permissions</string>
+    <string name="restore_all_messages">Restore all messages</string>
+    <string name="account_actions">Account actions</string>
 
 </resources>

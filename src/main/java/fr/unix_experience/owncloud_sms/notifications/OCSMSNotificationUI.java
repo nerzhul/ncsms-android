@@ -34,19 +34,19 @@ public class OCSMSNotificationUI {
      *
      * @see #cancel(Context)
      */
-    public static void notify(final Context context, final String titleString,
-                              final String contentString, final int number) {
-        final Resources res = context.getResources();
+    public static void notify(Context context, String titleString,
+                              String contentString, int number) {
+        Resources res = context.getResources();
 
         // This image is used as the notification's large icon (thumbnail).
         // TODO: Remove this if your notification has no relevant thumbnail.
-        final Bitmap picture = BitmapFactory.decodeResource(res, R.drawable.ic_launcher);
+        Bitmap picture = BitmapFactory.decodeResource(res, R.drawable.ic_launcher);
 
 
-        final String ticker = (titleString.length() > 20) ? titleString.substring(0, 20) : titleString;
-        final String title = res.getString(R.string.ui_notification_title_template, titleString);
+        String ticker = (titleString.length() > 20) ? titleString.substring(0, 20) : titleString;
+        String title = res.getString(R.string.ui_notification_title_template, titleString);
 
-        final NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
 
                 // Set appropriate defaults for the notification light, sound,
                 // and vibration.
@@ -76,17 +76,17 @@ public class OCSMSNotificationUI {
                         .setSummaryText(titleString))
                 .setAutoCancel(true);
 
-        notify(context, builder.build());
+        OCSMSNotificationUI.notify(context, builder.build());
     }
 
     @TargetApi(Build.VERSION_CODES.ECLAIR)
-    private static void notify(final Context context, final Notification notification) {
-        final NotificationManager nm = (NotificationManager) context
+    private static void notify(Context context, Notification notification) {
+        NotificationManager nm = (NotificationManager) context
                 .getSystemService(Context.NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ECLAIR) {
-            nm.notify(NOTIFICATION_TAG, 0, notification);
+            nm.notify(OCSMSNotificationUI.NOTIFICATION_TAG, 0, notification);
         } else {
-            nm.notify(NOTIFICATION_TAG.hashCode(), notification);
+            nm.notify(OCSMSNotificationUI.NOTIFICATION_TAG.hashCode(), notification);
         }
     }
 
@@ -95,13 +95,13 @@ public class OCSMSNotificationUI {
      * {@link #notify(Context, String, int)}.
      */
     @TargetApi(Build.VERSION_CODES.ECLAIR)
-    public static void cancel(final Context context) {
-        final NotificationManager nm = (NotificationManager) context
+    public static void cancel(Context context) {
+        NotificationManager nm = (NotificationManager) context
                 .getSystemService(Context.NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ECLAIR) {
-            nm.cancel(NOTIFICATION_TAG, 0);
+            nm.cancel(OCSMSNotificationUI.NOTIFICATION_TAG, 0);
         } else {
-            nm.cancel(NOTIFICATION_TAG.hashCode());
+            nm.cancel(OCSMSNotificationUI.NOTIFICATION_TAG.hashCode());
         }
     }
 }

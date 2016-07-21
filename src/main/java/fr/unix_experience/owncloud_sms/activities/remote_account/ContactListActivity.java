@@ -69,13 +69,15 @@ public class ContactListActivity extends AppCompatActivity implements ASyncConta
 		final Spinner sp = (Spinner) findViewById(R.id.contact_spinner);
 		mContactInfos = (LinearLayout) findViewById(R.id.contactinfos_layout);
 		final ProgressBar contactProgressBar = (ProgressBar) findViewById(R.id.contactlist_pgbar);
-        final ListView contactPhoneListView = (ListView) findViewById(R.id.contact_phonelistView);
+        ListView contactPhoneListView = (ListView) findViewById(R.id.contact_phonelistView);
         mContactPhoneListAdapter = new RecoveryPhoneNumberListViewAdapter(getBaseContext());
+        assert contactPhoneListView != null;
         contactPhoneListView.setAdapter(mContactPhoneListAdapter);
 
 		mContactInfos.setVisibility(View.INVISIBLE);
 
-		sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        assert sp != null;
+        sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 				mContactInfos.setVisibility(View.INVISIBLE);
@@ -97,7 +99,8 @@ public class ContactListActivity extends AppCompatActivity implements ASyncConta
 		for (final Account element : myAccountList) {
 			if (element.name.equals(accountName)) {
 				// Load "contacts"
-				contactProgressBar.setVisibility(View.VISIBLE);
+                assert contactProgressBar != null;
+                contactProgressBar.setVisibility(View.VISIBLE);
 				new ContactLoadTask(element, getBaseContext(), mAdapter, mObjects, mLayout, contactProgressBar, mContactInfos).execute();
 
 				// Add refresh handler

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
- /*
- * Copyright (c) 2014, Loic Blot <loic.blot@unix-experience.fr>
+/*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
  * All rights reserved.
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -25,17 +25,18 @@
  * SUCH DAMAGE.
  */
 -->
-<resources>
-    <!-- Translation version, reference for translators -->
-	<string name="gp_translation_version" translatable="false">3</string>
-	
-	<!-- Translations must begin here -->
-    <string name="gp_short_description">ownCloud SMS synchronize your local SMS on your ownCloud instance</string>
-    <string name="gp_description">
-ownCloud SMS application synchronize your SMS messages on a remote ownCloud instance and let you read your messages from it.
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="fr.unix_experience.owncloud_sms.activities.remote_account.AccountActionsActivity"
+    android:orientation="vertical">
 
-Sending SMS from ownCloud instance will coming in a future release.
-
-Application is fully compatible from Android 4.0 to 6.0
-	</string>
-</resources>
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/list"
+        android:choiceMode="singleChoice"
+        android:drawSelectorOnTop="true"/>
+</LinearLayout>
