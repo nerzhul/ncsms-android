@@ -155,4 +155,5 @@
     <string name="action_appinfo_perms">Infos et permissions</string>
     <string name="restore_all_messages">Restaurer tous les messages</string>
     <string name="account_actions">Actions du compte</string>
+    <string name="error_connection_failed_not_found">Echec de connexion, le serveur a retourné 404 NON TROUVE. Assurez vous d\'avoir spécifié la bonne URL.</string>
 </resources>

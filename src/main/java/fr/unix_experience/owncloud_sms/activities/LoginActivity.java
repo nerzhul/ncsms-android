@@ -31,6 +31,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -231,6 +232,7 @@ public class LoginActivity extends AppCompatActivity {
 	public class UserLoginTask extends AsyncTask<Void, Void, Boolean> { 
 
 		UserLoginTask(String serverURI, String login, String password) {
+            Log.d(TAG, "_serverURI = " + serverURI);
 			_serverURI = Uri.parse(serverURI);
 			_login = login;
 			_password = password;
@@ -315,6 +317,10 @@ public class LoginActivity extends AppCompatActivity {
 						_serverView.setError(getString(R.string.error_connection_failed));
 						_serverView.requestFocus();
 						break;
+                    case CONN_FAILED_NOT_FOUND:
+                        _serverView.setError(getString(R.string.error_connection_failed_not_found));
+                        _serverView.requestFocus();
+                        break;
 					case INVALID_LOGIN:
 						_passwordView.setError(getString(R.string.error_invalid_login));
 						_passwordView.requestFocus();
@@ -346,5 +352,6 @@ public class LoginActivity extends AppCompatActivity {
 		private LoginReturnCode _returnCode;
 		
 		public static final String PARAM_AUTHTOKEN_TYPE = "auth.token";
+        private final String TAG = UserLoginTask.class.getCanonicalName();
     }
 }

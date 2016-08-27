@@ -136,7 +136,7 @@ public class OwnCloudAuthenticator extends AbstractAccountAuthenticator {
 		}
 		
 		try {
-			if(isSuccess(status)) {
+			if(OwnCloudAuthenticator.isSuccess(status)) {
 				 String response = get.getResponseBodyAsString();
 				 Log.d(OwnCloudAuthenticator.TAG, "Successful response: " + response);
 
@@ -159,7 +159,11 @@ public class OwnCloudAuthenticator extends AbstractAccountAuthenticator {
 					Log.e(OwnCloudAuthenticator.TAG, "*** status code: " + status);
 				}
 
-                bRet = (status == 401) ? LoginReturnCode.INVALID_LOGIN : LoginReturnCode.UNKNOWN_ERROR;
+                switch (status) {
+                    case 401: bRet = LoginReturnCode.INVALID_LOGIN; break;
+                    case 404: bRet = LoginReturnCode.CONN_FAILED_NOT_FOUND; break;
+                    default: bRet = LoginReturnCode.UNKNOWN_ERROR; break;
+                }
 			}
 			
 		} catch (Exception e) {
@@ -172,7 +176,7 @@ public class OwnCloudAuthenticator extends AbstractAccountAuthenticator {
 		return bRet;
 	}
 	
-	private boolean isSuccess(int status) {
+	private static boolean isSuccess(int status) {
         return (status == HttpStatus.SC_OK);
     }
 	
