@@ -302,36 +302,36 @@ public class LoginActivity extends AppCompatActivity {
 				settingsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				getApplicationContext().startActivity(settingsIntent);
 			} else {
+                boolean serverViewRequestFocus = true;
 				switch (_returnCode) {
-                    case OK:
-                        break;
                     case INVALID_ADDR:
 						_serverView.setError(getString(R.string.error_invalid_server_address));
-						_serverView.requestFocus();
 						break;
 					case HTTP_CONN_FAILED:
 						_serverView.setError(getString(R.string.error_http_connection_failed));
-						_serverView.requestFocus();
 						break;
 					case CONN_FAILED:
 						_serverView.setError(getString(R.string.error_connection_failed));
-						_serverView.requestFocus();
 						break;
                     case CONN_FAILED_NOT_FOUND:
                         _serverView.setError(getString(R.string.error_connection_failed_not_found));
-                        _serverView.requestFocus();
                         break;
-					case INVALID_LOGIN:
-						_passwordView.setError(getString(R.string.error_invalid_login));
-						_passwordView.requestFocus();
-						break;
 					case UNKNOWN_ERROR:
                         _serverView.setError("UNK");
-                        _serverView.requestFocus();
 						break;
-				default:
-					break;
+                    case INVALID_LOGIN:
+                        _passwordView.setError(getString(R.string.error_invalid_login));
+                        _passwordView.requestFocus();
+                        // Warning, there is no break here to disable serverViewRequestFocus too
+                    case OK:
+                    default:
+                        serverViewRequestFocus = false;
+                        break;
 				}
+
+                if (serverViewRequestFocus) {
+                    _serverView.requestFocus();
+                }
 
                 // If not ok, reset the progress
                 if (_returnCode != LoginReturnCode.OK) {
