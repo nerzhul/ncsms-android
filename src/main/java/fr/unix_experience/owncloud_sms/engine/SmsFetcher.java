@@ -204,9 +204,8 @@ public class SmsFetcher {
                     String colName;
 					for (int idx = 0; idx < c.getColumnCount(); idx++) {
 						colName = c.getColumnName(idx);
-						
-						// Id column is must be an integer
                         switch (colName) {
+                            // Id column is must be an integer
                             case "_id":
                             case "type":
                                 entry.put(colName, c.getInt(idx));

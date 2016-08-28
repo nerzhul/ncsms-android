@@ -46,44 +46,30 @@ public class SmsDataProvider extends ContentProvider {
 				);
 	}
 
-	public Cursor query(String mailBox, String selection) {
-		return query(Uri.parse(mailBox),
-				new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
-				selection, null, null
-				);
-	}
-
 	public Cursor queryNonExistingMessages(String mailBox, String existingIds) {
 		if (!existingIds.isEmpty()) {
-            return query(mailBox, "_id NOT IN (" + existingIds + ")");
+            return query(Uri.parse(mailBox),
+                    new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
+                    "_id NOT IN (" + existingIds + ")", null, null
+            );
 		}
 
 		return query(mailBox);
 	}
 
     public Cursor queryMessagesSinceDate(String mailBox, Long sinceDate) {
-        OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
-        Integer bulkLimit = prefs.getSyncBulkLimit();
-        String bulkStr = "";
-        if (bulkLimit > 0) {
-            bulkStr = "LIMIT " + bulkLimit.toString();
-        }
-
-        return query(mailBox, "date > ?", new String[] { sinceDate.toString() });
+        return query(Uri.parse(mailBox),
+                new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
+                "date > ?", new String[] { sinceDate.toString() }, null
+        );
     }
-
-	public Cursor query(String mailBox, String selection, String[] selectionArgs) {
-		return query(Uri.parse(mailBox),
-				new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
-				selection, selectionArgs, null
-				);
-	}
 
 	@Override
 	public Cursor query(@NonNull Uri uri, String[] projection, String selection,
 			String[] selectionArgs, String sortOrder) {
         OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
         Integer bulkLimit = prefs.getSyncBulkLimit();
+        //Integer senderMinSize = prefs.getMinPhoneNumberCharsToSync();
         if (bulkLimit > 0) {
             if (sortOrder == null)
                 sortOrder = "_id ";
