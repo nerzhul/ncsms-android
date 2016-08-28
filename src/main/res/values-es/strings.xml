@@ -47,6 +47,7 @@
 	<string name="title_activity_general_settings">Configuración general</string>
 	
 	<string-array name="pref_sync_frequency_titles">
+        <item>5 minutes</item>
 	    <item>15 minutos</item>
 	    <item>30 minutos</item>
 	    <item>1 hora</item>
@@ -57,6 +58,7 @@
 	    <item>Nunca</item>
 	</string-array>
 	<string-array name="pref_sync_frequency_values">
+        <item>5</item>
 	    <item>15</item>
 	    <item>30</item>
 	    <item>60</item>
