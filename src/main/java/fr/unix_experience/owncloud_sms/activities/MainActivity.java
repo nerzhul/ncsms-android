@@ -134,7 +134,6 @@ public class MainActivity extends AppCompatActivity
         }
 
 		Context ctx = getApplicationContext();
-
 		if (MainActivity.mConnectivityMonitor.isValid()) {
 			// Now fetch messages since last stored date
 			JSONArray smsList = new JSONArray();
@@ -145,6 +144,9 @@ public class MainActivity extends AppCompatActivity
                         ctx.getString(R.string.sync_inprogress), OCSMSNotificationType.SYNC.ordinal());
 				new SyncTask(getApplicationContext(), smsList).execute();
 			}
+            else {
+                Toast.makeText(ctx, ctx.getString(R.string.nothing_to_sync), Toast.LENGTH_SHORT).show();
+            }
 		}
 		else {
 			Toast.makeText(ctx, ctx.getString(R.string.err_sync_no_connection_available), Toast.LENGTH_SHORT).show();

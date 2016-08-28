@@ -206,4 +206,5 @@
     <string name="restore_all_messages">Restore all messages</string>
     <string name="account_actions">Account actions</string>
     <string name="error_connection_failed_not_found">Connection failed, the server returns 404 NOT FOUND. Ensure you set the correct path for your ownCloud instance.</string>
+    <string name="nothing_to_sync">There is nothing to sync.</string>
 </resources>

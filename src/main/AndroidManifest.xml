@@ -37,9 +37,6 @@
 
         <!-- Related to periodic sync -->
         <service
-            android:name=".observers.SmsObserverService"
-            android:exported="false"/>
-        <service
             android:name=".sync_adapters.SmsSyncService"
             android:exported="true"
             android:process=":sync">

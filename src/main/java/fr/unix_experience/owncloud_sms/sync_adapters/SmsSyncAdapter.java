@@ -36,16 +36,16 @@ import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationUI;
 
 public class SmsSyncAdapter extends AbstractThreadedSyncAdapter {
 
-	public SmsSyncAdapter(final Context context, final boolean autoInitialize) {
+	public SmsSyncAdapter(Context context, boolean autoInitialize) {
 		super(context, autoInitialize);
 		_accountMgr = AccountManager.get(context);
 	}
 
 	@Override
-	public void onPerformSync(final Account account, final Bundle extras, final String authority,
-			final ContentProviderClient provider, final SyncResult syncResult) {
+	public void onPerformSync(Account account, Bundle extras, String authority,
+                              ContentProviderClient provider, SyncResult syncResult) {
 		// Create client
-		final String ocURI = _accountMgr.getUserData(account, "ocURI");
+		String ocURI = _accountMgr.getUserData(account, "ocURI");
 		if (ocURI == null) {
             OCSMSNotificationUI.notify(getContext(), getContext().getString(R.string.fatal_error),
                      getContext().getString(R.string.err_sync_account_unparsable),
@@ -53,22 +53,22 @@ public class SmsSyncAdapter extends AbstractThreadedSyncAdapter {
 			return;
 		}
 
-		final Uri serverURI = Uri.parse(ocURI);
+		Uri serverURI = Uri.parse(ocURI);
         OCSMSNotificationUI.notify(getContext(), getContext().getString(R.string.sync_title),
                 getContext().getString(R.string.sync_inprogress), OCSMSNotificationType.SYNC.ordinal());
 
-		final OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(getContext(),
+		OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(getContext(),
 				serverURI, _accountMgr.getUserData(account, "ocLogin"),
 				_accountMgr.getPassword(account));
 
 		try {
 			// getServerAPI version
-			Log.d(TAG, "Server API version: " + _client.getServerAPIVersion());
+			Log.d(SmsSyncAdapter.TAG, "Server API version: " + _client.getServerAPIVersion());
 
 			// and push datas
 			_client.doPushRequest(null);
             OCSMSNotificationUI.cancel(getContext());
-		} catch (final OCSyncException e) {
+		} catch (OCSyncException e) {
             OCSMSNotificationUI.cancel(getContext());
             OCSMSNotificationUI.notify(getContext(), getContext().getString(R.string.fatal_error),
                     getContext().getString(e.getErrorId()), OCSMSNotificationType.SYNC_FAILED.ordinal());
@@ -82,7 +82,7 @@ public class SmsSyncAdapter extends AbstractThreadedSyncAdapter {
 				syncResult.stats.numAuthExceptions++;
 			}
 			else {
-				// UNHANDLED
+				Log.w(SmsSyncAdapter.TAG, "onPerformSync: unhandled response");
 			}
 		}
 	}
