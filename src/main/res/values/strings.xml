@@ -165,7 +165,7 @@
     <string name="err_sync_get_smslist">Error #1: Invalid data received from server when getting previous messages</string>
     <string name="err_sync_craft_http_request">Error #2: Error while crafting HTTP request</string>
     <string name="err_sync_push_request">Error #3: Push request failed</string>
-    <string name="err_sync_push_request_resp">Error #4: Invalid datas received from server when pushing datas</string>
+    <string name="err_sync_push_request_resp">Error #4: Invalid data received from server when pushing data</string>
     <string name="err_sync_create_json_null_smslist">Error #5: NULL SMS List</string>
     <string name="err_sync_create_json_put_smslist">Error #6: Error while crafting push request</string>
     <string name="err_sync_create_json_request_encoding">Error #7: Unsupported encoding when generating request</string>
@@ -202,7 +202,7 @@
     <string name="please_fix_it">Please fix it.</string>
     <string name="err_cannot_read_contacts">We cannot read your contacts.</string>
     <string name="err_cannot_read_sms">We cannot read your SMS.</string>
-    <string name="action_appinfo_perms">App Infos and permissions</string>
+    <string name="action_appinfo_perms">App Info and permissions</string>
     <string name="restore_all_messages">Restore all messages</string>
     <string name="account_actions">Account actions</string>
     <string name="error_connection_failed_not_found">Connection failed, the server returns 404 NOT FOUND. Ensure you set the correct path for your ownCloud instance.</string>
