@@ -32,18 +32,6 @@
     <!-- Translation version, reference for translators -->
     <string name="translation_version">7</string>
 
-    <!-- System strings, do not translate -->
-    <string name="app_name">ownCloud-SMS</string>
-    <string name="account_type">fr.unix_experience.owncloud_sms</string>
-    <string name="account_authority">fr.unix_experience.owncloud_sms.datasync.provider</string>
-    <string name="slowsync_account_authority">fr.unix_experience.owncloud_sms.datasync.slowsync_provider</string>
-    <string name="target_package">fr.unix_experience.owncloud_sms</string>
-    <string name="login_logo">Login logo</string>
-
-    <!-- System strings: preferences -->
-    <string name="shared_preference_file">ownCloudSMSPrefs</string>
-    <string name="pref_lastmsgdate">last_message_date</string>
-
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">短信 - 快速模式</string>

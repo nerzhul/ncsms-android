@@ -38,6 +38,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
@@ -126,6 +127,7 @@ public class MainActivity extends AppCompatActivity
 	}
 
     public void syncAllMessages () {
+        Log.v(MainActivity.TAG, "Launch syncAllMessages()");
         if (!PermissionChecker.checkPermission(this, Manifest.permission.READ_SMS,
                 REQUEST_SMS)) {
             return;
@@ -147,6 +149,7 @@ public class MainActivity extends AppCompatActivity
 		else {
 			Toast.makeText(ctx, ctx.getString(R.string.err_sync_no_connection_available), Toast.LENGTH_SHORT).show();
 		}
+        Log.v(MainActivity.TAG, "Finish syncAllMessages()");
 	}
 
     private boolean openMyAccounts () {
@@ -202,4 +205,6 @@ public class MainActivity extends AppCompatActivity
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
+
+    private static final String TAG = MainActivity.class.getSimpleName();
 }

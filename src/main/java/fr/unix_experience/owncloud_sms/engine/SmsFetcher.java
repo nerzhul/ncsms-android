@@ -104,15 +104,16 @@ public class SmsFetcher {
 
 				} catch (JSONException e) {
 					Log.e(SmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
-					c.close();
 				}
 			}
 			while (c.moveToNext());
 
 			Log.d(SmsFetcher.TAG, c.getCount() + " messages read from " + mbURI);
-
-			c.close();
 		}
+
+        if (c != null) {
+            c.close();
+        }
 	}
 	
 	// Used by Content Observer
@@ -235,15 +236,16 @@ public class SmsFetcher {
 					
 				} catch (JSONException e) {
 					Log.e(SmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
-					c.close();
 				}
 			}
 			while (c.moveToNext());
 			
 			Log.d(SmsFetcher.TAG, c.getCount() + " messages read from " + mbURI);
-			
-			c.close();
 		}
+
+        if (c != null) {
+            c.close();
+        }
 	}
 	
 	private String mapMailboxIDToURI(MailboxID mbID) {

@@ -23,6 +23,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
@@ -36,7 +37,7 @@ public class SmsDataProvider extends ContentProvider {
 
 	@Override
 	public boolean onCreate() {
-		return false;
+		return true;
 	}
 
 	public Cursor query(String mailBox) {
@@ -46,7 +47,9 @@ public class SmsDataProvider extends ContentProvider {
 				);
 	}
 
+    // NOTE: in APIv2 this call should be modified to use date instead of _id which is likely unique
 	public Cursor queryNonExistingMessages(String mailBox, String existingIds) {
+        Log.d(SmsDataProvider.TAG, "queryNonExistingMessages !");
 		if (!existingIds.isEmpty()) {
             return query(Uri.parse(mailBox),
                     new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
@@ -58,6 +61,7 @@ public class SmsDataProvider extends ContentProvider {
 	}
 
     public Cursor queryMessagesSinceDate(String mailBox, Long sinceDate) {
+        Log.d(SmsDataProvider.TAG, "queryMessagesSinceDate !");
         return query(Uri.parse(mailBox),
                 new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
                 "date > ?", new String[] { sinceDate.toString() }, null
@@ -67,20 +71,51 @@ public class SmsDataProvider extends ContentProvider {
 	@Override
 	public Cursor query(@NonNull Uri uri, String[] projection, String selection,
 			String[] selectionArgs, String sortOrder) {
+        if ((_context == null) || (_context.getContentResolver() == null)) {
+            Log.e(SmsDataProvider.TAG, "query: context is null or content resolver is null, abort.");
+            return null;
+        }
         OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(_context);
         Integer bulkLimit = prefs.getSyncBulkLimit();
-        //Integer senderMinSize = prefs.getMinPhoneNumberCharsToSync();
+        Integer senderMinSize = prefs.getMinPhoneNumberCharsToSync();
+        if (senderMinSize < 0) {
+            senderMinSize = 0;
+        }
+
+        // If minSize > 0 we should filter
+        if (senderMinSize > 0) {
+            if ((selection == null) || (selection.isEmpty())) {
+                selection = "length(address) > ?";
+                selectionArgs = new String[] { senderMinSize.toString() };
+            }
+            else {
+                selection = "length(address) > ? AND " + selection;
+                int nSelectionArgLength = 1;
+                if (selectionArgs != null) {
+                    nSelectionArgLength += selectionArgs.length;
+                }
+                String[] nSelectionArgs = new String[nSelectionArgLength];
+                nSelectionArgs[0] = senderMinSize.toString();
+                if (selectionArgs != null) {
+                    System.arraycopy(selectionArgs, 0, nSelectionArgs, 1, selectionArgs.length);
+                }
+                selectionArgs = nSelectionArgs;
+            }
+
+            Log.d(SmsDataProvider.TAG, "query: Minimum message length set to " + selectionArgs[0]);
+        }
+
         if (bulkLimit > 0) {
             if (sortOrder == null)
                 sortOrder = "_id ";
             sortOrder += " LIMIT " + bulkLimit.toString();
+
+            Log.d(SmsDataProvider.TAG, "query: Bulk limit set to " + bulkLimit.toString());
         }
 
-		if ((_context != null) && (_context.getContentResolver() != null)) {
-			return _context.getContentResolver().query(uri, projection, selection, selectionArgs, sortOrder);
-		}
+        Log.d(SmsDataProvider.TAG, "query: selection set to " + selection);
 
-		return null;
+        return _context.getContentResolver().query(uri, projection, selection, selectionArgs, sortOrder);
 	}
 
 	@Override

@@ -40,6 +40,7 @@ public interface ASyncSMSSync {
 
 		@Override
 		protected Void doInBackground(Void... params) {
+            Log.d(ASyncSMSSync.TAG, "Starting background sync");
 			// Get ownCloud SMS account list
 			AccountManager _accountMgr = AccountManager.get(_context);
 			Account[] myAccountList = _accountMgr.getAccountsByType(_context.getString(R.string.account_type));
@@ -62,6 +63,7 @@ public interface ASyncSMSSync {
 				}
 			}
             OCSMSNotificationUI.cancel(_context);
+            Log.d(ASyncSMSSync.TAG, "Stopping background sync");
 			return null;
 		}
 
