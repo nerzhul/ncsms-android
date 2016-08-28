@@ -70,4 +70,6 @@ public class OCSMSSharedPrefs extends SharedPrefs {
     public Integer getSyncBulkLimit() {
         return _sPrefs.getInt("sync_bulk_messages", -1);
     }
+
+    public Integer getMinPhoneNumberCharsToSync() { return _sPrefs.getInt("minimum_sync_chars", DefaultPrefs.minimumCharsForSync); }
 }

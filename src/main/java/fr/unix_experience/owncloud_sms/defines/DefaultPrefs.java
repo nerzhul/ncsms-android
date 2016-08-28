@@ -2,6 +2,7 @@ package fr.unix_experience.owncloud_sms.defines;
 
 public class DefaultPrefs {
 	public final static Integer syncInterval = 15;
+    public final static Integer minimumCharsForSync = 6;
 	public final static Boolean pushOnReceive = true;
 
 	public final static Boolean syncWifi = true;
