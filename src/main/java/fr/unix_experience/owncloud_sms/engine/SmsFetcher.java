@@ -70,7 +70,7 @@ public class SmsFetcher {
 
 				try {
                     String colName;
-					for(int idx=0;idx<c.getColumnCount();idx++) {
+					for(int idx = 0; idx < c.getColumnCount(); idx++) {
 						colName = c.getColumnName(idx);
 
 						// Id column is must be an integer
@@ -126,12 +126,15 @@ public class SmsFetcher {
 		
 		// Fetch Sent SMS Message from Built-in Content Provider
 		Cursor c = (new SmsDataProvider(_context)).query(mbURI);
+        if (c == null) {
+            return null;
+        }
 		
 		c.moveToNext();
 		
 		// We create a list of strings to store results
 		JSONArray results = new JSONArray();
-		
+
 		JSONObject entry = new JSONObject();
 
 		try {
@@ -139,7 +142,7 @@ public class SmsFetcher {
             String colName;
 			for(int idx = 0;idx < c.getColumnCount(); idx++) {
 				colName = c.getColumnName(idx);
-				
+
 				// Id column is must be an integer
                 switch (colName) {
                     case "_id":
@@ -159,18 +162,17 @@ public class SmsFetcher {
                         break;
                 }
 			}
-			
+
 			/*
 			* Mailbox ID is required by server
-			* mboxId is greater than server mboxId by 1 because types 
+			* mboxId is greater than server mboxId by 1 because types
 			* aren't indexed in the same mean
 			*/
 			entry.put("mbox", (mboxId - 1));
-			
+
 			results.put(entry);
 		} catch (JSONException e) {
 			Log.e(SmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
-			c.close();
 		}
 		
 		c.close();
