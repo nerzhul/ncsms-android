@@ -203,4 +203,7 @@
     <string name="err_cannot_read_contacts">无法读取您的联系人</string>
     <string name="err_cannot_read_sms">无法读取您的短信</string>
     <string name="action_appinfo_perms">应用信息及权限</string>
+    <string name="restore_all_messages">恢复全部短信</string>
+    <string name="account_actions">账户操作</string>
+    <string name="error_connection_failed_not_found">连接失败，服务器返回"404未找到"。请确认您设置了正确的 ownCloud 服务器路径。</string>
 </resources>
