@@ -145,16 +145,16 @@
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">为我们评分！</string>
-    <string name="ma_title_add_account">添加账号</string>
+    <string name="ma_title_add_account">添加账户</string>
     <string name="ma_title_welcome">欢迎</string>
     <string name="ma_content_welcome">欢迎使用 ownCloud SMS，此应用可将您的短信同步到您的 ownCloud 服务器。</string>
-    <string name="ma_title_remote_account">远程账号</string>
-    <string name="choose_account">选择账号</string>
+    <string name="ma_title_remote_account">远程账户</string>
+    <string name="choose_account">选择账户</string>
 
     <!-- Restauration -->
-    <string name="title_activity_select_account">选择账号</string>
+    <string name="title_activity_select_account">选择账户</string>
     <string name="title_activity_select_contact">选择联系人</string>
-    <string name="no_account_configured">未配置账号</string>
+    <string name="no_account_configured">未配置账户</string>
 
     <!-- Notifications -->
     <string name="sync_title">同步进度</string>
@@ -183,7 +183,7 @@
     <string name="err_proto_v2">服务端不支持该功能，请确认服务端版本至少为 1.6。</string>
     <string name="contactinfos_title">联系人信息</string>
     <string name="subtitle_contact_phones">- 联系人电话号码</string>
-    <string name="pref_title_bulk_messages">每次同步的最大信息数目</string>
+    <string name="pref_title_bulk_messages">每次同步的最大短信数目</string>
     <string name="contactinfos_list">联系人列表</string>
     <string name="function_not_available">该功能目前不可用。</string>
 
@@ -193,7 +193,7 @@
 
     <string name="navigation_drawer_open">打开导航条</string>
     <string name="navigation_drawer_close">关闭导航条</string>
-    <string name="ma_title_my_accounts">我的账号</string>
+    <string name="ma_title_my_accounts">我的账户</string>
     <string name="ma_content_swipeaction">从左向右滑动以访问操作菜单。</string>
     <string name="cancel">取消</string>
     <string name="understood">我知道了</string>
