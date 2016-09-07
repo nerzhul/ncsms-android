@@ -36,4 +36,12 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="fr.unix_experience.owncloud_sms.activities.remote_account.RestoreMessagesActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/feature_not_already_implemented"
+        android:id="@+id/textView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>
