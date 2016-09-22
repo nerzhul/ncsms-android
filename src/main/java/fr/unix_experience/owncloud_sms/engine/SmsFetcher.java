@@ -38,7 +38,7 @@ public class SmsFetcher {
 		_existingDraftsMessages = null;
 	}
 	
-	public void fetchAllMessages(JSONArray result) {
+	void fetchAllMessages(JSONArray result) {
 		bufferMailboxMessages(result, MailboxID.INBOX);
 		bufferMailboxMessages(result, MailboxID.SENT);
 		bufferMailboxMessages(result, MailboxID.DRAFTS);
@@ -188,7 +188,7 @@ public class SmsFetcher {
 	}
 	
 	// Used by ConnectivityChanged Event
-	public void bufferMessagesSinceDate(JSONArray result, MailboxID mbID, Long sinceDate) {
+    private void bufferMessagesSinceDate(JSONArray result, MailboxID mbID, Long sinceDate) {
 		String mbURI = mapMailboxIDToURI(mbID);
 		
 		if ((_context == null) || (mbURI == null)) {
@@ -298,19 +298,19 @@ public class SmsFetcher {
         return sb.toString();
 	}
 	
-	public void setExistingInboxMessages(JSONArray inboxMessages) {
+	void setExistingInboxMessages(JSONArray inboxMessages) {
 		_existingInboxMessages = inboxMessages;
 	}
 
-	public void setExistingSentMessages(JSONArray sentMessages) {
+	void setExistingSentMessages(JSONArray sentMessages) {
 		_existingSentMessages = sentMessages;
 	}
 
-	public void setExistingDraftsMessages(JSONArray draftMessages) {
+	void setExistingDraftsMessages(JSONArray draftMessages) {
 		_existingDraftsMessages = draftMessages;
 	}
 	
-	public Long getLastMessageDate() {
+	Long getLastMessageDate() {
 		return _lastMsgDate;
 	}
 	
