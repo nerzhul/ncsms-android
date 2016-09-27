@@ -111,7 +111,6 @@
     <string name="title_activity_select_account">Выбрать аккаунта</string>
     <string name="title_activity_select_contact">Выбрать контакт</string>
     <string name="no_account_configured">Нет настроенных аккаунтов.</string>
-    <!-- Restauration -->
 
     <!-- Notifications -->
     <string name="sync_title">Процесс синхронизации</string>
@@ -122,7 +121,7 @@
     <string name="err_sync_get_smslist">Error #1: Invalid data received from server when getting previous messages</string>
     <string name="err_sync_craft_http_request">Error #2: Error while crafting HTTP request</string>
     <string name="err_sync_push_request">Error #3: Push request failed</string>
-    <string name="err_sync_push_request_resp">Error #4: Invalid datas received from server when pushing datas</string>
+    <string name="err_sync_push_request_resp">Error #4: Invalid data received from server when pushing data</string>
     <string name="err_sync_create_json_null_smslist">Error #5: NULL SMS List</string>
     <string name="err_sync_create_json_put_smslist">Error #6: Error while crafting push request</string>
     <string name="err_sync_create_json_request_encoding">Error #7: Unsupported encoding when generating request</string>
@@ -136,8 +135,8 @@
     <string name="err_sync_no_connection_available">Error #16: No data connection available</string>
     <string name="err_sync_account_unparsable">Error #17: malformed account. Please reconfigure it</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: OcSMS app is not installed or ownCloud awaiting for an upgrade</string>
-    <string name="err_fetch_phonelist">Неверный список телефонов, полученных от сервера.</string>
-    <string name="err_proto_v2">Сервер не поддерживает эту функцию. Убедитесь, что версия сервера не ниже 1.6.</string>
+    <string name="err_fetch_phonelist">Invalid phonelist received from server.</string>
+    <string name="err_proto_v2">Server doesn\'t support this feature. Ensure server version is at least 1.6.</string>
     <string name="contactinfos_title">Контактная информация</string>
     <string name="subtitle_contact_phones">- Контактный телефон</string>
     <string name="pref_title_bulk_messages">Максимальное количество сообщений для отправки</string>
@@ -158,7 +157,11 @@
     <string name="notif_permission_required_content">Некоторые разрешения отсутствует для выполнения синхронизации. Исправьте их в настройках приложения</string>
     <string name="please_fix_it">Пожалуйста исправьте это.</string>
     <string name="err_cannot_read_contacts">Мы не можем прочитать ваши контакты.</string>
-    <string name="err_cannot_read_sms">WМы не можем прочитать ваши SMS.</string>
+    <string name="err_cannot_read_sms">Мы не можем прочитать ваши SMS.</string>
     <string name="action_appinfo_perms">Информация о приложение и разрешениях</string>
-
-    </resources>
+    <string name="restore_all_messages">Восстановить все сообщения</string>
+    <string name="account_actions">Действия над аккаунтом</string>
+    <string name="error_connection_failed_not_found">Не удалось установить соединение, сервер возвращает 404 NOT FOUND. Убедитесь, что вы установили правильный путь для экземпляра OwnCloud.</string>
+    <string name="nothing_to_sync">Нечего синхронизировать.</string>
+    <string name="feature_not_already_implemented">Эта функция еще не реализована и будет доступна в ближайшее время.</string>
+</resources>
