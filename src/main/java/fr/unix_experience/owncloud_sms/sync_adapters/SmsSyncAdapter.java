@@ -63,7 +63,7 @@ public class SmsSyncAdapter extends AbstractThreadedSyncAdapter {
 
 		try {
 			// getServerAPI version
-			Log.d(SmsSyncAdapter.TAG, "Server API version: " + _client.getServerAPIVersion());
+			Log.i(SmsSyncAdapter.TAG, "Server API version: " + _client.getServerAPIVersion());
 
 			// and push datas
 			_client.doPushRequest(null);

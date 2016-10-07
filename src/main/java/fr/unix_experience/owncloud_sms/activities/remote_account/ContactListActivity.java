@@ -193,7 +193,7 @@ public class ContactListActivity extends AppCompatActivity implements ASyncConta
         switch (requestCodeID) {
             case REQUEST_CONTACTS:
                 for (int grantResult : grantResults) {
-                    Log.d("OcSMS", Integer.toString(grantResult));
+                    Log.i("OcSMS", Integer.toString(grantResult));
                 }
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     fetchContact(mFetchedContact);

@@ -108,7 +108,7 @@ public class SmsFetcher {
 			}
 			while (c.moveToNext());
 
-			Log.d(SmsFetcher.TAG, c.getCount() + " messages read from " + mbURI);
+			Log.i(SmsFetcher.TAG, c.getCount() + " messages read from " + mbURI);
 		}
 
         if (c != null) {
@@ -196,7 +196,13 @@ public class SmsFetcher {
 		}
 		
 		Cursor c = new SmsDataProvider(_context).queryMessagesSinceDate(mbURI, sinceDate);
-		
+        if (c != null) {
+            Log.i(SmsFetcher.TAG, "Retrieved " + c.getCount() + " messages.");
+        }
+        else {
+            Log.i(SmsFetcher.TAG, "No message retrieved.");
+        }
+
 		// Reading mailbox
 		if ((c != null) && (c.getCount() > 0)) {
 			c.moveToFirst();
@@ -242,7 +248,7 @@ public class SmsFetcher {
 			}
 			while (c.moveToNext());
 			
-			Log.d(SmsFetcher.TAG, c.getCount() + " messages read from " + mbURI);
+			Log.i(SmsFetcher.TAG, c.getCount() + " messages read from " + mbURI);
 		}
 
         if (c != null) {

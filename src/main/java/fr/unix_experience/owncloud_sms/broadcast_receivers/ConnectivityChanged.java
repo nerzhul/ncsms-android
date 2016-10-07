@@ -53,14 +53,14 @@ public class ConnectivityChanged extends BroadcastReceiver implements ASyncSMSSy
 		OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(context);
 
 		if (!prefs.pushOnReceive()) {
-			Log.d(ConnectivityChanged.TAG,"ConnectivityChanges.onReceive: pushOnReceive is disabled");
+			Log.i(ConnectivityChanged.TAG,"ConnectivityChanges.onReceive: pushOnReceive is disabled");
 			return;
 		}
 
 		// If data is available and previous dataConnectionState was false, then we need to sync
 		if (cMon.isValid() && !ConnectivityChanged.dataConnectionAvailable) {
             ConnectivityChanged.dataConnectionAvailable = true;
-			Log.d(ConnectivityChanged.TAG,"ConnectivityChanged.onReceive, data conn available");
+			Log.i(ConnectivityChanged.TAG,"ConnectivityChanged.onReceive, data conn available");
 
             if (!PermissionChecker.checkPermission(context, Manifest.permission.READ_SMS,
                     PermissionID.REQUEST_SMS)) {
@@ -72,14 +72,14 @@ public class ConnectivityChanged extends BroadcastReceiver implements ASyncSMSSy
 		// No data available and previous dataConnectionState was true
 		else if (ConnectivityChanged.dataConnectionAvailable && !cMon.isValid()) {
             ConnectivityChanged.dataConnectionAvailable = false;
-			Log.d(ConnectivityChanged.TAG,"ConnectivityChanges.onReceive: data conn is off");
+			Log.i(ConnectivityChanged.TAG,"ConnectivityChanges.onReceive: data conn is off");
 		}
 	}
 
 	private void checkMessagesAndSend(Context context) {
 		// Get last message synced from preferences
 		Long lastMessageSynced = (new OCSMSSharedPrefs(context)).getLastMessageDate();
-		Log.d(ConnectivityChanged.TAG,"Synced Last:" + lastMessageSynced);
+		Log.i(ConnectivityChanged.TAG,"Synced Last:" + lastMessageSynced);
 
 		// Now fetch messages since last stored date
         JSONArray smsList = new JSONArray();

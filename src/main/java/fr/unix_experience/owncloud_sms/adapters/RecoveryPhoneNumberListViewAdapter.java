@@ -37,13 +37,13 @@ public class RecoveryPhoneNumberListViewAdapter extends ArrayAdapter<String> {
             v.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.d(TAG, "Clicked on phone " + l);
+                    Log.i(TAG, "Clicked on phone " + l);
                 }
             });
             v.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    Log.d(TAG, "Long clicked on phone " + l);
+                    Log.i(TAG, "Long clicked on phone " + l);
                     return false;
                 }
             });

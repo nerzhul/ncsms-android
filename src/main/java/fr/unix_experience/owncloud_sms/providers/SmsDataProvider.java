@@ -49,7 +49,7 @@ public class SmsDataProvider extends ContentProvider {
 
     // NOTE: in APIv2 this call should be modified to use date instead of _id which is likely unique
 	public Cursor queryNonExistingMessages(String mailBox, String existingIds) {
-        Log.d(SmsDataProvider.TAG, "queryNonExistingMessages !");
+        Log.i(SmsDataProvider.TAG, "queryNonExistingMessages !");
 		if (!existingIds.isEmpty()) {
             return query(Uri.parse(mailBox),
                     new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
@@ -61,7 +61,6 @@ public class SmsDataProvider extends ContentProvider {
 	}
 
     public Cursor queryMessagesSinceDate(String mailBox, Long sinceDate) {
-        Log.d(SmsDataProvider.TAG, "queryMessagesSinceDate !");
         return query(Uri.parse(mailBox),
                 new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
                 "date > ?", new String[] { sinceDate.toString() }, null
@@ -102,7 +101,8 @@ public class SmsDataProvider extends ContentProvider {
                 selectionArgs = nSelectionArgs;
             }
 
-            Log.d(SmsDataProvider.TAG, "query: Minimum message length set to " + selectionArgs[0]);
+            Log.i(SmsDataProvider.TAG, "query: Minimum message length set to " + selectionArgs[0] +
+                    ". There is " + (selectionArgs.length - 1) + " other arg.");
         }
 
         if (bulkLimit > 0) {
@@ -110,10 +110,10 @@ public class SmsDataProvider extends ContentProvider {
                 sortOrder = "_id ";
             sortOrder += " LIMIT " + bulkLimit.toString();
 
-            Log.d(SmsDataProvider.TAG, "query: Bulk limit set to " + bulkLimit.toString());
+            Log.i(SmsDataProvider.TAG, "query: Bulk limit set to " + bulkLimit.toString());
         }
 
-        Log.d(SmsDataProvider.TAG, "query: selection set to " + selection);
+        Log.i(SmsDataProvider.TAG, "query: selection set to " + selection);
 
         return _context.getContentResolver().query(uri, projection, selection, selectionArgs, sortOrder);
 	}

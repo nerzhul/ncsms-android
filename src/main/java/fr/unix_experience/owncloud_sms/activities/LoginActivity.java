@@ -232,7 +232,7 @@ public class LoginActivity extends AppCompatActivity {
 	public class UserLoginTask extends AsyncTask<Void, Void, Boolean> { 
 
 		UserLoginTask(String serverURI, String login, String password) {
-            Log.d(TAG, "_serverURI = " + serverURI);
+            Log.i(TAG, "_serverURI = " + serverURI);
 			_serverURI = Uri.parse(serverURI);
 			_login = login;
 			_password = password;

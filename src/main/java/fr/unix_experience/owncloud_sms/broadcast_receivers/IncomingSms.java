@@ -31,7 +31,7 @@ public class IncomingSms extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		if (IncomingSms._mboxObserver == null) {
-			Log.d(IncomingSms.TAG,"_mboxObserver == null");
+			Log.i(IncomingSms.TAG,"_mboxObserver == null");
             IncomingSms._mboxObserver = new SmsObserver(new Handler(), context);
 			context.getContentResolver().
 	    		registerContentObserver(Uri.parse("content://sms"), true, IncomingSms._mboxObserver);

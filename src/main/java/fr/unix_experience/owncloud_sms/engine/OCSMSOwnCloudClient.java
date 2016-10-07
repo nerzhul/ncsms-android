@@ -134,19 +134,19 @@ public class OCSMSOwnCloudClient {
 			try {
 				inboxSmsList = smsBoxes.getJSONArray("inbox");
 			} catch (JSONException e) {
-				Log.d(OCSMSOwnCloudClient.TAG, "No inbox Sms received from server (doPushRequest, get SMS list)");
+				Log.i(OCSMSOwnCloudClient.TAG, "No inbox Sms received from server (doPushRequest, get SMS list)");
 			}
 
 			try {
 				sentSmsList = smsBoxes.getJSONArray("sent");
 			} catch (JSONException e) {
-				Log.d(OCSMSOwnCloudClient.TAG, "No sent Sms received from server (doPushRequest, get SMS list)");
+				Log.i(OCSMSOwnCloudClient.TAG, "No sent Sms received from server (doPushRequest, get SMS list)");
 			}
 
 			try {
 				draftsSmsList = smsBoxes.getJSONArray("drafts");
 			} catch (JSONException e) {
-				Log.d(OCSMSOwnCloudClient.TAG, "No drafts Sms received from server (doPushRequest, get SMS list)");
+				Log.i(OCSMSOwnCloudClient.TAG, "No drafts Sms received from server (doPushRequest, get SMS list)");
 			}
 
 			SmsFetcher fetcher = new SmsFetcher(_context);
@@ -162,7 +162,7 @@ public class OCSMSOwnCloudClient {
 		}
 
 		if (smsList.length() == 0) {
-			Log.d(OCSMSOwnCloudClient.TAG, "No new SMS to sync, sync done");
+			Log.i(OCSMSOwnCloudClient.TAG, "No new SMS to sync, sync done");
 			return;
 		}
 
@@ -192,7 +192,7 @@ public class OCSMSOwnCloudClient {
 		// Push was OK, we can save the lastMessageDate which was saved to server
 		(new OCSMSSharedPrefs(_context)).setLastMessageDate(lastMsgDate);
 
-		Log.d(OCSMSOwnCloudClient.TAG, "SMS Push request said: status " + pushStatus + " - " + pushMessage);
+		Log.i(OCSMSOwnCloudClient.TAG, "SMS Push request said: status " + pushStatus + " - " + pushMessage);
 	}
 
 	public GetMethod createGetVersionRequest() {
@@ -296,7 +296,7 @@ public class OCSMSOwnCloudClient {
 			try {
 				status = _ocClient.executeMethod(req);
 
-				Log.d(OCSMSOwnCloudClient.TAG, "HTTP Request done at try " + tryNb);
+				Log.i(OCSMSOwnCloudClient.TAG, "HTTP Request done at try " + tryNb);
 
 				// Force loop exit
 				tryNb = OCSMSOwnCloudClient.maximumHttpReqTries;
@@ -335,7 +335,7 @@ public class OCSMSOwnCloudClient {
 				Log.e(OCSMSOwnCloudClient.TAG, "Unable to parse server response", e);
 				throw new OCSyncException(R.string.err_sync_http_request_resp, OCSyncErrorType.IO);
 			}
-			//Log.d(TAG, "Successful response: " + response);
+			//Log.i(TAG, "Successful response: " + response);
 
 			// Parse the response
 			try {

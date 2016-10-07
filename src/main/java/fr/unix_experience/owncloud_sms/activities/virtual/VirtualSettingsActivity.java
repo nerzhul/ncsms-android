@@ -192,11 +192,11 @@ public class VirtualSettingsActivity extends PreferenceActivity {
 		@Override
 		public boolean onPreferenceChange(Preference preference, Object value) {
             if (preference instanceof ListPreference) {
-                Log.d(TAG, "Changed list preference " + preference.toString() + " value " + value.toString());
+                Log.i(TAG, "Changed list preference " + preference.toString() + " value " + value.toString());
                 handleListPreference(preference.getKey(), value.toString(), (ListPreference) preference);
 
 			} else if (preference instanceof CheckBoxPreference) {
-                Log.d(TAG, "Changed checkbox preference " + preference.toString() + " value " + value.toString());
+                Log.i(TAG, "Changed checkbox preference " + preference.toString() + " value " + value.toString());
                 handleCheckboxPreference(preference.getKey(), (Boolean) value);
 			} else {
 				// For all other preferences, set the summary to the value's

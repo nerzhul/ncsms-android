@@ -138,7 +138,7 @@ public class OwnCloudAuthenticator extends AbstractAccountAuthenticator {
 		try {
 			if(OwnCloudAuthenticator.isSuccess(status)) {
 				 String response = get.getResponseBodyAsString();
-				 Log.d(OwnCloudAuthenticator.TAG, "Successful response: " + response);
+				 Log.i(OwnCloudAuthenticator.TAG, "Successful response: " + response);
 
 				 // Parse the response
 				 JSONObject respJSON = new JSONObject(response);
@@ -148,7 +148,7 @@ public class OwnCloudAuthenticator extends AbstractAccountAuthenticator {
 				 String displayName = respData.getString(OwnCloudAuthenticator.NODE_DISPLAY_NAME);
 				 String email = respData.getString(OwnCloudAuthenticator.NODE_EMAIL);
 				 
-				 Log.d(OwnCloudAuthenticator.TAG, "*** Parsed user information: " + id + " - " + displayName + " - " + email);
+				 Log.i(OwnCloudAuthenticator.TAG, "*** Parsed user information: " + id + " - " + displayName + " - " + email);
 				 
 			} else {
 				String response = get.getResponseBodyAsString();

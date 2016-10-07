@@ -70,7 +70,7 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
                 "sync_3g".equals(key) || "sync_gprs".equals(key) ||
                 "sync_4g".equals(key) || "sync_others".equals(key)) {
 			OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(VirtualSettingsActivity._context);
-			Log.d(OCSMSSettingsActivity.TAG,"OCSMSSettingsActivity.handleCheckboxPreference: set " + key + " to "
+			Log.i(OCSMSSettingsActivity.TAG,"OCSMSSettingsActivity.handleCheckboxPreference: set " + key + " to "
 					+ value.toString());
 			prefs.putBoolean(key, value);
 		}
@@ -87,7 +87,7 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
 		.setSummary((index >= 0) ? preference.getEntries()[index]
                 : null);
 
-        Log.d(OCSMSSettingsActivity.TAG, "Modifying listPreference " + key);
+        Log.i(OCSMSSettingsActivity.TAG, "Modifying listPreference " + key);
 
         OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(VirtualSettingsActivity._context);
 

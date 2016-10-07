@@ -50,7 +50,7 @@ public class SmsObserver extends ContentObserver implements ASyncSMSSync {
         }
 
 		super.onChange(selfChange);
-		Log.d(SmsObserver.TAG, "onChange SmsObserver");
+		Log.i(SmsObserver.TAG, "onChange SmsObserver");
 
 		// No account, abort
 		Account[] myAccountList = AccountManager.get(_context).
