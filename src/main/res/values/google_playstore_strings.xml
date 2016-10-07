@@ -27,7 +27,7 @@
 -->
 <resources>
     <!-- Translation version, reference for translators -->
-	<string name="gp_translation_version" translatable="false">3</string>
+	<string name="gp_translation_version">3</string>
 	
 	<!-- Translations must begin here -->
     <string name="gp_short_description">ownCloud SMS synchronize your local SMS on your ownCloud instance</string>
