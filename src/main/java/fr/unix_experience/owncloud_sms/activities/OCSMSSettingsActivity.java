@@ -62,7 +62,7 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
         // Bind our string preferences
         VirtualSettingsActivity._stringPrefs.add(new BindObjectPref("sync_frequency", "15"));
         VirtualSettingsActivity._stringPrefs.add(new BindObjectPref("sync_bulk_messages", "-1"));
-        //VirtualSettingsActivity._stringPrefs.add(new BindObjectPref("minimum_sync_chars", "0"));
+        VirtualSettingsActivity._stringPrefs.add(new BindObjectPref("minimum_sync_chars", "1"));
 
         // Must be at the end, after preference bind
         super.onPostCreate(savedInstanceState);
