@@ -116,6 +116,43 @@
         <item>-1</item>
     </string-array>
 
+    <string-array name="pref_minimum_sync_chars_titles">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+    <string-array name="pref_minimum_sync_chars">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+
     <string name="pref_push_on_receive">Push SMS on reception</string>
     <string name="pref_sync_wifi">Synchronize in Wi-Fi</string>
     <string name="pref_sync_4g">Synchronize in 4G</string>
@@ -208,4 +245,5 @@
     <string name="error_connection_failed_not_found">Connection failed, the server returns 404 NOT FOUND. Ensure you set the correct path for your ownCloud instance.</string>
     <string name="nothing_to_sync">There is nothing to sync.</string>
     <string name="feature_not_already_implemented">This feature is not already implemented and will be available soon.</string>
+    <string name="pref_title_minimum_sync_chars">Minimum phonenumber length</string>
 </resources>
