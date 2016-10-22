@@ -17,6 +17,7 @@ package fr.unix_experience.owncloud_sms.activities;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import android.Manifest;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.ContentResolver;
@@ -27,26 +28,29 @@ import android.util.Log;
 
 import java.util.List;
 
-import fr.unix_experience.owncloud_sms.activities.virtual.VirtualSettingsActivity;
 import fr.unix_experience.owncloud_sms.R;
+import fr.unix_experience.owncloud_sms.activities.virtual.VirtualSettingsActivity;
 import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
+import fr.unix_experience.owncloud_sms.prefs.PermissionChecker;
+
+import static fr.unix_experience.owncloud_sms.enums.PermissionID.REQUEST_ACCOUNTS;
 
 public class OCSMSSettingsActivity extends VirtualSettingsActivity {
-	private static final String TAG = OCSMSSettingsActivity.class.getSimpleName();
+    private static final String TAG = OCSMSSettingsActivity.class.getSimpleName();
 
-	private static AccountManager _accountMgr;
-	private static String _accountAuthority;
-	private static String _accountType;
+    private static AccountManager _accountMgr;
+    private static String _accountAuthority;
+    private static String _accountType;
 
-	@Override
-	protected void onPostCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
         OCSMSSettingsActivity._accountMgr = AccountManager.get(getBaseContext());
         OCSMSSettingsActivity._accountAuthority = getString(R.string.account_authority);
         OCSMSSettingsActivity._accountType = getString(R.string.account_type);
         VirtualSettingsActivity._prefsRessourceFile = R.xml.pref_data_sync;
 
-		// Bind our boolean preferences
+        // Bind our boolean preferences
         VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("push_on_receive", DefaultPrefs.pushOnReceive));
         VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_wifi", DefaultPrefs.syncWifi));
         VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_4g", DefaultPrefs.sync4G));
@@ -55,46 +59,52 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
         VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_2g", DefaultPrefs.sync2G));
         VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_others", DefaultPrefs.syncOthers));
 
-		// Bind our string preferences
+        // Bind our string preferences
         VirtualSettingsActivity._stringPrefs.add(new BindObjectPref("sync_frequency", "15"));
         VirtualSettingsActivity._stringPrefs.add(new BindObjectPref("sync_bulk_messages", "-1"));
+        //VirtualSettingsActivity._stringPrefs.add(new BindObjectPref("minimum_sync_chars", "0"));
 
-		// Must be at the end, after preference bind
-		super.onPostCreate(savedInstanceState);
-	}
+        // Must be at the end, after preference bind
+        super.onPostCreate(savedInstanceState);
+    }
 
-	protected void handleCheckboxPreference(String key, Boolean value) {
-		// Network types allowed for sync
-		if("push_on_receive".equals(key) ||
+    protected void handleCheckboxPreference(String key, Boolean value) {
+        // Network types allowed for sync
+        if ("push_on_receive".equals(key) ||
                 "sync_wifi".equals(key) || "sync_2g".equals(key) ||
                 "sync_3g".equals(key) || "sync_gprs".equals(key) ||
                 "sync_4g".equals(key) || "sync_others".equals(key)) {
-			OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(VirtualSettingsActivity._context);
-			Log.i(OCSMSSettingsActivity.TAG,"OCSMSSettingsActivity.handleCheckboxPreference: set " + key + " to "
-					+ value.toString());
-			prefs.putBoolean(key, value);
-		}
-	}
+            OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(VirtualSettingsActivity._context);
+            Log.i(OCSMSSettingsActivity.TAG, "OCSMSSettingsActivity.handleCheckboxPreference: set " + key + " to "
+                    + value.toString());
+            prefs.putBoolean(key, value);
+        }
+    }
 
-	protected void handleListPreference(String key, String value,
-			ListPreference preference) {
-		// For list preferences, look up the correct display value in
-		// the preference's 'entries' list.
-		int index = preference.findIndexOfValue(value);
+    protected void handleListPreference(String key, String value,
+                                        ListPreference preference) {
+        // For list preferences, look up the correct display value in
+        // the preference's 'entries' list.
+        int index = preference.findIndexOfValue(value);
 
-		// Set the summary to reflect the new value.
-		preference
-		.setSummary((index >= 0) ? preference.getEntries()[index]
-                : null);
+        // Set the summary to reflect the new value.
+        preference
+                .setSummary((index >= 0) ? preference.getEntries()[index]
+                        : null);
 
         Log.i(OCSMSSettingsActivity.TAG, "Modifying listPreference " + key);
 
         OCSMSSharedPrefs prefs = new OCSMSSharedPrefs(VirtualSettingsActivity._context);
 
-		// Handle sync frequency change
-		if ("sync_frequency".equals(key)) {
-			Account[] myAccountList = OCSMSSettingsActivity._accountMgr.getAccountsByType(OCSMSSettingsActivity._accountType);
-			long syncFreq = Long.parseLong(value);
+        // Handle sync frequency change
+        if ("sync_frequency".equals(key)) {
+            if (!PermissionChecker.checkPermission(this, Manifest.permission.GET_ACCOUNTS,
+                    REQUEST_ACCOUNTS)) {
+                return;
+            }
+
+            Account[] myAccountList = OCSMSSettingsActivity._accountMgr.getAccountsByType(OCSMSSettingsActivity._accountType);
+            long syncFreq = Long.parseLong(value);
 
 			// Get ownCloud SMS account list
 			for (Account acct: myAccountList) {
@@ -121,7 +131,7 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
                 prefs.putLong(key, syncFreq);
 			}
 		}
-        else if ("sync_bulk_messages".equals(key)) {
+        else if ("sync_bulk_messages".equals(key) || "minimum_sync_chars".equals(key)) {
             prefs.putInteger(key, Integer.parseInt(value));
         }
 	}

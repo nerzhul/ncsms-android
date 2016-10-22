@@ -126,7 +126,6 @@ public class ContactListActivity extends AppCompatActivity implements ASyncConta
 	}
 
     private void fetchContact(String name) {
-
         if (!PermissionChecker.checkPermission(this, Manifest.permission.READ_CONTACTS,
                 REQUEST_CONTACTS)) {
             return;

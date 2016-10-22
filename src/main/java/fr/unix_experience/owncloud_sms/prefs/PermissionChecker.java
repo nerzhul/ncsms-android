@@ -39,8 +39,8 @@ import fr.unix_experience.owncloud_sms.enums.PermissionID;
 import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationUI;
 
 public class PermissionChecker {
-    public static boolean checkPermission(final Context context, final String permissionName,
-            final PermissionID permissionId) {
+    public static boolean checkPermission(Context context, final String permissionName,
+                                          final PermissionID permissionId) {
         int hasWriteContactsPermission = ContextCompat.checkSelfPermission(context, permissionName);
         if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
             // Check if we only have a context or a full activity
@@ -53,7 +53,7 @@ public class PermissionChecker {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     ActivityCompat.requestPermissions(activity,
-                                            new String[]{permissionName}, permissionId.ordinal());
+                                            new String[]{ permissionName }, permissionId.ordinal());
                                 }
                             });
                     return false;
