@@ -26,8 +26,12 @@ package fr.unix_experience.owncloud_sms.enums;
  */
 
 public enum MailboxID {
-	INBOX,
-	SENT,
-	DRAFTS,
-	ALL,
+	INBOX("content://sms/inbox"),
+	SENT("content://sms/sent"),
+	DRAFTS("content://sms/drafts"),
+	ALL("content://sms");
+
+	MailboxID(final String uri) { this.uri = uri; }
+	private final String uri;
+	public String getURI() { return this.uri; }
 }

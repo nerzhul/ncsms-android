@@ -45,9 +45,7 @@ public class SmsFetcher {
 	}
 
 	private void bufferMailboxMessages(JSONArray result, MailboxID mbID) {
-		String mbURI = mapMailboxIDToURI(mbID);
-
-		if ((_context == null) || (mbURI == null)) {
+		if ((_context == null)) {
 			return;
 		}
 
@@ -59,7 +57,7 @@ public class SmsFetcher {
 
 		// We generate a ID list for this message box
 		String existingIDs = buildExistingMessagesString(mbID);
-		Cursor c = new SmsDataProvider(_context).queryNonExistingMessages(mbURI, existingIDs);
+		Cursor c = new SmsDataProvider(_context).queryNonExistingMessages(mbID.getURI(), existingIDs);
 
 		// Reading mailbox
 		if ((c != null) && (c.getCount() > 0)) {
@@ -82,7 +80,7 @@ public class SmsFetcher {
 			}
 			while (c.moveToNext());
 
-			Log.i(SmsFetcher.TAG, c.getCount() + " messages read from " + mbURI);
+			Log.i(SmsFetcher.TAG, c.getCount() + " messages read from " + mbID.getURI());
 		}
 
 		if (c != null) {
@@ -92,14 +90,12 @@ public class SmsFetcher {
 
 	// Used by Content Observer
 	public JSONArray getLastMessage(MailboxID mbID) {
-		String mbURI = mapMailboxIDToURI(mbID);
-
-		if ((_context == null) || (mbURI == null)) {
+		if ((_context == null)) {
 			return null;
 		}
 
 		// Fetch Sent SMS Message from Built-in Content Provider
-		Cursor c = (new SmsDataProvider(_context)).query(mbURI);
+		Cursor c = (new SmsDataProvider(_context)).query(mbID.getURI());
 		if (c == null) {
 			return null;
 		}
@@ -146,13 +142,11 @@ public class SmsFetcher {
 	// Used by ConnectivityChanged Event
 	private void bufferMessagesSinceDate(JSONArray result, MailboxID mbID, Long sinceDate) {
 		Log.i(SmsFetcher.TAG, "bufferMessagesSinceDate for " + mbID.toString() + " sinceDate " + sinceDate.toString());
-		String mbURI = mapMailboxIDToURI(mbID);
-
-		if ((_context == null) || (mbURI == null)) {
+		if ((_context == null)) {
 			return;
 		}
 
-		Cursor c = new SmsDataProvider(_context).queryMessagesSinceDate(mbURI, sinceDate);
+		Cursor c = new SmsDataProvider(_context).queryMessagesSinceDate(mbID.getURI(), sinceDate);
 		if (c != null) {
 			Log.i(SmsFetcher.TAG, "Retrieved " + c.getCount() + " messages.");
 		} else {
@@ -179,7 +173,7 @@ public class SmsFetcher {
 			}
 			while (c.moveToNext());
 
-			Log.i(SmsFetcher.TAG, c.getCount() + " messages read from " + mbURI);
+			Log.i(SmsFetcher.TAG, c.getCount() + " messages read from " + mbID.getURI());
 		}
 
 		if (c != null) {
@@ -223,20 +217,6 @@ public class SmsFetcher {
 		return -1;
 	}
 
-	private String mapMailboxIDToURI(MailboxID mbID) {
-		if (mbID == MailboxID.INBOX) {
-			return "content://sms/inbox";
-		} else if (mbID == MailboxID.DRAFTS) {
-			return "content://sms/drafts";
-		} else if (mbID == MailboxID.SENT) {
-			return "content://sms/sent";
-		} else if (mbID == MailboxID.ALL) {
-			return "content://sms";
-		}
-
-		return null;
-	}
-
 	private String buildExistingMessagesString(MailboxID _mbID) {
 		JSONArray existingMessages = null;
 		if (_mbID == MailboxID.INBOX) {
@@ -271,14 +251,10 @@ public class SmsFetcher {
 	void setExistingInboxMessages(JSONArray inboxMessages) {
 		_existingInboxMessages = inboxMessages;
 	}
-
 	void setExistingSentMessages(JSONArray sentMessages) {
 		_existingSentMessages = sentMessages;
 	}
-
-	void setExistingDraftsMessages(JSONArray draftMessages) {
-		_existingDraftsMessages = draftMessages;
-	}
+	void setExistingDraftsMessages(JSONArray draftMessages) { _existingDraftsMessages = draftMessages; }
 
 	Long getLastMessageDate() {
 		return _lastMsgDate;
