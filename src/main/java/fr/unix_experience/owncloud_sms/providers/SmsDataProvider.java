@@ -109,7 +109,7 @@ public class SmsDataProvider extends ContentProvider {
 
         if (bulkLimit > 0) {
             if (sortOrder == null)
-                sortOrder = "_id ";
+                sortOrder = "date DESC";
             sortOrder += " LIMIT " + bulkLimit.toString();
 
             Log.i(SmsDataProvider.TAG, "query: Bulk limit set to " + bulkLimit.toString());
