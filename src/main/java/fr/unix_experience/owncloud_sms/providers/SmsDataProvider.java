@@ -52,7 +52,15 @@ public class SmsDataProvider extends ContentProvider {
         Log.i(SmsDataProvider.TAG, "queryNonExistingMessages !");
 		if (!existingIds.isEmpty()) {
             return query(Uri.parse(mailBox),
-                    new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
+                    new String[] {
+                        "read",
+                        "date",
+                        "address",
+                        "seen",
+                        "body",
+                        "_id",
+                        "type",
+                    },
                     "_id NOT IN (" + existingIds + ")", null, null
             );
 		}
@@ -62,7 +70,16 @@ public class SmsDataProvider extends ContentProvider {
 
     public Cursor queryMessagesSinceDate(String mailBox, Long sinceDate) {
         return query(Uri.parse(mailBox),
-                new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
+                new String[] {
+                    "read",
+                    "date",
+                    "address",
+                    "seen",
+                    "body",
+                    "_id",
+                    "type",
+                    //"length(address)" // For debug purposes
+                },
                 "date > ?", new String[] { sinceDate.toString() }, null
         );
     }
@@ -83,26 +100,11 @@ public class SmsDataProvider extends ContentProvider {
 
         // If minSize > 0 we should filter
         if (senderMinSize > 0) {
-            if ((selection == null) || (selection.isEmpty())) {
-                selection = "length(address) > ?";
-                selectionArgs = new String[] { senderMinSize.toString() };
-            }
-            else {
-                selection = "length(address) > ? AND " + selection;
-                int nSelectionArgLength = 1;
-                if (selectionArgs != null) {
-                    nSelectionArgLength += selectionArgs.length;
-                }
-                String[] nSelectionArgs = new String[nSelectionArgLength];
-                nSelectionArgs[0] = senderMinSize.toString();
-                if (selectionArgs != null) {
-                    System.arraycopy(selectionArgs, 0, nSelectionArgs, 1, selectionArgs.length);
-                }
-                selectionArgs = nSelectionArgs;
-            }
+            selection = ((selection == null) || (selection.isEmpty())) ?
+                    ("length(address) >= " + senderMinSize.toString()) :
+                    ("length(address) >= " + senderMinSize.toString() + " AND " + selection);
 
-            Log.i(SmsDataProvider.TAG, "query: Minimum message length set to " + selectionArgs[0] +
-                    ". There is " + (selectionArgs.length - 1) + " other arg.");
+            Log.i(SmsDataProvider.TAG, "query: Minimum message length set to " + senderMinSize);
         }
 
         if (bulkLimit > 0) {
