@@ -10,8 +10,8 @@ buildscript {
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "23.0.3"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
     useLibrary 'org.apache.http.legacy'
 
     lintOptions {
@@ -21,8 +21,8 @@ android {
     defaultConfig {
         applicationId "fr.unix_experience.owncloud_sms"
         minSdkVersion 14
-        targetSdkVersion 23
-        maxSdkVersion 23
+        targetSdkVersion 25
+        maxSdkVersion 24
     }
 
     buildTypes {
@@ -45,10 +45,10 @@ repositories {
 
 dependencies {
     compile project(':owncloudAndroidLibrary')
-    compile 'com.android.support:support-v13:24.2.0'
-    compile 'com.android.support:appcompat-v7:24.2.0'
-    compile 'com.android.support:design:24.2.0'
+    compile 'com.android.support:support-v13:25.0.0'
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:design:25.0.0'
     compile 'in.srain.cube:ultra-ptr:1.0.11'
     compile 'com.github.dmytrodanylyk.android-process-button:library:1.0.4'
-    compile 'com.android.support:support-v4:24.2.0'
+    compile 'com.android.support:support-v4:25.0.0'
 }
