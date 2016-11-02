@@ -117,7 +117,22 @@ public class SmsDataProvider extends ContentProvider {
 
         Log.i(SmsDataProvider.TAG, "query: selection set to " + selection);
 
-        return _context.getContentResolver().query(uri, projection, selection, selectionArgs, sortOrder);
+        Cursor cursor = _context.getContentResolver().query(uri, projection, selection, selectionArgs, sortOrder);
+		if (cursor == null) {
+			return null;
+		}
+
+		if (cursor.getCount() == 0) {
+			cursor.close();
+			return null;
+		}
+
+		if (!cursor.moveToFirst()) {
+			cursor.close();
+			return null;
+		}
+
+		return cursor;
 	}
 
 	@Override

@@ -63,16 +63,6 @@ public class SmsFetcher {
 			return;
 		}
 
-		if (c.getCount() == 0) {
-			c.close();
-			return;
-		}
-
-		if (!c.moveToFirst()) {
-			c.close();
-			return;
-		}
-
 		// Reading mailbox
 		do {
 			JSONObject entry = new JSONObject();
@@ -105,18 +95,6 @@ public class SmsFetcher {
 		// Fetch Sent SMS Message from Built-in Content Provider
 		Cursor c = (new SmsDataProvider(_context)).query(mbID.getURI());
 		if (c == null) {
-			return null;
-		}
-
-		// or for a reason count returns zero value
-		if (c.getCount() == 0) {
-			c.close();
-			return null;
-		}
-
-		// If no first message into cursor
-		if (!c.moveToFirst()) {
-			c.close();
 			return null;
 		}
 
@@ -169,20 +147,6 @@ public class SmsFetcher {
 			Log.i(SmsFetcher.TAG, "Retrieved " + c.getCount() + " messages.");
 		} else {
 			Log.i(SmsFetcher.TAG, "No message retrieved.");
-		}
-
-		if (c == null) {
-			return;
-		}
-
-		if (c.getCount() == 0) {
-			c.close();
-			return;
-		}
-
-		// Reading mailbox
-		if (!c.moveToFirst()) {
-			c.close();
 			return;
 		}
 
