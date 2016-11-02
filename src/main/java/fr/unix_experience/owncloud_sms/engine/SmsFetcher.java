@@ -59,33 +59,41 @@ public class SmsFetcher {
 		String existingIDs = buildExistingMessagesString(mbID);
 		Cursor c = new SmsDataProvider(_context).queryNonExistingMessages(mbID.getURI(), existingIDs);
 
-		// Reading mailbox
-		if ((c != null) && (c.getCount() > 0)) {
-			c.moveToFirst();
-			do {
-				JSONObject entry = new JSONObject();
-
-				try {
-					for (int idx = 0; idx < c.getColumnCount(); idx++) {
-						handleProviderColumn(c, idx, entry);
-					}
-
-					// Mailbox ID is required by server
-					entry.put("mbox", mbID.ordinal());
-					result.put(entry);
-
-				} catch (JSONException e) {
-					Log.e(SmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
-				}
-			}
-			while (c.moveToNext());
-
-			Log.i(SmsFetcher.TAG, c.getCount() + " messages read from " + mbID.getURI());
+		if (c == null) {
+			return;
 		}
 
-		if (c != null) {
+		if (c.getCount() == 0) {
 			c.close();
+			return;
 		}
+
+		if (!c.moveToFirst()) {
+			c.close();
+			return;
+		}
+
+		// Reading mailbox
+		do {
+			JSONObject entry = new JSONObject();
+
+			try {
+				for (int idx = 0; idx < c.getColumnCount(); idx++) {
+					handleProviderColumn(c, idx, entry);
+				}
+
+				// Mailbox ID is required by server
+				entry.put("mbox", mbID.ordinal());
+				result.put(entry);
+
+			} catch (JSONException e) {
+				Log.e(SmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
+			}
+		}
+		while (c.moveToNext());
+
+		Log.i(SmsFetcher.TAG, c.getCount() + " messages read from " + mbID.getURI());
+		c.close();
 	}
 
 	// Used by Content Observer
@@ -100,7 +108,17 @@ public class SmsFetcher {
 			return null;
 		}
 
-		c.moveToNext();
+		// or for a reason count returns zero value
+		if (c.getCount() == 0) {
+			c.close();
+			return null;
+		}
+
+		// If no first message into cursor
+		if (!c.moveToFirst()) {
+			c.close();
+			return null;
+		}
 
 		// We create a list of strings to store results
 		JSONArray results = new JSONArray();
@@ -153,32 +171,40 @@ public class SmsFetcher {
 			Log.i(SmsFetcher.TAG, "No message retrieved.");
 		}
 
-		// Reading mailbox
-		if ((c != null) && (c.getCount() > 0)) {
-			c.moveToFirst();
-			do {
-				JSONObject entry = new JSONObject();
-
-				try {
-					for (int idx = 0; idx < c.getColumnCount(); idx++) {
-						handleProviderColumn(c, idx, entry);
-					}
-
-					// Mailbox ID is required by server
-					entry.put("mbox", mbID.ordinal());
-					result.put(entry);
-				} catch (JSONException e) {
-					Log.e(SmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
-				}
-			}
-			while (c.moveToNext());
-
-			Log.i(SmsFetcher.TAG, c.getCount() + " messages read from " + mbID.getURI());
+		if (c == null) {
+			return;
 		}
 
-		if (c != null) {
+		if (c.getCount() == 0) {
 			c.close();
+			return;
 		}
+
+		// Reading mailbox
+		if (!c.moveToFirst()) {
+			c.close();
+			return;
+		}
+
+		do {
+			JSONObject entry = new JSONObject();
+
+			try {
+				for (int idx = 0; idx < c.getColumnCount(); idx++) {
+					handleProviderColumn(c, idx, entry);
+				}
+
+				// Mailbox ID is required by server
+				entry.put("mbox", mbID.ordinal());
+				result.put(entry);
+			} catch (JSONException e) {
+				Log.e(SmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
+			}
+		}
+		while (c.moveToNext());
+
+		Log.i(SmsFetcher.TAG, c.getCount() + " messages read from " + mbID.getURI());
+		c.close();
 	}
 
 	private Integer handleProviderColumn(Cursor c, int idx, JSONObject entry) throws JSONException {
