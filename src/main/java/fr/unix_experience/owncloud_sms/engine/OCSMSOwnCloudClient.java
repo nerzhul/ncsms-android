@@ -1,7 +1,7 @@
 package fr.unix_experience.owncloud_sms.engine;
 
 /*
- *  Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ *  Copyright (c) 2014-2016, Loic Blot <loic.blot@unix-experience.fr>
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Affero General Public License as
@@ -21,13 +21,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
 
-import com.owncloud.android.lib.common.OwnCloudClient;
-import com.owncloud.android.lib.common.OwnCloudClientFactory;
-import com.owncloud.android.lib.common.OwnCloudCredentialsFactory;
-
 import org.apache.commons.httpclient.HttpException;
 import org.apache.commons.httpclient.HttpMethod;
-import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.methods.StringRequestEntity;
 import org.apache.http.HttpStatus;
@@ -49,23 +44,13 @@ public class OCSMSOwnCloudClient {
 
 	public OCSMSOwnCloudClient(Context context, Uri serverURI, String accountName, String accountPassword) {
 		_context = context;
-
-		_ocClient = OwnCloudClientFactory.createOwnCloudClient(
-				serverURI, _context, true);
-
-		// Set basic credentials
-		_ocClient.setCredentials(
-				OwnCloudCredentialsFactory.newBasicCredentials(accountName, accountPassword)
-				);
-
 		_serverAPIVersion = 1;
-
+		_http = new HTTPRequestBuilder(context, serverURI, accountName, accountPassword);
         _connectivityMonitor = new ConnectivityMonitor(_context);
 	}
 
 	public Integer getServerAPIVersion() throws OCSyncException {
-		GetMethod get = createGetVersionRequest();
-		doHttpRequest(get, true);
+		doHttpRequest(_http.getVersion(), true);
 		if (_jsonQueryBuffer == null) {
 			// Return default version
 			return 1;
@@ -82,9 +67,8 @@ public class OCSMSOwnCloudClient {
 		return _serverAPIVersion;
 	}
 
-	public JSONArray getServerPhoneNumbers() throws OCSyncException {
-		GetMethod get = createGetPhoneListRequest();
-		doHttpRequest(get, true);
+	JSONArray getServerPhoneNumbers() throws OCSyncException {
+		doHttpRequest(_http.getPhoneList(), true);
 		if (_jsonQueryBuffer == null) {
 			return null;
 		}
@@ -107,13 +91,12 @@ public class OCSMSOwnCloudClient {
 		}
 	}
 
-	public void doPushRequestV1(JSONArray smsList) throws OCSyncException {
+	private void doPushRequestV1(JSONArray smsList) throws OCSyncException {
 		// We need to save this date as a step for connectivity change
 		Long lastMsgDate = (long) 0;
 
 		if (smsList == null) {
-			GetMethod get = createGetSmsIdListRequest();
-			doHttpRequest(get);
+			doHttpRequest(_http.getAllSmsIds());
 			if (_jsonQueryBuffer == null) {
 				return;
 			}
@@ -195,29 +178,7 @@ public class OCSMSOwnCloudClient {
 		Log.i(OCSMSOwnCloudClient.TAG, "SMS Push request said: status " + pushStatus + " - " + pushMessage);
 	}
 
-	public GetMethod createGetVersionRequest() {
-		return createGetRequest(OCSMSOwnCloudClient.OC_GET_VERSION);
-	}
-
-	public GetMethod createGetPhoneListRequest() {
-		return createGetRequest(OCSMSOwnCloudClient.OC_V2_GET_PHONELIST);
-	}
-
-	public GetMethod createGetSmsIdListRequest() {
-		return createGetRequest(OCSMSOwnCloudClient.OC_GET_ALL_SMS_IDS);
-	}
-
-	public GetMethod createGetLastSmsTimestampRequest() {
-		return createGetRequest(OCSMSOwnCloudClient.OC_GET_LAST_MSG_TIMESTAMP);
-	}
-
-	private GetMethod createGetRequest(String oc_call) {
-		GetMethod get = new GetMethod(_ocClient.getBaseUri() + oc_call);
-		get.addRequestHeader("OCS-APIREQUEST", "true");
-		return get;
-	}
-
-    public PostMethod createPushRequest(JSONArray smsList) throws OCSyncException {
+	private PostMethod createPushRequest(JSONArray smsList) throws OCSyncException {
 		JSONObject obj = createPushJSONObject(smsList);
 		if (obj == null) {
 			return null;
@@ -228,11 +189,7 @@ public class OCSMSOwnCloudClient {
 			return null;
 		}
 
-		PostMethod post = new PostMethod(_ocClient.getBaseUri() + OCSMSOwnCloudClient.OC_PUSH_ROUTE);
-		post.addRequestHeader("OCS-APIREQUEST", "true");
-		post.setRequestEntity(ent);
-
-		return post;
+		return _http.pushSms(ent);
 	}
 
 	private JSONObject createPushJSONObject(JSONArray smsList) throws OCSyncException {
@@ -294,8 +251,7 @@ public class OCSMSOwnCloudClient {
 			}
 
 			try {
-				status = _ocClient.executeMethod(req);
-
+				status = _http.execute(req);
 				Log.i(OCSMSOwnCloudClient.TAG, "HTTP Request done at try " + tryNb);
 
 				// Force loop exit
@@ -352,9 +308,7 @@ public class OCSMSOwnCloudClient {
 						throw new OCSyncException(R.string.err_sync_http_request_parse_resp, OCSyncErrorType.PARSE);
 					}
 				}
-                return;
 			}
-
 		} else if (status == HttpStatus.SC_FORBIDDEN) {
 			// Authentication failed
 			throw new OCSyncException(R.string.err_sync_auth_failed, OCSyncErrorType.AUTH);
@@ -380,24 +334,12 @@ public class OCSMSOwnCloudClient {
 
     private static final int maximumHttpReqTries = 3;
 
-	private final OwnCloudClient _ocClient;
+	private final HTTPRequestBuilder _http;
 	private final Context _context;
     private final ConnectivityMonitor _connectivityMonitor;
 
 	private Integer _serverAPIVersion;
     private JSONObject _jsonQueryBuffer;
-
-    // API v1 calls
-	private static final String OC_GET_VERSION = "/index.php/apps/ocsms/get/apiversion?format=json";
-	private static final String OC_GET_ALL_SMS_IDS = "/index.php/apps/ocsms/get/smsidlist?format=json";
-	private static final String OC_GET_LAST_MSG_TIMESTAMP = "/index.php/apps/ocsms/get/lastmsgtime?format=json";
-	private static final String OC_PUSH_ROUTE = "/index.php/apps/ocsms/push?format=json";
-
-    // API v2 calls
-	private static final String OC_V2_GET_PHONELIST = "/index.php/apps/ocsms/api/v2/phones/list?format=json";
-    private static final String OC_V2_GET_MESSAGES ="/index.php/apps/ocsms/api/v2/messages/[START]/[LIMIT]?format=json";
-    private static final String OC_V2_GET_MESSAGES_PHONE ="/index.php/apps/ocsms/api/v2/messages/[PHONENUMBER]/[START]/[LIMIT]?format=json";
-    private static final String OC_V2_GET_MESSAGES_SENDQUEUE = "/index.php/apps/ocsms/api/v2/messages/sendqueue?format=json";
 
 	private static final String TAG = OCSMSOwnCloudClient.class.getSimpleName();
 
