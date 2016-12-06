@@ -17,6 +17,8 @@ package fr.unix_experience.owncloud_sms.engine;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.content.Context;
 import android.net.Uri;
 import android.util.Log;
@@ -42,10 +44,20 @@ import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 @SuppressWarnings("deprecation")
 public class OCSMSOwnCloudClient {
 
-	public OCSMSOwnCloudClient(Context context, Uri serverURI, String accountName, String accountPassword) {
+	public OCSMSOwnCloudClient(Context context, Account account) {
 		_context = context;
 		_serverAPIVersion = 1;
-		_http = new HTTPRequestBuilder(context, serverURI, accountName, accountPassword);
+
+		AccountManager accountManager = AccountManager.get(context);
+		String ocURI = accountManager.getUserData(account, "ocURI");
+		if (ocURI == null) {
+			throw new IllegalStateException(context.getString(R.string.err_sync_account_unparsable));
+		}
+
+		Uri serverURI = Uri.parse(ocURI);
+		_http = new HTTPRequestBuilder(context, serverURI,
+				accountManager.getUserData(account, "ocLogin"),
+				accountManager.getPassword(account));
         _connectivityMonitor = new ConnectivityMonitor(_context);
 	}
 

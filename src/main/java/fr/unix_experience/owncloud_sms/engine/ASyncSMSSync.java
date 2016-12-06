@@ -47,15 +47,13 @@ public interface ASyncSMSSync {
 
 			// Notify that we are syncing SMS
 			for (Account element : myAccountList) {
-				Uri serverURI = Uri.parse(_accountMgr.getUserData(element, "ocURI"));
-
-				OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(_context,
-						serverURI, _accountMgr.getUserData(element, "ocLogin"),
-						_accountMgr.getPassword(element));
-
 				try {
+					OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(_context, element);
 					_client.doPushRequest(_smsList);
 					OCSMSNotificationUI.cancel(_context);
+				} catch (IllegalStateException e) { // Fail to read account data
+					OCSMSNotificationUI.notify(_context, _context.getString(R.string.fatal_error),
+							e.toString(), OCSMSNotificationType.SYNC_FAILED.ordinal());
 				} catch (OCSyncException e) {
 					Log.e(ASyncSMSSync.TAG, _context.getString(e.getErrorId()));
                     OCSMSNotificationUI.notify(_context, _context.getString(R.string.fatal_error),

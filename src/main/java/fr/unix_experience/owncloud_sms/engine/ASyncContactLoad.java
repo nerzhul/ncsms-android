@@ -5,7 +5,6 @@ import android.accounts.AccountManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.database.Cursor;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.provider.ContactsContract;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -51,18 +50,13 @@ public interface ASyncContactLoad {
 		}
 		@Override
 		protected Boolean doInBackground(Void... params) {
-			// Create client
-			String ocURI = ContactLoadTask._accountMgr.getUserData(ContactLoadTask._account, "ocURI");
-			if (ocURI == null) {
-				// @TODO: Handle the problem
+			OCSMSOwnCloudClient _client = null;
+			try {
+				_client = new OCSMSOwnCloudClient(_context, ContactLoadTask._account);
+			}
+			catch (IllegalStateException e) {
 				return false;
 			}
-
-			Uri serverURI = Uri.parse(ocURI);
-
-			OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(_context,
-					serverURI, ContactLoadTask._accountMgr.getUserData(ContactLoadTask._account, "ocLogin"),
-                    ContactLoadTask._accountMgr.getPassword(ContactLoadTask._account));
 
 			// Remove all objects, due to refreshing handling
 			_objects.clear();
