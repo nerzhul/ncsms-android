@@ -149,7 +149,7 @@ public class OCSMSOwnCloudClient {
 				Log.i(OCSMSOwnCloudClient.TAG, "No drafts Sms received from server (doPushRequest, get SMS list)");
 			}
 
-			SmsFetcher fetcher = new SmsFetcher(_context);
+			AndroidSmsFetcher fetcher = new AndroidSmsFetcher(_context);
 			fetcher.setExistingInboxMessages(inboxSmsList);
 			fetcher.setExistingSentMessages(sentSmsList);
 			fetcher.setExistingDraftsMessages(draftsSmsList);

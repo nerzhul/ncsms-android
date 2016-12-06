@@ -31,8 +31,8 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.engine.ASyncSMSSync;
+import fr.unix_experience.owncloud_sms.engine.AndroidSmsFetcher;
 import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
-import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
 import fr.unix_experience.owncloud_sms.enums.PermissionID;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 import fr.unix_experience.owncloud_sms.prefs.PermissionChecker;
@@ -83,7 +83,7 @@ public class ConnectivityChanged extends BroadcastReceiver implements ASyncSMSSy
 
 		// Now fetch messages since last stored date
         JSONArray smsList = new JSONArray();
-		new SmsFetcher(context).bufferMessagesSinceDate(smsList, lastMessageSynced);
+		new AndroidSmsFetcher(context).bufferMessagesSinceDate(smsList, lastMessageSynced);
 
 		AtomicReference<ConnectivityMonitor> cMon = new AtomicReference<>(new ConnectivityMonitor(context));
 

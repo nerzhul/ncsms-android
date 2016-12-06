@@ -28,8 +28,8 @@ import org.json.JSONObject;
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
 import fr.unix_experience.owncloud_sms.providers.SmsDataProvider;
 
-public class SmsFetcher {
-	public SmsFetcher(Context ct) {
+public class AndroidSmsFetcher {
+	public AndroidSmsFetcher(Context ct) {
 		_lastMsgDate = (long) 0;
 		_context = ct;
 
@@ -51,7 +51,7 @@ public class SmsFetcher {
 
 		if ((mbID != MailboxID.INBOX) && (mbID != MailboxID.SENT) &&
 				(mbID != MailboxID.DRAFTS)) {
-			Log.e(SmsFetcher.TAG, "Unhandled MailboxID " + mbID.ordinal());
+			Log.e(AndroidSmsFetcher.TAG, "Unhandled MailboxID " + mbID.ordinal());
 			return;
 		}
 
@@ -77,12 +77,12 @@ public class SmsFetcher {
 				result.put(entry);
 
 			} catch (JSONException e) {
-				Log.e(SmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
+				Log.e(AndroidSmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
 			}
 		}
 		while (c.moveToNext());
 
-		Log.i(SmsFetcher.TAG, c.getCount() + " messages read from " + mbID.getURI());
+		Log.i(AndroidSmsFetcher.TAG, c.getCount() + " messages read from " + mbID.getURI());
 		c.close();
 	}
 
@@ -120,7 +120,7 @@ public class SmsFetcher {
 
 			results.put(entry);
 		} catch (JSONException e) {
-			Log.e(SmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
+			Log.e(AndroidSmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
 		}
 
 		c.close();
@@ -137,16 +137,16 @@ public class SmsFetcher {
 
 	// Used by ConnectivityChanged Event
 	private void bufferMessagesSinceDate(JSONArray result, MailboxID mbID, Long sinceDate) {
-		Log.i(SmsFetcher.TAG, "bufferMessagesSinceDate for " + mbID.toString() + " sinceDate " + sinceDate.toString());
+		Log.i(AndroidSmsFetcher.TAG, "bufferMessagesSinceDate for " + mbID.toString() + " sinceDate " + sinceDate.toString());
 		if ((_context == null)) {
 			return;
 		}
 
 		Cursor c = new SmsDataProvider(_context).queryMessagesSinceDate(mbID.getURI(), sinceDate);
 		if (c != null) {
-			Log.i(SmsFetcher.TAG, "Retrieved " + c.getCount() + " messages.");
+			Log.i(AndroidSmsFetcher.TAG, "Retrieved " + c.getCount() + " messages.");
 		} else {
-			Log.i(SmsFetcher.TAG, "No message retrieved.");
+			Log.i(AndroidSmsFetcher.TAG, "No message retrieved.");
 			return;
 		}
 
@@ -162,12 +162,12 @@ public class SmsFetcher {
 				entry.put("mbox", mbID.ordinal());
 				result.put(entry);
 			} catch (JSONException e) {
-				Log.e(SmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
+				Log.e(AndroidSmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
 			}
 		}
 		while (c.moveToNext());
 
-		Log.i(SmsFetcher.TAG, c.getCount() + " messages read from " + mbID.getURI());
+		Log.i(AndroidSmsFetcher.TAG, c.getCount() + " messages read from " + mbID.getURI());
 		c.close();
 	}
 
@@ -184,7 +184,7 @@ public class SmsFetcher {
 				return c.getInt(idx);
 			/* For debug purpose
             case "length(address)":
-                Log.i(SmsFetcher.TAG, "Column name " + colName + " " + c.getString(idx));
+                Log.i(AndroidSmsFetcher.TAG, "Column name " + colName + " " + c.getString(idx));
                 break;*/
 			// Seen and read must be pseudo boolean
 			case "read":
@@ -241,10 +241,13 @@ public class SmsFetcher {
 	void setExistingInboxMessages(JSONArray inboxMessages) {
 		_existingInboxMessages = inboxMessages;
 	}
+
 	void setExistingSentMessages(JSONArray sentMessages) {
 		_existingSentMessages = sentMessages;
 	}
-	void setExistingDraftsMessages(JSONArray draftMessages) { _existingDraftsMessages = draftMessages; }
+	void setExistingDraftsMessages(JSONArray draftMessages) {
+		_existingDraftsMessages = draftMessages;
+	}
 
 	Long getLastMessageDate() {
 		return _lastMsgDate;
@@ -257,5 +260,5 @@ public class SmsFetcher {
 
 	private Long _lastMsgDate;
 
-	private static final String TAG = SmsFetcher.class.getSimpleName();
+	private static final String TAG = AndroidSmsFetcher.class.getSimpleName();
 }

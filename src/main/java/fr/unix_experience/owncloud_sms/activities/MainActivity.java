@@ -48,8 +48,8 @@ import org.json.JSONArray;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.activities.remote_account.AccountListActivity;
 import fr.unix_experience.owncloud_sms.engine.ASyncSMSSync.SyncTask;
+import fr.unix_experience.owncloud_sms.engine.AndroidSmsFetcher;
 import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
-import fr.unix_experience.owncloud_sms.engine.SmsFetcher;
 import fr.unix_experience.owncloud_sms.enums.OCSMSNotificationType;
 import fr.unix_experience.owncloud_sms.enums.PermissionID;
 import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationUI;
@@ -137,7 +137,7 @@ public class MainActivity extends AppCompatActivity
 		if (MainActivity.mConnectivityMonitor.isValid()) {
 			// Now fetch messages since last stored date
 			JSONArray smsList = new JSONArray();
-            new SmsFetcher(ctx).bufferMessagesSinceDate(smsList, (long) 0);
+            new AndroidSmsFetcher(ctx).bufferMessagesSinceDate(smsList, (long) 0);
 
 			if (smsList.length() > 0) {
                 OCSMSNotificationUI.notify(ctx, ctx.getString(R.string.sync_title),
