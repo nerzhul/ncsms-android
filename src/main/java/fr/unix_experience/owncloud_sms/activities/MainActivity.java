@@ -61,11 +61,11 @@ import static fr.unix_experience.owncloud_sms.enums.PermissionID.REQUEST_SMS;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
-    private static ConnectivityMonitor mConnectivityMonitor = null;
+    private ConnectivityMonitor _ConnectivityMonitor = null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        if (MainActivity.mConnectivityMonitor == null) {
-            MainActivity.mConnectivityMonitor = new ConnectivityMonitor(getApplicationContext());
+        if (_ConnectivityMonitor == null) {
+            _ConnectivityMonitor = new ConnectivityMonitor(getApplicationContext());
         }
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity
         }
 
 		Context ctx = getApplicationContext();
-		if (MainActivity.mConnectivityMonitor.isValid()) {
+		if (_ConnectivityMonitor.isValid()) {
 			// Now fetch messages since last stored date
 			JSONArray smsList = new JSONArray();
             new AndroidSmsFetcher(ctx).bufferMessagesSinceDate(smsList, (long) 0);

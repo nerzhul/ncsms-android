@@ -82,7 +82,7 @@ class HTTPRequestBuilder {
 		return get(HTTPRequestBuilder.OC_V2_GET_PHONELIST);
 	}
 
-	GetMethod getMessages(Integer start, Integer limit) {
+	GetMethod getMessages(Long start, Integer limit) {
 		return get(HTTPRequestBuilder.OC_V2_GET_MESSAGES.
 				replace("[START]", start.toString()).replace("[LIMIT]", limit.toString()));
 	}

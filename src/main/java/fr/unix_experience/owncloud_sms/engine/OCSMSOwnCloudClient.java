@@ -44,6 +44,8 @@ import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 @SuppressWarnings("deprecation")
 public class OCSMSOwnCloudClient {
 
+	private static final Integer SERVER_RECOVERY_MSG_LIMIT = 500;
+
 	public OCSMSOwnCloudClient(Context context, Account account) {
 		_context = context;
 		_serverAPIVersion = 1;
@@ -239,6 +241,26 @@ public class OCSMSOwnCloudClient {
 		return requestEntity;
 	}
 
+	JSONObject retrieveSomeMessages(Long start, Integer limit) {
+		// This is not allowed by server
+		if (limit > OCSMSOwnCloudClient.SERVER_RECOVERY_MSG_LIMIT) {
+			return null;
+		}
+
+		try {
+			doHttpRequest(_http.getMessages(start, limit));
+		} catch (OCSyncException e) {
+			_jsonQueryBuffer = null;
+			return null;
+		}
+
+		if (!_jsonQueryBuffer.has("messages") || !_jsonQueryBuffer.has("last_id")) {
+			return null;
+		}
+
+		return _jsonQueryBuffer;
+	}
+
 	private void doHttpRequest(HttpMethod req) throws OCSyncException {
 		doHttpRequest(req, false);
 	}
@@ -303,7 +325,6 @@ public class OCSMSOwnCloudClient {
 				Log.e(OCSMSOwnCloudClient.TAG, "Unable to parse server response", e);
 				throw new OCSyncException(R.string.err_sync_http_request_resp, OCSyncErrorType.IO);
 			}
-			//Log.i(TAG, "Successful response: " + response);
 
 			// Parse the response
 			try {
