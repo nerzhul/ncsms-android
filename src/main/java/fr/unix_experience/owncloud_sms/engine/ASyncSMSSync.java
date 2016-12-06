@@ -53,7 +53,7 @@ public interface ASyncSMSSync {
 					OCSMSNotificationUI.cancel(_context);
 				} catch (IllegalStateException e) { // Fail to read account data
 					OCSMSNotificationUI.notify(_context, _context.getString(R.string.fatal_error),
-							e.toString(), OCSMSNotificationType.SYNC_FAILED.ordinal());
+							e.getMessage(), OCSMSNotificationType.SYNC_FAILED.ordinal());
 				} catch (OCSyncException e) {
 					Log.e(ASyncSMSSync.TAG, _context.getString(e.getErrorId()));
                     OCSMSNotificationUI.notify(_context, _context.getString(R.string.fatal_error),

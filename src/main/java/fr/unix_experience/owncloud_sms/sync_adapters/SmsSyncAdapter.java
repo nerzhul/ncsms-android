@@ -55,7 +55,7 @@ class SmsSyncAdapter extends AbstractThreadedSyncAdapter {
 			OCSMSNotificationUI.cancel(getContext());
 		} catch (IllegalStateException e) {
 			OCSMSNotificationUI.notify(getContext(), getContext().getString(R.string.fatal_error),
-					e.toString(), OCSMSNotificationType.SYNC_FAILED.ordinal());
+					e.getMessage(), OCSMSNotificationType.SYNC_FAILED.ordinal());
 		} catch (OCSyncException e) {
             OCSMSNotificationUI.cancel(getContext());
             OCSMSNotificationUI.notify(getContext(), getContext().getString(R.string.fatal_error),

@@ -161,4 +161,5 @@
     <string name="nothing_to_sync">Il n\'y a rien à synchroniser.</string>
     <string name="feature_not_already_implemented">Cette fonctionnalité n\'est pas implémentée mais elle sera disponible bientôt.</string>
     <string name="pref_title_minimum_sync_chars">Longueur minimale du numéro de téléphone</string>
+    <string name="err_didnt_find_account_restore">Nous n\'avons pas retrouvé le compte que nous souhaitions utiliser pour la restauration. Cette situation est vraiment étrange.</string>
 </resources>

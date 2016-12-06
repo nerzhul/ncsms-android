@@ -174,5 +174,6 @@
     <string name="nothing_to_sync">There is nothing to sync.</string>
     <string name="feature_not_already_implemented">This feature is not already implemented and will be available soon.</string>
     <string name="pref_title_minimum_sync_chars">Minimum phonenumber length</string>
+    <string name="err_didnt_find_account_restore">We didn\'t find your account to restore your message, this is a very strange situation.</string>
 
 </resources>
