@@ -20,7 +20,6 @@ package fr.unix_experience.owncloud_sms.engine;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.Context;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -41,6 +40,7 @@ public interface ASyncSMSSync {
 		@Override
 		protected Void doInBackground(Void... params) {
             Log.i(ASyncSMSSync.TAG, "Starting background sync");
+
 			// Get ownCloud SMS account list
 			AccountManager _accountMgr = AccountManager.get(_context);
 			Account[] myAccountList = _accountMgr.getAccountsByType(_context.getString(R.string.account_type));

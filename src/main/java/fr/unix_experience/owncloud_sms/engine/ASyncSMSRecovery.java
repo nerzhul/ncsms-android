@@ -37,7 +37,12 @@ public interface ASyncSMSRecovery {
 
 		@Override
 		protected Void doInBackground(Void... params) {
+			// This feature is only available for Android 4.4 and greater
+			if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.KITKAT) {
+				return null;
+			}
 			Log.i(ASyncSMSRecovery.TAG, "Starting background recovery");
+
 			Long start = (long) 0;
 			JSONObject obj = new OCSMSOwnCloudClient(_context, _account).retrieveSomeMessages(start, 500);
 			try {

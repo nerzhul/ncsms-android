@@ -35,6 +35,10 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_restore_messages);
+		if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.KITKAT) {
+			// Change message to define Android 4.4 or greated is required
+			return;
+		}
 
 		assert getIntent().getExtras() != null;
 
