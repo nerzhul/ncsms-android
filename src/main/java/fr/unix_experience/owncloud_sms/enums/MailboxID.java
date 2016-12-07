@@ -26,12 +26,33 @@ package fr.unix_experience.owncloud_sms.enums;
  */
 
 public enum MailboxID {
-	INBOX("content://sms/inbox"),
-	SENT("content://sms/sent"),
-	DRAFTS("content://sms/drafts"),
-	ALL("content://sms");
+	INBOX(0),
+	SENT(1),
+	DRAFTS(2),
+	ALL(3);
 
-	MailboxID(final String uri) { this.uri = uri; }
+	MailboxID(int id) {
+		switch (id) {
+			case 0: uri = "content://sms/inbox"; break;
+			case 1: uri = "content://sms/sent"; break;
+			case 2: uri = "content://sms/drafts"; break;
+			case 3: uri = "content://sms"; break;
+			default: throw new AssertionError();
+		}
+		this.id = id;
+	}
+
+	public static MailboxID fromInt(int id) {
+		switch (id) {
+			case 0: return MailboxID.INBOX;
+			case 1: return MailboxID.SENT;
+			case 2: return MailboxID.DRAFTS;
+			case 3: return MailboxID.ALL;
+			default: throw new AssertionError();
+		}
+	}
 	private final String uri;
-	public String getURI() { return this.uri; }
+	private final int id;
+	public int getId() { return id; }
+	public String getURI() { return uri; }
 }

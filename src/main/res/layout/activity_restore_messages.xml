@@ -36,12 +36,50 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="fr.unix_experience.owncloud_sms.activities.remote_account.RestoreMessagesActivity">
 
-    <TextView
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/feature_not_already_implemented"
-        android:id="@+id/textView"
+        android:id="@+id/progressbar_restore"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:text="@string/error_make_default_sms_app"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:id="@+id/tv_error_default_smsapp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/holo_red_light"
+        android:textAlignment="center"/>
+
+    <Button
+        android:text="@string/fix_permissions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_error_default_smsapp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:id="@+id/button_fix_permissions"
+        style="@style/Widget.AppCompat.Button"/>
+
+    <Button
+        android:text="@string/launch_restore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_launch_restore"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:textSize="24sp"
+        android:textAllCaps="false"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:fontFamily="sans-serif-medium"
+        android:layout_alignBaseline="@+id/button_fix_permissions"
+        android:layout_alignBottom="@+id/button_fix_permissions"
+        android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>

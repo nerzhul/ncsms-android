@@ -1,12 +1,18 @@
 package fr.unix_experience.owncloud_sms.engine;
 
 import android.accounts.Account;
+import android.content.ContentValues;
 import android.content.Context;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.Iterator;
+
+import fr.unix_experience.owncloud_sms.enums.MailboxID;
 
 /*
  *  Copyright (c) 2014-2016, Loic Blot <loic.blot@unix-experience.fr>
@@ -43,10 +49,33 @@ public interface ASyncSMSRecovery {
 			}
 			Log.i(ASyncSMSRecovery.TAG, "Starting background recovery");
 
+			// Verify connectivity
+
 			Long start = (long) 0;
 			JSONObject obj = new OCSMSOwnCloudClient(_context, _account).retrieveSomeMessages(start, 500);
+			if (obj == null) {
+				Log.i(ASyncSMSRecovery.TAG, "Retrieved returns failure");
+				return null;
+			}
 			try {
+				JSONObject messages = obj.getJSONObject("messages");
+				Iterator<?> keys = messages.keys();
+				while(keys.hasNext()) {
+					String key = (String)keys.next();
+					if (messages.get(key) instanceof JSONObject) {
+						JSONObject msg = messages.getJSONObject(key);
+						ContentValues values = new ContentValues();
+						values.put("address", msg.getString("address"));
+						values.put("body", msg.getString("msg"));
+						values.put("date", Long.parseLong(key));
+
+						MailboxID mailbox_id = MailboxID.fromInt(msg.getInt("mailbox"));
+						_context.getContentResolver().insert(Uri.parse(mailbox_id.getURI()), values);
+					}
+				}
+
 				while (obj.getLong("last_id") != start) {
+					Log.i(TAG, obj.toString());
 					start = obj.getLong("last_id");
 					obj = new OCSMSOwnCloudClient(_context, _account).retrieveSomeMessages(start, 500);
 				}

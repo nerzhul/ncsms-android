@@ -20,10 +20,18 @@ package fr.unix_experience.owncloud_sms.activities.remote_account;
 import android.Manifest;
 import android.accounts.Account;
 import android.accounts.AccountManager;
+import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.provider.Telephony;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.engine.ASyncSMSRecovery;
@@ -31,12 +39,15 @@ import fr.unix_experience.owncloud_sms.engine.ASyncSMSRecovery;
 public class RestoreMessagesActivity extends AppCompatActivity {
 
 	Account _account = null;
+	String _defaultSmsApp;
+	private static final int REQUEST_DEFAULT_SMSAPP = 1;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_restore_messages);
 		if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.KITKAT) {
-			// Change message to define Android 4.4 or greated is required
+			// @TODO Change message to define Android 4.4 or greated is required
 			return;
 		}
 
@@ -47,7 +58,7 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 		// accountName cannot be null, devel error
 		assert accountName != null;
 		AccountManager accountManager = AccountManager.get(getBaseContext());
-		if (ActivityCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS) != PackageManager.PERMISSION_GRANTED) {
+		if (ActivityCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
 			// TODO: Consider calling
 			//    ActivityCompat#requestPermissions
 			// here to request the missing permissions, and then overriding
@@ -68,7 +79,72 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 			throw new IllegalStateException(getString(R.string.err_didnt_find_account_restore));
 		}
 
-		new ASyncSMSRecovery.SMSRecoveryTask(getApplicationContext(), _account).execute();
+		_defaultSmsApp = Telephony.Sms.getDefaultSmsPackage(this);
+		TextView tv = (TextView) findViewById(R.id.tv_error_default_smsapp);
+		Button fix_button = (Button) findViewById(R.id.button_fix_permissions);
+		final Button launch_restore = (Button) findViewById(R.id.button_launch_restore);
+		final ProgressBar pb = (ProgressBar) findViewById(R.id.progressbar_restore);
+		pb.setVisibility(View.INVISIBLE);
+
+		if (!Telephony.Sms.getDefaultSmsPackage(this).equals(getPackageName())) {
+			_defaultSmsApp = Telephony.Sms.getDefaultSmsPackage(getBaseContext());
+			tv.setVisibility(View.VISIBLE);
+			fix_button.setVisibility(View.VISIBLE);
+			launch_restore.setVisibility(View.INVISIBLE);
+		}
+		else {
+			tv.setVisibility(View.INVISIBLE);
+			fix_button.setVisibility(View.INVISIBLE);
+			launch_restore.setVisibility(View.VISIBLE);
+		}
+
+		fix_button.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.KITKAT) {
+					// @TODO Change message to define Android 4.4 or greated is required
+					return;
+				}
+
+				Log.i(RestoreMessagesActivity.TAG, "Ask to change the default SMS app");
+
+				Intent intent = new Intent(Telephony.Sms.Intents.ACTION_CHANGE_DEFAULT);
+				intent.putExtra(Telephony.Sms.Intents.EXTRA_PACKAGE_NAME, getBaseContext().getPackageName());
+				startActivityForResult(intent, REQUEST_DEFAULT_SMSAPP);
+			}
+		});
+
+		launch_restore.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				launch_restore.setVisibility(View.INVISIBLE);
+				pb.setVisibility(View.VISIBLE);
+				Log.i(RestoreMessagesActivity.TAG, "Launching restore asynchronously");
+				new ASyncSMSRecovery.SMSRecoveryTask(getApplicationContext(), _account).execute();
+			}
+		});
+
+
+		/*Intent finalIntent = new Intent(Telephony.Sms.Intents.ACTION_CHANGE_DEFAULT);
+		finalIntent.putExtra(Telephony.Sms.Intents.EXTRA_PACKAGE_NAME, _defaultSmsApp);
+		startActivity(finalIntent);*/
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		switch (requestCode) {
+			case RestoreMessagesActivity.REQUEST_DEFAULT_SMSAPP:
+				Log.i(RestoreMessagesActivity.TAG, "RC: " + Integer.toString(resultCode));
+				if (resultCode == Activity.RESULT_OK) {
+					TextView tv = (TextView) findViewById(R.id.tv_error_default_smsapp);
+					Button fix_button = (Button) findViewById(R.id.button_fix_permissions);
+					Button launch_restore = (Button) findViewById(R.id.button_launch_restore);
+					tv.setVisibility(View.INVISIBLE);
+					fix_button.setVisibility(View.INVISIBLE);
+					launch_restore.setVisibility(View.VISIBLE);
+				}
+				break;
+			default:
+				break;
+		}
 	}
 
 	private static final String TAG = RestoreMessagesActivity.class.getSimpleName();

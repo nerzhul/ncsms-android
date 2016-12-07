@@ -244,6 +244,7 @@ public class OCSMSOwnCloudClient {
 	JSONObject retrieveSomeMessages(Long start, Integer limit) {
 		// This is not allowed by server
 		if (limit > OCSMSOwnCloudClient.SERVER_RECOVERY_MSG_LIMIT) {
+			Log.e(OCSMSOwnCloudClient.TAG, "Message recovery limit exceeded");
 			return null;
 		}
 
@@ -251,10 +252,13 @@ public class OCSMSOwnCloudClient {
 			doHttpRequest(_http.getMessages(start, limit));
 		} catch (OCSyncException e) {
 			_jsonQueryBuffer = null;
+			Log.e(OCSMSOwnCloudClient.TAG, "Request failed.");
 			return null;
 		}
 
 		if (!_jsonQueryBuffer.has("messages") || !_jsonQueryBuffer.has("last_id")) {
+			Log.e(OCSMSOwnCloudClient.TAG,
+					"Invalid response received from server, either messages or last_id field is missing.");
 			return null;
 		}
 

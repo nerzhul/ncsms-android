@@ -6,11 +6,10 @@
     <uses-sdk android:maxSdkVersion="25"/>
 
     <uses-permission android:name="android.permission.READ_SMS"/>
-    <!-- For SMS Restore -->
-    <!-- <uses-permission android:name="android.permission.WRITE_SMS"/> -->
+    <uses-permission android:name="android.permission.WRITE_SMS" />
 
-    <!-- For SMS Sending -->
-    <!-- <uses-permission android:name="android.permission.SEND_SMS"/> -->
+    <!-- For SMS Restore & Sending -->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <!-- For SMS Broadcaster -->
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
@@ -72,11 +71,51 @@
                 android:resource="@xml/owncloud_account_authenticator"/>
         </service>
 
-        <receiver android:name=".broadcast_receivers.IncomingSms">
+        <receiver android:name=".broadcast_receivers.IncomingSms"
+                  android:permission="android.permission.BROADCAST_SMS">
             <intent-filter>
                 <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+                <action android:name="android.provider.Telephony.SMS_DELIVER" />
             </intent-filter>
         </receiver>
+
+        <!-- BroadcastReceiver that listens for incoming MMS messages. Note: useless class, used only for restoring SMS -->
+        <receiver android:name=".misc.MmsReceiver"
+                  android:permission="android.permission.BROADCAST_WAP_PUSH">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_DELIVER" />
+                <data android:mimeType="application/vnd.wap.mms-message" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Activity that allows the user to send new SMS/MMS messages Note: useless class, used only for restoring SMS -->
+        <activity android:name=".misc.ComposeSmsActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.SENDTO" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="sms" />
+                <data android:scheme="smsto" />
+                <data android:scheme="mms" />
+                <data android:scheme="mmsto" />
+            </intent-filter>
+        </activity>
+
+        <!-- Service that delivers messages from the phone "quick response" Note: useless class, used only for restoring SMS -->
+        <service android:name=".misc.HeadlessSmsSendService"
+                 android:permission="android.permission.SEND_RESPOND_VIA_MESSAGE"
+                 android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.RESPOND_VIA_MESSAGE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="sms" />
+                <data android:scheme="smsto" />
+                <data android:scheme="mms" />
+                <data android:scheme="mmsto" />
+            </intent-filter>
+        </service>
+
         <receiver android:name=".broadcast_receivers.ConnectivityChanged">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
