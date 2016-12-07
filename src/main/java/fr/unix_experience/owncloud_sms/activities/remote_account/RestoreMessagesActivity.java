@@ -46,10 +46,6 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_restore_messages);
-		if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.KITKAT) {
-			// @TODO Change message to define Android 4.4 or greated is required
-			return;
-		}
 
 		assert getIntent().getExtras() != null;
 
@@ -58,16 +54,6 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 		// accountName cannot be null, devel error
 		assert accountName != null;
 		AccountManager accountManager = AccountManager.get(getBaseContext());
-		if (ActivityCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
-			// TODO: Consider calling
-			//    ActivityCompat#requestPermissions
-			// here to request the missing permissions, and then overriding
-			//   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-			//                                          int[] grantResults)
-			// to handle the case where the user grants the permission. See the documentation
-			// for ActivityCompat#requestPermissions for more details.
-			return;
-		}
 		Account[] accountList = accountManager.getAccountsByType(getString(R.string.account_type));
 		for (Account element : accountList) {
 			if (element.name.equals(accountName)) {
@@ -79,13 +65,19 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 			throw new IllegalStateException(getString(R.string.err_didnt_find_account_restore));
 		}
 
-		_defaultSmsApp = Telephony.Sms.getDefaultSmsPackage(this);
 		TextView tv = (TextView) findViewById(R.id.tv_error_default_smsapp);
+		tv.setText(R.string.error_make_default_sms_app);
 		Button fix_button = (Button) findViewById(R.id.button_fix_permissions);
 		final Button launch_restore = (Button) findViewById(R.id.button_launch_restore);
 		final ProgressBar pb = (ProgressBar) findViewById(R.id.progressbar_restore);
 		pb.setVisibility(View.INVISIBLE);
 
+		if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.KITKAT) {
+			notifyIncompatibleVersion();
+			return;
+		}
+
+		_defaultSmsApp = Telephony.Sms.getDefaultSmsPackage(this);
 		if (!Telephony.Sms.getDefaultSmsPackage(this).equals(getPackageName())) {
 			_defaultSmsApp = Telephony.Sms.getDefaultSmsPackage(getBaseContext());
 			tv.setVisibility(View.VISIBLE);
@@ -101,7 +93,7 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 		fix_button.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.KITKAT) {
-					// @TODO Change message to define Android 4.4 or greated is required
+					notifyIncompatibleVersion();
 					return;
 				}
 
@@ -128,11 +120,21 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 		startActivity(finalIntent);*/
 	}
 
+	private void notifyIncompatibleVersion() {
+		TextView tv = (TextView) findViewById(R.id.tv_error_default_smsapp);
+		Button fix_button = (Button) findViewById(R.id.button_fix_permissions);
+		Button launch_restore = (Button) findViewById(R.id.button_launch_restore);
+		ProgressBar pb = (ProgressBar) findViewById(R.id.progressbar_restore);
+		tv.setText(R.string.err_kitkat_required);
+		fix_button.setVisibility(View.INVISIBLE);
+		launch_restore.setVisibility(View.INVISIBLE);
+		pb.setVisibility(View.INVISIBLE);
+	}
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		switch (requestCode) {
 			case RestoreMessagesActivity.REQUEST_DEFAULT_SMSAPP:
-				Log.i(RestoreMessagesActivity.TAG, "RC: " + Integer.toString(resultCode));
 				if (resultCode == Activity.RESULT_OK) {
 					TextView tv = (TextView) findViewById(R.id.tv_error_default_smsapp);
 					Button fix_button = (Button) findViewById(R.id.button_fix_permissions);

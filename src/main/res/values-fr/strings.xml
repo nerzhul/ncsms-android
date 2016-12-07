@@ -162,4 +162,7 @@
     <string name="feature_not_already_implemented">Cette fonctionnalité n\'est pas implémentée mais elle sera disponible bientôt.</string>
     <string name="pref_title_minimum_sync_chars">Longueur minimale du numéro de téléphone</string>
     <string name="err_didnt_find_account_restore">Nous n\'avons pas retrouvé le compte que nous souhaitions utiliser pour la restauration. Cette situation est vraiment étrange.</string>
+    <string name="err_kitkat_required">Android 4.4 ou plus est requis pour utiliser cette fonctionnalité.</string>
+    <string name="err_sync_get_smslist">Erreur #1: Données invalides reçues lors de l\'obtention des messages précédents.</string>
+    <string name="error_make_default_sms_app">Merci de bien vouloir mettre cette application en application SMS par défaut le temps de restaurer les messages. Cette limitation a été ajoutée depuis Android 4.4.</string>
 </resources>
