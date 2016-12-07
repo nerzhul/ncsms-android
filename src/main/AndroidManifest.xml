@@ -6,6 +6,12 @@
     <uses-sdk android:maxSdkVersion="25"/>
 
     <uses-permission android:name="android.permission.READ_SMS"/>
+    <!-- For SMS Restore -->
+    <!-- <uses-permission android:name="android.permission.WRITE_SMS"/> -->
+
+    <!-- For SMS Sending -->
+    <!-- <uses-permission android:name="android.permission.SEND_SMS"/> -->
+
     <!-- For SMS Broadcaster -->
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
     <uses-permission android:name="android.permission.INTERNET"/>
