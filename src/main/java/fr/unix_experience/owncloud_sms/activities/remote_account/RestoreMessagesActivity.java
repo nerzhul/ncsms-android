@@ -65,8 +65,9 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 			throw new IllegalStateException(getString(R.string.err_didnt_find_account_restore));
 		}
 
-		TextView tv = (TextView) findViewById(R.id.tv_error_default_smsapp);
-		tv.setText(R.string.error_make_default_sms_app);
+		TextView tv_error = (TextView) findViewById(R.id.tv_error_default_smsapp);
+		tv_error.setText(R.string.error_make_default_sms_app);
+		findViewById(R.id.tv_restore_finished).setVisibility(View.INVISIBLE);
 		Button fix_button = (Button) findViewById(R.id.button_fix_permissions);
 		final Button launch_restore = (Button) findViewById(R.id.button_launch_restore);
 		final ProgressBar pb = (ProgressBar) findViewById(R.id.progressbar_restore);
@@ -80,12 +81,12 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 		_defaultSmsApp = Telephony.Sms.getDefaultSmsPackage(this);
 		if (!Telephony.Sms.getDefaultSmsPackage(this).equals(getPackageName())) {
 			_defaultSmsApp = Telephony.Sms.getDefaultSmsPackage(getBaseContext());
-			tv.setVisibility(View.VISIBLE);
+			tv_error.setVisibility(View.VISIBLE);
 			fix_button.setVisibility(View.VISIBLE);
 			launch_restore.setVisibility(View.INVISIBLE);
 		}
 		else {
-			tv.setVisibility(View.INVISIBLE);
+			tv_error.setVisibility(View.INVISIBLE);
 			fix_button.setVisibility(View.INVISIBLE);
 			launch_restore.setVisibility(View.VISIBLE);
 		}
@@ -105,12 +106,15 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 			}
 		});
 
+		final RestoreMessagesActivity me = this;
 		launch_restore.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				launch_restore.setVisibility(View.INVISIBLE);
 				pb.setVisibility(View.VISIBLE);
+
+				// Verify connectivity
 				Log.i(RestoreMessagesActivity.TAG, "Launching restore asynchronously");
-				new ASyncSMSRecovery.SMSRecoveryTask(getApplicationContext(), _account).execute();
+				new ASyncSMSRecovery.SMSRecoveryTask(me, _account).execute();
 			}
 		});
 
@@ -147,6 +151,13 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 			default:
 				break;
 		}
+	}
+
+	public void onRestoreDone() {
+		// @TODO
+		Log.i(RestoreMessagesActivity.TAG, "Sync is done, updating interface");
+		findViewById(R.id.progressbar_restore).setVisibility(View.INVISIBLE);
+		findViewById(R.id.tv_restore_finished).setVisibility(View.VISIBLE);
 	}
 
 	private static final String TAG = RestoreMessagesActivity.class.getSimpleName();

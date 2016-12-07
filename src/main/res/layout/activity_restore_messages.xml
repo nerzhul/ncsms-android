@@ -82,4 +82,17 @@
         android:layout_alignBottom="@+id/button_fix_permissions"
         android:layout_centerHorizontal="true"/>
 
+    <TextView
+        android:text="@string/restore_finished"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_restore_finished"
+        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_green_dark"
+        android:textAllCaps="false"
+        android:visibility="invisible"/>
+
 </RelativeLayout>

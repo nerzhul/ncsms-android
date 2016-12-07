@@ -251,4 +251,5 @@
     <string name="error_make_default_sms_app">Please make this application default SMS application to permit restore your messages. This limitation has been introduced by Android 4.4.</string>
     <string name="fix_permissions">Fix permissions</string>
     <string name="err_kitkat_required">Android 4.4 or greater is required to use this feature.</string>
+    <string name="restore_finished">SMS restauration is now finished.</string>
 </resources>

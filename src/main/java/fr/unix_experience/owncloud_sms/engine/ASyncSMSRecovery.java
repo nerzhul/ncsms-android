@@ -2,9 +2,9 @@ package fr.unix_experience.owncloud_sms.engine;
 
 import android.accounts.Account;
 import android.content.ContentValues;
-import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.provider.Telephony;
 import android.util.Log;
 
 import org.json.JSONException;
@@ -12,6 +12,7 @@ import org.json.JSONObject;
 
 import java.util.Iterator;
 
+import fr.unix_experience.owncloud_sms.activities.remote_account.RestoreMessagesActivity;
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
 
 /*
@@ -33,10 +34,10 @@ import fr.unix_experience.owncloud_sms.enums.MailboxID;
 
 public interface ASyncSMSRecovery {
 	class SMSRecoveryTask extends AsyncTask<Void, Void, Void> {
-		private final Context _context;
+		private final RestoreMessagesActivity _context;
 		private final Account _account;
 
-		public SMSRecoveryTask(Context context, Account account) {
+		public SMSRecoveryTask(RestoreMessagesActivity context, Account account) {
 			_context = context;
 			_account = account;
 		}
@@ -65,9 +66,12 @@ public interface ASyncSMSRecovery {
 					if (messages.get(key) instanceof JSONObject) {
 						JSONObject msg = messages.getJSONObject(key);
 						ContentValues values = new ContentValues();
-						values.put("address", msg.getString("address"));
-						values.put("body", msg.getString("msg"));
-						values.put("date", Long.parseLong(key));
+						values.put(Telephony.Sms.ADDRESS, msg.getString("address"));
+						values.put(Telephony.Sms.BODY, msg.getString("msg"));
+						values.put(Telephony.Sms.DATE, key);
+						values.put(Telephony.Sms.DATE_SENT, key);
+						values.put(Telephony.Sms.TYPE, msg.getInt("type"));
+						values.put(Telephony.Sms.SEEN, 1);
 
 						MailboxID mailbox_id = MailboxID.fromInt(msg.getInt("mailbox"));
 						_context.getContentResolver().insert(Uri.parse(mailbox_id.getURI()), values);
@@ -75,7 +79,6 @@ public interface ASyncSMSRecovery {
 				}
 
 				while (obj.getLong("last_id") != start) {
-					Log.i(TAG, obj.toString());
 					start = obj.getLong("last_id");
 					obj = new OCSMSOwnCloudClient(_context, _account).retrieveSomeMessages(start, 500);
 				}
@@ -84,6 +87,12 @@ public interface ASyncSMSRecovery {
 			}
 			Log.i(ASyncSMSRecovery.TAG, "Finishing background recovery");
 			return null;
+		}
+
+		@Override
+		protected void onPostExecute(Void aVoid) {
+			super.onPostExecute(aVoid);
+			_context.onRestoreDone();
 		}
 	}
 
