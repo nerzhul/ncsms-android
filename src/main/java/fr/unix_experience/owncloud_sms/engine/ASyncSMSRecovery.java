@@ -14,6 +14,7 @@ import java.util.Iterator;
 
 import fr.unix_experience.owncloud_sms.activities.remote_account.RestoreMessagesActivity;
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
+import fr.unix_experience.owncloud_sms.providers.SmsDataProvider;
 
 /*
  *  Copyright (c) 2014-2016, Loic Blot <loic.blot@unix-experience.fr>
@@ -33,7 +34,7 @@ import fr.unix_experience.owncloud_sms.enums.MailboxID;
  */
 
 public interface ASyncSMSRecovery {
-	class SMSRecoveryTask extends AsyncTask<Void, Void, Void> {
+	class SMSRecoveryTask extends AsyncTask<Void, Integer, Void> {
 		private final RestoreMessagesActivity _context;
 		private final Account _account;
 
@@ -53,34 +54,54 @@ public interface ASyncSMSRecovery {
 			// Verify connectivity
 
 			Long start = (long) 0;
-			JSONObject obj = new OCSMSOwnCloudClient(_context, _account).retrieveSomeMessages(start, 500);
+
+			OCSMSOwnCloudClient client = new OCSMSOwnCloudClient(_context, _account);
+			SmsDataProvider smsDataProvider = new SmsDataProvider(_context);
+			JSONObject obj = client.retrieveSomeMessages(start, 500);
 			if (obj == null) {
 				Log.i(ASyncSMSRecovery.TAG, "Retrieved returns failure");
 				return null;
 			}
+
+			Integer nb = 0;
 			try {
-				JSONObject messages = obj.getJSONObject("messages");
-				Iterator<?> keys = messages.keys();
-				while(keys.hasNext()) {
-					String key = (String)keys.next();
-					if (messages.get(key) instanceof JSONObject) {
-						JSONObject msg = messages.getJSONObject(key);
-						ContentValues values = new ContentValues();
-						values.put(Telephony.Sms.ADDRESS, msg.getString("address"));
-						values.put(Telephony.Sms.BODY, msg.getString("msg"));
-						values.put(Telephony.Sms.DATE, key);
-						values.put(Telephony.Sms.TYPE, msg.getInt("type"));
-						values.put(Telephony.Sms.SEEN, 1);
-
-						MailboxID mailbox_id = MailboxID.fromInt(msg.getInt("mailbox"));
-						// @TODO verify message exists before inserting it
-						_context.getContentResolver().insert(Uri.parse(mailbox_id.getURI()), values);
-					}
-				}
-
 				while (obj.getLong("last_id") != start) {
+					JSONObject messages = obj.getJSONObject("messages");
+					Iterator<?> keys = messages.keys();
+					while(keys.hasNext()) {
+						String key = (String)keys.next();
+						if (messages.get(key) instanceof JSONObject) {
+							JSONObject msg = messages.getJSONObject(key);
+
+							int mbid = msg.getInt("mailbox");
+							// Ignore invalid mailbox
+							if (mbid > MailboxID.ALL.getId()) {
+								continue;
+							}
+
+							String address = msg.getString("address");
+
+							ContentValues values = new ContentValues();
+							values.put(Telephony.Sms.ADDRESS, address);
+							values.put(Telephony.Sms.BODY, msg.getString("msg"));
+							values.put(Telephony.Sms.DATE, key);
+							values.put(Telephony.Sms.TYPE, msg.getInt("type"));
+							values.put(Telephony.Sms.SEEN, 1);
+							values.put(Telephony.Sms.READ, 1);
+
+							MailboxID mailbox_id = MailboxID.fromInt(mbid);
+							// @TODO verify message exists before inserting it
+							_context.getContentResolver().insert(Uri.parse(mailbox_id.getURI()), values);
+
+							nb++;
+							if ((nb % 100) == 0) {
+								publishProgress(nb);
+							}
+						}
+					}
+
 					start = obj.getLong("last_id");
-					obj = new OCSMSOwnCloudClient(_context, _account).retrieveSomeMessages(start, 500);
+					obj = client.retrieveSomeMessages(start, 500);
 				}
 			} catch (JSONException e) {
 				Log.e(ASyncSMSRecovery.TAG, "Missing last_id field!");
@@ -88,15 +109,17 @@ public interface ASyncSMSRecovery {
 
 			// Force this refresh to fix dates
 			_context.getContentResolver().delete(Uri.parse("content://sms/conversations/-1"), null, null);
+
+			publishProgress(nb);
+
 			Log.i(ASyncSMSRecovery.TAG, "Finishing background recovery");
 			return null;
 		}
 
 		@Override
-		protected void onProgressUpdate(Void... values) {
+		protected void onProgressUpdate(Integer... values) {
 			super.onProgressUpdate(values);
-
-			// @TODO feedback user
+			_context.onProgressUpdate(values[0]);
 		}
 
 		@Override

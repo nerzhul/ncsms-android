@@ -95,4 +95,12 @@
         android:textAllCaps="false"
         android:visibility="invisible"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/progressbar_restore"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/tv_progress_value"
+        android:text="@string/x_messages_restored"/>
+
 </RelativeLayout>

@@ -68,6 +68,7 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 		TextView tv_error = (TextView) findViewById(R.id.tv_error_default_smsapp);
 		tv_error.setText(R.string.error_make_default_sms_app);
 		findViewById(R.id.tv_restore_finished).setVisibility(View.INVISIBLE);
+		findViewById(R.id.tv_progress_value).setVisibility(View.INVISIBLE);
 		Button fix_button = (Button) findViewById(R.id.button_fix_permissions);
 		final Button launch_restore = (Button) findViewById(R.id.button_launch_restore);
 		final ProgressBar pb = (ProgressBar) findViewById(R.id.progressbar_restore);
@@ -157,6 +158,15 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 		Intent finalIntent = new Intent(Telephony.Sms.Intents.ACTION_CHANGE_DEFAULT);
 		finalIntent.putExtra(Telephony.Sms.Intents.EXTRA_PACKAGE_NAME, _defaultSmsApp);
 		startActivity(finalIntent);
+	}
+
+	public void onProgressUpdate(Integer value) {
+		TextView tv_progress = (TextView) findViewById(R.id.tv_progress_value);
+		if (tv_progress.getVisibility() == View.INVISIBLE) {
+			tv_progress.setVisibility(View.VISIBLE);
+		}
+
+		tv_progress.setText(value.toString() + " " + getString(R.string.x_messages_restored));
 	}
 
 	private static final String TAG = RestoreMessagesActivity.class.getSimpleName();

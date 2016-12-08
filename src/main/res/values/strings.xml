@@ -252,4 +252,5 @@
     <string name="fix_permissions">Fix permissions</string>
     <string name="err_kitkat_required">Android 4.4 or greater is required to use this feature.</string>
     <string name="restore_finished">SMS restauration is now finished.</string>
+    <string name="x_messages_restored">messages restored...</string>
 </resources>
