@@ -49,10 +49,13 @@ public interface ASyncSMSRecovery {
 			if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.KITKAT) {
 				return null;
 			}
+
+			if (!new ConnectivityMonitor(_context).isValid()) {
+				Log.e(ASyncSMSRecovery.TAG, "Restore connectivity problems, aborting");
+				return null;
+			}
+
 			Log.i(ASyncSMSRecovery.TAG, "Starting background recovery");
-
-			// Verify connectivity
-
 			Long start = (long) 0;
 
 			OCSMSOwnCloudClient client = new OCSMSOwnCloudClient(_context, _account);
@@ -119,6 +122,11 @@ public interface ASyncSMSRecovery {
 					}
 
 					start = obj.getLong("last_id");
+
+					if (!new ConnectivityMonitor(_context).isValid()) {
+						Log.e(ASyncSMSRecovery.TAG, "Restore connectivity problems, aborting");
+						return null;
+					}
 					obj = client.retrieveSomeMessages(start, 500);
 				}
 			} catch (JSONException e) {
