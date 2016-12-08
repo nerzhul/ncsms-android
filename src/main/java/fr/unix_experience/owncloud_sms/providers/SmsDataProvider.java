@@ -25,6 +25,7 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import fr.unix_experience.owncloud_sms.enums.MailboxID;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
 public class SmsDataProvider extends ContentProvider {
@@ -84,6 +85,19 @@ public class SmsDataProvider extends ContentProvider {
         );
     }
 
+	public boolean messageExists(String address, String body, String date, MailboxID mb) {
+		Cursor c = query(Uri.parse(mb.getURI()), new String[] { "_id" },
+				"address = ? AND body = ? AND date = ?",
+				new String[] { address, body, date }, null);
+		if (c == null) {
+			return false;
+		}
+
+		boolean exists = c.getCount() > 0;
+		c.close();
+		return exists;
+	}
+
 	@Override
 	public Cursor query(@NonNull Uri uri, String[] projection, String selection,
 			String[] selectionArgs, String sortOrder) {
@@ -103,19 +117,13 @@ public class SmsDataProvider extends ContentProvider {
             selection = ((selection == null) || (selection.isEmpty())) ?
                     ("length(address) >= " + senderMinSize.toString()) :
                     ("length(address) >= " + senderMinSize.toString() + " AND " + selection);
-
-            Log.i(SmsDataProvider.TAG, "query: Minimum message length set to " + senderMinSize);
         }
 
         if (bulkLimit > 0) {
             if (sortOrder == null)
                 sortOrder = "date DESC";
             sortOrder += " LIMIT " + bulkLimit.toString();
-
-            Log.i(SmsDataProvider.TAG, "query: Bulk limit set to " + bulkLimit.toString());
         }
-
-        Log.i(SmsDataProvider.TAG, "query: selection set to " + selection);
 
         Cursor cursor = _context.getContentResolver().query(uri, projection, selection, selectionArgs, sortOrder);
 		if (cursor == null) {

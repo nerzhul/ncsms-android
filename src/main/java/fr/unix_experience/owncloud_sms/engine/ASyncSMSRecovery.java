@@ -68,7 +68,7 @@ public interface ASyncSMSRecovery {
 				while (obj.getLong("last_id") != start) {
 					JSONObject messages = obj.getJSONObject("messages");
 					Iterator<?> keys = messages.keys();
-					while(keys.hasNext()) {
+					while (keys.hasNext()) {
 						String key = (String)keys.next();
 						if (messages.get(key) instanceof JSONObject) {
 							JSONObject msg = messages.getJSONObject(key);
@@ -76,25 +76,43 @@ public interface ASyncSMSRecovery {
 							int mbid = msg.getInt("mailbox");
 							// Ignore invalid mailbox
 							if (mbid > MailboxID.ALL.getId()) {
+								Log.e(ASyncSMSRecovery.TAG, "Invalid mailbox found: " + msg.getString("mailbox"));
 								continue;
 							}
 
-							String address = msg.getString("address");
+							String address;
+							String body;
+							int type;
+							try {
+								address = msg.getString("address");
+								body = msg.getString("msg");
+								type = msg.getInt("type");
+							}
+							catch (JSONException e) {
+								Log.e(ASyncSMSRecovery.TAG, "Invalid SMS data found: " + e.getMessage());
+								continue;
+							}
+							MailboxID mailbox_id = MailboxID.fromInt(mbid);
+
+							// Ignore already existing messages
+							if (smsDataProvider.messageExists(address, body, key, mailbox_id)) {
+								publishProgress(nb);
+								continue;
+							}
 
 							ContentValues values = new ContentValues();
 							values.put(Telephony.Sms.ADDRESS, address);
-							values.put(Telephony.Sms.BODY, msg.getString("msg"));
+							values.put(Telephony.Sms.BODY, body);
 							values.put(Telephony.Sms.DATE, key);
-							values.put(Telephony.Sms.TYPE, msg.getInt("type"));
+							values.put(Telephony.Sms.TYPE, type);
 							values.put(Telephony.Sms.SEEN, 1);
 							values.put(Telephony.Sms.READ, 1);
 
-							MailboxID mailbox_id = MailboxID.fromInt(mbid);
 							// @TODO verify message exists before inserting it
 							_context.getContentResolver().insert(Uri.parse(mailbox_id.getURI()), values);
 
 							nb++;
-							if ((nb % 100) == 0) {
+							if ((nb % 5) == 0) {
 								publishProgress(nb);
 							}
 						}
