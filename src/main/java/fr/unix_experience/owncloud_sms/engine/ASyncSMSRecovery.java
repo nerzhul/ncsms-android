@@ -69,11 +69,11 @@ public interface ASyncSMSRecovery {
 						values.put(Telephony.Sms.ADDRESS, msg.getString("address"));
 						values.put(Telephony.Sms.BODY, msg.getString("msg"));
 						values.put(Telephony.Sms.DATE, key);
-						values.put(Telephony.Sms.DATE_SENT, key);
 						values.put(Telephony.Sms.TYPE, msg.getInt("type"));
 						values.put(Telephony.Sms.SEEN, 1);
 
 						MailboxID mailbox_id = MailboxID.fromInt(msg.getInt("mailbox"));
+						// @TODO verify message exists before inserting it
 						_context.getContentResolver().insert(Uri.parse(mailbox_id.getURI()), values);
 					}
 				}
@@ -85,8 +85,18 @@ public interface ASyncSMSRecovery {
 			} catch (JSONException e) {
 				Log.e(ASyncSMSRecovery.TAG, "Missing last_id field!");
 			}
+
+			// Force this refresh to fix dates
+			_context.getContentResolver().delete(Uri.parse("content://sms/conversations/-1"), null, null);
 			Log.i(ASyncSMSRecovery.TAG, "Finishing background recovery");
 			return null;
+		}
+
+		@Override
+		protected void onProgressUpdate(Void... values) {
+			super.onProgressUpdate(values);
+
+			// @TODO feedback user
 		}
 
 		@Override
