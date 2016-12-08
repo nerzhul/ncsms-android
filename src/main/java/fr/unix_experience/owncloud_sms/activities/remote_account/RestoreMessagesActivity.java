@@ -117,11 +117,6 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 				new ASyncSMSRecovery.SMSRecoveryTask(me, _account).execute();
 			}
 		});
-
-
-		/*Intent finalIntent = new Intent(Telephony.Sms.Intents.ACTION_CHANGE_DEFAULT);
-		finalIntent.putExtra(Telephony.Sms.Intents.EXTRA_PACKAGE_NAME, _defaultSmsApp);
-		startActivity(finalIntent);*/
 	}
 
 	private void notifyIncompatibleVersion() {
@@ -158,6 +153,10 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 		Log.i(RestoreMessagesActivity.TAG, "Sync is done, updating interface");
 		findViewById(R.id.progressbar_restore).setVisibility(View.INVISIBLE);
 		findViewById(R.id.tv_restore_finished).setVisibility(View.VISIBLE);
+
+		Intent finalIntent = new Intent(Telephony.Sms.Intents.ACTION_CHANGE_DEFAULT);
+		finalIntent.putExtra(Telephony.Sms.Intents.EXTRA_PACKAGE_NAME, _defaultSmsApp);
+		startActivity(finalIntent);
 	}
 
 	private static final String TAG = RestoreMessagesActivity.class.getSimpleName();
