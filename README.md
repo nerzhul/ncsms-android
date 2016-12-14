@@ -49,10 +49,6 @@ And for the **server** app here:
 
 https://github.com/nerzhul/ocsms/issues
 
-## Developers
-
-You can find our continuous integration here: http://jenkins.unix-experience.fr/job/ownCloud%20SMS%20%28Android%29/
-
 ### Coding guidelines
 
 - No empty lines at EOF
