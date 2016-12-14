@@ -30,7 +30,7 @@
 	<string name="gp_translation_version">3</string>
 	
 	<!-- Translations must begin here -->
-    <string name="gp_short_description">ownCloud SMS synchronize your local SMS on your ownCloud instance</string>
+    <string name="gp_short_description">Nextcloud SMS synchronize your local SMS on your Nextcloud instance</string>
     <string name="gp_description">
 ownCloud SMS application synchronize your SMS messages on a remote ownCloud instance and let you read your messages from it.
 

@@ -30,7 +30,7 @@
 	<string name="gp_translation_version">3</string>
 
 	<!--  Translations must begin here  -->
-	<string name="gp_short_description">ownCloud SMS выполняет синхронизацию SMS на ваш экземпляр ownCloud</string>
+	<string name="gp_short_description">Nextcloud SMS выполняет синхронизацию SMS на ваш экземпляр Nextcloud</string>
 	<string name="gp_description">
 Приложение ownCloud SMS выполнит синхронизацию SMS-сообщений на удаленный экземпляре OwnCloud и позволяет читать сообщения из него.
 

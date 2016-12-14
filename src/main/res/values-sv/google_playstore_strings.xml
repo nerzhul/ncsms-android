@@ -30,7 +30,7 @@
 	<!-- Translation version, reference for translators -->
 	<string name="gp_translation_version">4</string>
 	<!-- Translations must begin here -->
-	<string name="gp_short_description">ownCloud SMS synkroniserar dina lokala SMS till din ownCloudinstans.</string>
+	<string name="gp_short_description">Nextcloud SMS synkroniserar dina lokala SMS till din Nextcloudinstans.</string>
 	<string name="gp_description">
 		ownCloud SMS-applikationen synkroniserar dina SMS-meddelanden till din ownCloudinstans och gör det möjligt att läsa dina meddelanden på den.
 		
