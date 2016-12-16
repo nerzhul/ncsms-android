@@ -154,7 +154,7 @@
         <item>15</item>
     </string-array>
 
-    <string name="pref_push_on_receive">Synkronisera SMS vid mottagande</string>
+    <string name="pref_push_on_receive">Push SMS vid mottagande</string>
     <string name="pref_sync_wifi">Synkronisera med Wi-Fi</string>
     <string name="pref_sync_4g">Synkronisera med 4G</string>
     <string name="pref_sync_3g">Synkronisera med 3G</string>
