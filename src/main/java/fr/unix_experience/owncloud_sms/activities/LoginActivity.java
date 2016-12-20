@@ -48,7 +48,7 @@ import java.io.IOException;
 
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
-import fr.unix_experience.owncloud_sms.engine.HTTPRequestBuilder;
+import fr.unix_experience.owncloud_sms.engine.OCHttpClient;
 
 /**
  * A login screen that offers login via email/password.
@@ -241,7 +241,7 @@ public class LoginActivity extends AppCompatActivity {
 		@Override
 		protected Boolean doInBackground(Void... params) {
 			_returnCode = 0;
-			HTTPRequestBuilder http = new HTTPRequestBuilder(_serverURI, _login, _password);
+			OCHttpClient http = new OCHttpClient(_serverURI, _login, _password);
 			GetMethod testMethod = http.getVersion();
 			try {
 				_returnCode = http.execute(testMethod);

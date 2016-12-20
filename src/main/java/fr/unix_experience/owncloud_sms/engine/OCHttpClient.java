@@ -23,15 +23,19 @@ import android.util.Log;
 
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpMethod;
+import org.apache.commons.httpclient.MultiThreadedHttpConnectionManager;
+import org.apache.commons.httpclient.contrib.ssl.EasySSLProtocolSocketFactory;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.methods.StringRequestEntity;
+import org.apache.commons.httpclient.protocol.Protocol;
+import org.apache.commons.httpclient.protocol.ProtocolSocketFactory;
 
 import java.io.IOException;
 
-public class HTTPRequestBuilder {
+public class OCHttpClient extends HttpClient {
 
-	private static final String TAG = HTTPRequestBuilder.class.getCanonicalName();
+	private static final String TAG = OCHttpClient.class.getCanonicalName();
 	private final Uri _serverURI;
 	private final String _username;
 	private final String _password;
@@ -48,47 +52,49 @@ public class HTTPRequestBuilder {
 	private static final String OC_V2_GET_MESSAGES_PHONE ="/index.php/apps/ocsms/api/v2/messages/[PHONENUMBER]/[START]/[LIMIT]?format=json";
 	private static final String OC_V2_GET_MESSAGES_SENDQUEUE = "/index.php/apps/ocsms/api/v2/messages/sendqueue?format=json";
 
-	public HTTPRequestBuilder(Uri serverURI, String accountName, String accountPassword) {
+	public OCHttpClient(Uri serverURI, String accountName, String accountPassword) {
+		super(new MultiThreadedHttpConnectionManager());
+		Protocol easyhttps = new Protocol("https", (ProtocolSocketFactory)new EasySSLProtocolSocketFactory(), 443);
+		Protocol.registerProtocol("https", easyhttps);
 		_serverURI = serverURI;
 		_username = accountName;
 		_password = accountPassword;
 	}
 
 	private GetMethod get(String oc_call) {
-		Log.i(HTTPRequestBuilder.TAG, "Create GET " + _serverURI + oc_call);
+		Log.i(OCHttpClient.TAG, "Create GET " + _serverURI + oc_call);
 		return new GetMethod(_serverURI.toString() + oc_call);
 	}
 
 	GetMethod getAllSmsIds() {
-		return get(HTTPRequestBuilder.OC_GET_ALL_SMS_IDS);
+		return get(OCHttpClient.OC_GET_ALL_SMS_IDS);
 	}
 
 	public GetMethod getVersion() {
-		return get(HTTPRequestBuilder.OC_GET_VERSION);
+		return get(OCHttpClient.OC_GET_VERSION);
 	}
 
 	PostMethod pushSms(StringRequestEntity ent) {
-		PostMethod post = new PostMethod(_serverURI.toString() + HTTPRequestBuilder.OC_PUSH_ROUTE);
+		PostMethod post = new PostMethod(_serverURI.toString() + OCHttpClient.OC_PUSH_ROUTE);
 		post.setRequestEntity(ent);
 		return post;
 	}
 
 	GetMethod getPhoneList() {
-		return get(HTTPRequestBuilder.OC_V2_GET_PHONELIST);
+		return get(OCHttpClient.OC_V2_GET_PHONELIST);
 	}
 
 	GetMethod getMessages(Long start, Integer limit) {
-		return get(HTTPRequestBuilder.OC_V2_GET_MESSAGES.
+		return get(OCHttpClient.OC_V2_GET_MESSAGES.
 				replace("[START]", start.toString()).replace("[LIMIT]", limit.toString()));
 	}
 
 	public int execute(HttpMethod req) throws IOException {
-		HttpClient http = new HttpClient();
 		String basicAuth = "Basic " +
 				Base64.encodeToString((_username + ":" + _password).getBytes(), Base64.NO_WRAP);
 		//req.setFollowRedirects(true); // App is SIGKILLED by android when doing this... WTF
 		req.setDoAuthentication(true);
 		req.addRequestHeader("Authorization", basicAuth);
-		return http.executeMethod(req);
+		return executeMethod(req);
 	}
 }

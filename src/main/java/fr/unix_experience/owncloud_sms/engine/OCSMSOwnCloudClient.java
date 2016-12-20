@@ -56,7 +56,7 @@ public class OCSMSOwnCloudClient {
 		}
 
 		Uri serverURI = Uri.parse(ocURI);
-		_http = new HTTPRequestBuilder(serverURI, accountManager.getUserData(account, "ocLogin"),
+		_http = new OCHttpClient(serverURI, accountManager.getUserData(account, "ocLogin"),
 				accountManager.getPassword(account));
         _connectivityMonitor = new ConnectivityMonitor(_context);
 	}
@@ -369,7 +369,7 @@ public class OCSMSOwnCloudClient {
 
     private static final int maximumHttpReqTries = 3;
 
-	private final HTTPRequestBuilder _http;
+	private final OCHttpClient _http;
 	private final Context _context;
     private final ConnectivityMonitor _connectivityMonitor;
 
