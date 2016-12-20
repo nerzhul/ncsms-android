@@ -41,14 +41,14 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.dd.processbutton.iml.ActionProcessButton;
-import com.owncloud.android.lib.common.OwnCloudClient;
-import com.owncloud.android.lib.common.OwnCloudClientFactory;
-import com.owncloud.android.lib.common.OwnCloudCredentialsFactory;
+
+import org.apache.commons.httpclient.methods.GetMethod;
+
+import java.io.IOException;
 
 import fr.unix_experience.owncloud_sms.R;
-import fr.unix_experience.owncloud_sms.authenticators.OwnCloudAuthenticator;
 import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
-import fr.unix_experience.owncloud_sms.enums.LoginReturnCode;
+import fr.unix_experience.owncloud_sms.engine.HTTPRequestBuilder;
 
 /**
  * A login screen that offers login via email/password.
@@ -240,25 +240,19 @@ public class LoginActivity extends AppCompatActivity {
 
 		@Override
 		protected Boolean doInBackground(Void... params) {
-			// Create client object to perform remote operations
-			OwnCloudClient ocClient = OwnCloudClientFactory.createOwnCloudClient(
-				_serverURI, getBaseContext(), 
-				// Activity or Service context
-				true
-			);
-			
-			// Set basic credentials
-			ocClient.setCredentials(
-				OwnCloudCredentialsFactory.newBasicCredentials(_login, _password)
-			);
-			
-			// Send an authentication test to ownCloud
-			OwnCloudAuthenticator at = new OwnCloudAuthenticator(getBaseContext());
-			at.setClient(ocClient);
-			
-			_returnCode = at.testCredentials();
-			
-			return (_returnCode == LoginReturnCode.OK);
+			_returnCode = 0;
+			HTTPRequestBuilder http = new HTTPRequestBuilder(_serverURI, _login, _password);
+			GetMethod testMethod = http.getVersion();
+			try {
+				_returnCode = http.execute(testMethod);
+			} catch (IOException e) {
+				Log.w(TAG, "Failed to login, IOException occured: " + e.getMessage());
+				_returnCode = 599;
+			}
+
+			testMethod.releaseConnection();
+
+			return (_returnCode == 200);
 		}
 
 		@Override
@@ -304,26 +298,25 @@ public class LoginActivity extends AppCompatActivity {
 			} else {
                 boolean serverViewRequestFocus = true;
 				switch (_returnCode) {
-                    case INVALID_ADDR:
-						_serverView.setError(getString(R.string.error_invalid_server_address));
-						break;
-					case HTTP_CONN_FAILED:
-						_serverView.setError(getString(R.string.error_http_connection_failed));
-						break;
-					case CONN_FAILED:
-						_serverView.setError(getString(R.string.error_connection_failed));
-						break;
-                    case CONN_FAILED_NOT_FOUND:
-                        _serverView.setError(getString(R.string.error_connection_failed_not_found));
-                        break;
-					case UNKNOWN_ERROR:
+					case 0:
                         _serverView.setError("UNK");
 						break;
-                    case INVALID_LOGIN:
+					case 404:
+						_serverView.setError(getString(R.string.error_connection_failed_not_found));
+						break;
+					case 400:
+					case 598:
+						_serverView.setError(getString(R.string.error_connection_failed));
+						break;
+					case 599:
+						_serverView.setError(getString(R.string.error_http_connection_failed));
+						break;
+					case 401:
+                    case 403:
                         _passwordView.setError(getString(R.string.error_invalid_login));
                         _passwordView.requestFocus();
                         // Warning, there is no break here to disable serverViewRequestFocus too
-                    case OK:
+                    case 200:
                     default:
                         serverViewRequestFocus = false;
                         break;
@@ -334,7 +327,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 // If not ok, reset the progress
-                if (_returnCode != LoginReturnCode.OK) {
+                if (_returnCode != 200) {
                     _signInButton.setProgress(0);
                 }
 			}
@@ -345,13 +338,13 @@ public class LoginActivity extends AppCompatActivity {
 			mAuthTask = null;
 			showProgress(false);
 		}
-		
+
 		private final Uri _serverURI;
 		private final String _login;
 		private final String _password;
-		private LoginReturnCode _returnCode;
+		private int _returnCode;
 		
-		public static final String PARAM_AUTHTOKEN_TYPE = "auth.token";
+		static final String PARAM_AUTHTOKEN_TYPE = "auth.token";
         private final String TAG = UserLoginTask.class.getCanonicalName();
     }
 }

@@ -27,7 +27,6 @@ import org.apache.commons.httpclient.HttpException;
 import org.apache.commons.httpclient.HttpMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.methods.StringRequestEntity;
-import org.apache.http.HttpStatus;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -57,8 +56,7 @@ public class OCSMSOwnCloudClient {
 		}
 
 		Uri serverURI = Uri.parse(ocURI);
-		_http = new HTTPRequestBuilder(context, serverURI,
-				accountManager.getUserData(account, "ocLogin"),
+		_http = new HTTPRequestBuilder(serverURI, accountManager.getUserData(account, "ocLogin"),
 				accountManager.getPassword(account));
         _connectivityMonitor = new ConnectivityMonitor(_context);
 	}
@@ -321,7 +319,7 @@ public class OCSMSOwnCloudClient {
 			}
 		}
 
-		if (status == HttpStatus.SC_OK) {
+		if (status == 200) {
 			String response;
 			try {
 				response = req.getResponseBodyAsString();
@@ -346,7 +344,7 @@ public class OCSMSOwnCloudClient {
 					}
 				}
 			}
-		} else if (status == HttpStatus.SC_FORBIDDEN) {
+		} else if (status == 403) {
 			// Authentication failed
 			throw new OCSyncException(R.string.err_sync_auth_failed, OCSyncErrorType.AUTH);
 		} else {

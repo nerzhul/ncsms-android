@@ -33,7 +33,7 @@ To contribute please download `res/values/strings.xml` and `res/values/google_pl
 You can also contribute by adding patches in Java code or cleanups.
 
 ## Requirements
-- A NextCloud or ownCloud instance with ocsms app
+- An Nextcloud or ownCloud instance with ocsms app
 
 ## Build requirements
 - nrz-androidlib (last version)

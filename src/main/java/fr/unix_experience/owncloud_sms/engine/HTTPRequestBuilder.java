@@ -17,13 +17,11 @@ package fr.unix_experience.owncloud_sms.engine;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import android.content.Context;
 import android.net.Uri;
+import android.util.Base64;
+import android.util.Log;
 
-import com.owncloud.android.lib.common.OwnCloudClient;
-import com.owncloud.android.lib.common.OwnCloudClientFactory;
-import com.owncloud.android.lib.common.OwnCloudCredentialsFactory;
-
+import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpMethod;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
@@ -31,9 +29,12 @@ import org.apache.commons.httpclient.methods.StringRequestEntity;
 
 import java.io.IOException;
 
-class HTTPRequestBuilder {
+public class HTTPRequestBuilder {
 
-	private final OwnCloudClient _ocClient;
+	private static final String TAG = HTTPRequestBuilder.class.getCanonicalName();
+	private final Uri _serverURI;
+	private final String _username;
+	private final String _password;
 
 	// API v1 calls
 	private static final String OC_GET_VERSION = "/index.php/apps/ocsms/get/apiversion?format=json";
@@ -47,20 +48,15 @@ class HTTPRequestBuilder {
 	private static final String OC_V2_GET_MESSAGES_PHONE ="/index.php/apps/ocsms/api/v2/messages/[PHONENUMBER]/[START]/[LIMIT]?format=json";
 	private static final String OC_V2_GET_MESSAGES_SENDQUEUE = "/index.php/apps/ocsms/api/v2/messages/sendqueue?format=json";
 
-	HTTPRequestBuilder(Context context, Uri serverURI, String accountName, String accountPassword) {
-		_ocClient = OwnCloudClientFactory.createOwnCloudClient(
-				serverURI, context, true);
-
-		// Set basic credentials
-		_ocClient.setCredentials(
-				OwnCloudCredentialsFactory.newBasicCredentials(accountName, accountPassword)
-		);
+	public HTTPRequestBuilder(Uri serverURI, String accountName, String accountPassword) {
+		_serverURI = serverURI;
+		_username = accountName;
+		_password = accountPassword;
 	}
 
 	private GetMethod get(String oc_call) {
-		GetMethod get = new GetMethod(_ocClient.getBaseUri() + oc_call);
-		get.addRequestHeader("OCS-APIREQUEST", "true");
-		return get;
+		Log.i(HTTPRequestBuilder.TAG, "Create GET " + _serverURI + oc_call);
+		return new GetMethod(_serverURI.toString() + oc_call);
 	}
 
 	GetMethod getAllSmsIds() {
@@ -72,8 +68,7 @@ class HTTPRequestBuilder {
 	}
 
 	PostMethod pushSms(StringRequestEntity ent) {
-		PostMethod post = new PostMethod(_ocClient.getBaseUri() + HTTPRequestBuilder.OC_PUSH_ROUTE);
-		post.addRequestHeader("OCS-APIREQUEST", "true");
+		PostMethod post = new PostMethod(_serverURI.toString() + HTTPRequestBuilder.OC_PUSH_ROUTE);
 		post.setRequestEntity(ent);
 		return post;
 	}
@@ -87,7 +82,13 @@ class HTTPRequestBuilder {
 				replace("[START]", start.toString()).replace("[LIMIT]", limit.toString()));
 	}
 
-	int execute(HttpMethod req) throws IOException {
-		return _ocClient.executeMethod(req);
+	public int execute(HttpMethod req) throws IOException {
+		HttpClient http = new HttpClient();
+		String basicAuth = "Basic " +
+				Base64.encodeToString((_username + ":" + _password).getBytes(), Base64.NO_WRAP);
+		//req.setFollowRedirects(true); // App is SIGKILLED by android when doing this... WTF
+		req.setDoAuthentication(true);
+		req.addRequestHeader("Authorization", basicAuth);
+		return http.executeMethod(req);
 	}
 }
