@@ -159,14 +159,14 @@
     <string name="err_sync_create_json_request_encoding">Chyba #7: Nepodporované kódování při vytváření požadavku</string>
     <string name="err_sync_auth_failed">Chyba #8: Ověření selhalo</string>
     <string name="err_sync_http_request_returncode_unhandled">Chyba #9: Server nastavil neznámý HTTP kód odpovědi</string>
-    <string name="err_sync_http_request_connect">Chyba #11: Nelze se připojit k ownCloud serveru</string>
-    <string name="err_sync_http_request_httpexception">Chyba #12: Nelze se připojit k ownCloud serveru</string>
-    <string name="err_sync_http_request_ioexception">Chyba #13: Nelze se připojit k ownCloud serveru</string>
+    <string name="err_sync_http_request_connect">Chyba #11: Nelze se připojit k Nextcloud serveru</string>
+    <string name="err_sync_http_request_httpexception">Chyba #12: Nelze se připojit k Nextcloud serveru</string>
+    <string name="err_sync_http_request_ioexception">Chyba #13: Nelze se připojit k Nextcloud serveru</string>
     <string name="err_sync_http_request_resp">Chyba #14: Nelze zpracovat odpověď serveru</string>
     <string name="err_sync_http_request_parse_resp">Chyba #15: Nelze zpracovat odpověď serveru</string>
     <string name="err_sync_no_connection_available">Chyba #16: Není dostupné datové připojení</string>
     <string name="err_sync_account_unparsable">Chyba #17: účet poškozený Znovu nakonfigurovat</string>
-    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Chyba #18: OcSMS aplikace není nainstalována nebo ownCloud čeká na aktualizaci</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Chyba #18: Nextcloud SMS aplikace není nainstalována nebo ownCloud čeká na aktualizaci</string>
     <string name="err_fetch_phonelist">Přijat neplatný seznam telefoních čísel ze serveru.</string>
     <string name="err_proto_v2">Server nepodporuje tuto funkci. Zajistěte verzi na serveru alespoň 1.6.</string>
     <string name="contactinfos_title">Informace kontaktu</string>
@@ -175,7 +175,7 @@
     <string name="contactinfos_list">Adresář</string>
     <string name="function_not_available">Tato funkce ještě není dostupná.</string>
 
-    <string name="ui_notification_title_template">OcSMS: %1$s</string>
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
     <string name="communicate">Communicate</string>
     <string name="title_activity_main2">Main2Activity</string>
 

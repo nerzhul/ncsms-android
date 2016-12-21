@@ -31,7 +31,7 @@
     <string name="translation_version">6</string>
 
     <!-- In Serbian language there's a rule to transliterate app names -->
-    <string name="app_name">Оунклауд-СМС</string>
+    <string name="app_name">Оунклауд СМС</string>
 
     <!-- Translations must begin there -->
     <!-- Preferences -->

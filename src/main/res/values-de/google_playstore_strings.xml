@@ -30,7 +30,7 @@
 	<string name="gp_translation_version">3</string>
 	
     <!-- Translations must begin there -->
-    <string name="gp_short_description">Mit ownCloud SMS kannst Du Deine SMS mit Deiner ownCloud synchronisieren</string>
+    <string name="gp_short_description">Mit Nextcloud SMS kannst Du Deine SMS mit Deiner Nextcloud synchronisieren</string>
     <string name="gp_description">
 Die ownCloud SMS App synchronisiert Deine SMS-Nachrichten mit einer ownCloud-Instanz und erlaubt Dir, die SMS dort zu lesen.
 
