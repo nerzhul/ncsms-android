@@ -37,7 +37,6 @@ You can also contribute by adding patches in Java code or cleanups.
 
 ## Build requirements
 - nrz-androidlib (last version)
-- ownCloud-Android-Library v1.0
 
 ## Reporting issues
 
