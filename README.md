@@ -33,7 +33,6 @@ You can find our continuous integration here: http://jenkins.unix-experience.fr/
 
 ### Build requirements
 - nrz-androidlib (last version)
-- ownCloud-Android-Library v1.0
 
 ### Coding guidelines
 
