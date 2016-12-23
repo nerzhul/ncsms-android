@@ -13,30 +13,19 @@ ocsms app sources are available here: https://github.com/nerzhul/ocsms/
 
 You can find the application documentation here: https://github.com/nerzhul/ownCloud-SMS-App/wiki
 
-## :notebook: License
-
-ownCloud SMS Android Application license is in reflexion, then sources are partial.
-
-- App locales and layouts are under BSD 2 clause licens e
-- App DataProviders are under AGPLv3
-
 ## :link: Requirements
-- A Nextcloud instance with [ocsms app](https://github.com/nerzhul/ocsms)
+- [Nextcloud](https://nextcloud.com/) instance running
+- [ocsms](https://github.com/nerzhul/ocsms) app enabled
 
 ## :exclamation: Reporting issues
 
-Please create your issues for the **client** here:
-
-https://github.com/nerzhul/ownCloud-SMS-App/issues
-
-And for the **server** app here:
-
-https://github.com/nerzhul/ocsms/issues
+- **Client:** https://github.com/nerzhul/ownCloud-SMS-App/issues
+- **Server:** https://github.com/nerzhul/ocsms/issues
 
 ## :rocket: Contributions
 
-- We are searching for translations into others languages. To contribute please download `res/values/strings.xml` and `res/values/google_playstore_strings.xml` and provide a Pull Request with a translated version!
-- You can also contribute by adding patches in Java code or cleanups.
+- We are searching for **translations** into others languages. To contribute please download `res/values/strings.xml` and `res/values/google_playstore_strings.xml` and provide a Pull Request with a translated version!
+- You can also contribute by adding **patches** in Java code or cleanups.
 
 ## :wrench: Developers
 
@@ -50,3 +39,10 @@ You can find our continuous integration here: http://jenkins.unix-experience.fr/
 
 - No empty lines at EOF
 - No trailing whitespaces
+
+## :notebook: License
+
+Nextcloud SMS Android Application license is in reflexion, then sources are partial.
+
+- App locales and layouts are under BSD 2 clause license
+- App DataProviders are under AGPLv3
