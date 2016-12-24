@@ -1,0 +1,25 @@
+---
+language: android
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+jdk:
+  - oraclejdk8
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - extra
+    - build-tools-25.0.1
+    - android-25
+  licenses:
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
+    - 'android-sdk-preview-license-.+'
+    - 'android-.*'
