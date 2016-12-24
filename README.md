@@ -27,10 +27,6 @@ You can find the application documentation here: https://github.com/nerzhul/ownC
 - We are searching for **translations** into others languages. To contribute please download `res/values/strings.xml` and `res/values/google_playstore_strings.xml` and provide a Pull Request with a translated version!
 - You can also contribute by adding **patches** in Java code or cleanups.
 
-## :wrench: Developers
-
-You can find our continuous integration here: http://jenkins.unix-experience.fr/job/ownCloud%20SMS%20%28Android%29/
-
 ### Build requirements
 - nrz-androidlib (last version)
 
