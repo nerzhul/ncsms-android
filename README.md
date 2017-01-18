@@ -15,12 +15,12 @@ You can find the application documentation here: https://github.com/nerzhul/ownC
 
 ## :link: Requirements
 - [Nextcloud](https://nextcloud.com/) instance running
-- [ocsms](https://github.com/nerzhul/ocsms) app enabled
+- [ocsms](https://github.com/nextcloud/ocsms) app enabled
 
 ## :exclamation: Reporting issues
 
 - **Client:** https://github.com/nerzhul/ownCloud-SMS-App/issues
-- **Server:** https://github.com/nerzhul/ocsms/issues
+- **Server:** https://github.com/nextcloud/ocsms/issues
 
 ## :rocket: Contributions
 
@@ -28,7 +28,7 @@ You can find the application documentation here: https://github.com/nerzhul/ownC
 - You can also contribute by adding **patches** in Java code or cleanups.
 
 ### Build requirements
-- nrz-androidlib (last version)
+- gradle
 
 ### Coding guidelines
 
