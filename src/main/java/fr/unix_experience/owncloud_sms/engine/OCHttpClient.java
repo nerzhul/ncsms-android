@@ -23,6 +23,7 @@ import android.util.Log;
 
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpMethod;
+import org.apache.commons.httpclient.params.HttpClientParams;
 import org.apache.commons.httpclient.MultiThreadedHttpConnectionManager;
 import org.apache.commons.httpclient.contrib.ssl.EasySSLProtocolSocketFactory;
 import org.apache.commons.httpclient.methods.GetMethod;
@@ -59,6 +60,7 @@ public class OCHttpClient extends HttpClient {
 		_serverURI = serverURI;
 		_username = accountName;
 		_password = accountPassword;
+		getParams().setParameter(HttpClientParams.ALLOW_CIRCULAR_REDIRECTS, true);
 	}
 
 	private GetMethod get(String oc_call) {
