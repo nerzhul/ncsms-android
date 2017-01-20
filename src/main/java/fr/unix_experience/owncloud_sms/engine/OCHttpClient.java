@@ -22,9 +22,13 @@ import android.net.Uri;
 import android.util.Base64;
 import android.util.Log;
 
+import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpMethod;
+import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.HttpVersion;
+import org.apache.commons.httpclient.URI;
+import org.apache.commons.httpclient.URIException;
 import org.apache.commons.httpclient.cookie.CookiePolicy;
 import org.apache.commons.httpclient.params.HttpClientParams;
 import org.apache.commons.httpclient.MultiThreadedHttpConnectionManager;
@@ -102,12 +106,51 @@ public class OCHttpClient extends HttpClient {
 				replace("[START]", start.toString()).replace("[LIMIT]", limit.toString()));
 	}
 
+	private int followRedirections(HttpMethod httpMethod) throws IOException {
+		int redirectionsCount = 0;
+		int status = httpMethod.getStatusCode();
+		while (redirectionsCount < 3 &&
+				(status == HttpStatus.SC_MOVED_PERMANENTLY ||
+						status == HttpStatus.SC_MOVED_TEMPORARILY ||
+						status == HttpStatus.SC_TEMPORARY_REDIRECT)
+				) {
+			Header location = httpMethod.getResponseHeader("Location");
+			if (location == null) {
+				location = httpMethod.getResponseHeader("location");
+			}
+			if (location == null) {
+				Log.e(TAG, "No valid location header found when redirecting.");
+				return 500;
+			}
+
+			try {
+				httpMethod.setURI(new URI(location.getValue()));
+			} catch (URIException e) {
+				Log.e(TAG, "Invalid URI in 302 FOUND response");
+				return 500;
+			}
+
+			status = executeMethod(httpMethod);
+			redirectionsCount++;
+		}
+
+		if (redirectionsCount >= 3 && status == HttpStatus.SC_MOVED_PERMANENTLY ||
+				status == HttpStatus.SC_MOVED_TEMPORARILY ||
+				status == HttpStatus.SC_TEMPORARY_REDIRECT) {
+			Log.e(TAG, "Too many redirection done. Aborting, please ensure your server is " +
+					"correctly configured");
+			return 400;
+		}
+
+		return status;
+	}
+
 	public int execute(HttpMethod req) throws IOException {
 		String basicAuth = "Basic " +
 				Base64.encodeToString((_username + ":" + _password).getBytes(), Base64.NO_WRAP);
-		//req.setFollowRedirects(true); // App is SIGKILLED by android when doing this... WTF
 		req.setDoAuthentication(true);
 		req.addRequestHeader("Authorization", basicAuth);
-		return executeMethod(req);
+		executeMethod(req);
+		return followRedirections(req);
 	}
 }
