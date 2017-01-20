@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest package="fr.unix_experience.owncloud_sms"
           xmlns:android="http://schemas.android.com/apk/res/android"
-          android:versionCode="44"
-          android:versionName="0.24.0"> <!-- From Android 4.1 to 7.1 -->
+          android:versionCode="45"
+          android:versionName="0.24.1"> <!-- From Android 4.1 to 7.1 -->
     <uses-sdk android:maxSdkVersion="25"/>
 
     <uses-permission android:name="android.permission.READ_SMS"/>
