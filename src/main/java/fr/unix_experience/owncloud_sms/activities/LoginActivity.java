@@ -241,7 +241,7 @@ public class LoginActivity extends AppCompatActivity {
 		@Override
 		protected Boolean doInBackground(Void... params) {
 			_returnCode = 0;
-			OCHttpClient http = new OCHttpClient(_serverURI, _login, _password);
+			OCHttpClient http = new OCHttpClient(getBaseContext(), _serverURI, _login, _password);
 			GetMethod testMethod = http.getVersion();
 			try {
 				_returnCode = http.execute(testMethod);
