@@ -17,12 +17,15 @@ package fr.unix_experience.owncloud_sms.engine;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import android.content.Context;
 import android.net.Uri;
 import android.util.Base64;
 import android.util.Log;
 
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpMethod;
+import org.apache.commons.httpclient.HttpVersion;
+import org.apache.commons.httpclient.cookie.CookiePolicy;
 import org.apache.commons.httpclient.params.HttpClientParams;
 import org.apache.commons.httpclient.MultiThreadedHttpConnectionManager;
 import org.apache.commons.httpclient.contrib.ssl.EasySSLProtocolSocketFactory;
@@ -31,12 +34,16 @@ import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.methods.StringRequestEntity;
 import org.apache.commons.httpclient.protocol.Protocol;
 import org.apache.commons.httpclient.protocol.ProtocolSocketFactory;
+import org.apache.commons.httpclient.params.HttpMethodParams;
 
 import java.io.IOException;
+
+import fr.unix_experience.owncloud_sms.providers.AndroidVersionProvider;
 
 public class OCHttpClient extends HttpClient {
 
 	private static final String TAG = OCHttpClient.class.getCanonicalName();
+	private static final String PARAM_PROTOCOL_VERSION = "http.protocol.version";
 	private final Uri _serverURI;
 	private final String _username;
 	private final String _password;
@@ -53,7 +60,7 @@ public class OCHttpClient extends HttpClient {
 	private static final String OC_V2_GET_MESSAGES_PHONE ="/index.php/apps/ocsms/api/v2/messages/[PHONENUMBER]/[START]/[LIMIT]?format=json";
 	private static final String OC_V2_GET_MESSAGES_SENDQUEUE = "/index.php/apps/ocsms/api/v2/messages/sendqueue?format=json";
 
-	public OCHttpClient(Uri serverURI, String accountName, String accountPassword) {
+	public OCHttpClient(Context context, Uri serverURI, String accountName, String accountPassword) {
 		super(new MultiThreadedHttpConnectionManager());
 		Protocol easyhttps = new Protocol("https", (ProtocolSocketFactory)new EasySSLProtocolSocketFactory(), 443);
 		Protocol.registerProtocol("https", easyhttps);
@@ -61,6 +68,10 @@ public class OCHttpClient extends HttpClient {
 		_username = accountName;
 		_password = accountPassword;
 		getParams().setParameter(HttpClientParams.ALLOW_CIRCULAR_REDIRECTS, true);
+		getParams().setParameter(PARAM_PROTOCOL_VERSION, HttpVersion.HTTP_1_1);
+		getParams().setCookiePolicy(CookiePolicy.IGNORE_COOKIES);
+		getParams().setParameter(HttpMethodParams.USER_AGENT,
+				"nextcloud-phonesync (" + new AndroidVersionProvider(context).getVersionCode() + ")");
 	}
 
 	private GetMethod get(String oc_call) {

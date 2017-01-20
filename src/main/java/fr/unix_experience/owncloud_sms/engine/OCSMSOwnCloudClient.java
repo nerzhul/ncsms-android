@@ -56,7 +56,8 @@ public class OCSMSOwnCloudClient {
 		}
 
 		Uri serverURI = Uri.parse(ocURI);
-		_http = new OCHttpClient(serverURI, accountManager.getUserData(account, "ocLogin"),
+		_http = new OCHttpClient(context,
+				serverURI, accountManager.getUserData(account, "ocLogin"),
 				accountManager.getPassword(account));
         _connectivityMonitor = new ConnectivityMonitor(_context);
 	}
