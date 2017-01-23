@@ -2,7 +2,7 @@
 <!--
 /*
 * Copyright (c) 2014, Loic Blot <loic.blot@unix-experience.fr>
-* Copyright (c) 2015, Daniel Hansson <daniel@techandme.se>
+* Copyright (c) 2015-2017, Daniel Hansson <daniel@techandme.se>
 * All rights reserved.
 * Redistribution and use in source and binary forms, with or without
 * modification, are permitted provided that the following conditions
@@ -28,14 +28,14 @@
 -->
 <resources>
 	<!-- Translation version, reference for translators -->
-	<string name="gp_translation_version">4</string>
+	<string name="gp_translation_version">5</string>
 	<!-- Translations must begin here -->
 	<string name="gp_short_description">Nextcloud SMS synkroniserar dina lokala SMS till din Nextcloudinstans.</string>
 	<string name="gp_description">
-		ownCloud SMS-applikationen synkroniserar dina SMS-meddelanden till din ownCloudinstans och gör det möjligt att läsa dina meddelanden på den.
+		Nextcloud SMS-applikationen synkroniserar dina SMS-meddelanden till din Nextcloudinstans och gör det möjligt att läsa dina meddelanden på den.
 		
-		Skicka meddelanden från din ownCloudinstans kommer att bli möjligt i en kommande version.
+		Skicka meddelanden från din Nextcloudinstans kommer att bli möjligt i en kommande version.
 		
-		Applikationen är fullt kompatibel från Android 4.0 till 6.0
+		Applikationen är fullt kompatibel från Android 4.0 till 7.1.1
 	</string>
 </resources>
