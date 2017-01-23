@@ -239,7 +239,7 @@
     <string name="please_fix_it">Please fix it.</string>
     <string name="err_cannot_read_contacts">We cannot read your contacts.</string>
     <string name="err_cannot_read_sms">We cannot read your SMS.</string>
-    <string name="action_appinfo_perms">App Info and permissions</string>
+    <string name="action_appinfo_perms">App info and permissions</string>
     <string name="restore_all_messages">Restore all messages</string>
     <string name="account_actions">Account actions</string>
     <string name="error_connection_failed_not_found">Connection failed, the server returns 404 NOT FOUND. Ensure you set the correct path for your Nextcloud instance.</string>
@@ -251,7 +251,7 @@
     <string name="error_make_default_sms_app">Please make this application default SMS application to permit restore your messages. This limitation has been introduced by Android 4.4.</string>
     <string name="fix_permissions">Fix permissions</string>
     <string name="err_kitkat_required">Android 4.4 or greater is required to use this feature.</string>
-    <string name="restore_finished">SMS restauration is now finished.</string>
-    <string name="x_messages_restored">messages restored...</string>
+    <string name="restore_finished">SMS restoration is now finished.</string>
+    <string name="x_messages_restored">messages restored&#8230;</string>
     <string name="err_no_connection">No connection available, please ensure you have a valid data connection.</string>
 </resources>
