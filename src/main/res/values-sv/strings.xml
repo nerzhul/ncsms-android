@@ -253,6 +253,6 @@
     <string name="fix_permissions">Åtgärda rättigheter</string>
     <string name="err_kitkat_required">Android 4.4 eller högre krävs för att använda denna funktion.</string>
     <string name="restore_finished">Återställning av SMS är slutförd.</string>
-    <string name="x_messages_restored">meddelanden återställda...</string>
+    <string name="x_messages_restored">meddelanden återställda&#8230;</string>
     <string name="err_no_connection">Ingen anslutning tillgänlig, vänligen säkerställ att du har en giltig anslutning.</string>
 </resources>
