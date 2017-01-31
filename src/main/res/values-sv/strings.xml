@@ -237,7 +237,7 @@
     <string name="please_fix_it">Vänligen åtgärda det.</string>
     <string name="err_cannot_read_contacts">Vi kan inte läsa dina kontakter.</string>
     <string name="err_cannot_read_sms">Vi kan inte läsa dina SMS.</string>
-    <string name="action_appinfo_perms">Appinformation och rättigheter</string>
+    <string name="action_appinfo_perms">Appinformation &amp; rättigheter</string>
     <string name="restore_all_messages">Återställ alla meddelanden</string>
     <string name="account_actions">Kontoåtgärder</string>
     <string name="error_connection_failed_not_found">Anslutning misslyckades, servern returnerade 404 NOT FOUND. Säkerställ att korrekt sökväg används till din Nextcloud-instans.</string>
