@@ -2,7 +2,6 @@
 <!--
  /*
  * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
- * Copyright (c) 2015-2017, Daniel Hansson <daniel@techandme.se> 
  * All rights reserved.
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -39,7 +38,6 @@
     <string name="target_package">fr.unix_experience.owncloud_sms</string>
     <string name="login_logo">Login logo</string>
 
-    <!-- System strings: preferences -->
     <string name="pref_lastmsgdate">last_message_date</string>
 
     <!-- Translations must begin there -->

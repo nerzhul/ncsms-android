@@ -29,7 +29,7 @@
     <!-- Translation version, reference for translators -->
 	<string name="gp_translation_version">3</string>
 	
-    <!-- Translations must begin there -->
+	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS permet de synchroniser vos SMS sur votre instance Nextcloud</string>
     <string name="gp_description">
 L\'application ownCloud SMS vous permet de synchroniser vos messages SMS sur une instance ownCloud distante et ainsi de pouvoir les lire.

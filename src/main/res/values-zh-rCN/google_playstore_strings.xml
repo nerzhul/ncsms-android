@@ -28,7 +28,7 @@
 <resources>
     <!-- Translation version, reference for translators -->
 	<string name="gp_translation_version">3</string>
-
+	
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS 将您的短信同步至您远程的 Nextcloud 服务器</string>
     <string name="gp_description">
