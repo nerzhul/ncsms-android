@@ -30,13 +30,12 @@
 	<string name="gp_translation_version">3</string>
 	
 	<!-- Translations must begin here -->
-    <string name="gp_short_description">Mit Nextcloud SMS kannst Du Deine SMS mit Deiner Nextcloud synchronisieren</string>
+    <string name="gp_short_description">Nextcloud SMS sincronizza gli SMS locali sulla tua istanza di Nextcloud</string>
     <string name="gp_description">
-Die Nextloud SMS App synchronisiert Deine SMS-Nachrichten mit einer Nextloud-Instanz und erlaubt Dir, die SMS dort zu lesen.
+L\'applicazione ownCloud SMS sincronizza i tuoi messaggi SMS su un\'istanza remota di ownCloud e ti consente di leggere i tuoi messaggi da essa.
 
-In kommenden Versionen soll auch den SMS-Versand von der Nextcloud-Instanz aus möglich sein.
-Auf diese Weise wirst Du von überall in der Welt SMS versenden können, solange Dein Android-Smartphone GSM- und Datenempfang hat.
+L\'invio di SMS dall\'istanza di ownCloud sarà disponibile in una prossima versione.
 
-Die App ist vollständig kompatibel mit Android 4.0 bis 6.0
+L\'applicazione è completamente compatibile da Android 4.0 al 6.0
 	</string>
 </resources>

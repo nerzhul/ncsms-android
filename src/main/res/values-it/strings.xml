@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="account_type">fr.unix_experience.owncloud_sms</string>
+    <string name="account_authority">fr.unix_experience.owncloud_sms.datasync.provider</string>
+    <string name="slowsync_account_authority">fr.unix_experience.owncloud_sms.datasync.slowsync_provider</string>
+    <string name="target_package">fr.unix_experience.owncloud_sms</string>
+    <string name="login_logo">Logo di accesso</string>
+
+    <string name="pref_lastmsgdate">last_message_date</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - Veloce</string>
+    <string name="pref_title_slow_sync">SMS - Lento e sicuro</string>
+    <string name="action_settings">Impostazioni</string>
+    <string name="sync_now">Sincronizza ora</string>
+    <string name="pref_category_sync">Sincronizzazione</string>
+    <string name="title_global_pref_to_general_prefs">Preferenze generali</string>
+    <string name="summary_global_pref_to_general_prefs">Opzioni di sincronizzazione</string>
+    <string name="summary_notif_prefs">Notifiche</string>
+    <string name="pref_header_data_sync">Dati e sincronizzazione</string>
+    <string name="title_activity_general_settings">Impostazioni generali</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 minuti</item>
+        <item>15 minuti</item>
+        <item>30 minuti</item>
+        <item>1 ora</item>
+        <item>3 ore</item>
+        <item>6 ore</item>
+        <item>12 ore</item>
+        <item>24 ore</item>
+        <item>Mai</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>5</item>
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>-1</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages">
+        <item>100</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>25000</item>
+        <item>-1</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 ora</item>
+        <item>3 ore</item>
+        <item>6 ore</item>
+        <item>12 ore</item>
+        <item>24 ore</item>
+        <item>Mai</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_values">
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="pref_minimum_sync_chars_titles">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+    <string-array name="pref_minimum_sync_chars">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+
+    <string name="pref_push_on_receive">Invia SMS alla ricezione</string>
+    <string name="pref_sync_wifi">Sincronizza con Wi-Fi</string>
+    <string name="pref_sync_4g">Sincronizza con 4G</string>
+    <string name="pref_sync_3g">Sincronizza con 3G</string>
+    <string name="pref_sync_gprs">Sincronizza con 2.5G (GPRS)</string>
+    <string name="pref_sync_2g">Sincronizza con 2G</string>
+    <string name="pref_sync_others">Sincronizza con altre modalità</string>
+    <string name="title_activity_login">Accedi</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Nome utente</string>
+    <string name="prompt_password">Password </string>
+    <string name="action_sign_in">Accedi o registrati</string>
+    <string name="action_sign_in_short">Accedi</string>
+    <string name="error_invalid_login">Nome utente o password non corretti</string>
+    <string name="error_invalid_password">La password è troppo breve</string>
+    <string name="error_field_required">Il campo è richiesto</string>
+    <string name="prompt_serverURI">Indirizzo del server</string>
+    <string name="error_invalid_server_address">Indirizzo email non valido</string>
+    <string name="error_connection_failed">Connessione non riuscita, assicurati che il server sia corretto</string>
+    <string name="error_http_connection_failed">Impossibile eseguire una connessione HTTP. Assicurati che ci sia un server web</string>
+
+    <string-array name="protocol_array">
+        <item>https://</item>
+        <item>http://</item>
+    </string-array>
+
+    <string name="ma_title_add_account">Aggiungi un account</string>
+    <string name="ma_title_welcome">Benvenuto</string>
+    <string name="ma_title_remote_account">Account remoto</string>
+    <string name="choose_account">Scegli account</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Seleziona account</string>
+    <string name="title_activity_select_contact">Seleziona contatto</string>
+    <string name="no_account_configured">Nessun account configurato.</string>
+
+    <string name="fatal_error">Errore grave!</string>
+
+    <string name="err_sync_auth_failed">Errore #8: Autenticazione non riuscita</string>
+    <string name="err_sync_no_connection_available">Errore #16: Nessuna connessione dati disponibile</string>
+    <string name="err_proto_v2">Il server non supporta questa funzionalità. Assicurati che la versione del server sia almeno la 1.6.</string>
+    <string name="contactinfos_title">Informazioni di contatto</string>
+    <string name="pref_title_bulk_messages">Numero massimo di messaggi da inviare per sincronizzazione</string>
+    <string name="contactinfos_list">Elenco contatti</string>
+    <string name="function_not_available">Questa funzione non è ancora disponibile.</string>
+
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="communicate">Comunica</string>
+    <string name="navigation_drawer_open">Apri il cassetto di navigazione</string>
+    <string name="navigation_drawer_close">Chiudi il cassetto di navigazione</string>
+    <string name="ma_title_my_accounts">I miei account</string>
+    <string name="ma_content_swipeaction">Scorri da sinistra a destra per accedere al menu delle azioni.</string>
+    <string name="cancel">Annulla</string>
+    <string name="understood">Ricevuto</string>
+    <string name="notif_permission_required">Permessi richiesti</string>
+    <string name="please_fix_it">Correggilo.</string>
+    <string name="err_cannot_read_contacts">Non possiamo leggere i tuoi contatti.</string>
+    <string name="err_cannot_read_sms">Non possiamo leggere i tuoi SMS.</string>
+    <string name="action_appinfo_perms">Informazioni applicazione e permessi</string>
+    <string name="restore_all_messages">Ripristina tutti i messaggi</string>
+    <string name="nothing_to_sync">Non c\'è niente da sincronizzare.</string>
+    <string name="feature_not_already_implemented">Questa funzionalità non è ancora implementata e sarà presto disponibile.</string>
+    <string name="pref_title_minimum_sync_chars">Lunghezza minima del numero di telefono</string>
+    <string name="launch_restore">Ripristina i miei SMS</string>
+    <string name="fix_permissions">Correggi permessi</string>
+    <string name="err_kitkat_required">Richiesto Android 4.4 o successivo per utilizzare questa funzionalità.</string>
+    <string name="restore_finished">Il ripristino SMS è ora completato.</string>
+    <string name="x_messages_restored">messaggi ripristinati&#8230;</string>
+    <string name="err_no_connection">Nessuna connessione disponibile, assicurati di avere una connessione dati valida.</string>
+</resources>

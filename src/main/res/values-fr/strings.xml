@@ -163,7 +163,7 @@
     <string name="action_sign_in_short">Se connecter</string>
     <string name="error_invalid_login">Identifiant ou mot de passe incorrect</string>
     <string name="error_invalid_password">Ce mot de passe est trop court</string>
-    <string name="error_field_required">Ce champ est requis</string>
+    <string name="error_field_required">Ce champ est obligatoire</string>
     <string name="prompt_serverURI">Adresse du serveur</string>
     <string name="error_invalid_server_address">Adresse invalide</string>
     <string name="error_connection_failed">Echec de connexion, assurer vous qu\'il s\'agit du bon serveur</string>
@@ -178,7 +178,7 @@
     <string name="ma_title_rate_us">Notez nous !</string>
     <string name="ma_title_add_account">Ajouter un compte</string>
     <string name="ma_title_welcome">Bienvenue</string>
-    <string name="ma_content_welcome">Bienvenue sur l\'application ownCloud SMS. Cette application va vous permettre de synchroniser vos SMS au sein de votre instance ownCloud en utilisant l\'application dédiée.</string>
+    <string name="ma_content_welcome">Bienvenue sur l\'application Nextcloud SMS. Cette application vous permet de synchroniser vos messages SMS sur votre serveur Nextcloud.</string>
     <string name="ma_title_remote_account">Compte distant</string>
     <string name="choose_account">Choisissez un compte</string>
 
@@ -216,9 +216,12 @@
     <string name="subtitle_contact_phones">- Numéros de téléphone associés</string>
     <string name="pref_title_bulk_messages">Nombre maximum de messages à envoyer par synchronisation</string>
     <string name="contactinfos_list">Liste des contacts</string>
-    <string name="function_not_available">Cette fonctionnalité n\'est pas encore disponibleeems.</string>
+    <string name="function_not_available">Cette fonctionnalité n\'est pas encore disponible.</string>
 
+    <string name="ui_notification_title_template">SMS Nextcloud : %1$s</string>
     <string name="communicate">Parlez de nous</string>
+    <string name="navigation_drawer_open">Ouvrir le menu latéral</string>
+    <string name="navigation_drawer_close">Fermer le menu latéral</string>
     <string name="ma_title_my_accounts">Mes comptes</string>
     <string name="ma_content_swipeaction">Glissez votre doigt de gauche à droite pour afficher le menu.</string>
     <string name="cancel">Annuler</string>
@@ -226,18 +229,21 @@
     <string name="notif_permission_required">Permissions requises</string>
     <string name="notif_permission_required_content">Certaines permissions essentielles sont manquantes, merci de les corriger dans les paramètres de l\'application.</string>
     <string name="please_fix_it">Merci de bien vouloir le corriger.</string>
-    <string name="err_cannot_read_contacts">Nous ne pouvons lire vos contacts.</string>
+    <string name="err_cannot_read_contacts">Nous ne pouvons pas lire vos Contacts.</string>
     <string name="err_cannot_read_sms">Nous ne pouvons pas lire vos SMS.</string>
-    <string name="action_appinfo_perms">Infos et permissions</string>
+    <string name="action_appinfo_perms">Informations sur l\'application et ses autorisations</string>
     <string name="restore_all_messages">Restaurer tous les messages</string>
     <string name="account_actions">Actions du compte</string>
-    <string name="error_connection_failed_not_found">Echec de connexion, le serveur a retourné 404 NON TROUVE. Assurez vous d\'avoir spécifié la bonne URL.</string>
+    <string name="error_connection_failed_not_found">Échec de connexion, le serveur a retourné \'404 non trouvé\'. Vérifiez l\'URL renseignée pour le serveur Nextcloud.</string>
     <string name="nothing_to_sync">Il n\'y a rien à synchroniser.</string>
-    <string name="feature_not_already_implemented">Cette fonctionnalité n\'est pas implémentée mais elle sera disponible bientôt.</string>
+    <string name="feature_not_already_implemented">Cette fonctionnalité n\'est pas encore disponible mais le sera bientôt.</string>
     <string name="pref_title_minimum_sync_chars">Longueur minimale du numéro de téléphone</string>
     <string name="err_didnt_find_account_restore">Nous n\'avons pas retrouvé le compte que nous souhaitions utiliser pour la restauration. Cette situation est vraiment étrange.</string>
+    <string name="launch_restore">Restaurer mes SMS</string>
     <string name="error_make_default_sms_app">Merci de bien vouloir mettre cette application en application SMS par défaut le temps de restaurer les messages. Cette limitation a été ajoutée depuis Android 4.4.</string>
+    <string name="fix_permissions">Corrigez les droits d\'accès</string>
     <string name="err_kitkat_required">Android 4.4 ou plus est requis pour utiliser cette fonctionnalité.</string>
+    <string name="restore_finished">La restauration des SMS est terminée</string>
     <string name="x_messages_restored">messages restaurés...</string>
-    <string name="err_no_connection">Aucune connexion disponible, assurez voir d\'avoir une connection de données valide.</string>
+    <string name="err_no_connection">Aucune connexion disponible, vérifiez que vous disposez d\'une connexion de données valide.</string>
 </resources>

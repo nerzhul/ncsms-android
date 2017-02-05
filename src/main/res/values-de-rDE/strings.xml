@@ -215,7 +215,7 @@
     <string name="err_sync_account_unparsable">Fehler #17: Fehlerhaftes Konto. Bitte Konfiguration prüfen.</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Fehler #18: Nextcloud SMS App ist niht installiert oder Nextcloud führt gerade ein Uprade durch</string>
     <string name="err_fetch_phonelist">Nicht valide Telefonliste vom Server empfangen.</string>
-    <string name="err_proto_v2">Der Server unterstützt diese Funktion nicht. Stelle sicher, dass die Serverversion mindestens 1.6 ist.</string>
+    <string name="err_proto_v2">Der Server unterstützt diese Funktion nicht. Stellen Sie sicher, dass die Serverversion mindestens 1.6 ist.</string>
     <string name="contactinfos_title">Kontaktinformationen</string>
     <string name="subtitle_contact_phones">- Handys kontaktieren</string>
     <string name="pref_title_bulk_messages">Maximale Anzahl von Nachrichten, die pro Synchronisieren gesendet werden</string>
@@ -240,7 +240,7 @@
     <string name="action_appinfo_perms">App Infos und Berechtigungen</string>
     <string name="restore_all_messages">Alle Nachrichten wiederherstellen</string>
     <string name="account_actions">Account-Aktionen</string>
-    <string name="error_connection_failed_not_found">Verbindung fehlgeschlagen, der Server hat 404 NICHT GEFUNDEN geantworet. Stelle sicher, dass der Pfad zur Nextcloud-Instanz korrekt gesetzt ist.</string>
+    <string name="error_connection_failed_not_found">Verbindung fehlgeschlagen, der Server hat 404 NICHT GEFUNDEN geantworet. Stellen Sie sicher, dass der Pfad zur Nextcloud-Instanz korrekt gesetzt ist.</string>
     <string name="nothing_to_sync">Es gibt nichts zu synchronisieren.</string>
     <string name="feature_not_already_implemented">Diese Funktion ist noch nicht implementiert aber wird in Kürze verfügbar sein.</string>
     <string name="pref_title_minimum_sync_chars">Minimale Telefonnummernlänge</string>
@@ -251,5 +251,5 @@
     <string name="err_kitkat_required">Android 4.4 oder höher ist erforderlich, um diese Funktion zu verwenden.</string>
     <string name="restore_finished">SMS-Wiederherstellung ist nun abgeschlossen.</string>
     <string name="x_messages_restored">Nachrichten wiederhergestellt&#8230;</string>
-    <string name="err_no_connection">Keine Verbindung verfügbar, bitte stelle sicher, dass du eine stabile Datenverbindung hast.</string>
+    <string name="err_no_connection">Keine Verbindung verfügbar, bitte stellen Sie sicher, dass Sie eine stabile Datenverbindung haben.</string>
 </resources>

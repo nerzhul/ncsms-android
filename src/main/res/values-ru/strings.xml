@@ -32,6 +32,16 @@
     <!-- Translation version, reference for translators -->
     <string name="translation_version">7</string>
 
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="account_type">fr.unix_experience.owncloud_sms</string>
+    <string name="account_authority">fr.unix_experience.owncloud_sms.datasync.provider</string>
+    <string name="slowsync_account_authority">fr.unix_experience.owncloud_sms.datasync.slowsync_provider</string>
+    <string name="target_package">fr.unix_experience.owncloud_sms</string>
+    <string name="login_logo">Логотип логина</string>
+
+    <string name="pref_lastmsgdate">last_message_date</string>
+
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">Быстрая синхронизация</string>
@@ -58,6 +68,17 @@
         <item>24 часа</item>
         <item>Никогда</item>
     </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>5</item>
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>-1</item>
+    </string-array>
     <string-array name="pref_sync_bulk_max_messages_titles">
         <item>100 SMS</item>
         <item>1000 SMS</item>
@@ -67,6 +88,15 @@
         <item>25000 SMS</item>
         <item>Every SMS not synced</item>
     </string-array>
+    <string-array name="pref_sync_bulk_max_messages">
+        <item>100</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>25000</item>
+        <item>-1</item>
+    </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 минута</item>
         <item>1 час</item>
@@ -74,7 +104,51 @@
         <item>6 часов</item>
         <item>12 часов</item>
         <item>24 часа</item>
-        <item>Никогда</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_values">
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="pref_minimum_sync_chars_titles">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+    <string-array name="pref_minimum_sync_chars">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
     </string-array>
 
     <string name="pref_push_on_receive">Использовать Push</string>
@@ -99,6 +173,11 @@
     <string name="error_connection_failed">Не удалось установить соединение, убедитесь, что это верный сервер</string>
     <string name="error_http_connection_failed">Невозможно выполнить HTTP подключение. Пожалуйста, убедитесь, что это веб-сервер</string>
 
+    <string-array name="protocol_array">
+        <item>https://</item>
+        <item>http://</item>
+    </string-array>
+
     <!-- Main activity -->
     <string name="ma_title_rate_us">Оцените нас !</string>
     <string name="ma_title_add_account">Добавить аккаунт</string>
@@ -116,7 +195,7 @@
     <string name="sync_title">Процесс синхронизации</string>
     <string name="sync_inprogress">Идет синхронизация ...</string>
     <string name="fatal_error">Критическая ошибка!</string>
-    
+
     <!-- Errors -->
     <string name="err_sync_get_smslist">Error #1: Invalid data received from server when getting previous messages</string>
     <string name="err_sync_craft_http_request">Error #2: Error while crafting HTTP request</string>
@@ -164,4 +243,13 @@
     <string name="error_connection_failed_not_found">Не удалось установить соединение, сервер возвращает 404 NOT FOUND. Убедитесь, что вы установили правильный путь для экземпляра OwnCloud.</string>
     <string name="nothing_to_sync">Нечего синхронизировать.</string>
     <string name="feature_not_already_implemented">Эта функция еще не реализована и будет доступна в ближайшее время.</string>
+    <string name="pref_title_minimum_sync_chars">Минимальная длина телефонного номера</string>
+    <string name="err_didnt_find_account_restore">Мы не нашли вашей учётной записи для того, чтобы восстановить ваше сообщение, это очень странная ситуация.</string>
+    <string name="launch_restore">Восстановите мои SMS</string>
+    <string name="error_make_default_sms_app">Пожалуйста, выберите это приложение как приложение по умолчанию для SMS для того, чтобы разрешить восстанавливать ваши сообщения. Это ограничение было введено начиная с Android 4.4.</string>
+    <string name="fix_permissions">Исправить права доступа</string>
+    <string name="err_kitkat_required">Версия Android 4.4 или выше требуется для использования этой возможности.</string>
+    <string name="restore_finished">SMS восстановление закончилось.</string>
+    <string name="x_messages_restored">сообщения восстановлены&#8230;</string>
+    <string name="err_no_connection">Нет соединения, пожалуйста, убедитесь, что вы используете работающее соединение для данных.</string>
 </resources>
