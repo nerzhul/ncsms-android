@@ -34,6 +34,10 @@
 
     <!-- System strings, do not translate -->
     <string name="app_name">Nextcloud SMS</string>
+    <string name="account_type">fr.unix_experience.owncloud_sms</string>
+    <string name="account_authority">fr.unix_experience.owncloud_sms.datasync.provider</string>
+    <string name="slowsync_account_authority">fr.unix_experience.owncloud_sms.datasync.slowsync_provider</string>
+    <string name="target_package">fr.unix_experience.owncloud_sms</string>
     <string name="login_logo">Logo de connexion</string>
 
     <string name="pref_lastmsgdate">date_du_dernier_message</string>
