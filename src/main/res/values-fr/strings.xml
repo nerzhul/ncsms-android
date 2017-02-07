@@ -224,6 +224,8 @@
 
     <string name="ui_notification_title_template">SMS Nextcloud : %1$s</string>
     <string name="communicate">Parlez de nous</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
     <string name="navigation_drawer_open">Ouvrir le menu latéral</string>
     <string name="navigation_drawer_close">Fermer le menu latéral</string>
     <string name="ma_title_my_accounts">Mes comptes</string>
