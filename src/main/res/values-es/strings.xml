@@ -214,15 +214,42 @@
     <string name="err_sync_no_connection_available">Error #16: No hay información de la conexión disponible</string>
     <string name="err_sync_account_unparsable">Error #17: Cuenta distorsionada. Por favor reconfigurela.</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: La aplicación SMS de Nextcloud no esta instalada o Nextcloud esta en la espera de una actualización</string>
+    <string name="err_fetch_phonelist">La lista de teléfonos recibida del servidor no es válida</string>
+    <string name="err_proto_v2">El servidor no soporta esta característica. Asegúrate de que la versión del servidor es al menos 1.6.</string>
+    <string name="contactinfos_title">Información de los contactos</string>
+    <string name="subtitle_contact_phones">- Teléfonos de los contactos</string>
+    <string name="pref_title_bulk_messages">Mensajes que mandar máximos por sincronización</string>
     <string name="contactinfos_list">Lista de contactos</string>
     <string name="function_not_available">Esta función aun no esta disponible</string>
 
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
     <string name="communicate">Comunicar</string>
     <string name="title_activity_main2">Main2Activity</string>
 
     <string name="navigation_drawer_open">Abrir el cajón de navegación</string>
+    <string name="navigation_drawer_close">Cerrar cajón de navegación</string>
+    <string name="ma_title_my_accounts">Mis cuentas</string>
+    <string name="ma_content_swipeaction">Desliza de izquierda a derecha par acceder al menú de acciones</string>
+    <string name="cancel">Cancelar</string>
+    <string name="understood">Comprendido</string>
+    <string name="notif_permission_required">Permisos requeridos</string>
+    <string name="notif_permission_required_content">Faltan algunos permisos para realizar el proceso de sincronización. Por favor, arréglalo en la configuración de la app</string>
+    <string name="please_fix_it">Por favor, arréglalo.</string>
+    <string name="err_cannot_read_contacts">No podemos leer tus contactos.</string>
+    <string name="err_cannot_read_sms">No podemos leer tus SMS.</string>
+    <string name="action_appinfo_perms">Info y permisos de la app</string>
+    <string name="restore_all_messages">Restaurar todos los mensajes</string>
+    <string name="account_actions">Acciones de la cuenta</string>
+    <string name="error_connection_failed_not_found">Falló la conexión, el servidor devuelve 404 NO ENCONTRADO. Asegúrate de indicar la ruta correcta para tu instancia de Nextcloud.</string>
+    <string name="nothing_to_sync"> No hay nada que sincronizar.</string>
+    <string name="feature_not_already_implemented">Esta característica no ha sido realizada todavía. Pronto estará disponible.</string>
+    <string name="pref_title_minimum_sync_chars">Longitud del número de teléfono mínima.</string>
+    <string name="err_didnt_find_account_restore">No encontramos tu cuenta para restaurar tus mensajes, esta es una situación muy extraña.</string>
+    <string name="launch_restore">Restaurar mis SMS</string>
+    <string name="error_make_default_sms_app">Por favor, marca esta aplicación como predeterminada para SMS si quieres restaurar tus mensajes. Esta limitación se introdujo en Android 4.4.</string>
     <string name="fix_permissions">Arreglar permisos</string>
     <string name="err_kitkat_required">Android 4.4 o superior es necesitada para usar esta característica.</string>
     <string name="restore_finished">La restauración SMS se ha completado.</string>
+    <string name="x_messages_restored">mensajes restaurados&#8230;</string>
     <string name="err_no_connection">Sin conexión disponible, por favor asegure que tiene una conexión de datos válida.</string>
 </resources>

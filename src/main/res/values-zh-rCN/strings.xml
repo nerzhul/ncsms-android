@@ -32,6 +32,16 @@
     <!-- Translation version, reference for translators -->
     <string name="translation_version">7</string>
 
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud 信息</string>
+    <string name="account_type">fr.unix_experience.owncloud_sms</string>
+    <string name="account_authority">fr.unix_experience.owncloud_sms.datasync.provider</string>
+    <string name="slowsync_account_authority">fr.unix_experience.owncloud_sms.datasync.slowsync_provider</string>
+    <string name="target_package">fr.unix_experience.owncloud_sms</string>
+    <string name="login_logo">登录Logo</string>
+
+    <string name="pref_lastmsgdate">上一条信息的日期</string>
+
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">短信 - 快速模式</string>
@@ -102,6 +112,43 @@
         <item>720</item>
         <item>1440</item>
         <item>-1</item>
+    </string-array>
+
+    <string-array name="pref_minimum_sync_chars_titles">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+    <string-array name="pref_minimum_sync_chars">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
     </string-array>
 
     <string name="pref_push_on_receive">收到短信时便推送</string>
@@ -194,4 +241,15 @@
     <string name="restore_all_messages">恢复全部短信</string>
     <string name="account_actions">账户操作</string>
     <string name="error_connection_failed_not_found">连接失败，服务器返回"404未找到"。请确认您设置了正确的 ownCloud 服务器路径。</string>
+    <string name="nothing_to_sync">没有要同步的内容.</string>
+    <string name="feature_not_already_implemented">此功能尚未实现，很快就会推出.</string>
+    <string name="pref_title_minimum_sync_chars">最小号码长度</string>
+    <string name="err_didnt_find_account_restore">我们没有找到您的帐户来恢复您的消息，这是一个异常情况.</string>
+    <string name="launch_restore">恢复我的短信</string>
+    <string name="error_make_default_sms_app">请将此应用设置为默认短信应用已恢复您的信息.Android 4.4加入了此项限制.</string>
+    <string name="fix_permissions">修复权限</string>
+    <string name="err_kitkat_required">使用此功能需要Android 4.4或更高版本。</string>
+    <string name="restore_finished">短信恢复现已完成。</string>
+    <string name="x_messages_restored">信息已恢复&#8230;</string>
+    <string name="err_no_connection">没有可用的连接，请确保您具有有效的数据连接.</string>
 </resources>
