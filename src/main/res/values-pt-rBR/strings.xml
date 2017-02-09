@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="account_type">fr.unix_experience.owncloud_sms</string>
+    <string name="account_authority">fr.unix_experience.owncloud_sms.datasync.provider</string>
+    <string name="slowsync_account_authority">fr.unix_experience.owncloud_sms.datasync.slowsync_provider</string>
+    <string name="target_package">fr.unix_experience.owncloud_sms</string>
+    <string name="login_logo">Logo do Login</string>
+
+    <string name="pref_lastmsgdate">last_message_date</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - Rápido</string>
+    <string name="pref_title_sync_frequency">Frequência de Sincronização Rápida</string>
+    <string name="pref_title_slow_sync">SMS - Lento e Seguro</string>
+    <string name="pref_title_slow_sync_frequency">Frequência de Sincronização Lenta Segura</string>
+    <string name="action_settings">Configurações</string>
+    <string name="sync_now">Sincronizar agora</string>
+    <string name="pref_category_sync">Sincronização</string>
+    <string name="title_global_pref_to_general_prefs">Preferências gerais</string>
+    <string name="summary_global_pref_to_general_prefs">Opções de Sincronização</string>
+    <string name="summary_notif_prefs">Notificações</string>
+    <string name="pref_header_data_sync">Data &amp; sincronização</string>
+    <string name="title_activity_general_settings">Configurações Gerais</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 minutos</item>
+        <item>15 minutos</item>
+        <item>30 minutos</item>
+        <item>1 hora</item>
+        <item>3 horas</item>
+        <item>6 horas</item>
+        <item>12 horas</item>
+        <item>24 horas</item>
+        <item>Nunca</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>5</item>
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>-1</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Cada SMS não sincronizado</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages">
+        <item>100</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>25000</item>
+        <item>-1</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 hora</item>
+        <item>3 horas</item>
+        <item>6 horas</item>
+        <item>12 horas</item>
+        <item>24 horas</item>
+        <item>Nunca</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_values">
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="pref_minimum_sync_chars_titles">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+    <string-array name="pref_minimum_sync_chars">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+
+    <string name="pref_push_on_receive">Empurrar SMS na recepção</string>
+    <string name="pref_sync_wifi">Sincronizar em Wi-Fi</string>
+    <string name="pref_sync_4g">Sincronizar em 4G</string>
+    <string name="pref_sync_3g">Sincronizar em 3G</string>
+    <string name="pref_sync_gprs">Sincronizar em 2.5G (GPRS)</string>
+    <string name="pref_sync_2g">Sincronizar em 2G</string>
+    <string name="pref_sync_others">Sincronizar em outros modos</string>
+    <string name="title_activity_login">Acessar</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Login</string>
+    <string name="prompt_password">Senha</string>
+    <string name="action_sign_in">Acesse ou registre-se</string>
+    <string name="action_sign_in_short">Acessar</string>
+    <string name="error_invalid_login">Login ou senha incorreta</string>
+    <string name="error_invalid_password">Esta senha é muito curta</string>
+    <string name="error_field_required">Este campo é requerido</string>
+    <string name="prompt_serverURI">Endereço do servidor</string>
+    <string name="error_invalid_server_address">Endereço do servidor inválido</string>
+    <string name="error_connection_failed">A conexão falhou, certifique-se de que este é o servidor certo</string>
+    <string name="error_http_connection_failed">Não é possível executar uma conexão HTTP. Certifique-se de que existe um servidor web</string>
+
+    <string-array name="protocol_array">
+        <item>https://</item>
+        <item>http://</item>
+    </string-array>
+
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">Nos classifique!</string>
+    <string name="ma_title_add_account">Adicionar uma conta</string>
+    <string name="ma_title_welcome">Bem-Vindo</string>
+    <string name="ma_content_welcome">Bem-vindo ao aplicativo do Nextcloud SMS. Esta aplicação permite sincronizar o SMS com a instância do Nextcloud utilizando a aplicação SMS.</string>
+    <string name="ma_title_remote_account">Conta remota</string>
+    <string name="choose_account">Escolher conta</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Selecionar conta</string>
+    <string name="title_activity_select_contact">Selecionar contato</string>
+    <string name="no_account_configured">Nenhuma conta configurada.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">Processo de sincronização</string>
+    <string name="sync_inprogress">Sincronização em andamento...</string>
+    <string name="fatal_error">Erro fatal !</string>
+
+    <!-- Errors -->
+    <string name="err_sync_get_smslist">Erro #1: Dados inválidos recebidos do servidor ao obter mensagens anteriores</string>
+    <string name="err_sync_craft_http_request">Erro #2: Erro ao criar pedido HTTP</string>
+    <string name="err_sync_push_request">Erro #3: O pushing  falhou</string>
+    <string name="err_sync_push_request_resp">Erro #4: Dados inválidos recebidos do servidor no pushing de dados</string>
+    <string name="err_sync_create_json_null_smslist">Erro #5: NULL lista de SMS</string>
+    <string name="err_sync_create_json_put_smslist">Erro # 6: Erro ao criar pedido push</string>
+    <string name="err_sync_create_json_request_encoding">Erro #7: Codificação não suportada ao gerar solicitação</string>
+    <string name="err_sync_auth_failed">Erro #8: Falha na autenticação</string>
+    <string name="err_sync_http_request_returncode_unhandled">Erro #9: O servidor define o código de retorno HTTP não manipulado</string>
+    <string name="err_sync_http_request_connect">Erro #11: Não é possível executar uma conexão com a instância Nextcloud</string>
+    <string name="err_sync_http_request_httpexception">Erro #12: Não é possível executar uma conexão para a instância Nextcloud</string>
+    <string name="err_sync_http_request_ioexception">Erro #13: Não é possível executar uma conexão para a instância Nextcloud</string>
+    <string name="err_sync_http_request_resp">Erro #14: Não é possível analisar a resposta do servidor</string>
+    <string name="err_sync_http_request_parse_resp">Erro #15: Não é possível analisar a resposta do servidor</string>
+    <string name="err_sync_no_connection_available">Erro #16: Nenhuma conexão de dados disponível</string>
+    <string name="err_sync_account_unparsable">Erro #17: conta malformada. Por favor reconfigure-a</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Erro #18: O aplicativo do Nextcloud SMS não está instalado ou o Nextcloud aguarda uma atualização</string>
+    <string name="err_fetch_phonelist">Catalogo telefônico inválido recebido do servidor.</string>
+    <string name="err_proto_v2">O servidor não suporta este recurso. Verifique se a versão do servidor é pelo menos 1.6.</string>
+    <string name="contactinfos_title">Informações de contato</string>
+    <string name="subtitle_contact_phones">- Telefones de contato</string>
+    <string name="pref_title_bulk_messages">Máximo de mensagens a serem enviadas por sincronização</string>
+    <string name="contactinfos_list">Lista de contatos</string>
+    <string name="function_not_available">Esta função ainda não está disponível.</string>
+
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="communicate">Comunicar</string>
+    <string name="title_activity_main2">Atividade2Principal</string>
+
+    <string name="navigation_drawer_open">Abrir a gaveta de navegação</string>
+    <string name="navigation_drawer_close">Fechar a gaveta de navegação</string>
+    <string name="ma_title_my_accounts">Minhas contas</string>
+    <string name="ma_content_swipeaction">Deslize da esquerda para a direita para ativar o menu de ação.</string>
+    <string name="cancel">Cacelar</string>
+    <string name="understood">Entendido</string>
+    <string name="notif_permission_required">Permissões necessárias</string>
+    <string name="notif_permission_required_content">Algumas permissões estão faltando para executar o processo de sincronização. Corrija-o nas configurações do aplicativo</string>
+    <string name="please_fix_it">Por favor, corrigi-lo.</string>
+    <string name="err_cannot_read_contacts">Não podemos ler seus contatos.</string>
+    <string name="err_cannot_read_sms">Não podemos ler o seu SMS.</string>
+    <string name="action_appinfo_perms">Informações e permissões da aplicação</string>
+    <string name="restore_all_messages">Restaurar todas as mensagens</string>
+    <string name="account_actions">Ações da conta</string>
+    <string name="error_connection_failed_not_found">Falha na conexão, o servidor retorna 404 NOT FOUND. Certifique-se de definir o caminho correto para a instância do Nextcloud.</string>
+    <string name="nothing_to_sync">Não há nada para sincronizar.</string>
+    <string name="feature_not_already_implemented">Esse recurso ainda não está implementado e estará disponível em breve.</string>
+    <string name="pref_title_minimum_sync_chars">Comprimento mínimo do número de telefone</string>
+    <string name="err_didnt_find_account_restore">Não encontramos a sua conta para restaurar a sua mensagem, esta é uma situação muito estranha.</string>
+    <string name="launch_restore">Restaurar meu SMS</string>
+    <string name="error_make_default_sms_app">Por favor, faça este aplicativo SMS padrão para permitir restaurar suas mensagens. Essa limitação foi introduzida pelo Android 4.4.</string>
+    <string name="fix_permissions">Corrigir permissões</string>
+    <string name="err_kitkat_required">É necessário usar o Android 4.4 ou superior para usar esse recurso.</string>
+    <string name="restore_finished">A restauração de SMS está agora concluída.</string>
+    <string name="x_messages_restored">Mensagens restaurad&#8230;</string>
+    <string name="err_no_connection">Nenhuma conexão disponível, verifique se você tem uma conexão de dados válida.</string>
+</resources>
