@@ -47,13 +47,14 @@
     <string name="pref_title_sync">SMS - Szybki</string>
     <string name="pref_title_sync_frequency">Częstotliwość szybkiej synchronizacji</string>
     <string name="pref_title_slow_sync">SMS - Powolny i bezpieczny</string>
-    <string name="pref_title_slow_sync_frequency">Częstotliwość zabezpieczonej powolnej synchronizacji</string>
+    <string name="pref_title_slow_sync_frequency">Częstotliwość bezpiecznej powolnej synchronizacji</string>
     <string name="action_settings">Ustawienia</string>
     <string name="sync_now">Synchronizuj teraz</string>
     <string name="pref_category_sync">Synchronizacja</string>
     <string name="title_global_pref_to_general_prefs">Ogólne preferencje</string>
     <string name="summary_global_pref_to_general_prefs">Opcje synchronizacji</string>
     <string name="summary_notif_prefs">Powiadomienia</string>
+    <string name="pref_header_data_sync">Dane &amp; synchronizacja</string>
     <string name="title_activity_general_settings">Ogólne ustawienia</string>
 
     <string-array name="pref_sync_frequency_titles">
@@ -85,7 +86,7 @@
         <item>5000 SMSów</item>
         <item>10000 SMSów</item>
         <item>25000 SMSów</item>
-        <item>Żaden SMS nie zschynchronizowany</item>
+        <item>Żaden SMS się nie zsynchronizował</item>
     </string-array>
     <string-array name="pref_sync_bulk_max_messages">
         <item>100</item>
@@ -150,6 +151,7 @@
         <item>15</item>
     </string-array>
 
+    <string name="pref_push_on_receive">Push SMS po przyjęciu</string>
     <string name="pref_sync_wifi">Synchronizuj przez Wi-Fi</string>
     <string name="pref_sync_4g">Synchronizuj przez 4G</string>
     <string name="pref_sync_3g">Synchronizuj przez 3G</string>
@@ -180,7 +182,7 @@
     <string name="ma_title_rate_us">Oceń nas!</string>
     <string name="ma_title_add_account">Dodaj konto</string>
     <string name="ma_title_welcome">Witaj</string>
-    <string name="ma_content_welcome">Witaj w aplikacji Nextcloud SMS. Ta aplikacja umożliwia ci synchronizację twoich SMSów do twojej instancji Nextcloud.</string>
+    <string name="ma_content_welcome">Witaj w aplikacji Nextcloud SMS. Ta aplikacja umożliwia ci synchronizację twoich SMSów do instancji Nextcloud.</string>
     <string name="ma_title_remote_account">Zdalne konto</string>
     <string name="choose_account">Wybierz konto</string>
 
@@ -192,7 +194,7 @@
     <!-- Notifications -->
     <string name="sync_title">Proces synchronizacji</string>
     <string name="sync_inprogress">Synchronizacja w trakcie...</string>
-    <string name="fatal_error">Krytyczny błąd !</string>
+    <string name="fatal_error">Krytyczny błąd!</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Błąd #1: Błędne dane otrzymane z serwera podczas odbierania poprzedniej wiadomości</string>
@@ -222,6 +224,10 @@
 
     <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
     <string name="communicate">Skomunikuj</string>
+    <string name="title_activity_main2">Główna aktywność</string>
+
+    <string name="navigation_drawer_open">Otwórz okno nawigacji</string>
+    <string name="navigation_drawer_close">Zamknij okno nawigacji</string>
     <string name="ma_title_my_accounts">Moje konta</string>
     <string name="ma_content_swipeaction">Przesuń palcem od lewej do prawej aby otworzyć menu działań.</string>
     <string name="cancel">Anuluj</string>
