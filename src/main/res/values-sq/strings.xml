@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="account_type">fr.unix_experience.owncloud_sms</string>
+    <string name="account_authority">fr.unix_experience.owncloud_sms.datasync.provider</string>
+    <string name="slowsync_account_authority">fr.unix_experience.owncloud_sms.datasync.slowsync_provider</string>
+    <string name="target_package">fr.unix_experience.owncloud_sms</string>
+    <string name="login_logo">Shenja e hyrjes</string>
+
+    <string name="pref_lastmsgdate">last_message_date</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - i shpejtë</string>
+    <string name="pref_title_sync_frequency">Frekuence e shpejtë sinkronizimi</string>
+    <string name="pref_title_slow_sync">SMS - e ngadaltë dhe e sigurt</string>
+    <string name="pref_title_slow_sync_frequency">Frekuencë sinkronizimi e sigurt e ngadaltë </string>
+    <string name="action_settings">Rregullimet</string>
+    <string name="sync_now">Sinkronizo tani</string>
+    <string name="pref_category_sync">Sinkronizimi</string>
+    <string name="title_global_pref_to_general_prefs">Opsione të përgjithshme</string>
+    <string name="summary_global_pref_to_general_prefs">Mundësitë e sinkronizimit</string>
+    <string name="summary_notif_prefs">Njoftimet</string>
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+    <string name="title_activity_general_settings">Cilësimet e Përgjithshme</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 minuta</item>
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 orë</item>
+        <item>3 orë</item>
+        <item>6 orë</item>
+        <item>12 orë</item>
+        <item>24 orë</item>
+        <item>Kurrë</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>5</item>
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>-1</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Nuk sinkronizohet çdo SMS </item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages">
+        <item>100</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>25000</item>
+        <item>-1</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 orë</item>
+        <item>3 orë</item>
+        <item>6 orë</item>
+        <item>12 orë</item>
+        <item>24 orë</item>
+        <item>Kurrë</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_values">
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="pref_minimum_sync_chars_titles">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+    <string-array name="pref_minimum_sync_chars">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
+
+    <string name="pref_push_on_receive">Shty SMS-t në pritje</string>
+    <string name="pref_sync_wifi">Sinkronizuar në Wi-Fi</string>
+    <string name="pref_sync_4g">Sinkronizuar në 4G</string>
+    <string name="pref_sync_3g">Sinkronizuar në 3G</string>
+    <string name="pref_sync_gprs">Sinkronizuar në 2.5G (GPRS)</string>
+    <string name="pref_sync_2g">Sinkronizuar në 2G</string>
+    <string name="pref_sync_others">Sinkronizuar në mënyra të tjera</string>
+    <string name="title_activity_login">Hyni</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Hyrje</string>
+    <string name="prompt_password">Fjalëkalim</string>
+    <string name="action_sign_in">Hyni ose regjistrohuni</string>
+    <string name="action_sign_in_short">Hyni</string>
+    <string name="error_invalid_login">Hyni ose fjalëkalim pasakt!</string>
+    <string name="error_invalid_password">Ky fjalëkalim është shumë i shkurtër</string>
+    <string name="error_field_required">Kjo fushë është e detyrueshme</string>
+    <string name="prompt_serverURI">Adresë serveri</string>
+    <string name="error_invalid_server_address">Adresë serveri e pavlefshme</string>
+    <string name="error_connection_failed">Lidhja dështoi, sigurohuni që është serveri i duhur</string>
+    <string name="error_http_connection_failed">E pamundur të kryhet një lidhje HTTP. Ju lutemi sigurohuni që nuk është një web server</string>
+
+    <string-array name="protocol_array">
+        <item>https://</item>
+        <item>http://</item>
+    </string-array>
+
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">Na vleresoni!</string>
+    <string name="ma_title_add_account">Shtoni një llogari</string>
+    <string name="ma_title_welcome">Mirëseerdhët</string>
+    <string name="ma_content_welcome">Mirë se vini në aplikimin e  Nextcloud SMS . Kjo kërkesë ju lejon të sinkronizoni SMS-t tuaj në instancën  tuaj të Nextcloud duke përdorur aplikacionin SMS</string>
+    <string name="ma_title_remote_account">Llogari në largësi</string>
+    <string name="choose_account">Zgjidhni llogari</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Përzgjidhni llogari</string>
+    <string name="title_activity_select_contact">Zgjidhi llogari</string>
+    <string name="no_account_configured">Nuk ka llogari të konfiguruar.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">Proces sinkronizimi</string>
+    <string name="sync_inprogress">Sinkronizimi në progres ...</string>
+    <string name="fatal_error">Gabim fatal !</string>
+
+    <!-- Errors -->
+    <string name="err_sync_get_smslist">Gabim # 1: Të dhënat e pavlefshme janë marrë nga serveri kur janë marrë mesazht ee mëparshme</string>
+    <string name="err_sync_craft_http_request">Gabim # 2: Gabim gjatë përpilimin të kërkesës HTTP</string>
+    <string name="err_sync_push_request">Gabim # 3: Kërkesa shtyrjë  e dështuar</string>
+    <string name="err_sync_push_request_resp">Gabim # 4: Të dhëna të pavlefshme marrë nga serveri kur u shtyn të dhënave</string>
+    <string name="err_sync_create_json_null_smslist">Lista NULL SMS</string>
+    <string name="contactinfos_title">Informacioni i kontaktit</string>
+    <string name="subtitle_contact_phones">- Kontaktet e telefonave</string>
+    <string name="pref_title_bulk_messages">Maksimumi i Mesazheve për të dërguar në sinkronizim</string>
+    <string name="cancel">Anuloje</string>
+    </resources>

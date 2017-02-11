@@ -223,6 +223,8 @@
 
     <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
     <string name="communicate">Komunikovat</string>
+    <string name="navigation_drawer_open">Otevřít navigační panel</string>
+    <string name="navigation_drawer_close">Zavřít navigační panel</string>
     <string name="ma_title_my_accounts">Moje účty</string>
     <string name="ma_content_swipeaction">Pro otevření menu akcí přejeďte prstem zleva doprava.</string>
     <string name="cancel">Zrušit</string>
