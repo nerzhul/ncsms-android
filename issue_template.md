@@ -17,11 +17,11 @@ Tell us what happens instead
 
 ### Server configuration
 
-**ownCloud version:** 
+**Nextcloud version:** 
 
 **PHP version:**
 
-**HTTPd server:**
+**Webserver:**
 
 **HTTPS:**
 
@@ -31,10 +31,15 @@ Tell us what happens instead
 
 **Phone:**
 
-**ownCloud SMS app version:**
+**Nextcloud SMS app version:**
 
 ### Logs
 
 ```
 Insert your log here
 ```
+
+## Screenshots
+<!--
+Upload your screenshots here if any
+--> 
