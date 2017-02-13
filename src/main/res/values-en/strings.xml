@@ -28,25 +28,25 @@
 <resources>
     <!-- Translation version, reference for translators -->
 	<string name="translation_version">7</string>
-	
+
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">Fast Sync</string>
     <string name="pref_title_sync_frequency">Fast Sync frequency</string>
     <string name="pref_title_slow_sync">Secure Slow Sync</string>
     <string name="pref_title_slow_sync_frequency">Secure Slow Sync frequency</string>
-    
+
     <string name="action_settings">Settings</string>
     <string name="sync_now">Synchronize now</string>
     <string name="pref_category_sync">Synchronization</string>
 
-	<string name="title_global_pref_to_general_prefs">General preferences</string>
-	<string name="summary_global_pref_to_general_prefs">Sync options</string>
-	<string name="summary_notif_prefs">Notifications</string>
-	
+    <string name="title_global_pref_to_general_prefs">General preferences</string>
+    <string name="summary_global_pref_to_general_prefs">Sync options</string>
+    <string name="summary_notif_prefs">Notifications</string>
+
     <string name="pref_header_data_sync">Data &amp; sync</string>
 
-	<string name="title_activity_general_settings">General Settings</string>
+    <string name="title_activity_general_settings">General Settings</string>
 
     <string-array name="pref_sync_frequency_titles">
         <item>5 minutes</item>
@@ -59,18 +59,7 @@
         <item>24 hours</item>
         <item>Never</item>
     </string-array>
-    <string-array name="pref_sync_frequency_values">
-        <item>5</item>
-        <item>15</item>
-        <item>30</item>
-        <item>60</item>
-        <item>180</item>
-        <item>360</item>
-        <item>720</item>
-        <item>1440</item>
-        <item>-1</item>
-    </string-array>
-    
+
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 minute</item>
         <item>1 hour</item>
@@ -80,17 +69,7 @@
         <item>24 hours</item>
         <item>Never</item>
     </string-array>
-    
-    <string-array name="pref_slow_sync_frequency_values">
-        <item>1</item>
-        <item>60</item>
-        <item>180</item>
-        <item>360</item>
-        <item>720</item>
-        <item>1440</item>
-        <item>-1</item>
-    </string-array>
-    
+
     <string name="pref_push_on_receive">Push SMS on reception</string>
     <string name="pref_sync_wifi">Synchronize in Wi-Fi</string>
     <string name="pref_sync_4g">Synchronize in 4G</string>
@@ -98,7 +77,7 @@
     <string name="pref_sync_gprs">Synchronize in 2.5G (GPRS)</string>
     <string name="pref_sync_2g">Synchronize in 2G</string>
     <string name="pref_sync_others">Synchronize in other modes</string>
-    
+
     <string name="title_activity_login">Sign in</string>
 
     <!-- Login -->
@@ -113,12 +92,7 @@
     <string name="error_invalid_server_address">Invalid server address</string>
     <string name="error_connection_failed">Connection failed, ensure this is the right server</string>
     <string name="error_http_connection_failed">Unable to perform a HTTP connection. Please ensure there is a web server</string>
-    
-    <string-array name="protocol_array">
-    	<item>https://</item>
-        <item>http://</item>
-    </string-array>
-    
+
     <!-- Main activity -->
     <string name="ma_title_rate_us">Rate us !</string>
     <string name="ma_title_add_account">Add an account</string>
@@ -129,7 +103,7 @@
     <string name="sync_title">Sync process</string>
     <string name="sync_inprogress">Sync in progress...</string>
     <string name="fatal_error">Fatal error ! </string>
-    
+
     <!-- Errors -->
     <string name="err_sync_get_smslist">Error #1: Invalid data received from server when getting previous messages</string>
     <string name="err_sync_craft_http_request">Error #2: Error while crafting HTTP request</string>

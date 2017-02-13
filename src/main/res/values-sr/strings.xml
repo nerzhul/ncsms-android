@@ -67,7 +67,7 @@
         <item>24 сата</item>
         <item>Никад</item>
     </string-array>
-    
+
     <string name="pref_sync_wifi">Синх. преко бежичног</string>
     <string name="pref_sync_4g">Синх. преко 4G</string>
     <string name="pref_sync_3g">Синх. преко 3G</string>
