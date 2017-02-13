@@ -26,18 +26,13 @@
  */
 -->
 <resources
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingTranslation">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Translation version, reference for translators -->
     <string name="translation_version">7</string>
 
     <!-- System strings, do not translate -->
     <string name="app_name">Nextcloud SMS</string>
-    <string name="account_type">fr.unix_experience.owncloud_sms</string>
-    <string name="account_authority">fr.unix_experience.owncloud_sms.datasync.provider</string>
-    <string name="slowsync_account_authority">fr.unix_experience.owncloud_sms.datasync.slowsync_provider</string>
-    <string name="target_package">fr.unix_experience.owncloud_sms</string>
     <string name="login_logo">Logo do Login</string>
 
     <string name="pref_lastmsgdate">last_message_date</string>
@@ -68,17 +63,6 @@
         <item>24 horas</item>
         <item>Nunca</item>
     </string-array>
-    <string-array name="pref_sync_frequency_values">
-        <item>5</item>
-        <item>15</item>
-        <item>30</item>
-        <item>60</item>
-        <item>180</item>
-        <item>360</item>
-        <item>720</item>
-        <item>1440</item>
-        <item>-1</item>
-    </string-array>
     <string-array name="pref_sync_bulk_max_messages_titles">
         <item>100 SMS</item>
         <item>1000 SMS</item>
@@ -88,15 +72,6 @@
         <item>25000 SMS</item>
         <item>Cada SMS não sincronizado</item>
     </string-array>
-    <string-array name="pref_sync_bulk_max_messages">
-        <item>100</item>
-        <item>1000</item>
-        <item>2000</item>
-        <item>5000</item>
-        <item>10000</item>
-        <item>25000</item>
-        <item>-1</item>
-    </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 hora</item>
         <item>3 horas</item>
@@ -104,51 +79,6 @@
         <item>12 horas</item>
         <item>24 horas</item>
         <item>Nunca</item>
-    </string-array>
-    <string-array name="pref_slow_sync_frequency_values">
-        <item>60</item>
-        <item>180</item>
-        <item>360</item>
-        <item>720</item>
-        <item>1440</item>
-        <item>-1</item>
-    </string-array>
-
-    <string-array name="pref_minimum_sync_chars_titles">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-    </string-array>
-    <string-array name="pref_minimum_sync_chars">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
     </string-array>
 
     <string name="pref_push_on_receive">Empurrar SMS na recepção</string>
@@ -172,11 +102,6 @@
     <string name="error_invalid_server_address">Endereço do servidor inválido</string>
     <string name="error_connection_failed">A conexão falhou, certifique-se de que este é o servidor certo</string>
     <string name="error_http_connection_failed">Não é possível executar uma conexão HTTP. Certifique-se de que existe um servidor web</string>
-
-    <string-array name="protocol_array">
-        <item>https://</item>
-        <item>http://</item>
-    </string-array>
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">Nos classifique!</string>

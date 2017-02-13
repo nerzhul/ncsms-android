@@ -34,10 +34,10 @@
 
     <!-- System strings, do not translate -->
     <string name="app_name">Nextcloud SMS</string>
-    <string name="account_type">fr.unix_experience.owncloud_sms</string>
-    <string name="account_authority">fr.unix_experience.owncloud_sms.datasync.provider</string>
-    <string name="slowsync_account_authority">fr.unix_experience.owncloud_sms.datasync.slowsync_provider</string>
-    <string name="target_package">fr.unix_experience.owncloud_sms</string>
+    <string name="account_type" translatable="false">fr.unix_experience.owncloud_sms</string>
+    <string name="account_authority" translatable="false">fr.unix_experience.owncloud_sms.datasync.provider</string>
+    <string name="slowsync_account_authority" translatable="false">fr.unix_experience.owncloud_sms.datasync.slowsync_provider</string>
+    <string name="target_package" translatable="false">fr.unix_experience.owncloud_sms</string>
     <string name="login_logo">Login logo</string>
 
     <!-- System strings: preferences -->
@@ -70,7 +70,7 @@
         <item>24 hours</item>
         <item>Never</item>
     </string-array>
-    <string-array name="pref_sync_frequency_values">
+    <string-array name="pref_sync_frequency_values" translatable="false">
         <item>5</item>
         <item>15</item>
         <item>30</item>
@@ -90,7 +90,7 @@
         <item>25000 SMS</item>
         <item>Every SMS not synced</item>
     </string-array>
-    <string-array name="pref_sync_bulk_max_messages">
+    <string-array name="pref_sync_bulk_max_messages" translatable="false">
         <item>100</item>
         <item>1000</item>
         <item>2000</item>
@@ -107,7 +107,7 @@
         <item>24 hours</item>
         <item>Never</item>
     </string-array>
-    <string-array name="pref_slow_sync_frequency_values">
+    <string-array name="pref_slow_sync_frequency_values" translatable="false">
         <item>60</item>
         <item>180</item>
         <item>360</item>
@@ -116,7 +116,7 @@
         <item>-1</item>
     </string-array>
 
-    <string-array name="pref_minimum_sync_chars_titles">
+    <string-array name="pref_minimum_sync_chars_titles" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
@@ -134,7 +134,7 @@
         <item>14</item>
         <item>15</item>
     </string-array>
-    <string-array name="pref_minimum_sync_chars">
+    <string-array name="pref_minimum_sync_chars" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
@@ -175,7 +175,7 @@
     <string name="error_connection_failed">Connection failed, ensure this is the right server</string>
     <string name="error_http_connection_failed">Unable to perform a HTTP connection. Please ensure there is a web server</string>
 
-    <string-array name="protocol_array">
+    <string-array name="protocol_array" translatable="false">
         <item>https://</item>
         <item>http://</item>
     </string-array>
