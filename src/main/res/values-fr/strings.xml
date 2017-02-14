@@ -26,7 +26,8 @@
  */
 -->
 <resources
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
 
     <!-- Translation version, reference for translators -->
     <string name="translation_version">7</string>
@@ -80,7 +81,6 @@
         <item>24 heures</item>
         <item>Jamais</item>
     </string-array>
-
     <string name="pref_push_on_receive">Pousser le SMS à la réception</string>
     <string name="pref_sync_wifi">Synchroniser en Wi-Fi</string>
     <string name="pref_sync_4g">Synchroniser en 4G</string>

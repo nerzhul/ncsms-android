@@ -28,7 +28,7 @@
 <resources>
     <!-- Translation version, reference for translators -->
 	<string name="gp_translation_version">3</string>
-	
+
 	<!-- Translations must begin here -->
     <string name="gp_short_description">O Nextcloud SMS sincroniza seus SMS locais em sua instância do Nextcloud</string>
     <string name="gp_description">

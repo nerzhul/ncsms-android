@@ -28,7 +28,7 @@
 <resources>
     <!-- Translation version, reference for translators -->
 	<string name="gp_translation_version">3</string>
-	
+
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS menyinkronkan SMS lokal anda ke Nextcloud anda</string>
     <string name="gp_description">

@@ -26,7 +26,8 @@
  */
 -->
 <resources
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
 
     <!-- Translation version, reference for translators -->
     <string name="translation_version">8</string>
@@ -80,7 +81,6 @@
         <item>24 timmar</item>
         <item>Aldrig</item>
     </string-array>
-
     <string name="pref_push_on_receive">Synkronisera med Push vid mottagande</string>
     <string name="pref_sync_wifi">Synkronisera med Wi-Fi</string>
     <string name="pref_sync_4g">Synkronisera med 4G</string>
