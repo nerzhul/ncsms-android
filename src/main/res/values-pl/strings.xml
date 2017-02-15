@@ -34,7 +34,7 @@
 
     <!-- System strings, do not translate -->
     <string name="app_name">Nextcloud SMS</string>
-    <string name="login_logo">Logo loginu</string>
+    <string name="login_logo">Logo użytkownika</string>
 
     <string name="pref_lastmsgdate">last_message_date</string>
 
@@ -42,8 +42,8 @@
     <!-- Preferences -->
     <string name="pref_title_sync">SMS - Szybki</string>
     <string name="pref_title_sync_frequency">Częstotliwość szybkiej synchronizacji</string>
-    <string name="pref_title_slow_sync">SMS - Powolny i bezpieczny</string>
-    <string name="pref_title_slow_sync_frequency">Częstotliwość bezpiecznej powolnej synchronizacji</string>
+    <string name="pref_title_slow_sync">SMS - Wolny i bezpieczny</string>
+    <string name="pref_title_slow_sync_frequency">Częstotliwość bezpiecznej wolnej synchronizacji</string>
     <string name="action_settings">Ustawienia</string>
     <string name="sync_now">Synchronizuj teraz</string>
     <string name="pref_category_sync">Synchronizacja</string>
@@ -51,7 +51,7 @@
     <string name="summary_global_pref_to_general_prefs">Opcje synchronizacji</string>
     <string name="summary_notif_prefs">Powiadomienia</string>
     <string name="pref_header_data_sync">Dane &amp; synchronizacja</string>
-    <string name="title_activity_general_settings">Ogólne ustawienia</string>
+    <string name="title_activity_general_settings">Ustawienia ogólne</string>
 
     <string-array name="pref_sync_frequency_titles">
         <item>5 minut</item>
@@ -65,12 +65,12 @@
         <item>Nigdy</item>
     </string-array>
     <string-array name="pref_sync_bulk_max_messages_titles">
-        <item>100 SMSów</item>
-        <item>1000 SMSów</item>
-        <item>2000 SMSów</item>
-        <item>5000 SMSów</item>
-        <item>10000 SMSów</item>
-        <item>25000 SMSów</item>
+        <item>100 SMS-ów</item>
+        <item>1000 SMS-ów</item>
+        <item>2000 SMS-ów</item>
+        <item>5000 SMS-ów</item>
+        <item>10000 SMS-ów</item>
+        <item>25000 SMS-ów</item>
         <item>Żaden SMS się nie zsynchronizował</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
@@ -91,17 +91,17 @@
     <string name="title_activity_login">Zaloguj się</string>
 
     <!-- Login -->
-    <string name="prompt_login">Login</string>
+    <string name="prompt_login">Użytkownik</string>
     <string name="prompt_password">Hasło</string>
     <string name="action_sign_in">Zaloguj lub zarejestruj się</string>
     <string name="action_sign_in_short">Zaloguj się</string>
-    <string name="error_invalid_login">Niepoprawny login lub hasło</string>
+    <string name="error_invalid_login">Niepoprawny użytkownik lub hasło</string>
     <string name="error_invalid_password">To hasło jest za krótkie</string>
     <string name="error_field_required">To pole jest wymagane</string>
     <string name="prompt_serverURI">Adres serwera</string>
     <string name="error_invalid_server_address">Błędny adres serwera</string>
     <string name="error_connection_failed">Połączenie nie udało się, upewnij się, że to właściwy serwer</string>
-    <string name="error_http_connection_failed">Nie można zestawić połączenia HTTP. Proszę upewnić się, że jest tam serwer webowy</string>
+    <string name="error_http_connection_failed">Nie można zestawić połączenia HTTP. Proszę upewnić się, że jest tam serwer web.</string>
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">Oceń nas!</string>
@@ -130,7 +130,7 @@
     <string name="err_sync_create_json_put_smslist">Błąd #6: Błąd podczas tworzenia żądania wysłania w trybie push</string>
     <string name="err_sync_create_json_request_encoding">Błąd #7: Niewspierane kodowanie podczas generowania żądania</string>
     <string name="err_sync_auth_failed">Błąd #8: Uwierzytelnienie nie powiodło się</string>
-    <string name="err_sync_http_request_returncode_unhandled">Błąd #9: Serwer ustawił nieobsługiwany kod powrotu HTTP</string>
+    <string name="err_sync_http_request_returncode_unhandled">Błąd #9: Serwer ustawił nieobsługiwany kod zwrotny HTTP</string>
     <string name="err_sync_http_request_connect">Błąd #11: Nie udało się zestawić połączenia z instancją Nextcloud</string>
     <string name="err_sync_http_request_httpexception">Błąd #12: Nie udało się zestawić połączenia z instancją Nextcloud</string>
     <string name="err_sync_http_request_ioexception">Błąd #13: Nie udało się zestawić połączenia z instancją Nextcloud</string>
@@ -160,21 +160,21 @@
     <string name="notif_permission_required">Wymagane uprawnienia</string>
     <string name="notif_permission_required_content">Brakuje jakichś uprawnień aby wykonać synchronizację. Proszę naprawić to w ustawieniach aplikacji</string>
     <string name="please_fix_it">Proszę to naprawić.</string>
-    <string name="err_cannot_read_contacts">Nie możemy odczytać Twoich kontaktów.</string>
-    <string name="err_cannot_read_sms">Nie możemy odczytać twoich SMSów.</string>
+    <string name="err_cannot_read_contacts">Nie możemy odczytać twoich kontaktów.</string>
+    <string name="err_cannot_read_sms">Nie możemy odczytać twoich SMS-ów.</string>
     <string name="action_appinfo_perms">Informacje o aplikacji i uprawnienia</string>
     <string name="restore_all_messages">Przywróć wszystkie wiadomości</string>
     <string name="account_actions">Działania konta</string>
-    <string name="error_connection_failed_not_found">Połączenie nie udane. Serwer zwraca 404 NIE ZNALEZIONO. Upewnij się, że ustawiona jest prawidłowa ścieżka do twojej instancji Nextcloud.</string>
-    <string name="nothing_to_sync">Nie ma czegokolwiek do synchronizacji.</string>
+    <string name="error_connection_failed_not_found">Połączenie nie udane. Serwer zwraca błąd \"404 NOT FOUND\". Upewnij się, że ustawiona jest prawidłowa ścieżka do twojej instancji Nextclouda.</string>
+    <string name="nothing_to_sync">Nie ma nic do synchronizacji.</string>
     <string name="feature_not_already_implemented">Ta funkcjonalność nie jest jeszcze zaimplementowana ale będzie dostępna niedługo.</string>
     <string name="pref_title_minimum_sync_chars">Minimalna długość numeru telefonu</string>
     <string name="err_didnt_find_account_restore">Nie udało nam się odnaleźć twojego konta aby odzyskać Twoje wiadomości. To bardzo dziwna sytuacja.</string>
-    <string name="launch_restore">Przywróć moje SMSy</string>
-    <string name="error_make_default_sms_app">Ustaw tę aplikację jako domyślną aplikację do obsługi SMSów aby zezwolić na odtworzenie twoich SMSów. To ograniczenie zostało wprowadzone w Androidzie 4.4. </string>
+    <string name="launch_restore">Przywróć moje SMS-y</string>
+    <string name="error_make_default_sms_app">Ustaw tę aplikację jako domyślną do obsługi SMS-ów, aby zezwolić na odtworzenie twoich wiadomości. To ograniczenie zostało wprowadzone w Androidzie 4.4. </string>
     <string name="fix_permissions">Napraw uprawnienia</string>
     <string name="err_kitkat_required">Android w wersji 4.4 lub wyższej jest wymagany do obsługi tej funkcjonalności.</string>
-    <string name="restore_finished">Przywracanie SMSów zostało zakończone.</string>
+    <string name="restore_finished">Przywracanie SMS-ów zostało zakończone.</string>
     <string name="x_messages_restored">przywróconych wiadomości&#8230;</string>
     <string name="err_no_connection">Brak dostępnego połączenia. Proszę się upewnić że masz odpowiednie połączenie dla danych.</string>
 </resources>
