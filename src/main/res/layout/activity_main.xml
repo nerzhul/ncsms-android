@@ -34,9 +34,13 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <include
+            layout="@layout/toolbar" />
 
         <TextView
             android:id="@+id/main_title_welcome"

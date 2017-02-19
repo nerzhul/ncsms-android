@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
- /*
- * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+/*
+ * Copyright (c) 2017,Andy Scherzinger
  * All rights reserved.
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -24,15 +25,28 @@
  * SUCH DAMAGE.
  */
 -->
+<android.support.design.widget.AppBarLayout
+    android:id="@+id/appbar"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-<resources>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_scrollFlags="scroll|enterAlways|snap"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
-    <style name="OcSmsTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/oc_primary</item>
-        <item name="colorPrimaryDark">@color/oc_primary_dark</item>
-    </style>
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
 
-    <!-- separate style for Drawer activities needed for v21+ theming -->
-    <style name="Theme.ownCloud.Toolbar.Drawer" parent="OcSmsTheme">
-    </style>
-</resources>
+</android.support.design.widget.AppBarLayout>

@@ -27,7 +27,7 @@
 
 <resources>
 
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/oc_primary_dark</item>
         <item name="colorPrimary">@color/oc_primary</item>
     </style>

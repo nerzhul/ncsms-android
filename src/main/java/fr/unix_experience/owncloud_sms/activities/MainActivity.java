@@ -38,6 +38,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
@@ -62,6 +63,9 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
     private ConnectivityMonitor _ConnectivityMonitor = null;
+
+    private DrawerLayout drawer;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
         if (_ConnectivityMonitor == null) {
@@ -72,29 +76,85 @@ public class MainActivity extends AppCompatActivity
 
         super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        setupToolbar();
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        setupDrawer();
+        drawer.openDrawer(GravityCompat.START);
+	}
+
+    protected void setupToolbar() {
+        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+    }
+
+    private void setupDrawer() {
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, null, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         assert drawer != null;
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+        toggle.setDrawerIndicatorEnabled(true);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         assert navigationView != null;
         navigationView.setNavigationItemSelectedListener(this);
+    }
 
-        drawer.openDrawer(GravityCompat.START);
-	}
+    /**
+     * checks if the drawer exists and is opened.
+     *
+     * @return <code>true</code> if the drawer is open, else <code>false</code>
+     */
+    public boolean isDrawerOpen() {
+        return drawer != null && drawer.isDrawerOpen(GravityCompat.START);
+    }
+
+    /**
+     * closes the drawer.
+     */
+    public void closeDrawer() {
+        if (drawer != null) {
+            drawer.closeDrawer(GravityCompat.START);
+        }
+    }
+
+    /**
+     * opens the drawer.
+     */
+    public void openDrawer() {
+        if (drawer != null) {
+            drawer.openDrawer(GravityCompat.START);
+        }
+    }
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        assert drawer != null;
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
+        if (isDrawerOpen()) {
+            closeDrawer();
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        boolean retval = true;
+        switch (item.getItemId()) {
+            case android.R.id.home: {
+                if (isDrawerOpen()) {
+                    closeDrawer();
+                } else {
+                    openDrawer();
+                }
+                break;
+            }
+            default:
+                retval = super.onOptionsItemSelected(item);
+        }
+        return retval;
     }
 
     @Override
@@ -110,9 +170,7 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_my_accounts: res = openMyAccounts(); break;
             case R.id.nav_appinfo_perms: res = openAppInfos(); break;
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        assert drawer != null;
-        drawer.closeDrawer(GravityCompat.START);
+        closeDrawer();
         return res;
     }
 
