@@ -24,7 +24,10 @@ import android.content.ContentResolver;
 import android.content.PeriodicSync;
 import android.os.Bundle;
 import android.preference.ListPreference;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
+import android.view.MenuItem;
 
 import java.util.List;
 
@@ -42,6 +45,28 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
     private static AccountManager _accountMgr;
     private static String _accountAuthority;
     private static String _accountType;
+
+    private AppCompatDelegate mDelegate;
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+    }
+
+    private AppCompatDelegate getDelegate() {
+        if (mDelegate == null) {
+            mDelegate = AppCompatDelegate.create(this, null);
+        }
+        return mDelegate;
+    }
+
+    public ActionBar getSupportActionBar() {
+        return getDelegate().getSupportActionBar();
+    }
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -135,4 +160,18 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
             prefs.putInteger(key, Integer.parseInt(value));
         }
 	}
+
+    @Override
+    public boolean onMenuItemSelected(int featureId, MenuItem item) {
+        super.onMenuItemSelected(featureId, item);
+
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                break;
+            default:
+                return false;
+        }
+        return true;
+    }
 }

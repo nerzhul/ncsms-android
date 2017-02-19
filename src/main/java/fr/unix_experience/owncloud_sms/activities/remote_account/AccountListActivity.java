@@ -3,13 +3,15 @@ package fr.unix_experience.owncloud_sms.activities.remote_account;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import fr.unix_experience.owncloud_sms.adapters.AndroidAccountAdapter;
 import fr.unix_experience.android_lib.AppCompatListActivity;
 import fr.unix_experience.owncloud_sms.R;
+import fr.unix_experience.owncloud_sms.adapters.AndroidAccountAdapter;
 
 public class AccountListActivity extends AppCompatListActivity {
 
@@ -20,6 +22,10 @@ public class AccountListActivity extends AppCompatListActivity {
 		AccountManager _accountMgr = AccountManager.get(getBaseContext());
 
 		setContentView(R.layout.restore_activity_accountlist);
+
+		setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+		getSupportActionBar().setHomeButtonEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         ArrayList<Account> itemList = new ArrayList<>();
 
@@ -35,7 +41,19 @@ public class AccountListActivity extends AppCompatListActivity {
         Collections.addAll(itemList, accountList);
 
 		adapter.notifyDataSetChanged();
+	}
 
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+
+		switch (item.getItemId()) {
+			case android.R.id.home:
+				onBackPressed();
+				break;
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+		return true;
 	}
 }
 

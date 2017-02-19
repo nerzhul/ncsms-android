@@ -2,4 +2,5 @@
 <resources>
     <color name="oc_primary">#0082C9</color>
     <color name="oc_primary_dark">#006AA3</color>
+    <color name="oc_accent">#007CC2</color>
 </resources>
