@@ -7,7 +7,7 @@
         <item name="colorPrimary">@color/oc_primary</item>
     </style>
 
-    <style name="OcSmsTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="OcSmsTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/oc_primary</item>
         <item name="colorPrimaryDark">@color/oc_primary_dark</item>
         <item name="android:navigationBarColor">@color/oc_primary</item>
