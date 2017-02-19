@@ -35,9 +35,10 @@
     tools:openDrawer="start"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <include
             layout="@layout/toolbar" />
@@ -48,35 +49,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ma_title_welcome"
-            android:gravity="top"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
             android:id="@+id/main_tv_welcome"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
+            android:paddingBottom="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="top"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/main_title_welcome"
             android:text="@string/ma_content_welcome"
             android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <TextView
-            android:id="@+id/main_tv_swipe"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="top"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/main_tv_welcome"
-            android:text="@string/ma_content_swipeaction"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-    </RelativeLayout>
+    </LinearLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
