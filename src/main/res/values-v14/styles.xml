@@ -27,7 +27,7 @@
 
 <resources>
 
-    <style name="OcSmsTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="OcSmsTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/oc_primary</item>
         <item name="colorPrimaryDark">@color/oc_primary_dark</item>
         <item name="colorAccent">@color/oc_accent</item>
@@ -35,5 +35,9 @@
 
     <!-- separate style for Drawer activities needed for v21+ theming -->
     <style name="Theme.ownCloud.Toolbar.Drawer" parent="Theme.AppCompat.Light.NoActionBar">
+    </style>
+
+    <!-- separate style for Drawer activities needed for v21+ theming -->
+    <style name="Theme.ownCloud.Toolbar.Drawer" parent="OcSmsTheme">
     </style>
 </resources>
