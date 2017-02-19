@@ -3,4 +3,6 @@
     <color name="oc_primary">#0082C9</color>
     <color name="oc_primary_dark">#006AA3</color>
     <color name="oc_accent">#007CC2</color>
+    <color name="oc_login_hint">#7fC0E3</color>
+    <color name="oc_white">#ffffff</color>
 </resources>

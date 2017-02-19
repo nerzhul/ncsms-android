@@ -124,7 +124,8 @@
 
         <activity
             android:name=".activities.LoginActivity"
-            android:label="@string/title_activity_login">
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppBaseTheme.Login">
         </activity>
         <activity
             android:name=".activities.remote_account.AccountListActivity"
@@ -132,12 +133,12 @@
         </activity>
         <activity
             android:name=".activities.OCSMSSettingsActivity"
-            android:label="@string/title_activity_general_settings"
-            android:theme="@style/AppBaseTheme.Actionbar">
+            android:label="@string/title_activity_general_settings">
         </activity>
         <activity
             android:name=".activities.MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:theme="@style/OcSmsTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

@@ -84,6 +84,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/prompt_serverURI"
+                        android:textColor="@color/oc_white"
                         android:inputType="textUri" >
                         <requestFocus />
                     </EditText>
@@ -99,6 +100,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_login"
+                    android:textColor="@color/oc_white"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:singleLine="true" />
@@ -117,6 +119,7 @@
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
+                    android:textColor="@color/oc_white"
                     android:singleLine="true" />
            </android.support.design.widget.TextInputLayout>
 
