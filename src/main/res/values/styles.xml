@@ -27,7 +27,13 @@
 
 <resources>
 
-    <style name="AppBaseTheme.NoActionbar" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppBaseTheme.Actionbar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimaryDark">@color/oc_primary_dark</item>
+        <item name="colorPrimary">@color/oc_primary</item>
+        <item name="colorAccent">@color/oc_accent</item>
+    </style>
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/oc_primary_dark</item>
         <item name="colorPrimary">@color/oc_primary</item>
         <item name="colorAccent">@color/oc_accent</item>

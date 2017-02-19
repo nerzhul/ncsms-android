@@ -3,6 +3,7 @@ package fr.unix_experience.owncloud_sms.activities.remote_account;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class AccountListActivity extends AppCompatListActivity {
 
 		setContentView(R.layout.restore_activity_accountlist);
 
+		setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 		getSupportActionBar().setHomeButtonEnabled(true);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

@@ -133,7 +133,8 @@
         </activity>
         <activity
             android:name=".activities.OCSMSSettingsActivity"
-            android:label="@string/title_activity_general_settings">
+            android:label="@string/title_activity_general_settings"
+            android:theme="@style/AppBaseTheme.Actionbar">
         </activity>
         <activity
             android:name=".activities.MainActivity"
