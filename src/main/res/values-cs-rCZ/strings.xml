@@ -142,12 +142,15 @@
     <string name="err_fetch_phonelist">Ze serveru obdržen neplatný telefonní seznam.</string>
     <string name="err_proto_v2">Server nepodporuje tuto funkci. Ujistěte se, že serverová verze je minimálně 1.6.</string>
     <string name="contactinfos_title">Kontaktní informace</string>
+    <string name="subtitle_contact_phones">Kontaktní telefony</string>
     <string name="pref_title_bulk_messages">Maximální počet odeslaných zpráv pro jednu synchronizaci.</string>
     <string name="contactinfos_list">Kontakty</string>
     <string name="function_not_available">Tato funkce ještě není dostupná</string>
 
     <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
     <string name="communicate">Komunikovat</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
     <string name="navigation_drawer_open">Otevřít navigační panel</string>
     <string name="navigation_drawer_close">Zavřít navigační panel</string>
     <string name="ma_title_my_accounts">Moje účty</string>
