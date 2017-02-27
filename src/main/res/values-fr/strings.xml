@@ -104,7 +104,7 @@
     <string name="error_http_connection_failed">Impossible d\'effectuer la connexion HTTP. Assurez vous qu\'il s\'agit d\'un serveur HTTP</string>
 
     <!-- Main activity -->
-    <string name="ma_title_rate_us">Notez nous !</string>
+    <string name="ma_title_rate_us">Evaluez nous !</string>
     <string name="ma_title_add_account">Ajouter un compte</string>
     <string name="ma_title_welcome">Bienvenue</string>
     <string name="ma_content_welcome">Bienvenue sur l\'application Nextcloud SMS. Cette application vous permet de synchroniser vos messages SMS sur votre serveur Nextcloud.</string>

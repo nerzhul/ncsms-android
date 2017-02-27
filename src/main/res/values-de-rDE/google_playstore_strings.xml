@@ -34,8 +34,7 @@
     <string name="gp_description">
 Die Nextcloud SMS-App synchronisiert Ihre SMS-Nachrichten mit einer Nextcloud-Instanz und erlaubt es ihnen, die SMS dort zu lesen.
 
-In kommenden Versionen soll auch den SMS-Versand von der Nextcloud-Instanz aus möglich sein.
-Auf diese Weise werden Sie von überall in der Welt SMS versenden können, solange Ihr Android-Smartphone GSM- und Datenempfang hat.
+In kommenden Versionen soll auch der SMS-Versand aus Nextcloud heraus ermöglicht werden.
 
 Die App ist vollständig kompatibel mit Android 4.0 bis 6.0
 	</string>

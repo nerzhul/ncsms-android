@@ -71,7 +71,7 @@
         <item>5000 SMS</item>
         <item>10000 SMS</item>
         <item>25000 SMS</item>
-        <item>Alle SMS wurde noch nicht synchronisiert</item>
+        <item>Noch nicht alle SMS synchronisiert</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 Stunde</item>
@@ -88,14 +88,14 @@
     <string name="pref_sync_gprs">Synchronisiere über GPRS</string>
     <string name="pref_sync_2g">Synchronisiere über GSM</string>
     <string name="pref_sync_others">Synchronisiere über anderen Modus</string>
-    <string name="title_activity_login">Einloggen</string>
+    <string name="title_activity_login">Anmelden</string>
 
     <!-- Login -->
     <string name="prompt_login">Login</string>
     <string name="prompt_password">Passwort</string>
-    <string name="action_sign_in">Einloggen oder Registrieren</string>
-    <string name="action_sign_in_short">Einloggen</string>
-    <string name="error_invalid_login">Falscher Benutzername oder Passwort</string>
+    <string name="action_sign_in">Anmelden oder Registrieren</string>
+    <string name="action_sign_in_short">Anmelden</string>
+    <string name="error_invalid_login">Benutzername oder Passwort falsch</string>
     <string name="error_invalid_password">Dieses Passwort ist zu kurz</string>
     <string name="error_field_required">Pflichtfeld</string>
     <string name="prompt_serverURI">Serveradresse</string>
