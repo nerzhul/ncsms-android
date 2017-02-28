@@ -134,6 +134,7 @@
     <string name="err_cannot_read_sms">Non possiamo leggere i tuoi SMS.</string>
     <string name="action_appinfo_perms">Informazioni applicazione e permessi</string>
     <string name="restore_all_messages">Ripristina tutti i messaggi</string>
+    <string name="account_actions">Azioni Account</string>
     <string name="nothing_to_sync">Non c\'è niente da sincronizzare.</string>
     <string name="feature_not_already_implemented">Questa funzionalità non è ancora implementata e sarà presto disponibile.</string>
     <string name="pref_title_minimum_sync_chars">Lunghezza minima del numero di telefono</string>
