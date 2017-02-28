@@ -36,8 +36,4 @@
     <!-- separate style for Drawer activities needed for v21+ theming -->
     <style name="Theme.ownCloud.Toolbar.Drawer" parent="Theme.AppCompat.Light.NoActionBar">
     </style>
-
-    <!-- separate style for Drawer activities needed for v21+ theming -->
-    <style name="Theme.ownCloud.Toolbar.Drawer" parent="OcSmsTheme">
-    </style>
 </resources>

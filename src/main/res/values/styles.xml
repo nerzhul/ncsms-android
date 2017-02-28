@@ -48,22 +48,7 @@
         <item name="colorPrimary">@color/oc_primary</item>
         <item name="colorAccent">@color/oc_accent</item>
     </style>
-
-    <style name="AppBaseTheme.Login" parent="AppBaseTheme">
-        <item name="android:windowBackground">@color/oc_primary</item>
-        <item name="colorControlNormal">@color/oc_login_hint</item>
-        <item name="colorControlActivated">@color/oc_white</item>
-        <item name="colorControlHighlight">@color/oc_login_hint</item>
-        <item name="colorAccent">@color/oc_login_hint</item>
-        <item name="android:textColorHint">@color/oc_login_hint</item>
-        <item name="android:textColor">@color/oc_white</item>
-    </style>
-
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimaryDark">@color/oc_primary_dark</item>
-        <item name="colorPrimary">@color/oc_primary</item>
-        <item name="colorAccent">@color/oc_accent</item>
-    </style>
+    
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
