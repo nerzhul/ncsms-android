@@ -73,8 +73,8 @@
 				    android:id="@+id/oc_protocol"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
-				    android:entries="@array/protocol_array">
-	            </Spinner>
+                    android:popupBackground="@color/oc_primary"
+				    android:entries="@array/protocol_array" />
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
