@@ -73,7 +73,7 @@
 				    android:id="@+id/oc_protocol"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
-                    android:popupBackground="@color/oc_primary"
+				    android:popupBackground="@color/oc_primary"
 				    android:entries="@array/protocol_array" />
 
                 <android.support.design.widget.TextInputLayout
