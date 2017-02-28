@@ -26,8 +26,10 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.Telephony;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -48,6 +50,9 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_restore_messages);
+
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
 
 		assert getIntent().getExtras() != null;
 
@@ -110,6 +115,19 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 			}
 		});
 	}
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        boolean retval = true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+            default:
+                retval = super.onOptionsItemSelected(item);
+        }
+        return retval;
+    }
 
 	private void initInterface() {
 		TextView tv_error = (TextView) findViewById(R.id.tv_error_default_smsapp);
