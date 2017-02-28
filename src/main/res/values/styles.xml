@@ -27,13 +27,27 @@
 
 <resources>
 
-    <style name="AppBaseTheme.NoActionbar" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimaryDark">@color/oc_primary_dark</item>
+    <style name="OcSmsTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/oc_primary</item>
+        <item name="colorPrimaryDark">@color/oc_primary_dark</item>
         <item name="colorAccent">@color/oc_accent</item>
     </style>
 
-    <style name="AppBaseTheme.Login" parent="AppBaseTheme">
+    <!-- separate style for Drawer activities needed for v21+ theming -->
+    <style name="OcSmsTheme.Drawer" parent="OcSmsTheme.NoActionBar">
+
+    </style>
+
+    <style name="OcSmsTheme.NoActionbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimaryDark">@color/oc_primary_dark</item>
+        <item name="colorPrimary">@color/oc_primary</item>
+        <item name="colorAccent">@color/oc_accent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionModeOverlay">true</item>
+    </style>
+
+    <style name="OcSmsTheme.Login" parent="OcSmsTheme">
         <item name="android:windowBackground">@color/oc_primary</item>
         <item name="colorControlNormal">@color/oc_login_hint</item>
         <item name="colorControlActivated">@color/oc_white</item>
@@ -43,17 +57,7 @@
         <item name="android:textColor">@color/oc_white</item>
     </style>
 
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimaryDark">@color/oc_primary_dark</item>
-        <item name="colorPrimary">@color/oc_primary</item>
-        <item name="colorAccent">@color/oc_accent</item>
-    </style>
-    
     <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    </style>
-
     <style name="StandardButton">
         <item name="android:background">@color/oc_primary</item>
         <item name="android:layout_marginTop">15dp</item>
