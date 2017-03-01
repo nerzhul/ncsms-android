@@ -110,18 +110,18 @@ public class LoginActivity extends AppCompatActivity {
 		mProgressView = findViewById(R.id.login_progress);
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		boolean retval = true;
-		switch (item.getItemId()) {
-			case android.R.id.home:
-				finish();
-				break;
-			default:
-				retval = super.onOptionsItemSelected(item);
-		}
-		return retval;
-	}
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        boolean retval = true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+            default:
+                retval = super.onOptionsItemSelected(item);
+        }
+        return retval;
+    }
 
 	/**
 	 * Attempts to sign in or register the account specified by the login form.

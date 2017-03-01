@@ -66,8 +66,8 @@ public class MainActivity extends AppCompatActivity
 
     private DrawerLayout drawer;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         if (_ConnectivityMonitor == null) {
             _ConnectivityMonitor = new ConnectivityMonitor(getApplicationContext());
         }
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
         setupToolbar();
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         setupDrawer();
         drawer.openDrawer(GravityCompat.START);
-	}
+    }
 
     protected void setupToolbar() {
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
