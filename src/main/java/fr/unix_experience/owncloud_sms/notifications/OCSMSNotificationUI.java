@@ -3,13 +3,10 @@ package fr.unix_experience.owncloud_sms.notifications;
 import android.annotation.TargetApi;
 import android.app.Notification;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
@@ -74,7 +71,8 @@ public class OCSMSNotificationUI {
                         .bigText(contentString)
                         .setBigContentTitle(title)
                         .setSummaryText(titleString))
-                .setAutoCancel(true);
+                .setAutoCancel(true)
+                .setColor(context.getResources().getColor(R.color.oc_primary));
 
         OCSMSNotificationUI.notify(context, builder.build());
     }
@@ -83,25 +81,17 @@ public class OCSMSNotificationUI {
     private static void notify(Context context, Notification notification) {
         NotificationManager nm = (NotificationManager) context
                 .getSystemService(Context.NOTIFICATION_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ECLAIR) {
-            nm.notify(OCSMSNotificationUI.NOTIFICATION_TAG, 0, notification);
-        } else {
-            nm.notify(OCSMSNotificationUI.NOTIFICATION_TAG.hashCode(), notification);
-        }
+        nm.notify(OCSMSNotificationUI.NOTIFICATION_TAG, 0, notification);
     }
 
     /**
      * Cancels any notifications of this type previously shown using
-     * {@link #notify(Context, String, int)}.
+     * {@link #notify(Context, String, String, int)}.
      */
     @TargetApi(Build.VERSION_CODES.ECLAIR)
     public static void cancel(Context context) {
         NotificationManager nm = (NotificationManager) context
                 .getSystemService(Context.NOTIFICATION_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ECLAIR) {
-            nm.cancel(OCSMSNotificationUI.NOTIFICATION_TAG, 0);
-        } else {
-            nm.cancel(OCSMSNotificationUI.NOTIFICATION_TAG.hashCode());
-        }
+        nm.cancel(OCSMSNotificationUI.NOTIFICATION_TAG, 0);
     }
 }
