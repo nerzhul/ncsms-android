@@ -61,7 +61,9 @@
 		        android:id="@+id/ocsms_logo"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
-		        android:src="@drawable/login_logo"
+                android:paddingTop="24dp"
+                android:paddingBottom="36dp"
+		        android:src="@drawable/logo"
 		        android:contentDescription="@string/login_logo" />
             
             <LinearLayout
@@ -73,6 +75,7 @@
 				    android:id="@+id/oc_protocol"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
 				    android:popupBackground="@color/oc_primary"
 				    android:entries="@array/protocol_array" />
 
