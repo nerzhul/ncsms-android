@@ -40,7 +40,7 @@ public class OCSMSNotificationUI {
 
         // This image is used as the notification's large icon (thumbnail).
         // TODO: Remove this if your notification has no relevant thumbnail.
-        Bitmap picture = BitmapFactory.decodeResource(res, R.drawable.ic_launcher);
+        Bitmap picture = BitmapFactory.decodeResource(res, R.mipmap.ic_launcher);
 
 
         String ticker = (titleString.length() > 20) ? titleString.substring(0, 20) : titleString;
