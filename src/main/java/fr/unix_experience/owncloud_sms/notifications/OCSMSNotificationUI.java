@@ -50,7 +50,7 @@ public class OCSMSNotificationUI {
 
                 // Set appropriate defaults for the notification light, sound,
                 // and vibration.
-                .setSmallIcon(R.drawable.ic_launcher)
+                .setSmallIcon(R.drawable.notification_icon)
                 .setContentTitle(title)
                 .setContentText(contentString)
 
