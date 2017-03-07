@@ -57,10 +57,6 @@ public class OCSMSNotificationUI {
                         // 4.1 or later)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
-                        // Provide a large icon, shown with the notification in the
-                        // notification drawer on devices running Android 3.0 or later.
-                .setLargeIcon(picture)
-
                         // Set ticker text (preview) information for this notification.
                 //.setTicker(ticker)
 
