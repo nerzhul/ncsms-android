@@ -51,17 +51,17 @@ public class OCSMSNotificationUI {
                 .setContentTitle(title)
                 .setContentText(contentString)
 
-                        // All fields below this line are optional.
+                // All fields below this line are optional.
 
-                        // Use a default priority (recognized on devices running Android
-                        // 4.1 or later)
+                // Use a default priority (recognized on devices running Android
+                // 4.1 or later)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
-                        // Set ticker text (preview) information for this notification.
+                // Set ticker text (preview) information for this notification.
                 //.setTicker(ticker)
 
-                        // Show a number. This is useful when stacking notifications of
-                        // a single type.
+                // Show a number. This is useful when stacking notifications of
+                // a single type.
                 .setNumber(number)
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText(contentString)

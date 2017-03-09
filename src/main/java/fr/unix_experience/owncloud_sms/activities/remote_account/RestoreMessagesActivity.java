@@ -116,18 +116,18 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 		});
 	}
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        boolean retval = true;
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                break;
-            default:
-                retval = super.onOptionsItemSelected(item);
-        }
-        return retval;
-    }
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		boolean retval = true;
+		switch (item.getItemId()) {
+			case android.R.id.home:
+				finish();
+				break;
+			default:
+				retval = super.onOptionsItemSelected(item);
+		}
+		return retval;
+	}
 
 	private void initInterface() {
 		TextView tv_error = (TextView) findViewById(R.id.tv_error_default_smsapp);
@@ -150,8 +150,7 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 			tv_error.setVisibility(View.VISIBLE);
 			fix_button.setVisibility(View.VISIBLE);
 			launch_restore.setVisibility(View.INVISIBLE);
-		}
-		else {
+		} else {
 			tv_error.setVisibility(View.INVISIBLE);
 			fix_button.setVisibility(View.INVISIBLE);
 			launch_restore.setVisibility(View.VISIBLE);

@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
 	private EditText _loginView;
 	private EditText _passwordView;
 	private EditText _serverView;
-    private ActionProcessButton _signInButton;
+	private ActionProcessButton _signInButton;
 	private View mProgressView;
 	private View mLoginFormView;
 
@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
 				.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 					@Override
 					public boolean onEditorAction(TextView textView, int id,
-							KeyEvent keyEvent) {
+												  KeyEvent keyEvent) {
 						if ((id == R.id.oc_login) || (id == EditorInfo.IME_NULL)) {
 							attemptLogin();
 							return true;
@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
 					}
 				});
 
-        _signInButton = (ActionProcessButton) findViewById(R.id.oc_signin_button);
+		_signInButton = (ActionProcessButton) findViewById(R.id.oc_signin_button);
 		_signInButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -110,18 +110,18 @@ public class LoginActivity extends AppCompatActivity {
 		mProgressView = findViewById(R.id.login_progress);
 	}
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        boolean retval = true;
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                break;
-            default:
-                retval = super.onOptionsItemSelected(item);
-        }
-        return retval;
-    }
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		boolean retval = true;
+		switch (item.getItemId()) {
+			case android.R.id.home:
+				finish();
+				break;
+			default:
+				retval = super.onOptionsItemSelected(item);
+		}
+		return retval;
+	}
 
 	/**
 	 * Attempts to sign in or register the account specified by the login form.
@@ -145,12 +145,12 @@ public class LoginActivity extends AppCompatActivity {
 
 		boolean cancel = false;
 		View focusView = null;
-		
+
 		// Check for a valid server address.
 		if (TextUtils.isEmpty(protocol)) {
 			cancel = true;
 		}
-		
+
 		// Check for a valid server address.
 		if (TextUtils.isEmpty(serverAddr)) {
 			_serverView.setError(getString(R.string.error_field_required));
@@ -164,14 +164,14 @@ public class LoginActivity extends AppCompatActivity {
 			focusView = _loginView;
 			cancel = true;
 		}
-				
+
 		// Check for a valid password
 		if (TextUtils.isEmpty(password)) {
 			_passwordView.setError(getString(R.string.error_field_required));
 			focusView = _passwordView;
 			cancel = true;
 		}
-		
+
 		if (!isPasswordValid(password)) {
 			_passwordView.setError(getString(R.string.error_invalid_password));
 			focusView = _passwordView;
@@ -181,15 +181,15 @@ public class LoginActivity extends AppCompatActivity {
 		if (cancel) {
 			// There was an error; don't attempt login and focus the first
 			// form field with an error.
-            // reset the button progress
-            _signInButton.setProgress(0);
-            if (focusView != null) {
-                focusView.requestFocus();
-            }
-        } else {
+			// reset the button progress
+			_signInButton.setProgress(0);
+			if (focusView != null) {
+				focusView.requestFocus();
+			}
+		} else {
 			// Show a progress spinner, and kick off a background task to
 			// perform the user login attempt.
-            _signInButton.setProgress(25);
+			_signInButton.setProgress(25);
 			showProgress(true);
 			String serverURL = protocol + serverAddr;
 			mAuthTask = new UserLoginTask(serverURL, login, password);
@@ -247,10 +247,10 @@ public class LoginActivity extends AppCompatActivity {
 	 * Represents an asynchronous login/registration task used to authenticate
 	 * the user.
 	 */
-	public class UserLoginTask extends AsyncTask<Void, Void, Boolean> { 
+	public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
 		UserLoginTask(String serverURI, String login, String password) {
-            Log.i(TAG, "_serverURI = " + serverURI);
+			Log.i(TAG, "_serverURI = " + serverURI);
 			_serverURI = Uri.parse(serverURI);
 			_login = login;
 			_password = password;
@@ -277,47 +277,47 @@ public class LoginActivity extends AppCompatActivity {
 		protected void onPostExecute(Boolean success) {
 			mAuthTask = null;
 			showProgress(false);
-            _signInButton.setProgress(90);
+			_signInButton.setProgress(90);
 
 			if (success) {
-                _signInButton.setProgress(100);
+				_signInButton.setProgress(100);
 				String accountType = getIntent().getStringExtra(UserLoginTask.PARAM_AUTHTOKEN_TYPE);
-				if (accountType == null) {  
-		            accountType = getString(R.string.account_type);  
-		        }
-				
+				if (accountType == null) {
+					accountType = getString(R.string.account_type);
+				}
+
 				// Generate a label
 				String accountLabel = _login + "@" + _serverURI.getHost();
-				
+
 				// We create the account
 				Account account = new Account(accountLabel, accountType);
 				Bundle accountBundle = new Bundle();
 				accountBundle.putString("ocLogin", _login);
 				accountBundle.putString("ocURI", _serverURI.toString());
-				
+
 				// And we push it to Android
 				AccountManager accMgr = AccountManager.get(getApplicationContext());
-				accMgr.addAccountExplicitly(account, _password, accountBundle);  
-				
+				accMgr.addAccountExplicitly(account, _password, accountBundle);
+
 				// Set sync options
 				ContentResolver.setSyncAutomatically(account, getString(R.string.account_authority), true);
-				
+
 				Bundle b = new Bundle();
 				b.putInt("synctype", 1);
-				
+
 				ContentResolver.addPeriodicSync(account, getString(R.string.account_authority), b, DefaultPrefs.syncInterval * 60);
 				// Then it's finished
 				finish();
-				
+
 				// Start sync settings, we have finished to configure account
 				Intent settingsIntent = new Intent(Settings.ACTION_SYNC_SETTINGS);
 				settingsIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				getApplicationContext().startActivity(settingsIntent);
 			} else {
-                boolean serverViewRequestFocus = true;
+				boolean serverViewRequestFocus = true;
 				switch (_returnCode) {
 					case 0:
-                        _serverView.setError("UNK");
+						_serverView.setError("UNK");
 						break;
 					case 404:
 						_serverView.setError(getString(R.string.error_connection_failed_not_found));
@@ -330,24 +330,24 @@ public class LoginActivity extends AppCompatActivity {
 						_serverView.setError(getString(R.string.error_http_connection_failed));
 						break;
 					case 401:
-                    case 403:
-                        _passwordView.setError(getString(R.string.error_invalid_login));
-                        _passwordView.requestFocus();
-                        // Warning, there is no break here to disable serverViewRequestFocus too
-                    case 200:
-                    default:
-                        serverViewRequestFocus = false;
-                        break;
+					case 403:
+						_passwordView.setError(getString(R.string.error_invalid_login));
+						_passwordView.requestFocus();
+						// Warning, there is no break here to disable serverViewRequestFocus too
+					case 200:
+					default:
+						serverViewRequestFocus = false;
+						break;
 				}
 
-                if (serverViewRequestFocus) {
-                    _serverView.requestFocus();
-                }
+				if (serverViewRequestFocus) {
+					_serverView.requestFocus();
+				}
 
-                // If not ok, reset the progress
-                if (_returnCode != 200) {
-                    _signInButton.setProgress(0);
-                }
+				// If not ok, reset the progress
+				if (_returnCode != 200) {
+					_signInButton.setProgress(0);
+				}
 			}
 		}
 
@@ -361,8 +361,8 @@ public class LoginActivity extends AppCompatActivity {
 		private final String _login;
 		private final String _password;
 		private int _returnCode;
-		
+
 		static final String PARAM_AUTHTOKEN_TYPE = "auth.token";
-        private final String TAG = UserLoginTask.class.getCanonicalName();
-    }
+		private final String TAG = UserLoginTask.class.getCanonicalName();
+	}
 }

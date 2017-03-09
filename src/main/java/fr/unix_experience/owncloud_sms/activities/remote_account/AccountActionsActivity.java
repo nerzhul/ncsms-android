@@ -57,14 +57,14 @@ public class AccountActionsActivity extends AppCompatListActivity {
             case 0:
                 Intent intent = new Intent(this, RestoreMessagesActivity.class);
                 intent.putExtra("account", _accountName);
-				try {
-					startActivity(intent);
-				}
-				catch (IllegalStateException e) {
-					Log.e(AccountActionsActivity.TAG, e.getMessage());
-				}
+                try {
+                    startActivity(intent);
+                } catch (IllegalStateException e) {
+                    Log.e(AccountActionsActivity.TAG, e.getMessage());
+                }
                 break;
-            default: break; // Unhandled
+            default:
+                break; // Unhandled
         }
     }
 

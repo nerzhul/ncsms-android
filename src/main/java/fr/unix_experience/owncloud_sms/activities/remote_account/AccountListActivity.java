@@ -25,32 +25,32 @@ public class AccountListActivity extends AppCompatListActivity {
 		getSupportActionBar().setHomeButtonEnabled(true);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ArrayList<Account> itemList = new ArrayList<>();
+		ArrayList<Account> itemList = new ArrayList<>();
 
-        AndroidAccountAdapter adapter = new AndroidAccountAdapter(this,
+		AndroidAccountAdapter adapter = new AndroidAccountAdapter(this,
 				android.R.layout.simple_list_item_1,
-                itemList,
+				itemList,
 				R.layout.account_list_item,
 				R.id.accountname, AccountActionsActivity.class);
 		setListAdapter(adapter);
 
 		Account[] accountList =
 				_accountMgr.getAccountsByType(getString(R.string.account_type));
-        Collections.addAll(itemList, accountList);
+		Collections.addAll(itemList, accountList);
 
 		adapter.notifyDataSetChanged();
 	}
 
 	@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                break;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-        return true;
-    }
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+			case android.R.id.home:
+				onBackPressed();
+				break;
+			default:
+				return super.onOptionsItemSelected(item);
+		}
+		return true;
+	}
 }
 
