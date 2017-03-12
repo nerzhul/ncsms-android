@@ -30,12 +30,11 @@
 	<string name="gp_translation_version">3</string>
 
 	<!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMS synchroniseer je lokale SMS naar je Nextcloud</string>
+    <string name="gp_short_description">Met Nextcloud SMS synchroniseer je je SMS-berichten met een Nextcloud-server</string>
     <string name="gp_description">
-Nextcloud SMS applicatie synchroniseer je SMS berichten op een externe Nextcloud en laat je daar je berichten bekijken.
+Met Nextcloud SMS synchroniseer je je SMS-berichten met een Nextcloud-server en laat je daar je berichten bekijken.
 
-Het vanuit Nextcloud versturen van een SMS komt in een toekomstige release.
+In een toekomstige release zal het ook mogelijk worden om SMS-berichten te versturen vanuit Nextcloud.
 
-De applicatie is volledig compatible met Android 4.0 tot 6.0
-	</string>
+De applicatie is volledig compatibel met Android 4.0 tot 6.0</string>
 </resources>

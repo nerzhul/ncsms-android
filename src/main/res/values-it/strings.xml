@@ -69,6 +69,7 @@
         <item>5000 SMS</item>
         <item>10000 SMS</item>
         <item>25000 SMS</item>
+        <item>Ogni SMS non sincronizzato</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 ora</item>
@@ -100,6 +101,8 @@
     <string name="error_connection_failed">Connessione non riuscita, assicurati che il server sia corretto</string>
     <string name="error_http_connection_failed">Impossibile eseguire una connessione HTTP. Assicurati che ci sia un server web</string>
 
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">Valutaci!</string>
     <string name="ma_title_add_account">Aggiungi un account</string>
     <string name="ma_title_welcome">Benvenuto</string>
     <string name="ma_title_remote_account">Account remoto</string>
@@ -110,6 +113,9 @@
     <string name="title_activity_select_contact">Seleziona contatto</string>
     <string name="no_account_configured">Nessun account configurato.</string>
 
+    <!-- Notifications -->
+    <string name="sync_title">Processo di sincronizzazione</string>
+    <string name="sync_inprogress">Sincronizzazione in corso...</string>
     <string name="fatal_error">Errore grave!</string>
 
     <string name="err_sync_auth_failed">Errore #8: Autenticazione non riuscita</string>
@@ -122,6 +128,8 @@
 
     <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
     <string name="communicate">Comunica</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
     <string name="navigation_drawer_open">Apri il cassetto di navigazione</string>
     <string name="navigation_drawer_close">Chiudi il cassetto di navigazione</string>
     <string name="ma_title_my_accounts">I miei account</string>
@@ -134,11 +142,12 @@
     <string name="err_cannot_read_sms">Non possiamo leggere i tuoi SMS.</string>
     <string name="action_appinfo_perms">Informazioni applicazione e permessi</string>
     <string name="restore_all_messages">Ripristina tutti i messaggi</string>
-    <string name="account_actions">Azioni Account</string>
+    <string name="account_actions">Azioni account</string>
     <string name="nothing_to_sync">Non c\'è niente da sincronizzare.</string>
     <string name="feature_not_already_implemented">Questa funzionalità non è ancora implementata e sarà presto disponibile.</string>
     <string name="pref_title_minimum_sync_chars">Lunghezza minima del numero di telefono</string>
     <string name="launch_restore">Ripristina i miei SMS</string>
+    <string name="error_make_default_sms_app">Rendi predefinita questa applicazione di SMS per consentire di ripristinare i tuoi messaggi. Questa limitazione è stata introdotta da Android 4.4.</string>
     <string name="fix_permissions">Correggi permessi</string>
     <string name="err_kitkat_required">Richiesto Android 4.4 o successivo per utilizzare questa funzionalità.</string>
     <string name="restore_finished">Il ripristino SMS è ora completato.</string>
