@@ -35,7 +35,9 @@
 
     <!-- separate style for Drawer activities needed for v21+ theming -->
     <style name="OcSmsTheme.Drawer" parent="OcSmsTheme.NoActionBar">
-
+        <item name="colorPrimaryDark">@color/oc_primary_dark</item>
+        <item name="colorPrimary">@color/oc_primary</item>
+        <item name="colorAccent">@color/oc_accent</item>
     </style>
 
     <style name="OcSmsTheme.NoActionbar" parent="Theme.AppCompat.Light.NoActionBar">
