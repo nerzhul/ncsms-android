@@ -81,6 +81,7 @@
         <item>24 klukkustundir</item>
         <item>Aldrei</item>
     </string-array>
+    <string name="pref_push_on_receive">Ýta SMS við móttöku</string>
     <string name="pref_sync_wifi">Samstilla á Wi-Fi</string>
     <string name="pref_sync_4g">Samstilla á 4G</string>
     <string name="pref_sync_3g">Samstilla á 3G</string>
@@ -100,6 +101,8 @@
     <string name="prompt_serverURI">Vistfang þjóns</string>
     <string name="error_invalid_server_address">Ógilt vistfang vefþjóns</string>
     <string name="error_connection_failed">Tenging misfórst, gakktu úr skugga um að þetta sé réttur þjónn</string>
+    <string name="error_http_connection_failed">Get ekki framkvæmt HTTP-tengingu. Gakktu úr skugga um að það sé einhver vefþjónn</string>
+
     <!-- Main activity -->
     <string name="ma_title_rate_us">Gefðu okkur einkunn!</string>
     <string name="ma_title_add_account">Bæta við notandaaðgangi</string>
@@ -148,21 +151,27 @@
     <string name="communicate">Senda út</string>
     <string name="title_activity_main2">Main2Activity</string>
 
+    <string name="navigation_drawer_open">Opna rennivalmynd</string>
+    <string name="navigation_drawer_close">Loka rennivalmynd</string>
     <string name="ma_title_my_accounts">Notandaaðgangar mínir</string>
     <string name="ma_content_swipeaction">Strjúktu frá vinstri til hægri til að opna aðgerðavalmyndina.</string>
     <string name="cancel">Hætta við</string>
     <string name="understood">Náði þessu</string>
     <string name="notif_permission_required">Heimilda er krafist</string>
+    <string name="notif_permission_required_content">Einhverjar heimildir vantar svo hægt sé að framkvæma samstillingarferlið. Lagaðu þetta í forritsstillingunum.</string>
     <string name="please_fix_it">Endilega lagaðu þetta.</string>
     <string name="err_cannot_read_contacts">Við getum ekki lesið tengiliðalistana þína.</string>
     <string name="err_cannot_read_sms">Við getum ekki lesið SMS-in þín.</string>
     <string name="action_appinfo_perms">Upplúsingar um forrit og aðgangsheimildir</string>
     <string name="restore_all_messages">Endurheimta öll skilaboð</string>
     <string name="account_actions">Aðgerðir fyrir aðgang</string>
+    <string name="error_connection_failed_not_found">Tenging mistókst, þjónninn svaraði með 404 NOT FOUND. Gakktu úr skugga um að þú hafir sett inn rétta slóð á Nextcloud-tilvikið þitt.</string>
     <string name="nothing_to_sync">Það er ekkert sem hægt ser að samstilla.</string>
     <string name="feature_not_already_implemented">Ekki er ennþá búið að gefa út þennan eiginleika, en það mun gerast fljótlega.</string>
     <string name="pref_title_minimum_sync_chars">Lágmarkslengd símanúmers</string>
+    <string name="err_didnt_find_account_restore">Við fundum ekki notandaaðganginn þinn svo að við gætum endurheimt skilaboðin, þetta er mjög sérkennileg staða.</string>
     <string name="launch_restore">Endurheimta SMS-in mín</string>
+    <string name="error_make_default_sms_app">Endilega gerðu þetta forrit að sjálfgefnu SMS-forriti svo hægt verði að leyfa endurheimtingu á skilaboðunum þínum. Þessi takmörkun tók gildi í Android 4.4.</string>
     <string name="fix_permissions">Laga aðgangsheimildir</string>
     <string name="err_kitkat_required">Android 4.4 eða nýrra er nauðsynlegt til að geta notað þennan eiginleika.</string>
     <string name="restore_finished">Endurheimtingu SMS er lokið.</string>
