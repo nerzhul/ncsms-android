@@ -95,7 +95,7 @@ public class OCSMSOwnCloudClient {
 	}
 
 	public void doPushRequest(JSONArray smsList) throws OCSyncException {
-		/**
+		/*
 		 * If we need other API push, set it here
 		 */
 		switch (_serverAPIVersion) {

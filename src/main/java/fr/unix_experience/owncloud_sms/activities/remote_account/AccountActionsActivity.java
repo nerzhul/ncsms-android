@@ -1,7 +1,10 @@
 package fr.unix_experience.owncloud_sms.activities.remote_account;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -13,6 +16,7 @@ import java.util.ArrayList;
 
 import fr.unix_experience.android_lib.AppCompatListActivity;
 import fr.unix_experience.owncloud_sms.R;
+import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
 public class AccountActionsActivity extends AppCompatListActivity {
     @Override
@@ -31,6 +35,7 @@ public class AccountActionsActivity extends AppCompatListActivity {
 
         // Create item list
         itemList.add(getBaseContext().getString(R.string.restore_all_messages));
+		itemList.add(getBaseContext().getString(R.string.reinit_sync_cursor));
 
         adp.notifyDataSetChanged();
 
@@ -57,14 +62,31 @@ public class AccountActionsActivity extends AppCompatListActivity {
             case 0:
                 Intent intent = new Intent(this, RestoreMessagesActivity.class);
                 intent.putExtra("account", _accountName);
-                try {
-                    startActivity(intent);
-                } catch (IllegalStateException e) {
-                    Log.e(AccountActionsActivity.TAG, e.getMessage());
-                }
+				try {
+					startActivity(intent);
+				}
+				catch (IllegalStateException e) {
+					Log.e(AccountActionsActivity.TAG, e.getMessage());
+				}
                 break;
-            default:
-                break; // Unhandled
+			case 1:
+				final Context me = this;
+				new AlertDialog.Builder(this)
+						.setIcon(android.R.drawable.ic_dialog_alert)
+						.setTitle(R.string.reinit_sync_cursor)
+						.setMessage(R.string.reinit_sync_cursor_confirm)
+						.setPositiveButton(R.string.yes_confirm, new DialogInterface.OnClickListener() {
+							@Override
+							public void onClick(DialogInterface dialog, int which) {
+								(new OCSMSSharedPrefs(me)).setLastMessageDate(0L);
+								Log.i(AccountActionsActivity.TAG, "Synchronization cursor reinitialized");
+							}
+
+						})
+						.setNegativeButton(R.string.no_confirm, null)
+						.show();
+				break;
+            default: break; // Unhandled
         }
     }
 
