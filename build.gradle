@@ -12,7 +12,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    buildToolsVersion "25.0.2"
 
     lintOptions {
         abortOnError false
@@ -45,10 +45,10 @@ repositories {
 
 dependencies {
     compile 'commons-httpclient:commons-httpclient:3.1'
-    compile 'com.android.support:support-v13:25.1.0'
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:design:25.1.0'
+    compile 'com.android.support:support-v13:25.3.0'
+    compile 'com.android.support:appcompat-v7:25.3.0'
+    compile 'com.android.support:design:25.3.0'
     compile 'in.srain.cube:ultra-ptr:1.0.11'
     compile 'com.github.dmytrodanylyk.android-process-button:library:1.0.4'
-    compile 'com.android.support:support-v4:25.1.0'
+    compile 'com.android.support:support-v4:25.3.0'
 }
