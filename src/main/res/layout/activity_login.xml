@@ -61,7 +61,9 @@
 		        android:id="@+id/ocsms_logo"
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
-		        android:src="@drawable/login_logo"
+                android:paddingTop="24dp"
+                android:paddingBottom="36dp"
+		        android:src="@drawable/logo"
 		        android:contentDescription="@string/login_logo" />
             
             <LinearLayout
@@ -73,8 +75,9 @@
 				    android:id="@+id/oc_protocol"
 				    android:layout_width="wrap_content"
 				    android:layout_height="wrap_content"
-				    android:entries="@array/protocol_array">
-	            </Spinner>
+                    android:layout_gravity="center_vertical"
+				    android:popupBackground="@color/oc_primary"
+				    android:entries="@array/protocol_array" />
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -84,6 +87,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/prompt_serverURI"
+                        android:textColor="@color/oc_white"
                         android:inputType="textUri" >
                         <requestFocus />
                     </EditText>
@@ -99,9 +103,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/prompt_login"
+                    android:textColor="@color/oc_white"
                     android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+                    android:maxLines="1" />
            </android.support.design.widget.TextInputLayout>
 
            <android.support.design.widget.TextInputLayout
@@ -117,7 +121,7 @@
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:textColor="@color/oc_white" />
            </android.support.design.widget.TextInputLayout>
 
            <com.dd.processbutton.iml.ActionProcessButton

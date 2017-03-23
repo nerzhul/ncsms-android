@@ -34,9 +34,14 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <RelativeLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar" />
 
         <TextView
             android:id="@+id/main_title_welcome"
@@ -44,7 +49,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ma_title_welcome"
-            android:gravity="top"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
@@ -53,26 +57,9 @@
             android:paddingRight="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="top"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/main_title_welcome"
             android:text="@string/ma_content_welcome"
             android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <TextView
-            android:id="@+id/main_tv_swipe"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="top"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/main_tv_welcome"
-            android:text="@string/ma_content_swipeaction"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-    </RelativeLayout>
+    </LinearLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
@@ -81,5 +68,5 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"
-        android:fitsSystemWindows="false"/>
+        android:fitsSystemWindows="true"/>
 </android.support.v4.widget.DrawerLayout>

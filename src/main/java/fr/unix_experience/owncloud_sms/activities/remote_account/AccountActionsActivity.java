@@ -2,7 +2,9 @@ package fr.unix_experience.owncloud_sms.activities.remote_account;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -19,6 +21,9 @@ public class AccountActionsActivity extends AppCompatListActivity {
 
         setContentView(R.layout.activity_account_actions);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         ArrayList<String> itemList = new ArrayList<>();
         ArrayAdapter<String> adp = new ArrayAdapter<>(getBaseContext(),
                 android.R.layout.simple_dropdown_item_1line, itemList);
@@ -34,19 +39,32 @@ public class AccountActionsActivity extends AppCompatListActivity {
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        boolean retval = true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+            default:
+                retval = super.onOptionsItemSelected(item);
+        }
+        return retval;
+    }
+
+    @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         switch (position) {
             case 0:
                 Intent intent = new Intent(this, RestoreMessagesActivity.class);
                 intent.putExtra("account", _accountName);
-				try {
-					startActivity(intent);
-				}
-				catch (IllegalStateException e) {
-					Log.e(AccountActionsActivity.TAG, e.getMessage());
-				}
+                try {
+                    startActivity(intent);
+                } catch (IllegalStateException e) {
+                    Log.e(AccountActionsActivity.TAG, e.getMessage());
+                }
                 break;
-            default: break; // Unhandled
+            default:
+                break; // Unhandled
         }
     }
 

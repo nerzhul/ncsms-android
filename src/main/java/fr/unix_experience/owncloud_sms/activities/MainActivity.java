@@ -38,6 +38,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.Window;
@@ -59,107 +60,174 @@ import static fr.unix_experience.owncloud_sms.enums.PermissionID.REQUEST_MAX;
 import static fr.unix_experience.owncloud_sms.enums.PermissionID.REQUEST_SMS;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener{
+		implements NavigationView.OnNavigationItemSelectedListener {
 
-    private ConnectivityMonitor _ConnectivityMonitor = null;
+	private ConnectivityMonitor _ConnectivityMonitor = null;
+
+	private DrawerLayout drawer;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-        if (_ConnectivityMonitor == null) {
-            _ConnectivityMonitor = new ConnectivityMonitor(getApplicationContext());
-        }
+		if (_ConnectivityMonitor == null) {
+			_ConnectivityMonitor = new ConnectivityMonitor(getApplicationContext());
+		}
 
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        super.onCreate(savedInstanceState);
+		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, null, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        assert drawer != null;
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        assert navigationView != null;
-        navigationView.setNavigationItemSelectedListener(this);
+		setupToolbar();
+		getSupportActionBar().setHomeButtonEnabled(true);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        drawer.openDrawer(GravityCompat.START);
+		drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		setupDrawer();
+		drawer.openDrawer(GravityCompat.START);
 	}
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        assert drawer != null;
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
+	protected void setupToolbar() {
+		setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+	}
 
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        boolean res = true;
+	private void setupDrawer() {
+		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+				this, drawer, null, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+		assert drawer != null;
+		drawer.addDrawerListener(toggle);
+		toggle.syncState();
+		toggle.setDrawerIndicatorEnabled(true);
 
-        switch (id) {
-            case R.id.nav_sync: syncAllMessages(); break;
-            case R.id.nav_manage: res = openAppSettings(); break;
-            case R.id.nav_rateus: res = openGooglePlayStore(); break;
-            case R.id.nav_add_account: res = openAddAccount(); break;
-            case R.id.nav_my_accounts: res = openMyAccounts(); break;
-            case R.id.nav_appinfo_perms: res = openAppInfos(); break;
-        }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        assert drawer != null;
-        drawer.closeDrawer(GravityCompat.START);
-        return res;
-    }
+		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+		assert navigationView != null;
+		navigationView.setNavigationItemSelectedListener(this);
+	}
 
-	private boolean openAppSettings () {
+	/**
+	 * checks if the drawer exists and is opened.
+	 *
+	 * @return <code>true</code> if the drawer is open, else <code>false</code>
+	 */
+	public boolean isDrawerOpen() {
+		return drawer != null && drawer.isDrawerOpen(GravityCompat.START);
+	}
+
+	/**
+	 * closes the drawer.
+	 */
+	public void closeDrawer() {
+		if (drawer != null) {
+			drawer.closeDrawer(GravityCompat.START);
+		}
+	}
+
+	/**
+	 * opens the drawer.
+	 */
+	public void openDrawer() {
+		if (drawer != null) {
+			drawer.openDrawer(GravityCompat.START);
+		}
+	}
+
+	@Override
+	public void onBackPressed() {
+		if (isDrawerOpen()) {
+			closeDrawer();
+		} else {
+			super.onBackPressed();
+		}
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		boolean retval = true;
+		switch (item.getItemId()) {
+			case android.R.id.home: {
+				if (isDrawerOpen()) {
+					closeDrawer();
+				} else {
+					openDrawer();
+				}
+				break;
+			}
+			default:
+				retval = super.onOptionsItemSelected(item);
+		}
+		return retval;
+	}
+
+	@Override
+	public boolean onNavigationItemSelected(MenuItem item) {
+		int id = item.getItemId();
+		boolean res = true;
+
+		switch (id) {
+			case R.id.nav_sync:
+				syncAllMessages();
+				break;
+			case R.id.nav_manage:
+				res = openAppSettings();
+				break;
+			case R.id.nav_rateus:
+				res = openGooglePlayStore();
+				break;
+			case R.id.nav_add_account:
+				res = openAddAccount();
+				break;
+			case R.id.nav_my_accounts:
+				res = openMyAccounts();
+				break;
+			case R.id.nav_appinfo_perms:
+				res = openAppInfos();
+				break;
+		}
+		closeDrawer();
+		return res;
+	}
+
+	private boolean openAppSettings() {
 		startActivity(new Intent(this, OCSMSSettingsActivity.class));
-        return true;
+		return true;
 	}
 
-    private boolean openAddAccount () {
+	private boolean openAddAccount() {
 		startActivity(new Intent(Settings.ACTION_ADD_ACCOUNT));
-        return true;
+		return true;
 	}
 
-    public void syncAllMessages () {
-        Log.v(MainActivity.TAG, "Launch syncAllMessages()");
-        if (!PermissionChecker.checkPermission(this, Manifest.permission.READ_SMS,
-                REQUEST_SMS)) {
-            return;
-        }
+	public void syncAllMessages() {
+		Log.v(MainActivity.TAG, "Launch syncAllMessages()");
+		if (!PermissionChecker.checkPermission(this, Manifest.permission.READ_SMS,
+				REQUEST_SMS)) {
+			return;
+		}
 
 		Context ctx = getApplicationContext();
 		if (_ConnectivityMonitor.isValid()) {
 			// Now fetch messages since last stored date
 			JSONArray smsList = new JSONArray();
-            new AndroidSmsFetcher(ctx).bufferMessagesSinceDate(smsList, (long) 0);
+			new AndroidSmsFetcher(ctx).bufferMessagesSinceDate(smsList, (long) 0);
 
 			if (smsList.length() > 0) {
-                OCSMSNotificationUI.notify(ctx, ctx.getString(R.string.sync_title),
-                        ctx.getString(R.string.sync_inprogress), OCSMSNotificationType.SYNC.ordinal());
+				OCSMSNotificationUI.notify(ctx, ctx.getString(R.string.sync_title),
+						ctx.getString(R.string.sync_inprogress), OCSMSNotificationType.SYNC.ordinal());
 				new SyncTask(getApplicationContext(), smsList).execute();
+			} else {
+				Toast.makeText(ctx, ctx.getString(R.string.nothing_to_sync), Toast.LENGTH_SHORT).show();
 			}
-            else {
-                Toast.makeText(ctx, ctx.getString(R.string.nothing_to_sync), Toast.LENGTH_SHORT).show();
-            }
-		}
-		else {
+		} else {
 			Toast.makeText(ctx, ctx.getString(R.string.err_sync_no_connection_available), Toast.LENGTH_SHORT).show();
 		}
-        Log.v(MainActivity.TAG, "Finish syncAllMessages()");
+		Log.v(MainActivity.TAG, "Finish syncAllMessages()");
 	}
 
-    private boolean openMyAccounts () {
+	private boolean openMyAccounts() {
 		startActivity(new Intent(this, AccountListActivity.class));
-        return true;
+		return true;
 	}
 
-    private boolean openGooglePlayStore () {
+	private boolean openGooglePlayStore() {
 		Intent intent;
 		try {
 			intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName()));
@@ -168,45 +236,45 @@ public class MainActivity extends AppCompatActivity
 		}
 
 		startActivity(intent);
-        return true;
+		return true;
 	}
 
-    private boolean openAppInfos () {
-        Intent intent = new Intent();
-        intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-        Uri uri = Uri.fromParts("package", getPackageName(), null);
-        intent.setData(uri);
-        startActivity(intent);
-        return true;
-    }
+	private boolean openAppInfos() {
+		Intent intent = new Intent();
+		intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+		Uri uri = Uri.fromParts("package", getPackageName(), null);
+		intent.setData(uri);
+		startActivity(intent);
+		return true;
+	}
 
-    /*
-     * Permissions
-     */
+	/*
+	 * Permissions
+	 */
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-        @NonNull int[] grantResults) {
-        PermissionID requestCodeID = REQUEST_MAX;
-        if ((requestCode > 0) || (requestCode < REQUEST_MAX.ordinal())) {
-            requestCodeID = PermissionID.values()[requestCode];
-        }
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+										   @NonNull int[] grantResults) {
+		PermissionID requestCodeID = REQUEST_MAX;
+		if ((requestCode > 0) || (requestCode < REQUEST_MAX.ordinal())) {
+			requestCodeID = PermissionID.values()[requestCode];
+		}
 
-        switch (requestCodeID) {
-            case REQUEST_SMS:
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    syncAllMessages();
-                } else {
-                    // Permission Denied
-                    Toast.makeText(this, getString(R.string.err_cannot_read_sms) + " " +
-                            getString(R.string.please_fix_it), Toast.LENGTH_SHORT)
-                            .show();
-                }
-                break;
-            default:
-                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-    }
+		switch (requestCodeID) {
+			case REQUEST_SMS:
+				if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+					syncAllMessages();
+				} else {
+					// Permission Denied
+					Toast.makeText(this, getString(R.string.err_cannot_read_sms) + " " +
+							getString(R.string.please_fix_it), Toast.LENGTH_SHORT)
+							.show();
+				}
+				break;
+			default:
+				super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		}
+	}
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+	private static final String TAG = MainActivity.class.getSimpleName();
 }
