@@ -26,7 +26,8 @@
  */
 -->
 <resources
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
 
     <!-- Translation version, reference for translators -->
     <string name="translation_version">7</string>
@@ -80,7 +81,6 @@
         <item>24 timer</item>
         <item>Aldri</item>
     </string-array>
-
     <string name="pref_sync_wifi">Synkroniser via Wifi</string>
     <string name="pref_sync_4g">Synkroniser via 4G</string>
     <string name="pref_sync_3g">Synkroniser via 3G</string>
@@ -100,7 +100,8 @@
     <string name="prompt_serverURI">Tjeneradresse</string>
     <string name="error_invalid_server_address">Ugyldig tjeneradresse</string>
     <string name="error_connection_failed">Forbindelse feilet, sjekk at dette er korrekt tjener</string>
-
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">Vurder oss!</string>
     <string name="ma_title_add_account">Legg til en konto</string>
     <string name="ma_title_welcome">Velkommen</string>
     <string name="ma_title_remote_account">Ekstern konto</string>
@@ -116,6 +117,7 @@
     <string name="sync_inprogress">Synkronisering pågår...</string>
     <string name="fatal_error">Kritisk feil !</string>
 
+    <string name="err_fetch_phonelist">Ugyldig telefonliste mottatt fra tjener.</string>
     <string name="contactinfos_title">Kontaktopplysninger</string>
     <string name="subtitle_contact_phones">- Kontakt telefoner</string>
     <string name="pref_title_bulk_messages">Maks antall meldinger å sende i hver synkronisering</string>
@@ -128,6 +130,7 @@
     <string name="cancel">Avbryt</string>
     <string name="understood">Forstått</string>
     <string name="notif_permission_required">Rettighet nødvendig</string>
+    <string name="please_fix_it">Vennligst fiks det.</string>
     <string name="err_cannot_read_contacts">Vi kan ikke lese dine kontakter</string>
     <string name="err_cannot_read_sms">Vi kan ikke lese dine SMS.</string>
     <string name="action_appinfo_perms">App informasjon og rettigheter</string>
@@ -137,6 +140,8 @@
     <string name="pref_title_minimum_sync_chars">Minimum lengde på telefonnummer</string>
     <string name="launch_restore">Gjenopprett mine SMS</string>
     <string name="fix_permissions">Fiks rettigheter</string>
+    <string name="err_kitkat_required">Android 4.4 eller nyere er påkrevd for å bruke denne egenskapen.</string>
     <string name="restore_finished">SMS gjenoppretting er nå fullført.</string>
     <string name="x_messages_restored">meldinger gjenopprettet&#8230;</string>
-    </resources>
+    <string name="err_no_connection">Ingen forbindelse tilgjengelig, vennligst forsikre at du har gyldig dataforbindelse.</string>
+</resources>

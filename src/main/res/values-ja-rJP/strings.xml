@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="login_logo">ログインロゴ</string>
+
+    <string name="pref_lastmsgdate">last_message_date</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - 高速</string>
+    <string name="pref_title_sync_frequency">高速同期の周期</string>
+    <string name="pref_title_slow_sync">SMS - 低速で安全</string>
+    <string name="pref_title_slow_sync_frequency">安全で低速な同期の周期</string>
+    <string name="action_settings">設定</string>
+    <string name="sync_now">今すぐ同期</string>
+    <string name="pref_category_sync">同期</string>
+    <string name="title_global_pref_to_general_prefs">全般プリファレンス</string>
+    <string name="summary_global_pref_to_general_prefs">同期オプション</string>
+    <string name="summary_notif_prefs">通知</string>
+    <string name="pref_header_data_sync">データ &amp; 同期</string>
+    <string name="title_activity_general_settings">全般設定</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 分</item>
+        <item>15 分</item>
+        <item>30 分</item>
+        <item>1 時間</item>
+        <item>3 時間</item>
+        <item>6 時間</item>
+        <item>12 時間</item>
+        <item>24 時間</item>
+        <item>しない</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>未同期の SMS 毎</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 時間</item>
+        <item>3 時間</item>
+        <item>6 時間</item>
+        <item>12 時間</item>
+        <item>24 時間</item>
+        <item>しない</item>
+    </string-array>
+    <string name="pref_push_on_receive">受信時に SMS をプッシュ</string>
+    <string name="pref_sync_wifi">Wi-Fi 接続時に同期</string>
+    <string name="pref_sync_4g">4G 接続時に同期</string>
+    <string name="pref_sync_3g">3G 接続時に同期</string>
+    <string name="pref_sync_gprs">2.5G (GPRS) 接続時に同期</string>
+    <string name="pref_sync_2g">2G 接続時に同期</string>
+    <string name="pref_sync_others">他のモード時に同期</string>
+    <string name="title_activity_login">サインイン</string>
+
+    <!-- Login -->
+    <string name="prompt_login">ログイン</string>
+    <string name="prompt_password">パスワード</string>
+    <string name="action_sign_in">サインインまたは登録</string>
+    <string name="action_sign_in_short">サインイン</string>
+    <string name="error_invalid_login">ログインまたはパスワードが間違っています</string>
+    <string name="error_invalid_password">このパスワードは短すぎます</string>
+    <string name="error_field_required">このフィールドは必須です</string>
+    <string name="prompt_serverURI">サーバーアドレス</string>
+    <string name="error_invalid_server_address">サーバーアドレスが無効です</string>
+    <string name="error_connection_failed">接続に失敗しました。サーバーが正しいことを確認してください</string>
+    <string name="error_http_connection_failed">HTTP 接続を実行できません。Web サーバーがあることを確認してください</string>
+
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">評価してください!</string>
+    <string name="ma_title_add_account">アカウントを追加</string>
+    <string name="ma_title_welcome">ようこそ</string>
+    <string name="ma_content_welcome">Nextcloud SMS アプリケーションへようこそ。このアプリケーションは、SMS アプリを使用して Nextcloud インスタンスにあなたの SMS を同期させることができます。</string>
+    <string name="ma_title_remote_account">リモートアカウント</string>
+    <string name="choose_account">アカウントを選択</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">アカウントを選択</string>
+    <string name="title_activity_select_contact">連絡先を選択</string>
+    <string name="no_account_configured">アカウントが設定されていません。</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">同期プロセス</string>
+    <string name="sync_inprogress">同期しています...</string>
+    <string name="fatal_error">致命的なエラー !</string>
+
+    <!-- Errors -->
+    <string name="err_sync_get_smslist">エラー #1: 前のメッセージを取得するときに、サーバーから無効なデータを受信しました</string>
+    <string name="err_sync_craft_http_request">エラー #2: HTTP リクエストを作成中にエラーが発生しました</string>
+    <string name="err_sync_push_request">エラー #3: プッシュリクエストに失敗しました</string>
+    <string name="err_sync_push_request_resp">エラー #4: データをプッシュするときに、サーバーから無効なデータを受信しました</string>
+    <string name="err_sync_create_json_null_smslist">エラー #5: NULL SMS リスト</string>
+    <string name="err_sync_create_json_put_smslist">エラー #6: プッシュリクエストを作成中にエラーが発生しました</string>
+    <string name="err_sync_create_json_request_encoding">エラー #7: リクエストの生成時に、サポートしないエンコーディング</string>
+    <string name="err_sync_auth_failed">エラー #8: 認証に失敗しました</string>
+    <string name="err_sync_http_request_returncode_unhandled">エラー #9: サーバーが処理できない HTTP リターンコードを設定しました</string>
+    <string name="err_sync_http_request_connect">エラー #11: Nextcloud インスタンスへの接続を確立できません</string>
+    <string name="err_sync_http_request_httpexception">エラー #12: Nextcloud インスタンスへの接続を確立できません</string>
+    <string name="err_sync_http_request_ioexception">エラー #13: Nextcloud インスタンスへの接続を確立できません</string>
+    <string name="err_sync_http_request_resp">エラー #14: サーバーのレスポンスを解析できません</string>
+    <string name="err_sync_http_request_parse_resp">エラー #15: サーバーのレスポンスを解析できません</string>
+    <string name="err_sync_no_connection_available">エラー #16: データ接続が使用できません</string>
+    <string name="err_sync_account_unparsable">エラー #17: 不正なアカウント。再設定してください。</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">エラー #18: Nextcloud SMS アプリがインストールされていないか Nextcloud がアップグレードを待っています</string>
+    <string name="err_fetch_phonelist">サーバから無効な電話リストを受信しました。</string>
+    <string name="err_proto_v2">サーバーがこの機能をサポートしていません。サーバーのバージョンが 1.6 以上であることを確認してください。</string>
+    <string name="contactinfos_title">連絡先情報</string>
+    <string name="subtitle_contact_phones">- 連絡先の電話</string>
+    <string name="pref_title_bulk_messages">同期ごとに送信する最大メッセージ数</string>
+    <string name="contactinfos_list">連絡先リスト</string>
+    <string name="function_not_available">この機能はまだ利用できません。</string>
+
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="communicate">通信</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">ナビゲーションドロワーを開く</string>
+    <string name="navigation_drawer_close">ナビゲーションドロワーを閉じる</string>
+    <string name="ma_title_my_accounts">マイ アカウント</string>
+    <string name="ma_content_swipeaction">左から右にスワイプして、アクションメニューにアクセスします。</string>
+    <string name="cancel">キャンセル</string>
+    <string name="understood">理解しました</string>
+    <string name="notif_permission_required">アクセス許可が必要</string>
+    <string name="notif_permission_required_content">同期プロセスを実行するために、一部のアクセス許可が不足しています。アプリ設定で修正してください</string>
+    <string name="please_fix_it">修正してください。</string>
+    <string name="err_cannot_read_contacts">連絡先を読み取りできません。</string>
+    <string name="err_cannot_read_sms">SMS を読み取りできません。</string>
+    <string name="action_appinfo_perms">アプリ情報とアクセス許可</string>
+    <string name="restore_all_messages">すべてのメッセージを復元</string>
+    <string name="account_actions">アカウント操作</string>
+    <string name="error_connection_failed_not_found">接続に失敗しました。サーバーが 404 NOT FOUND を返しました。 Nextcloud インスタンスの正しいパスを設定していることを確認してください</string>
+    <string name="nothing_to_sync">同期するものはありません。</string>
+    <string name="feature_not_already_implemented">この機能はまだ実装されていませんし、すぐに利用できるようになります。</string>
+    <string name="pref_title_minimum_sync_chars">電話番号の最小長</string>
+    <string name="err_didnt_find_account_restore">メッセージを復元するアカウントが見つかりませんでした。これは非常に奇妙な状況です。</string>
+    <string name="launch_restore">自分の SMS を復元</string>
+    <string name="error_make_default_sms_app">メッセージを復元可能にするために、このアプリケーションをデフォルトの SMS アプリケーションにしてください。この制限は、Android 4.4 から導入されています。</string>
+    <string name="fix_permissions">アクセス許可を修正</string>
+    <string name="err_kitkat_required">この機能を使用するには Android 4.4 以上が必要です。</string>
+    <string name="restore_finished">SMS の復元が完了しました。</string>
+    <string name="x_messages_restored">メッセージを復元しました&#8230;</string>
+    <string name="err_no_connection">利用可能な接続がありません。データ接続が有効になっていることを確認してください。</string>
+</resources>

@@ -26,7 +26,8 @@
  */
 -->
 <resources
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
 
     <!-- Translation version, reference for translators -->
     <string name="translation_version">7</string>
@@ -80,7 +81,6 @@
         <item>24 orë</item>
         <item>Kurrë</item>
     </string-array>
-
     <string name="pref_push_on_receive">Shty SMS-t në pritje</string>
     <string name="pref_sync_wifi">Sinkronizuar në Wi-Fi</string>
     <string name="pref_sync_4g">Sinkronizuar në 4G</string>
@@ -127,8 +127,23 @@
     <string name="err_sync_push_request">Gabim # 3: Kërkesa shtyrjë  e dështuar</string>
     <string name="err_sync_push_request_resp">Gabim # 4: Të dhëna të pavlefshme marrë nga serveri kur u shtyn të dhënave</string>
     <string name="err_sync_create_json_null_smslist">Lista NULL SMS</string>
+    <string name="err_sync_create_json_put_smslist">Error #6: Gabim gjatë përpilimin të kërkesës</string>
+    <string name="err_sync_create_json_request_encoding">Gabim #7: Enkodimi i pambështetur gjatë gjenerimit të kërkesës</string>
+    <string name="err_sync_auth_failed">Gabim #8: Autentifikimi dështoi</string>
+    <string name="err_sync_http_request_returncode_unhandled">Gabim #9: Serveri vendosi kodin e kthimit HTTP të patrajtuar</string>
+    <string name="err_sync_http_request_connect">Gabim #11: Në pamundësi për të kryer një lidhje të instancës Nextcloud</string>
+    <string name="err_sync_http_request_httpexception">Gabim #12: Në pamundësi për të kryer një lidhje të instancës Nextcloud</string>
+    <string name="err_sync_http_request_ioexception">Gabim #13: Në pamundësi për të kryer një lidhje të instancës Nextcloud</string>
+    <string name="err_sync_http_request_resp">Gabim #14: Në pamundësi për të analizuar përgjigjen e serverit</string>
+    <string name="err_sync_http_request_parse_resp">Gabim #15: Në pamundësi për të analizuar përgjigjen e serverit</string>
+    <string name="err_sync_no_connection_available">Gabim #16: Nuk ka lidhje me të dhëna e disponueshme</string>
     <string name="contactinfos_title">Informacioni i kontaktit</string>
     <string name="subtitle_contact_phones">- Kontaktet e telefonave</string>
     <string name="pref_title_bulk_messages">Maksimumi i Mesazheve për të dërguar në sinkronizim</string>
+    <string name="contactinfos_list">Lista e kontakteve</string>
+    <string name="communicate">Komuniko</string>
+    <string name="ma_title_my_accounts">Llogarit e mia</string>
     <string name="cancel">Anuloje</string>
-    </resources>
+    <string name="restore_all_messages">Rikthe të gjithë mesazhet</string>
+    <string name="err_no_connection">Nuk ka asnjë lidhje, ju lutemi sigurohuni që të keni një lidhje të dhëmasj të vlefshme.</string>
+</resources>
