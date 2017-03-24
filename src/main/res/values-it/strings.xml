@@ -153,4 +153,4 @@
     <string name="restore_finished">Il ripristino SMS è ora completato.</string>
     <string name="x_messages_restored">messaggi ripristinati&#8230;</string>
     <string name="err_no_connection">Nessuna connessione disponibile, assicurati di avere una connessione dati valida.</string>
-</resources>
+    </resources>

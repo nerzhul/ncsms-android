@@ -177,4 +177,4 @@
     <string name="restore_finished">SMS iletileri geri yüklendi.</string>
     <string name="x_messages_restored">ileti geri yüklendi&#8230;</string>
     <string name="err_no_connection">Kullanılabilecek bir bağlantı yok. Lütfen kullanılabilecek bir veri bağlantınız olduğundan emin olun.</string>
-</resources>
+    </resources>

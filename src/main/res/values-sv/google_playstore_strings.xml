@@ -25,7 +25,9 @@
  * SUCH DAMAGE.
  */
 -->
-<resources>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
     <!-- Translation version, reference for translators -->
 	<string name="gp_translation_version">5</string>
 

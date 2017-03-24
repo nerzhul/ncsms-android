@@ -177,4 +177,4 @@
     <string name="restore_finished">A restauração de SMS está agora concluída.</string>
     <string name="x_messages_restored">Mensagens restaurad&#8230;</string>
     <string name="err_no_connection">Nenhuma conexão disponível, verifique se você tem uma conexão de dados válida.</string>
-</resources>
+    </resources>

@@ -177,4 +177,4 @@
     <string name="restore_finished">Przywracanie SMS-ów zostało zakończone.</string>
     <string name="x_messages_restored">przywróconych wiadomości&#8230;</string>
     <string name="err_no_connection">Brak dostępnego połączenia. Proszę się upewnić że masz odpowiednie połączenie dla danych.</string>
-</resources>
+    </resources>

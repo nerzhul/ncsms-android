@@ -177,4 +177,4 @@
     <string name="restore_finished">SMS-Wiederherstellung ist nun abgeschlossen.</string>
     <string name="x_messages_restored">Nachrichten wiederhergestellt&#8230;</string>
     <string name="err_no_connection">Keine Verbindung verfügbar, bitte stelle sicher, dass du eine stabile Datenverbindung hast.</string>
-</resources>
+    </resources>

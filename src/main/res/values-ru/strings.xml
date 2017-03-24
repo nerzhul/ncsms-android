@@ -177,4 +177,4 @@
     <string name="restore_finished">SMS восстановление закончилось.</string>
     <string name="x_messages_restored">сообщения восстановлены&#8230;</string>
     <string name="err_no_connection">Нет соединения, пожалуйста, убедитесь, что вы используете работающее соединение для данных.</string>
-</resources>
+    </resources>

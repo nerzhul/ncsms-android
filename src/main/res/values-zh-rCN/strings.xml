@@ -177,4 +177,4 @@
     <string name="restore_finished">短信恢复现已完成。</string>
     <string name="x_messages_restored">信息已恢复&#8230;</string>
     <string name="err_no_connection">没有可用的连接，请确保您具有有效的数据连接.</string>
-</resources>
+    </resources>
