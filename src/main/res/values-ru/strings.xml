@@ -45,13 +45,13 @@
     <string name="pref_title_slow_sync">Безопасная, медленная синхронизация</string>
     <string name="pref_title_slow_sync_frequency">Частота безопасной, медленной синхронизации</string>
     <string name="action_settings">Настройки</string>
-    <string name="sync_now">Синхронизировать</string>
+    <string name="sync_now">Синхронизировать сейчас</string>
     <string name="pref_category_sync">Синхронизация</string>
-    <string name="title_global_pref_to_general_prefs">Общие предпочтения</string>
+    <string name="title_global_pref_to_general_prefs">Основные настройки</string>
     <string name="summary_global_pref_to_general_prefs">Параметры синхронизации</string>
     <string name="summary_notif_prefs">Уведомления</string>
     <string name="pref_header_data_sync">Дата &amp; синхронизации</string>
-    <string name="title_activity_general_settings">Общие настройк</string>
+    <string name="title_activity_general_settings">Основные настройки</string>
 
     <string-array name="pref_sync_frequency_titles">
         <item>5 минут</item>
@@ -71,7 +71,7 @@
         <item>5000 SMS</item>
         <item>10000 SMS</item>
         <item>25000 SMS</item>
-        <item>Every SMS not synced</item>
+        <item>Все несинхронизированные SMS </item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 минута</item>
@@ -104,15 +104,15 @@
     <string name="error_http_connection_failed">Невозможно выполнить HTTP подключение. Пожалуйста, убедитесь, что это веб-сервер</string>
 
     <!-- Main activity -->
-    <string name="ma_title_rate_us">Оцените нас !</string>
+    <string name="ma_title_rate_us">Оцените нас!</string>
     <string name="ma_title_add_account">Добавить аккаунт</string>
-    <string name="ma_title_welcome">Добро пожаловат</string>
-    <string name="ma_content_welcome">Добро пожаловать в приложение ownCloud SMS. Оно позволит синхронизировать ваши SMS с экземпляром OwnCloud используя эту программу.</string>
-    <string name="ma_title_remote_account">Удаленные аккаунты</string>
-    <string name="choose_account">Выберите учетную запись</string>
+    <string name="ma_title_welcome">Добро пожаловать</string>
+    <string name="ma_content_welcome">Добро пожаловать в SMS-приложение Nextcloud. Это приложение позволяет синхронизировать ваши SMS-сообщение с сервером Nextcloud.</string>
+    <string name="ma_title_remote_account">Удалить аккаунт</string>
+    <string name="choose_account">Выбрать аккаунт</string>
 
     <!-- Restauration -->
-    <string name="title_activity_select_account">Выбрать аккаунта</string>
+    <string name="title_activity_select_account">Выбрать аккаунт</string>
     <string name="title_activity_select_contact">Выбрать контакт</string>
     <string name="no_account_configured">Нет настроенных аккаунтов.</string>
 
@@ -170,11 +170,15 @@
     <string name="feature_not_already_implemented">Эта функция еще не реализована и будет доступна в ближайшее время.</string>
     <string name="pref_title_minimum_sync_chars">Минимальная длина телефонного номера</string>
     <string name="err_didnt_find_account_restore">Мы не нашли вашей учётной записи для того, чтобы восстановить ваше сообщение, это очень странная ситуация.</string>
-    <string name="launch_restore">Восстановите мои SMS</string>
+    <string name="launch_restore">Восстановить SMS</string>
     <string name="error_make_default_sms_app">Пожалуйста, выберите это приложение как приложение по умолчанию для SMS для того, чтобы разрешить восстанавливать ваши сообщения. Это ограничение было введено начиная с Android 4.4.</string>
     <string name="fix_permissions">Исправить права доступа</string>
-    <string name="err_kitkat_required">Версия Android 4.4 или выше требуется для использования этой возможности.</string>
-    <string name="restore_finished">SMS восстановление закончилось.</string>
+    <string name="err_kitkat_required">Для использования требуется версия  Android 4.4 или выше.</string>
+    <string name="restore_finished">Восстановление SMS завершено.</string>
     <string name="x_messages_restored">сообщения восстановлены&#8230;</string>
     <string name="err_no_connection">Нет соединения, пожалуйста, убедитесь, что вы используете работающее соединение для данных.</string>
-    </resources>
+    <string name="reinit_sync_cursor">Переустановить курсор синхнронизации</string>
+    <string name="reinit_sync_cursor_confirm">Переустановить курсор синхронизации? Это может замедлить следующую синхронизацию если будет найдено много старых сообщений, не синхронизированных с сервером.</string>
+    <string name="yes_confirm">Да</string>
+    <string name="no_confirm">Нет</string>
+</resources>

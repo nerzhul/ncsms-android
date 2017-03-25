@@ -177,4 +177,8 @@
     <string name="restore_finished">SMS iletileri geri yüklendi.</string>
     <string name="x_messages_restored">ileti geri yüklendi&#8230;</string>
     <string name="err_no_connection">Kullanılabilecek bir bağlantı yok. Lütfen kullanılabilecek bir veri bağlantınız olduğundan emin olun.</string>
-    </resources>
+    <string name="reinit_sync_cursor">Eşitleme imlecini yeniden belirle</string>
+    <string name="reinit_sync_cursor_confirm">Eşitleme imlecini yeniden belirlemek ister misiniz? Bu işlem, sunucu ile eşitlenmemiş çok sayıda ileti bulunursa sonraki eşitleme işlemini yavaşlatır.</string>
+    <string name="yes_confirm">Evet</string>
+    <string name="no_confirm">Hayır</string>
+</resources>
