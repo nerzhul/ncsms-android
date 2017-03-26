@@ -177,4 +177,8 @@
     <string name="restore_finished">SMS-herstel voltooid.</string>
     <string name="x_messages_restored">berichten hersteld&#160;&#8230;</string>
     <string name="err_no_connection">Geen verbinding beschikbaar, zorg ervoor dat je een geldige dataverbinding hebt.</string>
-    </resources>
+    <string name="reinit_sync_cursor">Herinitialisatie synchronisatie cursor</string>
+    <string name="reinit_sync_cursor_confirm">Weet je zeker dat je de synchronizatiecursor wilt herinitialiseren? Dit kan de volgende synchronisatie vertragen als we veel oude, nog niet met de server gesynchroniseerde berichten aantroffen.</string>
+    <string name="yes_confirm">Ja</string>
+    <string name="no_confirm">Nee</string>
+</resources>

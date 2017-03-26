@@ -177,4 +177,6 @@
     <string name="restore_finished">SMS の復元が完了しました。</string>
     <string name="x_messages_restored">メッセージを復元しました&#8230;</string>
     <string name="err_no_connection">利用可能な接続がありません。データ接続が有効になっていることを確認してください。</string>
-    </resources>
+    <string name="yes_confirm">はい</string>
+    <string name="no_confirm">いいえ</string>
+</resources>

@@ -119,7 +119,11 @@
     <string name="fatal_error">Errore grave!</string>
 
     <string name="err_sync_auth_failed">Errore #8: Autenticazione non riuscita</string>
+    <string name="err_sync_http_request_resp">Errore #14: impossibile analizzare la risposta del server</string>
+    <string name="err_sync_http_request_parse_resp">Errore #15: impossibile analizzare la risposta del server</string>
     <string name="err_sync_no_connection_available">Errore #16: Nessuna connessione dati disponibile</string>
+    <string name="err_sync_account_unparsable">Errore #17: account non valido. Riconfiguralo</string>
+    <string name="err_fetch_phonelist">Elenco telefonico non valido ricevuto dal server.</string>
     <string name="err_proto_v2">Il server non supporta questa funzionalità. Assicurati che la versione del server sia almeno la 1.6.</string>
     <string name="contactinfos_title">Informazioni di contatto</string>
     <string name="pref_title_bulk_messages">Numero massimo di messaggi da inviare per sincronizzazione</string>
@@ -137,6 +141,7 @@
     <string name="cancel">Annulla</string>
     <string name="understood">Ricevuto</string>
     <string name="notif_permission_required">Permessi richiesti</string>
+    <string name="notif_permission_required_content">Mancano alcuni permessi per eseguire il processo di sincronizzazione. Correggili nelle impostazioni dell\'applicazione</string>
     <string name="please_fix_it">Correggilo.</string>
     <string name="err_cannot_read_contacts">Non possiamo leggere i tuoi contatti.</string>
     <string name="err_cannot_read_sms">Non possiamo leggere i tuoi SMS.</string>
@@ -153,4 +158,6 @@
     <string name="restore_finished">Il ripristino SMS è ora completato.</string>
     <string name="x_messages_restored">messaggi ripristinati&#8230;</string>
     <string name="err_no_connection">Nessuna connessione disponibile, assicurati di avere una connessione dati valida.</string>
-    </resources>
+    <string name="yes_confirm">Sì</string>
+    <string name="no_confirm">No</string>
+</resources>
