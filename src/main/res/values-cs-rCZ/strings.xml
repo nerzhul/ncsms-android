@@ -177,4 +177,6 @@
     <string name="restore_finished">Obnovení SMS je nyní dokončeno.</string>
     <string name="x_messages_restored">zprávy obnoveny&#8230;</string>
     <string name="err_no_connection">Připojení nedostupné. Prosím ujistěte se, že máte platné datové připojení.</string>
-    </resources>
+    <string name="yes_confirm">Ano</string>
+    <string name="no_confirm">Ne</string>
+</resources>
