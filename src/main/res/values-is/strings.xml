@@ -177,4 +177,8 @@
     <string name="restore_finished">Endurheimtingu SMS er lokið.</string>
     <string name="x_messages_restored">endurheimt skilaboð&#8230;</string>
     <string name="err_no_connection">Engin tenging tiltæk, gakktu úr skugga um að þú sért með gilda gagnatengingu.</string>
-    </resources>
+    <string name="reinit_sync_cursor">Endurstilla samstillingarbendil</string>
+    <string name="reinit_sync_cursor_confirm">Ertu viss um að þú viljir endurstilla samstillingarbendil? Þetta getur hægt á næstu samstillingu ef það finnast mörg gömul skilaboð sem ekki hafa verið samstillt við þjóninn.</string>
+    <string name="yes_confirm">Já</string>
+    <string name="no_confirm">Nei</string>
+</resources>
