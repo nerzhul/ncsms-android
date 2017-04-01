@@ -34,7 +34,7 @@
 
     <!-- System strings, do not translate -->
     <string name="app_name">Nextcloud SMS</string>
-    <string name="login_logo">Logo para ingresar</string>
+    <string name="login_logo">Logotipo para inicio de sesión</string>
 
     <string name="pref_lastmsgdate">fecha_de_ultimo_mensaje</string>
 
@@ -91,7 +91,7 @@
     <string name="title_activity_login">Autenticar</string>
 
     <!-- Login -->
-    <string name="prompt_login">Ingresar</string>
+    <string name="prompt_login">Incio de sesión</string>
     <string name="prompt_password">Contraseña</string>
     <string name="action_sign_in">Autenticar o registrar</string>
     <string name="action_sign_in_short">Autenticar</string>
