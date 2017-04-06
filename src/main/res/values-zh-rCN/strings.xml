@@ -177,6 +177,8 @@
     <string name="restore_finished">短信恢复现已完成。</string>
     <string name="x_messages_restored">信息已恢复&#8230;</string>
     <string name="err_no_connection">没有可用的连接，请确保您具有有效的数据连接.</string>
+    <string name="reinit_sync_cursor">重置同步状态</string>
+    <string name="reinit_sync_cursor_confirm">你确定要重置同步状态吗？如果发现许多未和服务器同步的旧消息，这将减慢下一次同步速度。</string>
     <string name="yes_confirm">是</string>
     <string name="no_confirm">否</string>
 </resources>

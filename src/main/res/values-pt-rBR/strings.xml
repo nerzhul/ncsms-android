@@ -34,16 +34,16 @@
 
     <!-- System strings, do not translate -->
     <string name="app_name">Nextcloud SMS</string>
-    <string name="login_logo">Logo do Login</string>
+    <string name="login_logo">Logotipo do Login</string>
 
-    <string name="pref_lastmsgdate">last_message_date</string>
+    <string name="pref_lastmsgdate">data_última_mensagem</string>
 
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">SMS - Rápido</string>
-    <string name="pref_title_sync_frequency">Frequência de Sincronização Rápida</string>
+    <string name="pref_title_sync_frequency">Frequência da Sincronização Rápida</string>
     <string name="pref_title_slow_sync">SMS - Lento e Seguro</string>
-    <string name="pref_title_slow_sync_frequency">Frequência de Sincronização Lenta Segura</string>
+    <string name="pref_title_slow_sync_frequency">Frequência da Sincronização Lenta Segura</string>
     <string name="action_settings">Configurações</string>
     <string name="sync_now">Sincronizar agora</string>
     <string name="pref_category_sync">Sincronização</string>
@@ -177,4 +177,8 @@
     <string name="restore_finished">A restauração de SMS está agora concluída.</string>
     <string name="x_messages_restored">Mensagens restaurad&#8230;</string>
     <string name="err_no_connection">Nenhuma conexão disponível, verifique se você tem uma conexão de dados válida.</string>
-    </resources>
+    <string name="reinit_sync_cursor">Reiniciar cursor de sincronização</string>
+    <string name="reinit_sync_cursor_confirm">Voce está certo que deseja reiniciar cursor de sincronização? Isso pode deixar lenta a próxima sincronização se encontrarmos mensagens antigas ainda não sincronizadas com o servidor.</string>
+    <string name="yes_confirm">Sim</string>
+    <string name="no_confirm">Não</string>
+</resources>
