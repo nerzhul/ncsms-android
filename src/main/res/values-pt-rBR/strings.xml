@@ -33,7 +33,7 @@
     <string name="translation_version">7</string>
 
     <!-- System strings, do not translate -->
-    <string name="app_name">Nextcloud SMS</string>
+    <string name="app_name">SMS Nextcloud</string>
     <string name="login_logo">Logotipo do Login</string>
 
     <string name="pref_lastmsgdate">data_última_mensagem</string>
@@ -50,7 +50,7 @@
     <string name="title_global_pref_to_general_prefs">Preferências gerais</string>
     <string name="summary_global_pref_to_general_prefs">Opções de Sincronização</string>
     <string name="summary_notif_prefs">Notificações</string>
-    <string name="pref_header_data_sync">Dados &amp; sincronização</string>
+    <string name="pref_header_data_sync">Sincronização &amp; dados</string>
     <string name="title_activity_general_settings">Configurações Gerais</string>
 
     <string-array name="pref_sync_frequency_titles">
@@ -81,7 +81,7 @@
         <item>24 horas</item>
         <item>Nunca</item>
     </string-array>
-    <string name="pref_push_on_receive">Empurrar SMS na recepção</string>
+    <string name="pref_push_on_receive">Impulsionar SMS na recepção</string>
     <string name="pref_sync_wifi">Sincronizar em Wi-Fi</string>
     <string name="pref_sync_4g">Sincronizar em 4G</string>
     <string name="pref_sync_3g">Sincronizar em 3G</string>
@@ -97,17 +97,17 @@
     <string name="action_sign_in_short">Acessar</string>
     <string name="error_invalid_login">Login ou senha incorreta</string>
     <string name="error_invalid_password">Esta senha é muito curta</string>
-    <string name="error_field_required">Este campo é requerido</string>
+    <string name="error_field_required">Este campo é necessário</string>
     <string name="prompt_serverURI">Endereço do servidor</string>
     <string name="error_invalid_server_address">Endereço do servidor inválido</string>
     <string name="error_connection_failed">A conexão falhou, certifique-se de que este é o servidor certo</string>
     <string name="error_http_connection_failed">Não é possível executar uma conexão HTTP. Certifique-se de que existe um servidor web</string>
 
     <!-- Main activity -->
-    <string name="ma_title_rate_us">Nos classifique!</string>
+    <string name="ma_title_rate_us">Classifique-nos!</string>
     <string name="ma_title_add_account">Adicionar uma conta</string>
-    <string name="ma_title_welcome">Bem-Vindo</string>
-    <string name="ma_content_welcome">Bem-vindo ao aplicativo do Nextcloud SMS. Esta aplicação permite sincronizar o SMS com a instância do Nextcloud utilizando a aplicação SMS.</string>
+    <string name="ma_title_welcome">Bem-vindo</string>
+    <string name="ma_content_welcome">Bem-vindo ao aplicativo de SMS do Nextcloud. Esta aplicação permite sincronizar seu SMS com o Nextcloud.</string>
     <string name="ma_title_remote_account">Conta remota</string>
     <string name="choose_account">Escolher conta</string>
 
@@ -124,21 +124,21 @@
     <!-- Errors -->
     <string name="err_sync_get_smslist">Erro #1: Dados inválidos recebidos do servidor ao obter mensagens anteriores</string>
     <string name="err_sync_craft_http_request">Erro #2: Erro ao criar pedido HTTP</string>
-    <string name="err_sync_push_request">Erro #3: O pushing  falhou</string>
-    <string name="err_sync_push_request_resp">Erro #4: Dados inválidos recebidos do servidor no pushing de dados</string>
-    <string name="err_sync_create_json_null_smslist">Erro #5: NULL lista de SMS</string>
-    <string name="err_sync_create_json_put_smslist">Erro # 6: Erro ao criar pedido push</string>
-    <string name="err_sync_create_json_request_encoding">Erro #7: Codificação não suportada ao gerar solicitação</string>
+    <string name="err_sync_push_request">Erro #3: O impulsionamento falhou</string>
+    <string name="err_sync_push_request_resp">Erro #4: Dados inválidos recebidos do servidor no impulsionamento de dados</string>
+    <string name="err_sync_create_json_null_smslist">Erro #5: Lista de SMS NULL</string>
+    <string name="err_sync_create_json_put_smslist">Erro # 6: Erro ao criar pedido de impulsionamento</string>
+    <string name="err_sync_create_json_request_encoding">Erro #7: Codificação não suportada ao gerar requisição</string>
     <string name="err_sync_auth_failed">Erro #8: Falha na autenticação</string>
-    <string name="err_sync_http_request_returncode_unhandled">Erro #9: O servidor define o código de retorno HTTP não manipulado</string>
-    <string name="err_sync_http_request_connect">Erro #11: Não é possível executar uma conexão com a instância Nextcloud</string>
-    <string name="err_sync_http_request_httpexception">Erro #12: Não é possível executar uma conexão para a instância Nextcloud</string>
-    <string name="err_sync_http_request_ioexception">Erro #13: Não é possível executar uma conexão para a instância Nextcloud</string>
+    <string name="err_sync_http_request_returncode_unhandled">Erro #9: O servidor definiu um código de retorno HTTP não suportado</string>
+    <string name="err_sync_http_request_connect">Erro #11: Não é possível executar uma conexão à instância Nextcloud</string>
+    <string name="err_sync_http_request_httpexception">Erro #12: Não é possível executar uma conexão à instância Nextcloud</string>
+    <string name="err_sync_http_request_ioexception">Erro #13: Não é possível executar uma conexão à instância Nextcloud</string>
     <string name="err_sync_http_request_resp">Erro #14: Não é possível analisar a resposta do servidor</string>
     <string name="err_sync_http_request_parse_resp">Erro #15: Não é possível analisar a resposta do servidor</string>
     <string name="err_sync_no_connection_available">Erro #16: Nenhuma conexão de dados disponível</string>
-    <string name="err_sync_account_unparsable">Erro #17: conta malformada. Por favor reconfigure-a</string>
-    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Erro #18: O aplicativo do Nextcloud SMS não está instalado ou o Nextcloud aguarda uma atualização</string>
+    <string name="err_sync_account_unparsable">Erro #17: Conta malformada. Por favor reconfigure-a</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Erro #18: O aplicativo de SMS do Nextcloud não está instalado ou o Nextcloud aguarda uma atualização</string>
     <string name="err_fetch_phonelist">Catalogo telefônico inválido recebido do servidor.</string>
     <string name="err_proto_v2">O servidor não suporta este recurso. Verifique se a versão do servidor é pelo menos 1.6.</string>
     <string name="contactinfos_title">Informações de contato</string>
@@ -147,9 +147,9 @@
     <string name="contactinfos_list">Lista de contatos</string>
     <string name="function_not_available">Esta função ainda não está disponível.</string>
 
-    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="ui_notification_title_template">SMS do Nextcloud : %1$s</string>
     <string name="communicate">Comunicar</string>
-    <string name="title_activity_main2">Atividade2Principal</string>
+    <string name="title_activity_main2">Atividade Principal</string>
 
     <string name="navigation_drawer_open">Abrir a gaveta de navegação</string>
     <string name="navigation_drawer_close">Fechar a gaveta de navegação</string>
@@ -158,8 +158,8 @@
     <string name="cancel">Cacelar</string>
     <string name="understood">Entendido</string>
     <string name="notif_permission_required">Permissões necessárias</string>
-    <string name="notif_permission_required_content">Algumas permissões estão faltando para executar o processo de sincronização. Corrija-o nas configurações do aplicativo</string>
-    <string name="please_fix_it">Por favor, corrigi-lo.</string>
+    <string name="notif_permission_required_content">Algumas permissões estão faltando para executar o processo de sincronização. Corrija-as nas configurações do aplicativo</string>
+    <string name="please_fix_it">Por favor, corrija-o.</string>
     <string name="err_cannot_read_contacts">Não podemos ler seus contatos.</string>
     <string name="err_cannot_read_sms">Não podemos ler o seu SMS.</string>
     <string name="action_appinfo_perms">Informações e permissões da aplicação</string>
@@ -169,16 +169,16 @@
     <string name="nothing_to_sync">Não há nada para sincronizar.</string>
     <string name="feature_not_already_implemented">Esse recurso ainda não está implementado e estará disponível em breve.</string>
     <string name="pref_title_minimum_sync_chars">Comprimento mínimo do número de telefone</string>
-    <string name="err_didnt_find_account_restore">Não encontramos a sua conta para restaurar a sua mensagem, esta é uma situação muito estranha.</string>
+    <string name="err_didnt_find_account_restore">Não encontramos a sua conta para restaurar a mensagem. É uma situação muito estranha.</string>
     <string name="launch_restore">Restaurar meu SMS</string>
-    <string name="error_make_default_sms_app">Por favor, faça este aplicativo SMS padrão para permitir restaurar suas mensagens. Essa limitação foi introduzida pelo Android 4.4.</string>
+    <string name="error_make_default_sms_app">Por favor, faça este aplicativo ser o padrão para SMS a fim de permitir restaurar suas mensagens. Essa limitação foi introduzida pelo Android 4.4.</string>
     <string name="fix_permissions">Corrigir permissões</string>
-    <string name="err_kitkat_required">É necessário usar o Android 4.4 ou superior para usar esse recurso.</string>
-    <string name="restore_finished">A restauração de SMS está agora concluída.</string>
-    <string name="x_messages_restored">Mensagens restaurad&#8230;</string>
+    <string name="err_kitkat_required">É necessário o Android 4.4 ou superior para usar esse recurso.</string>
+    <string name="restore_finished">A restauração de SMS foi concluída.</string>
+    <string name="x_messages_restored">Mensagens restauradas&#8230;</string>
     <string name="err_no_connection">Nenhuma conexão disponível, verifique se você tem uma conexão de dados válida.</string>
     <string name="reinit_sync_cursor">Reiniciar cursor de sincronização</string>
-    <string name="reinit_sync_cursor_confirm">Voce está certo que deseja reiniciar cursor de sincronização? Isso pode deixar lenta a próxima sincronização se encontrarmos mensagens antigas ainda não sincronizadas com o servidor.</string>
+    <string name="reinit_sync_cursor_confirm">Voce está certo que deseja reiniciar o cursor de sincronização? Isso pode deixar lenta a próxima sincronização se encontrarmos mensagens antigas ainda não sincronizadas com o servidor.</string>
     <string name="yes_confirm">Sim</string>
     <string name="no_confirm">Não</string>
 </resources>
