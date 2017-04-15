@@ -30,17 +30,17 @@
     tools:ignore="MissingTranslation">
 
     <!-- Translation version, reference for translators -->
-    <string name="translation_version">1</string>
+    <string name="translation_version">7</string>
 
     <!-- System strings, do not translate -->
-    <string name="app_name">Nextcloud SMS</string>
-    <string name="login_logo">Logo de inicio de sesión</string>
+    <string name="app_name">SMS de Nextcloud</string>
+    <string name="login_logo">Imagen de inicio de sesión</string>
 
     <string name="pref_lastmsgdate">last_message_date</string>
 
     <!-- Translations must begin there -->
     <!-- Preferences -->
-    <string name="pref_title_sync">SMS -Rápido</string>
+    <string name="pref_title_sync">SMS - Rápido</string>
     <string name="pref_title_sync_frequency">Frecuencia de sincronización</string>
     <string name="pref_title_slow_sync">SMS - Lento y seguro</string>
     <string name="pref_title_slow_sync_frequency">Frecuencia de sincronización lenta y segura</string>
@@ -54,7 +54,7 @@
     <string name="title_activity_general_settings">Configuración general</string>
 
     <string-array name="pref_sync_frequency_titles">
-        <item>5 minutes</item>
+        <item>5 minutos</item>
         <item>15 minutos</item>
         <item>30 minutos</item>
         <item>1 hora</item>
@@ -113,16 +113,16 @@
 
     <!-- Restauration -->
     <string name="title_activity_select_account">Seleccione una cuenta</string>
-    <string name="title_activity_select_contact">Selecciones un contacto</string>
+    <string name="title_activity_select_contact">Seleccione un contacto</string>
     <string name="no_account_configured">No hay cuenta configurada</string>
 
     <!-- Notifications -->
     <string name="sync_title">Proceso de sincronización</string>
     <string name="sync_inprogress">Sincronización en progreso...</string>
-    <string name="fatal_error">Error Fatal ! </string>
+    <string name="fatal_error">!Error irremediable! </string>
 
     <!-- Errors -->
-    <string name="err_sync_get_smslist">Error #1: Información inválida recivida desde el servidor al obtener mensajes previos</string>
+    <string name="err_sync_get_smslist">Error #1: Información inválida recibida desde el servidor al obtener mensajes previos</string>
     <string name="err_sync_craft_http_request">Error #2: Error durante la petición HTTP</string>
     <string name="err_sync_push_request">Error #3: Envío de petición fallida</string>
     <string name="err_sync_push_request_resp">Error #4: Información inválida recibida desde el servidor al enviar información</string>
@@ -147,28 +147,28 @@
     <string name="contactinfos_list">Lista de contactos</string>
     <string name="function_not_available">Esta función aun no esta disponible</string>
 
-    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="ui_notification_title_template">SMS de Nextcloud: %1$s</string>
     <string name="communicate">Comunicar</string>
     <string name="title_activity_main2">Main2Activity</string>
 
-    <string name="navigation_drawer_open">Abrir el cajón de navegación</string>
-    <string name="navigation_drawer_close">Cerrar cajón de navegación</string>
+    <string name="navigation_drawer_open">Abrir el menú deslizante de navegación</string>
+    <string name="navigation_drawer_close">Cerrar menú deslizante de navegación</string>
     <string name="ma_title_my_accounts">Mis cuentas</string>
-    <string name="ma_content_swipeaction">Desliza de izquierda a derecha par acceder al menú de acciones</string>
+    <string name="ma_content_swipeaction">Desliza de izquierda a derecha para acceder al menú de acciones</string>
     <string name="cancel">Cancelar</string>
     <string name="understood">Comprendido</string>
     <string name="notif_permission_required">Permisos requeridos</string>
-    <string name="notif_permission_required_content">Faltan algunos permisos para realizar el proceso de sincronización. Por favor, arréglalo en la configuración de la app</string>
+    <string name="notif_permission_required_content">Faltan algunos permisos para realizar el proceso de sincronización. Por favor, arréglalo en la configuración de la aplicación</string>
     <string name="please_fix_it">Por favor, arréglalo.</string>
     <string name="err_cannot_read_contacts">No podemos leer tus contactos.</string>
     <string name="err_cannot_read_sms">No podemos leer tus SMS.</string>
-    <string name="action_appinfo_perms">Info y permisos de la app</string>
+    <string name="action_appinfo_perms">Info y permisos de la aplicación</string>
     <string name="restore_all_messages">Restaurar todos los mensajes</string>
     <string name="account_actions">Acciones de la cuenta</string>
     <string name="error_connection_failed_not_found">Falló la conexión, el servidor devuelve 404 NO ENCONTRADO. Asegúrate de indicar la ruta correcta para tu instancia de Nextcloud.</string>
     <string name="nothing_to_sync"> No hay nada que sincronizar.</string>
     <string name="feature_not_already_implemented">Esta característica no ha sido realizada todavía. Pronto estará disponible.</string>
-    <string name="pref_title_minimum_sync_chars">Longitud del número de teléfono mínima.</string>
+    <string name="pref_title_minimum_sync_chars">Longitud mínima del número de teléfono.</string>
     <string name="err_didnt_find_account_restore">No encontramos tu cuenta para restaurar tus mensajes, esta es una situación muy extraña.</string>
     <string name="launch_restore">Restaurar mis SMS</string>
     <string name="error_make_default_sms_app">Por favor, marca esta aplicación como predeterminada para SMS si quieres restaurar tus mensajes. Esta limitación se introdujo en Android 4.4.</string>
@@ -177,8 +177,8 @@
     <string name="restore_finished">La restauración SMS se ha completado.</string>
     <string name="x_messages_restored">mensajes restaurados&#8230;</string>
     <string name="err_no_connection">Sin conexión disponible, por favor asegure que tiene una conexión de datos válida.</string>
-    <string name="reinit_sync_cursor">Reinicia cursos de sincronización</string>
-    <string name="reinit_sync_cursor_confirm">¿Esta seguro de que desea reiniciar el cursor de sincronización? Esto puede alentar la siguiente sincronización si encontramos muchos mensajes viejos no sincronizados con el servidor.</string>
-    <string name="yes_confirm">SI</string>
+    <string name="reinit_sync_cursor">Reiniciar el cursor de sincronización</string>
+    <string name="reinit_sync_cursor_confirm">¿Esta seguro de que desea reiniciar el cursor de sincronización? Esto puede relentizar la siguiente sincronización, si encontramos muchos mensajes viejos no sincronizados con el servidor.</string>
+    <string name="yes_confirm">Si</string>
     <string name="no_confirm">No</string>
 </resources>
