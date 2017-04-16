@@ -100,6 +100,8 @@
     <string name="prompt_serverURI">Tjeneradresse</string>
     <string name="error_invalid_server_address">Ugyldig tjeneradresse</string>
     <string name="error_connection_failed">Forbindelse feilet, sjekk at dette er korrekt tjener</string>
+    <string name="error_http_connection_failed">Kunne ikke utføre HTTP-tilknytning. Forsikre deg om at det finnes en vev-tjener.</string>
+
     <!-- Main activity -->
     <string name="ma_title_rate_us">Vurder oss!</string>
     <string name="ma_title_add_account">Legg til en konto</string>
@@ -126,10 +128,14 @@
 
     <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
     <string name="communicate">Kommunisere</string>
+    <string name="navigation_drawer_open">Åpne navigasjonsskuff</string>
+    <string name="navigation_drawer_close">Lukk navigasjonsskuff</string>
     <string name="ma_title_my_accounts">Mine kontoer</string>
+    <string name="ma_content_swipeaction">Sveip fra venstre til høyre for å få tilgang til handlingsmenyen.</string>
     <string name="cancel">Avbryt</string>
     <string name="understood">Forstått</string>
     <string name="notif_permission_required">Rettighet nødvendig</string>
+    <string name="notif_permission_required_content">Noen tilganger mangler for utførelse av synkroniseringsprosess. Fiks det i programinnstillingene.</string>
     <string name="please_fix_it">Vennligst fiks det.</string>
     <string name="err_cannot_read_contacts">Vi kan ikke lese dine kontakter</string>
     <string name="err_cannot_read_sms">Vi kan ikke lese dine SMS.</string>
@@ -144,4 +150,6 @@
     <string name="restore_finished">SMS gjenoppretting er nå fullført.</string>
     <string name="x_messages_restored">meldinger gjenopprettet&#8230;</string>
     <string name="err_no_connection">Ingen forbindelse tilgjengelig, vennligst forsikre at du har gyldig dataforbindelse.</string>
+    <string name="yes_confirm">Ja</string>
+    <string name="no_confirm">Nei</string>
 </resources>
