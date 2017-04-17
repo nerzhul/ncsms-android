@@ -119,6 +119,7 @@
     <string name="sync_inprogress">Synkronisering pågår...</string>
     <string name="fatal_error">Kritisk feil !</string>
 
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: Nexcloud SMS-program er ikke installert, eller Nextcloud avventer på grunn av oppdatering</string>
     <string name="err_fetch_phonelist">Ugyldig telefonliste mottatt fra tjener.</string>
     <string name="contactinfos_title">Kontaktopplysninger</string>
     <string name="subtitle_contact_phones">- Kontakt telefoner</string>

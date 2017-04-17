@@ -33,8 +33,7 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">O SMS do Nextcloud sincroniza seus SMS locais em sua instância do Nextcloud</string>
-    <string name="gp_description">
-A aplicação SMS do Nextcloud sincroniza suas mensagens SMS em uma instância remota Nextcloud e lhe permite ler as mensagens. 
+    <string name="gp_description">O aplicativo SMS do Nextcloud sincroniza suas mensagens SMS em uma instância remota Nextcloud e lhe permite ler as mensagens. 
 
 O envio de SMS da instância do Nextcloud virá em uma futura versão.
 
