@@ -106,6 +106,7 @@
     <string name="ma_title_rate_us">Vurder oss!</string>
     <string name="ma_title_add_account">Legg til en konto</string>
     <string name="ma_title_welcome">Velkommen</string>
+    <string name="ma_content_welcome">Velkommen til Nextcloud SMS-program. Dette programmet lar deg synkronisere dine SMS-er til din Nextcloud-installsjon ved bruk av et SMS-program.</string>
     <string name="ma_title_remote_account">Ekstern konto</string>
     <string name="choose_account">Velg konto</string>
 
@@ -119,6 +120,12 @@
     <string name="sync_inprogress">Synkronisering pågår...</string>
     <string name="fatal_error">Kritisk feil !</string>
 
+    <string name="err_sync_http_request_httpexception">Feil #12: Kunne ikke utføre tilkobling til Nextcloud-installasjon</string>
+    <string name="err_sync_http_request_ioexception">Feil #13: Kunne ikke utføre tilkobling til Nextcloud-installasjon</string>
+    <string name="err_sync_http_request_resp">Feil #14: Kunne ikke tolke tjener-svar</string>
+    <string name="err_sync_http_request_parse_resp">Feil #15: Kunne ikke tolke tjenersvar</string>
+    <string name="err_sync_no_connection_available">Feil #16: Ingen datatilknytning tilgjengelig</string>
+    <string name="err_sync_account_unparsable">Feil #17: Feilformatert konto. Sett den opp på nytt</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: Nexcloud SMS-program er ikke installert, eller Nextcloud avventer på grunn av oppdatering</string>
     <string name="err_fetch_phonelist">Ugyldig telefonliste mottatt fra tjener.</string>
     <string name="contactinfos_title">Kontaktopplysninger</string>
@@ -143,6 +150,7 @@
     <string name="action_appinfo_perms">App informasjon og rettigheter</string>
     <string name="restore_all_messages">Gjenopprett alle meldinger</string>
     <string name="account_actions">Kontoaktiviteter</string>
+    <string name="error_connection_failed_not_found">Tilkobling mislyktes, tjeneren svarer 404 IKKE FUNNET. Forsikre deg om at du har valgt rett sti til din Nextcloud-installasjon.</string>
     <string name="nothing_to_sync">Det er ingenting å synkronisere</string>
     <string name="pref_title_minimum_sync_chars">Minimum lengde på telefonnummer</string>
     <string name="launch_restore">Gjenopprett mine SMS</string>
