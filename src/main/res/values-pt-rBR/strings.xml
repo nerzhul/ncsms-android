@@ -71,7 +71,7 @@
         <item>5000 SMS</item>
         <item>10000 SMS</item>
         <item>25000 SMS</item>
-        <item>Cada SMS não sincronizado</item>
+        <item>Todo SMS não sincronizado</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 hora</item>
@@ -137,7 +137,7 @@
     <string name="err_sync_http_request_resp">Erro #14: Não é possível analisar a resposta do servidor</string>
     <string name="err_sync_http_request_parse_resp">Erro #15: Não é possível analisar a resposta do servidor</string>
     <string name="err_sync_no_connection_available">Erro #16: Nenhuma conexão de dados disponível</string>
-    <string name="err_sync_account_unparsable">Erro #17: Conta malformada. Por favor reconfigure-a</string>
+    <string name="err_sync_account_unparsable">Erro #17: Conta mal formada. Por favor reconfigure-a</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Erro #18: O aplicativo de SMS do Nextcloud não está instalado ou o Nextcloud aguarda uma atualização</string>
     <string name="err_fetch_phonelist">Catalogo telefônico inválido recebido do servidor.</string>
     <string name="err_proto_v2">O servidor não suporta este recurso. Verifique se a versão do servidor é pelo menos 1.6.</string>
@@ -155,7 +155,7 @@
     <string name="navigation_drawer_close">Fechar a gaveta de navegação</string>
     <string name="ma_title_my_accounts">Minhas contas</string>
     <string name="ma_content_swipeaction">Deslize da esquerda para a direita para ativar o menu de ação.</string>
-    <string name="cancel">Cacelar</string>
+    <string name="cancel">Cancelar</string>
     <string name="understood">Entendido</string>
     <string name="notif_permission_required">Permissões necessárias</string>
     <string name="notif_permission_required_content">Algumas permissões estão faltando para executar o processo de sincronização. Corrija-as nas configurações do aplicativo</string>
