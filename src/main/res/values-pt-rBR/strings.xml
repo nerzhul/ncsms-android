@@ -107,7 +107,7 @@
     <string name="ma_title_rate_us">Classifique-nos!</string>
     <string name="ma_title_add_account">Adicionar uma conta</string>
     <string name="ma_title_welcome">Bem-vindo</string>
-    <string name="ma_content_welcome">Bem-vindo ao aplicativo de SMS do Nextcloud. Esta aplicação permite sincronizar seu SMS com o Nextcloud.</string>
+    <string name="ma_content_welcome">Bem-vindo ao aplicativo de SMS do Nextcloud. Ele permite sincronizar seu SMS com o Nextcloud.</string>
     <string name="ma_title_remote_account">Conta remota</string>
     <string name="choose_account">Escolher conta</string>
 
@@ -162,7 +162,7 @@
     <string name="please_fix_it">Por favor, corrija-o.</string>
     <string name="err_cannot_read_contacts">Não podemos ler seus contatos.</string>
     <string name="err_cannot_read_sms">Não podemos ler o seu SMS.</string>
-    <string name="action_appinfo_perms">Informações e permissões da aplicação</string>
+    <string name="action_appinfo_perms">Informações e permissões do aplicativo</string>
     <string name="restore_all_messages">Restaurar todas as mensagens</string>
     <string name="account_actions">Ações da conta</string>
     <string name="error_connection_failed_not_found">Falha na conexão, o servidor retorna 404 NOT FOUND. Certifique-se de definir o caminho correto para a instância do Nextcloud.</string>

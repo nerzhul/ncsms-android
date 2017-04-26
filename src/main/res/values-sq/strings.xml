@@ -137,13 +137,37 @@
     <string name="err_sync_http_request_resp">Gabim #14: Në pamundësi për të analizuar përgjigjen e serverit</string>
     <string name="err_sync_http_request_parse_resp">Gabim #15: Në pamundësi për të analizuar përgjigjen e serverit</string>
     <string name="err_sync_no_connection_available">Gabim #16: Nuk ka lidhje me të dhëna e disponueshme</string>
+    <string name="err_sync_account_unparsable">Gabim #17: llogari e keqformuar. Ju lutemi rikonfigurojeni atë</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Gabim #18: Aplikacioni Nextcloud SMS nuk është i instaluar ose Nextcloud në pritje për një upgrade</string>
+    <string name="err_fetch_phonelist">U morr list telefonike jo e vlefshme nga serveri</string>
     <string name="contactinfos_title">Informacioni i kontaktit</string>
     <string name="subtitle_contact_phones">- Kontaktet e telefonave</string>
     <string name="pref_title_bulk_messages">Maksimumi i Mesazheve për të dërguar në sinkronizim</string>
     <string name="contactinfos_list">Lista e kontakteve</string>
+    <string name="function_not_available">Ky funksion nuk është ende i gatshëm</string>
+
+    <string name="ui_notification_title_template">Nextcloud SMS: 1%1$s</string>
     <string name="communicate">Komuniko</string>
+    <string name="navigation_drawer_open">Hapni sirtarin e navigimit</string>
+    <string name="navigation_drawer_close">Mbyllni sirtarin e navigimit</string>
     <string name="ma_title_my_accounts">Llogarit e mia</string>
     <string name="cancel">Anuloje</string>
+    <string name="understood">Kuptohet</string>
+    <string name="notif_permission_required">Kërkohen të drejtat</string>
+    <string name="please_fix_it">Ju lutem rregullojeni</string>
+    <string name="err_cannot_read_contacts">Ne nuk mund ti lexojm kontaktet tuaja.</string>
+    <string name="err_cannot_read_sms">Ne nuk mund ti lexojm SMS-të tuaja.</string>
+    <string name="action_appinfo_perms">Info e aplikacionit dhe të drejtat</string>
     <string name="restore_all_messages">Rikthe të gjithë mesazhet</string>
+    <string name="account_actions">Veprimet e llogarisë</string>
+    <string name="nothing_to_sync">Nuk ka gjë për të sinkronizuar</string>
+    <string name="feature_not_already_implemented">Kjo veçori nuk është implementuar akoma dhedo të jetë e gatshme së shpejti.</string>
+    <string name="pref_title_minimum_sync_chars">Gjatësia minimale e numrit të telefonit</string>
+    <string name="launch_restore">Rikthe SMS-të e mija</string>
+    <string name="fix_permissions">Rregullo të drejtat</string>
+    <string name="restore_finished">Kufizimi i SMS-ve tani ka mbaruar.</string>
+    <string name="x_messages_restored">mesazhet u rikthyen&#8230;</string>
     <string name="err_no_connection">Nuk ka asnjë lidhje, ju lutemi sigurohuni që të keni një lidhje të dhëmasj të vlefshme.</string>
+    <string name="yes_confirm">Po</string>
+    <string name="no_confirm">Jo</string>
 </resources>
