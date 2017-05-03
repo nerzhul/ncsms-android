@@ -4,3 +4,4 @@ ownCloudSMS.iml
 ownCloudSMS-release.apk
 lint.xml
 .gradle/
+.idea/
