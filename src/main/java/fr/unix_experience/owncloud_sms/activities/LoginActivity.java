@@ -260,15 +260,20 @@ public class LoginActivity extends AppCompatActivity {
 		protected Boolean doInBackground(Void... params) {
 			_returnCode = 0;
 			OCHttpClient http = new OCHttpClient(getBaseContext(), _serverURI, _login, _password);
-			GetMethod testMethod = http.getVersion();
+			GetMethod testMethod = null;
 			try {
+				testMethod = http.getVersion();
 				_returnCode = http.execute(testMethod);
+			} catch (IllegalArgumentException e) {
+				Log.w(TAG, "Failed to getVersion, IllegalArgumentException occured: " + e.getMessage());
+				_returnCode = 597;
 			} catch (IOException e) {
 				Log.w(TAG, "Failed to login, IOException occured: " + e.getMessage());
 				_returnCode = 599;
 			}
 
-			testMethod.releaseConnection();
+			if (testMethod != null)
+				testMethod.releaseConnection();
 
 			return (_returnCode == 200);
 		}
@@ -321,6 +326,9 @@ public class LoginActivity extends AppCompatActivity {
 						break;
 					case 404:
 						_serverView.setError(getString(R.string.error_connection_failed_not_found));
+						break;
+					case 597:
+						_serverView.setError(getString(R.string.error_invalid_server_address));
 						break;
 					case 400:
 					case 598:
