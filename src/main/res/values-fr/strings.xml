@@ -118,7 +118,7 @@
 
     <!-- Notifications -->
     <string name="sync_title">Processus de synchronisation</string>
-    <string name="sync_inprogress">Synchonisation en cours...</string>
+    <string name="sync_inprogress">Synchonisation en cours…</string>
     <string name="fatal_error">Erreur fatale ! </string>
 
     <!-- Errors -->
@@ -160,7 +160,7 @@
     <string name="notif_permission_required">Permissions requises</string>
     <string name="notif_permission_required_content">Certaines permissions essentielles sont manquantes, merci de les corriger dans les paramètres de l\'application.</string>
     <string name="please_fix_it">Merci de bien vouloir le corriger.</string>
-    <string name="err_cannot_read_contacts">Nous ne pouvons pas lire vos Contacts.</string>
+    <string name="err_cannot_read_contacts">Nous ne pouvons pas lire vos contacts.</string>
     <string name="err_cannot_read_sms">Nous ne pouvons pas lire vos SMS.</string>
     <string name="action_appinfo_perms">Informations sur l\'application et ses autorisations</string>
     <string name="restore_all_messages">Restaurer tous les messages</string>
