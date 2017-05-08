@@ -140,6 +140,7 @@
     <string name="err_sync_account_unparsable">Gabim #17: llogari e keqformuar. Ju lutemi rikonfigurojeni atë</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Gabim #18: Aplikacioni Nextcloud SMS nuk është i instaluar ose Nextcloud në pritje për një upgrade</string>
     <string name="err_fetch_phonelist">U morr list telefonike jo e vlefshme nga serveri</string>
+    <string name="err_proto_v2">Serveri nuk e mbështet këtë karakteristikë. Sigurohuni që versioni i serverit të jetë të paktën 1.6.</string>
     <string name="contactinfos_title">Informacioni i kontaktit</string>
     <string name="subtitle_contact_phones">- Kontaktet e telefonave</string>
     <string name="pref_title_bulk_messages">Maksimumi i Mesazheve për të dërguar në sinkronizim</string>
@@ -148,26 +149,36 @@
 
     <string name="ui_notification_title_template">Nextcloud SMS: 1%1$s</string>
     <string name="communicate">Komuniko</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
     <string name="navigation_drawer_open">Hapni sirtarin e navigimit</string>
     <string name="navigation_drawer_close">Mbyllni sirtarin e navigimit</string>
     <string name="ma_title_my_accounts">Llogarit e mia</string>
+    <string name="ma_content_swipeaction">Kaloni nga e majta në të djathtë për të aksesuar menun e veprimeve.</string>
     <string name="cancel">Anuloje</string>
     <string name="understood">Kuptohet</string>
     <string name="notif_permission_required">Kërkohen të drejtat</string>
+    <string name="notif_permission_required_content">Disa të drejta mungojnë në mënyrë që të performojmë procesin e sinkronizimit. Ju lutemi rregullojini ato në konfigurimet e aplikacionit. </string>
     <string name="please_fix_it">Ju lutem rregullojeni</string>
     <string name="err_cannot_read_contacts">Ne nuk mund ti lexojm kontaktet tuaja.</string>
     <string name="err_cannot_read_sms">Ne nuk mund ti lexojm SMS-të tuaja.</string>
     <string name="action_appinfo_perms">Info e aplikacionit dhe të drejtat</string>
     <string name="restore_all_messages">Rikthe të gjithë mesazhet</string>
     <string name="account_actions">Veprimet e llogarisë</string>
+    <string name="error_connection_failed_not_found">Lidhja dështoi, serveri kthen 404 NOT FOUND. Sigurohuni që keni vendosur rrugën e duhur për instancën tuaj Nextcloud. </string>
     <string name="nothing_to_sync">Nuk ka gjë për të sinkronizuar</string>
     <string name="feature_not_already_implemented">Kjo veçori nuk është implementuar akoma dhedo të jetë e gatshme së shpejti.</string>
     <string name="pref_title_minimum_sync_chars">Gjatësia minimale e numrit të telefonit</string>
+    <string name="err_didnt_find_account_restore">Ne nuk 1\' e gjetëm llogarinë tuaj që t\'ju kthenim mesazhet, kjo është një situat shumë e çuditshme. </string>
     <string name="launch_restore">Rikthe SMS-të e mija</string>
+    <string name="error_make_default_sms_app">Ju lutemi bëjeni këtë aplikacionin default të SMS-ve në mënyrë që të lejoni rikthimin e mesazheve tuaja. Ky limitim ka ardhur nga Android 4.4.</string>
     <string name="fix_permissions">Rregullo të drejtat</string>
+    <string name="err_kitkat_required"> Android 4.4. ose më i lartë kërkohet që ta përdor këtë karakteristikë.</string>
     <string name="restore_finished">Kufizimi i SMS-ve tani ka mbaruar.</string>
     <string name="x_messages_restored">mesazhet u rikthyen&#8230;</string>
     <string name="err_no_connection">Nuk ka asnjë lidhje, ju lutemi sigurohuni që të keni një lidhje të dhëmasj të vlefshme.</string>
+    <string name="reinit_sync_cursor">Riinicializo kursorin e inicializimit</string>
+    <string name="reinit_sync_cursor_confirm">Jeni të sigurt që doni të riinicializoni kursorin e sinkronizimit? Kjo mund të ngadalsoj sinkronizimin tjetër nëse gjejmë shumë mesazhe të vjetra të pa sinkronizuara me serverin.</string>
     <string name="yes_confirm">Po</string>
     <string name="no_confirm">Jo</string>
 </resources>
