@@ -34,29 +34,29 @@
 
     <!-- System strings, do not translate -->
     <string name="app_name">Nextcloud SMS</string>
-    <string name="login_logo">Logg inn logo</string>
+    <string name="login_logo">Innloggingslogo</string>
 
     <string name="pref_lastmsgdate">Dato for siste melding</string>
 
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">SMS - Hurtig</string>
-    <string name="pref_title_sync_frequency">Hyppig Synkronisering frekvens</string>
+    <string name="pref_title_sync_frequency">Hyppig synkroniseringfrekvens</string>
     <string name="pref_title_slow_sync">SMS - Treg og sikker</string>
     <string name="pref_title_slow_sync_frequency">Sikker sen synkroniseringsfrekvens</string>
     <string name="action_settings">Innstillinger</string>
     <string name="sync_now">Synkroniser nå</string>
     <string name="pref_category_sync">Synkronisering</string>
     <string name="title_global_pref_to_general_prefs">Generelle innstillinger</string>
-    <string name="summary_global_pref_to_general_prefs">Synkroniserings innstillinger</string>
+    <string name="summary_global_pref_to_general_prefs">Synkroniseringsinnstillinger</string>
     <string name="summary_notif_prefs">Varsler</string>
     <string name="pref_header_data_sync">Data og synkronisering</string>
     <string name="title_activity_general_settings">Generelle innstillinger</string>
 
     <string-array name="pref_sync_frequency_titles">
         <item>5 minutter</item>
-        <item>15 minutter</item>
-        <item>30 minutter</item>
+        <item>ett kvarter</item>
+        <item>halvtime</item>
         <item>1 time</item>
         <item>3 timer</item>
         <item>6 timer</item>
@@ -71,7 +71,7 @@
         <item>5 000 SMS</item>
         <item>10 000 SMS</item>
         <item>25 000 SMS</item>
-        <item>Ingen SMS er synkronisert</item>
+        <item>Ingen SMS-er synkronisert</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 time</item>
@@ -82,12 +82,11 @@
         <item>Aldri</item>
     </string-array>
     <string name="pref_push_on_receive">Push SMS ved mottak</string>
-    <string name="pref_sync_wifi">Synkroniser via Wifi</string>
+    <string name="pref_sync_wifi">Synkroniser via Wi-Fi</string>
     <string name="pref_sync_4g">Synkroniser via 4G</string>
     <string name="pref_sync_3g">Synkroniser via 3G</string>
     <string name="pref_sync_gprs">Synkroniser via 2.5G (GPRS)</string>
     <string name="pref_sync_2g">Synkroniser via 2G</string>
-    <string name="pref_sync_others">Synkroniser via andre måter</string>
     <string name="title_activity_login">Logg inn</string>
 
     <!-- Login -->
@@ -118,7 +117,7 @@
 
     <!-- Notifications -->
     <string name="sync_title">Synkroniserings prosess</string>
-    <string name="sync_inprogress">Synkronisering pågår...</string>
+    <string name="sync_inprogress">Synkronisering pågår…</string>
     <string name="fatal_error">Kritisk feil !</string>
 
     <!-- Errors -->
@@ -159,10 +158,10 @@
     <string name="understood">Forstått</string>
     <string name="notif_permission_required">Rettighet nødvendig</string>
     <string name="notif_permission_required_content">Noen tilganger mangler for utførelse av synkroniseringsprosess. Fiks det i programinnstillingene.</string>
-    <string name="please_fix_it">Vennligst fiks det.</string>
+    <string name="please_fix_it">Fiks det.</string>
     <string name="err_cannot_read_contacts">Vi kan ikke lese dine kontakter</string>
     <string name="err_cannot_read_sms">Vi kan ikke lese dine SMS.</string>
-    <string name="action_appinfo_perms">App informasjon og rettigheter</string>
+    <string name="action_appinfo_perms">Programinformasjon og rettigheter</string>
     <string name="restore_all_messages">Gjenopprett alle meldinger</string>
     <string name="account_actions">Kontoaktiviteter</string>
     <string name="error_connection_failed_not_found">Tilkobling mislyktes, tjeneren svarer 404 IKKE FUNNET. Forsikre deg om at du har valgt rett sti til din Nextcloud-installasjon.</string>
