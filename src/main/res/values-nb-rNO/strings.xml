@@ -87,6 +87,7 @@
     <string name="pref_sync_3g">Synkroniser via 3G</string>
     <string name="pref_sync_gprs">Synkroniser via 2.5G (GPRS)</string>
     <string name="pref_sync_2g">Synkroniser via 2G</string>
+    <string name="pref_sync_others">Synkroniser i andre modi</string>
     <string name="title_activity_login">Logg inn</string>
 
     <!-- Login -->
