@@ -34,7 +34,7 @@
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Mit Nextcloud SMS kannst Du Deine SMS mit Deiner Nextcloud synchronisieren</string>
     <string name="gp_description">
-Die Nextloud SMS App synchronisiert Deine SMS-Nachrichten mit einer Nextloud-Instanz und erlaubt Dir, die SMS dort zu lesen.
+Die Nextloud SMS App synchronisiert Deine SMS-Nachrichten mit einer Nextloud-Instanz und erlaubt Dir die SMS dort zu lesen.
 
 In kommenden Versionen soll auch den SMS-Versand von der Nextcloud-Instanz aus möglich sein.
 Auf diese Weise wirst Du von überall in der Welt SMS versenden können, solange Dein Android-Smartphone GSM- und Datenempfang hat.
