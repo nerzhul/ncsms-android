@@ -75,42 +75,7 @@ public interface ASyncContactLoad {
 				}
 
 				// Read all contacts
-				ContentResolver cr = _context.getContentResolver();
-				Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,
-						null, null, null, null);
-				if (((cur != null) ? cur.getCount() : 0) > 0) {
-                    String id, name;
-					while ((cur != null) && cur.moveToNext()) {
-						id = cur.getString(cur.getColumnIndex(ContactsContract.Contacts._ID));
-						name = cur.getString(cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
-						if (Integer.parseInt(cur.getString(
-								cur.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0) {
-
-							// Fetch all phone numbers
-							Cursor pCur = cr.query(
-									ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-									null,
-									ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?",
-									new String[]{id}, null);
-							while ((pCur != null) && pCur.moveToNext()) {
-								String phoneNo = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
-										.replaceAll(" ", "");
-								if (serverPhoneList.contains(phoneNo)) {
-									if (!_objects.contains(name)) {
-										_objects.add(name);
-									}
-									serverPhoneList.remove(phoneNo);
-								}
-							}
-                            if (pCur != null) {
-                                pCur.close();
-                            }
-                        }
-					}
-				}
-                if (cur != null) {
-                    cur.close();
-                }
+				readContacts(serverPhoneList);
 
                 for (String phone : serverPhoneList) {
 					_objects.add(phone);
@@ -126,6 +91,51 @@ public interface ASyncContactLoad {
 				return false;
 			}
 			return true;
+		}
+
+		private void readContacts(ArrayList<String> serverPhoneList) {
+			ContentResolver cr = _context.getContentResolver();
+			Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,
+					null, null, null, null);
+			if (cur == null) {
+				return;
+			}
+
+			if (cur.getCount() == 0) {
+				cur.close();
+				return;
+			}
+
+			String id, name;
+			while (cur.moveToNext()) {
+				id = cur.getString(cur.getColumnIndex(ContactsContract.Contacts._ID));
+				name = cur.getString(cur.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
+				if (Integer.parseInt(cur.getString(
+						cur.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))) > 0) {
+
+					// Fetch all phone numbers
+					Cursor pCur = cr.query(
+							ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+							null,
+							ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " = ?",
+							new String[]{id}, null);
+					while ((pCur != null) && pCur.moveToNext()) {
+						String phoneNo = pCur.getString(pCur.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
+								.replaceAll(" ", "");
+						if (serverPhoneList.contains(phoneNo)) {
+							if (!_objects.contains(name)) {
+								_objects.add(name);
+							}
+							serverPhoneList.remove(phoneNo);
+						}
+					}
+					if (pCur != null) {
+						pCur.close();
+					}
+				}
+			}
+
+			cur.close();
 		}
 
 		protected void onPostExecute(Boolean success) {
