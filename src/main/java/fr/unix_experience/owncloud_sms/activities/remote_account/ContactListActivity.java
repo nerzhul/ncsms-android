@@ -49,14 +49,7 @@ public class ContactListActivity extends AppCompatActivity implements ASyncConta
 
 		assert getIntent().getExtras() != null;
 
-		String accountName = getIntent().getExtras().getString("account");
-
-		// accountName cannot be null, devel error
-		assert accountName != null;
-
         ContactListActivity.mAccountMgr = AccountManager.get(getBaseContext());
-		Account[] myAccountList =
-                ContactListActivity.mAccountMgr.getAccountsByType(getString(R.string.account_type));
 
 		// Init view
 		mObjects = new ArrayList<>();
@@ -66,9 +59,7 @@ public class ContactListActivity extends AppCompatActivity implements ASyncConta
 
 		mAdapter = new ContactListAdapter(getBaseContext(), mObjects);
 
-		final Spinner sp = (Spinner) findViewById(R.id.contact_spinner);
 		mContactInfos = (LinearLayout) findViewById(R.id.contactinfos_layout);
-		final ProgressBar contactProgressBar = (ProgressBar) findViewById(R.id.contactlist_pgbar);
         ListView contactPhoneListView = (ListView) findViewById(R.id.contact_phonelistView);
         mContactPhoneListAdapter = new RecoveryPhoneNumberListViewAdapter(getBaseContext());
         assert contactPhoneListView != null;
@@ -76,14 +67,60 @@ public class ContactListActivity extends AppCompatActivity implements ASyncConta
 
 		mContactInfos.setVisibility(View.INVISIBLE);
 
-        assert sp != null;
-        sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+		initSpinner();
+		createAccountList();
+	}
+
+	private void createAccountList() {
+		final ProgressBar contactProgressBar = (ProgressBar) findViewById(R.id.contactlist_pgbar);
+		assert contactProgressBar != null;
+
+		String accountName = getIntent().getExtras().getString("account");
+		assert accountName != null;
+
+		Account[] myAccountList =
+				ContactListActivity.mAccountMgr.getAccountsByType(getString(R.string.account_type));
+
+		for (final Account element : myAccountList) {
+			if (element.name.equals(accountName)) {
+				// Load "contacts"
+				contactProgressBar.setVisibility(View.VISIBLE);
+				new ContactLoadTask(element, getBaseContext(), mAdapter, mObjects, mLayout,
+						contactProgressBar, mContactInfos).execute();
+
+				// Add refresh handler
+				mLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+					@Override
+					public void onRefresh() {
+						mLayout.setRefreshing(true);
+						mContactInfos.setVisibility(View.INVISIBLE);
+						contactProgressBar.setVisibility(View.VISIBLE);
+						(new Handler()).post(new Runnable() {
+							@Override
+							public void run() {
+								mObjects.clear();
+								mAdapter.notifyDataSetChanged();
+								new ContactLoadTask(element, getBaseContext(), mAdapter, mObjects,
+										mLayout, contactProgressBar, mContactInfos).execute();
+							}
+						});
+					}
+				});
+				return;
+			}
+		}
+	}
+
+	private void initSpinner() {
+		final Spinner sp = (Spinner) findViewById(R.id.contact_spinner);
+		assert sp != null;
+		sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 			@Override
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 				mContactInfos.setVisibility(View.INVISIBLE);
-                mContactPhoneListAdapter.clear();
+				mContactPhoneListAdapter.clear();
 
-                mFetchedContact = sp.getSelectedItem().toString();
+				mFetchedContact = sp.getSelectedItem().toString();
 				fetchContact(mFetchedContact);
 			}
 
@@ -95,37 +132,9 @@ public class ContactListActivity extends AppCompatActivity implements ASyncConta
 
 		});
 		sp.setAdapter(mAdapter);
-
-		for (final Account element : myAccountList) {
-			if (element.name.equals(accountName)) {
-				// Load "contacts"
-                assert contactProgressBar != null;
-                contactProgressBar.setVisibility(View.VISIBLE);
-				new ContactLoadTask(element, getBaseContext(), mAdapter, mObjects, mLayout, contactProgressBar, mContactInfos).execute();
-
-				// Add refresh handler
-				mLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-                    @Override
-                    public void onRefresh() {
-                        mLayout.setRefreshing(true);
-                        mContactInfos.setVisibility(View.INVISIBLE);
-                        contactProgressBar.setVisibility(View.VISIBLE);
-                        (new Handler()).post(new Runnable() {
-                            @Override
-                            public void run() {
-                                mObjects.clear();
-                                mAdapter.notifyDataSetChanged();
-                                new ContactLoadTask(element, getBaseContext(), mAdapter, mObjects, mLayout, contactProgressBar, mContactInfos).execute();
-                            }
-                        });
-                    }
-                });
-				return;
-			}
-		}
 	}
 
-    private void fetchContact(String name) {
+	private void fetchContact(String name) {
         if (!PermissionChecker.checkPermission(this, Manifest.permission.READ_CONTACTS,
                 REQUEST_CONTACTS)) {
             return;

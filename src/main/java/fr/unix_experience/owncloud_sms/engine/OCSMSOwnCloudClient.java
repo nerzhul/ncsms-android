@@ -104,6 +104,48 @@ public class OCSMSOwnCloudClient {
 		}
 	}
 
+	private AndroidSmsFetcher collectMessages(JSONArray smsList) throws OCSyncException {
+		JSONObject smsBoxes = new JSONObject();
+		JSONArray inboxSmsList = null, sentSmsList = null, draftsSmsList = null;
+		try {
+			smsBoxes = _jsonQueryBuffer.getJSONObject("smslist");
+		} catch (JSONException e) {
+			try {
+				_jsonQueryBuffer.getJSONArray("smslist");
+			} catch (JSONException e2) {
+				Log.e(OCSMSOwnCloudClient.TAG, "Invalid datas received from server (doPushRequest, get SMS list)", e);
+				throw new OCSyncException(R.string.err_sync_get_smslist, OCSyncErrorType.PARSE);
+			}
+		}
+
+		try {
+			inboxSmsList = smsBoxes.getJSONArray("inbox");
+		} catch (JSONException e) {
+			Log.i(OCSMSOwnCloudClient.TAG, "No inbox Sms received from server (doPushRequest, get SMS list)");
+		}
+
+		try {
+			sentSmsList = smsBoxes.getJSONArray("sent");
+		} catch (JSONException e) {
+			Log.i(OCSMSOwnCloudClient.TAG, "No sent Sms received from server (doPushRequest, get SMS list)");
+		}
+
+		try {
+			draftsSmsList = smsBoxes.getJSONArray("drafts");
+		} catch (JSONException e) {
+			Log.i(OCSMSOwnCloudClient.TAG, "No drafts Sms received from server (doPushRequest, get SMS list)");
+		}
+
+		AndroidSmsFetcher fetcher = new AndroidSmsFetcher(_context);
+		fetcher.setExistingInboxMessages(inboxSmsList);
+		fetcher.setExistingSentMessages(sentSmsList);
+		fetcher.setExistingDraftsMessages(draftsSmsList);
+
+		fetcher.fetchAllMessages(smsList);
+
+		return fetcher;
+	}
+
 	private void doPushRequestV1(JSONArray smsList) throws OCSyncException {
 		// We need to save this date as a step for connectivity change
 		Long lastMsgDate = (long) 0;
@@ -114,47 +156,10 @@ public class OCSMSOwnCloudClient {
 				return;
 			}
 
-			JSONObject smsBoxes = new JSONObject();
-			JSONArray inboxSmsList = null, sentSmsList = null, draftsSmsList = null;
-			try {
-				smsBoxes = _jsonQueryBuffer.getJSONObject("smslist");
-			} catch (JSONException e) {
-				try {
-                    _jsonQueryBuffer.getJSONArray("smslist");
-				} catch (JSONException e2) {
-					Log.e(OCSMSOwnCloudClient.TAG, "Invalid datas received from server (doPushRequest, get SMS list)", e);
-					throw new OCSyncException(R.string.err_sync_get_smslist, OCSyncErrorType.PARSE);
-				}
-			}
-
-			try {
-				inboxSmsList = smsBoxes.getJSONArray("inbox");
-			} catch (JSONException e) {
-				Log.i(OCSMSOwnCloudClient.TAG, "No inbox Sms received from server (doPushRequest, get SMS list)");
-			}
-
-			try {
-				sentSmsList = smsBoxes.getJSONArray("sent");
-			} catch (JSONException e) {
-				Log.i(OCSMSOwnCloudClient.TAG, "No sent Sms received from server (doPushRequest, get SMS list)");
-			}
-
-			try {
-				draftsSmsList = smsBoxes.getJSONArray("drafts");
-			} catch (JSONException e) {
-				Log.i(OCSMSOwnCloudClient.TAG, "No drafts Sms received from server (doPushRequest, get SMS list)");
-			}
-
-			AndroidSmsFetcher fetcher = new AndroidSmsFetcher(_context);
-			fetcher.setExistingInboxMessages(inboxSmsList);
-			fetcher.setExistingSentMessages(sentSmsList);
-			fetcher.setExistingDraftsMessages(draftsSmsList);
-
-            smsList = new JSONArray();
-			fetcher.fetchAllMessages(smsList);
-
+			// Create new JSONArray to get results
+			smsList = new JSONArray();
 			// Get maximum message date present in smsList to keep a step when connectivity changes
-			lastMsgDate = fetcher.getLastMessageDate();
+			lastMsgDate = collectMessages(smsList).getLastMessageDate();
 		}
 
 		if (smsList.length() == 0) {
@@ -312,39 +317,47 @@ public class OCSMSOwnCloudClient {
 			}
 		}
 
-		if (status == 200) {
-			String response = getResponseBody(req);
+		handleHTTPResponse(req, status, skipError);
+	}
 
-			// Parse the response
-			try {
-                _jsonQueryBuffer = new JSONObject(response);
-			} catch (JSONException e) {
-				if (!skipError) {
-					if (response.contains("ownCloud") && response.contains("DOCTYPE")) {
-						Log.e(OCSMSOwnCloudClient.TAG, "OcSMS app not enabled or ownCloud upgrade is required");
-						throw new OCSyncException(R.string.err_sync_ocsms_not_installed_or_oc_upgrade_required,
-								OCSyncErrorType.SERVER_ERROR);
-					}
-					else {
-						Log.e(OCSMSOwnCloudClient.TAG, "Unable to parse server response", e);
-						throw new OCSyncException(R.string.err_sync_http_request_parse_resp, OCSyncErrorType.PARSE);
+	private void handleHTTPResponse(HttpMethod req, int status, Boolean skipError) throws OCSyncException {
+		switch (status) {
+			case 200: {
+				String response = getResponseBody(req);
+
+				// Parse the response
+				try {
+					_jsonQueryBuffer = new JSONObject(response);
+				} catch (JSONException e) {
+					if (!skipError) {
+						if (response.contains("ownCloud") && response.contains("DOCTYPE")) {
+							Log.e(OCSMSOwnCloudClient.TAG, "OcSMS app not enabled or ownCloud upgrade is required");
+							throw new OCSyncException(R.string.err_sync_ocsms_not_installed_or_oc_upgrade_required,
+									OCSyncErrorType.SERVER_ERROR);
+						} else {
+							Log.e(OCSMSOwnCloudClient.TAG, "Unable to parse server response", e);
+							throw new OCSyncException(R.string.err_sync_http_request_parse_resp, OCSyncErrorType.PARSE);
+						}
 					}
 				}
+				break;
 			}
-		} else if (status == 403) {
-			// Authentication failed
-			throw new OCSyncException(R.string.err_sync_auth_failed, OCSyncErrorType.AUTH);
-		} else {
-			// Unk error
-			String response = getResponseBody(req);
-			Log.e(OCSMSOwnCloudClient.TAG, "Server set unhandled HTTP return code " + status);
+			case 403: {
+				// Authentication failed
+				throw new OCSyncException(R.string.err_sync_auth_failed, OCSyncErrorType.AUTH);
+			}
+			default: {
+				// Unk error
+				String response = getResponseBody(req);
+				Log.e(OCSMSOwnCloudClient.TAG, "Server set unhandled HTTP return code " + status);
 
-			if (response != null) {
-				Log.e(OCSMSOwnCloudClient.TAG, "Status code: " + status + ". Response message: " + response);
-			} else {
-				Log.e(OCSMSOwnCloudClient.TAG, "Status code: " + status);
+				if (response != null) {
+					Log.e(OCSMSOwnCloudClient.TAG, "Status code: " + status + ". Response message: " + response);
+				} else {
+					Log.e(OCSMSOwnCloudClient.TAG, "Status code: " + status);
+				}
+				throw new OCSyncException(R.string.err_sync_http_request_returncode_unhandled, OCSyncErrorType.SERVER_ERROR);
 			}
-			throw new OCSyncException(R.string.err_sync_http_request_returncode_unhandled, OCSyncErrorType.SERVER_ERROR);
 		}
 	}
 
