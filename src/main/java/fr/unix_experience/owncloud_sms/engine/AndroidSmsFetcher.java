@@ -44,6 +44,26 @@ public class AndroidSmsFetcher {
 		bufferMailboxMessages(result, MailboxID.DRAFTS);
 	}
 
+	private void readMailBox(Cursor c, JSONArray result, MailboxID mbID) {
+		do {
+			JSONObject entry = new JSONObject();
+
+			try {
+				for (int idx = 0; idx < c.getColumnCount(); idx++) {
+					handleProviderColumn(c, idx, entry);
+				}
+
+				// Mailbox ID is required by server
+				entry.put("mbox", mbID.ordinal());
+				result.put(entry);
+
+			} catch (JSONException e) {
+				Log.e(AndroidSmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
+			}
+		}
+		while (c.moveToNext());
+	}
+
 	private void bufferMailboxMessages(JSONArray result, MailboxID mbID) {
 		if ((_context == null)) {
 			return;
@@ -64,23 +84,7 @@ public class AndroidSmsFetcher {
 		}
 
 		// Reading mailbox
-		do {
-			JSONObject entry = new JSONObject();
-
-			try {
-				for (int idx = 0; idx < c.getColumnCount(); idx++) {
-					handleProviderColumn(c, idx, entry);
-				}
-
-				// Mailbox ID is required by server
-				entry.put("mbox", mbID.ordinal());
-				result.put(entry);
-
-			} catch (JSONException e) {
-				Log.e(AndroidSmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
-			}
-		}
-		while (c.moveToNext());
+		readMailBox(c, result, mbID);
 
 		Log.i(AndroidSmsFetcher.TAG, c.getCount() + " messages read from " + mbID.getURI());
 		c.close();
@@ -150,22 +154,8 @@ public class AndroidSmsFetcher {
 			return;
 		}
 
-		do {
-			JSONObject entry = new JSONObject();
-
-			try {
-				for (int idx = 0; idx < c.getColumnCount(); idx++) {
-					handleProviderColumn(c, idx, entry);
-				}
-
-				// Mailbox ID is required by server
-				entry.put("mbox", mbID.ordinal());
-				result.put(entry);
-			} catch (JSONException e) {
-				Log.e(AndroidSmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
-			}
-		}
-		while (c.moveToNext());
+		// Read Mailbox
+		readMailBox(c, result, mbID);
 
 		Log.i(AndroidSmsFetcher.TAG, c.getCount() + " messages read from " + mbID.getURI());
 		c.close();

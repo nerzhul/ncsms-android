@@ -293,21 +293,13 @@ public class OCSMSOwnCloudClient {
 
 				// Force loop exit
 				tryNb = OCSMSOwnCloudClient.maximumHttpReqTries;
-			} catch (ConnectException e) {
+			} catch (ConnectException | HttpException e) {
 				Log.e(OCSMSOwnCloudClient.TAG, "Unable to perform a connection to ownCloud instance", e);
 
 				// If it's the last try
 				if (tryNb == OCSMSOwnCloudClient.maximumHttpReqTries) {
 					req.releaseConnection();
 					throw new OCSyncException(R.string.err_sync_http_request_connect, OCSyncErrorType.IO);
-				}
-			} catch (HttpException e) {
-				Log.e(OCSMSOwnCloudClient.TAG, "Unable to perform a connection to ownCloud instance", e);
-
-				// If it's the last try
-				if (tryNb == OCSMSOwnCloudClient.maximumHttpReqTries) {
-					req.releaseConnection();
-					throw new OCSyncException(R.string.err_sync_http_request_httpexception, OCSyncErrorType.IO);
 				}
 			} catch (IOException e) {
 				Log.e(OCSMSOwnCloudClient.TAG, "Unable to perform a connection to ownCloud instance", e);
@@ -321,13 +313,7 @@ public class OCSMSOwnCloudClient {
 		}
 
 		if (status == 200) {
-			String response;
-			try {
-				response = req.getResponseBodyAsString();
-			} catch (IOException e) {
-				Log.e(OCSMSOwnCloudClient.TAG, "Unable to parse server response", e);
-				throw new OCSyncException(R.string.err_sync_http_request_resp, OCSyncErrorType.IO);
-			}
+			String response = getResponseBody(req);
 
 			// Parse the response
 			try {
@@ -350,15 +336,9 @@ public class OCSMSOwnCloudClient {
 			throw new OCSyncException(R.string.err_sync_auth_failed, OCSyncErrorType.AUTH);
 		} else {
 			// Unk error
-			String response;
-			try {
-				response = req.getResponseBodyAsString();
-			} catch (IOException e) {
-				Log.e(OCSMSOwnCloudClient.TAG, "Unable to parse server response", e);
-				throw new OCSyncException(R.string.err_sync_http_request_resp, OCSyncErrorType.PARSE);
-			}
-
+			String response = getResponseBody(req);
 			Log.e(OCSMSOwnCloudClient.TAG, "Server set unhandled HTTP return code " + status);
+
 			if (response != null) {
 				Log.e(OCSMSOwnCloudClient.TAG, "Status code: " + status + ". Response message: " + response);
 			} else {
@@ -368,7 +348,16 @@ public class OCSMSOwnCloudClient {
 		}
 	}
 
-    private static final int maximumHttpReqTries = 3;
+	private String getResponseBody(HttpMethod req) throws OCSyncException {
+		try {
+			return req.getResponseBodyAsString();
+		} catch (IOException e) {
+			Log.e(OCSMSOwnCloudClient.TAG, "Unable to parse server response", e);
+			throw new OCSyncException(R.string.err_sync_http_request_resp, OCSyncErrorType.IO);
+		}
+	}
+
+	private static final int maximumHttpReqTries = 3;
 
 	private final OCHttpClient _http;
 	private final Context _context;
