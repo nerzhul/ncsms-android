@@ -1,5 +1,7 @@
 # Nextcloud SMS (Android)
 
+[![codebeat badge](https://codebeat.co/badges/df05cef7-6724-4a2f-b170-96ed1ab793f6)](https://codebeat.co/projects/github-com-nerzhul-owncloud-sms-app-master)
+
 Nextcloud SMS app pushes your Android devices conversation into your Nextcloud instance, using [ocsms app](https://github.com/nerzhul/ocsms).
 
 ## :arrow_forward: Access
