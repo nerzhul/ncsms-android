@@ -128,7 +128,7 @@
     <string name="err_sync_push_request_resp">Erro #4: Dados inválidos recebidos do servidor no impulsionamento de dados</string>
     <string name="err_sync_create_json_null_smslist">Erro #5: Lista de SMS NULL</string>
     <string name="err_sync_create_json_put_smslist">Erro # 6: Erro ao criar pedido de impulsionamento</string>
-    <string name="err_sync_create_json_request_encoding">Erro #7: Codificação não suportada ao gerar requisição</string>
+    <string name="err_sync_create_json_request_encoding">Erro #7: Codificação não suportada ao gerar solicitação</string>
     <string name="err_sync_auth_failed">Erro #8: Falha na autenticação</string>
     <string name="err_sync_http_request_returncode_unhandled">Erro #9: O servidor definiu um código de retorno HTTP não suportado</string>
     <string name="err_sync_http_request_connect">Erro #11: Não foi possível executar uma conexão à instância Nextcloud</string>
