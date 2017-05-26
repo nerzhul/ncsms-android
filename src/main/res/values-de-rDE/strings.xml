@@ -91,7 +91,7 @@
     <string name="title_activity_login">Anmelden</string>
 
     <!-- Login -->
-    <string name="prompt_login">Login</string>
+    <string name="prompt_login">Anmelden</string>
     <string name="prompt_password">Passwort</string>
     <string name="action_sign_in">Anmelden oder Registrieren</string>
     <string name="action_sign_in_short">Anmelden</string>
