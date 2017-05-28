@@ -93,7 +93,7 @@
     <!-- Login -->
     <string name="prompt_login">Login</string>
     <string name="prompt_password">Passwort</string>
-    <string name="action_sign_in">Einloggen oder Registrieren</string>
+    <string name="action_sign_in">Anmelden oder registrieren</string>
     <string name="action_sign_in_short">Einloggen</string>
     <string name="error_invalid_login">Falscher Benutzername oder Passwort</string>
     <string name="error_invalid_password">Dieses Passwort ist zu kurz</string>
