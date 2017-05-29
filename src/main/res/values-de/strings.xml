@@ -34,7 +34,7 @@
 
     <!-- System strings, do not translate -->
     <string name="app_name">Nextcloud SMS</string>
-    <string name="login_logo">Login Logo</string>
+    <string name="login_logo">Anmelde-Logo</string>
 
     <string name="pref_lastmsgdate">last_message_date</string>
 
@@ -88,13 +88,13 @@
     <string name="pref_sync_gprs">Synchronisiere über GPRS</string>
     <string name="pref_sync_2g">Synchronisiere über GSM</string>
     <string name="pref_sync_others">Synchronisiere über anderen Modus</string>
-    <string name="title_activity_login">Einloggen</string>
+    <string name="title_activity_login">Anmelden</string>
 
     <!-- Login -->
-    <string name="prompt_login">Login</string>
+    <string name="prompt_login">Anmelden</string>
     <string name="prompt_password">Passwort</string>
     <string name="action_sign_in">Anmelden oder registrieren</string>
-    <string name="action_sign_in_short">Einloggen</string>
+    <string name="action_sign_in_short">Anmelden</string>
     <string name="error_invalid_login">Falscher Benutzername oder Passwort</string>
     <string name="error_invalid_password">Dieses Passwort ist zu kurz</string>
     <string name="error_field_required">Pflichtfeld</string>

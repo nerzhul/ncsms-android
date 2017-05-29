@@ -34,7 +34,7 @@
 
     <!-- System strings, do not translate -->
     <string name="app_name">Nextcloud SMS</string>
-    <string name="login_logo">Login Logo</string>
+    <string name="login_logo">Anmelde-Logo</string>
 
     <string name="pref_lastmsgdate">last_message_date</string>
 
