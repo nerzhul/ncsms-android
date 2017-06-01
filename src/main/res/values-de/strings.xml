@@ -95,7 +95,7 @@
     <string name="prompt_password">Passwort</string>
     <string name="action_sign_in">Anmelden oder registrieren</string>
     <string name="action_sign_in_short">Anmelden</string>
-    <string name="error_invalid_login">Falscher Benutzername oder Passwort</string>
+    <string name="error_invalid_login">Benutzername oder Passwort falsch</string>
     <string name="error_invalid_password">Dieses Passwort ist zu kurz</string>
     <string name="error_field_required">Pflichtfeld</string>
     <string name="prompt_serverURI">Serveradresse</string>
@@ -118,7 +118,7 @@
 
     <!-- Notifications -->
     <string name="sync_title">Synchronisation</string>
-    <string name="sync_inprogress">Sychronisation läuft...</string>
+    <string name="sync_inprogress">Sychronisation läuft…</string>
     <string name="fatal_error">Kritischer Fehler!</string>
 
     <!-- Errors -->
