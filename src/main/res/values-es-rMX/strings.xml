@@ -44,14 +44,14 @@
     <string name="pref_title_sync_frequency">Frecuencia de Sinconrización Rápida</string>
     <string name="pref_title_slow_sync">SMS - Lento y Seguro</string>
     <string name="pref_title_slow_sync_frequency">Frecuencia de Sincronización Lenta y Segura</string>
-    <string name="action_settings">Ajustes</string>
+    <string name="action_settings">Configuraciones</string>
     <string name="sync_now">Sincronizar ahora</string>
     <string name="pref_category_sync">Sincronización</string>
     <string name="title_global_pref_to_general_prefs">Preferencias generales</string>
     <string name="summary_global_pref_to_general_prefs">Opciones de sincronización</string>
     <string name="summary_notif_prefs">Notificaciones</string>
     <string name="pref_header_data_sync">Datos &amp; sincronización</string>
-    <string name="title_activity_general_settings">Ajustes generales</string>
+    <string name="title_activity_general_settings">Configuraciones generales</string>
 
     <string-array name="pref_sync_frequency_titles">
         <item>5 minutos</item>
@@ -158,7 +158,7 @@
     <string name="cancel">Cancelar</string>
     <string name="understood">Entendido</string>
     <string name="notif_permission_required">Se requieren privilegios</string>
-    <string name="notif_permission_required_content">Se requieren de algunos privilegios adiconales para ejecutar el proceso de sincronización. Favor de asignarlos en los ajustes de la aplicación. </string>
+    <string name="notif_permission_required_content">Se requieren de algunos privilegios adiconales para ejecutar el proceso de sincronización. Favor de asignarlos en las configuraciones de la aplicación. </string>
     <string name="please_fix_it">Favor de corregir.</string>
     <string name="err_cannot_read_contacts">No es posible leer sus contactos.</string>
     <string name="err_cannot_read_sms">No es posible leer sus SMS.</string>
