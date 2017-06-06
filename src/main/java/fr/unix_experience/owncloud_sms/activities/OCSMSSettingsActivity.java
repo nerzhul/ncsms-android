@@ -128,9 +128,7 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
 		int index = preference.findIndexOfValue(value);
 
 		// Set the summary to reflect the new value.
-		preference
-				.setSummary((index >= 0) ? preference.getEntries()[index]
-						: null);
+		preference.setSummary((index >= 0) ? preference.getEntries()[index] : null);
 
 		Log.i(OCSMSSettingsActivity.TAG, "Modifying listPreference " + key);
 
