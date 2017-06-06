@@ -77,6 +77,7 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
 
 		// Bind our boolean preferences
 		VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("push_on_receive", DefaultPrefs.pushOnReceive));
+		VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("show_sync_notifications", DefaultPrefs.showSyncNotifications));
 		VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_wifi", DefaultPrefs.syncWifi));
 		VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_4g", DefaultPrefs.sync4G));
 		VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_3g", DefaultPrefs.sync3G));
@@ -95,7 +96,7 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
 
 	protected void handleCheckboxPreference(String key, Boolean value) {
 		// Network types allowed for sync
-		if ("push_on_receive".equals(key) ||
+		if ("push_on_receive".equals(key) || "show_sync_notifications".equals(key) ||
 				"sync_wifi".equals(key) || "sync_2g".equals(key) ||
 				"sync_3g".equals(key) || "sync_gprs".equals(key) ||
 				"sync_4g".equals(key) || "sync_others".equals(key)) {

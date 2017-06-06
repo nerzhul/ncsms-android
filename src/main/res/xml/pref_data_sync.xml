@@ -31,6 +31,12 @@
         android:layout_height="wrap_content"
         android:key="push_on_receive"
         android:title="@string/pref_push_on_receive" />
+    <CheckBoxPreference android:id="@+id/checkbox_show_sync_notifications"
+        android:defaultValue="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:key="show_sync_notifications"
+        android:title="@string/pref_show_sync_notifications" />
     <CheckBoxPreference android:id="@+id/checkbox_sync_wifi"
         android:defaultValue="true"
         android:layout_width="wrap_content"

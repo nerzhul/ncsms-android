@@ -43,6 +43,10 @@ public class OCSMSSharedPrefs extends SharedPrefs {
 		return _sPrefs.getBoolean("push_on_receive", DefaultPrefs.pushOnReceive);
 	}
 
+	public Boolean showSyncNotifications() {
+		return _sPrefs.getBoolean("show_sync_notifications", DefaultPrefs.showSyncNotifications);
+	}
+
 	public Boolean syncInWifi() {
 		return _sPrefs.getBoolean("sync_wifi", DefaultPrefs.syncWifi);
 	}

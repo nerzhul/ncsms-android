@@ -157,5 +157,6 @@
     <string name="reinit_sync_cursor_confirm">Are you sure you want to reinitialize the synchronization cursor ? This can slowdown the next synchronisation if we found many old messages not synced with server.</string>
     <string name="yes_confirm">Yes</string>
     <string name="no_confirm">No</string>
+    <string name="pref_show_sync_notifications">Show sync notifications</string>
 
 </resources>

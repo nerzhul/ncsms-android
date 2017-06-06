@@ -181,4 +181,5 @@
     <string name="reinit_sync_cursor_confirm">Êtes-vous sûr de vouloir réinitialiser le curseur de synchronisation ? Cela peut ralentir la prochaine synchronisation si nous trouvons de nombreux anciens messages non synchronisés avec le serveur.</string>
     <string name="yes_confirm">Oui</string>
     <string name="no_confirm">Non</string>
+    <string name="pref_show_sync_notifications">Afficher les notifications de synchronisation</string>
 </resources>

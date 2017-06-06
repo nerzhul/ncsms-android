@@ -31,6 +31,7 @@ import fr.unix_experience.owncloud_sms.enums.OCSMSNotificationType;
 import fr.unix_experience.owncloud_sms.enums.OCSyncErrorType;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
 import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationUI;
+import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
 class SmsSyncAdapter extends AbstractThreadedSyncAdapter {
 
@@ -41,8 +42,11 @@ class SmsSyncAdapter extends AbstractThreadedSyncAdapter {
 	@Override
 	public void onPerformSync(Account account, Bundle extras, String authority,
                               ContentProviderClient provider, SyncResult syncResult) {
-        OCSMSNotificationUI.notify(getContext(), getContext().getString(R.string.sync_title),
-                getContext().getString(R.string.sync_inprogress), OCSMSNotificationType.SYNC.ordinal());
+
+		if (new OCSMSSharedPrefs(getContext()).showSyncNotifications()) {
+			OCSMSNotificationUI.notify(getContext(), getContext().getString(R.string.sync_title),
+					getContext().getString(R.string.sync_inprogress), OCSMSNotificationType.SYNC.ordinal());
+		}
 
 		try {
 			OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(getContext(), account);

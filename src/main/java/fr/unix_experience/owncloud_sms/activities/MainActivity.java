@@ -54,6 +54,7 @@ import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.enums.OCSMSNotificationType;
 import fr.unix_experience.owncloud_sms.enums.PermissionID;
 import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationUI;
+import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 import fr.unix_experience.owncloud_sms.prefs.PermissionChecker;
 
 import static fr.unix_experience.owncloud_sms.enums.PermissionID.REQUEST_MAX;
@@ -204,21 +205,27 @@ public class MainActivity extends AppCompatActivity
 		}
 
 		Context ctx = getApplicationContext();
-		if (_ConnectivityMonitor.isValid()) {
-			// Now fetch messages since last stored date
-			JSONArray smsList = new JSONArray();
-			new AndroidSmsFetcher(ctx).bufferMessagesSinceDate(smsList, (long) 0);
-
-			if (smsList.length() > 0) {
-				OCSMSNotificationUI.notify(ctx, ctx.getString(R.string.sync_title),
-						ctx.getString(R.string.sync_inprogress), OCSMSNotificationType.SYNC.ordinal());
-				new SyncTask(getApplicationContext(), smsList).execute();
-			} else {
-				Toast.makeText(ctx, ctx.getString(R.string.nothing_to_sync), Toast.LENGTH_SHORT).show();
-			}
-		} else {
+		if (!_ConnectivityMonitor.isValid()) {
 			Toast.makeText(ctx, ctx.getString(R.string.err_sync_no_connection_available), Toast.LENGTH_SHORT).show();
+			Log.v(MainActivity.TAG, "Finish syncAllMessages(): invalid connection");
+			return;
 		}
+
+		// Now fetch messages since last stored date
+		JSONArray smsList = new JSONArray();
+		new AndroidSmsFetcher(ctx).bufferMessagesSinceDate(smsList, (long) 0);
+
+		if (smsList.length() == 0) {
+			Toast.makeText(ctx, ctx.getString(R.string.nothing_to_sync), Toast.LENGTH_SHORT).show();
+			Log.v(MainActivity.TAG, "Finish syncAllMessages(): no sms");
+			return;
+		}
+
+		if (new OCSMSSharedPrefs(this).showSyncNotifications()) {
+			OCSMSNotificationUI.notify(ctx, ctx.getString(R.string.sync_title),
+					ctx.getString(R.string.sync_inprogress), OCSMSNotificationType.SYNC.ordinal());
+		}
+		new SyncTask(getApplicationContext(), smsList).execute();
 		Log.v(MainActivity.TAG, "Finish syncAllMessages()");
 	}
 
