@@ -153,6 +153,18 @@
         <item>15</item>
     </string-array>
 
+    <string name="setting_push_on_receive" translatable="false">push_on_receive</string>
+    <string name="setting_show_sync_notifications" translatable="false">show_sync_notifications</string>
+    <string name="setting_sync_wifi" translatable="false">sync_wifi</string>
+    <string name="setting_sync_4g" translatable="false">sync_4g</string>
+    <string name="setting_sync_3g" translatable="false">sync_3g</string>
+    <string name="setting_sync_gprs" translatable="false">sync_gprs</string>
+    <string name="setting_sync_2g" translatable="false">sync_2g</string>
+    <string name="setting_sync_others" translatable="false">sync_others</string>
+    <string name="setting_sync_frequency" translatable="false">sync_frequency</string>
+    <string name="setting_sync_bulk_messages" translatable="false">sync_bulk_messages</string>
+    <string name="setting_minimum_sync_chars" translatable="false">minimum_sync_chars</string>
+
     <string name="pref_push_on_receive">Push SMS on reception</string>
     <string name="pref_sync_wifi">Synchronize in Wi-Fi</string>
     <string name="pref_sync_4g">Synchronize in 4G</string>

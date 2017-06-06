@@ -27,9 +27,11 @@ import android.preference.ListPreference;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
+import android.util.Pair;
 import android.view.MenuItem;
 
 import java.util.List;
+import java.util.Vector;
 
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.activities.virtual.VirtualSettingsActivity;
@@ -45,6 +47,7 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
 	private static AccountManager _accountMgr;
 	private static String _accountAuthority;
 	private static String _accountType;
+	private static Vector<Pair<Integer, Boolean>> _boolSettings;
 
 	private AppCompatDelegate mDelegate;
 
@@ -76,19 +79,30 @@ public class OCSMSSettingsActivity extends VirtualSettingsActivity {
 		VirtualSettingsActivity._prefsRessourceFile = R.xml.pref_data_sync;
 
 		// Bind our boolean preferences
-		VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("push_on_receive", DefaultPrefs.pushOnReceive));
-		VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("show_sync_notifications", DefaultPrefs.showSyncNotifications));
-		VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_wifi", DefaultPrefs.syncWifi));
-		VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_4g", DefaultPrefs.sync4G));
-		VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_3g", DefaultPrefs.sync3G));
-		VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_gprs", DefaultPrefs.syncGPRS));
-		VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_2g", DefaultPrefs.sync2G));
-		VirtualSettingsActivity._boolPrefs.add(new BindObjectPref("sync_others", DefaultPrefs.syncOthers));
+		VirtualSettingsActivity._boolPrefs.add(
+				new BindObjectPref(R.string.setting_push_on_receive, DefaultPrefs.pushOnReceive));
+		VirtualSettingsActivity._boolPrefs.add(
+				new BindObjectPref(R.string.setting_show_sync_notifications, DefaultPrefs.showSyncNotifications));
+		VirtualSettingsActivity._boolPrefs.add(
+				new BindObjectPref(R.string.setting_sync_wifi, DefaultPrefs.syncWifi));
+		VirtualSettingsActivity._boolPrefs.add(
+				new BindObjectPref(R.string.setting_sync_4g, DefaultPrefs.sync4G));
+		VirtualSettingsActivity._boolPrefs.add(
+				new BindObjectPref(R.string.setting_sync_3g, DefaultPrefs.sync3G));
+		VirtualSettingsActivity._boolPrefs.add(
+				new BindObjectPref(R.string.setting_sync_gprs, DefaultPrefs.syncGPRS));
+		VirtualSettingsActivity._boolPrefs.add(
+				new BindObjectPref(R.string.setting_sync_2g, DefaultPrefs.sync2G));
+		VirtualSettingsActivity._boolPrefs.add(
+				new BindObjectPref(R.string.setting_sync_others, DefaultPrefs.syncOthers));
 
 		// Bind our string preferences
-		VirtualSettingsActivity._stringPrefs.add(new BindObjectPref("sync_frequency", "15"));
-		VirtualSettingsActivity._stringPrefs.add(new BindObjectPref("sync_bulk_messages", "-1"));
-		VirtualSettingsActivity._stringPrefs.add(new BindObjectPref("minimum_sync_chars", "1"));
+		VirtualSettingsActivity._stringPrefs.add(
+				new BindObjectPref(R.string.setting_sync_frequency, "15"));
+		VirtualSettingsActivity._stringPrefs.add(
+				new BindObjectPref(R.string.setting_sync_bulk_messages, "-1"));
+		VirtualSettingsActivity._stringPrefs.add(
+				new BindObjectPref(R.string.setting_minimum_sync_chars, "1"));
 
 		// Must be at the end, after preference bind
 		super.onPostCreate(savedInstanceState);

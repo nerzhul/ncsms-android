@@ -177,9 +177,9 @@ public class VirtualSettingsActivity extends PreferenceActivity {
 	// The preference object, it's only a key value pair
 	protected class BindObjectPref {
 		public String name;
-		public Object value;
-		public BindObjectPref(String prefName, Object prefVal) {
-			name = prefName;
+		Object value;
+		public BindObjectPref(int resId, Object prefVal) {
+			name = getString(resId);
 			value = prefVal;
 		}
 	}
