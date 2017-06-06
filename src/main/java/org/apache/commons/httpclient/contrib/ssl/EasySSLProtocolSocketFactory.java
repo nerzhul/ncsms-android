@@ -30,21 +30,24 @@
 
 package org.apache.commons.httpclient.contrib.ssl;
 
+import android.util.Log;
+
+import org.apache.commons.httpclient.ConnectTimeoutException;
+import org.apache.commons.httpclient.HttpClientError;
+import org.apache.commons.httpclient.params.HttpConnectionParams;
+import org.apache.commons.httpclient.protocol.SecureProtocolSocketFactory;
+
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketAddress;
 import java.net.UnknownHostException;
+import java.security.NoSuchAlgorithmException;
 
 import javax.net.SocketFactory;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
-
-import org.apache.commons.httpclient.ConnectTimeoutException;
-import org.apache.commons.httpclient.HttpClientError;
-import org.apache.commons.httpclient.params.HttpConnectionParams;
-import org.apache.commons.httpclient.protocol.SecureProtocolSocketFactory;
 
 /**
  * <p>
@@ -96,6 +99,7 @@ import org.apache.commons.httpclient.protocol.SecureProtocolSocketFactory;
 public class EasySSLProtocolSocketFactory implements SecureProtocolSocketFactory {
 
 	private SSLContext sslcontext = null;
+	private static final String TAG = EasySSLProtocolSocketFactory.class.getSimpleName();
 
 	/**
 	 * Constructor for EasySSLProtocolSocketFactory.
@@ -105,8 +109,30 @@ public class EasySSLProtocolSocketFactory implements SecureProtocolSocketFactory
 	}
 
 	private static SSLContext createEasySSLContext() {
+		SSLContext context = EasySSLProtocolSocketFactory.tryCreateSSLContext("TLSv1.2");
+		if (context == null) {
+			context = EasySSLProtocolSocketFactory.tryCreateSSLContext("TLSv1.1");
+			Log.i(EasySSLProtocolSocketFactory.TAG, "SSLContext set to TLSv1.1");
+		}
+		else {
+			Log.i(EasySSLProtocolSocketFactory.TAG, "SSLContext set to TLSv1.2");
+		}
+
+		if (context == null) {
+			context = EasySSLProtocolSocketFactory.tryCreateSSLContext("TLSv1");
+			Log.i(EasySSLProtocolSocketFactory.TAG, "SSLContext set to TLSv1");
+		}
+
+		if (context == null) {
+			context = EasySSLProtocolSocketFactory.tryCreateSSLContext("SSL");
+			Log.i(EasySSLProtocolSocketFactory.TAG, "SSLContext set to SSL");
+		}
+
+		if (context == null) {
+			throw new HttpClientError("Failed to create SSLContext");
+		}
+
 		try {
-			SSLContext context = SSLContext.getInstance("SSL");
 			context.init(
 					null,
 					new TrustManager[] {new EasyX509TrustManager(null)},
@@ -117,11 +143,19 @@ public class EasySSLProtocolSocketFactory implements SecureProtocolSocketFactory
 		}
 	}
 
-	private SSLContext getSSLContext() {
-		if (this.sslcontext == null) {
-			this.sslcontext = createEasySSLContext();
+	private static SSLContext tryCreateSSLContext(String ctx) {
+		try {
+			return SSLContext.getInstance(ctx);
+		} catch (NoSuchAlgorithmException e) {
+			return null;
 		}
-		return this.sslcontext;
+	}
+
+	private SSLContext getSSLContext() {
+		if (sslcontext == null) {
+			sslcontext = EasySSLProtocolSocketFactory.createEasySSLContext();
+		}
+		return sslcontext;
 	}
 
 	/**
@@ -132,7 +166,7 @@ public class EasySSLProtocolSocketFactory implements SecureProtocolSocketFactory
 			int port,
 			InetAddress clientHost,
 			int clientPort)
-			throws IOException, UnknownHostException {
+			throws IOException {
 
 		return getSSLContext().getSocketFactory().createSocket(
 				host,
@@ -162,12 +196,12 @@ public class EasySSLProtocolSocketFactory implements SecureProtocolSocketFactory
 	 * determined
 	 */
 	public Socket createSocket(
-			final String host,
-			final int port,
-			final InetAddress localAddress,
-			final int localPort,
-			final HttpConnectionParams params
-	) throws IOException, UnknownHostException, ConnectTimeoutException {
+			String host,
+			int port,
+			InetAddress localAddress,
+			int localPort,
+			HttpConnectionParams params
+	) throws IOException {
 		if (params == null) {
 			throw new IllegalArgumentException("Parameters may not be null");
 		}
@@ -189,7 +223,7 @@ public class EasySSLProtocolSocketFactory implements SecureProtocolSocketFactory
 	 * @see SecureProtocolSocketFactory#createSocket(java.lang.String,int)
 	 */
 	public Socket createSocket(String host, int port)
-			throws IOException, UnknownHostException {
+			throws IOException {
 		return getSSLContext().getSocketFactory().createSocket(
 				host,
 				port
@@ -204,7 +238,7 @@ public class EasySSLProtocolSocketFactory implements SecureProtocolSocketFactory
 			String host,
 			int port,
 			boolean autoClose)
-			throws IOException, UnknownHostException {
+			throws IOException {
 		return getSSLContext().getSocketFactory().createSocket(
 				socket,
 				host,
