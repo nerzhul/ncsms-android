@@ -181,4 +181,4 @@
     <string name="reinit_sync_cursor_confirm">Ertu viss um að þú viljir endurstilla samstillingarbendil? Þetta getur hægt á næstu samstillingu ef það finnast mörg gömul skilaboð sem ekki hafa verið samstillt við þjóninn.</string>
     <string name="yes_confirm">Já</string>
     <string name="no_confirm">Nei</string>
-</resources>
+    </resources>

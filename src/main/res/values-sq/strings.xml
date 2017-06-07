@@ -181,4 +181,4 @@
     <string name="reinit_sync_cursor_confirm">Jeni të sigurt që doni të riinicializoni kursorin e sinkronizimit? Kjo mund të ngadalsoj sinkronizimin tjetër nëse gjejmë shumë mesazhe të vjetra të pa sinkronizuara me serverin.</string>
     <string name="yes_confirm">Po</string>
     <string name="no_confirm">Jo</string>
-</resources>
+    </resources>

@@ -181,4 +181,4 @@
     <string name="reinit_sync_cursor_confirm">Bist du dir sicher, dass du den Synchronisationscursor reinitialisieren möchtest? Dies kann die nächste Synchronisation verlangsammen, wenn mehrere, mit dem Server, nicht synchronisierte Nachrichten gefunden werden.</string>
     <string name="yes_confirm">Ja</string>
     <string name="no_confirm">Nein</string>
-</resources>
+    </resources>

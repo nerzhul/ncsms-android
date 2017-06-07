@@ -179,4 +179,4 @@
     <string name="reinit_sync_cursor_confirm">Είστε σίγουροι πως θέλετε να επανεκκινήσετε τον συγχρονισμό δρομέα; Αυτό μπορεί να καθυστερήσει τον επόμενο συγχρονισμό εάν βρούμε πολλά παλιά μηνύματα που δεν έχουν συγχρονιστεί με τον εξυπηρετητή. </string>
     <string name="yes_confirm">Ναι</string>
     <string name="no_confirm">Όχι</string>
-</resources>
+    </resources>

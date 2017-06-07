@@ -181,4 +181,4 @@
     <string name="reinit_sync_cursor_confirm">同期カーソルを再初期化してもよろしいですか？ サーバーと同期されていない古いメッセージが多数見つかった場合は、次の同期が遅くなる可能性があります。</string>
     <string name="yes_confirm">はい</string>
     <string name="no_confirm">いいえ</string>
-</resources>
+    </resources>

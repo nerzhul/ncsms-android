@@ -181,4 +181,4 @@
     <string name="reinit_sync_cursor_confirm">Weet je zeker dat je de synchronizatiecursor wilt herinitialiseren? Dit kan de volgende synchronisatie vertragen als we veel oude, nog niet met de server gesynchroniseerde berichten aantroffen.</string>
     <string name="yes_confirm">Ja</string>
     <string name="no_confirm">Nee</string>
-</resources>
+    </resources>
