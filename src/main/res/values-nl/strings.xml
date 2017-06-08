@@ -41,9 +41,9 @@
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">SMS - Snel</string>
-    <string name="pref_title_sync_frequency">Fast Sync-frequentie</string>
+    <string name="pref_title_sync_frequency">Snelle sync-frequentie</string>
     <string name="pref_title_slow_sync">SMS - Langzaam en veilig</string>
-    <string name="pref_title_slow_sync_frequency">Beveiligde Slow Sync-frequentie</string>
+    <string name="pref_title_slow_sync_frequency">Beveiligde langzame sync-frequentie</string>
     <string name="action_settings">Instellingen</string>
     <string name="sync_now">Nu synchroniseren</string>
     <string name="pref_category_sync">Synchronisatie</string>
@@ -181,4 +181,5 @@
     <string name="reinit_sync_cursor_confirm">Weet je zeker dat je de synchronizatiecursor wilt herinitialiseren? Dit kan de volgende synchronisatie vertragen als we veel oude, nog niet met de server gesynchroniseerde berichten aantroffen.</string>
     <string name="yes_confirm">Ja</string>
     <string name="no_confirm">Nee</string>
-    </resources>
+    <string name="pref_show_sync_notifications">Sync-notificatie weergeven</string>
+</resources>

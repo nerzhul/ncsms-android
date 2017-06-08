@@ -181,4 +181,5 @@
     <string name="reinit_sync_cursor_confirm">¿Está seguro de que desea reinicializar el cursor de inicialización? Esto puede alentar la siguiente sincronización si se encuentran varios mensajes antiguos que no hayan sincronizado con el servidor. </string>
     <string name="yes_confirm">Sí</string>
     <string name="no_confirm">No</string>
-    </resources>
+    <string name="pref_show_sync_notifications">Mostrar notificaciones de sincronización</string>
+</resources>

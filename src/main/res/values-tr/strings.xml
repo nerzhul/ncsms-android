@@ -181,4 +181,5 @@
     <string name="reinit_sync_cursor_confirm">Eşitleme imlecini yeniden belirlemek ister misiniz? Bu işlem, sunucu ile eşitlenmemiş çok sayıda ileti bulunursa sonraki eşitleme işlemini yavaşlatır.</string>
     <string name="yes_confirm">Evet</string>
     <string name="no_confirm">Hayır</string>
-    </resources>
+    <string name="pref_show_sync_notifications">Eşitleme bildirimlerini görüntüle</string>
+</resources>

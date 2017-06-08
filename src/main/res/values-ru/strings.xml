@@ -181,4 +181,5 @@
     <string name="reinit_sync_cursor_confirm">Переустановить курсор синхронизации? Это может замедлить следующую синхронизацию если будет найдено много старых сообщений, не синхронизированных с сервером.</string>
     <string name="yes_confirm">Да</string>
     <string name="no_confirm">Нет</string>
-    </resources>
+    <string name="pref_show_sync_notifications">Показывать уведомления синхронизации</string>
+</resources>

@@ -181,4 +181,5 @@
     <string name="reinit_sync_cursor_confirm">Jesteś pewien/-na, że chcesz zainicjować ponownie suwak synchronizacji? Może to spowolnić następną synchronizację jeśli zbyt duża liczna starszych SMS-ów nie jest zsynchronizowana z serwerem.</string>
     <string name="yes_confirm">Tak</string>
     <string name="no_confirm">Nie</string>
-    </resources>
+    <string name="pref_show_sync_notifications">Pokaż powiadomienia dotyczące synchronizacji</string>
+</resources>

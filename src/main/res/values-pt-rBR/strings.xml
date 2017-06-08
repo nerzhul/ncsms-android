@@ -147,7 +147,7 @@
     <string name="contactinfos_list">Lista de contatos</string>
     <string name="function_not_available">Esta função ainda não está disponível.</string>
 
-    <string name="ui_notification_title_template">SMS do Nextcloud : %1$s</string>
+    <string name="ui_notification_title_template">Nextcloud  SMS: %1$s</string>
     <string name="communicate">Comunicar</string>
     <string name="title_activity_main2">Atividade Principal</string>
 
@@ -181,4 +181,5 @@
     <string name="reinit_sync_cursor_confirm">Você está certo que deseja reiniciar o cursor de sincronização? Isso pode deixar lenta a próxima sincronização se encontrarmos mensagens antigas ainda não sincronizadas com o servidor.</string>
     <string name="yes_confirm">Sim</string>
     <string name="no_confirm">Não</string>
-    </resources>
+    <string name="pref_show_sync_notifications">Mostrar notificações de sincronismo</string>
+</resources>
