@@ -181,4 +181,5 @@
     <string name="reinit_sync_cursor_confirm">Er du sikker på at du vil reinitialisere synkronisasjonspekeren? Dette kan gjøre neste synkronisering tregere hvis vi finner mange gamle meldinger som ikke er synkronisert med tjeneren.</string>
     <string name="yes_confirm">Ja</string>
     <string name="no_confirm">Nei</string>
-    </resources>
+    <string name="pref_show_sync_notifications">Vis synkroniseringsvarsler</string>
+</resources>
