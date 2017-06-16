@@ -107,7 +107,7 @@
     <string name="ma_title_rate_us">Classifique-nos!</string>
     <string name="ma_title_add_account">Adicionar uma conta</string>
     <string name="ma_title_welcome">Bem-vindo</string>
-    <string name="ma_content_welcome">Bem-vindo ao aplicativo de SMS do Nextcloud. Ele permite sincronizar seu SMS com o Nextcloud.</string>
+    <string name="ma_content_welcome">Bem-vindo ao aplicativo de SMS do Nextcloud. Ele permite sincronizar seus SMS com o Nextcloud usando o aplicativo SMS.</string>
     <string name="ma_title_remote_account">Conta remota</string>
     <string name="choose_account">Escolher conta</string>
 
@@ -137,7 +137,7 @@
     <string name="err_sync_http_request_resp">Erro #14: Não foi possível analisar a resposta do servidor</string>
     <string name="err_sync_http_request_parse_resp">Erro #15: Não éoi possível analisar a resposta do servidor</string>
     <string name="err_sync_no_connection_available">Erro #16: Nenhuma conexão de dados disponível</string>
-    <string name="err_sync_account_unparsable">Erro #17: Conta mal formada. Por favor reconfigure-a</string>
+    <string name="err_sync_account_unparsable">Erro #17: Conta mal criada. Por favor reconfigure-a</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Erro #18: O aplicativo de SMS do Nextcloud não está instalado ou o Nextcloud aguarda uma atualização</string>
     <string name="err_fetch_phonelist">Catalogo telefônico inválido recebido do servidor.</string>
     <string name="err_proto_v2">O servidor não suporta este recurso. Verifique se a versão do servidor é pelo menos 1.6.</string>
