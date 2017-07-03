@@ -171,12 +171,12 @@
     <string name="pref_title_minimum_sync_chars">Minimum lengde på telefonnummer</string>
     <string name="err_didnt_find_account_restore">Vi fant ikke din konto for å gjenopprette meldingen din. Dette er en rar situasjon.</string>
     <string name="launch_restore">Gjenopprett mine SMS</string>
-    <string name="error_make_default_sms_app">Vennligst sett denne applikasjonen som standard SMS- applikasjon for å tillate gjenoppretting av meldingene dine. Denne begrensningen ble introdusert i Android 4.4.</string>
+    <string name="error_make_default_sms_app">Sett denne applikasjonen som standard SMS-program for å tillate gjenoppretting av meldingene dine. Denne begrensningen ble introdusert i Android 4.4.</string>
     <string name="fix_permissions">Fiks rettigheter</string>
     <string name="err_kitkat_required">Android 4.4 eller nyere er påkrevd for å bruke denne egenskapen.</string>
     <string name="restore_finished">SMS gjenoppretting er nå fullført.</string>
     <string name="x_messages_restored">meldinger gjenopprettet&#8230;</string>
-    <string name="err_no_connection">Ingen forbindelse tilgjengelig, vennligst forsikre at du har gyldig dataforbindelse.</string>
+    <string name="err_no_connection">Ingen forbindelse tilgjengelig, forsikre at du har gyldig dataforbindelse.</string>
     <string name="reinit_sync_cursor">Reinit synkronisasjonspeker</string>
     <string name="reinit_sync_cursor_confirm">Er du sikker på at du vil reinitialisere synkronisasjonspekeren? Dette kan gjøre neste synkronisering tregere hvis vi finner mange gamle meldinger som ikke er synkronisert med tjeneren.</string>
     <string name="yes_confirm">Ja</string>
