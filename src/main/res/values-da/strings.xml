@@ -180,4 +180,5 @@
     <string name="reinit_sync_cursor">Initaliser synkroniserings cursor</string>
     <string name="yes_confirm">Ja</string>
     <string name="no_confirm">Nej</string>
-    </resources>
+    <string name="pref_show_sync_notifications">Vis notifikationer</string>
+</resources>
