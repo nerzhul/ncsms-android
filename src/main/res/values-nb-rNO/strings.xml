@@ -171,7 +171,7 @@
     <string name="pref_title_minimum_sync_chars">Minimum lengde på telefonnummer</string>
     <string name="err_didnt_find_account_restore">Vi fant ikke din konto for å gjenopprette meldingen din. Dette er en rar situasjon.</string>
     <string name="launch_restore">Gjenopprett mine SMS</string>
-    <string name="error_make_default_sms_app">Sett denne applikasjonen som standard SMS-program for å tillate gjenoppretting av meldingene dine. Denne begrensningen ble introdusert i Android 4.4.</string>
+    <string name="error_make_default_sms_app">Sett denne programmet som forvalgt SMS-program for å tillate gjenoppretting av meldingene dine. Denne begrensningen ble introdusert i Android 4.4.</string>
     <string name="fix_permissions">Fiks rettigheter</string>
     <string name="err_kitkat_required">Android 4.4 eller nyere er påkrevd for å bruke denne egenskapen.</string>
     <string name="restore_finished">SMS gjenoppretting er nå fullført.</string>

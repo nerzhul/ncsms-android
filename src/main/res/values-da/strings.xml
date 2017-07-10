@@ -178,6 +178,7 @@
     <string name="x_messages_restored">Meddelelser gendannet&#8230;</string>
     <string name="err_no_connection">Ingen forbindelse til rådighed, vær sikker på at du har en gyldig dataforbindelse.</string>
     <string name="reinit_sync_cursor">Initaliser synkroniserings cursor</string>
+    <string name="reinit_sync_cursor_confirm">Er du sikker på at du vil genaktivere synkroniseringsmarkøren? Dette kan nedsætte den næste synkronisering, hvis vi fandt mange gamle meddelelser ikke synkroniseret med serveren.</string>
     <string name="yes_confirm">Ja</string>
     <string name="no_confirm">Nej</string>
     <string name="pref_show_sync_notifications">Vis notifikationer</string>
