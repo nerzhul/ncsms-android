@@ -32,7 +32,7 @@
 	<string name="gp_translation_version">3</string>
 
 	<!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMS sincronice su SMS local con su instancia Nextcloud</string>
+    <string name="gp_short_description">SMS de Nextcloud sincroniza tu SMS local con tu instancia Nextcloud</string>
     <string name="gp_description">
 Con la aplicación SMS para ownCloud sincronice sus mensajes SMS en una instancia remota de ownCloud y podrá leer sus mensajes desde ella. 
 

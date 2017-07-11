@@ -33,7 +33,7 @@
     <string name="translation_version">7</string>
 
     <!-- System strings, do not translate -->
-    <string name="app_name">Nextcloud SMS</string>
+    <string name="app_name">SMS de Nextcloud</string>
     <string name="login_logo">Logotipo para inicio de sesión</string>
 
     <string name="pref_lastmsgdate">fecha_de_ultimo_mensaje</string>
@@ -137,7 +137,7 @@
     <string name="err_sync_http_request_resp">Error #14: Falla al interpretar la respuesta del servidor</string>
     <string name="err_sync_http_request_parse_resp">Error #15: Falla al interpretar la respuesta del servidor</string>
     <string name="err_sync_no_connection_available">Error #16: No se cuenta una conexión de datos disponible</string>
-    <string name="err_sync_account_unparsable">Error #17: Cuenta malformada. Favor de reconfiguarla</string>
+    <string name="err_sync_account_unparsable">Error #17: Cuenta malformada. Por favor reconfigurala</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: La aplicación Nextcloud SMS no ha sido instalada o Nextcloud requiere una actualización</string>
     <string name="err_fetch_phonelist">Se recibió una lista de teléfonos inválida del servidor. </string>
     <string name="err_proto_v2">El servidor no soporta esta funcionalidad. Favor de verificar que la versión del servidor sea por lo menos la 1.6. </string>
@@ -172,7 +172,7 @@
     <string name="err_didnt_find_account_restore">Su cuenta no fue encontrada para restaurar su mensaje, este es un caso muy atípico. </string>
     <string name="launch_restore">Restaurar mis SMS</string>
     <string name="error_make_default_sms_app">Favor de establecer esta aplicación como la aplicación por omision de SMS para permitir restaurar sus mensajes. Esta restricción fue introducida por Android 4.4</string>
-    <string name="fix_permissions">Corregir privilegios</string>
+    <string name="fix_permissions">Arreglar los privilegios</string>
     <string name="err_kitkat_required">Se requiere Android 4.4 o superior para usar esta funcionalidad.</string>
     <string name="restore_finished">La restauración de SMS ha terminado.</string>
     <string name="x_messages_restored">mensajes restaurados&#8230;</string>
