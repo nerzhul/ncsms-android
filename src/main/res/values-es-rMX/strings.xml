@@ -114,7 +114,7 @@
     <!-- Restauration -->
     <string name="title_activity_select_account">Seleccione la cuenta</string>
     <string name="title_activity_select_contact">Seleccione el contacto</string>
-    <string name="no_account_configured">No ha configurado una cuenta.</string>
+    <string name="no_account_configured">No hay una cuenta configurada.</string>
 
     <!-- Notifications -->
     <string name="sync_title">Proceso de sincronización</string>
@@ -124,7 +124,7 @@
     <!-- Errors -->
     <string name="err_sync_get_smslist">Error #1: Se recibieron datos inválidos al tratar de obtener los mensajes previos</string>
     <string name="err_sync_craft_http_request">Error #2: Error al generar la solicitud HTTP </string>
-    <string name="err_sync_push_request">Error #3:  Falla de la solicitud de cambio</string>
+    <string name="err_sync_push_request">Error #3:  Falla en la solicitud de cambio</string>
     <string name="err_sync_push_request_resp">Error #4: Se recibieron datos inválidos del servidor al publicar los datos</string>
     <string name="err_sync_create_json_null_smslist">Error #5: Lista de SMS nula</string>
     <string name="err_sync_create_json_put_smslist">Error #6: Error al generar la solicitud de cambio</string>
@@ -140,7 +140,7 @@
     <string name="err_sync_account_unparsable">Error #17: Cuenta malformada. Por favor reconfigurala</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: La aplicación Nextcloud SMS no ha sido instalada o Nextcloud requiere una actualización</string>
     <string name="err_fetch_phonelist">Se recibió una lista de teléfonos inválida del servidor. </string>
-    <string name="err_proto_v2">El servidor no soporta esta funcionalidad. Favor de verificar que la versión del servidor sea por lo menos la 1.6. </string>
+    <string name="err_proto_v2">El servidor no soporta esta funcionalidad. Por favor verifica que la versión del servidor sea por lo menos la 1.6. </string>
     <string name="contactinfos_title">Información de contacto</string>
     <string name="subtitle_contact_phones">- Teléfonos de contacto</string>
     <string name="pref_title_bulk_messages">Número máximo de mensajes a enviar por sincronización</string>
@@ -154,13 +154,13 @@
     <string name="navigation_drawer_open">Abirr la barra de navegación</string>
     <string name="navigation_drawer_close">Cerrar la barra de navegación</string>
     <string name="ma_title_my_accounts">Mis cuentas</string>
-    <string name="ma_content_swipeaction">Deslice el dedo de izquieda a derecha para acceder al menú de acción.</string>
+    <string name="ma_content_swipeaction">Desliza el dedo de izquieda a derecha para acceder al menú de acción.</string>
     <string name="cancel">Cancelar</string>
     <string name="understood">Entendido</string>
     <string name="notif_permission_required">Se requieren privilegios</string>
     <string name="notif_permission_required_content">Se requieren de algunos privilegios adiconales para ejecutar el proceso de sincronización. Favor de asignarlos en las configuraciones de la aplicación. </string>
     <string name="please_fix_it">Favor de corregir.</string>
-    <string name="err_cannot_read_contacts">No es posible leer sus contactos.</string>
+    <string name="err_cannot_read_contacts">No es posible leer tus contactos.</string>
     <string name="err_cannot_read_sms">No es posible leer sus SMS.</string>
     <string name="action_appinfo_perms">Información y privilegios de la aplicación</string>
     <string name="restore_all_messages">Restarurar todos los mensajes</string>
