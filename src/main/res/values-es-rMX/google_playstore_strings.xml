@@ -34,7 +34,7 @@
 	<!-- Translations must begin here -->
     <string name="gp_short_description">SMS de Nextcloud sincroniza tu SMS local con tu instancia Nextcloud</string>
     <string name="gp_description">
-Con la aplicación SMS para ownCloud sincronice sus mensajes SMS en una instancia remota de ownCloud y podrá leer sus mensajes desde ella. 
+Con la aplicación SMS para ownCloud sincroniza tus mensajes SMS en una instancia remota de ownCloud y podrás leer tus mensajes desde ella. 
 
 Enviar mensajes SMS desde la instancia ownCloud es una funcionalidad que se incorporará en un futuro lanzamiento.
 

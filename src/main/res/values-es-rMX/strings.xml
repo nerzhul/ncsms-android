@@ -36,7 +36,7 @@
     <string name="app_name">SMS de Nextcloud</string>
     <string name="login_logo">Logotipo para inicio de sesión</string>
 
-    <string name="pref_lastmsgdate">fecha_de_ultimo_mensaje</string>
+    <string name="pref_lastmsgdate">last_message_date</string>
 
     <!-- Translations must begin there -->
     <!-- Preferences -->
@@ -91,7 +91,7 @@
     <string name="title_activity_login">Autenticar</string>
 
     <!-- Login -->
-    <string name="prompt_login">Incio de sesión</string>
+    <string name="prompt_login">Inciar sesión</string>
     <string name="prompt_password">Contraseña</string>
     <string name="action_sign_in">Autenticar o registrar</string>
     <string name="action_sign_in_short">Autenticar</string>
@@ -100,20 +100,20 @@
     <string name="error_field_required">Este campo es requerido</string>
     <string name="prompt_serverURI">Dirección del servidor</string>
     <string name="error_invalid_server_address">Dirección del servidor inválida</string>
-    <string name="error_connection_failed">Falla en la conexión, favor de verficar que este sea el servidor correcto</string>
-    <string name="error_http_connection_failed">Falla al establecer la conexión HTTP. Favor de verificar que cuenta con un navegador. </string>
+    <string name="error_connection_failed">Falla en la conexión, por favor verfica que éste sea el servidor correcto</string>
+    <string name="error_http_connection_failed">Falla al establecer la conexión HTTP. Por favor verifica que cuentas con un navegador. </string>
 
     <!-- Main activity -->
-    <string name="ma_title_rate_us">¡Califíquenos!</string>
+    <string name="ma_title_rate_us">¡Califícanos!</string>
     <string name="ma_title_add_account">Agregar una cuenta</string>
     <string name="ma_title_welcome">Bienvenido</string>
-    <string name="ma_content_welcome">Bienvenido a la aplicación Nextcloud SMS. Esta aplicación le permite sincronizar sus SMS con su instancia Nextcloud suando la aplicación SMS. </string>
+    <string name="ma_content_welcome">Bienvenido a la aplicación Nextcloud SMS. Esta aplicación te permite sincronizar tus SMS con tu instancia Nextcloud usando la aplicación SMS. </string>
     <string name="ma_title_remote_account">Cuenta remota</string>
-    <string name="choose_account">Elija la cuenta</string>
+    <string name="choose_account">Elige la cuenta</string>
 
     <!-- Restauration -->
-    <string name="title_activity_select_account">Seleccione la cuenta</string>
-    <string name="title_activity_select_contact">Seleccione el contacto</string>
+    <string name="title_activity_select_account">Selecciona la cuenta</string>
+    <string name="title_activity_select_contact">Selecciona el contacto</string>
     <string name="no_account_configured">No hay una cuenta configurada.</string>
 
     <!-- Notifications -->
@@ -158,27 +158,27 @@
     <string name="cancel">Cancelar</string>
     <string name="understood">Entendido</string>
     <string name="notif_permission_required">Se requieren privilegios</string>
-    <string name="notif_permission_required_content">Se requieren de algunos privilegios adiconales para ejecutar el proceso de sincronización. Favor de asignarlos en las configuraciones de la aplicación. </string>
-    <string name="please_fix_it">Favor de corregir.</string>
+    <string name="notif_permission_required_content">Se requieren de algunos privilegios adiconales para ejecutar el proceso de sincronización. Por favor asígnalos en las configuraciones de la aplicación. </string>
+    <string name="please_fix_it">Por favor corrígelo.</string>
     <string name="err_cannot_read_contacts">No es posible leer tus contactos.</string>
-    <string name="err_cannot_read_sms">No es posible leer sus SMS.</string>
+    <string name="err_cannot_read_sms">No es posible leer tus SMS.</string>
     <string name="action_appinfo_perms">Información y privilegios de la aplicación</string>
     <string name="restore_all_messages">Restarurar todos los mensajes</string>
     <string name="account_actions">Acciones de la cuenta</string>
-    <string name="error_connection_failed_not_found">Falla en la conexión, el servidor responde 404 NO ENCONTRADO. Favor de verificar que la ruta a su instancia Nextcloud sea correcta.</string>
+    <string name="error_connection_failed_not_found">Falla en la conexión, el servidor responde 404 NO ENCONTRADO. Por favor verifica que la ruta a tu instancia Nextcloud sea correcta.</string>
     <string name="nothing_to_sync">No hay nada para sincronizar</string>
     <string name="feature_not_already_implemented">Esta funcionalidad aún no se encuentra implementada pero estará disponible pronto. </string>
     <string name="pref_title_minimum_sync_chars">Longitud mínima de número telefónico</string>
-    <string name="err_didnt_find_account_restore">Su cuenta no fue encontrada para restaurar su mensaje, este es un caso muy atípico. </string>
+    <string name="err_didnt_find_account_restore">No encontramos tu cuenta para restaurar tu mensaje, este es un caso muy atípico. </string>
     <string name="launch_restore">Restaurar mis SMS</string>
-    <string name="error_make_default_sms_app">Favor de establecer esta aplicación como la aplicación por omision de SMS para permitir restaurar sus mensajes. Esta restricción fue introducida por Android 4.4</string>
+    <string name="error_make_default_sms_app">Por favor establece esta aplicación como la aplicación predeterminada de SMS para permitir restaurar tus mensajes. Esta restricción fue introducida por Android 4.4</string>
     <string name="fix_permissions">Arreglar los privilegios</string>
     <string name="err_kitkat_required">Se requiere Android 4.4 o superior para usar esta funcionalidad.</string>
     <string name="restore_finished">La restauración de SMS ha terminado.</string>
     <string name="x_messages_restored">mensajes restaurados&#8230;</string>
-    <string name="err_no_connection">No hay una conexión disponible, favor de verificar que cuente con una conexión de datos válida.</string>
+    <string name="err_no_connection">No hay una conexión disponible, por favor verifica que cuentas con una conexión de datos válida.</string>
     <string name="reinit_sync_cursor">Reinicializar el cursor de sincronización</string>
-    <string name="reinit_sync_cursor_confirm">¿Está seguro de que desea reinicializar el cursor de inicialización? Esto puede alentar la siguiente sincronización si se encuentran varios mensajes antiguos que no hayan sincronizado con el servidor. </string>
+    <string name="reinit_sync_cursor_confirm">¿Estás seguro de que deseas reinicializar el cursor de inicialización? Esto puede alentar la siguiente sincronización si se encuentran varios mensajes antiguos que no hayan sincronizado con el servidor. </string>
     <string name="yes_confirm">Sí</string>
     <string name="no_confirm">No</string>
     <string name="pref_show_sync_notifications">Mostrar notificaciones de sincronización</string>
