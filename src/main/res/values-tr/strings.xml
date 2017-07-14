@@ -123,11 +123,11 @@
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Hata No 1: Önceki iletiler alınırken sunucudan geçersiz veriler alındı</string>
-    <string name="err_sync_craft_http_request">Hata No 2: HTTP isteği hazırlanırken bir sorun çıktı</string>
+    <string name="err_sync_craft_http_request">Hata No 2: HTTP isteği hazırlanırken sorun çıktı</string>
     <string name="err_sync_push_request">Hata No 3: Gönderme isteği yapılamadı</string>
     <string name="err_sync_push_request_resp">Hata No 4: Veriler gönderilirken sunucudan geçersiz veriler alındı</string>
     <string name="err_sync_create_json_null_smslist">Hata No 5: NULL SMS Listesi</string>
-    <string name="err_sync_create_json_put_smslist">Hata No 6: Gönderme isteği hazırlanırken bir sorun çıktı</string>
+    <string name="err_sync_create_json_put_smslist">Hata No 6: Gönderme isteği hazırlanırken sorun çıktı</string>
     <string name="err_sync_create_json_request_encoding">Hata No 7: İstek oluşturulurken desteklenmeyen kodlama ile karşılaşıldı</string>
     <string name="err_sync_auth_failed">Hata No 8: Kimlik doğrulanamadı</string>
     <string name="err_sync_http_request_returncode_unhandled">Hata No 9: Sunucu işlenemeyen bir HTTP dönüş kodu gönderdi</string>
