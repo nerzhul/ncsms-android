@@ -30,12 +30,12 @@
 	<string name="gp_translation_version">3</string>
 
 	<!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMS synchronize your local SMS on your Nextcloud instance</string>
+    <string name="gp_short_description">Nextcloud SMS synchronizes your local SMS messages to your Nextcloud</string>
     <string name="gp_description">
-ownCloud SMS application synchronize your SMS messages on a remote ownCloud instance and let you read your messages from it.
+Nextcloud SMS application synchronizes your SMS messages to a remote Nextcloud instance and lets you read your messages from it.
 
-Sending SMS from ownCloud instance will coming in a future release.
+The ability to send SMS messages directly from Nextcloud will be introdced in a future release.
 
-Application is fully compatible from Android 4.0 to 6.0
+The app is fully compatible with Android 4.0 onwards.
 	</string>
 </resources>
