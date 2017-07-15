@@ -184,7 +184,7 @@
     <string name="ma_title_rate_us">Rate us.</string>
     <string name="ma_title_add_account">Add an account</string>
     <string name="ma_title_welcome">Welcome</string>
-    <string name="ma_content_welcome">The Nextcloud SMS program lets you back up your SMS messages to your Nextcloud.</string>
+    <string name="ma_content_welcome">Welcome to the Nextcloud SMS app. It synchronizes your SMS messages to your Nextcloud using an SMS app.</string>
     <string name="ma_title_remote_account">Remote account</string>
     <string name="choose_account">Choose account</string>
 
