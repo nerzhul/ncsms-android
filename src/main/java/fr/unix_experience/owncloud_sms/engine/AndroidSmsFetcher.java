@@ -26,6 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
+import fr.unix_experience.owncloud_sms.jni.SmsBuffer;
 import fr.unix_experience.owncloud_sms.providers.SmsDataProvider;
 
 public class AndroidSmsFetcher {
@@ -56,6 +57,9 @@ public class AndroidSmsFetcher {
 				// Mailbox ID is required by server
 				entry.put("mbox", mbID.ordinal());
 				result.put(entry);
+				SmsBuffer buf = new SmsBuffer();
+				buf.push(mbID.ordinal());
+				buf.print();
 
 			} catch (JSONException e) {
 				Log.e(AndroidSmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
