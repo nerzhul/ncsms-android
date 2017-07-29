@@ -25,6 +25,17 @@ android {
         minSdkVersion 16
         targetSdkVersion 26
         maxSdkVersion 26
+        ndk {
+            // Specifies the ABI configurations of your native
+            // libraries Gradle should build and package with your APK.
+            abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a',
+                    'arm64-v8a'
+        }
+        externalNativeBuild {
+            cmake {
+                cppFlags "-frtti -fexceptions -std=c++11"
+            }
+        }
     }
 
     buildTypes {
@@ -35,6 +46,11 @@ android {
     }
     packagingOptions {
         exclude  'META-INF/LICENSE.txt'
+    }
+    externalNativeBuild {
+        cmake {
+            path 'CMakeLists.txt'
+        }
     }
 }
 
