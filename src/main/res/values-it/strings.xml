@@ -121,6 +121,9 @@
     <string name="sync_inprogress">Sincronizzazione in corso...</string>
     <string name="fatal_error">Errore grave!</string>
 
+    <!-- Errors -->
+    <string name="err_sync_get_smslist">Errore #1: dati non validi ricevuti dal server mentre si ottenevano i messaggi precedenti</string>
+    <string name="err_sync_craft_http_request">Errore #2: errore durante l\'elaborazione della richiesta HTTP</string>
     <string name="err_sync_push_request">Errore #3: richiesta push non riuscita</string>
     <string name="err_sync_create_json_null_smslist">Errore #5: Elenco SMS nullo</string>
     <string name="err_sync_auth_failed">Errore #8: Autenticazione non riuscita</string>
@@ -158,9 +161,11 @@
     <string name="action_appinfo_perms">Informazioni applicazione e permessi</string>
     <string name="restore_all_messages">Ripristina tutti i messaggi</string>
     <string name="account_actions">Azioni account</string>
+    <string name="error_connection_failed_not_found">Connessione non riuscita, il server restituisce 404 NON TROVATO. Assicurati di aver impostato il percorso corretto per la tua istanza di Nextcloud.</string>
     <string name="nothing_to_sync">Non c\'è niente da sincronizzare.</string>
     <string name="feature_not_already_implemented">Questa funzionalità non è ancora implementata e sarà presto disponibile.</string>
     <string name="pref_title_minimum_sync_chars">Lunghezza minima del numero di telefono</string>
+    <string name="err_didnt_find_account_restore">Non abbiamo trovato il tuo account per ripristinare il messaggio, questa è una situazione davvero inattesa.</string>
     <string name="launch_restore">Ripristina i miei SMS</string>
     <string name="error_make_default_sms_app">Rendi predefinita questa applicazione di SMS per consentire di ripristinare i tuoi messaggi. Questa limitazione è stata introdotta da Android 4.4.</string>
     <string name="fix_permissions">Correggi permessi</string>
@@ -168,6 +173,7 @@
     <string name="restore_finished">Il ripristino SMS è ora completato.</string>
     <string name="x_messages_restored">messaggi ripristinati&#8230;</string>
     <string name="err_no_connection">Nessuna connessione disponibile, assicurati di avere una connessione dati valida.</string>
+    <string name="reinit_sync_cursor_confirm">Sei sicuro di voler reinizializzare il cursore di sincronizzazione? Ciò può rallentare la prossima sincronizzazione se troviamo molti vecchi messaggi non sincronizzati con il server.</string>
     <string name="yes_confirm">Sì</string>
     <string name="no_confirm">No</string>
     <string name="pref_show_sync_notifications">Mostra notifiche di sincronizzazione</string>
