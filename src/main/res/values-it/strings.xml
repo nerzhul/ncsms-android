@@ -125,7 +125,10 @@
     <string name="err_sync_get_smslist">Errore #1: dati non validi ricevuti dal server mentre si ottenevano i messaggi precedenti</string>
     <string name="err_sync_craft_http_request">Errore #2: errore durante l\'elaborazione della richiesta HTTP</string>
     <string name="err_sync_push_request">Errore #3: richiesta push non riuscita</string>
+    <string name="err_sync_push_request_resp">Errore #4: dati non validi ricevuti dal server durante l\'esecuzione del push dei dati</string>
     <string name="err_sync_create_json_null_smslist">Errore #5: Elenco SMS nullo</string>
+    <string name="err_sync_create_json_put_smslist">Errore #6: errore durante l\'elaborazione della richiesta push</string>
+    <string name="err_sync_create_json_request_encoding">Errore #7: codifica non supportata durante la creazione della richiesta</string>
     <string name="err_sync_auth_failed">Errore #8: Autenticazione non riuscita</string>
     <string name="err_sync_http_request_returncode_unhandled">Errore #9: il server ha impostato un codice di errore HTTP non gestito</string>
     <string name="err_sync_http_request_connect">Errore #11: impossibile eseguire una connessione all\'istanza Nextcloud</string>
@@ -139,6 +142,7 @@
     <string name="err_fetch_phonelist">Elenco telefonico non valido ricevuto dal server.</string>
     <string name="err_proto_v2">Il server non supporta questa funzionalità. Assicurati che la versione del server sia almeno la 1.6.</string>
     <string name="contactinfos_title">Informazioni di contatto</string>
+    <string name="subtitle_contact_phones">- Contatti telefonici</string>
     <string name="pref_title_bulk_messages">Numero massimo di messaggi da inviare per sincronizzazione</string>
     <string name="contactinfos_list">Elenco contatti</string>
     <string name="function_not_available">Questa funzione non è ancora disponibile.</string>
@@ -173,6 +177,7 @@
     <string name="restore_finished">Il ripristino SMS è ora completato.</string>
     <string name="x_messages_restored">messaggi ripristinati&#8230;</string>
     <string name="err_no_connection">Nessuna connessione disponibile, assicurati di avere una connessione dati valida.</string>
+    <string name="reinit_sync_cursor">Reinizializza il cursore di sincronizzazione</string>
     <string name="reinit_sync_cursor_confirm">Sei sicuro di voler reinizializzare il cursore di sincronizzazione? Ciò può rallentare la prossima sincronizzazione se troviamo molti vecchi messaggi non sincronizzati con il server.</string>
     <string name="yes_confirm">Sì</string>
     <string name="no_confirm">No</string>
