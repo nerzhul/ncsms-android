@@ -5,3 +5,5 @@ ownCloudSMS-release.apk
 lint.xml
 .gradle/
 .idea/
+local.properties
+ownCloud-SMS-App.iml
