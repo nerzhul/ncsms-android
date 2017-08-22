@@ -11,7 +11,7 @@ buildscript {
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
     buildToolsVersion "25.0.3"
 
     lintOptions {
@@ -21,8 +21,8 @@ android {
     defaultConfig {
         applicationId "fr.unix_experience.owncloud_sms"
         minSdkVersion 16
-        targetSdkVersion 25
-        maxSdkVersion 25
+        targetSdkVersion 26
+        maxSdkVersion 26
     }
 
     buildTypes {
