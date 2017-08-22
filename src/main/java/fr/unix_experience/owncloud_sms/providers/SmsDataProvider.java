@@ -29,6 +29,17 @@ import fr.unix_experience.owncloud_sms.enums.MailboxID;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
 public class SmsDataProvider extends ContentProvider {
+	static String messageFields[] = {
+		"read",
+		"date",
+		"address",
+		"seen",
+		"body",
+		"_id",
+		"type",
+		//"length(address)" // For debug purposes
+	};
+
     // WARNING: mandatory
     public SmsDataProvider() {}
     public SmsDataProvider (Context ct) {
@@ -52,16 +63,7 @@ public class SmsDataProvider extends ContentProvider {
 	public Cursor queryNonExistingMessages(String mailBox, String existingIds) {
         Log.i(SmsDataProvider.TAG, "queryNonExistingMessages !");
 		if (!existingIds.isEmpty()) {
-            return query(Uri.parse(mailBox),
-                    new String[] {
-                        "read",
-                        "date",
-                        "address",
-                        "seen",
-                        "body",
-                        "_id",
-                        "type",
-                    },
+            return query(Uri.parse(mailBox), SmsDataProvider.messageFields,
                     "_id NOT IN (" + existingIds + ")", null, null
             );
 		}
@@ -70,17 +72,7 @@ public class SmsDataProvider extends ContentProvider {
 	}
 
     public Cursor queryMessagesSinceDate(String mailBox, Long sinceDate) {
-        return query(Uri.parse(mailBox),
-                new String[] {
-                    "read",
-                    "date",
-                    "address",
-                    "seen",
-                    "body",
-                    "_id",
-                    "type",
-                    //"length(address)" // For debug purposes
-                },
+        return query(Uri.parse(mailBox), SmsDataProvider.messageFields,
                 "date > ?", new String[] { sinceDate.toString() }, null
         );
     }
