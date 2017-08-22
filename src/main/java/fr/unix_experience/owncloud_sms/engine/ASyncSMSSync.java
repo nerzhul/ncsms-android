@@ -23,18 +23,17 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import org.json.JSONArray;
-
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.enums.OCSMSNotificationType;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
+import fr.unix_experience.owncloud_sms.jni.SmsBuffer;
 import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationUI;
 
 public interface ASyncSMSSync {
 	class SyncTask extends AsyncTask<Void, Void, Void> {
-		public SyncTask(Context context, JSONArray smsList) {
+		public SyncTask(Context context, SmsBuffer smsBuffer) {
 			_context = context;
-			_smsList = smsList;
+			_smsBuffer = smsBuffer;
 		}
 
 		@Override
@@ -49,7 +48,7 @@ public interface ASyncSMSSync {
 			for (Account element : myAccountList) {
 				try {
 					OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(_context, element);
-					_client.doPushRequest(_smsList);
+					_client.doPushRequest(_smsBuffer);
 					OCSMSNotificationUI.cancel(_context);
 				} catch (IllegalStateException e) { // Fail to read account data
 					OCSMSNotificationUI.notify(_context, _context.getString(R.string.fatal_error),
@@ -66,7 +65,7 @@ public interface ASyncSMSSync {
 		}
 
 		private final Context _context;
-		private final JSONArray _smsList;
+		private final SmsBuffer _smsBuffer;
 	}
 
 	String TAG = ASyncSMSSync.class.getSimpleName();

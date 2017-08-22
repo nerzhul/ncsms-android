@@ -44,8 +44,6 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
 
-import org.json.JSONArray;
-
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.activities.remote_account.AccountListActivity;
 import fr.unix_experience.owncloud_sms.engine.ASyncSMSSync.SyncTask;
@@ -53,6 +51,7 @@ import fr.unix_experience.owncloud_sms.engine.AndroidSmsFetcher;
 import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.enums.OCSMSNotificationType;
 import fr.unix_experience.owncloud_sms.enums.PermissionID;
+import fr.unix_experience.owncloud_sms.jni.SmsBuffer;
 import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationUI;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 import fr.unix_experience.owncloud_sms.prefs.PermissionChecker;
@@ -212,10 +211,10 @@ public class MainActivity extends AppCompatActivity
 		}
 
 		// Now fetch messages since last stored date
-		JSONArray smsList = new JSONArray();
-		new AndroidSmsFetcher(ctx).bufferMessagesSinceDate(smsList, (long) 0);
+		SmsBuffer smsBuffer = new SmsBuffer();
+		new AndroidSmsFetcher(ctx).bufferMessagesSinceDate(smsBuffer, (long) 0);
 
-		if (smsList.length() == 0) {
+		if (smsBuffer.empty()) {
 			Toast.makeText(ctx, ctx.getString(R.string.nothing_to_sync), Toast.LENGTH_SHORT).show();
 			Log.v(MainActivity.TAG, "Finish syncAllMessages(): no sms");
 			return;
@@ -225,7 +224,7 @@ public class MainActivity extends AppCompatActivity
 			OCSMSNotificationUI.notify(ctx, ctx.getString(R.string.sync_title),
 					ctx.getString(R.string.sync_inprogress), OCSMSNotificationType.SYNC.ordinal());
 		}
-		new SyncTask(getApplicationContext(), smsList).execute();
+		new SyncTask(getApplicationContext(), smsBuffer).execute();
 		Log.v(MainActivity.TAG, "Finish syncAllMessages()");
 	}
 

@@ -37,13 +37,39 @@ public class SmsBuffer {
 	private static native long createNativeObject();
 	private static native void deleteNativeObject(long handle);
 
-	public static native void push(long handle, int mbid);
-	public void push(int mbid) {
-		SmsBuffer.push(mHandle, mbid);
+	/*
+	JNI: push method
+	 */
+	public static native void push(long handle, int id, int mbid, int type, long date,
+								   String address, String body, String read, String seen);
+
+	public void push(int id, int mbid, int type, long date, String address, String body,
+					 String read, String seen) {
+		SmsBuffer.push(mHandle, id, mbid, type, date, address, body, read, seen);
 	}
 
+	/*
+	JNI: Eepty method
+	 */
+	public static native boolean empty(long handle);
+
+	public boolean empty() {
+		return SmsBuffer.empty(mHandle);
+	}
+
+	/*
+	JNI: print method
+	 */
 	public static native void print(long handle);
 	public void print() {
 		SmsBuffer.print(mHandle);
+	}
+
+	/*
+	JNI: asRawJsonString method
+	 */
+	public static native String asRawJsonString(long handle);
+	public String asRawJsonString() {
+		return SmsBuffer.asRawJsonString(mHandle);
 	}
 }

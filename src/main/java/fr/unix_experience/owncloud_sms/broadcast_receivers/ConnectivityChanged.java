@@ -25,8 +25,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import org.json.JSONArray;
-
 import java.util.concurrent.atomic.AtomicReference;
 
 import fr.unix_experience.owncloud_sms.R;
@@ -34,6 +32,7 @@ import fr.unix_experience.owncloud_sms.engine.ASyncSMSSync;
 import fr.unix_experience.owncloud_sms.engine.AndroidSmsFetcher;
 import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.enums.PermissionID;
+import fr.unix_experience.owncloud_sms.jni.SmsBuffer;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 import fr.unix_experience.owncloud_sms.prefs.PermissionChecker;
 
@@ -82,14 +81,14 @@ public class ConnectivityChanged extends BroadcastReceiver implements ASyncSMSSy
 		Log.i(ConnectivityChanged.TAG,"Synced Last:" + lastMessageSynced);
 
 		// Now fetch messages since last stored date
-        JSONArray smsList = new JSONArray();
-		new AndroidSmsFetcher(context).bufferMessagesSinceDate(smsList, lastMessageSynced);
+		SmsBuffer smsBuffer = new SmsBuffer();
+		new AndroidSmsFetcher(context).bufferMessagesSinceDate(smsBuffer, lastMessageSynced);
 
 		AtomicReference<ConnectivityMonitor> cMon = new AtomicReference<>(new ConnectivityMonitor(context));
 
 		// Synchronize if network is valid and there are SMS
-		if (cMon.get().isValid() && (smsList.length() > 0)) {
-			new SyncTask(context, smsList).execute();
+		if (cMon.get().isValid() && !smsBuffer.empty()) {
+			new SyncTask(context, smsBuffer).execute();
 		}
 	}
 

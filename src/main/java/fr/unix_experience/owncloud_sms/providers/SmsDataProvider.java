@@ -29,15 +29,15 @@ import fr.unix_experience.owncloud_sms.enums.MailboxID;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
 public class SmsDataProvider extends ContentProvider {
-	static String messageFields[] = {
-		"read",
-		"date",
-		"address",
-		"seen",
-		"body",
-		"_id",
-		"type",
-		//"length(address)" // For debug purposes
+	static String[] messageFields = {
+			"read",
+			"date",
+			"address",
+			"seen",
+			"body",
+			"_id",
+			"type",
+			//"length(address)" // For debug purposes
 	};
 
     // WARNING: mandatory
@@ -54,7 +54,7 @@ public class SmsDataProvider extends ContentProvider {
 
 	public Cursor query(String mailBox) {
 		return query(Uri.parse(mailBox),
-				new String[] { "read", "date", "address", "seen", "body", "_id", "type", },
+				SmsDataProvider.messageFields,
 				null, null, null
 				);
 	}

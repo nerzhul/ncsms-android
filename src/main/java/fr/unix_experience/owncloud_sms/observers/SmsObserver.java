@@ -25,8 +25,6 @@ import android.database.ContentObserver;
 import android.os.Handler;
 import android.util.Log;
 
-import org.json.JSONArray;
-
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.engine.ASyncSMSSync;
 import fr.unix_experience.owncloud_sms.engine.AndroidSmsFetcher;
@@ -34,6 +32,7 @@ import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.engine.OCSMSOwnCloudClient;
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
 import fr.unix_experience.owncloud_sms.enums.PermissionID;
+import fr.unix_experience.owncloud_sms.jni.SmsBuffer;
 import fr.unix_experience.owncloud_sms.prefs.PermissionChecker;
 
 public class SmsObserver extends ContentObserver implements ASyncSMSSync {
@@ -60,7 +59,7 @@ public class SmsObserver extends ContentObserver implements ASyncSMSSync {
 		}
 	
 		AndroidSmsFetcher fetcher = new AndroidSmsFetcher(_context);
-		JSONArray smsList = fetcher.getLastMessage(MailboxID.ALL);
+		SmsBuffer smsList = fetcher.getLastMessage(MailboxID.ALL);
 		
 		ConnectivityMonitor cMon = new ConnectivityMonitor(_context);
 		

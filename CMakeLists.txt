@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.5.0)
 
 set (SRC_FILES
 	${CMAKE_CURRENT_SOURCE_DIR}/src/main/cpp/httpclient.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/src/main/cpp/json.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/main/cpp/nativesms.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/src/main/cpp/smsbuffer.cpp
 )
