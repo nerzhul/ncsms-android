@@ -24,21 +24,46 @@
 class SmsBuffer
 {
 public:
-    SmsBuffer();
+    SmsBuffer() = default;
+    ~SmsBuffer() = default;
 
     JNIEXPORT static jlong JNICALL createNativeObject(JNIEnv *env, jobject self);
     JNIEXPORT static void JNICALL deleteNativeObject(JNIEnv *env, jobject self, jlong ptr);
 
-    JNIEXPORT static void JNICALL push(JNIEnv *env, jobject self, jlong ptr, jint mailbox_id);
-    void _push(int mailbox_id);
+	/*
+	 * push method
+	 */
+    JNIEXPORT static void JNICALL push(JNIEnv *env, jobject self, jlong ptr, jint msg_id,
+                                       jint mailbox_id, jint type, jlong date, jstring address,
+                                       jstring body, jstring read, jstring seen);
+    void _push(int msg_id, int mailbox_id, int type,
+               long date, const char *address, const char *body, const char *read,
+               const char *seen);
 
+	/*
+	 * empty method
+	 */
+
+	JNIEXPORT static jboolean JNICALL empty(JNIEnv *env, jobject self, jlong ptr);
+	bool _empty() const;
+
+	/*
+	 * print method
+	 */
     JNIEXPORT static void JNICALL print(JNIEnv *env, jobject self, jlong ptr);
     void _print();
+
+	/*
+	 * asRawJsonString method
+	 */
+	JNIEXPORT static jstring JNICALL asRawJsonString(JNIEnv *env, jobject self, jlong ptr);
+	void as_raw_json_string(std::string &result);
 
     DECL_JNICLASSATTRS
 
 private:
     void reset_buffer();
     std::stringstream m_buffer;
+	uint32_t m_sms_count{0};
     bool m_buffer_empty{true};
 };

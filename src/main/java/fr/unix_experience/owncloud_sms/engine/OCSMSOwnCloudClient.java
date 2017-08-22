@@ -38,6 +38,7 @@ import java.net.ConnectException;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.enums.OCSyncErrorType;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
+import fr.unix_experience.owncloud_sms.jni.SmsBuffer;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
 @SuppressWarnings("deprecation")
@@ -94,17 +95,17 @@ public class OCSMSOwnCloudClient {
 		}
 	}
 
-	public void doPushRequest(JSONArray smsList) throws OCSyncException {
+	public void doPushRequest(SmsBuffer smsBuffer) throws OCSyncException {
 		/*
 		 * If we need other API push, set it here
 		 */
 		switch (_serverAPIVersion) {
 		case 1:
-		default: doPushRequestV1(smsList); break;
+		default: doPushRequestV1(smsBuffer); break;
 		}
 	}
 
-	private AndroidSmsFetcher collectMessages(JSONArray smsList) throws OCSyncException {
+	private AndroidSmsFetcher collectMessages(SmsBuffer smsBuffer) throws OCSyncException {
 		JSONObject smsBoxes = new JSONObject();
 		JSONArray inboxSmsList = null, sentSmsList = null, draftsSmsList = null;
 		try {
@@ -141,33 +142,33 @@ public class OCSMSOwnCloudClient {
 		fetcher.setExistingSentMessages(sentSmsList);
 		fetcher.setExistingDraftsMessages(draftsSmsList);
 
-		fetcher.fetchAllMessages(smsList);
+		fetcher.fetchAllMessages(smsBuffer);
 
 		return fetcher;
 	}
 
-	private void doPushRequestV1(JSONArray smsList) throws OCSyncException {
+	private void doPushRequestV1(SmsBuffer smsBuffer) throws OCSyncException {
 		// We need to save this date as a step for connectivity change
 		Long lastMsgDate = (long) 0;
 
-		if (smsList == null) {
+		if (smsBuffer == null) {
 			doHttpRequest(_http.getAllSmsIds());
 			if (_jsonQueryBuffer == null) {
 				return;
 			}
 
 			// Create new JSONArray to get results
-			smsList = new JSONArray();
+			smsBuffer = new SmsBuffer();
 			// Get maximum message date present in smsList to keep a step when connectivity changes
-			lastMsgDate = collectMessages(smsList).getLastMessageDate();
+			lastMsgDate = collectMessages(smsBuffer).getLastMessageDate();
 		}
 
-		if (smsList.length() == 0) {
+		if (smsBuffer.empty()) {
 			Log.i(OCSMSOwnCloudClient.TAG, "No new SMS to sync, sync done");
 			return;
 		}
 
-		PostMethod post = createPushRequest(smsList);
+		PostMethod post = createPushRequest(smsBuffer);
 		if (post == null) {
 			Log.e(OCSMSOwnCloudClient.TAG,"Push request for POST is null");
 			throw new OCSyncException(R.string.err_sync_craft_http_request, OCSyncErrorType.IO);
@@ -196,44 +197,15 @@ public class OCSMSOwnCloudClient {
 		Log.i(OCSMSOwnCloudClient.TAG, "SMS Push request said: status " + pushStatus + " - " + pushMessage);
 	}
 
-	private PostMethod createPushRequest(JSONArray smsList) throws OCSyncException {
-		JSONObject obj = createPushJSONObject(smsList);
-		if (obj == null) {
-			return null;
-		}
-
-		StringRequestEntity ent = createJSONRequestEntity(obj);
-		if (ent == null) {
-			return null;
-		}
-
-		return _http.pushSms(ent);
+	private PostMethod createPushRequest(SmsBuffer smsBuffer) throws OCSyncException {
+		return _http.pushSms(createJSONRequestEntity(smsBuffer));
 	}
 
-	private JSONObject createPushJSONObject(JSONArray smsList) throws OCSyncException {
-		if (smsList == null) {
-			Log.e(OCSMSOwnCloudClient.TAG,"NULL SMS List");
-			throw new OCSyncException(R.string.err_sync_create_json_null_smslist, OCSyncErrorType.IO);
-		}
-
-		JSONObject reqJSON = new JSONObject();
-
-		try {
-			reqJSON.put("smsDatas", smsList);
-			reqJSON.put("smsCount", smsList.length());
-		} catch (JSONException e) {
-			Log.e(OCSMSOwnCloudClient.TAG,"JSON Exception when creating JSON request object");
-			throw new OCSyncException(R.string.err_sync_create_json_put_smslist, OCSyncErrorType.PARSE);
-		}
-
-		return reqJSON;
-	}
-
-	private StringRequestEntity createJSONRequestEntity(JSONObject obj) throws OCSyncException {
+	private StringRequestEntity createJSONRequestEntity(SmsBuffer smsBuffer) throws OCSyncException {
 		StringRequestEntity requestEntity;
 		try {
 			requestEntity = new StringRequestEntity(
-					obj.toString(),
+					smsBuffer.asRawJsonString(),
 					"application/json",
 					"UTF-8");
 

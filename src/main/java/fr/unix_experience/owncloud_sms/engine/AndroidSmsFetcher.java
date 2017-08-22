@@ -39,13 +39,13 @@ public class AndroidSmsFetcher {
 		_existingDraftsMessages = null;
 	}
 
-	void fetchAllMessages(JSONArray result) {
+	void fetchAllMessages(SmsBuffer result) {
 		bufferMailboxMessages(result, MailboxID.INBOX);
 		bufferMailboxMessages(result, MailboxID.SENT);
 		bufferMailboxMessages(result, MailboxID.DRAFTS);
 	}
 
-	private void readMailBox(Cursor c, JSONArray result, MailboxID mbID) {
+	private void readMailBox(Cursor c, SmsBuffer smsBuffer, MailboxID mbID) {
 		do {
 			JSONObject entry = new JSONObject();
 
@@ -56,10 +56,15 @@ public class AndroidSmsFetcher {
 
 				// Mailbox ID is required by server
 				entry.put("mbox", mbID.ordinal());
-				result.put(entry);
-				SmsBuffer buf = new SmsBuffer();
-				buf.push(mbID.ordinal());
-				buf.print();
+
+				smsBuffer.push(entry.getInt("_id"),
+						mbID.ordinal(),
+						entry.getInt("type"),
+						entry.getLong("date"),
+						entry.getString("address"),
+						entry.getString("body"),
+						entry.getString("read"),
+						entry.getString("seen"));
 
 			} catch (JSONException e) {
 				Log.e(AndroidSmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
@@ -68,7 +73,7 @@ public class AndroidSmsFetcher {
 		while (c.moveToNext());
 	}
 
-	private void bufferMailboxMessages(JSONArray result, MailboxID mbID) {
+	private void bufferMailboxMessages(SmsBuffer smsBuffer, MailboxID mbID) {
 		if ((_context == null)) {
 			return;
 		}
@@ -88,14 +93,14 @@ public class AndroidSmsFetcher {
 		}
 
 		// Reading mailbox
-		readMailBox(c, result, mbID);
+		readMailBox(c, smsBuffer, mbID);
 
 		Log.i(AndroidSmsFetcher.TAG, c.getCount() + " messages read from " + mbID.getURI());
 		c.close();
 	}
 
 	// Used by Content Observer
-	public JSONArray getLastMessage(MailboxID mbID) {
+	public SmsBuffer getLastMessage(MailboxID mbID) {
 		if ((_context == null)) {
 			return null;
 		}
@@ -107,8 +112,8 @@ public class AndroidSmsFetcher {
 		}
 
 		// We create a list of strings to store results
-		JSONArray results = new JSONArray();
 		JSONObject entry = new JSONObject();
+		SmsBuffer results = new SmsBuffer();
 
 		try {
 			Integer mboxId = -1;
@@ -126,7 +131,14 @@ public class AndroidSmsFetcher {
 			*/
 			entry.put("mbox", (mboxId - 1));
 
-			results.put(entry);
+			results.push(entry.getInt("_id"),
+					mbID.ordinal(),
+					entry.getInt("type"),
+					entry.getLong("date"),
+					entry.getString("address"),
+					entry.getString("body"),
+					entry.getString("read"),
+					entry.getString("seen"));
 		} catch (JSONException e) {
 			Log.e(AndroidSmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
 		}
@@ -137,14 +149,14 @@ public class AndroidSmsFetcher {
 	}
 
 	// Used by ConnectivityChanged Event
-	public void bufferMessagesSinceDate(JSONArray result, Long sinceDate) {
-		bufferMessagesSinceDate(result, MailboxID.INBOX, sinceDate);
-		bufferMessagesSinceDate(result, MailboxID.SENT, sinceDate);
-		bufferMessagesSinceDate(result, MailboxID.DRAFTS, sinceDate);
+	public void bufferMessagesSinceDate(SmsBuffer smsBuffer, Long sinceDate) {
+		bufferMessagesSinceDate(smsBuffer, MailboxID.INBOX, sinceDate);
+		bufferMessagesSinceDate(smsBuffer, MailboxID.SENT, sinceDate);
+		bufferMessagesSinceDate(smsBuffer, MailboxID.DRAFTS, sinceDate);
 	}
 
 	// Used by ConnectivityChanged Event
-	private void bufferMessagesSinceDate(JSONArray result, MailboxID mbID, Long sinceDate) {
+	private void bufferMessagesSinceDate(SmsBuffer smsBuffer, MailboxID mbID, Long sinceDate) {
 		Log.i(AndroidSmsFetcher.TAG, "bufferMessagesSinceDate for " + mbID.toString() + " sinceDate " + sinceDate.toString());
 		if ((_context == null)) {
 			return;
@@ -159,7 +171,7 @@ public class AndroidSmsFetcher {
 		}
 
 		// Read Mailbox
-		readMailBox(c, result, mbID);
+		readMailBox(c, smsBuffer, mbID);
 
 		Log.i(AndroidSmsFetcher.TAG, c.getCount() + " messages read from " + mbID.getURI());
 		c.close();
@@ -191,7 +203,7 @@ public class AndroidSmsFetcher {
 				if (tmpDate > _lastMsgDate) {
 					_lastMsgDate = tmpDate;
 				}
-				entry.put(colName, c.getString(idx));
+				entry.put(colName, c.getLong(idx));
 				break;
 			default:
 				entry.put(colName, c.getString(idx));
