@@ -18,7 +18,7 @@ android:
     - extra
     - build-tools-26.0.1
     - android-26
-    - cmake
+    - cmake-3.6.4111459
   licenses:
     - 'android-sdk-license-.+'
     - 'google-gdk-license-.+'
