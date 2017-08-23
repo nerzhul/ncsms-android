@@ -51,7 +51,7 @@ jlong SmsBuffer::createNativeObject(JNIEnv *env, jobject self)
 
 void SmsBuffer::deleteNativeObject(JNIEnv *env, jobject self, jlong ptr)
 {
-	__android_log_print(ANDROID_LOG_INFO, LOG_TAG, "deleteSmsBuffer");
+	__android_log_print(ANDROID_LOG_INFO, LOG_TAG, "deleteNativeObject 0x%li", ptr);
 	delete reinterpret_cast<SmsBuffer *>(ptr);
 }
 

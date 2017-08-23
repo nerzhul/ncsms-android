@@ -175,6 +175,7 @@ public class OCSMSOwnCloudClient {
 		}
 
 		doHttpRequest(post);
+
 		if (_jsonQueryBuffer == null) {
 			Log.e(OCSMSOwnCloudClient.TAG,"Request failed. It doesn't return a valid JSON Object");
 			throw new OCSyncException(R.string.err_sync_push_request, OCSyncErrorType.IO);

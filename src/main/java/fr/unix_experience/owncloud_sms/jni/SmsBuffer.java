@@ -24,13 +24,14 @@ public class SmsBuffer {
 
 	private long mHandle;
 
+	String TAG = SmsBuffer.class.getSimpleName();
+
 	public SmsBuffer() {
 		mHandle = SmsBuffer.createNativeObject();
 	}
 
 	protected void finalize() throws Throwable {
-		SmsBuffer.deleteNativeObject(mHandle);
-		mHandle = 0;
+		clear();
 		super.finalize();
 	}
 
@@ -45,7 +46,19 @@ public class SmsBuffer {
 
 	public void push(int id, int mbid, int type, long date, String address, String body,
 					 String read, String seen) {
+		if (mHandle == 0) {
+			throw new IllegalAccessError("Pushing data to empty native handler, aborting");
+		}
 		SmsBuffer.push(mHandle, id, mbid, type, date, address, body, read, seen);
+	}
+
+	public void clear() {
+		if (mHandle == 0) {
+			return;
+		}
+
+		SmsBuffer.deleteNativeObject(mHandle);
+		mHandle = 0;
 	}
 
 	/*
