@@ -20,8 +20,8 @@ android {
 
     defaultConfig {
         applicationId "fr.unix_experience.owncloud_sms"
-        versionCode 51
-        versionName "1.1.1"
+        versionCode 54
+        versionName "1.2.0"
         minSdkVersion 16
         targetSdkVersion 26
         maxSdkVersion 26
@@ -29,7 +29,7 @@ android {
             // Specifies the ABI configurations of your native
             // libraries Gradle should build and package with your APK.
             abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a',
-                    'arm64-v8a'
+                    'arm64-v8a', 'mips', 'mips64'
         }
         externalNativeBuild {
             cmake {

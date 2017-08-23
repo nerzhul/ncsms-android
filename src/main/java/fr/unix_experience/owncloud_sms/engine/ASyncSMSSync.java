@@ -60,6 +60,7 @@ public interface ASyncSMSSync {
 				}
 			}
             OCSMSNotificationUI.cancel(_context);
+			_smsBuffer.clear();
             Log.i(ASyncSMSSync.TAG, "Stopping background sync");
 			return null;
 		}
