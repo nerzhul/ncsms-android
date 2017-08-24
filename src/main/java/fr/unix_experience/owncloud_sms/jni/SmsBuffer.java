@@ -36,53 +36,21 @@ public class SmsBuffer {
 	}
 
 	private static native long createNativeObject();
-	private static native void deleteNativeObject(long handle);
-
-	/*
-	JNI: push method
-	 */
-	public static native void push(long handle, int id, int mbid, int type, long date,
-								   String address, String body, String read, String seen);
-
-	public void push(int id, int mbid, int type, long date, String address, String body,
-					 String read, String seen) {
-		if (mHandle == 0) {
-			throw new IllegalAccessError("Pushing data to empty native handler, aborting");
-		}
-		SmsBuffer.push(mHandle, id, mbid, type, date, address, body, read, seen);
-	}
+	private native void deleteNativeObject();
+	public native void push(int id, int mbid, int type, long date, String address,
+								   String body, String read, String seen);
+	public native boolean empty();
+	public native void print();
+	public native String asRawJsonString();
 
 	public void clear() {
 		if (mHandle == 0) {
 			return;
 		}
 
-		SmsBuffer.deleteNativeObject(mHandle);
+		deleteNativeObject();
 		mHandle = 0;
 	}
 
-	/*
-	JNI: Eepty method
-	 */
-	public static native boolean empty(long handle);
 
-	public boolean empty() {
-		return SmsBuffer.empty(mHandle);
-	}
-
-	/*
-	JNI: print method
-	 */
-	public static native void print(long handle);
-	public void print() {
-		SmsBuffer.print(mHandle);
-	}
-
-	/*
-	JNI: asRawJsonString method
-	 */
-	public static native String asRawJsonString(long handle);
-	public String asRawJsonString() {
-		return SmsBuffer.asRawJsonString(mHandle);
-	}
 }
