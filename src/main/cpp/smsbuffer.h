@@ -28,12 +28,12 @@ public:
     ~SmsBuffer() = default;
 
     JNIEXPORT static jlong JNICALL createNativeObject(JNIEnv *env, jobject self);
-    JNIEXPORT static void JNICALL deleteNativeObject(JNIEnv *env, jobject self, jlong ptr);
+    JNIEXPORT static void JNICALL deleteNativeObject(JNIEnv *env, jobject self);
 
 	/*
 	 * push method
 	 */
-    JNIEXPORT static void JNICALL push(JNIEnv *env, jobject self, jlong ptr, jint msg_id,
+    JNIEXPORT static void JNICALL push(JNIEnv *env, jobject self, jint msg_id,
                                        jint mailbox_id, jint type, jlong date, jstring address,
                                        jstring body, jstring read, jstring seen);
     void _push(int msg_id, int mailbox_id, int type,
@@ -44,19 +44,19 @@ public:
 	 * empty method
 	 */
 
-	JNIEXPORT static jboolean JNICALL empty(JNIEnv *env, jobject self, jlong ptr);
+	JNIEXPORT static jboolean JNICALL empty(JNIEnv *env, jobject self);
 	bool _empty() const;
 
 	/*
 	 * print method
 	 */
-    JNIEXPORT static void JNICALL print(JNIEnv *env, jobject self, jlong ptr);
+    JNIEXPORT static void JNICALL print(JNIEnv *env, jobject self);
     void _print();
 
 	/*
 	 * asRawJsonString method
 	 */
-	JNIEXPORT static jstring JNICALL asRawJsonString(JNIEnv *env, jobject self, jlong ptr);
+	JNIEXPORT static jstring JNICALL asRawJsonString(JNIEnv *env, jobject self);
 	void as_raw_json_string(std::string &result);
 
     DECL_JNICLASSATTRS
@@ -66,4 +66,7 @@ private:
     std::stringstream m_buffer;
 	uint32_t m_sms_count{0};
     bool m_buffer_empty{true};
+
+	static bool gJava_inited;
+	static jfieldID gJava_mHandle;
 };

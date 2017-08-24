@@ -28,29 +28,38 @@ const char *SmsBuffer::classPathName = "fr/unix_experience/owncloud_sms/jni/SmsB
 JNINativeMethod SmsBuffer::methods[] =
 		{
 				DECL_JNIMETHOD(createNativeObject, "()J")
-				DECL_JNIMETHOD(deleteNativeObject, "(J)V")
-				DECL_JNIMETHOD(empty, "(J)Z")
-				DECL_JNIMETHOD(asRawJsonString, "(J)Ljava/lang/String;")
+				DECL_JNIMETHOD(deleteNativeObject, "()V")
+				DECL_JNIMETHOD(empty, "()Z")
+				DECL_JNIMETHOD(asRawJsonString, "()Ljava/lang/String;")
 				DECL_JNIMETHOD(push,
-							   "(JIIIJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V")
-				DECL_JNIMETHOD(print, "(J)V")
+							   "(IIIJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V")
+				DECL_JNIMETHOD(print, "()V")
 		};
 DECL_METHODSIZE(SmsBuffer)
 
 #define SMSBUFFER_CAST \
+	if (!SmsBuffer::gJava_inited) { \
+		SmsBuffer::gJava_inited = true; \
+		SmsBuffer::gJava_mHandle = env->GetFieldID(env->GetObjectClass(self), "mHandle", "J"); \
+	} \
+	long ptr = env->GetLongField(self, SmsBuffer::gJava_mHandle); \
     SmsBuffer *me = reinterpret_cast<SmsBuffer *>(ptr); \
     if (!me) { \
         __android_log_print(ANDROID_LOG_FATAL, LOG_TAG, "It's not a SmsBuffer!"); \
 		assert(false); \
     }
 
+bool SmsBuffer::gJava_inited = false;
+jfieldID SmsBuffer::gJava_mHandle{};
+
 jlong SmsBuffer::createNativeObject(JNIEnv *env, jobject self)
 {
 	return reinterpret_cast<jlong>(new SmsBuffer());
 }
 
-void SmsBuffer::deleteNativeObject(JNIEnv *env, jobject self, jlong ptr)
+void SmsBuffer::deleteNativeObject(JNIEnv *env, jobject self)
 {
+	SMSBUFFER_CAST
 	__android_log_print(ANDROID_LOG_INFO, LOG_TAG, "deleteNativeObject 0x%li", ptr);
 	delete reinterpret_cast<SmsBuffer *>(ptr);
 }
@@ -62,7 +71,7 @@ void SmsBuffer::reset_buffer()
 	m_sms_count = 0;
 }
 
-void SmsBuffer::push(JNIEnv *env, jobject self, jlong ptr, jint msg_id, jint mailbox_id, jint type,
+void SmsBuffer::push(JNIEnv *env, jobject self, jint msg_id, jint mailbox_id, jint type,
 					 jlong date, jstring address, jstring body, jstring read, jstring seen)
 {
 	SMSBUFFER_CAST
@@ -97,7 +106,7 @@ void SmsBuffer::_push(int msg_id, int mailbox_id, int type,
 	m_sms_count++;
 }
 
-jboolean SmsBuffer::empty(JNIEnv *env, jobject self, jlong ptr)
+jboolean SmsBuffer::empty(JNIEnv *env, jobject self)
 {
 	SMSBUFFER_CAST
 	return (jboolean) (me->_empty() ? 1 : 0);
@@ -108,7 +117,7 @@ bool SmsBuffer::_empty() const
 	return m_buffer_empty;
 }
 
-void SmsBuffer::print(JNIEnv *env, jobject self, jlong ptr)
+void SmsBuffer::print(JNIEnv *env, jobject self)
 {
 	SMSBUFFER_CAST
 	me->_print();
@@ -120,7 +129,7 @@ void SmsBuffer::_print()
 						m_buffer.str().c_str());
 }
 
-jstring SmsBuffer::asRawJsonString(JNIEnv *env, jobject self, jlong ptr)
+jstring SmsBuffer::asRawJsonString(JNIEnv *env, jobject self)
 {
 	SMSBUFFER_CAST
 	std::string result;
