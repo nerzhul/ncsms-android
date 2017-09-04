@@ -23,7 +23,6 @@ import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
 import fr.unix_experience.owncloud_sms.jni.SmsBuffer;
@@ -47,7 +46,7 @@ public class AndroidSmsFetcher {
 
 	private void readMailBox(Cursor c, SmsBuffer smsBuffer, MailboxID mbID) {
 		do {
-			JSONObject entry = new JSONObject();
+			SmsEntry entry = new SmsEntry();
 
 			try {
 				for (int idx = 0; idx < c.getColumnCount(); idx++) {
@@ -55,7 +54,7 @@ public class AndroidSmsFetcher {
 				}
 
 				// Mailbox ID is required by server
-				entry.put("mbox", mbID.ordinal());
+				entry.mailboxId = mbID.ordinal();
 				smsBuffer.push(mbID, entry);
 
 			} catch (JSONException e) {
@@ -104,7 +103,7 @@ public class AndroidSmsFetcher {
 		}
 
 		// We create a list of strings to store results
-		JSONObject entry = new JSONObject();
+		SmsEntry entry = new SmsEntry();
 		SmsBuffer results = new SmsBuffer();
 
 		try {
@@ -121,7 +120,7 @@ public class AndroidSmsFetcher {
 			* mboxId is greater than server mboxId by 1 because types
 			* aren't indexed in the same mean
 			*/
-			entry.put("mbox", (mboxId - 1));
+			entry.mailboxId = mboxId - 1;
 			results.push(mbID, entry);
 		} catch (JSONException e) {
 			Log.e(AndroidSmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
@@ -161,16 +160,16 @@ public class AndroidSmsFetcher {
 		c.close();
 	}
 
-	private Integer handleProviderColumn(Cursor c, int idx, JSONObject entry) throws JSONException {
+	private Integer handleProviderColumn(Cursor c, int idx, SmsEntry entry) throws JSONException {
 		String colName = c.getColumnName(idx);
 
 		// Id column is must be an integer
 		switch (colName) {
 			case "_id":
-				entry.put(colName, c.getInt(idx));
+				entry.id = c.getInt(idx);
 				break;
 			case "type":
-				entry.put(colName, c.getInt(idx));
+				entry.type = c.getInt(idx);
 				return c.getInt(idx);
 			/* For debug purpose
             case "length(address)":
@@ -178,8 +177,10 @@ public class AndroidSmsFetcher {
                 break;*/
 			// Seen and read must be pseudo boolean
 			case "read":
+				entry.read = (c.getInt(idx) > 0);
+				break;
 			case "seen":
-				entry.put(colName, (c.getInt(idx) > 0) ? "true" : "false");
+				entry.seen = (c.getInt(idx) > 0);
 				break;
 			case "date":
 				// Special case for date, we need to record last without searching
@@ -187,10 +188,16 @@ public class AndroidSmsFetcher {
 				if (tmpDate > _lastMsgDate) {
 					_lastMsgDate = tmpDate;
 				}
-				entry.put(colName, c.getLong(idx));
+				entry.date = c.getLong(idx);
+				break;
+			case "address":
+				entry.address = c.getString(idx);
+				break;
+			case "body":
+				entry.body = c.getString(idx);
 				break;
 			default:
-				entry.put(colName, c.getString(idx));
+				// Unhandled column
 				break;
 		}
 

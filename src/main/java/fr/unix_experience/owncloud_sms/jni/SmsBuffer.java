@@ -1,8 +1,8 @@
 package fr.unix_experience.owncloud_sms.jni;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
+import fr.unix_experience.owncloud_sms.engine.SmsEntry;
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
 
 /**
@@ -48,15 +48,15 @@ public class SmsBuffer {
 	public native void print();
 	public native String asRawJsonString();
 
-	public void push (MailboxID mbid, JSONObject jsonObject) throws JSONException {
-		push(jsonObject.getInt("_id"),
+	public void push(MailboxID mbid, SmsEntry smsEntry) throws JSONException {
+		push(smsEntry.id,
 				mbid.ordinal(),
-				jsonObject.getInt("type"),
-				jsonObject.getLong("date"),
-				jsonObject.getString("address"),
-				jsonObject.getString("body"),
-				jsonObject.getString("read"),
-				jsonObject.getString("seen"));
+				smsEntry.type,
+				smsEntry.date,
+				smsEntry.address,
+				smsEntry.body,
+				smsEntry.read ? "true" : "false",
+				smsEntry.seen ? "true" : "false");
 	}
 
 	public void clear() {
