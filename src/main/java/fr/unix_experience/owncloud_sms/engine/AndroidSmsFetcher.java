@@ -48,18 +48,13 @@ public class AndroidSmsFetcher {
 		do {
 			SmsEntry entry = new SmsEntry();
 
-			try {
-				for (int idx = 0; idx < c.getColumnCount(); idx++) {
-					handleProviderColumn(c, idx, entry);
-				}
-
-				// Mailbox ID is required by server
-				entry.mailboxId = mbID.ordinal();
-				smsBuffer.push(mbID, entry);
-
-			} catch (JSONException e) {
-				Log.e(AndroidSmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
+			for (int idx = 0; idx < c.getColumnCount(); idx++) {
+				handleProviderColumn(c, idx, entry);
 			}
+
+			// Mailbox ID is required by server
+			entry.mailboxId = mbID.ordinal();
+			smsBuffer.push(mbID, entry);
 		}
 		while (c.moveToNext());
 	}
@@ -106,25 +101,21 @@ public class AndroidSmsFetcher {
 		SmsEntry entry = new SmsEntry();
 		SmsBuffer results = new SmsBuffer();
 
-		try {
-			Integer mboxId = -1;
-			for (int idx = 0; idx < c.getColumnCount(); idx++) {
-				Integer rid = handleProviderColumn(c, idx, entry);
-				if (rid != -1) {
-					mboxId = rid;
-				}
+		Integer mboxId = -1;
+		for (int idx = 0; idx < c.getColumnCount(); idx++) {
+			Integer rid = handleProviderColumn(c, idx, entry);
+			if (rid != -1) {
+				mboxId = rid;
 			}
-
-			/*
-			* Mailbox ID is required by server
-			* mboxId is greater than server mboxId by 1 because types
-			* aren't indexed in the same mean
-			*/
-			entry.mailboxId = mboxId - 1;
-			results.push(mbID, entry);
-		} catch (JSONException e) {
-			Log.e(AndroidSmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
 		}
+
+		/*
+		* Mailbox ID is required by server
+		* mboxId is greater than server mboxId by 1 because types
+		* aren't indexed in the same mean
+		*/
+		entry.mailboxId = mboxId - 1;
+		results.push(mbID, entry);
 
 		c.close();
 
@@ -160,7 +151,7 @@ public class AndroidSmsFetcher {
 		c.close();
 	}
 
-	private Integer handleProviderColumn(Cursor c, int idx, SmsEntry entry) throws JSONException {
+	private Integer handleProviderColumn(Cursor c, int idx, SmsEntry entry) {
 		String colName = c.getColumnName(idx);
 
 		// Id column is must be an integer

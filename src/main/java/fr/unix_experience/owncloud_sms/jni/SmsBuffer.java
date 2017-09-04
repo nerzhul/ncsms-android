@@ -1,7 +1,5 @@
 package fr.unix_experience.owncloud_sms.jni;
 
-import org.json.JSONException;
-
 import fr.unix_experience.owncloud_sms.engine.SmsEntry;
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
 
@@ -48,7 +46,7 @@ public class SmsBuffer {
 	public native void print();
 	public native String asRawJsonString();
 
-	public void push(MailboxID mbid, SmsEntry smsEntry) throws JSONException {
+	public void push(MailboxID mbid, SmsEntry smsEntry) {
 		push(smsEntry.id,
 				mbid.ordinal(),
 				smsEntry.type,
