@@ -1,5 +1,10 @@
 package fr.unix_experience.owncloud_sms.jni;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import fr.unix_experience.owncloud_sms.enums.MailboxID;
+
 /**
  *  Copyright (c) 2014-2017, Loic Blot <loic.blot@unix-experience.fr>
  *
@@ -42,6 +47,17 @@ public class SmsBuffer {
 	public native boolean empty();
 	public native void print();
 	public native String asRawJsonString();
+
+	public void push (MailboxID mbid, JSONObject jsonObject) throws JSONException {
+		push(jsonObject.getInt("_id"),
+				mbid.ordinal(),
+				jsonObject.getInt("type"),
+				jsonObject.getLong("date"),
+				jsonObject.getString("address"),
+				jsonObject.getString("body"),
+				jsonObject.getString("read"),
+				jsonObject.getString("seen"));
+	}
 
 	public void clear() {
 		if (mHandle == 0) {

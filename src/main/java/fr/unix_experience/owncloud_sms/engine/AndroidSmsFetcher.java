@@ -56,15 +56,7 @@ public class AndroidSmsFetcher {
 
 				// Mailbox ID is required by server
 				entry.put("mbox", mbID.ordinal());
-
-				smsBuffer.push(entry.getInt("_id"),
-						mbID.ordinal(),
-						entry.getInt("type"),
-						entry.getLong("date"),
-						entry.getString("address"),
-						entry.getString("body"),
-						entry.getString("read"),
-						entry.getString("seen"));
+				smsBuffer.push(mbID, entry);
 
 			} catch (JSONException e) {
 				Log.e(AndroidSmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
@@ -130,15 +122,7 @@ public class AndroidSmsFetcher {
 			* aren't indexed in the same mean
 			*/
 			entry.put("mbox", (mboxId - 1));
-
-			results.push(entry.getInt("_id"),
-					mbID.ordinal(),
-					entry.getInt("type"),
-					entry.getLong("date"),
-					entry.getString("address"),
-					entry.getString("body"),
-					entry.getString("read"),
-					entry.getString("seen"));
+			results.push(mbID, entry);
 		} catch (JSONException e) {
 			Log.e(AndroidSmsFetcher.TAG, "JSON Exception when reading SMS Mailbox", e);
 		}
