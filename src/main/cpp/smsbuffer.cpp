@@ -81,7 +81,7 @@ void SmsBuffer::push(JNIEnv *env, jobject self, jint msg_id, jint mailbox_id, ji
 }
 
 void SmsBuffer::_push(int msg_id, int mailbox_id, int type,
-					  long date, const char *address, const char *body, const char *read,
+					  long long date, const char *address, const char *body, const char *read,
 					  const char *seen)
 {
 	// If buffer is not empty, we are joining messages

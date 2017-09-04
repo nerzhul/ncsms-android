@@ -37,7 +37,7 @@ public:
                                        jint mailbox_id, jint type, jlong date, jstring address,
                                        jstring body, jstring read, jstring seen);
     void _push(int msg_id, int mailbox_id, int type,
-               long date, const char *address, const char *body, const char *read,
+               long long date, const char *address, const char *body, const char *read,
                const char *seen);
 
 	/*
