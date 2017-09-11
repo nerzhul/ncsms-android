@@ -59,13 +59,13 @@ public class SmsObserver extends ContentObserver implements ASyncSMSSync {
 		}
 	
 		AndroidSmsFetcher fetcher = new AndroidSmsFetcher(_context);
-		SmsBuffer smsList = fetcher.getLastMessage(MailboxID.ALL);
+		SmsBuffer smsBuffer = fetcher.getLastMessage(MailboxID.ALL);
 		
 		ConnectivityMonitor cMon = new ConnectivityMonitor(_context);
 		
 		// Synchronize if network is valid and there are SMS
-		if (cMon.isValid() && (smsList != null)) {
-			new SyncTask(_context, smsList).execute();
+		if (cMon.isValid() && (smsBuffer != null)) {
+			new SyncTask(_context, smsBuffer).execute();
 		}
 	}
 

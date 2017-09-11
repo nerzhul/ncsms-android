@@ -31,6 +31,7 @@ JNINativeMethod SmsBuffer::methods[] =
 				DECL_JNIMETHOD(deleteNativeObject, "()V")
 				DECL_JNIMETHOD(empty, "()Z")
 				DECL_JNIMETHOD(asRawJsonString, "()Ljava/lang/String;")
+				DECL_JNIMETHOD(getLastMessageDate, "()J")
 				DECL_JNIMETHOD(push,
 							   "(IIIJLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V")
 				DECL_JNIMETHOD(print, "()V")
@@ -69,6 +70,7 @@ void SmsBuffer::reset_buffer()
 	m_buffer.clear();
 	m_buffer_empty = true;
 	m_sms_count = 0;
+	m_last_message_date = 0;
 }
 
 void SmsBuffer::push(JNIEnv *env, jobject self, jint msg_id, jint mailbox_id, jint type,
@@ -94,15 +96,19 @@ void SmsBuffer::_push(int msg_id, int mailbox_id, int type,
 		m_buffer_empty = false;
 	}
 
-	m_buffer << "{\"_id\": " << msg_id << ", "
-			<< "\"mbox\": " << mailbox_id << ", "
-			<< "\"type\": " << type << ", "
-			<< "\"date\": " << date << ", "
-			<< "\"body\": " << json::escape_string(body) << ", "
-			<< "\"address\": " << json::escape_string(address) << ", "
-			<< "\"read\": " << json::escape_string(read) << ", "
-			<< "\"seen\": " << json::escape_string(seen)
+	m_buffer << "{\"_id\":" << msg_id << ","
+			<< "\"mbox\":" << mailbox_id << ","
+			<< "\"type\":" << type << ","
+			<< "\"date\":" << date << ","
+			<< "\"body\":" << json::escape_string(body) << ","
+			<< "\"address\":" << json::escape_string(address) << ","
+			<< "\"read\":" << json::escape_string(read) << ","
+			<< "\"seen\":" << json::escape_string(seen)
 			<< "}";
+
+	if (date > m_last_message_date) {
+		m_last_message_date = date;
+	}
 	m_sms_count++;
 }
 
@@ -142,4 +148,15 @@ void SmsBuffer::as_raw_json_string(std::string &result)
 	std::stringstream ss;
 	ss << "{\"smsCount\": " << m_sms_count << ", \"smsDatas\": " << m_buffer.str() << "]}";
 	result = ss.str();
+}
+
+jlong SmsBuffer::getLastMessageDate(JNIEnv *env, jobject self)
+{
+	SMSBUFFER_CAST
+	return me->_get_last_message_date();
+}
+
+long long SmsBuffer::_get_last_message_date() const
+{
+	return m_last_message_date;
 }

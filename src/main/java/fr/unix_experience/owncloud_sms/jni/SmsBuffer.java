@@ -45,6 +45,7 @@ public class SmsBuffer {
 	public native boolean empty();
 	public native void print();
 	public native String asRawJsonString();
+	public native long getLastMessageDate();
 
 	public void push(MailboxID mbid, SmsEntry smsEntry) {
 		push(smsEntry.id,
@@ -65,6 +66,4 @@ public class SmsBuffer {
 		deleteNativeObject();
 		mHandle = 0;
 	}
-
-
 }

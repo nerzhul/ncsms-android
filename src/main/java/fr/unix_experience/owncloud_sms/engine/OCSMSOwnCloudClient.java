@@ -148,9 +148,6 @@ public class OCSMSOwnCloudClient {
 	}
 
 	private void doPushRequestV1(SmsBuffer smsBuffer) throws OCSyncException {
-		// We need to save this date as a step for connectivity change
-		Long lastMsgDate = (long) 0;
-
 		if (smsBuffer == null) {
 			doHttpRequest(_http.getAllSmsIds());
 			if (_jsonQueryBuffer == null) {
@@ -159,8 +156,6 @@ public class OCSMSOwnCloudClient {
 
 			// Create new JSONArray to get results
 			smsBuffer = new SmsBuffer();
-			// Get maximum message date present in smsList to keep a step when connectivity changes
-			lastMsgDate = collectMessages(smsBuffer).getLastMessageDate();
 		}
 
 		if (smsBuffer.empty()) {
@@ -193,9 +188,10 @@ public class OCSMSOwnCloudClient {
 		}
 
 		// Push was OK, we can save the lastMessageDate which was saved to server
-		(new OCSMSSharedPrefs(_context)).setLastMessageDate(lastMsgDate);
+		(new OCSMSSharedPrefs(_context)).setLastMessageDate(smsBuffer.getLastMessageDate());
 
 		Log.i(OCSMSOwnCloudClient.TAG, "SMS Push request said: status " + pushStatus + " - " + pushMessage);
+		Log.i(OCSMSOwnCloudClient.TAG, "LastMessageDate set to: " + smsBuffer.getLastMessageDate());
 	}
 
 	private PostMethod createPushRequest(SmsBuffer smsBuffer) throws OCSyncException {

@@ -30,7 +30,6 @@ import fr.unix_experience.owncloud_sms.providers.SmsDataProvider;
 
 public class AndroidSmsFetcher {
 	public AndroidSmsFetcher(Context ct) {
-		_lastMsgDate = (long) 0;
 		_context = ct;
 
 		_existingInboxMessages = null;
@@ -174,11 +173,6 @@ public class AndroidSmsFetcher {
 				entry.seen = (c.getInt(idx) > 0);
 				break;
 			case "date":
-				// Special case for date, we need to record last without searching
-				Long tmpDate = c.getLong(idx);
-				if (tmpDate > _lastMsgDate) {
-					_lastMsgDate = tmpDate;
-				}
 				entry.date = c.getLong(idx);
 				break;
 			case "address":
@@ -237,16 +231,10 @@ public class AndroidSmsFetcher {
 		_existingDraftsMessages = draftMessages;
 	}
 
-	Long getLastMessageDate() {
-		return _lastMsgDate;
-	}
-
 	private final Context _context;
 	private JSONArray _existingInboxMessages;
 	private JSONArray _existingSentMessages;
 	private JSONArray _existingDraftsMessages;
-
-	private Long _lastMsgDate;
 
 	private static final String TAG = AndroidSmsFetcher.class.getSimpleName();
 }

@@ -73,7 +73,7 @@ public class SmsDataProvider extends ContentProvider {
 
     public Cursor queryMessagesSinceDate(String mailBox, Long sinceDate) {
         return query(Uri.parse(mailBox), SmsDataProvider.messageFields,
-                "date > ?", new String[] { sinceDate.toString() }, null
+                "date > ?", new String[] { sinceDate.toString() }, "date ASC"
         );
     }
 

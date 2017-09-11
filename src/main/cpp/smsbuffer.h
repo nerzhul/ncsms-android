@@ -59,6 +59,13 @@ public:
 	JNIEXPORT static jstring JNICALL asRawJsonString(JNIEnv *env, jobject self);
 	void as_raw_json_string(std::string &result);
 
+	/*
+	 * getLastMessageDate method
+	 */
+
+	JNIEXPORT static jlong JNICALL getLastMessageDate(JNIEnv *env, jobject self);
+	long long _get_last_message_date() const;
+
     DECL_JNICLASSATTRS
 
 private:
@@ -66,6 +73,7 @@ private:
     std::stringstream m_buffer;
 	uint32_t m_sms_count{0};
     bool m_buffer_empty{true};
+	long long m_last_message_date{0};
 
 	static bool gJava_inited;
 	static jfieldID gJava_mHandle;
