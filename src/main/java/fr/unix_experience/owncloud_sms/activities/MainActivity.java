@@ -205,7 +205,7 @@ public class MainActivity extends AppCompatActivity
 			return;
 		}
 
-		new SyncTask(getApplicationContext()).execute();
+		new SyncTask(this).execute();
 		Log.v(MainActivity.TAG, "Finish syncAllMessages()");
 	}
 

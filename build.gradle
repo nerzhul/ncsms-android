@@ -20,8 +20,8 @@ android {
 
     defaultConfig {
         applicationId "fr.unix_experience.owncloud_sms"
-        versionCode 56
-        versionName "1.2.3"
+        versionCode 57
+        versionName "1.2.4"
         minSdkVersion 16
         targetSdkVersion 26
         maxSdkVersion 26

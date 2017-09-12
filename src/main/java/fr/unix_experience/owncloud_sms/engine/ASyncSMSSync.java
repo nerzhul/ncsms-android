@@ -19,6 +19,7 @@ package fr.unix_experience.owncloud_sms.engine;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
+import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
@@ -33,12 +34,14 @@ import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 
 public interface ASyncSMSSync {
 	class SyncTask extends AsyncTask<Void, Void, Void> {
-		public SyncTask(Context context) {
+		public SyncTask(Activity context) {
+			_activity = context;
 			_context = context;
 			_smsBuffer = null;
 		}
 
 		public SyncTask(Context context, SmsBuffer buffer) {
+			_activity = null;
 			_context = context;
 			_smsBuffer = buffer;
 		}
@@ -70,7 +73,14 @@ public interface ASyncSMSSync {
 				SmsBuffer smsBuffer = new SmsBuffer();
 				fetcher.bufferMessagesSinceDate(smsBuffer, syncStartupDate);
 				if (smsBuffer.empty()) {
-					Toast.makeText(_context, _context.getString(R.string.nothing_to_sync), Toast.LENGTH_SHORT).show();
+					if (_activity != null) {
+						_activity.runOnUiThread(new Runnable() {
+							public void run() {
+								Toast.makeText(_context, _context.getString(R.string.nothing_to_sync), Toast.LENGTH_SHORT).show();
+							}
+						});
+					}
+
 					Log.i(ASyncSMSSync.TAG, "Finish syncAllMessages(): no more sms");
 					smsBuffer.clear();
 					shouldSync = false;
@@ -113,6 +123,7 @@ public interface ASyncSMSSync {
 
 		private final SmsBuffer _smsBuffer;
 		private final Context _context;
+		private final Activity _activity;
 	}
 
 	String TAG = ASyncSMSSync.class.getSimpleName();
