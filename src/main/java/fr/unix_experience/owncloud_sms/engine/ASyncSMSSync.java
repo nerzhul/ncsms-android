@@ -68,15 +68,19 @@ public interface ASyncSMSSync {
 
 			Log.i(ASyncSMSSync.TAG, "Current message date is " + syncStartupDate);
 			boolean shouldSync = true;
+			boolean hasSyncSomething = false;
 			AndroidSmsFetcher fetcher = new AndroidSmsFetcher(_context);
 			while (shouldSync) {
 				SmsBuffer smsBuffer = new SmsBuffer();
 				fetcher.bufferMessagesSinceDate(smsBuffer, syncStartupDate);
 				if (smsBuffer.empty()) {
 					if (_activity != null) {
+						final boolean syncComplete = hasSyncSomething;
 						_activity.runOnUiThread(new Runnable() {
 							public void run() {
-								Toast.makeText(_context, _context.getString(R.string.nothing_to_sync), Toast.LENGTH_SHORT).show();
+								Toast.makeText(_context,
+										_context.getString(syncComplete ? R.string.sync_complete : R.string.nothing_to_sync),
+										Toast.LENGTH_SHORT).show();
 							}
 						});
 					}
@@ -94,6 +98,7 @@ public interface ASyncSMSSync {
 
 				syncStartupDate = smsBuffer.getLastMessageDate();
 				performSync(smsBuffer);
+				hasSyncSomething = true;
 			}
 		}
 
