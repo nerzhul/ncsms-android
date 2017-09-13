@@ -182,4 +182,4 @@
     <string name="yes_confirm">はい</string>
     <string name="no_confirm">いいえ</string>
     <string name="pref_show_sync_notifications">同期の通知を表示</string>
-</resources>
+    </resources>
