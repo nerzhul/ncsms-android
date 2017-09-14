@@ -182,4 +182,5 @@
     <string name="yes_confirm">Sì</string>
     <string name="no_confirm">No</string>
     <string name="pref_show_sync_notifications">Mostra notifiche di sincronizzazione</string>
-    </resources>
+    <string name="sync_complete">Sincronizzazione completata</string>
+</resources>
