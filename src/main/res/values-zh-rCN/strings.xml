@@ -182,4 +182,5 @@
     <string name="yes_confirm">是</string>
     <string name="no_confirm">否</string>
     <string name="pref_show_sync_notifications">显示同步通知</string>
-    </resources>
+    <string name="sync_complete">同步完成</string>
+</resources>
