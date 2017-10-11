@@ -65,13 +65,13 @@
         <item>Никад</item>
     </string-array>
     <string-array name="pref_sync_bulk_max_messages_titles">
-        <item>100 СМС-ова</item>
-        <item>1000 СМС-ова</item>
-        <item>2000 СМС-ова</item>
-        <item>5000 СМС-ова</item>
-        <item>10000 СМС-ова</item>
-        <item>25000 СМС-ова</item>
-        <item>Сваки несинхронизовани СМС</item>
+        <item>100 СМС порука</item>
+        <item>1000 СМС порука</item>
+        <item>2000 СМС порука</item>
+        <item>5000 СМС порука</item>
+        <item>10000 СМС порука</item>
+        <item>25000 СМС порука</item>
+        <item>Свака несинхронизована СМС порука</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 сат</item>
@@ -81,7 +81,7 @@
         <item>24 сата</item>
         <item>Никад</item>
     </string-array>
-    <string name="pref_push_on_receive">Шаљи СМС-ове одмах по примању</string>
+    <string name="pref_push_on_receive">Шаљи СМС поруке одмах по примању</string>
     <string name="pref_sync_wifi">Синх. преко бежичног интернета</string>
     <string name="pref_sync_4g">Синх. преко 4G</string>
     <string name="pref_sync_3g">Синх. преко 3G</string>
@@ -154,4 +154,33 @@
     <string name="navigation_drawer_open">Отвори навигациону фиоку</string>
     <string name="navigation_drawer_close">Затвори навигациону фиоку</string>
     <string name="ma_title_my_accounts">Моји налози</string>
-    </resources>
+    <string name="ma_content_swipeaction">Превуците с лева на десни да видите акције.</string>
+    <string name="cancel">Откажи</string>
+    <string name="understood">Разумео</string>
+    <string name="notif_permission_required">Потребне дозволе</string>
+    <string name="notif_permission_required_content">Неке дозволе потребне за синхронизацију недостају. Поправите то у поставкама апликације</string>
+    <string name="please_fix_it">Исправи</string>
+    <string name="err_cannot_read_contacts">Не могу да прочитам контакте.</string>
+    <string name="err_cannot_read_sms">Не могу да прочитам СМС поруке.</string>
+    <string name="action_appinfo_perms">Информације о апликацији и дозволе</string>
+    <string name="restore_all_messages">Поврати све поруке</string>
+    <string name="account_actions">Акције налога</string>
+    <string name="error_connection_failed_not_found">Веза није успела, сервер је вратио грешку 404 NOT FOUND. ПРоверите да ли имате добру путању ка Вашој Некстклауд инстанци.</string>
+    <string name="nothing_to_sync">Нема ништа за синхронизацију.</string>
+    <string name="feature_not_already_implemented">Функционалност још није подржава и биће доступна ускоро.</string>
+    <string name="pref_title_minimum_sync_chars">Минимална дужина телефонског броја</string>
+    <string name="err_didnt_find_account_restore">Нисмо нашли Ваш налог, да бисмо повратили поруке, ово је баш чудна ситуација.</string>
+    <string name="launch_restore">Поврати моје СМС поруке</string>
+    <string name="error_make_default_sms_app">Да бисте повратили поруке, ова апликација мора бити подразумевана апликација за СМС поруке. Ово ограничење уведено је од Андроид верзије 4.4.</string>
+    <string name="fix_permissions">Поправи дозволе</string>
+    <string name="err_kitkat_required">Да бисте користили ову функционалност, потребна Вам је Андроид верзија 4.4 или већа.</string>
+    <string name="restore_finished">Враћање СМС порука завршено.</string>
+    <string name="x_messages_restored">поруке враћене&#8230;</string>
+    <string name="err_no_connection">Ниједна конекција није доступна, проверите да ли имате неки тип конекције на интернет.</string>
+    <string name="reinit_sync_cursor">Поново иницијализуј синхронизациони показивач</string>
+    <string name="reinit_sync_cursor_confirm">Да ли сте сигурни да желите да поново иницијализујете синхронизациони показивач? Ово може успорити следећу синхронизацију уколико нађемо превише старих порука које до сад нису синхронизоване са сервером.</string>
+    <string name="yes_confirm">Да</string>
+    <string name="no_confirm">Не</string>
+    <string name="pref_show_sync_notifications">Прикажи обавештења о синхронизацији</string>
+    <string name="sync_complete">Синхронизација готова</string>
+</resources>
