@@ -157,7 +157,7 @@
     <string name="ma_content_swipeaction">Sveip fra venstre til høyre for å få tilgang til handlingsmenyen.</string>
     <string name="cancel">Avbryt</string>
     <string name="understood">Forstått</string>
-    <string name="notif_permission_required">Rettighet nødvendig</string>
+    <string name="notif_permission_required">Rettigheter trengs</string>
     <string name="notif_permission_required_content">Noen tilganger mangler for utførelse av synkroniseringsprosess. Fiks det i programinnstillingene.</string>
     <string name="please_fix_it">Fiks det.</string>
     <string name="err_cannot_read_contacts">Vi kan ikke lese dine kontakter</string>
