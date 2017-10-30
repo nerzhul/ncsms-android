@@ -68,7 +68,7 @@ public interface ASyncSMSRecovery {
 
 			Integer nb = 0;
 			try {
-				while (obj.getLong("last_id") != start) {
+				while (obj != null && obj.getLong("last_id") != start) {
 					JSONObject messages = obj.getJSONObject("messages");
 					Iterator<?> keys = messages.keys();
 					while (keys.hasNext()) {
