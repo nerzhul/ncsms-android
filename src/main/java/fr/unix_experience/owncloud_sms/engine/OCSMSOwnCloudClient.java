@@ -20,7 +20,6 @@ package fr.unix_experience.owncloud_sms.engine;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.Context;
-import android.net.Uri;
 import android.util.Log;
 
 import org.apache.commons.httpclient.HttpException;
@@ -34,6 +33,8 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.ConnectException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.enums.OCSyncErrorType;
@@ -56,11 +57,15 @@ public class OCSMSOwnCloudClient {
 			throw new IllegalStateException(context.getString(R.string.err_sync_account_unparsable));
 		}
 
-		Uri serverURI = Uri.parse(ocURI);
-		_http = new OCHttpClient(context,
-				serverURI, accountManager.getUserData(account, "ocLogin"),
-				accountManager.getPassword(account));
-        _connectivityMonitor = new ConnectivityMonitor(_context);
+		try {
+			URL serverURL = new URL(ocURI);
+			_http = new OCHttpClient(context,
+					serverURL, accountManager.getUserData(account, "ocLogin"),
+					accountManager.getPassword(account));
+			_connectivityMonitor = new ConnectivityMonitor(_context);
+		} catch (MalformedURLException e) {
+			throw new IllegalStateException(context.getString(R.string.err_sync_account_unparsable));
+		}
 	}
 
 	public Integer getServerAPIVersion() throws OCSyncException {

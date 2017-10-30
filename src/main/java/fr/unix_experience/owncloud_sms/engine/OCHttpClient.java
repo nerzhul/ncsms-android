@@ -18,7 +18,6 @@ package fr.unix_experience.owncloud_sms.engine;
  */
 
 import android.content.Context;
-import android.net.Uri;
 import android.util.Base64;
 import android.util.Log;
 
@@ -41,6 +40,7 @@ import org.apache.commons.httpclient.protocol.Protocol;
 import org.apache.commons.httpclient.protocol.ProtocolSocketFactory;
 
 import java.io.IOException;
+import java.net.URL;
 
 import fr.unix_experience.owncloud_sms.providers.AndroidVersionProvider;
 
@@ -56,7 +56,7 @@ public class OCHttpClient extends HttpClient {
 
 	private static final String TAG = OCHttpClient.class.getCanonicalName();
 	private static final String PARAM_PROTOCOL_VERSION = "http.protocol.version";
-	private final Uri _serverURI;
+	private final URL _serverURI;
 	private final String _username;
 	private final String _password;
 
@@ -66,11 +66,11 @@ public class OCHttpClient extends HttpClient {
 	private static final String OC_V2_GET_MESSAGES_PHONE ="/index.php/apps/ocsms/api/v2/messages/[PHONENUMBER]/[START]/[LIMIT]?format=json";
 	private static final String OC_V2_GET_MESSAGES_SENDQUEUE = "/index.php/apps/ocsms/api/v2/messages/sendqueue?format=json";
 
-	public OCHttpClient(Context context, Uri serverURI, String accountName, String accountPassword) {
+	public OCHttpClient(Context context, URL serverURL, String accountName, String accountPassword) {
 		super(new MultiThreadedHttpConnectionManager());
 		Protocol easyhttps = new Protocol("https", (ProtocolSocketFactory)new EasySSLProtocolSocketFactory(), 443);
 		Protocol.registerProtocol("https", easyhttps);
-		_serverURI = serverURI;
+		_serverURI = serverURL;
 		_username = accountName;
 		_password = accountPassword;
 		getParams().setParameter(HttpClientParams.ALLOW_CIRCULAR_REDIRECTS, true);

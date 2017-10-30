@@ -24,7 +24,6 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.ContentResolver;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -47,6 +46,8 @@ import com.dd.processbutton.iml.ActionProcessButton;
 import org.apache.commons.httpclient.methods.GetMethod;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
@@ -57,6 +58,9 @@ import fr.unix_experience.owncloud_sms.engine.OCHttpClient;
  */
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class LoginActivity extends AppCompatActivity {
+
+	private static final String TAG = LoginActivity.class.getCanonicalName();
+
 	/**
 	 * Keep track of the login task to ensure we can cancel it if requested.
 	 */
@@ -192,8 +196,12 @@ public class LoginActivity extends AppCompatActivity {
 			_signInButton.setProgress(25);
 			showProgress(true);
 			String serverURL = protocol + serverAddr;
-			mAuthTask = new UserLoginTask(serverURL, login, password);
-			mAuthTask.execute((Void) null);
+			try {
+				mAuthTask = new UserLoginTask(serverURL, login, password);
+				mAuthTask.execute((Void) null);
+			} catch (MalformedURLException e) {
+				Log.e(TAG, "Invalid server URL " + serverURL);
+			}
 		}
 	}
 
@@ -249,9 +257,9 @@ public class LoginActivity extends AppCompatActivity {
 	 */
 	public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
-		UserLoginTask(String serverURI, String login, String password) {
-			Log.i(TAG, "_serverURI = " + serverURI);
-			_serverURI = Uri.parse(serverURI);
+		UserLoginTask(String serverURL, String login, String password) throws MalformedURLException {
+			_serverURL = new URL(serverURL);
+			Log.i(TAG, "_serverURL = " + serverURL);
 			_login = login;
 			_password = password;
 		}
@@ -259,7 +267,7 @@ public class LoginActivity extends AppCompatActivity {
 		@Override
 		protected Boolean doInBackground(Void... params) {
 			_returnCode = 0;
-			OCHttpClient http = new OCHttpClient(getBaseContext(), _serverURI, _login, _password);
+			OCHttpClient http = new OCHttpClient(getBaseContext(), _serverURL, _login, _password);
 			GetMethod testMethod = null;
 			try {
 				testMethod = http.getVersion();
@@ -292,13 +300,13 @@ public class LoginActivity extends AppCompatActivity {
 				}
 
 				// Generate a label
-				String accountLabel = _login + "@" + _serverURI.getHost();
+				String accountLabel = _login + "@" + _serverURL.getHost();
 
 				// We create the account
 				Account account = new Account(accountLabel, accountType);
 				Bundle accountBundle = new Bundle();
 				accountBundle.putString("ocLogin", _login);
-				accountBundle.putString("ocURI", _serverURI.toString());
+				accountBundle.putString("ocURI", _serverURL.toString());
 
 				// And we push it to Android
 				AccountManager accMgr = AccountManager.get(getApplicationContext());
@@ -365,7 +373,7 @@ public class LoginActivity extends AppCompatActivity {
 			showProgress(false);
 		}
 
-		private final Uri _serverURI;
+		private final URL _serverURL;
 		private final String _login;
 		private final String _password;
 		private int _returnCode;
