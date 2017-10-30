@@ -23,6 +23,10 @@ namespace json {
 
 std::string escape_string(const char *str)
 {
+	if (!str) {
+		return "";
+	}
+
 	std::string result;
 	// Create a sufficient buffer to escape all chars
 	result.reserve(strlen(str) * 2 + 3);
