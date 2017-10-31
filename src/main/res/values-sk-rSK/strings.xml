@@ -36,7 +36,12 @@
     <string name="app_name">Nextcloud SMS správy</string>
     <string name="login_logo">Prihlasovacie logo</string>
 
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - Rýchle</string>
     <string name="pref_title_sync_frequency">Interval rýchlej synchronizácie</string>
+    <string name="pref_title_slow_sync">SMS - Zabezpečené a pomalšie</string>
+    <string name="pref_title_slow_sync_frequency">Zabezpečená pomalšia synchronizačná frekvencia</string>
     <string name="action_settings">Nastavenia</string>
     <string name="sync_now">Teraz synchronizovať</string>
     <string name="pref_category_sync">Synchronizácia</string>
@@ -94,6 +99,8 @@
     <string name="prompt_serverURI">Adresa servera</string>
     <string name="error_invalid_server_address">Neplatná adresa servera</string>
     <string name="error_connection_failed">Pripojenie zlyhalo, uistite sa, že toto je ten správny server</string>
+    <string name="error_http_connection_failed">Nie je možné vytvoriť HTTP pripojenie. Uistite sa prosím, že na druhej strane je web server</string>
+
     <!-- Main activity -->
     <string name="ma_title_rate_us">Ohodnoťte nás!</string>
     <string name="ma_title_add_account">Pridať účet</string>
