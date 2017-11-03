@@ -63,7 +63,6 @@ repositories {
 }
 
 dependencies {
-    compile 'commons-httpclient:commons-httpclient:3.1'
     compile 'com.android.support:support-v13:26.1.0'
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support:design:26.1.0'
