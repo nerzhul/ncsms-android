@@ -20,31 +20,30 @@ package fr.unix_experience.owncloud_sms.engine;
 import android.content.Context;
 import android.util.Base64;
 import android.util.Log;
+import android.util.Pair;
 
-import org.apache.commons.httpclient.Header;
-import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.HttpMethod;
-import org.apache.commons.httpclient.HttpStatus;
-import org.apache.commons.httpclient.HttpVersion;
-import org.apache.commons.httpclient.MultiThreadedHttpConnectionManager;
-import org.apache.commons.httpclient.URI;
-import org.apache.commons.httpclient.URIException;
 import org.apache.commons.httpclient.contrib.ssl.EasySSLProtocolSocketFactory;
-import org.apache.commons.httpclient.cookie.CookiePolicy;
-import org.apache.commons.httpclient.methods.GetMethod;
-import org.apache.commons.httpclient.methods.PostMethod;
-import org.apache.commons.httpclient.methods.StringRequestEntity;
-import org.apache.commons.httpclient.params.HttpClientParams;
-import org.apache.commons.httpclient.params.HttpMethodParams;
 import org.apache.commons.httpclient.protocol.Protocol;
 import org.apache.commons.httpclient.protocol.ProtocolSocketFactory;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.Charset;
 
+import fr.unix_experience.owncloud_sms.R;
+import fr.unix_experience.owncloud_sms.enums.OCSyncErrorType;
+import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
 import fr.unix_experience.owncloud_sms.providers.AndroidVersionProvider;
 
-public class OCHttpClient extends HttpClient {
+public class OCHttpClient {
 	static {
 		System.loadLibrary("nativesms");
 	}
@@ -56,7 +55,8 @@ public class OCHttpClient extends HttpClient {
 
 	private static final String TAG = OCHttpClient.class.getCanonicalName();
 	private static final String PARAM_PROTOCOL_VERSION = "http.protocol.version";
-	private final URL _serverURI;
+	private final URL _url;
+	private final String _userAgent;
 	private final String _username;
 	private final String _password;
 
@@ -67,92 +67,147 @@ public class OCHttpClient extends HttpClient {
 	private static final String OC_V2_GET_MESSAGES_SENDQUEUE = "/index.php/apps/ocsms/api/v2/messages/sendqueue?format=json";
 
 	public OCHttpClient(Context context, URL serverURL, String accountName, String accountPassword) {
-		super(new MultiThreadedHttpConnectionManager());
 		Protocol easyhttps = new Protocol("https", (ProtocolSocketFactory)new EasySSLProtocolSocketFactory(), 443);
 		Protocol.registerProtocol("https", easyhttps);
-		_serverURI = serverURL;
+		_url = serverURL;
 		_username = accountName;
 		_password = accountPassword;
-		getParams().setParameter(HttpClientParams.ALLOW_CIRCULAR_REDIRECTS, true);
-		getParams().setParameter(OCHttpClient.PARAM_PROTOCOL_VERSION, HttpVersion.HTTP_1_1);
-		getParams().setCookiePolicy(CookiePolicy.IGNORE_COOKIES);
-		getParams().setParameter(HttpMethodParams.USER_AGENT,
-				"nextcloud-phonesync (" + new AndroidVersionProvider(context).getVersionCode() + ")");
+
+		_userAgent = "nextcloud-phonesync (" + new AndroidVersionProvider(context).getVersionCode() + ")";
 	}
 
-	private GetMethod get(String oc_call) {
-		Log.i(OCHttpClient.TAG, "Create GET " + _serverURI + oc_call);
-		return new GetMethod(_serverURI.toString() + oc_call);
-	}
-
-	GetMethod getAllSmsIds() {
-		return get(OCHttpClient.getAllSmsIdsCall());
-	}
-
-	public GetMethod getVersion() {
-		return get(OCHttpClient.getVersionCall());
-	}
-
-	PostMethod pushSms(StringRequestEntity ent) {
-		PostMethod post = new PostMethod(_serverURI.toString() + OCHttpClient.getPushRoute());
-		post.setRequestEntity(ent);
-		return post;
-	}
-
-	GetMethod getPhoneList() {
-		return get(OCHttpClient.OC_V2_GET_PHONELIST);
-	}
-
-	GetMethod getMessages(Long start, Integer limit) {
-		return get(OCHttpClient.OC_V2_GET_MESSAGES.
-				replace("[START]", start.toString()).replace("[LIMIT]", limit.toString()));
-	}
-
-	private int followRedirections(HttpMethod httpMethod) throws IOException {
-		int redirectionsCount = 0;
-		int status = httpMethod.getStatusCode();
-		while ((redirectionsCount < 3) &&
-				((status == HttpStatus.SC_MOVED_PERMANENTLY) ||
-						(status == HttpStatus.SC_MOVED_TEMPORARILY) ||
-						(status == HttpStatus.SC_TEMPORARY_REDIRECT))
-				) {
-			Header location = httpMethod.getResponseHeader("Location");
-			if (location == null) {
-				location = httpMethod.getResponseHeader("location");
-			}
-			if (location == null) {
-				Log.e(OCHttpClient.TAG, "No valid location header found when redirecting.");
-				return 500;
-			}
-
-			try {
-				httpMethod.setURI(new URI(location.getValue()));
-			} catch (URIException e) {
-				Log.e(OCHttpClient.TAG, "Invalid URI in 302 FOUND response");
-				return 500;
-			}
-
-			status = executeMethod(httpMethod);
-			redirectionsCount++;
+	private Pair<Integer, JSONObject> get(String oc_call, boolean skipError) throws OCSyncException {
+		Log.i(OCHttpClient.TAG, "Perform GET " + _url + oc_call);
+		try {
+			return execute("GET",
+					new URL(_url.toString() + oc_call), "", skipError);
+		} catch (MalformedURLException e) {
+			Log.e(OCHttpClient.TAG, "Malformed URL provided, aborting. URL was: "
+					+ _url.toExternalForm() + oc_call);
 		}
 
-		if (((redirectionsCount >= 3) && (status == HttpStatus.SC_MOVED_PERMANENTLY)) ||
-				(status == HttpStatus.SC_MOVED_TEMPORARILY) ||
-				(status == HttpStatus.SC_TEMPORARY_REDIRECT)) {
-			Log.e(OCHttpClient.TAG, "Too many redirection done. Aborting, please ensure your server is " +
-					"correctly configured");
-			return 400;
-		}
-
-		return status;
+		return new Pair<>(0, null);
 	}
 
-	public int execute(HttpMethod req) throws IOException {
-		String basicAuth = "Basic " +
-				Base64.encodeToString((_username + ":" + _password).getBytes(), Base64.NO_WRAP);
-		req.setDoAuthentication(true);
-		req.addRequestHeader("Authorization", basicAuth);
-		executeMethod(req);
-		return followRedirections(req);
+	private Pair<Integer, JSONObject> post(String oc_call, String data) throws OCSyncException {
+		Log.i(OCHttpClient.TAG, "Perform GET " + _url + oc_call);
+		try {
+			return execute("POST",
+					new URL(_url.toString() + oc_call), data, false);
+		} catch (MalformedURLException e) {
+			Log.e(OCHttpClient.TAG, "Malformed URL provided, aborting. URL was: "
+					+ _url.toExternalForm() + oc_call);
+		}
+
+		return new Pair<>(0, null);
+	}
+
+	Pair<Integer, JSONObject> getAllSmsIds() throws OCSyncException {
+		return get(OCHttpClient.getAllSmsIdsCall(), false);
+	}
+
+	public Pair<Integer, JSONObject> getVersion() throws OCSyncException {
+		return get(OCHttpClient.getVersionCall(), true);
+	}
+
+	Pair<Integer, JSONObject> pushSms(String smsBuf) throws OCSyncException {
+		return post(OCHttpClient.getPushRoute(), smsBuf);
+	}
+
+	Pair<Integer, JSONObject> getPhoneList() throws OCSyncException {
+		return get(OCHttpClient.OC_V2_GET_PHONELIST, true);
+	}
+
+	Pair<Integer, JSONObject> getMessages(Long start, Integer limit) throws OCSyncException {
+		return get(OCHttpClient.OC_V2_GET_MESSAGES
+				.replace("[START]", start.toString())
+				.replace("[LIMIT]", limit.toString()), false);
+	}
+
+	public Pair<Integer, JSONObject> execute(String method, URL url, String requestBody, boolean skipError) throws OCSyncException {
+		Pair<Integer, JSONObject> response;
+		HttpURLConnection urlConnection = null;
+		try {
+			urlConnection = (HttpURLConnection) url.openConnection();
+			urlConnection.setRequestMethod(method);
+			urlConnection.setRequestProperty("User-Agent", _userAgent);
+			urlConnection.setInstanceFollowRedirects(true);
+			urlConnection.setDoOutput(true);
+			urlConnection.setRequestProperty("Content-Type", "application/json");
+			urlConnection.setRequestProperty("Accept", "application/json");
+
+			String basicAuth = "Basic " +
+					Base64.encodeToString((_username + ":" + _password).getBytes(), Base64.NO_WRAP);
+			urlConnection.setRequestProperty("Authorization", basicAuth);
+			urlConnection.setChunkedStreamingMode(0);
+
+			OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
+			out.write(requestBody.getBytes(Charset.forName("UTF-8")));
+
+			response = handleHTTPResponse(urlConnection, skipError);
+		} catch (IOException e) {
+			throw new OCSyncException(R.string.err_sync_http_request_ioexception, OCSyncErrorType.IO);
+		} finally {
+			if (urlConnection != null) {
+				urlConnection.disconnect();
+			}
+		}
+
+		return response;
+	}
+
+	private Pair<Integer, JSONObject> handleHTTPResponse(HttpURLConnection connection, Boolean skipError) throws OCSyncException {
+		BufferedReader reader;
+		String response;
+		try {
+			reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+			StringBuilder stringBuilder = new StringBuilder();
+
+			String line;
+			while ((line = reader.readLine()) != null) {
+				stringBuilder.append(line).append("\n");
+			}
+
+			response = stringBuilder.toString();
+			int status = connection.getResponseCode();
+
+			switch (status) {
+				case 200: {
+					// Parse the response
+					try {
+						JSONObject jsonResponse = new JSONObject(response);
+						return new Pair<>(status, jsonResponse);
+
+					} catch (JSONException e) {
+						if (!skipError) {
+							if (response.contains("ownCloud") && response.contains("DOCTYPE")) {
+								Log.e(OCHttpClient.TAG, "OcSMS app not enabled or ownCloud upgrade is required");
+								throw new OCSyncException(R.string.err_sync_ocsms_not_installed_or_oc_upgrade_required,
+										OCSyncErrorType.SERVER_ERROR);
+							} else {
+								Log.e(OCHttpClient.TAG, "Unable to parse server response", e);
+								throw new OCSyncException(R.string.err_sync_http_request_parse_resp, OCSyncErrorType.PARSE);
+							}
+						}
+					}
+					break;
+				}
+				case 403: {
+					// Authentication failed
+					throw new OCSyncException(R.string.err_sync_auth_failed, OCSyncErrorType.AUTH);
+				}
+				default: {
+					// Unk error
+					Log.e(OCHttpClient.TAG, "Server set unhandled HTTP return code " + status);
+					Log.e(OCHttpClient.TAG, "Status code: " + status + ". Response message: " + response);
+					throw new OCSyncException(R.string.err_sync_http_request_returncode_unhandled, OCSyncErrorType.SERVER_ERROR);
+				}
+			}
+		}
+		catch (IOException e) {
+			throw new OCSyncException(R.string.err_sync_http_request_ioexception, OCSyncErrorType.IO);
+		}
+
+		return new Pair<>(0, null);
 	}
 }

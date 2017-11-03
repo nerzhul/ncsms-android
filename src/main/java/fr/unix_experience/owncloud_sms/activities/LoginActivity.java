@@ -32,6 +32,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.Pair;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,15 +44,15 @@ import android.widget.TextView;
 
 import com.dd.processbutton.iml.ActionProcessButton;
 
-import org.apache.commons.httpclient.methods.GetMethod;
+import org.json.JSONObject;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.defines.DefaultPrefs;
 import fr.unix_experience.owncloud_sms.engine.OCHttpClient;
+import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
 
 /**
  * A login screen that offers login via email/password.
@@ -268,20 +269,16 @@ public class LoginActivity extends AppCompatActivity {
 		protected Boolean doInBackground(Void... params) {
 			_returnCode = 0;
 			OCHttpClient http = new OCHttpClient(getBaseContext(), _serverURL, _login, _password);
-			GetMethod testMethod = null;
 			try {
-				testMethod = http.getVersion();
-				_returnCode = http.execute(testMethod);
+				Pair<Integer, JSONObject> response = http.getVersion();
+				_returnCode = response.first;
 			} catch (IllegalArgumentException e) {
 				Log.w(TAG, "Failed to getVersion, IllegalArgumentException occured: " + e.getMessage());
 				_returnCode = 597;
-			} catch (IOException e) {
-				Log.w(TAG, "Failed to login, IOException occured: " + e.getMessage());
+			} catch (OCSyncException e) {
+				Log.w(TAG, "Failed to login, OCSyncException occured: " + e.getMessage());
 				_returnCode = 599;
 			}
-
-			if (testMethod != null)
-				testMethod.releaseConnection();
 
 			return (_returnCode == 200);
 		}
