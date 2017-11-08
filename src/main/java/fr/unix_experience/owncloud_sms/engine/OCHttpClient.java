@@ -113,7 +113,7 @@ public class OCHttpClient {
 	}
 
 	private Pair<Integer, JSONObject> post(String oc_call, String data) throws OCSyncException {
-		Log.i(OCHttpClient.TAG, "Perform GET " + _url + oc_call);
+		Log.i(OCHttpClient.TAG, "Perform POST " + _url + oc_call);
 		try {
 			return execute("POST",
 					new URL(_url.toString() + oc_call), data, false);
@@ -166,6 +166,7 @@ public class OCHttpClient {
 
 			OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
 			out.write(requestBody.getBytes(Charset.forName("UTF-8")));
+			out.close();
 
 			response = handleHTTPResponse(urlConnection, skipError);
 		} catch (IOException e) {
@@ -180,10 +181,8 @@ public class OCHttpClient {
 	}
 
 	private Pair<Integer, JSONObject> handleHTTPResponse(HttpURLConnection connection, Boolean skipError) throws OCSyncException {
-		BufferedReader reader;
-		String response;
 		try {
-			reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 			StringBuilder stringBuilder = new StringBuilder();
 
 			String line;
@@ -191,7 +190,7 @@ public class OCHttpClient {
 				stringBuilder.append(line).append("\n");
 			}
 
-			response = stringBuilder.toString();
+			String response = stringBuilder.toString();
 			int status = connection.getResponseCode();
 
 			switch (status) {
@@ -226,6 +225,8 @@ public class OCHttpClient {
 					throw new OCSyncException(R.string.err_sync_http_request_returncode_unhandled, OCSyncErrorType.SERVER_ERROR);
 				}
 			}
+
+			reader.close();
 		}
 		catch (IOException e) {
 			throw new OCSyncException(R.string.err_sync_http_request_ioexception, OCSyncErrorType.IO);
