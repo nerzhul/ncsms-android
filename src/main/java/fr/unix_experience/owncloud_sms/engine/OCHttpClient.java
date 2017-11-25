@@ -155,7 +155,9 @@ public class OCHttpClient {
 			urlConnection.setRequestMethod(method);
 			urlConnection.setRequestProperty("User-Agent", _userAgent);
 			urlConnection.setInstanceFollowRedirects(true);
-			urlConnection.setDoOutput(true);
+			if (!"GET".equals(method)) {
+				urlConnection.setDoOutput(true);
+			}
 			urlConnection.setRequestProperty("Content-Type", "application/json");
 			urlConnection.setRequestProperty("Accept", "application/json");
 
@@ -164,9 +166,11 @@ public class OCHttpClient {
 			urlConnection.setRequestProperty("Authorization", basicAuth);
 			urlConnection.setChunkedStreamingMode(0);
 
-			OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
-			out.write(requestBody.getBytes(Charset.forName("UTF-8")));
-			out.close();
+			if (!"GET".equals(method)) {
+				OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
+				out.write(requestBody.getBytes(Charset.forName("UTF-8")));
+				out.close();
+			}
 
 			response = handleHTTPResponse(urlConnection, skipError);
 		} catch (IOException e) {
