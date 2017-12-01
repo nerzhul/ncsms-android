@@ -160,6 +160,7 @@ public class OCHttpClient {
 			}
 			urlConnection.setRequestProperty("Content-Type", "application/json");
 			urlConnection.setRequestProperty("Accept", "application/json");
+			urlConnection.setRequestProperty("Transfer-Encoding", "chunked");
 
 			String basicAuth = "Basic " +
 					Base64.encodeToString((_username + ":" + _password).getBytes(), Base64.NO_WRAP);
