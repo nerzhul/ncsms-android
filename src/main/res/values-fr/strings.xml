@@ -183,4 +183,5 @@
     <string name="no_confirm">Non</string>
     <string name="pref_show_sync_notifications">Afficher les notifications de synchronisation</string>
     <string name="sync_complete">Synchronisation terminée</string>
+    <string name="err_sync_http_write_failed">Erreur #19: échec d\'écriture du flux HTTP lors de la poussée d\'informations vers le serveur.</string>
 </resources>

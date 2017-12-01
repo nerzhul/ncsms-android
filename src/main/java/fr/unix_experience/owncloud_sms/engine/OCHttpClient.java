@@ -32,6 +32,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.nio.charset.Charset;
 
@@ -152,29 +153,8 @@ public class OCHttpClient {
 		HttpURLConnection urlConnection = null;
 		try {
 			urlConnection = (HttpURLConnection) url.openConnection();
-			urlConnection.setRequestMethod(method);
-			urlConnection.setRequestProperty("User-Agent", _userAgent);
-			urlConnection.setInstanceFollowRedirects(true);
-			if (!"GET".equals(method)) {
-				urlConnection.setDoOutput(true);
-			}
-			urlConnection.setRequestProperty("Content-Type", "application/json");
-			urlConnection.setRequestProperty("Accept", "application/json");
-			urlConnection.setRequestProperty("Transfer-Encoding", "chunked");
-
-			String basicAuth = "Basic " +
-					Base64.encodeToString((_username + ":" + _password).getBytes(), Base64.NO_WRAP);
-			urlConnection.setRequestProperty("Authorization", basicAuth);
-			urlConnection.setChunkedStreamingMode(0);
-
-			if (!"GET".equals(method)) {
-				OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
-				out.write(requestBody.getBytes(Charset.forName("UTF-8")));
-				out.close();
-			}
-
-			response = handleHTTPResponse(urlConnection, skipError);
 		} catch (IOException e) {
+			Log.e(OCHttpClient.TAG, "Failed to open connection to server: " + e);
 			throw new OCSyncException(R.string.err_sync_http_request_ioexception, OCSyncErrorType.IO);
 		} finally {
 			if (urlConnection != null) {
@@ -182,6 +162,43 @@ public class OCHttpClient {
 			}
 		}
 
+		if (urlConnection == null) {
+			Log.e(OCHttpClient.TAG, "Failed to open connection to server: null urlConnection");
+			throw new OCSyncException(R.string.err_sync_http_request_ioexception, OCSyncErrorType.IO);
+		}
+
+		try {
+			urlConnection.setRequestMethod(method);
+		} catch (ProtocolException e) {
+			Log.e(OCHttpClient.TAG, "Fatal error when setting request method: " + e);
+			throw new OCSyncException(R.string.err_sync_http_request_ioexception, OCSyncErrorType.IO);
+		}
+		urlConnection.setRequestProperty("User-Agent", _userAgent);
+		urlConnection.setInstanceFollowRedirects(true);
+		if (!"GET".equals(method)) {
+			urlConnection.setDoOutput(true);
+		}
+		urlConnection.setRequestProperty("Content-Type", "application/json");
+		urlConnection.setRequestProperty("Accept", "application/json");
+		urlConnection.setRequestProperty("Transfer-Encoding", "chunked");
+
+		String basicAuth = "Basic " +
+				Base64.encodeToString((_username + ":" + _password).getBytes(), Base64.NO_WRAP);
+		urlConnection.setRequestProperty("Authorization", basicAuth);
+		urlConnection.setChunkedStreamingMode(0);
+
+		if (!"GET".equals(method)) {
+			try {
+				OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
+				out.write(requestBody.getBytes(Charset.forName("UTF-8")));
+				out.close();
+			} catch (IOException e) {
+				Log.e(OCHttpClient.TAG, "Failed to open connection to server: " + e);
+				throw new OCSyncException(R.string.err_sync_http_write_failed, OCSyncErrorType.IO);
+			}
+		}
+
+		response = handleHTTPResponse(urlConnection, skipError);
 		return response;
 	}
 
