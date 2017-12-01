@@ -16,7 +16,7 @@ android:
     - tools
     - platform-tools
     - extra
-    - build-tools-26.0.1
+    - build-tools-26.0.2
     - android-26
   licenses:
     - 'android-sdk-license-.+'
@@ -25,8 +25,8 @@ android:
     - 'android-.*'
 
 before_install:
-  - wget https://dl.google.com/android/repository/android-ndk-r15c-linux-x86_64.zip > /dev/null
+  - wget https://dl.google.com/android/repository/android-ndk-r16-linux-x86_64.zip > /dev/null
   - mkdir -p /usr/local/android-sdk/ndk-bundle
-  - unzip android-ndk-r15c-linux-x86_64.zip -d /usr/local/android-sdk/ndk-bundle > /dev/null
-  - export ANDROID_NDK_HOME="/usr/local/android-sdk/ndk-bundle/android-ndk-r15c"
+  - unzip android-ndk-r16-linux-x86_64.zip -d /usr/local/android-sdk/ndk-bundle > /dev/null
+  - export ANDROID_NDK_HOME="/usr/local/android-sdk/ndk-bundle/android-ndk-r16"
   - rm -Rf "${ANDROID_HOME}/cmake"
