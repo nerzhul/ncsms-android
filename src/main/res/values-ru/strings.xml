@@ -183,4 +183,4 @@
     <string name="no_confirm">Нет</string>
     <string name="pref_show_sync_notifications">Показывать уведомления синхронизации</string>
     <string name="sync_complete">Синхронизация завершена</string>
-</resources>
+    </resources>

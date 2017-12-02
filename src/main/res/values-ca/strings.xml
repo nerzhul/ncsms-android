@@ -183,4 +183,4 @@
     <string name="no_confirm">No</string>
     <string name="pref_show_sync_notifications">Mostra notificacions de sincronització</string>
     <string name="sync_complete">S\'ha completat la sincronització</string>
-</resources>
+    </resources>
