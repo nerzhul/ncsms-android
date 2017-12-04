@@ -183,4 +183,5 @@
     <string name="no_confirm">Nem</string>
     <string name="pref_show_sync_notifications">Szinkronizálási értesítések mutatása</string>
     <string name="sync_complete">Szinkronizálás kész</string>
-    </resources>
+    <string name="err_sync_http_write_failed">Hiba #19: nem sikerült a HTTP folyam írása az adattolás során.</string>
+</resources>
