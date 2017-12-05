@@ -183,4 +183,5 @@
     <string name="no_confirm">No</string>
     <string name="pref_show_sync_notifications">Mostrar notificaciones de la sincronización</string>
     <string name="sync_complete">Sincronización completada</string>
-    </resources>
+    <string name="err_sync_http_write_failed">Error #19: Falló la escritura de transmisión HTTP al enviar datos al servidor.</string>
+</resources>
