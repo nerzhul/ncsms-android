@@ -183,4 +183,5 @@
     <string name="no_confirm">Nein</string>
     <string name="pref_show_sync_notifications">Synchronisations-Benachrichtigungen anzeigen</string>
     <string name="sync_complete">Synchronisierung abgeschlossen</string>
-    </resources>
+    <string name="err_sync_http_write_failed">Fehler #19: Fehler beim Schreiben des HTTP-Streams während der Datenübertragung zum Server.</string>
+</resources>
