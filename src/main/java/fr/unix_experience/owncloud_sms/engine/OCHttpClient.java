@@ -151,6 +151,7 @@ public class OCHttpClient {
 	public Pair<Integer, JSONObject> execute(String method, URL url, String requestBody, boolean skipError) throws OCSyncException {
 		Pair<Integer, JSONObject> response;
 		HttpURLConnection urlConnection = null;
+
 		try {
 			urlConnection = (HttpURLConnection) url.openConnection();
 		} catch (IOException e) {
@@ -171,7 +172,7 @@ public class OCHttpClient {
 			urlConnection.setRequestMethod(method);
 		} catch (ProtocolException e) {
 			Log.e(OCHttpClient.TAG, "Fatal error when setting request method: " + e);
-			throw new OCSyncException(R.string.err_sync_http_request_ioexception, OCSyncErrorType.IO);
+			throw new OCSyncException(R.string.err_sync_http_request_protocol_exception, OCSyncErrorType.IO);
 		}
 		urlConnection.setRequestProperty("User-Agent", _userAgent);
 		urlConnection.setInstanceFollowRedirects(true);
@@ -180,8 +181,9 @@ public class OCHttpClient {
 		}
 		urlConnection.setRequestProperty("Content-Type", "application/json");
 		urlConnection.setRequestProperty("Accept", "application/json");
-		urlConnection.setRequestProperty("Transfer-Encoding", "chunked");
-
+		if (!"GET".equals(method)) {
+			urlConnection.setRequestProperty("Transfer-Encoding", "chunked");
+		}
 		String basicAuth = "Basic " +
 				Base64.encodeToString((_username + ":" + _password).getBytes(), Base64.NO_WRAP);
 		urlConnection.setRequestProperty("Authorization", basicAuth);
