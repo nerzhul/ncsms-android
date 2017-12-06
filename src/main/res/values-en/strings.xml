@@ -61,7 +61,6 @@
     </string-array>
 
     <string-array name="pref_slow_sync_frequency_titles">
-        <item>1 minute</item>
         <item>1 hour</item>
         <item>3 hours</item>
         <item>6 hours</item>
