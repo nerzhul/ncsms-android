@@ -184,4 +184,4 @@
     <string name="pref_show_sync_notifications">Mostra notifiche di sincronizzazione</string>
     <string name="sync_complete">Sincronizzazione completata</string>
     <string name="err_sync_http_write_failed">Errore #19: scrittura del flusso HTTP non riuscita durante l\'invio dei dati al server.</string>
-</resources>
+    </resources>

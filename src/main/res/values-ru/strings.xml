@@ -184,4 +184,4 @@
     <string name="pref_show_sync_notifications">Показывать уведомления синхронизации</string>
     <string name="sync_complete">Синхронизация завершена</string>
     <string name="err_sync_http_write_failed">Error #19: При передаче данных на сервер не удалось произвести запись в поток HTTP.</string>
-</resources>
+    </resources>

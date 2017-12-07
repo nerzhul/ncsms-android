@@ -183,4 +183,5 @@
     <string name="no_confirm">Nej</string>
     <string name="pref_show_sync_notifications">Vis notifikationer</string>
     <string name="sync_complete">Synkronisering fuldført </string>
+    <string name="err_sync_http_write_failed">Fejl #19: Kunne ikke skrive HTTP Stream når data blev sendt til server.</string>
     </resources>

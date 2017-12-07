@@ -184,4 +184,4 @@
     <string name="pref_show_sync_notifications">Mostrar notificações de sincronismo</string>
     <string name="sync_complete">Sincronização completa</string>
     <string name="err_sync_http_write_failed">Erro #19: Falha escrevendo o stream PHP ao enviar dados para o servidor.</string>
-</resources>
+    </resources>

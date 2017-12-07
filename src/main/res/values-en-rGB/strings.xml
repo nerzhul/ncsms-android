@@ -184,4 +184,4 @@
     <string name="pref_show_sync_notifications">Show sync notifications</string>
     <string name="sync_complete">Synchronisation complete</string>
     <string name="err_sync_http_write_failed">Error #19: Failed to write HTTP stream when pushing data to server.</string>
-</resources>
+    </resources>
