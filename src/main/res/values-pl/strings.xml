@@ -183,4 +183,6 @@
     <string name="no_confirm">Nie</string>
     <string name="pref_show_sync_notifications">Pokaż powiadomienia dotyczące synchronizacji</string>
     <string name="sync_complete">Synchronizacja zakończona</string>
-    </resources>
+    <string name="err_sync_http_write_failed">Błąd #19: Błąd zapisu strumienia HTTP podczas przesyłania danych na serwer.</string>
+    <string name="err_sync_http_request_protocol_exception">Błąd #20: Wystąpił błąd poprawnego ustawienia protokołu HTTP.</string>
+</resources>

@@ -184,4 +184,5 @@
     <string name="pref_show_sync_notifications">Eşitleme bildirimlerini görüntüle</string>
     <string name="sync_complete">Eşitleme tamamlandı</string>
     <string name="err_sync_http_write_failed">Hata No 19: Veriler sunucuya gönderilirken HTTP akışına yazılamadı.</string>
-    </resources>
+    <string name="err_sync_http_request_protocol_exception">Hata 20: HTTP iletişim kuralı sürümü doğru şekilde ayarlanamadı.</string>
+</resources>
