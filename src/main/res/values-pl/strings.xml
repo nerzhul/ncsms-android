@@ -50,7 +50,7 @@
     <string name="title_global_pref_to_general_prefs">Ogólne preferencje</string>
     <string name="summary_global_pref_to_general_prefs">Opcje synchronizacji</string>
     <string name="summary_notif_prefs">Powiadomienia</string>
-    <string name="pref_header_data_sync">Dane &amp; synchronizacja</string>
+    <string name="pref_header_data_sync">Synchronizacja &amp; danych</string>
     <string name="title_activity_general_settings">Ustawienia ogólne</string>
 
     <string-array name="pref_sync_frequency_titles">
