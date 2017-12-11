@@ -184,4 +184,5 @@
     <string name="pref_show_sync_notifications">Afficher les notifications de synchronisation</string>
     <string name="sync_complete">Synchronisation terminée</string>
     <string name="err_sync_http_write_failed">Erreur #19: Echec de l\'écriture du flux HTTP lors de l\'envoi de données au serveur.</string>
-    </resources>
+    <string name="err_sync_http_request_protocol_exception">Erreur #20: Impossible de définir correctement la version du protocole HTTP.</string>
+</resources>
