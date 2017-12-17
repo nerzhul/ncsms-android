@@ -183,4 +183,6 @@
     <string name="no_confirm">Не</string>
     <string name="pref_show_sync_notifications">Прикажи обавештења о синхронизацији</string>
     <string name="sync_complete">Синхронизација готова</string>
-    </resources>
+    <string name="err_sync_http_write_failed">Грешка #19: не могу да пишем на HTTP ток при гурању података на сервер.</string>
+    <string name="err_sync_http_request_protocol_exception">Грешка #20: Не могу да поставим верзију HTTP протокола.</string>
+</resources>

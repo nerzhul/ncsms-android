@@ -183,4 +183,6 @@
     <string name="no_confirm">否</string>
     <string name="pref_show_sync_notifications">显示同步通知</string>
     <string name="sync_complete">同步完成</string>
-    </resources>
+    <string name="err_sync_http_write_failed">错误＃19：将数据推送到服务器时，无法写入HTTP流。</string>
+    <string name="err_sync_http_request_protocol_exception">错误20：#未能正确设置HTTP协议的版本。</string>
+</resources>
