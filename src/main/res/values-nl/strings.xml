@@ -183,4 +183,6 @@
     <string name="no_confirm">Nee</string>
     <string name="pref_show_sync_notifications">Sync-notificatie weergeven</string>
     <string name="sync_complete">Synchronisatie voltooid</string>
-    </resources>
+    <string name="err_sync_http_write_failed">Fout #4: Kon HTTP-stream niet wegschrijven bij het naar de server sturen van data</string>
+    <string name="err_sync_http_request_protocol_exception">Fout #20: Het juist instellen van de HTTP protocolversie is mislukt.</string>
+</resources>
