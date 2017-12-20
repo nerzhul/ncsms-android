@@ -107,7 +107,7 @@
     <string name="ma_title_rate_us">Vurder oss!</string>
     <string name="ma_title_add_account">Legg til en konto</string>
     <string name="ma_title_welcome">Velkommen</string>
-    <string name="ma_content_welcome">Velkommen til Nextcloud SMS-program. Dette programmet lar deg synkronisere dine SMS-er til din Nextcloud-installsjon ved bruk av et SMS-program.</string>
+    <string name="ma_content_welcome">Velkommen til Nextcloud SMS. Dette programmet lar deg synkronisere dine SMS-er til din Nextcloud.</string>
     <string name="ma_title_remote_account">Ekstern konto</string>
     <string name="choose_account">Velg konto</string>
 
