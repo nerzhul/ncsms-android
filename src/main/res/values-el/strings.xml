@@ -183,4 +183,6 @@
     <string name="no_confirm">Όχι</string>
     <string name="pref_show_sync_notifications">Εμφάνιση ειδοποιήσεων συγχρονισμού</string>
     <string name="sync_complete">Ο συγχρονισμός ολοκληρώθηκε</string>
-    </resources>
+    <string name="err_sync_http_write_failed">Σφάλμα #19: Αποτυχία εγγραφής ροής HTTP κατά την προώθηση δεδομένων στον διακομιστή.</string>
+    <string name="err_sync_http_request_protocol_exception">Σφάλμα #20: Αποτυχία καθορισμού έκδοσης πρωτοκόλλου HTTP.</string>
+</resources>

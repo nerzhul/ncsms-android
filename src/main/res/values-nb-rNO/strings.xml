@@ -183,4 +183,6 @@
     <string name="no_confirm">Nei</string>
     <string name="pref_show_sync_notifications">Vis synkroniseringsvarsler</string>
     <string name="sync_complete">Synkronisering fullført</string>
-    </resources>
+    <string name="err_sync_http_write_failed">Feil #19: Klarte ikke å skrive HTTP-strøm under flytting av data til tjener.</string>
+    <string name="err_sync_http_request_protocol_exception">Feil #20: Klarte ikke å sette HTTP-protokollversjon.</string>
+</resources>
