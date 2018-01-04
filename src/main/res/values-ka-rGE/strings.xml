@@ -184,4 +184,5 @@
     <string name="pref_show_sync_notifications">სინქრონიზაციის შეტყობინებების ჩვენება</string>
     <string name="sync_complete">სინქრონიზაცია დასრულებულია</string>
     <string name="err_sync_http_write_failed">შეცდომა #19: სერვერზე მონაცემების გაგზავნისას HTTP ნაკადის ჩაწერა ვერ მოხერხდა.</string>
-    </resources>
+    <string name="err_sync_http_request_protocol_exception">შეცდომა #20: HTTP პროტოკოლის სწორად დაყენება ვერ მოხერხდა.</string>
+</resources>
