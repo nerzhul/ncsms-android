@@ -56,6 +56,14 @@
         <item>24 tuntia</item>
         <item>Ei koskaan</item>
     </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+    </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 tunti</item>
         <item>3 tuntia</item>
@@ -114,4 +122,6 @@
     <string name="restore_finished">Tekstiviestien palautus on nyt valmistunut.</string>
     <string name="yes_confirm">Kyllä</string>
     <string name="no_confirm">Ei</string>
+    <string name="pref_show_sync_notifications">Näytä synkronointi-ilmoitukset</string>
+    <string name="sync_complete">Synkronointi valmistui</string>
     </resources>
