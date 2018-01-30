@@ -262,7 +262,7 @@
     <string name="launch_restore">Restore my SMSes</string>
     <string name="error_make_default_sms_app">On Android 4.4 onwards, please make this the default SMS app to permit restoring your messages.</string>
     <string name="fix_permissions">Fix permissions</string>
-    <string name="err_kitkat_required">Android 4.4 or above is required to use this feature.</string>
+    <string name="err_kitkat_required">Android 4.4 or greater is required to use this feature.</string>
     <string name="restore_finished">SMS restoration finished.</string>
     <string name="x_messages_restored">messages restored&#8230;</string>
     <string name="err_no_connection">No connection available, please ensure you have a working data connection.</string>
