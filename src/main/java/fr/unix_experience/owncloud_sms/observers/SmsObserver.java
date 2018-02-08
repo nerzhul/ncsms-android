@@ -32,8 +32,8 @@ import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.engine.OCSMSOwnCloudClient;
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
 import fr.unix_experience.owncloud_sms.enums.PermissionID;
-import fr.unix_experience.owncloud_sms.jni.SmsBuffer;
 import fr.unix_experience.owncloud_sms.prefs.PermissionChecker;
+import ncsmsgo.SmsBuffer;
 
 public class SmsObserver extends ContentObserver implements ASyncSMSSync {
 

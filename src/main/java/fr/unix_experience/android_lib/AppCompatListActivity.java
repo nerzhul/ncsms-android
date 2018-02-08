@@ -208,7 +208,7 @@ public class AppCompatListActivity extends AppCompatActivity {
         super.onContentChanged();
 
         View emptyView = findViewById(R.id.empty);
-        mList = (ListView)findViewById(R.id.list);
+        mList = findViewById(R.id.list);
         if (mList == null) {
             throw new RuntimeException(
                     "Your content must have a ListView whose id attribute is " +

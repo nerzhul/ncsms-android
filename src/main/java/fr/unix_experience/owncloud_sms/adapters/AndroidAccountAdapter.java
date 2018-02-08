@@ -43,7 +43,7 @@ public class AndroidAccountAdapter extends ArrayAdapter<Account> {
 		final Account account = _accounts.get(position);
 
 		if (account != null) {
-			TextView label = (TextView) v.findViewById(AndroidAccountAdapter._accountFieldId);
+			TextView label = v.findViewById(AndroidAccountAdapter._accountFieldId);
 			if (label != null) {
 				label.setText(account.name + " >");
 				v.setOnClickListener(new OnClickListener() {

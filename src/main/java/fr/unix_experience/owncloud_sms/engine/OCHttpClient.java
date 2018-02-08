@@ -45,16 +45,12 @@ import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.enums.OCSyncErrorType;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
 import fr.unix_experience.owncloud_sms.providers.AndroidVersionProvider;
+import ncsmsgo.SmsBuffer;
+import ncsmsgo.SmsHTTPClient;
+import ncsmsgo.SmsPushResponse;
 
 public class OCHttpClient {
-	static {
-		System.loadLibrary("nativesms");
-	}
-
-	public static native String getAllSmsIdsCall();
-	public static native String getLastMsgTimestamp();
-	public static native String getPushRoute();
-	public static native String getVersionCall();
+	private SmsHTTPClient _smsHttpClient;
 
 	private static final String TAG = OCHttpClient.class.getCanonicalName();
 	private static final String PARAM_PROTOCOL_VERSION = "http.protocol.version";
@@ -62,12 +58,6 @@ public class OCHttpClient {
 	private final String _userAgent;
 	private final String _username;
 	private final String _password;
-
-	// API v2 calls
-	private static final String OC_V2_GET_PHONELIST = "/index.php/apps/ocsms/api/v2/phones/list?format=json";
-	private static final String OC_V2_GET_MESSAGES ="/index.php/apps/ocsms/api/v2/messages/[START]/[LIMIT]?format=json";
-	private static final String OC_V2_GET_MESSAGES_PHONE ="/index.php/apps/ocsms/api/v2/messages/[PHONENUMBER]/[START]/[LIMIT]?format=json";
-	private static final String OC_V2_GET_MESSAGES_SENDQUEUE = "/index.php/apps/ocsms/api/v2/messages/sendqueue?format=json";
 
 	public OCHttpClient(Context context, URL serverURL, String accountName, String accountPassword) {
 		// Create a trust manager that does not validate certificate chains
@@ -96,6 +86,11 @@ public class OCHttpClient {
 		_url = serverURL;
 		_username = accountName;
 		_password = accountPassword;
+
+		_smsHttpClient = new SmsHTTPClient();
+		// @TODO: at a point add a flag to permit insecure connections somewhere instead of trusting them
+		_smsHttpClient.init(_url.toString(), new AndroidVersionProvider(context).getVersionCode(),
+				_username, _password, false);
 
 		_userAgent = "nextcloud-phonesync (" + new AndroidVersionProvider(context).getVersionCode() + ")";
 	}
@@ -127,23 +122,46 @@ public class OCHttpClient {
 	}
 
 	Pair<Integer, JSONObject> getAllSmsIds() throws OCSyncException {
-		return get(OCHttpClient.getAllSmsIdsCall(), false);
+		return get(_smsHttpClient.getAllSmsIdsCall(), false);
 	}
 
-	public Pair<Integer, JSONObject> getVersion() throws OCSyncException {
-		return get(OCHttpClient.getVersionCall(), true);
+	// Perform the GoLang doVersionCall and handle return
+	public Pair<Integer, Integer> getVersion() throws OCSyncException {
+		Integer serverAPIVersion = (int) _smsHttpClient.doVersionCall();
+		int httpStatus = (int) _smsHttpClient.getLastHTTPStatus();
+
+		// If last status is not 200, send the wrong status now
+		if (httpStatus != 200) {
+			return new Pair<>(httpStatus, 0);
+		}
+
+		if (serverAPIVersion > 0) {
+			return new Pair<>(200, serverAPIVersion);
+		}
+		else if (serverAPIVersion == 0) {
+			// Return default version
+			return new Pair<>(200, 1);
+		}
+		else if (serverAPIVersion == -1) {
+			// This return code from API means I/O error
+			throw new OCSyncException(R.string.err_sync_http_request_ioexception, OCSyncErrorType.IO);
+		}
+		else {
+			throw new OCSyncException(R.string.err_sync_http_request_returncode_unhandled, OCSyncErrorType.SERVER_ERROR);
+		}
 	}
 
-	Pair<Integer, JSONObject> pushSms(String smsBuf) throws OCSyncException {
-		return post(OCHttpClient.getPushRoute(), smsBuf);
+	Pair<Integer, SmsPushResponse> pushSms(SmsBuffer smsBuf) throws OCSyncException {
+		SmsPushResponse spr = _smsHttpClient.doPushCall(smsBuf);
+		return new Pair<>((int) _smsHttpClient.getLastHTTPStatus(), spr);
 	}
 
 	Pair<Integer, JSONObject> getPhoneList() throws OCSyncException {
-		return get(OCHttpClient.OC_V2_GET_PHONELIST, true);
+		return get(_smsHttpClient.getPhoneListCall(), true);
 	}
 
 	Pair<Integer, JSONObject> getMessages(Long start, Integer limit) throws OCSyncException {
-		return get(OCHttpClient.OC_V2_GET_MESSAGES
+		return get(_smsHttpClient.getMessagesCall()
 				.replace("[START]", start.toString())
 				.replace("[LIMIT]", limit.toString()), false);
 	}

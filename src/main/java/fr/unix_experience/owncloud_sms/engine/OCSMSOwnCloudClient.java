@@ -33,8 +33,9 @@ import java.net.URL;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.enums.OCSyncErrorType;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
-import fr.unix_experience.owncloud_sms.jni.SmsBuffer;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
+import ncsmsgo.SmsBuffer;
+import ncsmsgo.SmsPushResponse;
 
 @SuppressWarnings("deprecation")
 public class OCSMSOwnCloudClient {
@@ -56,6 +57,7 @@ public class OCSMSOwnCloudClient {
 			_http = new OCHttpClient(context,
 					serverURL, accountManager.getUserData(account, "ocLogin"),
 					accountManager.getPassword(account));
+
 			_connectivityMonitor = new ConnectivityMonitor(_context);
 		} catch (MalformedURLException e) {
 			throw new IllegalStateException(context.getString(R.string.err_sync_account_unparsable));
@@ -63,21 +65,13 @@ public class OCSMSOwnCloudClient {
 	}
 
 	public Integer getServerAPIVersion() throws OCSyncException {
-		Pair<Integer, JSONObject> response = _http.getVersion();
-		if (response.second == null) {
-			// Return default version
-			return 1;
+		Pair<Integer, Integer> vPair = _http.getVersion();
+		_serverAPIVersion = vPair.second;
+		if (vPair.first == 200 && _serverAPIVersion > 0) {
+			return _serverAPIVersion;
 		}
 
-		try {
-			_serverAPIVersion = response.second.getInt("version");
-		}
-		catch (JSONException e) {
-			Log.e(OCSMSOwnCloudClient.TAG, "No version received from server, assuming version 1", e);
-			_serverAPIVersion = 1;
-		}
-
-		return _serverAPIVersion;
+		return 0;
 	}
 
 	JSONArray getServerPhoneNumbers() throws OCSyncException {
@@ -111,7 +105,7 @@ public class OCSMSOwnCloudClient {
 				return;
 			}
 
-			// Create new JSONArray to get results
+			// Create new SmsBuffer to get results
 			smsBuffer = new SmsBuffer();
 		}
 
@@ -120,28 +114,18 @@ public class OCSMSOwnCloudClient {
 			return;
 		}
 
-		Pair<Integer, JSONObject> response = _http.pushSms(smsBuffer.asRawJsonString());
+		Pair<Integer, SmsPushResponse> response = _http.pushSms(smsBuffer);
 
 		if (response.second == null) {
-			Log.e(OCSMSOwnCloudClient.TAG,"Request failed. It doesn't return a valid JSON Object");
+			Log.e(OCSMSOwnCloudClient.TAG,"Push request failed. GoLang response is empty.");
 			throw new OCSyncException(R.string.err_sync_push_request, OCSyncErrorType.IO);
-		}
-
-		Boolean pushStatus;
-		String pushMessage;
-		try {
-			pushStatus = response.second.getBoolean("status");
-			pushMessage = response.second.getString("msg");
-		}
-		catch (JSONException e) {
-			Log.e(OCSMSOwnCloudClient.TAG, "Invalid datas received from server", e);
-			throw new OCSyncException(R.string.err_sync_push_request_resp, OCSyncErrorType.PARSE);
 		}
 
 		// Push was OK, we can save the lastMessageDate which was saved to server
 		(new OCSMSSharedPrefs(_context)).setLastMessageDate(smsBuffer.getLastMessageDate());
 
-		Log.i(OCSMSOwnCloudClient.TAG, "SMS Push request said: status " + pushStatus + " - " + pushMessage);
+		Log.i(OCSMSOwnCloudClient.TAG, "SMS Push request said: status " +
+				response.second.getStatus() + " - " + response.second.getMessage());
 		Log.i(OCSMSOwnCloudClient.TAG, "LastMessageDate set to: " + smsBuffer.getLastMessageDate());
 	}
 

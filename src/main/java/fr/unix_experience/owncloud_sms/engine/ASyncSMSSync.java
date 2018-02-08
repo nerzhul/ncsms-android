@@ -28,9 +28,9 @@ import android.widget.Toast;
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.enums.OCSMSNotificationType;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
-import fr.unix_experience.owncloud_sms.jni.SmsBuffer;
 import fr.unix_experience.owncloud_sms.notifications.OCSMSNotificationUI;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
+import ncsmsgo.SmsBuffer;
 
 public interface ASyncSMSSync {
 	class SyncTask extends AsyncTask<Void, Void, Void> {

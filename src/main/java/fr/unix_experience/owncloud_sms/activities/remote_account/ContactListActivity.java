@@ -55,12 +55,12 @@ public class ContactListActivity extends AppCompatActivity implements ASyncConta
 		mObjects = new ArrayList<>();
 		setContentView(R.layout.restore_activity_contactlist);
 
-		mLayout = (SwipeRefreshLayout) findViewById(R.id.contactlist_swipe_container);
+		mLayout = findViewById(R.id.contactlist_swipe_container);
 
 		mAdapter = new ContactListAdapter(getBaseContext(), mObjects);
 
-		mContactInfos = (LinearLayout) findViewById(R.id.contactinfos_layout);
-        ListView contactPhoneListView = (ListView) findViewById(R.id.contact_phonelistView);
+		mContactInfos = findViewById(R.id.contactinfos_layout);
+        ListView contactPhoneListView = findViewById(R.id.contact_phonelistView);
         mContactPhoneListAdapter = new RecoveryPhoneNumberListViewAdapter(getBaseContext());
         assert contactPhoneListView != null;
         contactPhoneListView.setAdapter(mContactPhoneListAdapter);
@@ -72,7 +72,7 @@ public class ContactListActivity extends AppCompatActivity implements ASyncConta
 	}
 
 	private void createAccountList() {
-		final ProgressBar contactProgressBar = (ProgressBar) findViewById(R.id.contactlist_pgbar);
+		final ProgressBar contactProgressBar = findViewById(R.id.contactlist_pgbar);
 		assert contactProgressBar != null;
 
 		String accountName = getIntent().getExtras().getString("account");
@@ -112,7 +112,7 @@ public class ContactListActivity extends AppCompatActivity implements ASyncConta
 	}
 
 	private void initSpinner() {
-		final Spinner sp = (Spinner) findViewById(R.id.contact_spinner);
+		final Spinner sp = findViewById(R.id.contact_spinner);
 		assert sp != null;
 		sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 			@Override

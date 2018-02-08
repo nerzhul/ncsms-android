@@ -32,9 +32,9 @@ import fr.unix_experience.owncloud_sms.engine.ASyncSMSSync;
 import fr.unix_experience.owncloud_sms.engine.AndroidSmsFetcher;
 import fr.unix_experience.owncloud_sms.engine.ConnectivityMonitor;
 import fr.unix_experience.owncloud_sms.enums.PermissionID;
-import fr.unix_experience.owncloud_sms.jni.SmsBuffer;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 import fr.unix_experience.owncloud_sms.prefs.PermissionChecker;
+import ncsmsgo.SmsBuffer;
 
 public class ConnectivityChanged extends BroadcastReceiver implements ASyncSMSSync {
 

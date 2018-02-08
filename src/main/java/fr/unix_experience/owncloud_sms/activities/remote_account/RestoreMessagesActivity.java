@@ -73,9 +73,9 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 		}
 
 		initInterface();
-		Button fix_button = (Button) findViewById(R.id.button_fix_permissions);
-		final Button launch_restore = (Button) findViewById(R.id.button_launch_restore);
-		final ProgressBar pb = (ProgressBar) findViewById(R.id.progressbar_restore);
+		Button fix_button = findViewById(R.id.button_fix_permissions);
+		final Button launch_restore = findViewById(R.id.button_launch_restore);
+		final ProgressBar pb = findViewById(R.id.progressbar_restore);
 
 		final RestoreMessagesActivity me = this;
 		fix_button.setOnClickListener(new View.OnClickListener() {
@@ -130,13 +130,13 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 	}
 
 	private void initInterface() {
-		TextView tv_error = (TextView) findViewById(R.id.tv_error_default_smsapp);
+		TextView tv_error = findViewById(R.id.tv_error_default_smsapp);
 		tv_error.setText(R.string.error_make_default_sms_app);
 		findViewById(R.id.tv_restore_finished).setVisibility(View.INVISIBLE);
 		findViewById(R.id.tv_progress_value).setVisibility(View.INVISIBLE);
-		Button fix_button = (Button) findViewById(R.id.button_fix_permissions);
-		Button launch_restore = (Button) findViewById(R.id.button_launch_restore);
-		ProgressBar pb = (ProgressBar) findViewById(R.id.progressbar_restore);
+		Button fix_button = findViewById(R.id.button_fix_permissions);
+		Button launch_restore = findViewById(R.id.button_launch_restore);
+		ProgressBar pb = findViewById(R.id.progressbar_restore);
 		pb.setVisibility(View.INVISIBLE);
 
 		if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.KITKAT) {
@@ -158,10 +158,10 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 	}
 
 	private void errorNotification(int err) {
-		TextView tv = (TextView) findViewById(R.id.tv_error_default_smsapp);
-		Button fix_button = (Button) findViewById(R.id.button_fix_permissions);
-		Button launch_restore = (Button) findViewById(R.id.button_launch_restore);
-		ProgressBar pb = (ProgressBar) findViewById(R.id.progressbar_restore);
+		TextView tv = findViewById(R.id.tv_error_default_smsapp);
+		Button fix_button = findViewById(R.id.button_fix_permissions);
+		Button launch_restore = findViewById(R.id.button_launch_restore);
+		ProgressBar pb = findViewById(R.id.progressbar_restore);
 		tv.setText(err);
 		tv.setVisibility(View.VISIBLE);
 		fix_button.setVisibility(View.INVISIBLE);
@@ -182,9 +182,9 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 		switch (requestCode) {
 			case RestoreMessagesActivity.REQUEST_DEFAULT_SMSAPP:
 				if (resultCode == Activity.RESULT_OK) {
-					TextView tv = (TextView) findViewById(R.id.tv_error_default_smsapp);
-					Button fix_button = (Button) findViewById(R.id.button_fix_permissions);
-					Button launch_restore = (Button) findViewById(R.id.button_launch_restore);
+					TextView tv = findViewById(R.id.tv_error_default_smsapp);
+					Button fix_button = findViewById(R.id.button_fix_permissions);
+					Button launch_restore = findViewById(R.id.button_launch_restore);
 					tv.setVisibility(View.INVISIBLE);
 					fix_button.setVisibility(View.INVISIBLE);
 					launch_restore.setVisibility(View.VISIBLE);
@@ -225,7 +225,7 @@ public class RestoreMessagesActivity extends AppCompatActivity {
 	}
 
 	public void onProgressUpdate(Integer value) {
-		TextView tv_progress = (TextView) findViewById(R.id.tv_progress_value);
+		TextView tv_progress = findViewById(R.id.tv_progress_value);
 		if (tv_progress.getVisibility() == View.INVISIBLE) {
 			tv_progress.setVisibility(View.VISIBLE);
 		}

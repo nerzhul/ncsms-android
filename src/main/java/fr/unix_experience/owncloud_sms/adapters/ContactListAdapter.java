@@ -39,7 +39,7 @@ public class ContactListAdapter extends ArrayAdapter<String> {
 		String element = _objects.get(position);
 
 		if (element != null) {
-			TextView label = (TextView) v.findViewById(ContactListAdapter._fieldId);
+			TextView label = v.findViewById(ContactListAdapter._fieldId);
 			if (label != null) {
 				label.setText(element);
 			}
