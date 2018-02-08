@@ -11,6 +11,9 @@ cache:
 jdk:
   - oraclejdk8
 
+before_install:
+  - yes | sdkmanager "platforms;android-27"
+
 android:
   components:
     - tools
@@ -23,10 +26,3 @@ android:
     - 'google-gdk-license-.+'
     - 'android-sdk-preview-license-.+'
     - 'android-.*'
-
-before_install:
-  - wget https://dl.google.com/android/repository/android-ndk-r16-linux-x86_64.zip > /dev/null
-  - mkdir -p /usr/local/android-sdk/ndk-bundle
-  - unzip android-ndk-r16-linux-x86_64.zip -d /usr/local/android-sdk/ndk-bundle > /dev/null
-  - export ANDROID_NDK_HOME="/usr/local/android-sdk/ndk-bundle/android-ndk-r16"
-  - rm -Rf "${ANDROID_HOME}/cmake"

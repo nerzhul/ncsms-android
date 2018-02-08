@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity
 		getSupportActionBar().setHomeButtonEnabled(true);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-		drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		drawer = findViewById(R.id.drawer_layout);
 		setupDrawer();
 		drawer.openDrawer(GravityCompat.START);
 	}
@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity
 		toggle.syncState();
 		toggle.setDrawerIndicatorEnabled(true);
 
-		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+		NavigationView navigationView = findViewById(R.id.nav_view);
 		assert navigationView != null;
 		navigationView.setNavigationItemSelectedListener(this);
 	}

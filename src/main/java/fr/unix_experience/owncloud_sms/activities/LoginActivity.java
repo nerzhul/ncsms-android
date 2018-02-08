@@ -44,8 +44,6 @@ import android.widget.TextView;
 
 import com.dd.processbutton.iml.ActionProcessButton;
 
-import org.json.JSONObject;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -85,11 +83,11 @@ public class LoginActivity extends AppCompatActivity {
 		actionBar.setDisplayHomeAsUpEnabled(true);
 
 		// Set up the login form.
-		_protocolView = (Spinner) findViewById(R.id.oc_protocol);
-		_serverView = (EditText) findViewById(R.id.oc_server);
-		_loginView = (EditText) findViewById(R.id.oc_login);
+		_protocolView = findViewById(R.id.oc_protocol);
+		_serverView = findViewById(R.id.oc_server);
+		_loginView = findViewById(R.id.oc_login);
 
-		_passwordView = (EditText) findViewById(R.id.oc_password);
+		_passwordView = findViewById(R.id.oc_password);
 		_passwordView
 				.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 					@Override
@@ -103,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
 					}
 				});
 
-		_signInButton = (ActionProcessButton) findViewById(R.id.oc_signin_button);
+		_signInButton = findViewById(R.id.oc_signin_button);
 		_signInButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -270,8 +268,8 @@ public class LoginActivity extends AppCompatActivity {
 			_returnCode = 0;
 			OCHttpClient http = new OCHttpClient(getBaseContext(), _serverURL, _login, _password);
 			try {
-				Pair<Integer, JSONObject> response = http.getVersion();
-				_returnCode = response.first;
+				Pair<Integer, Integer> vPair = http.getVersion();
+				_returnCode = vPair.first;
 			} catch (IllegalArgumentException e) {
 				Log.w(TAG, "Failed to getVersion, IllegalArgumentException occured: " + e.getMessage());
 				_returnCode = 597;

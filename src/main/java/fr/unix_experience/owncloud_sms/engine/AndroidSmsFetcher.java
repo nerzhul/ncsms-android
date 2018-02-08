@@ -25,8 +25,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
-import fr.unix_experience.owncloud_sms.jni.SmsBuffer;
 import fr.unix_experience.owncloud_sms.providers.SmsDataProvider;
+import ncsmsgo.SmsBuffer;
 
 public class AndroidSmsFetcher {
 	public AndroidSmsFetcher(Context ct) {
@@ -53,7 +53,14 @@ public class AndroidSmsFetcher {
 
 			// Mailbox ID is required by server
 			entry.mailboxId = mbID.ordinal();
-			smsBuffer.push(mbID, entry);
+			smsBuffer.push(entry.id,
+					mbID.ordinal(),
+					entry.type,
+					entry.date,
+					entry.address,
+					entry.body,
+					entry.read ? "true" : "false",
+					entry.seen ? "true" : "false");
 		}
 		while (c.moveToNext());
 	}
@@ -114,7 +121,14 @@ public class AndroidSmsFetcher {
 		* aren't indexed in the same mean
 		*/
 		entry.mailboxId = mboxId - 1;
-		results.push(mbID, entry);
+		results.push(entry.id,
+				mbID.ordinal(),
+				entry.type,
+				entry.date,
+				entry.address,
+				entry.body,
+				entry.read ? "true" : "false",
+				entry.seen ? "true" : "false");
 
 		c.close();
 

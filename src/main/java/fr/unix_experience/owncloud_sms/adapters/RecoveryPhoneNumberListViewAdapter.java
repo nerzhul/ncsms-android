@@ -30,7 +30,7 @@ public class RecoveryPhoneNumberListViewAdapter extends ArrayAdapter<String> {
             v = inflater.inflate(RecoveryPhoneNumberListViewAdapter._itemLayout, null);
         }
 
-        TextView label = (TextView) v.findViewById(RecoveryPhoneNumberListViewAdapter._fieldId);
+        TextView label = v.findViewById(RecoveryPhoneNumberListViewAdapter._fieldId);
         if (label != null) {
             final String l = getItem(position).toString();
             label.setText(getItem(position).toString());
