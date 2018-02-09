@@ -28,6 +28,7 @@ You can find the application documentation here: https://github.com/nerzhul/ownC
 
 - We are searching for **translations** into others languages. To contribute please download `res/values/strings.xml` and `res/values/google_playstore_strings.xml` and provide a Pull Request with a translated version!
 - You can also contribute by adding **patches** in Java code or cleanups.
+- Application uses a [GoMobile AAR](https://gitlab.com/nerzhul/ncsmsgo) to have the best performance on phones with modern technologies like HTTP/2.0
 
 ### Build requirements
 - gradle
