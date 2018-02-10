@@ -77,9 +77,7 @@ public interface ASyncContactLoad {
 				// Read all contacts
 				readContacts(serverPhoneList);
 
-                for (String phone : serverPhoneList) {
-					_objects.add(phone);
-				}
+				_objects.addAll(serverPhoneList);
 
 				// Sort phone numbers
 				Collections.sort(_objects);
