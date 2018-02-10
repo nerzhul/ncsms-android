@@ -7,14 +7,11 @@ import android.os.AsyncTask;
 import android.provider.Telephony;
 import android.util.Log;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.Iterator;
-
 import fr.unix_experience.owncloud_sms.activities.remote_account.RestoreMessagesActivity;
 import fr.unix_experience.owncloud_sms.enums.MailboxID;
 import fr.unix_experience.owncloud_sms.providers.SmsDataProvider;
+import ncsmsgo.SmsMessage;
+import ncsmsgo.SmsMessagesResponse;
 
 /*
  *  Copyright (c) 2014-2016, Loic Blot <loic.blot@unix-experience.fr>
@@ -60,81 +57,68 @@ public interface ASyncSMSRecovery {
 
 			OCSMSOwnCloudClient client = new OCSMSOwnCloudClient(_context, _account);
 			SmsDataProvider smsDataProvider = new SmsDataProvider(_context);
-			JSONObject obj = client.retrieveSomeMessages(start, 500);
+			SmsMessagesResponse obj = client.retrieveSomeMessages(start, 500);
 			if (obj == null) {
 				Log.i(ASyncSMSRecovery.TAG, "Retrieved returns failure");
 				return null;
 			}
 
 			Integer nb = 0;
-			try {
-				while ((obj != null) && (obj.getLong("last_id") != start)) {
-					JSONObject messages = obj.getJSONObject("messages");
-					Iterator<?> keys = messages.keys();
-					while (keys.hasNext()) {
-						String key = (String)keys.next();
-						if (messages.get(key) instanceof JSONObject) {
-							JSONObject msg = messages.getJSONObject(key);
-
-							int mbid = msg.getInt("mailbox");
-							// Ignore invalid mailbox
-							if (mbid > MailboxID.ALL.getId()) {
-								Log.e(ASyncSMSRecovery.TAG, "Invalid mailbox found: " + msg.getString("mailbox"));
-								continue;
-							}
-
-							String address;
-							String body;
-							int type;
-							try {
-								address = msg.getString("address");
-								body = msg.getString("msg");
-								type = msg.getInt("type");
-							}
-							catch (JSONException e) {
-								Log.e(ASyncSMSRecovery.TAG, "Invalid SMS data found: " + e.getMessage());
-								continue;
-							}
-							MailboxID mailbox_id = MailboxID.fromInt(mbid);
-
-							// Ignore already existing messages
-							if (smsDataProvider.messageExists(address, body, key, mailbox_id)) {
-								publishProgress(nb);
-								continue;
-							}
-
-							ContentValues values = new ContentValues();
-							values.put(Telephony.Sms.ADDRESS, address);
-							values.put(Telephony.Sms.BODY, body);
-							values.put(Telephony.Sms.DATE, key);
-							values.put(Telephony.Sms.TYPE, type);
-							values.put(Telephony.Sms.SEEN, 1);
-							values.put(Telephony.Sms.READ, 1);
-
-							// @TODO verify message exists before inserting it
-							_context.getContentResolver().insert(Uri.parse(mailbox_id.getURI()), values);
-
-							nb++;
-							if ((nb % 5) == 0) {
-								publishProgress(nb);
-							}
-						}
+			while ((obj != null) && (obj.getLastID() != start)) {
+				SmsMessage message;
+				while ((message = obj.getNextMessage()) != null) {
+					int mbid = (int) message.getMailbox();
+					// Ignore invalid mailbox
+					if (mbid > MailboxID.ALL.getId()) {
+						Log.e(ASyncSMSRecovery.TAG, "Invalid mailbox found: " + mbid);
+						continue;
 					}
 
-					start = obj.getLong("last_id");
-
-					if (!new ConnectivityMonitor(_context).isValid()) {
-						Log.e(ASyncSMSRecovery.TAG, "Restore connectivity problems, aborting");
-						return null;
+					String address = message.getAddress();
+					String body = message.getMessage();
+					int type = (int) message.getType();
+					if (address.isEmpty() || body.isEmpty()) {
+						Log.e(ASyncSMSRecovery.TAG, "Invalid SMS message found: " + message.toString());
+						continue;
 					}
-					obj = client.retrieveSomeMessages(start, 500);
+
+					MailboxID mailbox_id = MailboxID.fromInt(mbid);
+
+					String date = Integer.toString((int) message.getDate());
+					// Ignore already existing messages
+					if (smsDataProvider.messageExists(address, body, date, mailbox_id)) {
+						publishProgress(nb);
+						continue;
+					}
+
+					ContentValues values = new ContentValues();
+					values.put(Telephony.Sms.ADDRESS, address);
+					values.put(Telephony.Sms.BODY, body);
+					values.put(Telephony.Sms.DATE, date);
+					values.put(Telephony.Sms.TYPE, type);
+					values.put(Telephony.Sms.SEEN, 1);
+					values.put(Telephony.Sms.READ, 1);
+
+					_context.getContentResolver().insert(Uri.parse(mailbox_id.getURI()), values);
+
+					nb++;
+					if ((nb % 10) == 0) {
+						publishProgress(nb);
+					}
 				}
-			} catch (JSONException e) {
-				Log.e(ASyncSMSRecovery.TAG, "Missing last_id field!");
+
+				start = obj.getLastID();
+
+				if (!new ConnectivityMonitor(_context).isValid()) {
+					Log.e(ASyncSMSRecovery.TAG, "Restore connectivity problems, aborting");
+					return null;
+				}
+				obj = client.retrieveSomeMessages(start, 500);
 			}
 
 			// Force this refresh to fix dates
-			_context.getContentResolver().delete(Uri.parse("content://sms/conversations/-1"), null, null);
+			_context.getContentResolver().delete(Uri.parse("content://sms/conversations/-1"),
+					null, null);
 
 			publishProgress(nb);
 

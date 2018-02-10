@@ -23,8 +23,6 @@ import android.content.Context;
 import android.util.Log;
 import android.util.Pair;
 
-import org.json.JSONObject;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -34,6 +32,7 @@ import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 import ncsmsgo.SmsBuffer;
 import ncsmsgo.SmsIDListResponse;
+import ncsmsgo.SmsMessagesResponse;
 import ncsmsgo.SmsPhoneListResponse;
 import ncsmsgo.SmsPushResponse;
 
@@ -57,8 +56,6 @@ public class OCSMSOwnCloudClient {
 			_http = new OCHttpClient(context,
 					serverURL, accountManager.getUserData(account, "ocLogin"),
 					accountManager.getPassword(account));
-
-			_connectivityMonitor = new ConnectivityMonitor(_context);
 		} catch (MalformedURLException e) {
 			throw new IllegalStateException(context.getString(R.string.err_sync_account_unparsable));
 		}
@@ -124,14 +121,14 @@ public class OCSMSOwnCloudClient {
 		Log.i(OCSMSOwnCloudClient.TAG, "LastMessageDate set to: " + smsBuffer.getLastMessageDate());
 	}
 
-	JSONObject retrieveSomeMessages(Long start, Integer limit) {
+	SmsMessagesResponse retrieveSomeMessages(Long start, Integer limit) {
 		// This is not allowed by server
 		if (limit > OCSMSOwnCloudClient.SERVER_RECOVERY_MSG_LIMIT) {
 			Log.e(OCSMSOwnCloudClient.TAG, "Message recovery limit exceeded");
 			return null;
 		}
 
-		Pair<Integer, JSONObject> response;
+		Pair<Integer, SmsMessagesResponse> response;
 		try {
 			response = _http.getMessages(start, limit);
 		} catch (OCSyncException e) {
@@ -139,8 +136,7 @@ public class OCSMSOwnCloudClient {
 			return null;
 		}
 
-		if ((response.second == null) || !response.second.has("messages")
-				|| !response.second.has("last_id")) {
+		if (response.second == null) {
 			Log.e(OCSMSOwnCloudClient.TAG,
 					"Invalid response received from server, either messages or last_id field is missing.");
 			return null;
@@ -151,7 +147,6 @@ public class OCSMSOwnCloudClient {
 
 	private final OCHttpClient _http;
 	private final Context _context;
-    private final ConnectivityMonitor _connectivityMonitor;
 
 	private Integer _serverAPIVersion;
 
