@@ -111,6 +111,8 @@ public interface ASyncSMSSync {
 			for (Account element : myAccountList) {
 				try {
 					OCSMSOwnCloudClient _client = new OCSMSOwnCloudClient(_context, element);
+					// Fetch API version first to do some early verifications
+					Log.i(ASyncSMSSync.TAG, "Server API version: " + _client.getServerAPIVersion());
 					_client.doPushRequest(smsBuffer);
 					OCSMSNotificationUI.cancel(_context);
 				} catch (IllegalStateException e) { // Fail to read account data

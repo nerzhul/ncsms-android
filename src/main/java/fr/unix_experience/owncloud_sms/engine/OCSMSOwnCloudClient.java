@@ -33,6 +33,7 @@ import fr.unix_experience.owncloud_sms.enums.OCSyncErrorType;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 import ncsmsgo.SmsBuffer;
+import ncsmsgo.SmsIDListResponse;
 import ncsmsgo.SmsPhoneListResponse;
 import ncsmsgo.SmsPushResponse;
 
@@ -94,7 +95,7 @@ public class OCSMSOwnCloudClient {
 
 	private void doPushRequestV1(SmsBuffer smsBuffer) throws OCSyncException {
 		if (smsBuffer == null) {
-			Pair<Integer, JSONObject> response = _http.getAllSmsIds();
+			Pair<Integer, SmsIDListResponse> response = _http.getAllSmsIds();
 			if (response.second == null) {
 				return;
 			}

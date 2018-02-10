@@ -47,6 +47,7 @@ import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
 import fr.unix_experience.owncloud_sms.providers.AndroidVersionProvider;
 import ncsmsgo.SmsBuffer;
 import ncsmsgo.SmsHTTPClient;
+import ncsmsgo.SmsIDListResponse;
 import ncsmsgo.SmsPhoneListResponse;
 import ncsmsgo.SmsPushResponse;
 
@@ -118,8 +119,11 @@ public class OCHttpClient {
 		}
 	}
 
-	Pair<Integer, JSONObject> getAllSmsIds() throws OCSyncException {
-		return get(_smsHttpClient.getAllSmsIdsCall(), false);
+	Pair<Integer, SmsIDListResponse> getAllSmsIds() throws OCSyncException {
+		SmsIDListResponse silr = _smsHttpClient.doGetSmsIDList();
+		int httpStatus = (int) _smsHttpClient.getLastHTTPStatus();
+		handleEarlyHTTPStatus(httpStatus);
+		return new Pair<>(httpStatus, silr);
 	}
 
 	// Perform the GoLang doVersionCall and handle return
