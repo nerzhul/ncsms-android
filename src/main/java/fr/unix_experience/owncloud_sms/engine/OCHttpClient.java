@@ -47,6 +47,7 @@ import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
 import fr.unix_experience.owncloud_sms.providers.AndroidVersionProvider;
 import ncsmsgo.SmsBuffer;
 import ncsmsgo.SmsHTTPClient;
+import ncsmsgo.SmsPhoneListResponse;
 import ncsmsgo.SmsPushResponse;
 
 public class OCHttpClient {
@@ -108,17 +109,13 @@ public class OCHttpClient {
 		return new Pair<>(0, null);
 	}
 
-	private Pair<Integer, JSONObject> post(String oc_call, String data) throws OCSyncException {
-		Log.i(OCHttpClient.TAG, "Perform POST " + _url + oc_call);
-		try {
-			return execute("POST",
-					new URL(_url.toString() + oc_call), data, false);
-		} catch (MalformedURLException e) {
-			Log.e(OCHttpClient.TAG, "Malformed URL provided, aborting. URL was: "
-					+ _url.toExternalForm() + oc_call);
+	private void handleEarlyHTTPStatus(int httpStatus) throws OCSyncException {
+		switch (httpStatus) {
+			case 403: {
+				// Authentication failed
+				throw new OCSyncException(R.string.err_sync_auth_failed, OCSyncErrorType.AUTH);
+			}
 		}
-
-		return new Pair<>(0, null);
 	}
 
 	Pair<Integer, JSONObject> getAllSmsIds() throws OCSyncException {
@@ -129,6 +126,8 @@ public class OCHttpClient {
 	public Pair<Integer, Integer> getVersion() throws OCSyncException {
 		Integer serverAPIVersion = (int) _smsHttpClient.doVersionCall();
 		int httpStatus = (int) _smsHttpClient.getLastHTTPStatus();
+
+		handleEarlyHTTPStatus(httpStatus);
 
 		// If last status is not 200, send the wrong status now
 		if (httpStatus != 200) {
@@ -153,11 +152,16 @@ public class OCHttpClient {
 
 	Pair<Integer, SmsPushResponse> pushSms(SmsBuffer smsBuf) throws OCSyncException {
 		SmsPushResponse spr = _smsHttpClient.doPushCall(smsBuf);
-		return new Pair<>((int) _smsHttpClient.getLastHTTPStatus(), spr);
+		int httpStatus = (int) _smsHttpClient.getLastHTTPStatus();
+		handleEarlyHTTPStatus(httpStatus);
+		return new Pair<>(httpStatus, spr);
 	}
 
-	Pair<Integer, JSONObject> getPhoneList() throws OCSyncException {
-		return get(_smsHttpClient.getPhoneListCall(), true);
+	Pair<Integer, SmsPhoneListResponse> getPhoneList() throws OCSyncException {
+		SmsPhoneListResponse splr = _smsHttpClient.doGetPhoneList();
+		int httpStatus = (int) _smsHttpClient.getLastHTTPStatus();
+		handleEarlyHTTPStatus(httpStatus);
+		return new Pair<>(httpStatus, splr);
 	}
 
 	Pair<Integer, JSONObject> getMessages(Long start, Integer limit) throws OCSyncException {

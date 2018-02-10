@@ -23,8 +23,6 @@ import android.content.Context;
 import android.util.Log;
 import android.util.Pair;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.net.MalformedURLException;
@@ -35,6 +33,7 @@ import fr.unix_experience.owncloud_sms.enums.OCSyncErrorType;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
 import fr.unix_experience.owncloud_sms.prefs.OCSMSSharedPrefs;
 import ncsmsgo.SmsBuffer;
+import ncsmsgo.SmsPhoneListResponse;
 import ncsmsgo.SmsPushResponse;
 
 @SuppressWarnings("deprecation")
@@ -74,18 +73,13 @@ public class OCSMSOwnCloudClient {
 		return 0;
 	}
 
-	JSONArray getServerPhoneNumbers() throws OCSyncException {
-		Pair<Integer, JSONObject> response = _http.getPhoneList();
-		if (response.second == null) {
+	SmsPhoneListResponse getServerPhoneNumbers() throws OCSyncException {
+		Pair<Integer, SmsPhoneListResponse> response = _http.getPhoneList();
+		if (response.second == null || response.first != 200) {
 			return null;
 		}
 
-		try {
-			return response.second.getJSONArray("phoneList");
-		} catch (JSONException e) {
-			Log.e(OCSMSOwnCloudClient.TAG, "No phonelist received from server, empty it", e);
-			return null;
-		}
+		return response.second;
 	}
 
 	public void doPushRequest(SmsBuffer smsBuffer) throws OCSyncException {

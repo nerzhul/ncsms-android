@@ -12,15 +12,13 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
 import java.util.ArrayList;
 import java.util.Collections;
 
 import fr.unix_experience.owncloud_sms.R;
 import fr.unix_experience.owncloud_sms.adapters.ContactListAdapter;
 import fr.unix_experience.owncloud_sms.exceptions.OCSyncException;
+import ncsmsgo.SmsPhoneListResponse;
 
 public interface ASyncContactLoad {
 	class ContactLoadTask extends AsyncTask<Void, Void, Boolean> {
@@ -68,10 +66,15 @@ public interface ASyncContactLoad {
 
 				ArrayList<String> serverPhoneList = new ArrayList<>();
 
-				JSONArray phoneNumbers = _client.getServerPhoneNumbers();
-				for (int i = 0; i < phoneNumbers.length(); i++) {
-					String phone = phoneNumbers.getString(i);
-					serverPhoneList.add(phone);
+				SmsPhoneListResponse splr = _client.getServerPhoneNumbers();
+				if (splr == null) {
+					_objects.add(_context.getString(R.string.err_fetch_phonelist));
+					return false;
+				}
+
+				String phoneNumber;
+				while (!(phoneNumber = splr.getNextEntry()).equals("")) {
+					serverPhoneList.add(phoneNumber);
 				}
 
 				// Read all contacts
@@ -81,9 +84,6 @@ public interface ASyncContactLoad {
 
 				// Sort phone numbers
 				Collections.sort(_objects);
-			} catch (JSONException e) {
-				_objects.add(_context.getString(R.string.err_fetch_phonelist));
-				return false;
 			} catch (OCSyncException e) {
 				_objects.add(_context.getString(e.getErrorId()));
 				return false;
