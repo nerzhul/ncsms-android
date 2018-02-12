@@ -183,4 +183,6 @@
     <string name="no_confirm">No</string>
     <string name="pref_show_sync_notifications">Mostra notificacions de sincronització</string>
     <string name="sync_complete">S\'ha completat la sincronització</string>
-    </resources>
+    <string name="err_sync_http_write_failed">Error #19: No s\'ha pogut escriure la transmissió HTTP en el moment d\'enviar la informació al servidor.</string>
+    <string name="err_sync_http_request_protocol_exception">Error #20: No s\'ha pogut establir correctament la versió del protocol HTTP.</string>
+</resources>
