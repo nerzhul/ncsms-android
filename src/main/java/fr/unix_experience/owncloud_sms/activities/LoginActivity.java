@@ -261,6 +261,7 @@ public class LoginActivity extends AppCompatActivity {
 			Log.i(TAG, "_serverURL = " + serverURL);
 			_login = login;
 			_password = password;
+			_last_http_error = null;
 		}
 
 		@Override
@@ -278,6 +279,7 @@ public class LoginActivity extends AppCompatActivity {
 				_returnCode = 599;
 			}
 
+			_last_http_error = http.getLastError();
 			return (_returnCode == 200);
 		}
 
@@ -325,7 +327,12 @@ public class LoginActivity extends AppCompatActivity {
 				boolean serverViewRequestFocus = true;
 				switch (_returnCode) {
 					case 0:
-						_serverView.setError("UNK");
+						if (!_last_http_error.isEmpty()) {
+							_serverView.setError("Low level error: " + _last_http_error);
+						}
+						else {
+							_serverView.setError("Unknown error");
+						}
 						break;
 					case 404:
 						_serverView.setError(getString(R.string.error_connection_failed_not_found));
@@ -371,6 +378,7 @@ public class LoginActivity extends AppCompatActivity {
 		private final URL _serverURL;
 		private final String _login;
 		private final String _password;
+		private String _last_http_error;
 		private int _returnCode;
 
 		static final String PARAM_AUTHTOKEN_TYPE = "auth.token";

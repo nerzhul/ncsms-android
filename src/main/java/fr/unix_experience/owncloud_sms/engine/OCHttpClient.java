@@ -52,6 +52,10 @@ public class OCHttpClient {
 		}
 	}
 
+	public String getLastError() {
+		return _smsHttpClient.getLastError();
+	}
+
 	Pair<Integer, SmsIDListResponse> getAllSmsIds() throws OCSyncException {
 		SmsIDListResponse silr = _smsHttpClient.doGetSmsIDList();
 		int httpStatus = (int) _smsHttpClient.getLastHTTPStatus();
