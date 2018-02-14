@@ -183,4 +183,6 @@
     <string name="no_confirm">Nei</string>
     <string name="pref_show_sync_notifications">Birta tilkynningar vegna samstillingar</string>
     <string name="sync_complete">Samstillingu lokið</string>
-    </resources>
+    <string name="err_sync_http_write_failed">Villa #19: Mistókst að skrifa í HTTP-streymi þegar gögnum var ýtt til vefþjóns.</string>
+    <string name="err_sync_http_request_protocol_exception">Villa #20: Mistókst að setja rétt útgáfu HTTP-samskiptamáta.</string>
+</resources>
