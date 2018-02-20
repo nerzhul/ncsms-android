@@ -183,4 +183,6 @@
     <string name="no_confirm">いいえ</string>
     <string name="pref_show_sync_notifications">同期の通知を表示</string>
     <string name="sync_complete">同期完了</string>
-    </resources>
+    <string name="err_sync_http_write_failed">Error #19: サーバーにデータをプッシュするときにHTTPストリームの書き込みに失敗しました。</string>
+    <string name="err_sync_http_request_protocol_exception">Error #20: HTTPプロトコルのバージョンを正しく設定できませんでした。</string>
+</resources>
