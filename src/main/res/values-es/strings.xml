@@ -100,7 +100,7 @@
     <string name="error_field_required">Campo requerido</string>
     <string name="prompt_serverURI">Dirección del servidor</string>
     <string name="error_invalid_server_address">Dirección inválida</string>
-    <string name="error_connection_failed">Imposible conectar al servidor. Por favor asegúrese que la dirección del servidor es correcta</string>
+    <string name="error_connection_failed">Fallo al conectarse. Por favor, asegúrate de que la dirección del servidor es correcta</string>
     <string name="error_http_connection_failed">Imposible establecer una conexión HTTP. Por favor asegúrese que el servidor HTTP esta ejecutándose</string>
 
     <!-- Main activity -->
