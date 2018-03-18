@@ -86,7 +86,7 @@ public interface ASyncSMSRecovery {
 
 					MailboxID mailbox_id = MailboxID.fromInt(mbid);
 
-					String date = Integer.toString((int) message.getDate());
+					String date = Long.toString(message.getDate());
 					// Ignore already existing messages
 					if (smsDataProvider.messageExists(address, body, date, mailbox_id)) {
 						publishProgress(nb);
