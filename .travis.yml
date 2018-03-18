@@ -19,7 +19,7 @@ android:
     - tools
     - platform-tools
     - extra
-    - build-tools-27.0.2
+    - build-tools-27.0.3
     - android-27
   licenses:
     - 'android-sdk-license-.+'
