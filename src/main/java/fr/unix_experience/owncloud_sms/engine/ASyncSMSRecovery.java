@@ -65,6 +65,8 @@ public interface ASyncSMSRecovery {
 
 			Integer nb = 0;
 			while ((obj != null) && (obj.getLastID() != start)) {
+				Log.i(TAG, "Retrieving messages from " + Long.toString(start)
+						+ " to " + Long.toString(obj.getLastID()));
 				SmsMessage message;
 				while ((message = obj.getNextMessage()) != null) {
 					int mbid = (int) message.getMailbox();
