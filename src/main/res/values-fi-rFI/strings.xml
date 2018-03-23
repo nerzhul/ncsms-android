@@ -109,17 +109,21 @@
     <string name="sync_inprogress">Synkronointi käynnissä..</string>
     <string name="fatal_error">Vakava virhe!</string>
 
+    <string name="function_not_available">Tämä toiminto ei ole vielä käytettävissä.</string>
+
     <string name="ma_title_my_accounts">Omat tilit</string>
     <string name="cancel">Peru</string>
     <string name="understood">Ymmärretty</string>
     <string name="notif_permission_required">Oikeuksia vaaditaan</string>
     <string name="err_cannot_read_sms">Tekstiviestejäsi ei voitu lukea.</string>
+    <string name="action_appinfo_perms">Äpin tiedot ja oikeudet</string>
     <string name="restore_all_messages">Palauta kaikki viestit</string>
     <string name="nothing_to_sync">Ei synkronoitavaa.</string>
     <string name="launch_restore">Palauta tekstiviestit</string>
     <string name="fix_permissions">Korjaa oikeudet</string>
     <string name="err_kitkat_required">Android 4.4 tai uudempi vaaditaan tämän ominaisuuden käyttöä varten.</string>
     <string name="restore_finished">Tekstiviestien palautus on nyt valmistunut.</string>
+    <string name="x_messages_restored">viestit palautettu&#8230;</string>
     <string name="yes_confirm">Kyllä</string>
     <string name="no_confirm">Ei</string>
     <string name="pref_show_sync_notifications">Näytä synkronointi-ilmoitukset</string>
