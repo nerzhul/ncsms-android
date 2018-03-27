@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">1</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="login_logo">Prisijungimo logotipas</string>
+
+    <string name="pref_lastmsgdate">paskutinio_pranešimo_data</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - Greitas</string>
+    <string name="pref_title_sync_frequency">Greitos sinchronizacijos dažnis</string>
+    <string name="pref_title_slow_sync">SMS - lėtas ir saugus</string>
+    <string name="pref_title_slow_sync_frequency">Saugios ir lėtos sinchronizacijos dažnis</string>
+    <string name="action_settings">Nustatymai</string>
+    <string name="sync_now">Sinchronizuoti dabar</string>
+    <string name="pref_category_sync">Sinchronizacija</string>
+    <string name="title_global_pref_to_general_prefs">Bendrosios nuostatos</string>
+    <string name="summary_global_pref_to_general_prefs">Sinchronizavimo parinktys</string>
+    <string name="summary_notif_prefs">Pranešimai</string>
+    <string name="pref_header_data_sync">Duomenys ir sinchronizavimas</string>
+    <string name="title_activity_general_settings">Bendri nustatymai</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 minutės</item>
+        <item>15 minučių</item>
+        <item>30 minučių</item>
+        <item>1 valanda</item>
+        <item>3 valandos</item>
+        <item>6 valandos</item>
+        <item>12 valandos</item>
+        <item>24 valandos</item>
+        <item>Niekada</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Kiekviena žinutė nėra sinchronizuota</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 valanda</item>
+        <item>3 valandos</item>
+        <item>6 valandos</item>
+        <item>12 valandų</item>
+        <item>24 valandos</item>
+        <item>Niekada</item>
+    </string-array>
+    <string name="pref_sync_wifi">Sinchronizuoti su Wi-fi</string>
+    <string name="pref_sync_4g">Sinchronizuoti su 4G</string>
+    <string name="pref_sync_3g">Sinchronizuoti su 3G</string>
+    <string name="pref_sync_gprs">Sinchronizuoti su 2.5G (GPRS)</string>
+    <string name="pref_sync_2g">Sinchronizuoti su 2G</string>
+    <string name="pref_sync_others">Sinchronizuoti kitose būsenose</string>
+    <string name="title_activity_login">Prisijungti</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Prisijungti</string>
+    <string name="prompt_password">Slaptažodis </string>
+    <string name="action_sign_in">Prisijunkite arba registruokitės</string>
+    <string name="action_sign_in_short">Prisijungti</string>
+    <string name="error_invalid_login">Neteisingas prisijungimo vardas arba slaptažodis</string>
+    <string name="error_invalid_password">Šis slaptažodis yra per trumpas</string>
+    <string name="error_field_required">Šis laukas yra būtinas</string>
+    <string name="prompt_serverURI">Serverio adresas</string>
+    <string name="error_invalid_server_address">Neteisingas serverio adresas</string>
+    <string name="error_connection_failed">Prisijungti nepavyko, įsitikinkite kad jungiatės prie tinkamo serverio</string>
+    <string name="error_http_connection_failed">
+Nepavyko užmegzti HTTP ryšio. Patikrinkite žiniatinklių serverį.</string>
+
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">Įvertinkite mus!</string>
+    <string name="ma_title_add_account">Pridėti paskyrą</string>
+    <string name="ma_title_welcome">Sveiki</string>
+    <string name="ma_content_welcome">Sveiki atvykę į Nextcloud SMS programą. Ši programa leidžia jums sinchronizuoti savo SMS žinutes į savo Nextcloud egzempliorių, naudojant SMS programėlę.</string>
+    <string name="ma_title_remote_account">Nuotolinė paskyra</string>
+    <string name="choose_account">Parinkti paskyrą</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Pasirinkti paskyrą</string>
+    <string name="title_activity_select_contact">Pasirinkti kontaktus</string>
+    <string name="no_account_configured">Nėra sukonfiguruotų paskyrų.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">Sinchronizavimo procesas</string>
+    <string name="sync_inprogress">Vyksta sinchronizacija ...</string>
+    <string name="fatal_error">Lemtingoji klaida !</string>
+
+    <!-- Errors -->
+    <string name="err_sync_get_smslist">Klaida #1: Gaunami netinkami duomenys, su ankstesniais pranešimais.</string>
+    <string name="err_sync_create_json_request_encoding">Klaida #7: Nepalaikomas užklausų generavimo kodavimas</string>
+    <string name="err_sync_auth_failed">Klaida #8: Autentifikacija nepavyko</string>
+    <string name="err_sync_http_request_connect">Klaida #11: Nepavyko prisijungti prie \"Nextcloud\" </string>
+    <string name="err_sync_http_request_httpexception">Klaida #12: Nepavyko prisijungti prie \"Nextcloud\" </string>
+    <string name="err_sync_http_request_ioexception">Klaida #13: Nepavyko prisijungti prie \"Nextcloud\" </string>
+    <string name="err_sync_http_request_resp">Klaida #14: Nepavyko išanalizuoti serverio atsakymo</string>
+    <string name="err_sync_http_request_parse_resp">Klaida #15: Nepavyko išnagrinėti serverio atsakymo</string>
+    <string name="err_sync_no_connection_available">Klaida #16: Duomenys nepasiekiami</string>
+    <string name="contactinfos_title">Kontaktų informacija</string>
+    <string name="contactinfos_list">Kontaktų sąrašas</string>
+    <string name="function_not_available">Ši funkcija kol kas yra neprieinama.</string>
+
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="communicate">Komunikuoti</string>
+    <string name="ma_title_my_accounts">Mano paskyros</string>
+    <string name="ma_content_swipeaction">Perbraukite iš kairės į dešinę, kad galėtumėte pasiekti veiksmų meniu.</string>
+    <string name="cancel">Atsisakyti</string>
+    <string name="notif_permission_required">Reikalingas leidimas</string>
+    <string name="notif_permission_required_content">Trūksta teisių atlikti sinchronizaciją. Pataisykite tai programėlės nustatymuose.</string>
+    <string name="please_fix_it">Prašome tai ištaisyti.</string>
+    <string name="err_cannot_read_contacts">Nepavyko perskaityti jūsų kontaktų.</string>
+    <string name="err_cannot_read_sms">Nepavyko perskaityti jūsų SMS.</string>
+    <string name="action_appinfo_perms">Programėlės informacija ir tesiės</string>
+    <string name="restore_all_messages">Atstatyti visas žinutes</string>
+    <string name="account_actions">Veiksmai su paskyra</string>
+    <string name="error_connection_failed_not_found">Prisijungimas nepavyko, serveris grąžino klaidą 404 NOT FOUND. Įsitikinkite, kad nustatėte teisingą kelią \"Nextcloud\" serveriui.</string>
+    <string name="nothing_to_sync">Nėra ką sinchronizuoti.</string>
+    <string name="feature_not_already_implemented">Ši funkcija kol kas neįdiegta.</string>
+    <string name="pref_title_minimum_sync_chars">Minimalus telefono numerio ilgis</string>
+    <string name="err_didnt_find_account_restore">Mums nepavyko surasti jūsų paskyros, kad galėtume atkurti jūsų pranešimą.</string>
+    <string name="launch_restore">Atkurti mano SMS</string>
+    <string name="fix_permissions">Sutvarkyti leidimus</string>
+    <string name="err_kitkat_required">Jei norite naudoti šią funkciją, reikalinga 4.4 ar naujesnė  \"Android\" versija.</string>
+    <string name="restore_finished">SMS atkūrimas pabaigtas.</string>
+    <string name="x_messages_restored">atkurti pranešimai&#8230;</string>
+    <string name="err_no_connection">Nėra ryšio, įsitikinkite, kad turite galiojantį duomenų ryšį.</string>
+    <string name="reinit_sync_cursor_confirm">Ar tikrai norite pakartototinai inicijuoti sinchronizavimo žymeklį? Tai gali sulėtinti sekančią sinchronizaciją jei yra daug pranešimų, kurie nebuvo sinchronizuoti su serveriu.</string>
+    <string name="yes_confirm">Taip</string>
+    <string name="no_confirm">Ne</string>
+    <string name="pref_show_sync_notifications">Parodyti sinchronizacijos pranešimus</string>
+    <string name="sync_complete">Sinchronizacija pabaigta</string>
+    <string name="err_sync_http_write_failed">Klaida #19: Nepavyko įrašyti HTTP srauto, perduodant duomenis į serverį.</string>
+    <string name="err_sync_http_request_protocol_exception">Klaida # 20: Nepavyko tinkamai nustatyti HTTP protokolo versijos.</string>
+</resources>
