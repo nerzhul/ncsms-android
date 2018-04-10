@@ -71,7 +71,7 @@
         <item>5000 SMS</item>
         <item>10000 SMS</item>
         <item>25000 SMS</item>
-        <item>Alle SMS wurde noch nicht synchronisiert</item>
+        <item>Noch nicht alle SMS synchronisiert</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 Stunde</item>
@@ -93,7 +93,7 @@
     <!-- Login -->
     <string name="prompt_login">Anmelden</string>
     <string name="prompt_password">Passwort</string>
-    <string name="action_sign_in">Anmelden oder registrieren</string>
+    <string name="action_sign_in">Anmelden oder Registrieren</string>
     <string name="action_sign_in_short">Anmelden</string>
     <string name="error_invalid_login">Benutzername oder Passwort falsch</string>
     <string name="error_invalid_password">Dieses Passwort ist zu kurz</string>
@@ -118,7 +118,7 @@
 
     <!-- Notifications -->
     <string name="sync_title">Synchronisation</string>
-    <string name="sync_inprogress">Sychronisation läuft…</string>
+    <string name="sync_inprogress">Sychronisation läuft …</string>
     <string name="fatal_error">Kritischer Fehler!</string>
 
     <!-- Errors -->
@@ -140,7 +140,7 @@
     <string name="err_sync_account_unparsable">Fehler #17: Fehlerhaftes Konto. Bitte Konfiguration prüfen.</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Fehler #18: Nextcloud SMS App ist niht installiert oder Nextcloud führt gerade ein Uprade durch</string>
     <string name="err_fetch_phonelist">Nicht valide Telefonliste vom Server empfangen.</string>
-    <string name="err_proto_v2">Der Server unterstützt diese Funktion nicht. Stelle sicher, dass die Serverversion mindestens 1.6 ist.</string>
+    <string name="err_proto_v2">Der Server unterstützt diese Funktion nicht. Stellen Sie sicher, dass die Serverversion mindestens 1.6 ist.</string>
     <string name="contactinfos_title">Kontaktinformationen</string>
     <string name="subtitle_contact_phones">- Handys kontaktieren</string>
     <string name="pref_title_bulk_messages">Maximale Anzahl von Nachrichten, die pro Synchronisieren gesendet werden</string>
@@ -165,7 +165,7 @@
     <string name="action_appinfo_perms">App Infos und Berechtigungen</string>
     <string name="restore_all_messages">Alle Nachrichten wiederherstellen</string>
     <string name="account_actions">Account-Aktionen</string>
-    <string name="error_connection_failed_not_found">Verbindung fehlgeschlagen, der Server hat 404 NICHT GEFUNDEN geantworet. Stelle sicher, dass der Pfad zur Nextcloud-Instanz korrekt gesetzt ist.</string>
+    <string name="error_connection_failed_not_found">Verbindung fehlgeschlagen, der Server hat 404 NICHT GEFUNDEN geantworet. Stellen Sie sicher, dass der Pfad zur Nextcloud-Instanz korrekt gesetzt ist.</string>
     <string name="nothing_to_sync">Es gibt nichts zu synchronisieren.</string>
     <string name="feature_not_already_implemented">Diese Funktion ist noch nicht implementiert aber wird in Kürze verfügbar sein.</string>
     <string name="pref_title_minimum_sync_chars">Minimale Telefonnummernlänge</string>
@@ -176,9 +176,9 @@
     <string name="err_kitkat_required">Android 4.4 oder höher ist erforderlich, um diese Funktion zu verwenden.</string>
     <string name="restore_finished">SMS-Wiederherstellung ist nun abgeschlossen.</string>
     <string name="x_messages_restored">Nachrichten wiederhergestellt&#8230;</string>
-    <string name="err_no_connection">Keine Verbindung verfügbar, bitte stelle sicher, dass du eine stabile Datenverbindung hast.</string>
+    <string name="err_no_connection">Keine Verbindung verfügbar, bitte stellen Sie sicher, dass Sie eine stabile Datenverbindung haben.</string>
     <string name="reinit_sync_cursor">Synchronisationscursor reinitialisieren</string>
-    <string name="reinit_sync_cursor_confirm">Bist du dir sicher, dass du den Synchronisationscursor reinitialisieren möchtest? Dies kann die nächste Synchronisation verlangsammen, wenn mehrere, mit dem Server, nicht synchronisierte Nachrichten gefunden werden.</string>
+    <string name="reinit_sync_cursor_confirm">Sind Sie sich sicher, dass Sie den Synchronisationscursor reinitialisieren möchten? Dies kann die nächste Synchronisation verlangsammen, wenn mehrere, mit dem Server, nicht synchronisierte Nachrichten gefunden werden.</string>
     <string name="yes_confirm">Ja</string>
     <string name="no_confirm">Nein</string>
     <string name="pref_show_sync_notifications">Synchronisations-Benachrichtigungen anzeigen</string>
