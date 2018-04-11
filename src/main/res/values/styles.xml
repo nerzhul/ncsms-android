@@ -85,4 +85,8 @@
 
     <style name="OcSmsTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
+    <style name="SplashTheme" parent="OcSmsTheme">
+        <item name="android:windowBackground">@drawable/splashscreen</item>
+    </style>
+
 </resources>

@@ -135,15 +135,19 @@
             android:name=".activities.OCSMSSettingsActivity"
             android:label="@string/title_activity_general_settings">
         </activity>
+
+        <activity
+            android:name="fr.unix_experience.owncloud_sms.activities.SplashscreenActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/OcSmsTheme.Drawer">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity
             android:name=".activities.remote_account.ContactListActivity"
