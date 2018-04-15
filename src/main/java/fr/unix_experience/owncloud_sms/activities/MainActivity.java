@@ -63,6 +63,8 @@ public class MainActivity extends AppCompatActivity
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		setTheme(R.style.OcSmsTheme_Drawer);
+
 		if (_ConnectivityMonitor == null) {
 			_ConnectivityMonitor = new ConnectivityMonitor(getApplicationContext());
 		}
