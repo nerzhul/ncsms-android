@@ -183,4 +183,5 @@
     <string name="no_confirm">Ne</string>
     <string name="pref_show_sync_notifications">Zobrazit notifikace synchronizace</string>
     <string name="sync_complete">Synchronizace dokončena</string>
-    </resources>
+    <string name="err_sync_http_request_protocol_exception">Error #20: Chyba při nastavení verze HTTP protokolu.</string>
+</resources>
