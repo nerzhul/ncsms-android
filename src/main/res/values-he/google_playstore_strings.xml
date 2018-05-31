@@ -33,4 +33,10 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS מסנכרן את המסרונים (SMS) המקומיים שלך עם מופע ה־Nextcloud</string>
-    </resources>
+    <string name="gp_description">יישומון המסרונים של ownCloud מסנכרן את המסרונים שלך מול מערכת ownCloud מרוחקת ומאפשר לך לקרוא ממנה את ההודעות.
+
+האפשרות לשליחת מסרון מתוך מערכת ownCloud תגיע בגרסה הקרובה.
+
+היישומון נתמך באופן מלא ב־Android מגרסאות 4.0 ועד 6.0
+	</string>
+</resources>
