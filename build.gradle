@@ -5,7 +5,7 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.2'
     }
 }
 
@@ -54,11 +54,11 @@ repositories {
 }
 
 dependencies {
-    compile 'com.android.support:support-v13:27.1.0'
-    compile 'com.android.support:appcompat-v7:27.1.0'
-    compile 'com.android.support:design:27.1.0'
+    compile 'com.android.support:support-v13:27.1.1'
+    compile 'com.android.support:appcompat-v7:27.1.1'
+    compile 'com.android.support:design:27.1.1'
     compile 'in.srain.cube:ultra-ptr:1.0.11'
     compile 'com.github.dmytrodanylyk.android-process-button:library:1.0.4'
-    compile 'com.android.support:support-v4:27.1.0'
+    compile 'com.android.support:support-v4:27.1.1'
     implementation project(':ncsmsgo')
 }
