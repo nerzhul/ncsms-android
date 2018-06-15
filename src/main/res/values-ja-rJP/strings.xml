@@ -101,7 +101,7 @@
     <string name="prompt_serverURI">サーバーアドレス</string>
     <string name="error_invalid_server_address">サーバーアドレスが無効です</string>
     <string name="error_connection_failed">接続に失敗しました。サーバーが正しいことを確認してください</string>
-    <string name="error_http_connection_failed">HTTP 接続を実行できません。Web サーバーがあることを確認してください</string>
+    <string name="error_http_connection_failed">HTTP接続を実行できません。Webサーバーがあることを確認してください</string>
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">評価してください!</string>
@@ -139,7 +139,7 @@
     <string name="err_sync_no_connection_available">エラー #16: データ接続が使用できません</string>
     <string name="err_sync_account_unparsable">エラー #17: 不正なアカウント。再設定してください。</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">エラー #18: Nextcloud SMS アプリがインストールされていないか Nextcloud がアップグレードを待っています</string>
-    <string name="err_fetch_phonelist">サーバから無効な電話リストを受信しました。</string>
+    <string name="err_fetch_phonelist">サーバーから無効な電話リストを受信しました。</string>
     <string name="err_proto_v2">サーバーがこの機能をサポートしていません。サーバーのバージョンが 1.6 以上であることを確認してください。</string>
     <string name="contactinfos_title">連絡先情報</string>
     <string name="subtitle_contact_phones">- 連絡先の電話</string>
