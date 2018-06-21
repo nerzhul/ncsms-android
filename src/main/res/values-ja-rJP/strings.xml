@@ -123,7 +123,7 @@
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">エラー #1: 前のメッセージを取得するときに、サーバーから無効なデータを受信しました</string>
-    <string name="err_sync_craft_http_request">エラー #2: HTTP リクエストを作成中にエラーが発生しました</string>
+    <string name="err_sync_craft_http_request">エラー #2: HTTP リクエストの作成中にエラーが発生しました</string>
     <string name="err_sync_push_request">エラー #3: プッシュリクエストに失敗しました</string>
     <string name="err_sync_push_request_resp">エラー #4: データをプッシュするときに、サーバーから無効なデータを受信しました</string>
     <string name="err_sync_create_json_null_smslist">エラー #5: NULL SMS リスト</string>
