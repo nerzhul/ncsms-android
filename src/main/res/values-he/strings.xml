@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="login_logo">לוגו כניסה</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - מהיר</string>
+    <string name="pref_title_sync_frequency">תדירות עדכון מהירה</string>
+    <string name="pref_title_slow_sync">SMS - אטי ומאובטח</string>
+    <string name="pref_title_slow_sync_frequency">תדירות סנכרון מאובטח אטי</string>
+    <string name="action_settings">הגדרות</string>
+    <string name="sync_now">בצע סנכרון עכשיו</string>
+    <string name="pref_category_sync">סנכרון</string>
+    <string name="title_global_pref_to_general_prefs">העדפות כלליות</string>
+    <string name="summary_global_pref_to_general_prefs">אפשרויות סנכרון</string>
+    <string name="summary_notif_prefs">התראות</string>
+    <string name="pref_header_data_sync">נתונים וסנכרון</string>
+    <string name="title_activity_general_settings">הגדרות כלליות</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 דקות</item>
+        <item>15 דקות</item>
+        <item>30 דקות</item>
+        <item>שעה אחת</item>
+        <item>3 שעות</item>
+        <item>6 שעות</item>
+        <item>12 שעות</item>
+        <item>24 שעות</item>
+        <item>אף פעם</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>שעה אחת</item>
+        <item>3 שעות</item>
+        <item>6 שעות</item>
+        <item>12 שעות</item>
+        <item>24 שעות</item>
+        <item>אף פעם</item>
+    </string-array>
+    <string name="pref_sync_wifi">סנכרון עם רשת אלחוטית</string>
+    <string name="pref_sync_4g">סנכרון עם חיבור דור רביעי</string>
+    <string name="pref_sync_3g">סנכרון עם חיבור דור שלישי</string>
+    <string name="pref_sync_gprs">סנכרון עם חיבור דור שתיים וחצי</string>
+    <string name="pref_sync_2g">סנכרון עם חיבור דור שני</string>
+    <string name="pref_sync_others">סנכרון במצבים אחרים</string>
+    <string name="title_activity_login">היכנס</string>
+
+    <!-- Login -->
+    <string name="prompt_login">התחבר</string>
+    <string name="prompt_password">סיסמה</string>
+    <string name="action_sign_in">התחבר או הירשם</string>
+    <string name="action_sign_in_short">היכנס</string>
+    <string name="error_invalid_login">שם המשתמש או הססמה שגויים</string>
+    <string name="error_invalid_password">הססמה קצרה מדי</string>
+    <string name="error_field_required">זהו שדה חובה</string>
+    <string name="prompt_serverURI">כתובת שרת</string>
+    <string name="error_invalid_server_address">כתובת השרת שגויה</string>
+    <string name="error_connection_failed">החיבור נכשל, נא לוודא שזה השרת הנכון</string>
+    <string name="error_http_connection_failed">לא ניתן לבצע התחברות HTTP. נא לוודא שיש שרת</string>
+
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">דרג אותנו!</string>
+    <string name="ma_title_add_account">הוסף חשבון</string>
+    <string name="ma_title_welcome">ברוך הבא</string>
+    <string name="ma_title_remote_account">חשבון מרוחק</string>
+    <string name="choose_account">נא לבחור חשבון</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">בחר חשבון</string>
+    <string name="title_activity_select_contact">בחר איש קשר</string>
+    <string name="no_account_configured">לא הוגדר חשבון.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">תהליך סנכרון</string>
+    <string name="sync_inprogress">סנכרון מתבצע…</string>
+    <string name="fatal_error">שגיאה חמורה!</string>
+
+    <string name="err_fetch_phonelist">התקבלה רשימת טלפונים שגויה מהשרת.</string>
+    <string name="err_proto_v2">השרת אינו תומך בתכונה זו. נא לוודא שגרסת השרת היא לפחות 1.6.</string>
+    <string name="pref_title_bulk_messages">מספר ההודעות המרבית לשליחה בעת סנכרון בודד</string>
+    <string name="contactinfos_list">רשימת אנשי קשר</string>
+    <string name="function_not_available">פונקציה זו אינה זמינה עוד.</string>
+
+    <string name="ma_title_my_accounts">החשבונות שלי</string>
+    <string name="ma_content_swipeaction">יש לגרור משמאל לימין כדי לגשת לתפריט הפעולות.</string>
+    <string name="cancel">ביטול</string>
+    <string name="understood">הבנתי</string>
+    <string name="notif_permission_required">נדרשות הרשאות</string>
+    <string name="please_fix_it">נא לתקן זאת.</string>
+    <string name="err_cannot_read_contacts">אין לנו אפשרות לקרוא את אנשי הקשר שלך.</string>
+    <string name="err_cannot_read_sms">אין לנו אפשרות לקרוא את הודעות ה־SMS שלך.</string>
+    <string name="action_appinfo_perms">פרטי יישומון והרשאות</string>
+    <string name="restore_all_messages">שחזור כל ההודעות</string>
+    <string name="account_actions">פעולות חשבון</string>
+    <string name="error_connection_failed_not_found">החיבור נכשל, השרת מחזיר 404 לא נמצא. נא לוודא שהגדרת את הנתיב הנכון של עותק ה־Nextcloud שלך.</string>
+    <string name="nothing_to_sync">אין מה לסנכרן.</string>
+    <string name="feature_not_already_implemented">תכונה זו כבר הוטמעה והיא תהיה זמינה בקרוב.</string>
+    <string name="pref_title_minimum_sync_chars">אורך מזערי למספר טלפון</string>
+    <string name="err_didnt_find_account_restore">לא מצאנו את החשבון שלך כדי לשחזר את ההודעות שלך, מדובר במצב די מוזר.</string>
+    <string name="launch_restore">שחזור הודעות ה־SMS שלי</string>
+    <string name="fix_permissions">תיקון הרשאות</string>
+    <string name="err_kitkat_required">נדרשת גרסה 4.4 ומעלה של Android כדי להשתמש בתכונה הזו.</string>
+    <string name="restore_finished">שחזור הודעות ה־SMS הסתיים כעת.</string>
+    <string name="x_messages_restored">הודעות שוחזרו&#8230;</string>
+    <string name="err_no_connection">אין חיבור זמין, נא לוודא שיש לך חיבור נתונים זמין.</string>
+    <string name="yes_confirm">כן</string>
+    <string name="no_confirm">לא</string>
+    <string name="pref_show_sync_notifications">הצגת הודעות סנכרון</string>
+    <string name="sync_complete">הסנכרון הושלם</string>
+    </resources>
