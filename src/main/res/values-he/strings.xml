@@ -62,6 +62,15 @@
         <item>24 שעות</item>
         <item>אף פעם</item>
     </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 הודעות</item>
+        <item>1000 הודעות</item>
+        <item>2000 הודעות</item>
+        <item>5000 הודעות</item>
+        <item>10000 הודעות</item>
+        <item>25000 הודעות</item>
+        <item>לא סונכרנו הודעות</item>
+    </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>שעה אחת</item>
         <item>3 שעות</item>
@@ -70,6 +79,7 @@
         <item>24 שעות</item>
         <item>אף פעם</item>
     </string-array>
+    <string name="pref_push_on_receive">דחיפת SMS עם הקבלה</string>
     <string name="pref_sync_wifi">סנכרון עם רשת אלחוטית</string>
     <string name="pref_sync_4g">סנכרון עם חיבור דור רביעי</string>
     <string name="pref_sync_3g">סנכרון עם חיבור דור שלישי</string>
@@ -114,11 +124,14 @@
     <string name="contactinfos_list">רשימת אנשי קשר</string>
     <string name="function_not_available">פונקציה זו אינה זמינה עוד.</string>
 
+    <string name="navigation_drawer_open">פתיחת מגירת ניווט</string>
+    <string name="navigation_drawer_close">סגירת מגירת ניווט</string>
     <string name="ma_title_my_accounts">החשבונות שלי</string>
     <string name="ma_content_swipeaction">יש לגרור משמאל לימין כדי לגשת לתפריט הפעולות.</string>
     <string name="cancel">ביטול</string>
     <string name="understood">הבנתי</string>
     <string name="notif_permission_required">נדרשות הרשאות</string>
+    <string name="notif_permission_required_content">חלק מההרשאות חסרות לצורך ביצוע תהליך הסנכרון. נא לתקן אותן בהגדרות היישומון</string>
     <string name="please_fix_it">נא לתקן זאת.</string>
     <string name="err_cannot_read_contacts">אין לנו אפשרות לקרוא את אנשי הקשר שלך.</string>
     <string name="err_cannot_read_sms">אין לנו אפשרות לקרוא את הודעות ה־SMS שלך.</string>
@@ -140,4 +153,6 @@
     <string name="no_confirm">לא</string>
     <string name="pref_show_sync_notifications">הצגת הודעות סנכרון</string>
     <string name="sync_complete">הסנכרון הושלם</string>
-    </resources>
+    <string name="err_sync_http_write_failed">שגיאה מס׳ 19: כתיבת תזרים HTTP בעת דחיפת נתונים לשרת נכשלה.</string>
+    <string name="err_sync_http_request_protocol_exception">שגיאה מס׳ 20: הגדרת גרסת פרוטוקול ה־HTTP כראוי נכשלה.</string>
+</resources>
