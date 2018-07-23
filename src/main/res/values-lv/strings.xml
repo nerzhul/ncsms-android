@@ -41,13 +41,16 @@
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">SMS - Ātri</string>
+    <string name="pref_title_sync_frequency">Ātras sinhronizēšanas biežums</string>
     <string name="pref_title_slow_sync">SMS - Lēni un droši</string>
+    <string name="pref_title_slow_sync_frequency">Drošas, Lēnas Sinhronizēšanas biežums </string>
     <string name="action_settings">Iestatījumi</string>
     <string name="sync_now">Sinhronizēt tagad</string>
     <string name="pref_category_sync">Synchronization</string>
     <string name="title_global_pref_to_general_prefs">Vispārīgās preferences</string>
     <string name="summary_global_pref_to_general_prefs">Sinhronizācijas opcijas</string>
     <string name="summary_notif_prefs">Paziņojumi</string>
+    <string name="pref_header_data_sync">Datu &amp; sinhronizēšana</string>
     <string name="title_activity_general_settings">Vispārīgie iestatījumi</string>
 
     <string-array name="pref_sync_frequency_titles">
@@ -68,6 +71,7 @@
         <item>5000 SMS</item>
         <item>10000 SMS</item>
         <item>25000 SMS</item>
+        <item>Katrs SMS nav sinhronizēts</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 stunda</item>
@@ -92,12 +96,17 @@
     <string name="action_sign_in_short">Pierakstīties</string>
     <string name="error_invalid_login">Lietotājvārds vai parole nav pareiza</string>
     <string name="error_invalid_password">Parole ir par īsu</string>
+    <string name="error_field_required">Šis lauks ir obligāts</string>
     <string name="prompt_serverURI">Servera adrese</string>
     <string name="error_invalid_server_address">Nederīgs servera adrese</string>
+    <string name="error_connection_failed">Savienojums neizdevās, pārliecinies vai šis ir īstais serveris</string>
+    <string name="error_http_connection_failed">Neizdevās izveidot HTTP savienojumu. Lūdzu pārliecinies vai tur ir web serveris</string>
+
     <!-- Main activity -->
     <string name="ma_title_rate_us">Vērtē mūs!</string>
     <string name="ma_title_add_account">Pievienot kontam</string>
     <string name="ma_title_welcome">Laipni lūdzam!</string>
+    <string name="ma_content_welcome">Esiet sveicināts Nextcloud SMS lietotnē. Šī lietotne ļaus tev sinhronizēt tavus SMS ar tavu Nextcloud serveri izmantojot SMS lietotni.</string>
     <string name="ma_title_remote_account">Attālais konts</string>
     <string name="choose_account">Izvēlieties kontu</string>
 
@@ -111,8 +120,12 @@
     <string name="sync_inprogress">... notiek sinhronizācija</string>
     <string name="fatal_error">Fatāla kļūda!</string>
 
+    <string name="err_sync_craft_http_request">Kļūda #2: Kļūda izveidojot HTTP pieprasījumu</string>
+    <string name="err_sync_create_json_null_smslist">Kļūda #5: Null SMS saraksts</string>
     <string name="err_sync_create_json_request_encoding">Kļūda #7: Neatbalstīta kodēšana ģenerējot pieprasījumu</string>
     <string name="err_sync_auth_failed">Kļūda #8: Autentifikācija neizdevās</string>
+    <string name="err_sync_no_connection_available">Kļūda #16: Datu savienojums nav pieejams</string>
+    <string name="err_proto_v2">Serveris neatbalsta šo iespēju. Pārliecinies ka servera versija ir vismaz 1.6.</string>
     <string name="contactinfos_title">Kontaktpersonas informācija</string>
     <string name="subtitle_contact_phones">- Kontaktpersonas tālrunis</string>
     <string name="contactinfos_list">Kontaktpersonu saraksts</string>
@@ -120,15 +133,25 @@
     <string name="communicate">Sazināties</string>
     <string name="ma_title_my_accounts">Mani konti</string>
     <string name="cancel">Atcelt</string>
+    <string name="understood">Sapratu</string>
     <string name="notif_permission_required">Nepieciešamās atļaujas</string>
     <string name="please_fix_it">Lūdzu, izlabojiet to.</string>
     <string name="err_cannot_read_sms">Mēs nevaram nolasīt jūsu SMS.</string>
     <string name="restore_all_messages">Atjaunot visus ziņojumus</string>
     <string name="account_actions">Konta darbības</string>
     <string name="nothing_to_sync">Nav nekā, ko sinhronizēt.</string>
+    <string name="pref_title_minimum_sync_chars">Minimālais telefona numura garums</string>
+    <string name="err_didnt_find_account_restore">Mēs neatradām tavu kontu lai atjaunotu tavas ziņas... Šī ir ļoti savāda situācija.</string>
     <string name="launch_restore">Atjaunot manas SMS</string>
+    <string name="error_make_default_sms_app">Lūdzu uzstādi šo lietotni kā noklusējuma SMS lietotni, lai ļautu tai atjaunot tavas ziņas. Šī limitācija nāca spēka Android 4.4.</string>
     <string name="fix_permissions">Labot atļaujas</string>
+    <string name="err_kitkat_required">Android 4.4 vai jaunāks ir vajadzīgs lai izmantotu šo iespēju.</string>
     <string name="restore_finished">SMS atjaunošana tagad ir pabeigta.</string>
+    <string name="x_messages_restored">ziņas atjaunotas &#8230;</string>
+    <string name="err_no_connection">Nav interneta savienojuma. Pārliecinies ka tev ir datu vai wifi savienojums.</string>
     <string name="yes_confirm">Jā</string>
     <string name="no_confirm">Nē</string>
-    </resources>
+    <string name="pref_show_sync_notifications">Rādīt sinhronizācijas paziņojumus</string>
+    <string name="sync_complete">Sinhronizācija pabeigta</string>
+    <string name="err_sync_http_request_protocol_exception">Kļūda #20: Neizdevās pareizi uzstādīt HTTP protokola verisju.</string>
+</resources>
