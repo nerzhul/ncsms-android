@@ -34,9 +34,9 @@
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS synkroniserer dine SMS-meldinger til din Nextcloud</string>
     <string name="gp_description">
-Nextclouds SMS-program synkroniserer dine SMS meldinger til Nextcloud-en og la deg lese meldringene fra den.
+Nextclouds SMS-program synkroniserer dine SMS meldinger til Nextcloud og lar deg lese meldringene fra den.
 
-Forsendelse av SMS fra Nextcloud vil komme i en fremtidig versjon.
+Sending av SMS fra Nextcloud vil komme i en fremtidig versjon.
 
 Programmet er kompatibelt med Android 4.0 - 6.0
 	</string>

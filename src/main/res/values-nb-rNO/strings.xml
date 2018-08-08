@@ -66,11 +66,11 @@
     </string-array>
     <string-array name="pref_sync_bulk_max_messages_titles">
         <item>100 SMS</item>
-        <item>1 000 SMS</item>
-        <item>2 000 SMS</item>
-        <item>5 000 SMS</item>
-        <item>10 000 SMS</item>
-        <item>25 000 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
         <item>Ingen SMS-er synkronisert</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
