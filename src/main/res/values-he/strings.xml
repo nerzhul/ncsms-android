@@ -147,6 +147,8 @@
 
     <string name="ui_notification_title_template">SMS של Nextcloud: %1$s</string>
     <string name="communicate">תקשורת</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
     <string name="navigation_drawer_open">פתיחת מגירת ניווט</string>
     <string name="navigation_drawer_close">סגירת מגירת ניווט</string>
     <string name="ma_title_my_accounts">החשבונות שלי</string>
@@ -173,6 +175,8 @@
     <string name="restore_finished">שחזור הודעות ה־SMS הסתיים כעת.</string>
     <string name="x_messages_restored">הודעות שוחזרו&#8230;</string>
     <string name="err_no_connection">אין חיבור זמין, נא לוודא שיש לך חיבור נתונים זמין.</string>
+    <string name="reinit_sync_cursor">אתחול מצביע הסנכרון מחדש</string>
+    <string name="reinit_sync_cursor_confirm">לאתחל את מצביע הסנכרון מחדש? פעולה זו עשויה להאט את הסנכרון הבאה אם נמצא הודעות ישנות רבות שלא סונכרנו עם השרת.</string>
     <string name="yes_confirm">כן</string>
     <string name="no_confirm">לא</string>
     <string name="pref_show_sync_notifications">הצגת הודעות סנכרון</string>

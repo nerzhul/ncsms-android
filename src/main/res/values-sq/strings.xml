@@ -182,4 +182,7 @@
     <string name="yes_confirm">Po</string>
     <string name="no_confirm">Jo</string>
     <string name="pref_show_sync_notifications">Shfaqni njoftimet e sinkronizimit</string>
-    </resources>
+    <string name="sync_complete">Sinkronizimi përfundoi</string>
+    <string name="err_sync_http_write_failed">Gabim #19: Dështoi të shkruajë vargun HTTP kur dërgoi të dhënat në server.</string>
+    <string name="err_sync_http_request_protocol_exception">Gabim #20: Dështoi të vendosë si duhet versionin e protokollit HTTP </string>
+</resources>
