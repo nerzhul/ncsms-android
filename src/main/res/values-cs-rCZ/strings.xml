@@ -101,10 +101,10 @@
     <string name="prompt_serverURI">Adresa serveru</string>
     <string name="error_invalid_server_address">Neplatná adresa serveru</string>
     <string name="error_connection_failed">Připojení se nezdařilo. Ujistěte se, že se připojujete ke správnému serveru</string>
-    <string name="error_http_connection_failed">Nezdařilo se vytvořit HTTP připojení. Prosím ujistěte se, že na druhé straně je webový server.</string>
+    <string name="error_http_connection_failed">Nezdařilo se vytvořit HTTP připojení. Ověřte že na druhé straně je webový server.</string>
 
     <!-- Main activity -->
-    <string name="ma_title_rate_us">Ohodnotit!</string>
+    <string name="ma_title_rate_us">Ohodnoťte!</string>
     <string name="ma_title_add_account">Přidat účet</string>
     <string name="ma_title_welcome">Vítejte</string>
     <string name="ma_content_welcome">Vítejte v aplikaci Nextcloud SMS. Tato aplikace vám umožní synchronizovat SMS do vašeho prostředí Nextcloud použitím aplikace SMS.</string>
@@ -114,12 +114,12 @@
     <!-- Restauration -->
     <string name="title_activity_select_account">Vybrat účet</string>
     <string name="title_activity_select_contact">Vybrat kontakt</string>
-    <string name="no_account_configured">Nenakonfigurován žádný účet</string>
+    <string name="no_account_configured">Nenastaven žádný účet.</string>
 
     <!-- Notifications -->
     <string name="sync_title">Průběh synchronizace</string>
-    <string name="sync_inprogress">Probíhá synchronizace</string>
-    <string name="fatal_error">Závažná chyba !</string>
+    <string name="sync_inprogress">Synchronizuje se…</string>
+    <string name="fatal_error">Závažná chyba!</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Error #1: Ze serveru obdržena neplatná data při získávání předchozích zpráv.</string>
