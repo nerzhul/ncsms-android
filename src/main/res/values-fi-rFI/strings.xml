@@ -34,7 +34,7 @@
 
     <!-- System strings, do not translate -->
     <string name="app_name">Nextcloud SMS</string>
-    <string name="login_logo">Kirjautumis logo</string>
+    <string name="login_logo">Kirjautumislogo</string>
 
     <string name="action_settings">Asetukset</string>
     <string name="sync_now">Synkronoi nyt</string>
@@ -115,9 +115,12 @@
     <string name="cancel">Peru</string>
     <string name="understood">Ymmärretty</string>
     <string name="notif_permission_required">Oikeuksia vaaditaan</string>
+    <string name="please_fix_it">Korjaa se.</string>
+    <string name="err_cannot_read_contacts">Yhteystietojasi ei voitu lukea.</string>
     <string name="err_cannot_read_sms">Tekstiviestejäsi ei voitu lukea.</string>
     <string name="action_appinfo_perms">Äpin tiedot ja oikeudet</string>
     <string name="restore_all_messages">Palauta kaikki viestit</string>
+    <string name="account_actions">Tilin toiminnot</string>
     <string name="nothing_to_sync">Ei synkronoitavaa.</string>
     <string name="launch_restore">Palauta tekstiviestit</string>
     <string name="fix_permissions">Korjaa oikeudet</string>
