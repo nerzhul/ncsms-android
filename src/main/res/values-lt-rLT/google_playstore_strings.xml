@@ -29,14 +29,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
     <!-- Translation version, reference for translators -->
-	<string name="gp_translation_version">3</string>
+	<string name="gp_translation_version">1</string>
 
 	<!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMS synchronizuje vaše lokální SMS do vašeho prostředí Nextcloud</string>
+    <string name="gp_short_description">Nextcloud SMS sinchronizuoja Jūsų lokalius SMS pranešimus Jūsų Nextcloud programoje.</string>
     <string name="gp_description">
-Aplikace NextCloud SMS synchronizuje vaše SMS zprávy do vzdáleného prostředí Nextcloud a také vám umožňuje je v něm číst.
+wnCloud SMS programa sinchronizuoja Jūsų SMS žinutes nuotoliniame \"ownCloud\", kurias Jūs galite patogiai skaityti.
 
-Odesílání SMS z prostředí Nextcloud bude uvedeno v budoucích verzích.
-
-Aplikace je plně kompatibilní se systémem Android 4.0 až 6.0</string>
+SMs pranešimų siuntimas iš ownCloud serverio bus realizuota vėlesniuose atnaujinimuose.
+</string>
 </resources>
