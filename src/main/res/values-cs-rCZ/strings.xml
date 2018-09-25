@@ -42,12 +42,12 @@
     <!-- Preferences -->
     <string name="pref_title_sync">SMS - Rychlé</string>
     <string name="pref_title_sync_frequency">Rychlá Synchronizační frekvence</string>
-    <string name="pref_title_slow_sync">SMS - Zabezpečené a Pomalejší</string>
+    <string name="pref_title_slow_sync">SMS – pomalé a bezpečné</string>
     <string name="pref_title_slow_sync_frequency">Zabezpečená Pomalejší Synchronizační frekvence</string>
     <string name="action_settings">Nastavení</string>
     <string name="sync_now">Synchronizovat nyní</string>
     <string name="pref_category_sync">Synchronizace</string>
-    <string name="title_global_pref_to_general_prefs">Obecné preference</string>
+    <string name="title_global_pref_to_general_prefs">Obecné předvolby</string>
     <string name="summary_global_pref_to_general_prefs">Nastavení synchronizace</string>
     <string name="summary_notif_prefs">Upozornění</string>
     <string name="pref_header_data_sync">Data a synchronizace</string>
@@ -71,7 +71,7 @@
         <item>5000 SMS</item>
         <item>10000 SMS</item>
         <item>25000 SMS</item>
-        <item>Všechny SMS nesynchronizovány</item>
+        <item>Všechny nesynchronizované SMS</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 hodina</item>
@@ -97,7 +97,7 @@
     <string name="action_sign_in_short">Přihlásit se</string>
     <string name="error_invalid_login">Jméno nebo heslo není správné</string>
     <string name="error_invalid_password">Toto heslo je příliš krátké</string>
-    <string name="error_field_required">Toto pole je vyžadováno</string>
+    <string name="error_field_required">Tato kolonka je vyžadována</string>
     <string name="prompt_serverURI">Adresa serveru</string>
     <string name="error_invalid_server_address">Neplatná adresa serveru</string>
     <string name="error_connection_failed">Připojení se nezdařilo. Ujistěte se, že se připojujete ke správnému serveru</string>
@@ -159,7 +159,7 @@
     <string name="understood">Rozumím</string>
     <string name="notif_permission_required">Vyžadováno oprávnění</string>
     <string name="notif_permission_required_content">Chybí některá oprávnění vyžadovaná pro synchronizace. Opravte je v nastavení aplikace</string>
-    <string name="please_fix_it">Prosím opravte to.</string>
+    <string name="please_fix_it">Opravte to.</string>
     <string name="err_cannot_read_contacts">Nemůžeme načíst vaše kontakty.</string>
     <string name="err_cannot_read_sms">Nedaří se načíst vaše SMS.</string>
     <string name="action_appinfo_perms">Informace o aplikaci a oprávněních</string>
