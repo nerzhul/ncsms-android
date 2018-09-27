@@ -43,7 +43,7 @@
     <string name="pref_title_sync">SMS – rychlé</string>
     <string name="pref_title_sync_frequency">Četnost rychlé synchronizace</string>
     <string name="pref_title_slow_sync">SMS – pomalé a bezpečné</string>
-    <string name="pref_title_slow_sync_frequency">Zabezpečená Pomalejší Synchronizační frekvence</string>
+    <string name="pref_title_slow_sync_frequency">Četnost zabezpečené pomalé synchronizace</string>
     <string name="action_settings">Nastavení</string>
     <string name="sync_now">Synchronizovat nyní</string>
     <string name="pref_category_sync">Synchronizace</string>
