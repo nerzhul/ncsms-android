@@ -132,6 +132,7 @@ Nepavyko užmegzti HTTP ryšio. Patikrinkite žiniatinklių serverį.</string>
     <string name="err_sync_http_request_resp">Klaida #14: Nepavyko išanalizuoti serverio atsakymo</string>
     <string name="err_sync_http_request_parse_resp">Klaida #15: Nepavyko išnagrinėti serverio atsakymo</string>
     <string name="err_sync_no_connection_available">Klaida #16: Duomenys nepasiekiami</string>
+    <string name="err_sync_account_unparsable">Klaida #17: netaisyklinga paskyra. Sukonfigūruokite ją iš naujo</string>
     <string name="err_proto_v2">Serveris nepalaiko šios ypatybės. Užtikrinkite, kad serverio versija yra bent 1.6.</string>
     <string name="contactinfos_title">Kontaktų informacija</string>
     <string name="contactinfos_list">Kontaktų sąrašas</string>
@@ -139,6 +140,8 @@ Nepavyko užmegzti HTTP ryšio. Patikrinkite žiniatinklių serverį.</string>
 
     <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
     <string name="communicate">Komunikuoti</string>
+    <string name="navigation_drawer_open">Atidaryti naršymo stalčių</string>
+    <string name="navigation_drawer_close">Uždaryti naršymo stalčių</string>
     <string name="ma_title_my_accounts">Mano paskyros</string>
     <string name="ma_content_swipeaction">Perbraukite iš kairės į dešinę, kad galėtumėte pasiekti veiksmų meniu.</string>
     <string name="cancel">Atsisakyti</string>
