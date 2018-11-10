@@ -183,4 +183,6 @@
     <string name="no_confirm">Nej</string>
     <string name="pref_show_sync_notifications">Visa synknotifieringar</string>
     <string name="sync_complete">Synkronisering färdig</string>
-    </resources>
+    <string name="err_sync_http_write_failed">Fel #19: det gick inte att skriva HTTP-ström när du överföra data till en server.</string>
+    <string name="err_sync_http_request_protocol_exception">Fel # 20: Det gick inte att korrekt ställa in HTTP-protokollversionen.</string>
+</resources>
