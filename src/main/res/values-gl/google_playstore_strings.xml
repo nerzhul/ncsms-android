@@ -34,10 +34,10 @@
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS sincroniza as súas mensaxes SMS locais no seu servidor Nextcloud</string>
     <string name="gp_description">
-    A aplicación ownCloud SMS sincroniza as súas mensaxes SMS nun servidor ownCloud remoto e permítelle ler as súas mensaxes desde él.
+    A aplicación Nextcloud SMS sincroniza as súas mensaxes SMS nun servidor Nextcloud remoto e permítelle ler as súas mensaxes desde él.
 
-    O envio de SMS desde o servidor ownCloud será incorpordo en futuras versións.
+    O envío de SMS dende o servidor Nextcloud será incorporado en futuras versións.
 
     A aplicación é totalmente compatíbel con Android 4.0 a 6.0
-⇥</string>
+	</string>
 </resources>
