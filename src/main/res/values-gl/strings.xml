@@ -151,8 +151,8 @@
     <string name="communicate">Comunicar</string>
     <string name="title_activity_main2">Main2Activity</string>
 
-    <string name="navigation_drawer_open">Abrir o menú de navegación</string>
-    <string name="navigation_drawer_close">Pechar o menú de navegación</string>
+    <string name="navigation_drawer_open">Abrir o caixón de navegación</string>
+    <string name="navigation_drawer_close">Pechar o caixón de navegación</string>
     <string name="ma_title_my_accounts">As miñas contas</string>
     <string name="ma_content_swipeaction">Desprace da esquerda á dereita para acceder ao menú de accións</string>
     <string name="cancel">Cancelar</string>
