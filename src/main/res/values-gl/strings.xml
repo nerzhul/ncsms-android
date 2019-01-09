@@ -107,7 +107,7 @@
     <string name="ma_title_rate_us">Cualifiquenos!</string>
     <string name="ma_title_add_account">Engadir unha conta</string>
     <string name="ma_title_welcome">Benvido</string>
-    <string name="ma_content_welcome">Benvido á aplicación Nextcloud SMS. Esta aplicación permítelle sincronizar os seus SMS coa súa instancia Nextcloud usando a aplicación SMS.</string>
+    <string name="ma_content_welcome">Benvido ao aplicativo Nextcloud SMS. Este aplicativo permítelle sincronizar os seus SMS coa súa instancia Nextcloud usando o aplicativo SMS.</string>
     <string name="ma_title_remote_account">Conta remota</string>
     <string name="choose_account">Escolla unha conta</string>
 
@@ -138,7 +138,7 @@
     <string name="err_sync_http_request_parse_resp">Erro núm. 15: Non é posíbel interpretar a resposta do servidor</string>
     <string name="err_sync_no_connection_available">Erro núm. 16: Non hai unha conexión de datos dispoñíbel</string>
     <string name="err_sync_account_unparsable">Erro núm. 17: Conta mal formada. Reconfigúrea.</string>
-    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Erro núm. 18: A aplicación Nextcloud SMS non esta instalada ou Nextcloud esta agardando unha actualización</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Erro núm. 18: O aplicativon Nextcloud SMS non esta instalada ou Nextcloud esta agardando unha actualización</string>
     <string name="err_fetch_phonelist">A lista de teléfonos recibida do servidor é incorrecta.</string>
     <string name="err_proto_v2">O servidor non admite esta funcionalidade. Asegúrese de que a versión do servidor sexa cando menos a 1.6.</string>
     <string name="contactinfos_title">Información dos contactos</string>
@@ -158,11 +158,11 @@
     <string name="cancel">Cancelar</string>
     <string name="understood">Entendido</string>
     <string name="notif_permission_required">Requírense permisos</string>
-    <string name="notif_permission_required_content">Faltan algúns permisos adicionais para executar o proceso de sincronización. Asígneos nos axustes da aplicación</string>
+    <string name="notif_permission_required_content">Faltan algúns permisos adicionais para executar o proceso de sincronización. Asígneos nos axustes do aplicativo</string>
     <string name="please_fix_it">Arránxeo.</string>
     <string name="err_cannot_read_contacts">Non é posíbel ler os seus contactos.</string>
     <string name="err_cannot_read_sms">Non é posíbel ler os seus SMS.</string>
-    <string name="action_appinfo_perms">Información e permisos da aplicación</string>
+    <string name="action_appinfo_perms">Información e permisos do aplicativo</string>
     <string name="restore_all_messages">Restaurar todas as mensaxes</string>
     <string name="account_actions">Accións da conta</string>
     <string name="error_connection_failed_not_found">Produciuse un fallo na conexión, o servidor devolve 404 NON ATOPADO. Asegúrese de indicar a ruta correcta para a súa instancia de Nextcloud.</string>
@@ -171,7 +171,7 @@
     <string name="pref_title_minimum_sync_chars">Lonxitude mínima do número telefónico.</string>
     <string name="err_didnt_find_account_restore">Non atopamos a súa conta para restaurar as súas mensaxes, esta é unha situación moi estraña.</string>
     <string name="launch_restore">Restaurar os meus SMS</string>
-    <string name="error_make_default_sms_app">Estabeleza esta aplicación como predeterminada para SMS se quere permitir restaurar as súas mensaxes. Esta limitación introduciuse en Android 4.4.</string>
+    <string name="error_make_default_sms_app">Estabeleza estee aplicativo como predeterminado para SMS se quere permitir restaurar as súas mensaxes. Esta limitación introduciuse en Android 4.4.</string>
     <string name="fix_permissions">Arraxar os permisos</string>
     <string name="err_kitkat_required">Requírese Android 4.4 ou superior para usar esta funcionalidade.</string>
     <string name="restore_finished">Xa rematou a restauración dos SMS.</string>
