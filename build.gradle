@@ -28,8 +28,8 @@ android {
 
     defaultConfig {
         applicationId "fr.unix_experience.owncloud_sms"
-        versionCode 69
-        versionName "2.0.5"
+        versionCode 70
+        versionName "2.0.6"
         minSdkVersion 16
         targetSdkVersion 28
         maxSdkVersion 28
@@ -61,11 +61,11 @@ repositories {
 }
 
 dependencies {
-    compile 'com.android.support:support-v13:28.0.0'
-    compile 'com.android.support:appcompat-v7:28.0.0'
-    compile 'com.android.support:design:28.0.0'
-    compile 'in.srain.cube:ultra-ptr:1.0.11'
-    compile 'com.github.dmytrodanylyk.android-process-button:library:1.0.4'
-    compile 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:support-v13:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'in.srain.cube:ultra-ptr:1.0.11'
+    implementation 'com.github.dmytrodanylyk.android-process-button:library:1.0.4'
+    implementation 'com.android.support:support-v4:28.0.0'
     implementation project(':ncsmsgo')
 }
