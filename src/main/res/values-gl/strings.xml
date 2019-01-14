@@ -100,7 +100,7 @@
     <string name="error_field_required">Este campo é obrigatorio</string>
     <string name="prompt_serverURI">Enderezo do servidor</string>
     <string name="error_invalid_server_address">O enderezo do servidor é incorrecto</string>
-    <string name="error_connection_failed">Produciuse unha falla na conexión, asegúrese de que este sexa o servidor correcto</string>
+    <string name="error_connection_failed">Produciuse un fallo na conexión, asegúrese de que este sexa o servidor correcto</string>
     <string name="error_http_connection_failed">Non é posíbel estabelecer a conexión HTTP. Asegúrese de que hai un servidor web</string>
 
     <!-- Main activity -->
