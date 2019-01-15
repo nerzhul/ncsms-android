@@ -165,7 +165,7 @@
     <string name="action_appinfo_perms">应用信息及权限</string>
     <string name="restore_all_messages">恢复全部短信</string>
     <string name="account_actions">账户操作</string>
-    <string name="error_connection_failed_not_found">连接失败，服务器返回"404未找到"。请确认您设置了正确的 ownCloud 服务器路径。</string>
+    <string name="error_connection_failed_not_found">连接失败，服务器返回\"404 NOT FOUND\"。请确认您设置了正确的 ownCloud 服务器路径。</string>
     <string name="nothing_to_sync">没有要同步的内容。</string>
     <string name="feature_not_already_implemented">此功能尚未实现，很快就会推出。</string>
     <string name="pref_title_minimum_sync_chars">最小号码长度</string>
@@ -173,16 +173,16 @@
     <string name="launch_restore">恢复我的短信</string>
     <string name="error_make_default_sms_app">请将此应用设置为默认短信应用已恢复您的信息。Android 4.4加入了此项限制。</string>
     <string name="fix_permissions">修复权限</string>
-    <string name="err_kitkat_required">使用此功能需要Android 4.4或更高版本。</string>
+    <string name="err_kitkat_required">使用此功能需要 Android 4.4 或更高版本。</string>
     <string name="restore_finished">短信恢复现已完成。</string>
     <string name="x_messages_restored">信息已恢复&#8230;</string>
     <string name="err_no_connection">没有可用的连接，请确保您具有有效的数据连接。</string>
     <string name="reinit_sync_cursor">重置同步状态</string>
-    <string name="reinit_sync_cursor_confirm">你确定要重置同步状态吗？如果发现许多未和服务器同步的旧消息，这将减慢下一次同步速度。</string>
+    <string name="reinit_sync_cursor_confirm">您确定要重置同步状态吗？如果发现许多未和服务器同步的旧消息，这将减慢下一次同步速度。</string>
     <string name="yes_confirm">是</string>
     <string name="no_confirm">否</string>
     <string name="pref_show_sync_notifications">显示同步通知</string>
     <string name="sync_complete">同步完成</string>
-    <string name="err_sync_http_write_failed">错误＃19：将数据推送到服务器时，无法写入HTTP流。</string>
-    <string name="err_sync_http_request_protocol_exception">错误20：#未能正确设置HTTP协议的版本。</string>
+    <string name="err_sync_http_write_failed">错误 #19：将数据推送到服务器时，无法写入 HTTP 流。</string>
+    <string name="err_sync_http_request_protocol_exception">错误 #20：未能正确设置 HTTP 协议的版本。</string>
 </resources>
