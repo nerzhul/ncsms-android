@@ -73,8 +73,10 @@ public class MainActivity extends AppCompatActivity
 		setContentView(R.layout.activity_main);
 
 		setupToolbar();
-		getSupportActionBar().setHomeButtonEnabled(true);
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		if (getSupportActionBar() != null) {
+			getSupportActionBar().setHomeButtonEnabled(true);
+			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		}
 
 		drawer = findViewById(R.id.drawer_layout);
 		setupDrawer();
@@ -153,7 +155,7 @@ public class MainActivity extends AppCompatActivity
 	}
 
 	@Override
-	public boolean onNavigationItemSelected(MenuItem item) {
+	public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 		int id = item.getItemId();
 		boolean res = true;
 
@@ -176,6 +178,11 @@ public class MainActivity extends AppCompatActivity
 			case R.id.nav_appinfo_perms:
 				res = openAppInfos();
 				break;
+			case R.id.nav_appinfo_privacy_policy:
+				res = openPrivacyPolicy();
+				break;
+			default:
+				Log.e(TAG, "Unhandled navigation item " + Integer.toString(id));
 		}
 		closeDrawer();
 		return res;
@@ -218,7 +225,7 @@ public class MainActivity extends AppCompatActivity
 		Intent intent;
 		try {
 			intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName()));
-		} catch (android.content.ActivityNotFoundException anfe) {
+		} catch (android.content.ActivityNotFoundException e) {
 			intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName()));
 		}
 
@@ -232,6 +239,11 @@ public class MainActivity extends AppCompatActivity
 		Uri uri = Uri.fromParts("package", getPackageName(), null);
 		intent.setData(uri);
 		startActivity(intent);
+		return true;
+	}
+
+	private boolean openPrivacyPolicy() {
+		startActivity(new Intent(this, PrivacyPolicyActivity.class));
 		return true;
 	}
 

@@ -22,6 +22,10 @@
             android:id="@+id/nav_appinfo_perms"
             android:icon="@drawable/ic_information"
             android:title="@string/action_appinfo_perms"/>
+        <item
+            android:id="@+id/nav_appinfo_privacy_policy"
+            android:icon="@drawable/ic_information"
+            android:title="@string/action_appinfo_privacy_policy"/>
     </group>
 
     <item android:title="@string/communicate">

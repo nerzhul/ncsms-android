@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="fr.unix_experience.owncloud_sms"
-          xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- From Android 4.1 to O -->
-    <uses-sdk android:maxSdkVersion="26"/>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="fr.unix_experience.owncloud_sms"> <!-- From Android 4.1 to O -->
+    <uses-sdk android:maxSdkVersion="26" />
 
-    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WRITE_SMS" />
 
     <!-- For SMS Restore & Sending -->
-    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <!-- For SMS Broadcaster -->
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!-- For syncer -->
-    <uses-permission android:name="android.permission.READ_SYNC_STATS"/>
-    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
-    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <!-- For account management -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
-    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
-    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
 
     <!-- For backup restauration -->
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/OcSmsTheme">
 
         <!-- Related to periodic sync -->
@@ -46,55 +46,59 @@
             android:exported="true"
             android:process=":sync">
             <intent-filter>
-                <action android:name="android.content.SyncAdapter"/>
+                <action android:name="android.content.SyncAdapter" />
             </intent-filter>
 
             <meta-data
                 android:name="android.content.SyncAdapter"
-                android:resource="@xml/sync_adapter"/>
+                android:resource="@xml/sync_adapter" />
         </service>
 
         <provider
             android:name=".providers.SmsDataProvider"
             android:authorities="@string/account_authority"
-            android:label="@string/pref_title_sync">
-        </provider>
+            android:label="@string/pref_title_sync"></provider>
 
         <!-- Related to Login -->
         <service android:name=".authenticators.OwnCloudAuthenticatorService">
             <intent-filter>
-                <action android:name="android.accounts.AccountAuthenticator"/>
+                <action android:name="android.accounts.AccountAuthenticator" />
             </intent-filter>
 
             <meta-data
                 android:name="android.accounts.AccountAuthenticator"
-                android:resource="@xml/owncloud_account_authenticator"/>
+                android:resource="@xml/owncloud_account_authenticator" />
         </service>
 
-        <receiver android:name=".broadcast_receivers.IncomingSms"
-                  android:permission="android.permission.BROADCAST_SMS">
+        <receiver
+            android:name=".broadcast_receivers.IncomingSms"
+            android:permission="android.permission.BROADCAST_SMS">
             <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
                 <action android:name="android.provider.Telephony.SMS_DELIVER" />
             </intent-filter>
         </receiver>
 
         <!-- BroadcastReceiver that listens for incoming MMS messages. Note: useless class, used only for restoring SMS -->
-        <receiver android:name=".misc.MmsReceiver"
-                  android:permission="android.permission.BROADCAST_WAP_PUSH">
+        <receiver
+            android:name=".misc.MmsReceiver"
+            android:permission="android.permission.BROADCAST_WAP_PUSH">
             <intent-filter>
                 <action android:name="android.provider.Telephony.WAP_PUSH_DELIVER" />
+
                 <data android:mimeType="application/vnd.wap.mms-message" />
             </intent-filter>
         </receiver>
 
         <!-- Activity that allows the user to send new SMS/MMS messages Note: useless class, used only for restoring SMS -->
-        <activity android:name=".misc.ComposeSmsActivity" >
+        <activity android:name=".misc.ComposeSmsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <action android:name="android.intent.action.SENDTO" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="sms" />
                 <data android:scheme="smsto" />
                 <data android:scheme="mms" />
@@ -103,12 +107,15 @@
         </activity>
 
         <!-- Service that delivers messages from the phone "quick response" Note: useless class, used only for restoring SMS -->
-        <service android:name=".misc.HeadlessSmsSendService"
-                 android:permission="android.permission.SEND_RESPOND_VIA_MESSAGE"
-                 android:exported="true" >
+        <service
+            android:name=".misc.HeadlessSmsSendService"
+            android:exported="true"
+            android:permission="android.permission.SEND_RESPOND_VIA_MESSAGE">
             <intent-filter>
                 <action android:name="android.intent.action.RESPOND_VIA_MESSAGE" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:scheme="sms" />
                 <data android:scheme="smsto" />
                 <data android:scheme="mms" />
@@ -118,45 +125,43 @@
 
         <receiver android:name=".broadcast_receivers.ConnectivityChanged">
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
 
         <activity
             android:name=".activities.LoginActivity"
             android:label="@string/title_activity_login"
-            android:theme="@style/OcSmsTheme.Login">
-        </activity>
+            android:theme="@style/OcSmsTheme.Login"></activity>
         <activity
             android:name=".activities.remote_account.AccountListActivity"
-            android:label="@string/title_activity_select_account">
-        </activity>
+            android:label="@string/title_activity_select_account"></activity>
         <activity
             android:name=".activities.OCSMSSettingsActivity"
-            android:label="@string/title_activity_general_settings">
-        </activity>
+            android:label="@string/title_activity_general_settings"></activity>
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/OcSmsTheme.Drawer">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".activities.remote_account.ContactListActivity"
-            android:label="@string/title_activity_select_contact">
-        </activity>
+            android:label="@string/title_activity_select_contact"></activity>
         <activity
             android:name=".activities.remote_account.AccountActionsActivity"
-            android:label="@string/account_actions">
-        </activity>
+            android:label="@string/account_actions"></activity>
         <activity
             android:name=".activities.remote_account.RestoreMessagesActivity"
-            android:label="@string/restore_all_messages">
-        </activity>
+            android:label="@string/restore_all_messages"></activity>
+        <activity
+            android:name=".activities.PrivacyPolicyActivity"
+            android:label="@string/action_appinfo_privacy_policy"
+            android:theme="@style/OcSmsTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

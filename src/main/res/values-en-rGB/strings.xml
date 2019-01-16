@@ -185,4 +185,5 @@
     <string name="sync_complete">Synchronisation complete</string>
     <string name="err_sync_http_write_failed">Error #19: Failed to write HTTP stream when pushing data to server.</string>
     <string name="err_sync_http_request_protocol_exception">Error #20: Failed to properly set HTTP protocol version.</string>
+    <string name="action_appinfo_privacy_policy">Privacy policy</string>
 </resources>

@@ -185,4 +185,29 @@
     <string name="sync_complete">Synchronisation terminée</string>
     <string name="err_sync_http_write_failed">Erreur #19: Echec de l\'écriture du flux HTTP lors de l\'envoi de données au serveur.</string>
     <string name="err_sync_http_request_protocol_exception">Erreur #20: Impossible de définir correctement la version du protocole HTTP.</string>
+    <string name="action_appinfo_privacy_policy">Politique de confidentialité</string>
+    <string name="privacy_policy_large_text">
+        "Généralités\n\n"
+
+        "Nextcloud SMS est un logiciel libre développé par ses contributeurs. Cette politque de "
+        "confidentialité vous informe du traîtement appliqué aux données collectées par cette "
+        "application.\n\n"
+
+        "Les informations que nous récupérons\n\n"
+
+        "Nous récupérons uniquement les SMS et le journal d'appel.\n\n"
+
+        "Où sont envoyées mes données.\n\n"
+
+        "Les données ne sont ni envoyées à l'équipe en charge de Nextcloud, ni à l'équipe en "
+        "charge de Nextcloud SMS ni à aucun gouvernement ou aucune entité auquel vous ne souhaitez "
+        "pas les donner.\n\n"
+
+        "Lorsque vous configurez un compte Nextcloud sur l'application, vous acceptez "
+        "implicitement que vos SMS et votre journal d'appel soit stocké sur l'infrastructure du "
+        "propriétaire de l'instance Nextcloud et sous sa responsabilité.\n\n"
+
+        "Nous ne vous recommandons pas d'utiliser un compte sur instance publique ou d'entreprise. "
+        "Votre vie privée doit être sous votre contrôle sur votre propre instance Nextcloud.\n\n"
+    </string>
 </resources>

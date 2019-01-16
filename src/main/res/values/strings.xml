@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  /*
  * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
  * All rights reserved.
@@ -25,9 +24,7 @@
  * SUCH DAMAGE.
  */
 -->
-<resources
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingTranslation">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
     <!-- Translation version, reference for translators -->
     <string name="translation_version">7</string>
@@ -274,4 +271,28 @@
     <string name="sync_complete">Synchronization complete</string>
     <string name="err_sync_http_write_failed">Error #19: Failed to write HTTP stream when pushing data to server.</string>
     <string name="err_sync_http_request_protocol_exception">Error #20: Failed to properly set HTTP protocol version.</string>
+    <string name="action_appinfo_privacy_policy">Privacy policy</string>
+    <string name="privacy_policy_large_text">
+        "Overview\n\n"
+
+        "Nextcloud SMS is a free software developed by its contributors. This privacy policy "
+        "is intended to inform you about data gathered by this application."
+
+        "Information we collect\n\n"
+
+        "Only SMS and call log are collected by the application.\n\n"
+
+        "Where information is sent.\n\n"
+
+        "Information is neither sent to Nextcloud team servers nor Nextcloud SMS team servers nor "
+        "any government nor another entity you don't want.\n\n"
+
+        "When you configure a Nextcloud account in the application, you agree with the Nextcloud "
+        "instance owner that your SMS and call log data will be stored in his infrastructure "
+        "under his responsibility.\n\n"
+
+        "We don't recommend to use a public or a company Nextcloud instance account. Your privacy "
+        "must be under your control on your own Nextcloud instance.\n\n"
+
+    </string>
 </resources>
