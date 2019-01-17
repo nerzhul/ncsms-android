@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  /*
  * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
  * All rights reserved.
@@ -25,9 +24,7 @@
  * SUCH DAMAGE.
  */
 -->
-<resources
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingTranslation">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
     <!-- Translation version, reference for translators -->
     <string name="translation_version">7</string>
@@ -185,4 +182,4 @@
     <string name="sync_complete">Synkronisering fullført</string>
     <string name="err_sync_http_write_failed">Feil #19: Klarte ikke å skrive HTTP-strøm under flytting av data til tjener.</string>
     <string name="err_sync_http_request_protocol_exception">Feil #20: Klarte ikke å sette HTTP-protokollversjon.</string>
-</resources>
+    </resources>

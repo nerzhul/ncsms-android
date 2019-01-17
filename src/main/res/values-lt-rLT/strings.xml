@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  /*
  * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
  * All rights reserved.
@@ -25,9 +24,7 @@
  * SUCH DAMAGE.
  */
 -->
-<resources
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingTranslation">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
     <!-- Translation version, reference for translators -->
     <string name="translation_version">1</string>
@@ -171,4 +168,4 @@ Nepavyko užmegzti HTTP ryšio. Patikrinkite žiniatinklių serverį.</string>
     <string name="sync_complete">Sinchronizacija pabaigta</string>
     <string name="err_sync_http_write_failed">Klaida #19: Nepavyko įrašyti HTTP srauto, perduodant duomenis į serverį.</string>
     <string name="err_sync_http_request_protocol_exception">Klaida # 20: Nepavyko tinkamai nustatyti HTTP protokolo versijos.</string>
-</resources>
+    </resources>

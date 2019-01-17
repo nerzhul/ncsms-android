@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  /*
  * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
  * All rights reserved.
@@ -25,9 +24,7 @@
  * SUCH DAMAGE.
  */
 -->
-<resources
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingTranslation">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
     <!-- Translation version, reference for translators -->
     <string name="translation_version">7</string>
@@ -185,4 +182,4 @@
     <string name="sync_complete">Sinkronizimi përfundoi</string>
     <string name="err_sync_http_write_failed">Gabim #19: Dështoi të shkruajë vargun HTTP kur dërgoi të dhënat në server.</string>
     <string name="err_sync_http_request_protocol_exception">Gabim #20: Dështoi të vendosë si duhet versionin e protokollit HTTP </string>
-</resources>
+    </resources>

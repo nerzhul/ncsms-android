@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  /*
  * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
  * All rights reserved.
@@ -25,9 +24,7 @@
  * SUCH DAMAGE.
  */
 -->
-<resources
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingTranslation">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
     <!-- Translation version, reference for translators -->
     <string name="translation_version">7</string>
@@ -185,4 +182,4 @@
     <string name="sync_complete">Sincronizzazione completata</string>
     <string name="err_sync_http_write_failed">Errore #19: scrittura del flusso HTTP non riuscita durante l\'invio dei dati al server.</string>
     <string name="err_sync_http_request_protocol_exception">Errore #20: impostazione della versione corretta del protocollo HTTP non riuscita.</string>
-</resources>
+    </resources>

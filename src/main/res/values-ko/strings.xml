@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  /*
  * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
  * All rights reserved.
@@ -25,9 +24,7 @@
  * SUCH DAMAGE.
  */
 -->
-<resources
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingTranslation">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
 
     <!-- Translation version, reference for translators -->
     <string name="translation_version">7</string>
@@ -185,4 +182,4 @@
     <string name="sync_complete">동기화 완료</string>
     <string name="err_sync_http_write_failed">오류 #19: 데이터를 서버에 기록하는 중 HTTP 스트림에 기록할 수 없습니다.</string>
     <string name="err_sync_http_request_protocol_exception">오류 #20: HTTP 프로토콜 버전을 설정할 수 없습니다.</string>
-</resources>
+    </resources>
