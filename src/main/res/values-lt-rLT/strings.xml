@@ -168,4 +168,5 @@ Nepavyko užmegzti HTTP ryšio. Patikrinkite žiniatinklių serverį.</string>
     <string name="sync_complete">Sinchronizacija pabaigta</string>
     <string name="err_sync_http_write_failed">Klaida #19: Nepavyko įrašyti HTTP srauto, perduodant duomenis į serverį.</string>
     <string name="err_sync_http_request_protocol_exception">Klaida # 20: Nepavyko tinkamai nustatyti HTTP protokolo versijos.</string>
+    <string name="action_appinfo_privacy_policy">Privatumo politika</string>
     </resources>

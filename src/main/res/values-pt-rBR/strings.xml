@@ -182,4 +182,28 @@
     <string name="sync_complete">Sincronização completa</string>
     <string name="err_sync_http_write_failed">Erro #19: Falha escrevendo o stream PHP ao enviar dados para o servidor.</string>
     <string name="err_sync_http_request_protocol_exception">Erro #20: Falha ao configurar o protocolo HTTP adequadamente.</string>
-    </resources>
+    <string name="action_appinfo_privacy_policy">Política de privacidade</string>
+    <string name="privacy_policy_large_text">
+        \"Visão Geral\n\n\"
+
+        \"Nextcloud SMS é um software gratuito desenvolvido por seus colaboradores. Esta \"
+        \" política de privacidade destina-se a informá-lo sobre dados recolhidos pela aplicação.\"
+
+        \"Informação que coletamos\n\n\"
+
+        \"Apenas o SMS e o registro de chamadas são coletados pelo aplicativo.\n\n\"
+
+        \"Para onde as informações são enviadas.\n\n\"
+
+        \"As informações não são enviadas aos servidores da equipe Nextcloud, servidores SMS ou \"
+        \"qualquer governo ou entidade que você não queira.\n\n\"
+
+        \"Quando você configura uma conta do Nextcloud no aplicativo, você concorda com o \"
+        \"proprietário da instância do Nextcloud de que seus dados de SMS e de registro de \"
+        \"chamadas serão armazenados em sua infraestrutura.\n\n\"
+
+        \"Não recomendamos usar uma conta Nextcloud pública ou corporativa. Sua privacidade \"
+        \"deve estar sob seu controle em sua própria instância do Nextcloud.\n\n\"
+
+    </string>
+</resources>

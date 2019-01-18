@@ -182,4 +182,5 @@
     <string name="sync_complete">Sincronización completada</string>
     <string name="err_sync_http_write_failed">Error #19: Falló la escritura de transmisión HTTP al enviar datos al servidor.</string>
     <string name="err_sync_http_request_protocol_exception">Error 20: Fallo al configurar de forma adecuada la versión del protocolo HTTP.</string>
+    <string name="action_appinfo_privacy_policy">Política de privacidad</string>
     </resources>
