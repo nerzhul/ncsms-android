@@ -183,4 +183,28 @@
     <string name="err_sync_http_write_failed">Error #19: Falló la escritura de transmisión HTTP al enviar datos al servidor.</string>
     <string name="err_sync_http_request_protocol_exception">Error 20: Fallo al configurar de forma adecuada la versión del protocolo HTTP.</string>
     <string name="action_appinfo_privacy_policy">Política de privacidad</string>
-    </resources>
+    <string name="privacy_policy_large_text">
+Vista general\n\n
+
+\"SMS de Nextcloud es software libre desarrollado por sus contribuyentes. Esta política de privacidad\"
+\"pretende informarte acerca de los datos reunidos por esta aplicación.\"
+
+\"Información que recogemos\n\n\"
+
+\"Solo se recogen los registros de llamadas y mensajes.\n\n\"
+
+\"A dónde se envía la información.\n\n\"
+
+\"La información no se envía ni a los servidores del equipo Nextcloud ni ª
+ªa ningún gobierno u otra entidad a la que no quieras enviar.\n\n\"
+
+\"Cuando configuras una cuenta de Nextcloud en la aplicación, aceptas que el propietario de la instancia\"
+
+\"de almacene tus registros de llmadas y SMS en su infraestructura\"
+\"bajo su responsabilidad.\n\n\"
+
+\"No recomendamos usar una cuenta pública o empresarial de Nextcloud. Tu privacidad\"
+\"debe estar bajo tu control en tu propia instancia de Nextcloud.\n\n\"
+
+</string>
+</resources>

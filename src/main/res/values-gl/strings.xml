@@ -182,4 +182,28 @@
     <string name="sync_complete">Completouse a sincronización</string>
     <string name="err_sync_http_write_failed">Erro núm. 19: Produciuse un fallo ao escribir o fluxo HTTP ao enviar os datos ao servidor.</string>
     <string name="err_sync_http_request_protocol_exception">Erro núm. 20: Non foi posíbel configurar correctamente a versión do protocolo HTTP.</string>
-    </resources>
+    <string name="action_appinfo_privacy_policy">Política de privacidade</string>
+    <string name="privacy_policy_large_text">
+\"Descrición xeral\n\n\"
+
+\"Nextcloud SMS é un software libre desenvolvido polos seus colaboradores. Esta política de\"
+\"privacidade ten como obxectivo informarlle sobre os datos recompilados por este aplicativo.\"
+
+\"Información que recollemos\n\n\"
+
+\"O aplicativo só recolle os SMS e o rexistro de chamadas.\n\n\"
+
+\"Onde se envía a información.\n\n\"
+
+\"A información non se envía nin aos servidores do equipo do Nextcloud nin aos servidores do equipo\"
+\"do \"Nextcloud SMS nin a ningún goberno nin a ningunha outra entidade que vostede non queira.\n\n\"
+
+\"Cando configura unha conta do Nextcloud no aplicativo, vostede acorda co propietario da instancia\"
+\"do Nextcloud que os seus datos de SMS e rexistro de chamadas serán almacenados na súa\"
+\"infraestrutura baixo a súa responsabilidade.\n\n\"
+
+\"Non recomendamos usar unha conta pública ou de empresa no Nextcloud. A súa privacidade debe\"
+\"estar baixo o seu control na súa propia instancia de Nextcloud.\n\n\"
+
+</string>
+</resources>

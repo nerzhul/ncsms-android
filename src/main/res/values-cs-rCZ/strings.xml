@@ -182,4 +182,28 @@
     <string name="sync_complete">Synchronizace dokončena</string>
     <string name="err_sync_http_write_failed">Chyba #19: Během odeslání dat na server došlo k selhání zápisu HTTP streamu.</string>
     <string name="err_sync_http_request_protocol_exception">Error #20: Chyba při nastavení verze HTTP protokolu.</string>
-    </resources>
+    <string name="action_appinfo_privacy_policy">Zásady soukromí</string>
+    <string name="privacy_policy_large_text">
+        \"Přehled\n\n\"
+
+        \"Nextcloud SMS je svobodný software vyvinutý přispěvateli do tohoto projektu. Tyto zásady ochrany soukromí \"
+        \"jsou zamýšleny jako informace pro vás o datech shromažďovaných touto aplikací.\"
+
+        \"Informace, které jsou sbírány\n\n\"
+
+        \"Aplikací jsou sbírány pouze záznamy SMS zpráv a volání.\n\n\"
+
+        \"Kam jsou informace odesílány.\n\n\"
+
+        \"Informace nejsou odesílány ani na servery vývojářů Nextcloud ani Nextcloud SMS \"
+        \"ani žádné vládní či jiné entitě, kterou nechcete.\n\n\"
+
+        \"Když nastavujete účet v aplikaci Nexcloud odsouhlasíte vlastníkovi instance \"
+        \"Nextcloud že data vašeho záznamu SMS zpráv a hovorů budou ukládány na jeho infrastruktuře,\"
+        \"za jeho odpovědnosti.\n\n\"
+
+        \"Nedoporučujeme použít účet ve veřejné nebo firemní instanci Nextcloud. Je třeba, aby vaše soukromí \"
+        \"bylo pod vaší kontrolou na vaší vlastní instanci Nextcloud.\n\n\"
+
+    </string>
+</resources>

@@ -183,4 +183,27 @@
     <string name="err_sync_http_write_failed">Fehler #19: Fehler beim Schreiben des HTTP-Streams während der Datenübertragung zum Server.</string>
     <string name="err_sync_http_request_protocol_exception">Error #20 : Fehler beim Setzen der HTTP-Protokoll-Version.</string>
     <string name="action_appinfo_privacy_policy">Datenschutz</string>
-    </resources>
+    <string name="privacy_policy_large_text">
+        \"Übersicht\n\n\"
+
+        \"Nextcloud SMS ist freie Software und wird von Freiwilligen entwickelte. Diese Datenschutzerklärung \"
+\"soll Sie über die von dieser Anwendung erfassten Daten informieren.\"
+
+        \"Informationen, die wir sammeln\n\n\"
+
+        \"Nur SMS und Anrufprotokoll werden von der Anwendung gesammelt.\n\n\"
+
+        \"Wohin die Informationen geschickt werden.\n\n\"
+
+        \"Informationen werden weder an Nextcloud-Server noch an Nextcloud SMS-Server oder \"
+        \"irgendeine Regierung oder eine andere Einheit gesendet, die du nicht willst.
+
+        \"Wenn Sie ein Nextcloud-Konto in der Anwendung einrichten, stimmen Sie mit dem Nextcloud-Instanzinhaber überein, \"
+        \"dass Ihre SMS- und Anrufprotokolldaten in seiner Infrastruktur gespeichert werden, \"
+        \"unter seiner Verantwortung.\n\n\"
+
+        \"Wir empfehlen nicht, ein öffentliches oder firmeneigenes Nextcloud-Instanzkonto zu verwenden. Ihre Privatsphäre \"
+        \"muss unter Ihrer Kontrolle sein, bei Ihrer eigenen Nextcloud-Instanz.\n\n\"
+
+    </string>
+</resources>

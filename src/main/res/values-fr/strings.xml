@@ -182,4 +182,5 @@
     <string name="sync_complete">Synchronisation terminée</string>
     <string name="err_sync_http_write_failed">Erreur #19: Echec de l\'écriture du flux HTTP lors de l\'envoi de données au serveur.</string>
     <string name="err_sync_http_request_protocol_exception">Erreur #20: Impossible de définir correctement la version du protocole HTTP.</string>
+    <string name="action_appinfo_privacy_policy">Politique de confidentialité</string>
     </resources>

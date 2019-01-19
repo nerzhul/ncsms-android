@@ -183,4 +183,27 @@
     <string name="err_sync_http_write_failed">Hata No 19: Veriler sunucuya gönderilirken HTTP akışına yazılamadı.</string>
     <string name="err_sync_http_request_protocol_exception">Hata 20: HTTP iletişim kuralı sürümü doğru şekilde ayarlanamadı.</string>
     <string name="action_appinfo_privacy_policy">Gizlilik ilkesi</string>
-    </resources>
+    <string name="privacy_policy_large_text">
+ \"Genel Bilgiler\n\n\"
+
+ \"Nextcloud SMS katılımcılar tarafından geliştirilmiş özgür bir uygulamadır. Bu gizlilik ilkesi \"
+ \"sizi bu uygulama tarafından toplanan bilgiler hakkında bilgilendirmeyi amaçlamaktadır.\"
+
+ \"Toplanan bilgiler\n\n\"
+
+ \"Uygulama tarafından yalnız SMS ve çağrı günlüğü kayıtları toplanır.\n\n\"
+
+ \"Bilgiler nereye gönderilir.\n\n\"
+
+ \"Toplanan bilgiler istemediğiniz herhangi bir Nextcloud ekibi sunucusuna, \"
+ \"Nextcloud SMS ekibi sunucusuna, devlet ya da başka kuruluşlara gönderilmez.\n\n\"
+
+ \"Uygulama içinde bir Nextcloud hesabı yapılandırldığında, Nextcloud kopyası sahibinin \"
+ \"SMS ve çağrı günlüğü kayıtlarının kendi alt yapısında ve kendi sorumluluğunda \"
+ \"saklandığı hakkında bir ilke onaylanır.\n\n\"
+
+ \"Herkese açık ya da bir kuruma ait olan bir Nextcloud kopyası hesabı kullanmanız önerilmez. \"
+ \"Kendi Nextcloud kopyanızda gizliliğinizin kendi kontrolunuzda olması gerekir.\n\n\"
+
+ </string>
+</resources>
