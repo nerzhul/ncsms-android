@@ -182,4 +182,29 @@
     <string name="sync_complete">Synchronisatie voltooid</string>
     <string name="err_sync_http_write_failed">Fout #4: Kon HTTP-stream niet wegschrijven bij het naar de server sturen van data</string>
     <string name="err_sync_http_request_protocol_exception">Fout #20: Het juist instellen van de HTTP protocolversie is mislukt.</string>
-    </resources>
+    <string name="action_appinfo_privacy_policy">Privacybeleid</string>
+    <string name="privacy_policy_large_text">
+        \"Overzicht\n\n\"
+
+        \"Nextcloud SMS is gratis software. Dit privacybeleid \"
+        \"is bedoeld om je te informeren over de gegevens die door deze
+         applicatie worden verameld.\"
+
+        \"Informatie die we verzamelen\n\n\"
+
+        \"Er worden alleen SMS en gesprekslog verzameld door de applicatie.\n\n\"
+
+        \"Waar informatie naartoe wordt verzonden.\n\n\"
+
+        \"Informatie wordt noch naar Nextcloud team servers noch naar Nextcloud SMS team servers noch naar enige overheidsinstantie \"
+        \"of andere organisatie verzonden als je dat niet wilt.\n\n\"
+
+        \"Als je een Nextcloud account in de applicatie configureert, stem je ermee in dat de Nextcloud \"
+        \"servereigenaar je SMS en gesprekslogs data bewaart in zijn infrastructuur \"
+        \"onder zijn verantwoordelijkheid.\n\n\"
+
+        \"We adviseren niet om eem openbare of bedrijfsaccount te gebruiken . Je moet zelf het beheer hebben\"
+        \"over jouw persoonsgegevens op jouw Nextcloud server.\n\n\"
+
+    </string>
+</resources>

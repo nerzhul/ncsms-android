@@ -182,4 +182,5 @@
     <string name="sync_complete">Synkronisering färdig</string>
     <string name="err_sync_http_write_failed">Fel #19: det gick inte att skriva HTTP-ström när du överföra data till en server.</string>
     <string name="err_sync_http_request_protocol_exception">Fel # 20: Det gick inte att korrekt ställa in HTTP-protokollversionen.</string>
+    <string name="action_appinfo_privacy_policy">Integritetspolicy</string>
     </resources>
