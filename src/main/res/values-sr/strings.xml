@@ -182,4 +182,5 @@
     <string name="sync_complete">Синхронизација готова</string>
     <string name="err_sync_http_write_failed">Грешка #19: не могу да пишем на HTTP ток при гурању података на сервер.</string>
     <string name="err_sync_http_request_protocol_exception">Грешка #20: Не могу да поставим верзију HTTP протокола.</string>
+    <string name="action_appinfo_privacy_policy">Политика приватности</string>
     </resources>

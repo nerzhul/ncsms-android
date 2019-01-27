@@ -182,4 +182,5 @@
     <string name="sync_complete">Синхронизация завершена</string>
     <string name="err_sync_http_write_failed">Error #19: При передаче данных на сервер не удалось произвести запись в поток HTTP.</string>
     <string name="err_sync_http_request_protocol_exception">Error #20: Failed to properly set HTTP protocol version.</string>
+    <string name="action_appinfo_privacy_policy">Политика конфиденциальности</string>
     </resources>
