@@ -182,4 +182,25 @@
     <string name="sync_complete">Synkronisering fullført</string>
     <string name="err_sync_http_write_failed">Feil #19: Klarte ikke å skrive HTTP-strøm under flytting av data til tjener.</string>
     <string name="err_sync_http_request_protocol_exception">Feil #20: Klarte ikke å sette HTTP-protokollversjon.</string>
-    </resources>
+    <string name="action_appinfo_privacy_policy">Personvern politikk</string>
+    <string name="privacy_policy_large_text">
+\"Oversikt\n\n\"
+
+\"Nextcloud SMS er gratis programvare. Dette personvern erklæringen\"
+\"informerer om data som samles inn av dette programmet.\"
+
+\"Vi samler informasjon om\n\n\"
+
+\"SMS og samtale logg samles inn.\n\n\"
+
+\"Hvor informasjon sendes.\n\n\"
+
+\"Informasjon sendes ikke til Nextcloud team tjener, Nextcloud SMS team tjener eller \"
+\"myndigheter eller andre steder du ikke ønsker at det lagres.\n\n\"
+
+\"Når du konfigurerer en Nextcloud konto i applikasjonene, gir du samtykke til eier av Nextcloud \"
+\"instans at SMS og telefon logg kan lagres på eiers infrastruktur på eiers ansvar.\n\n\"
+
+\"Vi anbefaler ikke å benytte offentlige tilbydere eller en firma Nextcloud konto. Ditt personvern \"
+\"må være under din kontroll på din egen Nextcloud instans.\n\n\"</string>
+</resources>
