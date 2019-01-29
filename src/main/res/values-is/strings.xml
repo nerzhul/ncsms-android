@@ -182,4 +182,28 @@
     <string name="sync_complete">Samstillingu lokið</string>
     <string name="err_sync_http_write_failed">Villa #19: Mistókst að skrifa í HTTP-streymi þegar gögnum var ýtt til vefþjóns.</string>
     <string name="err_sync_http_request_protocol_exception">Villa #20: Mistókst að setja rétt útgáfu HTTP-samskiptamáta.</string>
-    </resources>
+    <string name="action_appinfo_privacy_policy">Stefna um meðferð persónulegra gagna</string>
+    <string name="privacy_policy_large_text">
+        \"Yfirlit:\n\n\"
+
+        \"Nextcloud SMS er frjáls hugbúnaður sem hannaður er af þátttakendum í verkefninu. Þessi stefna um \"
+        \"meðferð persónugagna er til að láta þig vita um hvaða gögnum sé safnað í þessu forriti.\"
+
+        \"Upplýsingar sem við söfnum:\n\n\"
+
+        \"Einungis er safnað skrám yfir SMS-færslur og hringingar.\n\n\"
+
+        \"Hvert upplýsingarnar eru sendar:\n\n\"
+
+        \"Upplýsingar eru hvorki sendar á samstarfsþjóna Nextcloud né SMS-þjóna Nextcloud SMS né heldur til neinna \"
+        \"ríkisstofnana eða annarra aðila sem þú vilt ekki að þær fari til.\n\n\"
+
+        \"Þegar þú setur upp Nextcloud aðgang í forritinu, gefur þú leyfi til eiganda Nextcloud-\"
+        \"tilviksins að gögn yfir SMS og símtöl verði geymd á kerfinu hans \"
+        \"og á ábyrgð viðkomandi rekstraraðila.\n\n\"
+
+        \"Við mælum ekki með því að nota aðgang á opinberu tilviki Nextcloud eða hjá fyrirtæki. Gagnaleynd þín \"
+        \"er er betur farið undir þinni stjórn á þínu eigin Nextcloud-tilviki.\n\n\"
+
+    </string>
+</resources>
