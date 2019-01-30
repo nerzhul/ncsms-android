@@ -168,7 +168,7 @@
     <string name="pref_title_minimum_sync_chars">Minsta längd på telefonnummer</string>
     <string name="err_didnt_find_account_restore">Vi hittade inte ditt konto för att återställa dina meddelande, detta är väldigt konstigt.</string>
     <string name="launch_restore">Återställ mitt SMS</string>
-    <string name="error_make_default_sms_app">Vänligen gör denna applikation till din standardapplikation för SMS för att tillåta återställning utav dina meddelanden. Denna begränsning introducerades i Android 4.4.</string>
+    <string name="error_make_default_sms_app">Vänligen gör denna applikation till din standardapplikation för SMS för att tillåta återställning av dina meddelanden. Denna begränsning introducerades i Android 4.4.</string>
     <string name="fix_permissions">Åtgärda rättigheter</string>
     <string name="err_kitkat_required">Android 4.4 eller högre krävs för att använda denna funktion.</string>
     <string name="restore_finished">Återställning av SMS är slutförd.</string>
