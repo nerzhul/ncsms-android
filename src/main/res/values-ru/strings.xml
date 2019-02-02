@@ -157,12 +157,12 @@
     <string name="notif_permission_required">Необходимые разрешения</string>
     <string name="notif_permission_required_content">Некоторые разрешения отсутствует для выполнения синхронизации. Исправьте их в настройках приложения</string>
     <string name="please_fix_it">Пожалуйста исправьте это.</string>
-    <string name="err_cannot_read_contacts">Мы не можем прочитать ваши контакты.</string>
-    <string name="err_cannot_read_sms">Мы не можем прочитать ваши SMS.</string>
+    <string name="err_cannot_read_contacts">Не удалось получить доступ к контактам.</string>
+    <string name="err_cannot_read_sms">Не удалось получить доступ к SMS.</string>
     <string name="action_appinfo_perms">Информация о приложение и разрешениях</string>
     <string name="restore_all_messages">Восстановить все сообщения</string>
     <string name="account_actions">Действия над аккаунтом</string>
-    <string name="error_connection_failed_not_found">Не удалось установить соединение, сервер возвращает 404 NOT FOUND. Убедитесь, что вы установили правильный путь для экземпляра OwnCloud.</string>
+    <string name="error_connection_failed_not_found">Не удалось установить соединение, сервер возвращает 404 NOT FOUND. Убедитесь, что задан верный правильный путь, по которому доступен сервер Nextcloud.</string>
     <string name="nothing_to_sync">Нечего синхронизировать.</string>
     <string name="feature_not_already_implemented">Эта функция еще не реализована и будет доступна в ближайшее время.</string>
     <string name="pref_title_minimum_sync_chars">Минимальная длина телефонного номера</string>
