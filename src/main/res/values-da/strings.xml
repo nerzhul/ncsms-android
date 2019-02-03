@@ -182,4 +182,5 @@
     <string name="sync_complete">Synkronisering fuldført </string>
     <string name="err_sync_http_write_failed">Fejl #19: Kunne ikke skrive HTTP Stream når data blev sendt til server.</string>
     <string name="err_sync_http_request_protocol_exception">Fejl # 20: Kunne ikke indstille HTTP-protokolversionen korrekt.</string>
+    <string name="action_appinfo_privacy_policy">Fortrolighedspolitik</string>
     </resources>
