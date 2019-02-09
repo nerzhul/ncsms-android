@@ -148,7 +148,7 @@
     <string name="communicate">Kommunikér</string>
     <string name="title_activity_main2">Main2Aktivitet</string>
 
-    <string name="navigation_drawer_open">Åben navigationsskuffe</string>
+    <string name="navigation_drawer_open">Åbn navigationsskuffe</string>
     <string name="navigation_drawer_close">Luk navigationsskuffe</string>
     <string name="ma_title_my_accounts">Mine konti</string>
     <string name="ma_content_swipeaction">Stryg fra venstre mod højre for adgang til handlingsmenu.</string>
