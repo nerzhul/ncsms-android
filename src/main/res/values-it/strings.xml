@@ -186,7 +186,7 @@
     <string name="privacy_policy_large_text">
         \"Riepilogo\n\n\"
 
-        \"Nextcloud SMS è un software libero sviluppato dai suoi collaboratori. Questa informativa sulla privacy \"
+        \"Nextcloud SMS è un software libero sviluppato dai suoi collaboratori. Questa informativa sulla riservatezza \"
         \"ha lo scopo di informarti sui dati raccolti da questa applicazione.\"
 
         \"Informazioni raccolte\n\n\"
@@ -195,14 +195,14 @@
 
         \"Dove vengono inviate le informazioni.\n\n\"
 
-        \"Le informazioni non vengono inviate nè ai server del team di Nextcloud, nè a quelli del team di Nextcloud SMS, nè ad \"
-        \"alcun governo, nè ad altre entità a te indesiderate.\n\n\"
+        \"Le informazioni non vengono inviate né ai server della squadra di Nextcloud, né a quelli della squadra di Nextcloud SMS, né ad \"
+        \"alcun governo o ad altre entità a te indesiderate.\n\n\"
 
         \"Quando configuri un account Nextcloud nell\'applicazione, accetti con il proprietario \"
         \"dell\'istanza Nextcloud che i tuoi SMS e i registri delle chiamate saranno memorizzati nella sua infrastruttura \"
         \"sotto la sua responsabilità.\n\n\"
 
-        \"Non consigliamo l\'utilizzo di un account in un\'istanza Nextcloud pubblica o aziendale. La tua privacy \"
+        \"Non consigliamo l\'utilizzo di un account in un\'istanza Nextcloud pubblica o aziendale. La tua riservatezza \"
         \"deve essere sotto il tuo controllo nella tua istanza Nextcloud personale.\n\n\"
 
     </string>
