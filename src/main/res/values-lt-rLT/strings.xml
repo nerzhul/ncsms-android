@@ -110,7 +110,7 @@ Nepavyko užmegzti HTTP ryšio. Patikrinkite žiniatinklių serverį.</string>
 
     <!-- Restauration -->
     <string name="title_activity_select_account">Pasirinkti paskyrą</string>
-    <string name="title_activity_select_contact">Pasirinkti kontaktus</string>
+    <string name="title_activity_select_contact">Pasirinkti adresatus</string>
     <string name="no_account_configured">Nėra sukonfiguruotų paskyrų.</string>
 
     <!-- Notifications -->
@@ -131,8 +131,8 @@ Nepavyko užmegzti HTTP ryšio. Patikrinkite žiniatinklių serverį.</string>
     <string name="err_sync_no_connection_available">Klaida #16: Duomenys nepasiekiami</string>
     <string name="err_sync_account_unparsable">Klaida #17: netaisyklinga paskyra. Sukonfigūruokite ją iš naujo</string>
     <string name="err_proto_v2">Serveris nepalaiko šios ypatybės. Užtikrinkite, kad serverio versija yra bent 1.6.</string>
-    <string name="contactinfos_title">Kontaktų informacija</string>
-    <string name="contactinfos_list">Kontaktų sąrašas</string>
+    <string name="contactinfos_title">Adresatų informacija</string>
+    <string name="contactinfos_list">Adresatų sąrašas</string>
     <string name="function_not_available">Ši funkcija kol kas yra neprieinama.</string>
 
     <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
@@ -145,7 +145,7 @@ Nepavyko užmegzti HTTP ryšio. Patikrinkite žiniatinklių serverį.</string>
     <string name="notif_permission_required">Reikalingas leidimas</string>
     <string name="notif_permission_required_content">Trūksta teisių atlikti sinchronizaciją. Pataisykite tai programėlės nustatymuose.</string>
     <string name="please_fix_it">Prašome tai ištaisyti.</string>
-    <string name="err_cannot_read_contacts">Nepavyko perskaityti jūsų kontaktų.</string>
+    <string name="err_cannot_read_contacts">Nepavyko perskaityti jūsų adresatų.</string>
     <string name="err_cannot_read_sms">Nepavyko perskaityti jūsų SMS.</string>
     <string name="action_appinfo_perms">Programėlės informacija ir tesiės</string>
     <string name="restore_all_messages">Atkurti visas žinutes</string>
