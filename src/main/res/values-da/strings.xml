@@ -183,4 +183,26 @@
     <string name="err_sync_http_write_failed">Fejl #19: Kunne ikke skrive HTTP Stream når data blev sendt til server.</string>
     <string name="err_sync_http_request_protocol_exception">Fejl # 20: Kunne ikke indstille HTTP-protokolversionen korrekt.</string>
     <string name="action_appinfo_privacy_policy">Fortrolighedspolitik</string>
-    </resources>
+    <string name="privacy_policy_large_text">
+\"Overblik\n\n\"
+
+\"Nextcloud SMS er gratis software udviklet af dets bidragere. Denne privatlivs politik \"
+\"er ment til at informere dig om data indsamlet af denne applikation.\"
+
+\"Information vi samler\n\n\"
+
+\"Kun SMS- og opkaldslog bliver indsamlet af applikationen.\n\n\"
+
+\"Hvor bliver information sendt.\n\n\"
+
+\"Informationen hverken sendt til Nextcloud holdets server eller Nextcloud SMS holdets servere eller \"
+\" nogle stater eller andet instans du ikke vil have.\n\n\"
+
+\"Når du konfigurerer en Nextcloud konto i applikationen, erklærer du dig enig i at din SMS- og opkaldslog data vil blive opbevaret på ejerens infrastruktur \"
+\" under ejers ansvar.\n\n\"
+
+\"Vi foreslår ikke at bruge en offentlig eller firma-ejet Nextcloud konto. Dit privatliv \"
+\"skal være under din kontrol på din egen Nextcloud instans.\n\n\"
+
+</string>
+</resources>
