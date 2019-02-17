@@ -71,12 +71,12 @@
         <item>Все несинхронизированные SMS </item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
-        <item>1 минута</item>
         <item>1 час</item>
         <item>3 часа</item>
         <item>6 часов</item>
         <item>12 часов</item>
         <item>24 часа</item>
+        <item>Никогда</item>
     </string-array>
     <string name="pref_push_on_receive">Использовать Push</string>
     <string name="pref_sync_wifi">Синхронизировать по Wi-Fi</string>
@@ -90,7 +90,7 @@
     <!-- Login -->
     <string name="prompt_login">Логин</string>
     <string name="prompt_password">Пароль</string>
-    <string name="action_sign_in">Войти или зарегестрироваться</string>
+    <string name="action_sign_in">Войти или зарегистрироваться</string>
     <string name="action_sign_in_short">Войти</string>
     <string name="error_invalid_login">Логин или пароль неверны</string>
     <string name="error_invalid_password">Этот пароль слишком короткий</string>
@@ -119,13 +119,13 @@
     <string name="fatal_error">Критическая ошибка!</string>
 
     <!-- Errors -->
-    <string name="err_sync_get_smslist">Error #1: Invalid data received from server when getting previous messages</string>
-    <string name="err_sync_craft_http_request">Error #2: Error while crafting HTTP request</string>
-    <string name="err_sync_push_request">Error #3: Push request failed</string>
-    <string name="err_sync_push_request_resp">Error #4: Invalid data received from server when pushing data</string>
-    <string name="err_sync_create_json_null_smslist">Error #5: NULL SMS List</string>
-    <string name="err_sync_create_json_put_smslist">Error #6: Error while crafting push request</string>
-    <string name="err_sync_create_json_request_encoding">Error #7: Unsupported encoding when generating request</string>
+    <string name="err_sync_get_smslist">Error #1: Недопустимые данные, полученные от сервера при получении предыдущих сообщений </string>
+    <string name="err_sync_craft_http_request">Error #2: Ошибка при создании HTTP-запроса</string>
+    <string name="err_sync_push_request">Error #3: Ошибка Push-запроса</string>
+    <string name="err_sync_push_request_resp">Error #4: Недопустимые данные, полученные от сервера при отправке данных</string>
+    <string name="err_sync_create_json_null_smslist">Error #5: Пустой список SMS</string>
+    <string name="err_sync_create_json_put_smslist">Error #6: Ошибка при создании push-запроса</string>
+    <string name="err_sync_create_json_request_encoding">Error #7: Неподдерживаемая кодировка при генерации запроса</string>
     <string name="err_sync_auth_failed">Error #8: Authentication failed</string>
     <string name="err_sync_http_request_returncode_unhandled">Error #9: Server set unhandled HTTP return code</string>
     <string name="err_sync_http_request_connect">Error #11: Unable to perform a connection to Nextcloud instance</string>
@@ -137,7 +137,7 @@
     <string name="err_sync_account_unparsable">Error #17: malformed account. Please reconfigure it</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: Nextcloud SMS app is not installed or Nextcloud awaiting for an upgrade</string>
     <string name="err_fetch_phonelist">Invalid phonelist received from server.</string>
-    <string name="err_proto_v2">Server doesn\'t support this feature. Ensure server version is at least 1.6.</string>
+    <string name="err_proto_v2">Сервер не поддерживает эту функцию. Убедитесь, что версия сервера не ниже 1.6.</string>
     <string name="contactinfos_title">Контактная информация</string>
     <string name="subtitle_contact_phones">- Контактный телефон</string>
     <string name="pref_title_bulk_messages">Максимальное количество сообщений для отправки</string>
@@ -174,13 +174,36 @@
     <string name="restore_finished">Восстановление SMS завершено.</string>
     <string name="x_messages_restored">сообщения восстановлены&#8230;</string>
     <string name="err_no_connection">Нет соединения, пожалуйста, убедитесь, что вы используете работающее соединение для данных.</string>
-    <string name="reinit_sync_cursor">Переустановить курсор синхнронизации</string>
+    <string name="reinit_sync_cursor">Переустановить курсор синхронизации</string>
     <string name="reinit_sync_cursor_confirm">Переустановить курсор синхронизации? Это может замедлить следующую синхронизацию если будет найдено много старых сообщений, не синхронизированных с сервером.</string>
     <string name="yes_confirm">Да</string>
     <string name="no_confirm">Нет</string>
     <string name="pref_show_sync_notifications">Показывать уведомления синхронизации</string>
     <string name="sync_complete">Синхронизация завершена</string>
     <string name="err_sync_http_write_failed">Error #19: При передаче данных на сервер не удалось произвести запись в поток HTTP.</string>
-    <string name="err_sync_http_request_protocol_exception">Error #20: Failed to properly set HTTP protocol version.</string>
+    <string name="err_sync_http_request_protocol_exception">Error #20: Не удалось правильно установить версию протокола HTTP.</string>
     <string name="action_appinfo_privacy_policy">Политика конфиденциальности</string>
-    </resources>
+    <string name="privacy_policy_large_text">
+\"Общие положения\n\n\"
+
+\"Nextcloud SMS - это бесплатное программное обеспечение, разработанное его участниками. Эта политика конфиденциальности \"
+\"предназначена для информирования Вас о данных, собираемых этим приложением.\"
+
+\"Информация, которую мы собираем\n\n\"
+
+\"Только SMS и журнал вызовов собираются этим приложением.\n\n\"
+
+\"Куда отправляется информация\n\n\"
+
+\"Информация не отправляется ни на серверы команд Nextcloud, ни на серверы команд Nextcloud SMS, ни \"
+\"какому-либо правительству или любой другой нежелательной вам организации.\n\n\"
+
+\"Когда вы настраиваете учетную запись Nextcloud в приложении, вы соглашаетесь с владельцем \"
+\"экземпляра Nextcloud, что ваши SMS и данные журнала вызовов будут храниться в его инфраструктуре \"
+\"под его ответственность.\n\n\"
+
+\"Мы не рекомендуем использовать общедоступную или корпоративную учетную запись Nextcloud. Ваша конфиденциальность \"
+\"должна находиться под вашим контролем на вашем собственном экземпляре Nextcloud.\n\n\"
+
+</string>
+</resources>
