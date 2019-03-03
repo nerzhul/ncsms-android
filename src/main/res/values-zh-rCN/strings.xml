@@ -182,4 +182,28 @@
     <string name="sync_complete">同步完成</string>
     <string name="err_sync_http_write_failed">错误 #19：将数据推送到服务器时，无法写入 HTTP 流。</string>
     <string name="err_sync_http_request_protocol_exception">错误 #20：未能正确设置 HTTP 协议的版本。</string>
-    </resources>
+    <string name="action_appinfo_privacy_policy">隐私政策</string>
+    <string name="privacy_policy_large_text">
+        \"概览\n\n\"
+
+        \"Nextcloud SMS是一款由贡献者开发的自由软件。 此隐私政策\"
+        \"用于向您说明此应用所收集的数据。\"
+
+        \"我们所收集的信息\n\n\"
+
+        \"应用只收集短信和通话日志。\n\n\"
+
+        \"信息将发送到哪里。\n\n\"
+
+        \"信息既不会发送到Nextcloud团队的服务器，也不会发送到Nextcloud SMS团队的服务器，\"
+        \"亦不会发送给任何政府或其他您不愿意透露信息的实体。\n\n\"
+
+        \"当您在此应用中配置一个Nextcloud账号时，您同意将您的短信\"
+        \"和通话日志保留在此Nextcloud实例拥有者的基础设施中\"
+        \"并由其负责。\n\n\"
+
+        \"我们不推荐您使用公开的或企业的Nextcloud实例账号。 使用您自己的Nextcloud实例，\"
+        \"您的隐私才能处于您的掌控之下。\n\n\"
+
+    </string>
+</resources>
