@@ -68,7 +68,7 @@
         <item>5000 SMS-ów</item>
         <item>10000 SMS-ów</item>
         <item>25000 SMS-ów</item>
-        <item>Żaden SMS się nie zsynchronizował</item>
+        <item>Żaden SMS nie zsynchronizował się</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 godzina</item>
@@ -97,14 +97,14 @@
     <string name="error_field_required">To pole jest wymagane</string>
     <string name="prompt_serverURI">Adres serwera</string>
     <string name="error_invalid_server_address">Błędny adres serwera</string>
-    <string name="error_connection_failed">Połączenie nie udało się, upewnij się, że to właściwy serwer</string>
-    <string name="error_http_connection_failed">Nie można zestawić połączenia HTTP. Proszę upewnić się, że jest tam serwer web.</string>
+    <string name="error_connection_failed">Połączenie nie powiodło się, upewnij się, że jest to właściwy serwer</string>
+    <string name="error_http_connection_failed">Nie można wykonać połączenia HTTP. Proszę upewnić się, czy jest tam serwer www</string>
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">Oceń nas!</string>
     <string name="ma_title_add_account">Dodaj konto</string>
     <string name="ma_title_welcome">Witaj</string>
-    <string name="ma_content_welcome">Witaj w aplikacji Nextcloud SMS. Ta aplikacja umożliwia ci synchronizację twoich SMSów do instancji Nextcloud.</string>
+    <string name="ma_content_welcome">Witamy w aplikacji SMS Nextcloud. Ta aplikacja umożliwia synchronizowanie wiadomości SMS z aplikacją sieciową Nextcloud za pomocą aplikacji SMS.</string>
     <string name="ma_title_remote_account">Zdalne konto</string>
     <string name="choose_account">Wybierz konto</string>
 
@@ -115,30 +115,30 @@
 
     <!-- Notifications -->
     <string name="sync_title">Proces synchronizacji</string>
-    <string name="sync_inprogress">Synchronizacja w trakcie…</string>
+    <string name="sync_inprogress">Trwa synchronizacja...</string>
     <string name="fatal_error">Krytyczny błąd!</string>
 
     <!-- Errors -->
-    <string name="err_sync_get_smslist">Błąd #1: Błędne dane otrzymane z serwera podczas odbierania poprzedniej wiadomości</string>
+    <string name="err_sync_get_smslist">Błąd #1: Nieprawidłowe dane otrzymane z serwera podczas pobierania poprzednich wiadomości</string>
     <string name="err_sync_craft_http_request">Błąd #2: Błąd podczas tworzenia żądania HTTP</string>
     <string name="err_sync_push_request">Błąd #3: Żądanie push nie udało się</string>
-    <string name="err_sync_push_request_resp">Błąd #4: Otrzymano błędne dane z serwera podczas przesyłania danych</string>
+    <string name="err_sync_push_request_resp">Błąd #4: Nieprawidłowe dane odebrane z serwera podczas przesyłania danych</string>
     <string name="err_sync_create_json_null_smslist">Błąd #5: Pusta lista SMS-ów</string>
     <string name="err_sync_create_json_put_smslist">Błąd #6: Błąd podczas tworzenia żądania wysłania w trybie push</string>
-    <string name="err_sync_create_json_request_encoding">Błąd #7: Niewspierane kodowanie podczas generowania żądania</string>
+    <string name="err_sync_create_json_request_encoding">Błąd #7: Nieobsługiwane kodowanie podczas generowania żądania</string>
     <string name="err_sync_auth_failed">Błąd #8: Uwierzytelnienie nie powiodło się</string>
-    <string name="err_sync_http_request_returncode_unhandled">Błąd #9: Serwer ustawił nieobsługiwany kod zwrotny HTTP</string>
-    <string name="err_sync_http_request_connect">Błąd #11: Nie udało się zestawić połączenia z instancją Nextcloud</string>
-    <string name="err_sync_http_request_httpexception">Błąd #12: Nie udało się zestawić połączenia z instancją Nextcloud</string>
-    <string name="err_sync_http_request_ioexception">Błąd #13: Nie udało się zestawić połączenia z instancją Nextcloud</string>
+    <string name="err_sync_http_request_returncode_unhandled">Błąd #9: Serwer ustawił nieobsługiwany kod odpowiedzi HTTP</string>
+    <string name="err_sync_http_request_connect">Błąd #11: Nie można wykonać połączenia z aplikacją Nextcloud</string>
+    <string name="err_sync_http_request_httpexception">Błąd #12: Nie można wykonać połączenia z aplikacją Nextcloud</string>
+    <string name="err_sync_http_request_ioexception">Błąd #13: Nie można wykonać połączenia z aplikacją Nextcloud</string>
     <string name="err_sync_http_request_resp">Błąd #14: Nie udało się przetworzyć odpowiedzi serwera</string>
     <string name="err_sync_http_request_parse_resp">Błąd #15: Nie udało się przetworzyć odpowiedzi serwera</string>
-    <string name="err_sync_no_connection_available">Błąd #16: Brak dostępnego połączenia</string>
+    <string name="err_sync_no_connection_available">Błąd #16: Brak połączenia transmisji danych</string>
     <string name="err_sync_account_unparsable">Błąd #17: Uszkodzone konto. Ustaw je poprawnie.</string>
-    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Błąd #18: Aplikacja Nextcloud SMS jest niezainstalowana lub Nextcloud czeka na aktualizację</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Błąd #18: Aplikacja Nextcloud SMS jest niezainstalowana lub Nextcloud oczekuje na aktualizację</string>
     <string name="err_fetch_phonelist">Otrzymano od serwera błędną listę telefonów</string>
-    <string name="err_proto_v2">Serwer nie wspiera tej funkcjonalności. Upewnij się, że wersja serwera to co najmniej 1.6</string>
-    <string name="contactinfos_title">Informacje kontaktowe</string>
+    <string name="err_proto_v2">Serwer nie obsługuje tej funkcji. Upewnij się, że wersja serwera ma co najmniej 1,6.</string>
+    <string name="contactinfos_title">Informacje o kontaktach</string>
     <string name="subtitle_contact_phones">- Telefony kontaktowe</string>
     <string name="pref_title_bulk_messages">Maksymalna ilość wiadomości do wysłania podczas synchronizacji</string>
     <string name="contactinfos_list">Lista kontaktów</string>
@@ -151,36 +151,59 @@
     <string name="navigation_drawer_open">Otwórz okno nawigacji</string>
     <string name="navigation_drawer_close">Zamknij okno nawigacji</string>
     <string name="ma_title_my_accounts">Moje konta</string>
-    <string name="ma_content_swipeaction">Przesuń palcem od lewej do prawej aby otworzyć menu działań.</string>
+    <string name="ma_content_swipeaction">Przesuń palcem od lewej do prawej, aby otworzyć menu działań.</string>
     <string name="cancel">Anuluj</string>
     <string name="understood">Zrozumiano</string>
     <string name="notif_permission_required">Wymagane uprawnienia</string>
-    <string name="notif_permission_required_content">Brakuje jakichś uprawnień aby wykonać synchronizację. Proszę naprawić to w ustawieniach aplikacji</string>
+    <string name="notif_permission_required_content">Brak niektórych uprawnień do przeprowadzenia procesu synchronizacji. Napraw to w ustawieniach aplikacji</string>
     <string name="please_fix_it">Proszę to naprawić.</string>
     <string name="err_cannot_read_contacts">Nie możemy odczytać twoich kontaktów.</string>
     <string name="err_cannot_read_sms">Nie możemy odczytać twoich SMS-ów.</string>
     <string name="action_appinfo_perms">Informacje o aplikacji i uprawnienia</string>
     <string name="restore_all_messages">Przywróć wszystkie wiadomości</string>
-    <string name="account_actions">Działania konta</string>
-    <string name="error_connection_failed_not_found">Połączenie nie udane. Serwer zwraca błąd \"404 NOT FOUND\". Upewnij się, że ustawiona jest prawidłowa ścieżka do twojej instancji Nextclouda.</string>
-    <string name="nothing_to_sync">Nie ma nic do synchronizacji.</string>
-    <string name="feature_not_already_implemented">Ta funkcjonalność nie jest jeszcze zaimplementowana ale będzie dostępna niedługo.</string>
+    <string name="account_actions">Czynności na koncie</string>
+    <string name="error_connection_failed_not_found">Połączenie nie powiodło się, serwer zwraca błąd \"404 NOT FOUND\". Upewnij się, że ustawiłeś poprawną ścieżkę dla aplikacji Nextcloud.</string>
+    <string name="nothing_to_sync">Nie ma nic do zsynchronizowania.</string>
+    <string name="feature_not_already_implemented">Ta funkcja nie jest jeszcze zaimplementowana, ale będzie dostępna wkrótce.</string>
     <string name="pref_title_minimum_sync_chars">Minimalna długość numeru telefonu</string>
-    <string name="err_didnt_find_account_restore">Nie udało nam się odnaleźć twojego konta aby odzyskać Twoje wiadomości. To bardzo dziwna sytuacja.</string>
-    <string name="launch_restore">Przywróć moje SMS-y</string>
-    <string name="error_make_default_sms_app">Ustaw tę aplikację jako domyślną do obsługi SMS-ów, aby zezwolić na odtworzenie twoich wiadomości. To ograniczenie zostało wprowadzone w Androidzie 4.4. </string>
+    <string name="err_didnt_find_account_restore">Nie znaleźliśmy Twojego konta, aby przywrócić wiadomość. Jest to bardzo dziwna sytuacja.</string>
+    <string name="launch_restore">Przywróć SMS-y</string>
+    <string name="error_make_default_sms_app">Ustaw tę aplikację jako domyślną aplikację dla SMS-ów, aby umożliwić przywracanie wiadomości. To ograniczenie zostało wprowadzone przez Androida 4.4.</string>
     <string name="fix_permissions">Napraw uprawnienia</string>
-    <string name="err_kitkat_required">Android w wersji 4.4 lub wyższej jest wymagany do obsługi tej funkcjonalności.</string>
+    <string name="err_kitkat_required">Do korzystania z tej funkcji wymagany jest Android 4.4 lub nowszy.</string>
     <string name="restore_finished">Przywracanie SMS-ów zostało zakończone.</string>
     <string name="x_messages_restored">przywróconych wiadomości&#8230;</string>
-    <string name="err_no_connection">Brak dostępnego połączenia. Proszę się upewnić że masz odpowiednie połączenie dla danych.</string>
-    <string name="reinit_sync_cursor">Zainicjuj ponownie suwak synchronizacji</string>
-    <string name="reinit_sync_cursor_confirm">Jesteś pewien/-na, że chcesz zainicjować ponownie suwak synchronizacji? Może to spowolnić następną synchronizację jeśli zbyt duża liczna starszych SMS-ów nie jest zsynchronizowana z serwerem.</string>
+    <string name="err_no_connection">Brak połączenia, upewnij się, że masz poprawne połączenie transmisji danych.</string>
+    <string name="reinit_sync_cursor">Ponownie zainicjuj suwak synchronizacji</string>
+    <string name="reinit_sync_cursor_confirm">Czy na pewno chcesz ponownie zainicjować suwak synchronizacji? Może to spowolnić następną synchronizację, jeśli wystąpi zbyt duża ilość starych wiadomości niezsynchronizowanych z serwerem.</string>
     <string name="yes_confirm">Tak</string>
     <string name="no_confirm">Nie</string>
-    <string name="pref_show_sync_notifications">Pokaż powiadomienia dotyczące synchronizacji</string>
+    <string name="pref_show_sync_notifications">Pokaż powiadomienia o synchronizacji</string>
     <string name="sync_complete">Synchronizacja zakończona</string>
-    <string name="err_sync_http_write_failed">Błąd #19: Błąd zapisu strumienia HTTP podczas przesyłania danych na serwer.</string>
-    <string name="err_sync_http_request_protocol_exception">Błąd #20: Wystąpił błąd poprawnego ustawienia protokołu HTTP.</string>
+    <string name="err_sync_http_write_failed">Błąd #19: Błąd zapisu strumienia HTTP podczas przesyłania danych do serwera.</string>
+    <string name="err_sync_http_request_protocol_exception">Błąd #20: Nieprawidłowe ustawienie wersji protokołu HTTP.</string>
     <string name="action_appinfo_privacy_policy">Polityka prywatności</string>
-    </resources>
+    <string name="privacy_policy_large_text">
+        \"Przegląd \ n \ n\"
+
+        \"Nextcloud SMS to darmowe oprogramowanie opracowane przez jego autorów.
+        \"Polityka prywatności ma na celu informowanie użytkownika o zebranych danych przez tę aplikację.\"
+
+        \"Informacje, które zbieramy \ n \ n\"
+
+        \"Pobierane przez aplikację są tylko SMS-y i historia połączeń. \ N \ n\"
+
+        \"Gdzie są wysyłane informacje. \ N \ n\"
+
+        \"Informacje nie są wysyłane do serwerów zespołu Nextcloud ani do serwerów zespołu Nextcloud SMS\"
+        \"ani do rządu lub innego podmiotu, do którego nie chcesz. \ n \ n\"
+
+        \"Po skonfigurowaniu konta w aplikacji Nextcloud, zgadzasz się na to,\"
+        \"aby właściciel aplikacji Nextcloud, przechowywał Twoje SMS-y i historię połączeń,\"
+        \"za które odpowiada. \ n \ n\"
+
+        \"Nie zalecamy korzystania z publicznego lub firmowego konta aplikacji Nextcloud. Aby zachować prywatność,\"
+        \"muszą być pod kontrolą we własnej aplikacji Nextcloud. \ n \ n\"
+
+    </string>
+</resources>
