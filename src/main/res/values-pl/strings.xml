@@ -174,8 +174,8 @@
     <string name="restore_finished">Przywracanie SMS-ów zostało zakończone.</string>
     <string name="x_messages_restored">przywróconych wiadomości&#8230;</string>
     <string name="err_no_connection">Brak połączenia, upewnij się, że masz poprawne połączenie transmisji danych.</string>
-    <string name="reinit_sync_cursor">Ponownie zainicjuj suwak synchronizacji</string>
-    <string name="reinit_sync_cursor_confirm">Czy na pewno chcesz ponownie zainicjować suwak synchronizacji? Może to spowolnić następną synchronizację, jeśli wystąpi zbyt duża ilość starych wiadomości niezsynchronizowanych z serwerem.</string>
+    <string name="reinit_sync_cursor">Zainicjuj ponownie synchronizacje</string>
+    <string name="reinit_sync_cursor_confirm">Czy na pewno chcesz ponownie ustawić synchronizację? Może to spowolnić następną synchronizację, jeśli wystąpi zbyt duża ilość starych wiadomości niezsynchronizowanych z serwerem.</string>
     <string name="yes_confirm">Tak</string>
     <string name="no_confirm">Nie</string>
     <string name="pref_show_sync_notifications">Pokaż powiadomienia o synchronizacji</string>
