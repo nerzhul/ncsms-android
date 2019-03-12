@@ -48,7 +48,7 @@
     <string name="summary_global_pref_to_general_prefs">Opcions de sincronització</string>
     <string name="summary_notif_prefs">Notificacions</string>
     <string name="pref_header_data_sync">Dades &amp; sincronització</string>
-    <string name="title_activity_general_settings">Configuració general</string>
+    <string name="title_activity_general_settings">Paràmetres generals</string>
 
     <string-array name="pref_sync_frequency_titles">
         <item>5 minuts</item>
