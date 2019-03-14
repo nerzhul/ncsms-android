@@ -32,12 +32,12 @@
 	<string name="gp_translation_version">3</string>
 
 	<!-- Translations must begin here -->
-    <string name="gp_short_description">A Nextcloud SMS szinkronizálja a helyi SMS-eket a Nextcloud példánnyal</string>
+    <string name="gp_short_description">A Nextcloud SMS szinkronizálja a helyi SMS-eit a Nextcloud példányával</string>
     <string name="gp_description">
-Az ownCloud SMS alkalmazás szinkronizálja az SMS-eidet a távoli ownCloud-oddal hogy ott is olvashasd azokat.
+Az ownCloud SMS alkalmazás szinkronizálja az SMS-eit a távoli ownCloud példányával, hogy ott is elolvashassa azokat.
 
-Az SMS küldési lehetőség később érkezik.
+Az ownCloud példányból küldhető SMS egy későbbi kiadásban érkezik.
 
-Az alkalmazás Android 4.0 to 6.0 kompatibilis.
+Az alkalmazás teljesen kompatibilis az Android 4.0-6.0 rendszerekkel.
 	</string>
 </resources>
