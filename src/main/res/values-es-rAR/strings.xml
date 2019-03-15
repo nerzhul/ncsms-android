@@ -178,4 +178,9 @@
     <string name="reinit_sync_cursor_confirm">¿Está seguro de que desea reinicializar el cursor de inicialización? Esto puede alentar la siguiente sincronización si se encuentran varios mensajes antiguos que no hayan sincronizado con el servidor. </string>
     <string name="yes_confirm">Sí</string>
     <string name="no_confirm">No</string>
+    <string name="pref_show_sync_notifications">Mostrar notificaciones de sincronización</string>
+    <string name="sync_complete">Sincronización completa</string>
+    <string name="err_sync_http_write_failed">Error #19: No se pudo escribir la secuencia HTTP al enviar datos al servidor.</string>
+    <string name="err_sync_http_request_protocol_exception">Error #20: Error al establecer correctamente la versión del protocolo HTTP.</string>
+    <string name="action_appinfo_privacy_policy">Políticas de privacidad</string>
     </resources>
