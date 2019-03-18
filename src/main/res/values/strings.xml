@@ -39,7 +39,7 @@
 
     <!-- System strings: preferences -->
     <string name="shared_preference_file" translatable="false">ownCloudSMSPrefs</string>
-    <string name="pref_lastmsgdate">last_message_date</string>
+    <string name="pref_lastmsgdate" translatable="false">last_message_date</string>
 
     <!-- Translations must begin there -->
     <!-- Preferences -->
