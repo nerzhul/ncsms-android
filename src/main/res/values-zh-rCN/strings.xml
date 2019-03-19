@@ -33,8 +33,6 @@
     <string name="app_name">Nextcloud 信息</string>
     <string name="login_logo">登录图标</string>
 
-    <string name="pref_lastmsgdate">上一条信息的日期</string>
-
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">短信 - 快速模式</string>

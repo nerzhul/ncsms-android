@@ -33,8 +33,6 @@
     <string name="app_name">Nextcloud SMS</string>
     <string name="login_logo">Innloggingslogo</string>
 
-    <string name="pref_lastmsgdate">Dato for siste melding</string>
-
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">SMS - Hurtig</string>

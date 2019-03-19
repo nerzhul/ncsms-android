@@ -33,8 +33,6 @@
     <string name="app_name">Nextcloud SMS</string>
     <string name="login_logo">로그인 로고</string>
 
-    <string name="pref_lastmsgdate">last_message_date</string>
-
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">SMS - 빠름</string>
@@ -182,4 +180,5 @@
     <string name="sync_complete">동기화 완료</string>
     <string name="err_sync_http_write_failed">오류 #19: 데이터를 서버에 기록하는 중 HTTP 스트림에 기록할 수 없습니다.</string>
     <string name="err_sync_http_request_protocol_exception">오류 #20: HTTP 프로토콜 버전을 설정할 수 없습니다.</string>
+    <string name="action_appinfo_privacy_policy">개인 정보 취급 방침</string>
     </resources>

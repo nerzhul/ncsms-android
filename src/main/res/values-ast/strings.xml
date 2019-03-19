@@ -33,8 +33,6 @@
     <string name="app_name">Nextcloud SMS</string>
     <string name="login_logo">Logu d\'aniciu de sesión</string>
 
-    <string name="pref_lastmsgdate">last_message_date</string>
-
     <string name="pref_title_slow_sync">SMS - Lentu y seguru</string>
     <string name="action_settings">Axustes</string>
     <string name="sync_now">Sincronizar agora</string>

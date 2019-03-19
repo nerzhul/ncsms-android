@@ -33,8 +33,6 @@
     <string name="app_name">Nextcloud SMS</string>
     <string name="login_logo">Logo de connexion</string>
 
-    <string name="pref_lastmsgdate">date_du_dernier_message</string>
-
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">SMS - Méthode rapide</string>
@@ -183,4 +181,20 @@
     <string name="err_sync_http_write_failed">Erreur #19: Echec de l\'écriture du flux HTTP lors de l\'envoi de données au serveur.</string>
     <string name="err_sync_http_request_protocol_exception">Erreur #20: Impossible de définir correctement la version du protocole HTTP.</string>
     <string name="action_appinfo_privacy_policy">Politique de confidentialité</string>
-    </resources>
+    <string name="privacy_policy_large_text">\"Vue d\'ensemble\"
+
+\"Nextcloud SMS est un logiciel gratuit développé par ses contributeurs. Cette politique de confidentialité vise à  vous informer sur les données recueillies par cette application\"
+
+\"Informations que nous collectons\"
+
+\"Seuls les journaux de SMS et d\'appels sont collectés par l\'application.\"
+
+\"Où sont envoyées ces informations ?\"
+
+\"Ces informations ne sont envoyées ni aux serveurs de l’équipe Nextcloud ni aux serveurs de l’équipe de Nextcloud SMS, ni à un quelconque gouvernement, ni à d\'autres organismes que vous n\'avez pas autorisé\"
+\"Lorsque vous configurez un compte Nextcloud dans l\'application vous convenez implicitement avec le détenteur de l\'instance Nextcloud que les journaux de SMS et d\'appels sont conservés dans son infrastructure et sous sa responsabilité.\"
+
+\"Nous ne recommandons pas l\'utilisation d\'un compte sur une instance publique ou appartenant à une entreprise. Votre vie privée devrait être sous votre contrôle sur votre propre instance Nextcloud.\"
+
+</string>
+</resources>

@@ -33,8 +33,6 @@
     <string name="app_name">Nextcloud SMS</string>
     <string name="login_logo">Imaxe do acceso</string>
 
-    <string name="pref_lastmsgdate">data_da_última_mensaxe</string>
-
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">SMS - Rápido</string>
