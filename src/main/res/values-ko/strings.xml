@@ -181,4 +181,27 @@
     <string name="err_sync_http_write_failed">오류 #19: 데이터를 서버에 기록하는 중 HTTP 스트림에 기록할 수 없습니다.</string>
     <string name="err_sync_http_request_protocol_exception">오류 #20: HTTP 프로토콜 버전을 설정할 수 없습니다.</string>
     <string name="action_appinfo_privacy_policy">개인 정보 취급 방침</string>
-    </resources>
+    <string name="privacy_policy_large_text">
+        \"개요\n\n\"
+
+        \"Nextcloud SMS 는 본 프로그램 기여자들에 의해 개발된 자유 소프트웨어입니다. 본 개인정보 보호 정책은 \"
+        \"프로그램에 의해 수집된 데이터에 대해 알리기 위해 작성되었습니다.\"
+
+        \"우리가 수집하는 정보\n\n\"
+
+        \"본 프로그램에서는 통화 및 SMS 기록만 수집됩니다. \n\n\"
+
+        \"정보를 전송하는 곳.\n\n\"
+
+        \"정보는 Nextcloud팀 서버나 Nextcloud SMS팀 서버 또는 \"
+        \"원하지 않는 정부나 다른 단체들로 보내지지 않습니다..\n\n\"
+
+        \"본 애플리케이션에서 Nextcloud 계정을 설정할 때, Nextcloud 인스턴스 소유자의 \"
+        \"책임 내에 SMS 및  통화 내역이 본 인프라에\"
+        \"저장된다는 것에 동의하셨습니다.\n\n\"
+
+        \"우리는 공용 또는 회사 Nextcloud 인스턴스 계정에서 사용하는 것을 추천하지 않습니다. \"
+        \"개인 정보는 자신의 Nextcloud 인스턴스 내에서 자신의 통제 아래에 있어야 합니다.\n\n\"
+
+    </string>
+</resources>
