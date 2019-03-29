@@ -135,6 +135,8 @@ Nepavyko užmegzti HTTP ryšio. Patikrinkite žiniatinklių serverį.</string>
 
     <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
     <string name="communicate">Komunikuoti</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
     <string name="navigation_drawer_open">Atidaryti naršymo stalčių</string>
     <string name="navigation_drawer_close">Uždaryti naršymo stalčių</string>
     <string name="ma_title_my_accounts">Mano paskyros</string>

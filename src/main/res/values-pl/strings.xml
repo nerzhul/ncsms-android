@@ -96,7 +96,7 @@
     <string name="prompt_serverURI">Adres serwera</string>
     <string name="error_invalid_server_address">Błędny adres serwera</string>
     <string name="error_connection_failed">Połączenie nie powiodło się, upewnij się, że jest to właściwy serwer</string>
-    <string name="error_http_connection_failed">Nie można wykonać połączenia HTTP. Proszę upewnić się, czy jest tam serwer www</string>
+    <string name="error_http_connection_failed">Nie można wykonać połączenia HTTP. Upewnij się, że istnieje serwer WWW</string>
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">Oceń nas!</string>
