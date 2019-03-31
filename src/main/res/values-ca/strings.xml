@@ -45,7 +45,7 @@
     <string name="title_global_pref_to_general_prefs">Preferències generals</string>
     <string name="summary_global_pref_to_general_prefs">Opcions de sincronització</string>
     <string name="summary_notif_prefs">Notificacions</string>
-    <string name="pref_header_data_sync">Dades &amp; sincronització</string>
+    <string name="pref_header_data_sync">Sincronització &amp; de dades </string>
     <string name="title_activity_general_settings">Paràmetres generals</string>
 
     <string-array name="pref_sync_frequency_titles">
@@ -99,7 +99,7 @@
     <string name="error_http_connection_failed">No es pot realitzar una connexió HTTP. Assegureu-vos que hi ha un servidor web</string>
 
     <!-- Main activity -->
-    <string name="ma_title_rate_us">Puntua\'ns!</string>
+    <string name="ma_title_rate_us">Puntueu-nos!</string>
     <string name="ma_title_add_account">Afegeix un compte</string>
     <string name="ma_title_welcome">Benvingut</string>
     <string name="ma_content_welcome">Benvingut a l\'aplicació SMS de Nextcloud. Aquesta aplicació us permet sincronitzar els vostres SMS a la vostra instància de Nextcloud mitjançant l\'aplicació SMS.</string>
@@ -154,14 +154,14 @@
     <string name="understood">Entesos</string>
     <string name="notif_permission_required">Es necessiten permisos</string>
     <string name="notif_permission_required_content">Falta alguns permisos per realitzar el procés de sincronització. Corregiu-lo a la configuració de l\'aplicació</string>
-    <string name="please_fix_it">Corregiu-lo.</string>
+    <string name="please_fix_it">Si us plau, corregiu-lo.</string>
     <string name="err_cannot_read_contacts">No podem llegir els vostres contactes.</string>
     <string name="err_cannot_read_sms">No podem llegir el teu SMS</string>
     <string name="action_appinfo_perms">Informació i permisos de l\'aplicació</string>
     <string name="restore_all_messages">Restaura tots els missatges</string>
     <string name="account_actions">Accions del compte</string>
     <string name="error_connection_failed_not_found">Error de connexió, el servidor torna 404 NO TROBAT. Assegureu-vos que configureu la ruta correcta per a la vostra instància de Nextcloud.</string>
-    <string name="nothing_to_sync">No hi ha res per sincronitzar</string>
+    <string name="nothing_to_sync">No hi ha res a sincronitzar</string>
     <string name="feature_not_already_implemented">Aquesta funció encara no està implementada i aviat estarà disponible.</string>
     <string name="pref_title_minimum_sync_chars">Longitud mínima del número de telèfon</string>
     <string name="err_didnt_find_account_restore">No hem trobat el vostre compte per restaurar el vostre missatge, aquesta és una situació molt estranya.</string>
@@ -172,7 +172,7 @@
     <string name="restore_finished">La restauració d\'SMS ha finalitzat</string>
     <string name="x_messages_restored">S\'han restablert els missatges&#8230;</string>
     <string name="err_no_connection">No hi ha cap connexió disponible, assegureu-vos que teniu una connexió de dades vàlida.</string>
-    <string name="reinit_sync_cursor">Reiniciar el cursor de sincronització</string>
+    <string name="reinit_sync_cursor">Reinicia el cursor de sincronització</string>
     <string name="reinit_sync_cursor_confirm">Esteu segur que voleu reinicialitzar el cursor de sincronització? Això pot frenar la propera sincronització si trobem molts missatges antics que no es sincronitzen amb el servidor.</string>
     <string name="yes_confirm">Sí</string>
     <string name="no_confirm">No</string>

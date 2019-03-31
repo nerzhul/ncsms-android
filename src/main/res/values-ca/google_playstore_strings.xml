@@ -34,10 +34,10 @@
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS sincronitza els missatges SMS amb el teu compte de Nextcloud</string>
     <string name="gp_description">
-L\'aplicació onwCloud SMS sincronitza els teus missatges SMS amb la teva instància Nextcloud i et permet llegir-los allà.
+L\'aplicació ownCloud SMS sincronitza els vostres missatges SMS amb la vostra instància Nextcloud i us permet llegir-los allà.
 
-L\'enviament de SMS des de Nextcloud arribarà en un futur.
+L\'enviament d\'SMS des de Nextcloud arribarà en un futur.
 
-L\'aplicació es compatible des de la versió 4.0 a la versió 6.0 d\'Android.
+L\'aplicació és compatible des de la versió 4.0 a la versió 6.0 d\'Android.
 	</string>
 </resources>
