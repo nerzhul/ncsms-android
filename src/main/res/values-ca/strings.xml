@@ -181,4 +181,24 @@
     <string name="err_sync_http_write_failed">Error #19: No s\'ha pogut escriure la transmissió HTTP en el moment d\'enviar la informació al servidor.</string>
     <string name="err_sync_http_request_protocol_exception">Error #20: No s\'ha pogut establir correctament la versió del protocol HTTP.</string>
     <string name="action_appinfo_privacy_policy">Política de privadesa</string>
-    </resources>
+    <string name="privacy_policy_large_text">
+\"Resum\n\n\"
+
+\"Nextcloud SMS és programari lliure desenvolupat pels seus contribuïdors. Aquesta política de privadesa\"
+\"té la intenció d\'informar-vos sobre les dades recopilades per aquesta aplicació.\n\n\"
+
+\"On s\'envia la informació.\n\n\"
+
+La informació no s\'envia mai als servidors de l\'equip de Nextcloud, tampoc als servidors de l\'equip de Nextcloud SMS\"
+\"ni tampaoc a cap govern ni cap altra entitat que no vulgueu.\n\n\"
+
+\"Quan configureu un compte de Nextcloud a aquesta aplicació, accepteu que el propietari de\"
+\"la instància de Nextcloud emmagatzemarà les dades dels SMS i el registre de trucades a la\"
+\"seva infrastructura, sota la seva responsabilitat.\n\n\"
+
+\"No us volem recomanar usar cap instància pública de Nextcloud ni personal ni corporativa.\"
+\"La vostra privacitat ha d\'estar sota el vostre control o sota control de la vostra instància\"
+\"de Nextcloud.\n\n\"
+
+ </string>
+</resources>
