@@ -155,8 +155,8 @@
     <string name="notif_permission_required">Berechtigungen benötigt</string>
     <string name="notif_permission_required_content">Einige Berechtigungen fehlen zur Durchführung des Synchronisationsprozesses. Bitte in den App-Einstellungen korrigieren.</string>
     <string name="please_fix_it">Bitte behebe es.</string>
-    <string name="err_cannot_read_contacts">Wir können deine Kontakte nicht lesen.</string>
-    <string name="err_cannot_read_sms">Wir können deine SMS nicht lesen.</string>
+    <string name="err_cannot_read_contacts">Wir können Ihre Kontakte nicht lesen.</string>
+    <string name="err_cannot_read_sms">Wir können Ihre SMS nicht lesen.</string>
     <string name="action_appinfo_perms">App Infos und Berechtigungen</string>
     <string name="restore_all_messages">Alle Nachrichten wiederherstellen</string>
     <string name="account_actions">Account-Aktionen</string>
@@ -164,9 +164,9 @@
     <string name="nothing_to_sync">Es gibt nichts zu synchronisieren.</string>
     <string name="feature_not_already_implemented">Diese Funktion ist noch nicht implementiert aber wird in Kürze verfügbar sein.</string>
     <string name="pref_title_minimum_sync_chars">Minimale Telefonnummernlänge</string>
-    <string name="err_didnt_find_account_restore">Wir haben deinen Account nicht gefunden, um deine Nachricht wiederherstellen. Dieses ist eine sehr seltsame Situation.</string>
+    <string name="err_didnt_find_account_restore">Wir haben Ihren Account nicht gefunden, um Ihre Nachricht wiederherstellen. Dieses ist eine sehr seltsame Situation.</string>
     <string name="launch_restore">Meine SMS wiederherstellen</string>
-    <string name="error_make_default_sms_app">Bitte diese Anwendung als Standard-SMS-Anwendung definieren. Hierdurch können deine SMS-Nachrichten wiederhergestellt werden. Diese Einschränkung wurde mit Android 4.4 eingeführt.</string>
+    <string name="error_make_default_sms_app">Bitte diese Anwendung als Standard-SMS-Anwendung definieren. Hierdurch können Ihre SMS-Nachrichten wiederhergestellt werden. Diese Einschränkung wurde mit Android 4.4 eingeführt.</string>
     <string name="fix_permissions">Berechtigungen korrigieren</string>
     <string name="err_kitkat_required">Android 4.4 oder höher ist erforderlich, um diese Funktion zu verwenden.</string>
     <string name="restore_finished">SMS-Wiederherstellung ist nun abgeschlossen.</string>
