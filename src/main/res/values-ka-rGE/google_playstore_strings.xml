@@ -33,11 +33,4 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud სმსების სინქრონიზაცია თქვენს ლოკალურ სმსებთან, თქვენს Nextcloud ინსტანციაში</string>
-    <string name="gp_description">
-ownCloud SMS აპლიკაცია გაძლევთ თქვენს სმს შეტყობინებებთან სინქრონიზაციის და მათი წაკითხვის საშუალებას დისტანციურ ownCloud ინსტანციაზე.
-
-წერილის გაგზავნა ownCloud ინსტანციიდან მხარდაჭერილი იქნება მომვალ ვერსიებში.
-
-აპლიკაცია სრულად თავსებადია Android ვერსიებზე 4.0-იდან 6.0-ის ჩათვლით
-	</string>
-</resources>
+    </resources>

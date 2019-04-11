@@ -33,11 +33,4 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud කෙටි පණිවිඩ ඔබගේ දුරකතනයේ කෙටි පනිවද සමග හුවමාරු කිරීම</string>
-    <string name="gp_description">
-Nextcloud SMS යෙදුම ඔබගේ ස්මාර්ට් ජංගම පණිවුඩය දුරස්ථ Nextcloud නිදසුනෙන් සමමුහුර්ත කර ඔබගේ පණිවුඩයෙන් ඔබට කියවීමට ඉඩ සලසයි.
-
-Nextcloud උදාහරණයෙන් SMS පණිවිඩ යැවීම අනාගත නිකුතුවකට එළඹෙනු ඇත.
-
-යෙදුම Android 4.0 සිට 6.0 දක්වා සම්පූර්ණ අනුකූල වේ
-	</string>
-</resources>
+    </resources>

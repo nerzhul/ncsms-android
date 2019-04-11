@@ -33,11 +33,4 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS, Nextcloud kopyanızdaki yerel kısa mesajları eşitler</string>
-    <string name="gp_description">
-ownCloud SMS uygulaması SMS iletilerinizi uzak bir ownCloud kopyası ile eşitleyerek iletilerinizi oradan okumanızı sağlar.
-
-ownCloud üzerinden SMS gönderme özelliği gelecek sürümlerde eklenecek.
-
-Uygulama Android 4.0 ile 6.0 arasındaki sürümlerle tam uyumludur.
-	</string>
-</resources>
+    </resources>

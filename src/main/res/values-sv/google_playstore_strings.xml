@@ -33,11 +33,4 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS synkroniserar dina lokala SMS till din Nextcloud-instans.</string>
-    <string name="gp_description">
-		Nextcloud SMS-applikationen synkroniserar dina SMS-meddelanden till din Nextcloud-instans och gör det möjligt att läsa dina meddelanden på den.
-		
-		Skicka meddelanden från din Nextcloudinstans kommer att bli möjligt i en kommande version.
-		
-		Applikationen är fullt kompatibel från Android 4.0 till 7.1.1
-	</string>
-</resources>
+    </resources>

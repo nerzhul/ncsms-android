@@ -33,11 +33,4 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS sinkronizon SMS-et tuaj lokal në instancën tuaj Nextcloud</string>
-    <string name="gp_description">
-Aplikacioni OwnCloud SMS sinkronizon mesazhet tuaja SMS me një instancë remote të ownCloud dhe ju lejon të lexoni mesazhet tuaja prej saj.
-
-Dërgimi i SMS-ve nga ownCloud do të jetë i mundur në lançimet e ardhshme.
-
-Aplikacioni është plotësisht i përputhshëm me Android 4.0 deri në 6.0
-	</string>
-</resources>
+    </resources>

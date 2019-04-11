@@ -33,11 +33,4 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS 将您的短信同步至您远程的 Nextcloud 服务器</string>
-    <string name="gp_description">
-ownCloud SMS 应用程序将您的短信同步至远程的 ownCloud 服务器，于是您可以在那里阅读信息。
-
-从 ownCloud 服务器发送短信的功能将在未来版本中实现。
-
-应用程序与 Android 4.0 至 6.0 完全兼容。
-	</string>
-</resources>
+    </resources>

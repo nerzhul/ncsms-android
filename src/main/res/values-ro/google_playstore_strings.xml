@@ -33,11 +33,4 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS sincronizează SMS-urile locale cu instanța ta Nextcloud</string>
-    <string name="gp_description">
-Aplicația Nextcloud SMS sincronizează mesajele tale SMS cu o instanță Nextcloud și îți permite citirea mesajelor de acolo.
-
-Trimiterea de mesaje SMS din instanța Nextcloud va fi posibilă într-o versiunea ulterioară.
-
-Aplicația este compatibilă complet cu versiuni Android de la 4.0 la 6.0
-	</string>
-</resources>
+    </resources>

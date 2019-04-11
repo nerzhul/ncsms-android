@@ -33,9 +33,4 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS sinchronizuoja Jūsų lokalius SMS pranešimus Jūsų Nextcloud programoje.</string>
-    <string name="gp_description">
-wnCloud SMS programa sinchronizuoja Jūsų SMS žinutes nuotoliniame \"ownCloud\", kurias Jūs galite patogiai skaityti.
-
-SMs pranešimų siuntimas iš ownCloud serverio bus realizuota vėlesniuose atnaujinimuose.
-</string>
-</resources>
+    </resources>

@@ -33,11 +33,4 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS выполняет синхронизацию SMS на ваш экземпляр Nextcloud</string>
-    <string name="gp_description">
-Приложение ownCloud SMS выполнит синхронизацию SMS-сообщений на удаленный экземпляре OwnCloud и позволяет читать сообщения из него.
-
-Отправка SMS из OwnCloud будет добавлена в будущих версиях.
-
-Программа полностью совместима с Android 4.0 до 6.0
-	</string>
-</resources>
+    </resources>

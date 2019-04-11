@@ -33,10 +33,4 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS はローカル SMS を Nextcloud インスタンスで同期します</string>
-    <string name="gp_description">
-Nextcloud SMS アプリケーションは、リモートの Nextcloud インスタンスで SMS メッセージを同期し、そこからメッセージを読むことができます。
-
-Nextcloud インスタンスからの SMS 送信は、将来のリリースで行われます。
-
-アプリケーションは Android 4.0 から 6.0 に完全に互換性があります</string>
-</resources>
+    </resources>

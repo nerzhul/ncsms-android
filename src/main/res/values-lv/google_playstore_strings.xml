@@ -33,11 +33,4 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS sinhronizē vietējos SMS savā Nextcloud instancē.</string>
-    <string name="gp_description">
-ownCloud SMS lietotne sinhronizē tavas īsziņas ar attālu ownCloud vai Nextcloud instanci un ļauj tev lasīt savas īsziņas no tās.
-
-Īsziņu sūtīšana no ownCloud vai Nextcloud instances nāks nākotnes atjauninājumā.
-
-Lietotne ir pilnība saderīga no Android 4.0 līdz 6.0
-	</string>
-</resources>
+    </resources>

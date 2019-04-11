@@ -33,11 +33,4 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS 會同步您本機上的 SMS 到您的 Nextcloud 實體上</string>
-    <string name="gp_description">
-Nextcloud SMS 會應用程式同步您的 SMS 訊息到遠端的 Nextcloud 實體，並讓您可以從遠端閱讀。
-
-從 Nextcloud 實體傳送 SMS 將會在未來的版本中實作。
-
-應用程式與 Android 4.0 到 6.0 完全相容
-	</string>
-</resources>
+    </resources>
