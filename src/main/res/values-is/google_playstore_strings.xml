@@ -33,4 +33,11 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS samstillir SMS á símanum þínum við Nextcloud skýið þitt</string>
-    </resources>
+    <string name="gp_description">
+Nextcloud SMS samstillir SMS-skeytin þín við fjartengt Nextcloud-ský og gerir þér kleift að lesa skilaboðin úr því.
+
+Að senda SMS úr Nextcloud-skýi mun svo verða hægt í framtíðinni.
+
+Forritið er að fullu samhæft við Android 4.0 til 6.0
+	</string>
+</resources>

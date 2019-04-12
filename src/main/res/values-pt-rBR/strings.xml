@@ -176,7 +176,7 @@
     <string name="reinit_sync_cursor_confirm">Você está certo que deseja reiniciar o cursor de sincronização? Isso pode deixar lenta a próxima sincronização se encontrarmos mensagens antigas ainda não sincronizadas com o servidor.</string>
     <string name="yes_confirm">Sim</string>
     <string name="no_confirm">Não</string>
-    <string name="pref_show_sync_notifications">Mostrar notificações de sincronismo</string>
+    <string name="pref_show_sync_notifications">Exibir notificações de sincronismo</string>
     <string name="sync_complete">Sincronização completa</string>
     <string name="err_sync_http_write_failed">Erro #19: Falha escrevendo o stream PHP ao enviar dados para o servidor.</string>
     <string name="err_sync_http_request_protocol_exception">Erro #20: Falha ao configurar o protocolo HTTP adequadamente.</string>

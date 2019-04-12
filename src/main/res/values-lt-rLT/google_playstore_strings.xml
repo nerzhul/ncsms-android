@@ -29,8 +29,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
     <!-- Translation version, reference for translators -->
-	<string name="gp_translation_version">1</string>
+	<string name="gp_translation_version">2</string>
 
 	<!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMS sinchronizuoja Jūsų lokalius SMS pranešimus Jūsų Nextcloud programoje.</string>
-    </resources>
+    <string name="gp_short_description">Nextcloud SMS sinchronizuoja jūsų vietines SMS žinutes jūsų Nextcloud egzemplioriuje</string>
+    <string name="gp_description">
+Nextcloud SMS programa sinchronizuoja jūsų SMS žinutes nuotoliniame Nextcloud egzemplioriuje ir leidžia jums iš jo skaityti žinutes.
+
+SMS siuntimas iš Nextcloud egzemplioriaus yra numatomas būsimosiose laidose.
+
+Programa yra pilnai suderinama su Android 4.0 iki 6.0
+	</string>
+</resources>
