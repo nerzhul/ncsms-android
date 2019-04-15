@@ -181,4 +181,23 @@
     <string name="err_sync_http_write_failed">Chyba #19: Chyba v HTTP spojení pri posielaní dát na server</string>
     <string name="err_sync_http_request_protocol_exception">Chyba #20: Nepodarilo sa správne nastaviť verziu protokolu HTTP</string>
     <string name="action_appinfo_privacy_policy">Zásady ochrany osobných údajov</string>
-    </resources>
+    <string name="privacy_policy_large_text">\"Prehľad\n\n\"
+
+\"Nextcloud SMS je slobodný softvér vyvinutý prispievateľmi do tohto projektu. Tieto zásady ochrany osobných údajov\"
+\"sú zamýšľané ako informácie pre vás o dátach, ktoré sa zaznamenávajú touto apkou.\"
+
+\"Informácie, ktoré sa zaznamenávajú\n\n\"
+
+\"Aplikáciou sa zaznamenávajú len informácie o SMS správach a volaniach.\n\n\"
+
+\"Kam sa informácie odosielajú\n\n\"
+
+\"Informácie sa neodosielajú nikam na servery vývojárov Nextcloud resp. Nextcloud SMS\"
+\"ani žiadnej vládnej organizácii či inej entite.\n\n\"
+
+\"Keď nastavujete svoj účet Nextcloud v tejto apke, tak odsúhlasujete vlastníkovi Nextcloud inštancie, že záznamy o SMS a volaniach budú uložené na jeho infraštruktúre a budú teda pod jeho zodpovednosťou.\n\n\"
+
+\"Neodporúčame použiť účet vo verejnej alebo firemnej inštancii Nextcloud. Je potrebné, aby vaše súkromie ostalo pod vašou kontrolou a na vašej vlastnej inštancii Nextcloud.\n\n\"
+
+</string>
+</resources>

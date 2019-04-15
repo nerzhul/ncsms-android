@@ -81,7 +81,7 @@
     <string name="pref_sync_3g">Sinchronizuoti su 3G</string>
     <string name="pref_sync_gprs">Sinchronizuoti su 2.5G (GPRS)</string>
     <string name="pref_sync_2g">Sinchronizuoti su 2G</string>
-    <string name="pref_sync_others">Sinchronizuoti kitose būsenose</string>
+    <string name="pref_sync_others">Sinchronizuoti kitose veiksenose</string>
     <string name="title_activity_login">Prisijungti</string>
 
     <!-- Login -->
