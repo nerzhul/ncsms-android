@@ -33,4 +33,11 @@
 
 	<!-- Translations must begin here -->
     <string name="gp_short_description">A Nextcloud SMS szinkronizálja a helyi SMS-eit a Nextcloud példányával</string>
-    </resources>
+    <string name="gp_description">
+A Nextcloud SMS szolgáltatás szinkronizálja az SMS üzeneteid egy távoli Nextcloud rendszerre ahonnan olvasni tudod azokat
+
+A távoli Nextcloud rendszerre történő SMS küldés egy későbbi verzióban lesz elérhető funkció.
+
+Ez a szolgáltatás az Android 4.0 és 6.0 köztti rendszerekkel kompatibilis
+	</string>
+</resources>
