@@ -28,10 +28,7 @@
 <resources
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
-    <!-- Translation version, reference for translators -->
-	<string name="gp_translation_version">3</string>
-
-	<!-- Translations must begin here -->
+    <!-- Translations must begin here -->
     <string name="gp_short_description">A Nextcloud SMS szinkronizálja a helyi SMS-eit a Nextcloud példányával</string>
     <string name="gp_description">
 A Nextcloud SMS szolgáltatás szinkronizálja az SMS üzeneteid egy távoli Nextcloud rendszerre ahonnan olvasni tudod azokat

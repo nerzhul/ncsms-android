@@ -28,10 +28,7 @@
 <resources
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
-    <!-- Translation version, reference for translators -->
-	<string name="gp_translation_version">3</string>
-
-	<!-- Translations must begin here -->
+    <!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS 将您的短信同步至您远程的 Nextcloud 服务器</string>
     <string name="gp_description">
 Nextcloud SMS应用将您的短信同步到远端的Nextcloud实例并允许您在其上阅读这些短信。

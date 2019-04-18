@@ -28,10 +28,7 @@
 <resources
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
-    <!-- Translation version, reference for translators -->
-	<string name="gp_translation_version">3</string>
-
-	<!-- Translations must begin here -->
+    <!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS sincronitza els missatges SMS amb el teu compte de Nextcloud</string>
     <string name="gp_description">L\'aplicació SMS de Nextcloud sincronitza els vostres missatges SMS en una instància de Nextcloud remota i us hi permetrà llegir els vostres missatges.
 

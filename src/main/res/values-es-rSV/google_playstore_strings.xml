@@ -28,9 +28,6 @@
 <resources
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
-    <!-- Translation version, reference for translators -->
-	<string name="gp_translation_version">3</string>
-
-	<!-- Translations must begin here -->
+    <!-- Translations must begin here -->
     <string name="gp_short_description">SMS de Nextcloud sincroniza tu SMS local con tu instancia Nextcloud</string>
     </resources>

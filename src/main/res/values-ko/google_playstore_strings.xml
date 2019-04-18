@@ -28,9 +28,6 @@
 <resources
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
-    <!-- Translation version, reference for translators -->
-	<string name="gp_translation_version">3</string>
-
-	<!-- Translations must begin here -->
+    <!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS는 로컬 SMS를 Nextcloud 인스턴스와 동기화합니다</string>
     </resources>
