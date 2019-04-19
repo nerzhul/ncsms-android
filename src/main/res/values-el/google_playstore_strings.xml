@@ -30,4 +30,8 @@
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
     <string name="gp_short_description">Το Nextcloud SMS συγχρονίζει τα τοπικά SMS στην Nextcloud εγκατάστασή σας</string>
-    </resources>
+    <string name="gp_description">Η εφαρμογή Nextcloud SMS συγχρονίζει τα μηνύματα SMS σε απομακρυσμένη εγκατάσταση Nextcloud και σας επιτρέπει να διαβάσετε τα μηνύματά σας από εκεί.
+Η αποστολή SMS από την εγκατάσταση Nextcloud θα είναι διαθέσιμη σε μελλοντική έκδοση.
+Η εφαρμογή είναι πλήρως συμβατή από την έκδοση Android 4.0 έως 6.0
+</string>
+</resources>

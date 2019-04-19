@@ -30,4 +30,10 @@
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS permet de synchroniser les SMS de votre appareil avec un serveur Nextcloud</string>
-    </resources>
+    <string name="gp_description">
+L\'application Nextcloud SMS permet de synchroniser vos messages SMS sur un serveur Nextcloud distant et ainsi de pouvoir lire vos messages SMS sur le serveur.
+
+Dans une version future, il sera possible d\'envoyer des SMS depuis le serveur Nextcloud.
+
+L\'application est compatible avec les versions d\'Android 4.0 à 6.0.</string>
+</resources>
