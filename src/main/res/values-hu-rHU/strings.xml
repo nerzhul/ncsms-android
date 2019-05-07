@@ -180,4 +180,5 @@
     <string name="sync_complete">Szinkronizálás kész</string>
     <string name="err_sync_http_write_failed">Hiba #19: nem sikerült a HTTP folyam írása az adattolás során.</string>
     <string name="err_sync_http_request_protocol_exception">Error #20: Nem sikerült megfelelően beállítani a HTTP protokoll verziót.</string>
+    <string name="action_appinfo_privacy_policy">Adatvédelmi irányelvek</string>
     </resources>
