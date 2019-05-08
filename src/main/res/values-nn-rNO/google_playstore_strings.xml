@@ -29,5 +29,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
-    <string name="gp_short_description">Netxtcloud SMS synkroniser dine lokale SMSer til din Nextcloud</string>
-    </resources>
+    <string name="gp_short_description">Netxtcloud SMS synkroniserer SMS-meldingar til Nextcloud</string>
+    <string name="gp_description">
+Nextcloud SMS-app synkroniserer SMS-meldingane dine til ein Nextcloud-instans og lar deg lesa meldingane dine der.
+
+Å send SMS frå Nextcloud vil koma i ei framtidig utgåve.
+
+Programmet er fullt kompatibelt med Android fom. 4.0 tom. 6.0.
+</string>
+</resources>
