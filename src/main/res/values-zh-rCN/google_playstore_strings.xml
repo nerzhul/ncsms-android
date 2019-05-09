@@ -28,13 +28,16 @@
 <resources
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
-    <!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMS 将您的短信同步至您远程的 Nextcloud 服务器</string>
+    <!-- Translation version, reference for translators -->
+	<string name="gp_translation_version" translatable="false">3</string>
+
+	<!-- Translations must begin here -->
+    <string name="gp_short_description">Nextcloud 短信将你的本地短信同步到 Nextcloud 实例。</string>
     <string name="gp_description">
-Nextcloud SMS应用将您的短信同步到远端的Nextcloud实例并允许您在其上阅读这些短信。
+Nextcloud 短信应用将你的本地短信同步到 Nextcloud 实例，让你能够在实例上阅读消息。
 
-从Nextcloud实例中发送短信将在未来版本中实现。
+从 Nextcloud 实例发送短信功能将在未来发布。
 
-应用与安卓4.0至6.0完全兼容。
+应用与 Android 4.0 到 6.0 完全兼容。
 	</string>
 </resources>
