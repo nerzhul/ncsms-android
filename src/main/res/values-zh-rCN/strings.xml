@@ -30,7 +30,7 @@
     <string name="translation_version">7</string>
 
     <!-- System strings, do not translate -->
-    <string name="app_name">Nextcloud 信息</string>
+    <string name="app_name">Nextcloud 短信</string>
     <string name="login_logo">登录图标</string>
 
     <!-- Translations must begin there -->
@@ -42,11 +42,11 @@
     <string name="action_settings">设置</string>
     <string name="sync_now">立即同步</string>
     <string name="pref_category_sync">同步</string>
-    <string name="title_global_pref_to_general_prefs">普通设置</string>
+    <string name="title_global_pref_to_general_prefs">通用设置偏好</string>
     <string name="summary_global_pref_to_general_prefs">同步选项</string>
     <string name="summary_notif_prefs">通知</string>
     <string name="pref_header_data_sync">数据与同步</string>
-    <string name="title_activity_general_settings">普通设置</string>
+    <string name="title_activity_general_settings">通用设置</string>
 
     <string-array name="pref_sync_frequency_titles">
         <item>5 分钟</item>
@@ -57,7 +57,7 @@
         <item>6 小时</item>
         <item>12 小时</item>
         <item>24 小时</item>
-        <item>从不</item>
+        <item>永不</item>
     </string-array>
     <string-array name="pref_sync_bulk_max_messages_titles">
         <item>100 条短信</item>
@@ -74,7 +74,7 @@
         <item>6 小时</item>
         <item>12 小时</item>
         <item>24 小时</item>
-        <item>从不</item>
+        <item>永不</item>
     </string-array>
     <string name="pref_push_on_receive">收到短信时便推送</string>
     <string name="pref_sync_wifi">使用 WiFi 时同步</string>
@@ -91,58 +91,58 @@
     <string name="action_sign_in">登录或注册</string>
     <string name="action_sign_in_short">登录</string>
     <string name="error_invalid_login">用户名或密码不正确</string>
-    <string name="error_invalid_password">密码长度不足</string>
-    <string name="error_field_required">该字段是必填的</string>
+    <string name="error_invalid_password">密码长度太短</string>
+    <string name="error_field_required">该字段必填</string>
     <string name="prompt_serverURI">服务器地址</string>
     <string name="error_invalid_server_address">服务器地址无效</string>
     <string name="error_connection_failed">连接失败，请确认填写了正确的服务器</string>
-    <string name="error_http_connection_failed">无法建立 HTTP 连接，请确认网页服务器存在</string>
+    <string name="error_http_connection_failed">无法建立 HTTP 连接，请确认网站存在</string>
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">为我们评分！</string>
-    <string name="ma_title_add_account">添加账户</string>
+    <string name="ma_title_add_account">添加帐号</string>
     <string name="ma_title_welcome">欢迎</string>
-    <string name="ma_content_welcome">欢迎使用 ownCloud SMS，此应用可将您的短信同步到您的 ownCloud 服务器。</string>
-    <string name="ma_title_remote_account">远程账户</string>
-    <string name="choose_account">选择账户</string>
+    <string name="ma_content_welcome">欢迎使用 Nextcloud 短信应用。本应用将允许你将短信同步到 Nextcloud 实例。</string>
+    <string name="ma_title_remote_account">远程帐号</string>
+    <string name="choose_account">选择帐号</string>
 
     <!-- Restauration -->
-    <string name="title_activity_select_account">选择账户</string>
+    <string name="title_activity_select_account">选择帐号</string>
     <string name="title_activity_select_contact">选择联系人</string>
-    <string name="no_account_configured">未配置账户</string>
+    <string name="no_account_configured">帐号未配置。</string>
 
     <!-- Notifications -->
     <string name="sync_title">同步进度</string>
-    <string name="sync_inprogress">正在同步……</string>
+    <string name="sync_inprogress">正在同步…</string>
     <string name="fatal_error">严重错误！</string>
 
     <!-- Errors -->
-    <string name="err_sync_get_smslist">错误 #1：获取之前信息时，服务端返回了无效数据</string>
-    <string name="err_sync_craft_http_request">错误 #2：准备 HTTP 请求时出错</string>
-    <string name="err_sync_push_request">错误 #3：发送请求时失败</string>
-    <string name="err_sync_push_request_resp">错误 #4：推送数据时，服务端返回了无效数据</string>
-    <string name="err_sync_create_json_null_smslist">错误 #5：短信列表为空</string>
-    <string name="err_sync_create_json_put_smslist">错误 #6：准备推送请求时失败</string>
-    <string name="err_sync_create_json_request_encoding">错误 #7：生成请求时出现了不支持的编码</string>
-    <string name="err_sync_auth_failed">错误 #8：认证失败</string>
-    <string name="err_sync_http_request_returncode_unhandled">错误 #9：服务端设置了未处理的 HTTP 返回代码</string>
-    <string name="err_sync_http_request_connect">错误 #11：无法建立至 Nextcloud 服务器的连接</string>
-    <string name="err_sync_http_request_httpexception">错误 #12：无法建立至 Nextcloud 服务器的连接</string>
-    <string name="err_sync_http_request_ioexception">错误 #13：无法建立至 Nextcloud 服务器的连接</string>
-    <string name="err_sync_http_request_resp">错误 #14：无法解析服务端的响应</string>
-    <string name="err_sync_http_request_parse_resp">错误 #15：无法解析服务端的响应</string>
-    <string name="err_sync_no_connection_available">错误 #16：无可用的数据连接</string>
-    <string name="err_sync_account_unparsable">错误 #17：账户不正确，请重新配置</string>
-    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">错误 #18：Nextcloud SMS 应用未安装，或 Nextcloud 正等待升级</string>
-    <string name="err_fetch_phonelist">从服务端获取的电话号码列表无效。</string>
-    <string name="err_proto_v2">服务端不支持该功能，请确认服务端版本至少为 1.6。</string>
+    <string name="err_sync_get_smslist">错误 1：获取先前信息时，服务器返回了无效数据</string>
+    <string name="err_sync_craft_http_request">错误 2：准备 HTTP 请求时出错</string>
+    <string name="err_sync_push_request">错误 3：上传请求失败</string>
+    <string name="err_sync_push_request_resp">错误 4：上传数据时，服务器返回了无效数据</string>
+    <string name="err_sync_create_json_null_smslist">错误 5：短信列表为空</string>
+    <string name="err_sync_create_json_put_smslist">错误 6：准备上传数据时失败</string>
+    <string name="err_sync_create_json_request_encoding">错误 7：生成请求时遇到了不受支持的编码方式</string>
+    <string name="err_sync_auth_failed">错误 8：认证失败</string>
+    <string name="err_sync_http_request_returncode_unhandled">错误 9：服务器设置了未经处理的 HTTP 返回代码</string>
+    <string name="err_sync_http_request_connect">错误 11：无法与 Nextcloud 实例建立连接</string>
+    <string name="err_sync_http_request_httpexception">错误 12：无法与 Nextcloud 实例建立连接</string>
+    <string name="err_sync_http_request_ioexception">错误 13：无法与 Nextcloud 实例建立连接</string>
+    <string name="err_sync_http_request_resp">错误 14：无法解析服务器的响应</string>
+    <string name="err_sync_http_request_parse_resp">错误 15：无法解析服务器的响应</string>
+    <string name="err_sync_no_connection_available">错误 16：无网络连接</string>
+    <string name="err_sync_account_unparsable">错误 17：账户格式错误，请重新配置</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">错误 18：Nextcloud SMS 应用未安装，或 Nextcloud 需要升级</string>
+    <string name="err_fetch_phonelist">服务器返回的电话号码列表无效。</string>
+    <string name="err_proto_v2">服务器不支持该功能，请确认服务器版本大于 1.6。</string>
     <string name="contactinfos_title">联系人信息</string>
     <string name="subtitle_contact_phones">- 联系人电话号码</string>
     <string name="pref_title_bulk_messages">每次同步的最大短信数目</string>
     <string name="contactinfos_list">联系人列表</string>
     <string name="function_not_available">该功能目前不可用。</string>
 
-    <string name="ui_notification_title_template">Nextcloud SMS：%1$s</string>
+    <string name="ui_notification_title_template">Nextcloud 短信：%1$s</string>
     <string name="communicate">Communicate</string>
     <string name="title_activity_main2">Main2Activity</string>
 
@@ -152,56 +152,56 @@
     <string name="ma_content_swipeaction">从左向右滑动以访问操作菜单。</string>
     <string name="cancel">取消</string>
     <string name="understood">我知道了</string>
-    <string name="notif_permission_required">需要的权限</string>
-    <string name="notif_permission_required_content">同步操作需要的一些权限缺失，请在应用设置中修正该问题。</string>
-    <string name="please_fix_it">请修正该问题</string>
+    <string name="notif_permission_required">需要权限</string>
+    <string name="notif_permission_required_content">同步过程中遇到没有权限问题，请在应用设置里修复这一问题。</string>
+    <string name="please_fix_it">修复这一问题。</string>
     <string name="err_cannot_read_contacts">无法读取您的联系人</string>
     <string name="err_cannot_read_sms">无法读取您的短信</string>
     <string name="action_appinfo_perms">应用信息及权限</string>
     <string name="restore_all_messages">恢复全部短信</string>
     <string name="account_actions">账户操作</string>
-    <string name="error_connection_failed_not_found">连接失败，服务器返回\"404 NOT FOUND\"。请确认您设置了正确的 ownCloud 服务器路径。</string>
-    <string name="nothing_to_sync">没有要同步的内容。</string>
+    <string name="error_connection_failed_not_found">连接失败，服务器返回 404 NOT FOUND。请确保设置的 Nextcloud 实例路径是正确的。</string>
+    <string name="nothing_to_sync">没有需要同步的内容。</string>
     <string name="feature_not_already_implemented">此功能尚未实现，很快就会推出。</string>
     <string name="pref_title_minimum_sync_chars">最小号码长度</string>
-    <string name="err_didnt_find_account_restore">我们没有找到您的帐户来恢复您的消息，这是一个异常情况。</string>
+    <string name="err_didnt_find_account_restore">我们没有找到恢复消息的帐号，这是一个异常情况。</string>
     <string name="launch_restore">恢复我的短信</string>
-    <string name="error_make_default_sms_app">请将此应用设置为默认短信应用已恢复您的信息。Android 4.4加入了此项限制。</string>
+    <string name="error_make_default_sms_app">请将此应用设置为默认短信应用，用于恢复短信。此限制于 Android 4.4 引入。</string>
     <string name="fix_permissions">修复权限</string>
-    <string name="err_kitkat_required">使用此功能需要 Android 4.4 或更高版本。</string>
+    <string name="err_kitkat_required">使用此功能需要 Android 4.4 及其更高版本。</string>
     <string name="restore_finished">短信恢复现已完成。</string>
-    <string name="x_messages_restored">信息已恢复&#8230;</string>
-    <string name="err_no_connection">没有可用的连接，请确保您具有有效的数据连接。</string>
+    <string name="x_messages_restored">短信已恢复&#8230;</string>
+    <string name="err_no_connection">无网络，请确保您拥有可用的网络连接。</string>
     <string name="reinit_sync_cursor">重置同步状态</string>
     <string name="reinit_sync_cursor_confirm">您确定要重置同步状态吗？如果发现许多未和服务器同步的旧消息，这将减慢下一次同步速度。</string>
     <string name="yes_confirm">是</string>
     <string name="no_confirm">否</string>
     <string name="pref_show_sync_notifications">显示同步通知</string>
-    <string name="sync_complete">同步完成</string>
-    <string name="err_sync_http_write_failed">错误 #19：将数据推送到服务器时，无法写入 HTTP 流。</string>
-    <string name="err_sync_http_request_protocol_exception">错误 #20：未能正确设置 HTTP 协议的版本。</string>
+    <string name="sync_complete">同步已完成</string>
+    <string name="err_sync_http_write_failed">错误 19：上传数据时，无法写入 HTTP 流。</string>
+    <string name="err_sync_http_request_protocol_exception">错误 20：不支持的 HTTP 协议版本。</string>
     <string name="action_appinfo_privacy_policy">隐私政策</string>
     <string name="privacy_policy_large_text">
-        \"概览\n\n\"
+        \"概述\n\n\"
 
-        \"Nextcloud SMS是一款由贡献者开发的自由软件。 此隐私政策\"
-        \"用于向您说明此应用所收集的数据。\"
+        \"Nextcloud 短信是由其贡献者开发的自由软件。\"
+        \"本隐私政策向您告知本应用所收集的数据。\"
 
         \"我们所收集的信息\n\n\"
 
-        \"应用只收集短信和通话日志。\n\n\"
+        \"本应用只收集短信和通话记录。\n\n\"
 
-        \"信息将发送到哪里。\n\n\"
+        \"信息发往何处\n\n\"
 
-        \"信息既不会发送到Nextcloud团队的服务器，也不会发送到Nextcloud SMS团队的服务器，\"
-        \"亦不会发送给任何政府或其他您不愿意透露信息的实体。\n\n\"
+        \"信息既不发往 Nextcloud 项目和 Nextcloud 短信项目的服务器，\"
+        \"也不会发往任何政府，或是你不希望的个体。\n\n\"
 
-        \"当您在此应用中配置一个Nextcloud账号时，您同意将您的短信\"
-        \"和通话日志保留在此Nextcloud实例拥有者的基础设施中\"
+        \"当您在此应用中配置 Nextcloud 账号，\"
+        \"您同意将短信和通话记录数据储存在实例所有者的基础设施中，\"
         \"并由其负责。\n\n\"
 
-        \"我们不推荐您使用公开的或企业的Nextcloud实例账号。 使用您自己的Nextcloud实例，\"
-        \"您的隐私才能处于您的掌控之下。\n\n\"
+        \"我们不推荐您使用公开的或者企业 Nextcloud 实例账号。\"
+        \"只有使用自己的 Nextcloud 实例，您的隐私才能全权掌控。\n\n\"
 
     </string>
 </resources>
