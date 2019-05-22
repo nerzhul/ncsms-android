@@ -66,7 +66,7 @@
         <item>5000 条短信</item>
         <item>10000 条短信</item>
         <item>25000 条短信</item>
-        <item>所有未同步的短信</item>
+        <item>全部未同步短信</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1 小时</item>
@@ -148,15 +148,15 @@
 
     <string name="navigation_drawer_open">打开导航条</string>
     <string name="navigation_drawer_close">关闭导航条</string>
-    <string name="ma_title_my_accounts">我的账户</string>
+    <string name="ma_title_my_accounts">我的帐号</string>
     <string name="ma_content_swipeaction">从左向右滑动以访问操作菜单。</string>
     <string name="cancel">取消</string>
     <string name="understood">我知道了</string>
     <string name="notif_permission_required">需要权限</string>
     <string name="notif_permission_required_content">同步过程中遇到没有权限问题，请在应用设置里修复这一问题。</string>
     <string name="please_fix_it">修复这一问题。</string>
-    <string name="err_cannot_read_contacts">无法读取您的联系人</string>
-    <string name="err_cannot_read_sms">无法读取您的短信</string>
+    <string name="err_cannot_read_contacts">无法读取通讯录</string>
+    <string name="err_cannot_read_sms">无法读取短信</string>
     <string name="action_appinfo_perms">应用信息及权限</string>
     <string name="restore_all_messages">恢复全部短信</string>
     <string name="account_actions">账户操作</string>
