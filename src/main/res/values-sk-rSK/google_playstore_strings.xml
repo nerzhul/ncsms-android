@@ -30,4 +30,11 @@
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS synchronizuje vaše lokálne SMS s vašou Nextcloud inštanciou</string>
-    </resources>
+    <string name="gp_description">
+Aplikácia Nextcloud SMS synchronizuje SMS správy na vzdialený Nextcloud server a umožňuje vám z neho čítať svoje správy.
+
+Funkcia odosielania SMS z Nextcloudu príde v budúcej verzii.
+
+Aplikácia je plne kompatibilná s Androidom 4.0 až 6.0
+	</string>
+</resources>
