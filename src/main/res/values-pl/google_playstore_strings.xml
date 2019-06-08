@@ -30,4 +30,11 @@
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
     <string name="gp_short_description">Aplikacja Nextcloud SMS synchronizuje lokalne SMS-y na instancji Nextcloud</string>
-    </resources>
+    <string name="gp_description">
+Aplikacja SMS Nextcloud synchronizuje wiadomości SMS na zdalnej instancji Nextcloud oraz umożliwia ich odczyt.
+
+Wysyłanie wiadomości SMS z instancji Nextcloud będzie dostępne w przyszłej wersji.
+
+Aplikacja jest w pełni kompatybilna z Androidem 4.0 do 6.0
+	</string>
+</resources>
