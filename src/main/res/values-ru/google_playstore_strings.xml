@@ -29,5 +29,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMS выполняет синхронизацию SMS на ваш экземпляр Nextcloud</string>
-    </resources>
+    <string name="gp_short_description">Приложение Nextcloud SMS выполняет синхронизацию SMS на ваше облако Nextcloud</string>
+    <string name="gp_description">Приложение Nextcloud SMS выполняет синхронизацию SMS на ваше удаленное облако Nextcloud а также позволяет читать переписку в веб интерфейсе. Отправка SMS через Nextcloud будет реализована в будущем. Приложение полностью совместима с Android 4.0 до 6.0</string>
+</resources>
