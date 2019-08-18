@@ -164,9 +164,9 @@
     <string name="nothing_to_sync">Niets te synchroniseren.</string>
     <string name="feature_not_already_implemented">Deze optie is nog niet geïmplementeerd maar komt binnenkort beschikbaar.</string>
     <string name="pref_title_minimum_sync_chars">Minimumlengte telefoonnummer</string>
-    <string name="err_didnt_find_account_restore">We vonden je account niet om te kunnen herstellen, een heel vreemde situatie...</string>
+    <string name="err_didnt_find_account_restore">We vonden je account niet om te kunnen herstellen, een heel vreemde situatie.</string>
     <string name="launch_restore">Herstel mijn SMS</string>
-    <string name="error_make_default_sms_app">Maak dit de standaardapplicatie voor SMS om herstel van berichten mogelijk te maken. Dit is een beperking vanaf Android 4.4.</string>
+    <string name="error_make_default_sms_app">Maak dit de standaardapplicatie voor SMS om herstel van berichten mogelijk te maken. Dit is een beperking sinds Android 4.4.</string>
     <string name="fix_permissions">Herstel permissies</string>
     <string name="err_kitkat_required">Android 4.4 of hoger is vereist voor deze functionaliteit.</string>
     <string name="restore_finished">SMS-herstel voltooid.</string>
