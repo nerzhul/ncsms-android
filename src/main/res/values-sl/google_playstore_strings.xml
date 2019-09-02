@@ -30,4 +30,11 @@
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
     <string name="gp_short_description">Program Nextcloud SMS je namenjen usklajevanju sporočil SMS s strežnikom Nextcloud</string>
-    </resources>
+    <string name="gp_description">
+Program Nextcloud SMS je namenjen usklajevanju sporočil SMS z oddaljenim strežnikom Nextcloud in branju sporočil prek računalnika.
+
+Možnost pošiljanja sporočil SMS s strežnika NextCloud bo dodana v prihodnji izdaji.
+
+Program je združljiv z operacijskimi sistemi Android 4.0 do 6.0
+	</string>
+</resources>
