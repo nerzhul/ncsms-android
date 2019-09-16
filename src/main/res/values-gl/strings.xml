@@ -149,7 +149,7 @@
     <string name="navigation_drawer_open">Abrir o caixón de navegación</string>
     <string name="navigation_drawer_close">Pechar o caixón de navegación</string>
     <string name="ma_title_my_accounts">As miñas contas</string>
-    <string name="ma_content_swipeaction">Desprace da esquerda á dereita para acceder ao menú de accións</string>
+    <string name="ma_content_swipeaction">Esvare da esquerda á dereita para acceder ao menú de accións</string>
     <string name="cancel">Cancelar</string>
     <string name="understood">Entendido</string>
     <string name="notif_permission_required">Requírense permisos</string>
