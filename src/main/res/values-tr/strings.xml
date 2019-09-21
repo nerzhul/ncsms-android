@@ -133,7 +133,7 @@
     <string name="err_sync_http_request_parse_resp">Hata No 15: Sunucu yanıtı işlenemedi</string>
     <string name="err_sync_no_connection_available">Hata No 16: Kullanılabilecek bir veri bağlantısı yok</string>
     <string name="err_sync_account_unparsable">Hata No 17: Hesap sorunlu. Lütfen yeniden ayarlayın</string>
-    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Hata No 18: Nextcloud SMS uygulaması kurulmamış ya da Nextcloud yazılımının güncellenmesi gerekiyor</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Hata No 18: Nextcloud SMS uygulaması kurulmamış ya da Nextcloud uygulamasının güncellenmesi gerekiyor</string>
     <string name="err_fetch_phonelist">Sunucudan alınan telefon listesi geçersiz.</string>
     <string name="err_proto_v2">Sunucu bu özelliği desteklemiyor. Sunucu sürümünün en az 1.6 olduğundan emin olun.</string>
     <string name="contactinfos_title">Kişi bilgileri</string>
