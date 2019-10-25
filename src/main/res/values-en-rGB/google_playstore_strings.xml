@@ -30,4 +30,11 @@
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS synchronises your SMS with your Nextcloud</string>
-    </resources>
+    <string name="gp_description">
+Nextcloud SMS application synchronize your SMS messages on a remote Nextcloud instance and let you read your messages from it.
+
+Sending SMS from Nextcloud instance will coming in a future release.
+
+Application is fully compatible from Android 4.0 to 6.0
+	</string>
+</resources>
