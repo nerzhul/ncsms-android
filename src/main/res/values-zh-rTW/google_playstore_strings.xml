@@ -29,5 +29,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMS 會同步您本機上的 SMS 到您的 Nextcloud 實體上</string>
-    </resources>
+    <string name="gp_short_description">Nextcloud SMS 同步您本地上的簡訊到您的 Nextcloud 伺服器中</string>
+    <string name="gp_description">
+Nextcloud SMS 同步您本地上的 SMS 到您的 Nextcloud 伺服器中，並且讓您輕鬆的在遠端讀取您的簡訊。
+
+從 Nextcloud 傳送簡訊功能將在未來發佈，敬請期待！
+
+此應用程式完全相容 Android 4.0 和 Android 6.0 中間所有的版本。</string>
+</resources>
