@@ -82,7 +82,7 @@
     <string name="pref_sync_3g">Synchronizovat přes 3G</string>
     <string name="pref_sync_gprs">Synchronizovat přes 2.5G (GPRS)</string>
     <string name="pref_sync_2g">Synchronizovat přes 2G</string>
-    <string name="pref_sync_others">Synchronizovat v ostatních módech</string>
+    <string name="pref_sync_others">Synchronizovat v ostatních režimech</string>
     <string name="title_activity_login">Přihlásit se</string>
 
     <!-- Login -->
@@ -92,7 +92,7 @@
     <string name="action_sign_in_short">Přihlásit se</string>
     <string name="error_invalid_login">Jméno nebo heslo není správné</string>
     <string name="error_invalid_password">Toto heslo je příliš krátké</string>
-    <string name="error_field_required">Tato kolonka je vyžadována</string>
+    <string name="error_field_required">Tuto kolonku je třeba vyplnit</string>
     <string name="prompt_serverURI">Adresa serveru</string>
     <string name="error_invalid_server_address">Neplatná adresa serveru</string>
     <string name="error_connection_failed">Připojení se nezdařilo. Ujistěte se, že se připojujete ke správnému serveru</string>
@@ -137,7 +137,7 @@
     <string name="err_fetch_phonelist">Ze serveru obdržen neplatný telefonní seznam.</string>
     <string name="err_proto_v2">Server nepodporuje tuto funkci. Zajistěte, aby jeho verze byla alespoň 1.6.</string>
     <string name="contactinfos_title">Kontaktní informace</string>
-    <string name="subtitle_contact_phones">Kontaktní telefony</string>
+    <string name="subtitle_contact_phones">- Kontaktní telefony</string>
     <string name="pref_title_bulk_messages">Maximální počet odeslaných zpráv pro jednu synchronizaci.</string>
     <string name="contactinfos_list">Kontakty</string>
     <string name="function_not_available">Tato funkce ještě není dostupná</string>
@@ -168,7 +168,7 @@
     <string name="launch_restore">Obnovit mé SMS</string>
     <string name="error_make_default_sms_app">Zvolte tuto aplikaci jako výchozí SMS aplikaci pro obnovení vašich SMS zpráv. Toto omezení bylo uvedeno v Adnroidu 4.4.</string>
     <string name="fix_permissions">Opravit oprávnění</string>
-    <string name="err_kitkat_required">Android 4.4 nebo novější je vyžadován pro využití této funkce.</string>
+    <string name="err_kitkat_required">Pro používání této funkce je zapotřebí systém Android 4.4 a novější.</string>
     <string name="restore_finished">Obnovení SMS je nyní dokončeno.</string>
     <string name="x_messages_restored">zprávy obnoveny&#8230;</string>
     <string name="err_no_connection">Připojení nedostupné. Ověřte, že máte funkční datové připojení.</string>
@@ -180,7 +180,7 @@
     <string name="sync_complete">Synchronizace dokončena</string>
     <string name="err_sync_http_write_failed">Chyba #19: Během odeslání dat na server došlo k selhání zápisu HTTP streamu.</string>
     <string name="err_sync_http_request_protocol_exception">Error #20: Chyba při nastavení verze HTTP protokolu.</string>
-    <string name="action_appinfo_privacy_policy">Zásady soukromí</string>
+    <string name="action_appinfo_privacy_policy">Zásady ochrany soukromí</string>
     <string name="privacy_policy_large_text">
         \"Přehled\n\n\"
 
