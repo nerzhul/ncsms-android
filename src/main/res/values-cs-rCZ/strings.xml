@@ -31,7 +31,7 @@
 
     <!-- System strings, do not translate -->
     <string name="app_name">Nextcloud SMS</string>
-    <string name="login_logo">Přihlašovací logo</string>
+    <string name="login_logo">Logo na přihlašovací obrazovce</string>
 
     <!-- Translations must begin there -->
     <!-- Preferences -->
@@ -136,7 +136,7 @@
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Chyba č. 18: Aplikace Nextcloud SMS není na serveru nainstalována, nebo Nextcloud čeká na aktualizace.</string>
     <string name="err_fetch_phonelist">Ze serveru obdržen neplatný telefonní seznam.</string>
     <string name="err_proto_v2">Server nepodporuje tuto funkci. Zajistěte, aby jeho verze byla alespoň 1.6.</string>
-    <string name="contactinfos_title">Kontaktní informace</string>
+    <string name="contactinfos_title">Kontaktní údaje</string>
     <string name="subtitle_contact_phones">- Kontaktní telefony</string>
     <string name="pref_title_bulk_messages">Maximální počet odeslaných zpráv pro jednu synchronizaci.</string>
     <string name="contactinfos_list">Kontakty</string>
@@ -155,7 +155,7 @@
     <string name="notif_permission_required">Vyžadováno oprávnění</string>
     <string name="notif_permission_required_content">Chybí některá oprávnění vyžadovaná pro synchronizace. Opravte je v nastavení aplikace</string>
     <string name="please_fix_it">Opravte to.</string>
-    <string name="err_cannot_read_contacts">Nemůžeme načíst vaše kontakty.</string>
+    <string name="err_cannot_read_contacts">Nedaří se načíst vaše kontakty.</string>
     <string name="err_cannot_read_sms">Nedaří se načíst vaše SMS.</string>
     <string name="action_appinfo_perms">Informace o aplikaci a oprávněních</string>
     <string name="restore_all_messages">Obnovit všechny zprávy</string>

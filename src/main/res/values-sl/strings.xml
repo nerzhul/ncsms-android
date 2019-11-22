@@ -136,6 +136,7 @@
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: program Nextcloud SMS ni nameščen ali pa je v teku posodobitev</string>
     <string name="err_fetch_phonelist">S strežnika je prejet napačen seznam telefonskih številk</string>
     <string name="contactinfos_title">Podrobnosti stika</string>
+    <string name="pref_title_bulk_messages">Največje število sporočil na usklajevanje</string>
     <string name="contactinfos_list">Seznam stikov</string>
     <string name="function_not_available">Ta zmožnost še ni na voljo.</string>
 
@@ -147,14 +148,17 @@
     <string name="cancel">Prekliči</string>
     <string name="understood">Razumem</string>
     <string name="notif_permission_required">Zahtevana so posebna dovoljenja</string>
+    <string name="notif_permission_required_content">Za izvedbo usklajevanja ni nastavljenih ustreznih dovoljenj. Prilagoditi je treba nastavitve programa.</string>
     <string name="please_fix_it">Napako je treba odpraviti.</string>
     <string name="err_cannot_read_contacts">Ni mogoče prebrati seznama stikov.</string>
     <string name="err_cannot_read_sms">Ni mogoče prebrati sporočil SMS.</string>
     <string name="action_appinfo_perms">Podrobnosti programa in dovoljenja za uporabo</string>
     <string name="restore_all_messages">Obnovi vsa sporočila</string>
     <string name="account_actions">Dejanja računa</string>
+    <string name="error_connection_failed_not_found">Povezava je spodletela, strežnik vrača odziv 404 NOT FOUND. Zagotoviti je treba pravilno pot do okolja Nextcloud.</string>
     <string name="nothing_to_sync">Ni podatkov za usklajevanje</string>
     <string name="feature_not_already_implemented">Zmožnost še ni omogočena, bo pa kmalu na voljo.</string>
+    <string name="pref_title_minimum_sync_chars">Najmanjša dolžina telefonske številke</string>
     <string name="launch_restore">Obnovi sporočila SMS</string>
     <string name="fix_permissions">Popravi dovoljenja</string>
     <string name="restore_finished">Obnavljanje sporočil SMS je končano.</string>
