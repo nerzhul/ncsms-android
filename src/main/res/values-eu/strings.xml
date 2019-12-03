@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="login_logo">Saio hasiera logoa</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - Azkarra</string>
+    <string name="pref_title_sync_frequency">Sinkronizazio-maiztasuna</string>
+    <string name="pref_title_slow_sync">SMS - Motela eta segurua</string>
+    <string name="pref_title_slow_sync_frequency">Sinkronizazio-maiztasun motela eta segurua</string>
+    <string name="action_settings">Ezarpenak</string>
+    <string name="sync_now">Sinkronizatu orain</string>
+    <string name="pref_category_sync">Sinkronizazioa</string>
+    <string name="title_global_pref_to_general_prefs">Hobespen orokorrak</string>
+    <string name="summary_global_pref_to_general_prefs">Sinkronizazio aukerak</string>
+    <string name="summary_notif_prefs">Jakinarazpenak</string>
+    <string name="title_activity_general_settings">Ezarpen orokorrak</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 minutu</item>
+        <item>15 minutu</item>
+        <item>30 minutu</item>
+        <item>Ordu 1</item>
+        <item>3 ordu</item>
+        <item>6 ordu</item>
+        <item>12 ordu</item>
+        <item>24 ordu</item>
+        <item>Inoiz ez</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Sinkronizatu gabeko SMS guztiak</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>Ordu 1</item>
+        <item>3 ordu</item>
+        <item>6 ordu</item>
+        <item>12 ordu</item>
+        <item>24 ordu</item>
+        <item>Inoiz ez</item>
+    </string-array>
+    <string name="pref_sync_wifi">Sinkronizatu Wi-Fiarekin</string>
+    <string name="pref_sync_4g">Sinkronizatu 4Grekin</string>
+    <string name="pref_sync_3g">Sinkronizatu 3Grekin</string>
+    <string name="pref_sync_gprs">Sinkronizatu 2.5Grekin (GPRS)</string>
+    <string name="pref_sync_2g">Sinkronizatu 2Grekin</string>
+    <string name="pref_sync_others">Sinkronizatu beste moduekin</string>
+    <string name="title_activity_login">Eman izena</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Hasi saioa</string>
+    <string name="prompt_password">Pasahitza</string>
+    <string name="action_sign_in">Eman izena edo erregistratu</string>
+    <string name="action_sign_in_short">Eman izena</string>
+    <string name="error_invalid_login">Erabiltzaile-izen edo pasahitz okerra</string>
+    <string name="error_invalid_password">Pasahitz hau laburregia da</string>
+    <string name="error_field_required">Eremu hau derrigorrezkoa da</string>
+    <string name="prompt_serverURI">Zerbitzariaren helbidea</string>
+    <string name="error_invalid_server_address">Zerbitzari helbide baliogabea</string>
+    <string name="error_connection_failed">Konexioak huts egin du, egiaztatu zerbitzari zuzena dela</string>
+    <string name="error_http_connection_failed">Ezin izan da HTTP konexio bat ezarri. Mesedez egiaztatu web zerbitzari bat dagoela</string>
+
+    <string name="ma_title_add_account">Gehitu kontu bat</string>
+    <string name="ma_title_welcome">Ongi etorri</string>
+    <string name="ma_title_remote_account">Urruneko kontua</string>
+    <string name="choose_account">Hautatu kontua</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Hautatu kontua</string>
+    <string name="title_activity_select_contact">Hautatu kontaktua</string>
+    <string name="no_account_configured">Ez da konturik konfiguratu.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">Sinkronizazio prozesua</string>
+    <string name="sync_inprogress">Sinkronizatzen...</string>
+    <string name="fatal_error">Errore larria !</string>
+
+    <string name="contactinfos_title">Kontaktuen informazioa</string>
+    <string name="subtitle_contact_phones">- Kontaktuen telefonoak</string>
+    <string name="contactinfos_list">Kontaktuen zerrenda</string>
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="communicate">Komunikatu</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Ireki nabigatzeko menu lerrakorra</string>
+    <string name="navigation_drawer_close">Itxi nabigatzeko menu lerrakorra</string>
+    <string name="ma_title_my_accounts">Nire kontuak</string>
+    <string name="cancel">Utzi</string>
+    <string name="understood">Ulertuta</string>
+    <string name="notif_permission_required">Baimenak behar dira</string>
+    <string name="notif_permission_required_content">Baimen batzuk falta dira sinkronizazio prozesua egiteko. Mesedez konpondu ezazu apparen ezarpenetan</string>
+    <string name="please_fix_it">Mesedez konpondu ezazu.</string>
+    <string name="err_cannot_read_contacts">Ezin ditugu zure kontaktuak irakurri.</string>
+    <string name="err_cannot_read_sms">Ezin ditugu zure SMSak irakurri.</string>
+    <string name="action_appinfo_perms">App informazioa eta baimenak</string>
+    <string name="restore_all_messages">Berezarri mezu guztiak</string>
+    <string name="account_actions">Kontuaren ekintzak</string>
+    <string name="error_connection_failed_not_found">Konexioak huts egin du, zerbitzariak 404 NOT FOUND bueltatzen du. Egiaztatu Nextcloud instantziara bide-izen zuzena jarri duzula.</string>
+    <string name="nothing_to_sync">Ez dago ezer sinkronizatzeko.</string>
+    <string name="pref_title_minimum_sync_chars">Telefono zenbakiaren gutxieneko luzera</string>
+    <string name="launch_restore">Berezarri nire SMSak</string>
+    <string name="fix_permissions">Konpondu baimenak</string>
+    <string name="err_kitkat_required">Android 4.4 edo berriagoa behar da ezaugarri hau erabiltzeko.</string>
+    <string name="restore_finished">SMS berreskurapena bukatu da.</string>
+    <string name="x_messages_restored">&#8230; mezu berezarrita</string>
+    <string name="yes_confirm">Bai</string>
+    <string name="no_confirm">Ez</string>
+    <string name="pref_show_sync_notifications">Erakutsi sinkronizazio jakinarazpenak</string>
+    <string name="sync_complete">Sinkronizazioa bukatu da</string>
+    <string name="err_sync_http_request_protocol_exception">20. errorea: HTTP protokolo bertsioa ezartzeak huts egin du.</string>
+    <string name="action_appinfo_privacy_policy">Pribatutasun politika</string>
+    </resources>
