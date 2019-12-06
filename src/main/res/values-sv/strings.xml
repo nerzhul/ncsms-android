@@ -181,4 +181,26 @@
     <string name="err_sync_http_write_failed">Fel #19: det gick inte att skriva HTTP-ström när du överföra data till en server.</string>
     <string name="err_sync_http_request_protocol_exception">Fel # 20: Det gick inte att korrekt ställa in HTTP-protokollversionen.</string>
     <string name="action_appinfo_privacy_policy">Integritetspolicy</string>
-    </resources>
+    <string name="privacy_policy_large_text">
+        \"Översikt\n\n\"
+
+        \"Nextcloud SMS är en kostnadsfri mjukvara, utvecklad av dess bidragsgivare\". 
+        \"Integritetspolicyn är avsedd för din information om de data som applikationen samlar in.\"
+
+        \"Information som vi samlar in\n\n\"
+
+        \"Endast SMS och samtalslogg samlas in av applikationen.\n\n\"
+
+        \"Vart informationen skickas.\n\n\"
+
+        \"Information  skickas vare sig till Nextcloud-teamets servrar eller till Nextcloud SMS-teams servrar. Ej heller \"
+        \"till någon regerings eller till nån annan myndighet du tillåter.\n\n\"
+
+        \"När du i applikationen konfigurerar ett Nextcloud-konto accepterar du att Nextcloud-anslutningen lagrar SMS och samtalslogg i dennes infrastruktur\"
+        \"och under dennes ansvar.\n\n\"
+
+        \"Vi avråder från använda av offentliga servrar eller uppkoppling företagsanslutet Nextcloud-konto.\"
+        \"Du måste ha kontroll över dina egna Nextcloud-anslutningar.\n\n\"
+
+    </string>
+</resources>
