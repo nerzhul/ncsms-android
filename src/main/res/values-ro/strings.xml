@@ -123,4 +123,7 @@
     <string name="err_sync_push_request_resp">Eroare #4: Date invalide primite de la server în timp ce împingeam datele</string>
     <string name="err_sync_create_json_null_smslist">Eroare #5: Listă SMS nulă</string>
     <string name="err_sync_create_json_put_smslist">Eroare #6: Eroare în timp ce compuneam cererea Push</string>
+    <string name="cancel">Anulează</string>
+    <string name="yes_confirm">a</string>
+    <string name="no_confirm">Nu</string>
     </resources>

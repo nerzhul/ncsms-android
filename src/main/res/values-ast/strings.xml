@@ -91,6 +91,8 @@
     <string name="error_connection_failed">Falló la conexón, asegúrate de qu\'esti ye\'l sirvidor correutu</string>
     <string name="ma_title_welcome">Afáyate</string>
     <string name="ma_title_remote_account">Cuenta remota</string>
+    <string name="choose_account">Esbillar cuenta</string>
+
     <!-- Restauration -->
     <string name="title_activity_select_account">Esbillar cuenta</string>
     <string name="title_activity_select_contact">Esbillar contautu</string>

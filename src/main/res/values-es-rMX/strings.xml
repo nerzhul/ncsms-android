@@ -180,4 +180,5 @@
     <string name="sync_complete">Sincronización completa</string>
     <string name="err_sync_http_write_failed">Error #19: Falla al escribir al flujo HTTP al enviar datos al servidor. </string>
     <string name="err_sync_http_request_protocol_exception">Error #20: Falla al establecer correctamente la versión del protocolo HTTP.</string>
+    <string name="action_appinfo_privacy_policy">Política de privacidad</string>
     </resources>

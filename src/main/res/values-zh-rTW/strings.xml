@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud 簡訊</string>
+    <string name="login_logo">登入 Logo</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">簡訊-快速</string>
+    <string name="pref_title_sync_frequency">高同步頻率</string>
+    <string name="pref_title_slow_sync">簡訊-緩慢但安全</string>
+    <string name="pref_title_slow_sync_frequency">安全但較慢的同步頻率</string>
+    <string name="action_settings">設定</string>
+    <string name="sync_now">現在同步</string>
+    <string name="pref_category_sync">同步</string>
+    <string name="title_global_pref_to_general_prefs">一般偏好設定</string>
+    <string name="summary_global_pref_to_general_prefs">同步設定</string>
+    <string name="summary_notif_prefs">通知</string>
+    <string name="pref_header_data_sync">在 &amp; 同步</string>
+    <string name="title_activity_general_settings">一般設定</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5分鐘</item>
+        <item>15分鐘</item>
+        <item>30分鐘</item>
+        <item>1小時</item>
+        <item>3小時</item>
+        <item>6小時</item>
+        <item>12小時</item>
+        <item>24小時</item>
+        <item>永不</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>所有SMS未同步</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1小時</item>
+        <item>3小時</item>
+        <item>6小時</item>
+        <item>12小時</item>
+        <item>24小時</item>
+        <item>永不</item>
+    </string-array>
+    <string name="pref_sync_wifi">透過 WiFi 同步</string>
+    <string name="pref_sync_4g">透過 4G 同步</string>
+    <string name="pref_sync_3g">透過 3G 同步</string>
+    <string name="pref_sync_gprs">透過 2.5G (GPRS) 同步</string>
+    <string name="pref_sync_2g">透過 2G 同步</string>
+    <string name="pref_sync_others">於其他模式同步</string>
+    <string name="title_activity_login">登入</string>
+
+    <!-- Login -->
+    <string name="prompt_login">帳號</string>
+    <string name="prompt_password">密碼</string>
+    <string name="action_sign_in">登入或註冊</string>
+    <string name="action_sign_in_short">登入</string>
+    <string name="error_invalid_login">帳號或密碼錯誤</string>
+    <string name="error_invalid_password">此密碼過短</string>
+    <string name="error_field_required">此欄位為必填</string>
+    <string name="prompt_serverURI">伺服器位址</string>
+    <string name="error_invalid_server_address">無效的伺服器位址</string>
+    <string name="error_connection_failed">連線失敗，確認這是正確的伺服器</string>
+    <string name="ma_title_add_account">新增一個帳號</string>
+    <string name="ma_title_welcome">歡迎</string>
+    <string name="ma_content_welcome">歡迎使用 Nextcloud SMS 應用程式。此應用程式可以讓您同步您的SMS到使用 SMS app的 Nextcloud 程式上。</string>
+    <string name="ma_title_remote_account">遠端帳號</string>
+    <string name="choose_account">選擇帳戶</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">選擇帳號</string>
+    <string name="fatal_error">嚴重的錯誤！</string>
+
+    <string name="navigation_drawer_open">開啟導覽列</string>
+    <string name="navigation_drawer_close">關閉導覽列</string>
+    <string name="cancel">取消</string>
+    <string name="yes_confirm">是</string>
+    <string name="no_confirm">否</string>
+    </resources>
