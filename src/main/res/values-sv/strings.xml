@@ -123,7 +123,7 @@
     <string name="err_sync_push_request_resp">Fel #4: Ogiltig data mottaget från server när data skickades</string>
     <string name="err_sync_create_json_null_smslist">Fel #5: NULL SMS Lista</string>
     <string name="err_sync_create_json_put_smslist">Fel #6: Fel vid hantering av skickningsbegäran</string>
-    <string name="err_sync_create_json_request_encoding">Fel #7: Encoding stöddes ej när begäran skapades</string>
+    <string name="err_sync_create_json_request_encoding">Fel #7: Kodning stöddes inte när begäran skapades</string>
     <string name="err_sync_auth_failed">Fel #8: Autentisering misslyckades</string>
     <string name="err_sync_http_request_returncode_unhandled">Fel #9: Server satte ohanterad HTTP-returkod</string>
     <string name="err_sync_http_request_connect">Fel #11: Kunde inte ansluta till Nextcloud-instansen</string>
@@ -135,7 +135,7 @@
     <string name="err_sync_account_unparsable">Fel #17: fel på konto. Vänligen konfigurera det igen</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Fel #18: Nextcloud SMS-app är inte installerad eller så väntar Nextcloud en uppgradering</string>
     <string name="err_fetch_phonelist">Ogiltig telefonlista mottagen från server.</string>
-    <string name="err_proto_v2">Servern stöder ej denna funktion. Säkerställ att serverversionen är minst 1.6.</string>
+    <string name="err_proto_v2">Servern stöder inte denna funktion. Säkerställ att serverversionen är minst 1.6.</string>
     <string name="contactinfos_title">Kontaktinformation</string>
     <string name="subtitle_contact_phones">- Kontakttelefoner</string>
     <string name="pref_title_bulk_messages">Maximalt antal meddelanden att skicka per synk</string>
@@ -193,7 +193,7 @@
 
         \"Vart informationen skickas.\n\n\"
 
-        \"Information  skickas vare sig till Nextcloud-teamets servrar eller till Nextcloud SMS-teams servrar. Ej heller \"
+        \"Information  skickas vare sig till Nextcloud-teamets servrar eller till Nextcloud SMS-teams servrar. Inte heller \"
         \"till någon regerings eller till nån annan myndighet du tillåter.\n\n\"
 
         \"När du i applikationen konfigurerar ett Nextcloud-konto accepterar du att Nextcloud-anslutningen lagrar SMS och samtalslogg i dennes infrastruktur\"
