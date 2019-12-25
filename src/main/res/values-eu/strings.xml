@@ -101,6 +101,7 @@
     <string name="ma_title_rate_us">Balora gaitzazu!</string>
     <string name="ma_title_add_account">Gehitu kontu bat</string>
     <string name="ma_title_welcome">Ongi etorri</string>
+    <string name="ma_content_welcome">Ongi etorri Nextcloud SMS aplikaziora. Aplikazio honek uzten dizu zure SMS zerbitzua zure Nextcloudarekin sinkronizatzea SMS aplikazioa erabiliz.</string>
     <string name="ma_title_remote_account">Urruneko kontua</string>
     <string name="choose_account">Hautatu kontua</string>
 
@@ -114,6 +115,9 @@
     <string name="sync_inprogress">Sinkronizatzen...</string>
     <string name="fatal_error">Errore larria !</string>
 
+    <!-- Errors -->
+    <string name="err_sync_get_smslist">Errore #1: balio ez duten datuak jaso dira zerbitzaritik aurreko mezuak jasotzerakoan</string>
+    <string name="err_sync_craft_http_request">Errore #2: Errorea HTTP bat sortzeko eskatzerakoan</string>
     <string name="contactinfos_title">Kontaktuen informazioa</string>
     <string name="subtitle_contact_phones">- Kontaktuen telefonoak</string>
     <string name="contactinfos_list">Kontaktuen zerrenda</string>
