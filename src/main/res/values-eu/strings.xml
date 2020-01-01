@@ -76,6 +76,7 @@
         <item>24 ordu</item>
         <item>Inoiz ez</item>
     </string-array>
+    <string name="pref_push_on_receive">Push SMS harrera lekuan</string>
     <string name="pref_sync_wifi">Sinkronizatu Wi-Fiarekin</string>
     <string name="pref_sync_4g">Sinkronizatu 4Grekin</string>
     <string name="pref_sync_3g">Sinkronizatu 3Grekin</string>
@@ -118,6 +119,10 @@
     <!-- Errors -->
     <string name="err_sync_get_smslist">Errore #1: balio ez duten datuak jaso dira zerbitzaritik aurreko mezuak jasotzerakoan</string>
     <string name="err_sync_craft_http_request">Errore #2: Errorea HTTP bat sortzeko eskatzerakoan</string>
+    <string name="err_sync_push_request">Errore #3: Push eskaerak huts egin du</string>
+    <string name="err_sync_create_json_null_smslist">Errore #5: SMS zerrenda  NULUA</string>
+    <string name="err_sync_create_json_request_encoding">ErrorE #7: Onartzen ez den kodetze sistema eskaera egiterakoan</string>
+    <string name="err_sync_auth_failed">Errore #8: Ezin izan da autentifikatu</string>
     <string name="contactinfos_title">Kontaktuen informazioa</string>
     <string name="subtitle_contact_phones">- Kontaktuen telefonoak</string>
     <string name="contactinfos_list">Kontaktuen zerrenda</string>
