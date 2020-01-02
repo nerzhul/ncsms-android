@@ -83,13 +83,13 @@
     <string name="pref_sync_gprs">Synchronizuj przez 2.5G (GPRS)</string>
     <string name="pref_sync_2g">Synchronizuj przez 2G</string>
     <string name="pref_sync_others">Synchronizuj w innych trybach</string>
-    <string name="title_activity_login">Zaloguj się</string>
+    <string name="title_activity_login">Zaloguj</string>
 
     <!-- Login -->
     <string name="prompt_login">Użytkownik</string>
     <string name="prompt_password">Hasło</string>
     <string name="action_sign_in">Zaloguj lub zarejestruj się</string>
-    <string name="action_sign_in_short">Zaloguj się</string>
+    <string name="action_sign_in_short">Zaloguj</string>
     <string name="error_invalid_login">Niepoprawny użytkownik lub hasło</string>
     <string name="error_invalid_password">To hasło jest za krótkie</string>
     <string name="error_field_required">To pole jest wymagane</string>
