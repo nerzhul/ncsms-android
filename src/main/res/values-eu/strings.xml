@@ -123,6 +123,7 @@
     <string name="err_sync_create_json_null_smslist">Errore #5: SMS zerrenda  NULUA</string>
     <string name="err_sync_create_json_request_encoding">ErrorE #7: Onartzen ez den kodetze sistema eskaera egiterakoan</string>
     <string name="err_sync_auth_failed">Errore #8: Ezin izan da autentifikatu</string>
+    <string name="err_sync_http_request_returncode_unhandled">Errore #9: Zerbitzariak ezarri du eskuragarri ez dagoen HTTP itzulera kodea</string>
     <string name="contactinfos_title">Kontaktuen informazioa</string>
     <string name="subtitle_contact_phones">- Kontaktuen telefonoak</string>
     <string name="contactinfos_list">Kontaktuen zerrenda</string>
