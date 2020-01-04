@@ -109,7 +109,7 @@
     <!-- Restauration -->
     <string name="title_activity_select_account">选择帐号</string>
     <string name="title_activity_select_contact">选择联系人</string>
-    <string name="no_account_configured">帐号未配置。</string>
+    <string name="no_account_configured">未配置帐号。</string>
 
     <!-- Notifications -->
     <string name="sync_title">同步进度</string>
@@ -132,7 +132,7 @@
     <string name="err_sync_http_request_resp">错误 14：无法解析服务器的响应</string>
     <string name="err_sync_http_request_parse_resp">错误 15：无法解析服务器的响应</string>
     <string name="err_sync_no_connection_available">错误 16：无网络连接</string>
-    <string name="err_sync_account_unparsable">错误 17：账户格式错误，请重新配置</string>
+    <string name="err_sync_account_unparsable">错误＃17：格式错误的账号。 请重新配置</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">错误 18：Nextcloud SMS 应用未安装，或 Nextcloud 需要升级</string>
     <string name="err_fetch_phonelist">服务器返回的电话号码列表无效。</string>
     <string name="err_proto_v2">服务器不支持该功能，请确认服务器版本大于 1.6。</string>
@@ -159,12 +159,12 @@
     <string name="err_cannot_read_sms">无法读取短信</string>
     <string name="action_appinfo_perms">应用信息及权限</string>
     <string name="restore_all_messages">恢复全部短信</string>
-    <string name="account_actions">账户操作</string>
+    <string name="account_actions">账号操作</string>
     <string name="error_connection_failed_not_found">连接失败，服务器返回 404 NOT FOUND。请确保设置的 Nextcloud 实例路径是正确的。</string>
     <string name="nothing_to_sync">没有需要同步的内容。</string>
     <string name="feature_not_already_implemented">此功能尚未实现，很快就会推出。</string>
     <string name="pref_title_minimum_sync_chars">最小号码长度</string>
-    <string name="err_didnt_find_account_restore">我们没有找到恢复消息的帐号，这是一个异常情况。</string>
+    <string name="err_didnt_find_account_restore">我们找不到您的账号来还原您的消息，这是一种非常奇怪的情况。</string>
     <string name="launch_restore">恢复我的短信</string>
     <string name="error_make_default_sms_app">请将此应用设置为默认短信应用，用于恢复短信。此限制于 Android 4.4 引入。</string>
     <string name="fix_permissions">修复权限</string>
