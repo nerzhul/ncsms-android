@@ -127,6 +127,8 @@
     <string name="contactinfos_title">Kontaktuen informazioa</string>
     <string name="subtitle_contact_phones">- Kontaktuen telefonoak</string>
     <string name="contactinfos_list">Kontaktuen zerrenda</string>
+    <string name="function_not_available">Funtzio hau ez dago erabilgarri oraindik.</string>
+
     <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
     <string name="communicate">Komunikatu</string>
     <string name="title_activity_main2">Main2Activity</string>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nekstklaud SMS</string>
+    <string name="login_logo">Logo prijave</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS — brzo</string>
+    <string name="pref_title_sync_frequency">Učestalost brze sinh.</string>
+    <string name="pref_title_slow_sync">SMS — sporo i bezbedno</string>
+    <string name="pref_title_slow_sync_frequency">Učestanost spore, bezbedne sinh.</string>
+    <string name="action_settings">Postavke</string>
+    <string name="sync_now">Sinhronizuj odmah</string>
+    <string name="pref_category_sync">Sinhronizacija</string>
+    <string name="title_global_pref_to_general_prefs">Opšte postavke</string>
+    <string name="summary_global_pref_to_general_prefs">Opcije sinhronizacije</string>
+    <string name="summary_notif_prefs">Obaveštenja</string>
+    <string name="pref_header_data_sync">Podaci i sinhronizacija</string>
+    <string name="title_activity_general_settings">Opšte postavke</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 minuta</item>
+        <item>15 minuta</item>
+        <item>30 minuta</item>
+        <item>1 sat</item>
+        <item>3 sata</item>
+        <item>6 sati</item>
+        <item>12 sati</item>
+        <item>24 sata</item>
+        <item>Nikad</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS poruka</item>
+        <item>1000 SMS poruka</item>
+        <item>2000 SMS poruka</item>
+        <item>5000 SMS poruka</item>
+        <item>10000 SMS poruka</item>
+        <item>25000 SMS poruka</item>
+        <item>Svaka nesinhronizovana SMS poruka</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 sat</item>
+        <item>3 sata</item>
+        <item>6 sati</item>
+        <item>12 sati</item>
+        <item>24 sata</item>
+        <item>Nikad</item>
+    </string-array>
+    <string name="pref_push_on_receive">Šalji SMS poruke odmah po primanju</string>
+    <string name="pref_sync_wifi">Sinh. preko bežičnog interneta</string>
+    <string name="pref_sync_4g">Sinh. preko 4G</string>
+    <string name="pref_sync_3g">Sinh. preko 3G</string>
+    <string name="pref_sync_gprs">Sinh. preko 2.5G (GPRS)</string>
+    <string name="pref_sync_2g">Sinh. preko 2G</string>
+    <string name="pref_sync_others">Sinh. u ostalim režimima</string>
+    <string name="title_activity_login">Prijavljivanje</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Korisničko ime</string>
+    <string name="prompt_password">Lozinka</string>
+    <string name="action_sign_in">Prijavite se ili registrujte</string>
+    <string name="action_sign_in_short">Prijava</string>
+    <string name="error_invalid_login">Korisničko ime ili lozinka netačni</string>
+    <string name="error_invalid_password">Ova lozinka je prekratka</string>
+    <string name="error_field_required">Ovo polje je obavezno</string>
+    <string name="prompt_serverURI">Adresa servera</string>
+    <string name="error_invalid_server_address">Neispravna adresa servera</string>
+    <string name="error_connection_failed">Povezivanje nije uspelo, proverite da li je ovo pravi server</string>
+    <string name="error_http_connection_failed">Ne mogu da napravim HTTP vezu. Proverite da li veb server postoji</string>
+
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">Ocenite nas!</string>
+    <string name="ma_title_add_account">Dodajte nalog</string>
+    <string name="ma_title_welcome">Dobro došli</string>
+    <string name="ma_content_welcome">Dobro došli u Nekstklaud SMS. Ova aplikacija sinhronizuje vaše SMS poruke na SMS aplikaciju vašeg Nekstklaud servera.</string>
+    <string name="ma_title_remote_account">Udaljeni nalog</string>
+    <string name="choose_account">Odaberite nalog</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Označite nalog</string>
+    <string name="title_activity_select_contact">Označite kontakt</string>
+    <string name="no_account_configured">Nalog nije podešen.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">Sinhronizacija</string>
+    <string name="sync_inprogress">Sinhronizacija u toku...</string>
+    <string name="fatal_error">Kobna greška! </string>
+
+    <!-- Errors -->
+    <string name="err_sync_get_smslist">Greška #1: neispravni podaci primljeni sa servera prilikom dobavljanja prethodnih poruka</string>
+    <string name="err_sync_craft_http_request">Greška #2: greška pri izradi HTTP zahteva</string>
+    <string name="err_sync_push_request">Greška #3: zahtev za guranjem nije uspeo</string>
+    <string name="err_sync_push_request_resp">Greška #4: neispravni podaci primljeni sa servera prilikom guranja podataka</string>
+    <string name="err_sync_create_json_null_smslist">Greška #5: prazan spisak SMS poruka</string>
+    <string name="err_sync_create_json_put_smslist">Greška #6: greška pri izradi zahteva guranja</string>
+    <string name="err_sync_create_json_request_encoding">Greška #7: nepodržano kodiranje pri izradi zahteva</string>
+    <string name="err_sync_auth_failed">Greška #8: autentifikacija nije uspela</string>
+    <string name="err_sync_http_request_returncode_unhandled">Greška #9: server je postavio neobrađen HTTP povratni kod</string>
+    <string name="err_sync_http_request_connect">Greška #11: ne mogu da uspostavim vezu ka Nekstklaud instanci</string>
+    <string name="err_sync_http_request_httpexception">Greška #12: ne mogu da uspostavim vezu ka Nekstklaud instanci</string>
+    <string name="err_sync_http_request_ioexception">Greška #13: ne mogu da uspostavim vezu na Nekstklaud instanci</string>
+    <string name="err_sync_http_request_resp">Greška #14: ne mogu da raščlanim odgovor servera</string>
+    <string name="err_sync_http_request_parse_resp">Greška #15: ne mogu da raščlanim odgovor servera</string>
+    <string name="err_sync_no_connection_available">Greška #16: nema veze ka internetu</string>
+    <string name="err_sync_account_unparsable">Greška #17: deformisan nalog. Postavite ga ponovo</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Greška #18: Nekstklaud SMS aplikacija nije instalirana na serveru ili čeka da bude ažurirana</string>
+    <string name="err_fetch_phonelist">Niispravan imenik primljen sa servera.</string>
+    <string name="err_proto_v2">Server ne podržava ovu funkcionalniost. Budite sigurni da je verzija servera bar 1.6.</string>
+    <string name="contactinfos_title">Informacije o kontaktu</string>
+    <string name="subtitle_contact_phones">- Telefoni kontakta</string>
+    <string name="pref_title_bulk_messages">Maksimalni broj poruka za slanje prilikom sinhronizacije</string>
+    <string name="contactinfos_list">Lista kontakata</string>
+    <string name="function_not_available">Ova funkcija još nije dostupna.</string>
+
+    <string name="ui_notification_title_template">Nekstklaud SMS: %1$s</string>
+    <string name="communicate">Komuniciraj</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Otvori navigacionu fioku</string>
+    <string name="navigation_drawer_close">Zatvori navigacionu fioku</string>
+    <string name="ma_title_my_accounts">Moji nalozi</string>
+    <string name="ma_content_swipeaction">Prevucite s leva na desni da vidite akcije.</string>
+    <string name="cancel">Otkaži</string>
+    <string name="understood">Razumeo</string>
+    <string name="notif_permission_required">Potrebne dozvole</string>
+    <string name="notif_permission_required_content">Neke dozvole potrebne za sinhronizaciju nedostaju. Popravite to u postavkama aplikacije</string>
+    <string name="please_fix_it">Ispravi</string>
+    <string name="err_cannot_read_contacts">Ne mogu da pročitam kontakte.</string>
+    <string name="err_cannot_read_sms">Ne mogu da pročitam SMS poruke.</string>
+    <string name="action_appinfo_perms">Informacije o aplikaciji i dozvole</string>
+    <string name="restore_all_messages">Povrati sve poruke</string>
+    <string name="account_actions">Akcije naloga</string>
+    <string name="error_connection_failed_not_found">Veza nije uspela, server je vratio grešku 404 NOT FOUND. PRoverite da li imate dobru putanju ka Vašoj Nekstklaud instanci.</string>
+    <string name="nothing_to_sync">Nema ništa za sinhronizaciju.</string>
+    <string name="feature_not_already_implemented">Funkcionalnost još nije podržava i biće dostupna uskoro.</string>
+    <string name="pref_title_minimum_sync_chars">Minimalna dužina telefonskog broja</string>
+    <string name="err_didnt_find_account_restore">Nismo našli Vaš nalog, da bismo povratili poruke, ovo je baš čudna situacija.</string>
+    <string name="launch_restore">Povrati moje SMS poruke</string>
+    <string name="error_make_default_sms_app">Da biste povratili poruke, ova aplikacija mora biti podrazumevana aplikacija za SMS poruke. Ovo ograničenje uvedeno je od Android verzije 4.4.</string>
+    <string name="fix_permissions">Popravi dozvole</string>
+    <string name="err_kitkat_required">Da biste koristili ovu funkcionalnost, potrebna Vam je Android verzija 4.4 ili veća.</string>
+    <string name="restore_finished">Vraćanje SMS poruka završeno.</string>
+    <string name="x_messages_restored">poruke vraćene&#8230;</string>
+    <string name="err_no_connection">Nijedna konekcija nije dostupna, proverite da li imate neki tip konekcije na internet.</string>
+    <string name="reinit_sync_cursor">Ponovo inicijalizuj sinhronizacioni pokazivač</string>
+    <string name="reinit_sync_cursor_confirm">Da li ste sigurni da želite da ponovo inicijalizujete sinhronizacioni pokazivač? Ovo može usporiti sledeću sinhronizaciju ukoliko nađemo previše starih poruka koje do sad nisu sinhronizovane sa serverom.</string>
+    <string name="yes_confirm">Da</string>
+    <string name="no_confirm">Ne</string>
+    <string name="pref_show_sync_notifications">Prikaži obaveštenja o sinhronizaciji</string>
+    <string name="sync_complete">Sinhronizacija gotova</string>
+    <string name="err_sync_http_write_failed">Greška #19: ne mogu da pišem na HTTP tok pri guranju podataka na server.</string>
+    <string name="err_sync_http_request_protocol_exception">Greška #20: Ne mogu da postavim verziju HTTP protokola.</string>
+    <string name="action_appinfo_privacy_policy">Politika privatnosti</string>
+    <string name="privacy_policy_large_text">
+        \"Pregled\n\n\"
+
+        \"Nekstklaud SMS je slobodni softver koji su razvili svi koji su mu doprineli. Politika privatnosti \"
+        \"je namenjena da Vas upozna sa podacima koje skuplja ova aplikacija.\"
+
+        \"Informacije koje skupljamo\n\n\"
+
+        \"Aplikacija prikuplja samo SMS i dnevnik poziva.\n\n\"
+
+        \"Gde su informacije poslate.\n\n\"
+
+        \"Ove informacije se ne šalju ni na Nekstklaud timski server, niti Nekstklaud SMS timu, niti bilo kojoj vladi niti entitetu kojem Vi ne želite da ovo bude poslano.\n\n\"
+
+        \"Kada podesite Nekstklaud nalog u aplikaciji, slažete se sa vlasnikom Nekstklaud instance \"
+        \"da će podaci iz SMS-ova i dnevnici poziva biti uskladišteni na njegovoj infrastrukturi \"
+        \"pod njegovom odgovornošću.\n\n\"
+
+        \"Ne preporučujemo javni ili kompanijski nalog Nekstklaud instance. Vaša privatnost \"
+        \"mora biti pod Vašom kontrolom na Vašoj Nekstklaud instanci.\n\n\"
+
+    </string>
+</resources>
