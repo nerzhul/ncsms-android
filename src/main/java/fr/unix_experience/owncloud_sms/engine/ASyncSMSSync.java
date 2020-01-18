@@ -93,12 +93,16 @@ public interface ASyncSMSSync {
 
 				if (prefs.showSyncNotifications()) {
 					OCSMSNotificationUI.notify(_context, _context.getString(R.string.sync_title),
-							_context.getString(R.string.sync_inprogress), OCSMSNotificationType.SYNC.ordinal());
+							_context.getString(R.string.sync_inprogress), OCSMSNotificationType.SYNC);
 				}
 
-				syncStartupDate = smsBuffer.getLastMessageDate();
-				performSync(smsBuffer);
-				hasSyncSomething = true;
+				try {
+					syncStartupDate = smsBuffer.getLastMessageDate();
+					performSync(smsBuffer);
+					hasSyncSomething = true;
+				} finally {
+					OCSMSNotificationUI.cancel(_context, OCSMSNotificationType.SYNC);
+				}
 			}
 		}
 
@@ -114,17 +118,16 @@ public interface ASyncSMSSync {
 					// Fetch API version first to do some early verifications
 					Log.i(ASyncSMSSync.TAG, "Server API version: " + _client.getServerAPIVersion());
 					_client.doPushRequest(smsBuffer);
-					OCSMSNotificationUI.cancel(_context);
+					OCSMSNotificationUI.cancel(_context, OCSMSNotificationType.SYNC_FAILED);
 				} catch (IllegalStateException e) { // Fail to read account data
 					OCSMSNotificationUI.notify(_context, _context.getString(R.string.fatal_error),
-							e.getMessage(), OCSMSNotificationType.SYNC_FAILED.ordinal());
+							e.getMessage(), OCSMSNotificationType.SYNC_FAILED);
 				} catch (OCSyncException e) {
 					Log.e(ASyncSMSSync.TAG, _context.getString(e.getErrorId()));
 					OCSMSNotificationUI.notify(_context, _context.getString(R.string.fatal_error),
-							e.getMessage(), OCSMSNotificationType.SYNC_FAILED.ordinal());
+							e.getMessage(), OCSMSNotificationType.SYNC_FAILED);
 				}
 			}
-			OCSMSNotificationUI.cancel(_context);
 			smsBuffer.clear();
 		}
 
