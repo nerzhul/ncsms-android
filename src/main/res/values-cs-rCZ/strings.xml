@@ -103,7 +103,7 @@
     <string name="ma_title_add_account">Přidat účet</string>
     <string name="ma_title_welcome">Vítejte</string>
     <string name="ma_content_welcome">Vítejte v aplikaci Nextcloud SMS. Tato aplikace vám umožní synchronizovat SMS do vašeho prostředí Nextcloud použitím aplikace SMS.</string>
-    <string name="ma_title_remote_account">Vzdálený účet</string>
+    <string name="ma_title_remote_account">Účet na protějšku</string>
     <string name="choose_account">Vyberte účet</string>
 
     <!-- Restauration -->
@@ -178,7 +178,7 @@
     <string name="no_confirm">Ne</string>
     <string name="pref_show_sync_notifications">Zobrazit oznámení ze synchronizace</string>
     <string name="sync_complete">Synchronizace dokončena</string>
-    <string name="err_sync_http_write_failed">Chyba #19: Během odeslání dat na server došlo k selhání zápisu HTTP streamu.</string>
+    <string name="err_sync_http_write_failed">Chyba č. 19: Při odesílání dat na server se nepodařilo zapsat do HTTP proudu (stream).</string>
     <string name="err_sync_http_request_protocol_exception">Chyba č. 20: Nepodařilo se řádné nastavit verzi HTTP protokolu.</string>
     <string name="action_appinfo_privacy_policy">Zásady ochrany soukromí</string>
     <string name="privacy_policy_large_text">
