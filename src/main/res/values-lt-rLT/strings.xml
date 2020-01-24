@@ -130,6 +130,7 @@ Nepavyko užmegzti HTTP ryšio. Patikrinkite žiniatinklių serverį.</string>
     <string name="err_sync_account_unparsable">Klaida #17: netaisyklinga paskyra. Sukonfigūruokite ją iš naujo</string>
     <string name="err_proto_v2">Serveris nepalaiko šios ypatybės. Užtikrinkite, kad serverio versija yra bent 1.6.</string>
     <string name="contactinfos_title">Adresatų informacija</string>
+    <string name="subtitle_contact_phones">- Adresatų telefonai</string>
     <string name="contactinfos_list">Adresatų sąrašas</string>
     <string name="function_not_available">Ši funkcija kol kas yra neprieinama.</string>
 
