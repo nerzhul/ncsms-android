@@ -134,8 +134,11 @@
     <string name="err_sync_no_connection_available">Errore #16: Ez dago datu konexiorik eskuragarri</string>
     <string name="err_sync_account_unparsable">Errore #17: gaizki osatutako kontua. Mesedez konfiguratu ezazu berriro</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Errore #18: Nextcloud SMS appa ez dago instalatuta edo Nextcloud eguneraketa bat itxaroten dago</string>
+    <string name="err_fetch_phonelist">Zerbitzaritik jasotako telefono-zerrenda ez da baliozkoa</string>
+    <string name="err_proto_v2">Zerbitzariak ez du ezaugarri hori onartzen. Egiaztatu zerbitzariaren bertsioa gutxienez 1.6 dela.</string>
     <string name="contactinfos_title">Kontaktuen informazioa</string>
     <string name="subtitle_contact_phones">- Kontaktuen telefonoak</string>
+    <string name="pref_title_bulk_messages">Sinkronizazio bidez gehienez bidali ahal diren mezuak</string>
     <string name="contactinfos_list">Kontaktuen zerrenda</string>
     <string name="function_not_available">Funtzio hau ez dago erabilgarri oraindik.</string>
 
@@ -146,6 +149,7 @@
     <string name="navigation_drawer_open">Ireki nabigatzeko menu lerrakorra</string>
     <string name="navigation_drawer_close">Itxi nabigatzeko menu lerrakorra</string>
     <string name="ma_title_my_accounts">Nire kontuak</string>
+    <string name="ma_content_swipeaction">Lerratu ezkerretik eskuinera ekintzen menura sartzeko</string>
     <string name="cancel">Utzi</string>
     <string name="understood">Ulertuta</string>
     <string name="notif_permission_required">Baimenak behar dira</string>
@@ -158,16 +162,45 @@
     <string name="account_actions">Kontuaren ekintzak</string>
     <string name="error_connection_failed_not_found">Konexioak huts egin du, zerbitzariak 404 NOT FOUND bueltatzen du. Egiaztatu Nextcloud instantziara bide-izen zuzena jarri duzula.</string>
     <string name="nothing_to_sync">Ez dago ezer sinkronizatzeko.</string>
+    <string name="feature_not_already_implemented">Ezaugarri hori oraindik ez dago ezarrita eta laster egongo da erabilgarri.</string>
     <string name="pref_title_minimum_sync_chars">Telefono zenbakiaren gutxieneko luzera</string>
+    <string name="err_didnt_find_account_restore">Ez dugu zure kontua aurkitzen zure mezuak leheneratzeko, egoera oso bitxia da.</string>
     <string name="launch_restore">Berezarri nire SMSak</string>
+    <string name="error_make_default_sms_app">Mesedez, markatu aplikazio hau SMSrako lehenetsi gisa, zure mezuak berrezarri nahi badituzu. Muga hori Android-4.4 bertsioan sartu zen.</string>
     <string name="fix_permissions">Konpondu baimenak</string>
     <string name="err_kitkat_required">Android 4.4 edo berriagoa behar da ezaugarri hau erabiltzeko.</string>
     <string name="restore_finished">SMS berreskurapena bukatu da.</string>
     <string name="x_messages_restored">&#8230; mezu berezarrita</string>
+    <string name="err_no_connection">Konexio erabilgarririk gabe, mesedez, ziurtatu baliozko datu-konexioa duzula.</string>
+    <string name="reinit_sync_cursor">Berrabiarazi sinkronizazio-kurtsorea</string>
+    <string name="reinit_sync_cursor_confirm">Ziur zaude sinkronizazio-kurtsorea berrabiarazi nahi duzula? Horrek sinkronizazio hau moteldu dezake, zerbitzariarekin sinkronizatu gabeko mezu zahar asko aurkitzen baditugu.</string>
     <string name="yes_confirm">Bai</string>
     <string name="no_confirm">Ez</string>
     <string name="pref_show_sync_notifications">Erakutsi sinkronizazio jakinarazpenak</string>
     <string name="sync_complete">Sinkronizazioa bukatu da</string>
+    <string name="err_sync_http_write_failed">#19 errorea: HTTP transmisio-idazketak huts egin du datuak zerbitzarira bidaltzean.</string>
     <string name="err_sync_http_request_protocol_exception">20. errorea: HTTP protokolo bertsioa ezartzeak huts egin du.</string>
     <string name="action_appinfo_privacy_policy">Pribatutasun politika</string>
-    </resources>
+    <string name="privacy_policy_large_text">Ikuspegi orokorra\n\n
+
+\"Nextcloud-en SMSa software librea da, eta zergadunek garatzen dute. Pribatutasun-politika hau\"
+
+\"aplikazio honek bildutako datuen berri eman nahi dizu\".
+
+\"Jasotzen dugun informazioa\n\n\"
+
+\"Dei- eta mezu-erregistroak baino ez dira jasotzen.\n\n\"
+
+\"Nora bidaltzen da informazioa\n\n\"
+
+\"Informazioa ez da bidaltzen ez Nextcloud ekipoaren zerbitzarietara, ez eta... ere.
+bidali nahi ez duzun gobernu edo beste erakunde batera\n\n.
+
+\"Aplikazioan Nextcloud-eko kontu bat konfiguratzen duzunean, onartzen duzu instantziaren jabea izatea\"
+\"gorde zure beteak eta SMSak zure azpiegituran\"
+\"zure ardurapean\n\n\"
+
+\"Ez dugu gomendatzen Nextcloud-eko kontu publiko edo enpresarial bat erabiltzea. Zure pribatutasuna\"
+\"zure kontrolpean egon behar du Nextcloud-eko zure instantzian.\n\n
+</string>
+</resources>
