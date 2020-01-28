@@ -107,7 +107,7 @@
     <string name="choose_account">Choisissez un compte</string>
 
     <!-- Restauration -->
-    <string name="title_activity_select_account">Choisissez un compte</string>
+    <string name="title_activity_select_account">Chosissez un compte</string>
     <string name="title_activity_select_contact">Choisissez un contact</string>
     <string name="no_account_configured">Vous n\'avez pas configuré de compte.</string>
 
