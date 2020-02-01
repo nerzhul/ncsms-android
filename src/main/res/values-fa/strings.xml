@@ -142,6 +142,7 @@
     <string name="contactinfos_list">لیست مخاطبین</string>
     <string name="function_not_available">این عملکرد هنوز موجود نیست</string>
 
+    <string name="ui_notification_title_template">پیام کوتاه نکست کلود: %1$s</string>
     <string name="communicate">برقراری ارتباط</string>
     <string name="title_activity_main2">Main2Activity</string>
 
@@ -169,6 +170,7 @@
     <string name="fix_permissions">مجوزهای ثابت</string>
     <string name="err_kitkat_required">برای استفاده از این ویژگی Android 4.4 یا بالاتر نیاز است.</string>
     <string name="restore_finished">اکنون ترمیم پیام کوتاه به پایان رسیده است.</string>
+    <string name="x_messages_restored">پیام ها بازیابی شدند&#8230;</string>
     <string name="err_no_connection">هیچ ارتباطی در دسترس نیست ، لطفاً اطمینان حاصل کنید که اتصال داده معتبری دارید.</string>
     <string name="reinit_sync_cursor">از مکان نما همزمان سازی مجدداً استفاده کنید</string>
     <string name="reinit_sync_cursor_confirm">آیا مطمئن هستید که می خواهید مکان نما همزمان سازی را دوباره فعال کنید؟ در صورتی که بسیاری از پیامهای قدیمی را که با سرور همگام نشده اند ، می تواند همگام سازی بعدی را کند کند.</string>
