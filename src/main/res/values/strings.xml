@@ -204,7 +204,7 @@
 
     <!-- Notifications -->
     <string name="sync_title">Sync process</string>
-    <string name="sync_inprogress">Sync in progress...</string>
+    <string name="sync_inprogress">Sync in progress …</string>
     <string name="fatal_error">Fatal error ! </string>
 
     <!-- Errors -->
