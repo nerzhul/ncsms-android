@@ -135,10 +135,10 @@
     <string name="err_sync_account_unparsable">Chyba č. 17: chybně definovaný účet. Nastavte ho znovu.</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Chyba č. 18: Aplikace Nextcloud SMS není na serveru nainstalována, nebo Nextcloud čeká na aktualizace.</string>
     <string name="err_fetch_phonelist">Ze serveru obdržen neplatný telefonní seznam.</string>
-    <string name="err_proto_v2">Server nepodporuje tuto funkci. Zajistěte, aby jeho verze byla alespoň 1.6.</string>
+    <string name="err_proto_v2">Server tuto funkci nepodporuje. Zajistěte, aby jeho verze byla alespoň 1.6.</string>
     <string name="contactinfos_title">Kontaktní údaje</string>
     <string name="subtitle_contact_phones">- Kontaktní telefony</string>
-    <string name="pref_title_bulk_messages">Maximální počet odeslaných zpráv pro jednu synchronizaci.</string>
+    <string name="pref_title_bulk_messages">Maximální počet odeslaných zpráv v rámci jedné synchronizace.</string>
     <string name="contactinfos_list">Kontakty</string>
     <string name="function_not_available">Tato funkce ještě není dostupná</string>
 
@@ -153,30 +153,30 @@
     <string name="cancel">Storno</string>
     <string name="understood">Rozumím</string>
     <string name="notif_permission_required">Vyžadováno oprávnění</string>
-    <string name="notif_permission_required_content">Chybí některá oprávnění vyžadovaná pro synchronizace. Opravte je v nastavení aplikace</string>
+    <string name="notif_permission_required_content">Chybí některá oprávnění vyžadovaná pro synchronizaci. Opravte je v nastavení aplikace</string>
     <string name="please_fix_it">Opravte to.</string>
     <string name="err_cannot_read_contacts">Nedaří se načíst vaše kontakty.</string>
     <string name="err_cannot_read_sms">Nedaří se načíst vaše SMS.</string>
     <string name="action_appinfo_perms">Informace o aplikaci a oprávněních</string>
     <string name="restore_all_messages">Obnovit všechny zprávy</string>
     <string name="account_actions">Akce účtu</string>
-    <string name="error_connection_failed_not_found">Připojení se nezdařilo, server vrátil 404 NENALEZENO/NOT FOUND. Ověřte, že jste nastavili správnou cestu k vašemu prostředí Nextcloud.</string>
+    <string name="error_connection_failed_not_found">Připojení se nezdařilo, server vrátil 404 NENALEZENO (NOT FOUND). Ověřte, že jste nastavili správný popis umístění k vámi využívané instance Nextcloud.</string>
     <string name="nothing_to_sync">Není co synchronizovat.</string>
     <string name="feature_not_already_implemented">Tato funkce ještě není implementována a bude dostupná brzy.</string>
     <string name="pref_title_minimum_sync_chars">Minimální délka telefonního čísla</string>
     <string name="err_didnt_find_account_restore">Nebyl nalezen váš účet pro obnovu zpráv, toto je velmi zvláštní situace.</string>
     <string name="launch_restore">Obnovit mé SMS</string>
-    <string name="error_make_default_sms_app">Zvolte tuto aplikaci jako výchozí SMS aplikaci pro obnovení vašich SMS zpráv. Toto omezení bylo uvedeno v Adnroidu 4.4.</string>
+    <string name="error_make_default_sms_app">Pro obnovení vašich SMS zpráv zvolte tuto aplikaci jako výchozí SMS aplikaci. Toto omezení bylo zavedeno v Adnroid 4.4.</string>
     <string name="fix_permissions">Opravit oprávnění</string>
     <string name="err_kitkat_required">Pro používání této funkce je zapotřebí systém Android 4.4 a novější.</string>
     <string name="restore_finished">Obnovení SMS je nyní dokončeno.</string>
     <string name="x_messages_restored">zprávy obnoveny&#8230;</string>
-    <string name="err_no_connection">Připojení nedostupné. Ověřte, že máte funkční datové připojení.</string>
+    <string name="err_no_connection">Není k dispozici připojení k síti. Ověřte, že máte funkční datové připojení.</string>
     <string name="reinit_sync_cursor">Znovu inicializovat synchronizační kurzor</string>
-    <string name="reinit_sync_cursor_confirm">Opravdu si přejete znovu inicializovat synchronizační kurzor? Pokud bude nalezeno mnoho starých zpráv nesynchronizovaných se serverem, může to zdržet příští synchronizaci.</string>
+    <string name="reinit_sync_cursor_confirm">Opravdu chcete znovu inicializovat synchronizační kurzor? Pokud bude nalezeno mnoho starých zpráv nesynchronizovaných se serverem, může to zdržet příští synchronizaci.</string>
     <string name="yes_confirm">Ano</string>
     <string name="no_confirm">Ne</string>
-    <string name="pref_show_sync_notifications">Zobrazit oznámení ze synchronizace</string>
+    <string name="pref_show_sync_notifications">Zobrazit upozornění ohledně synchronizace</string>
     <string name="sync_complete">Synchronizace dokončena</string>
     <string name="err_sync_http_write_failed">Chyba č. 19: Při odesílání dat na server se nepodařilo zapsat do HTTP proudu (stream).</string>
     <string name="err_sync_http_request_protocol_exception">Chyba č. 20: Nepodařilo se řádné nastavit verzi HTTP protokolu.</string>
@@ -187,9 +187,9 @@
         \"Nextcloud SMS je svobodný software vyvinutý přispěvateli do tohoto projektu. Tyto zásady ochrany soukromí \"
         \"jsou zamýšleny jako informace pro vás o datech shromažďovaných touto aplikací.\"
 
-        \"Informace, které jsou sbírány\n\n\"
+        \"Informace, které jsou shromažďovány\n\n\"
 
-        \"Aplikací jsou sbírány pouze záznamy SMS zpráv a volání.\n\n\"
+        \"Aplikací jsou shromažďovány pouze záznamy SMS zpráv a volání.\n\n\"
 
         \"Kam jsou informace odesílány.\n\n\"
 
@@ -197,8 +197,8 @@
         \"ani žádné vládní či jiné entitě, kterou nechcete.\n\n\"
 
         \"Když nastavujete účet v aplikaci Nexcloud odsouhlasíte vlastníkovi instance \"
-        \"Nextcloud že data vašeho záznamu SMS zpráv a hovorů budou ukládány na jeho infrastruktuře,\"
-        \"za jeho odpovědnosti.\n\n\"
+        \"Nextcloud že data vašeho záznamu SMS zpráv a hovorů budou ukládána na jeho infrastruktuře,\"
+        \"na jeho odpovědnost.\n\n\"
 
         \"Nedoporučujeme použít účet ve veřejné nebo firemní instanci Nextcloud. Je třeba, aby vaše soukromí \"
         \"bylo pod vaší kontrolou na vaší vlastní instanci Nextcloud.\n\n\"

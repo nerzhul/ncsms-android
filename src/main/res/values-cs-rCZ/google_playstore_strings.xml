@@ -29,11 +29,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMS synchronizuje SMS zprávy z telefonu do vaší instance Nextcloud</string>
+    <string name="gp_short_description">Nextcloud SMS synchronizuje SMS zprávy z telefonu na vámi využívanou instanci Nextcloud</string>
     <string name="gp_description">
-Aplikace NextCloud SMS synchronizuje vaše SMS zprávy do vzdáleného prostředí Nextcloud a také vám umožňuje je v něm číst.
+Aplikace Nextcloud SMS synchronizuje vaše SMS zprávy na vámi využívanou instanci Nextcloud serveru, kde si je také můžete číst.
 
 Odesílání SMS z prostředí Nextcloud bude uvedeno v budoucích verzích.
 
-Aplikace je plně kompatibilní se systémem Android 4.0 až 6.0</string>
+Aplikace je plně kompatibilní se systémem Android verze 4.0 a novějšími</string>
 </resources>
