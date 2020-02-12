@@ -135,6 +135,7 @@
     <string name="err_sync_account_unparsable">Napaka #17: nepravilno oblikovani podatki računa (zahteva ponovno nastavitev)</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: program Nextcloud SMS ni nameščen ali pa je v teku posodobitev</string>
     <string name="err_fetch_phonelist">S strežnika je prejet napačen seznam telefonskih številk</string>
+    <string name="err_proto_v2">Strežnik te zmožnosti ne podpira. Za to možnost je zahtevana različica 1.6 ali višja.</string>
     <string name="contactinfos_title">Podrobnosti stika</string>
     <string name="pref_title_bulk_messages">Največje število sporočil na usklajevanje</string>
     <string name="contactinfos_list">Seznam stikov</string>
@@ -161,9 +162,13 @@
     <string name="pref_title_minimum_sync_chars">Najmanjša dolžina telefonske številke</string>
     <string name="launch_restore">Obnovi sporočila SMS</string>
     <string name="fix_permissions">Popravi dovoljenja</string>
+    <string name="err_kitkat_required">Za uporabo te možnosti je zahtevana različica operacijskega sistema Android 4.4 ali višja.</string>
     <string name="restore_finished">Obnavljanje sporočil SMS je končano.</string>
+    <string name="reinit_sync_cursor">Ponovno začni kazalnik usklajevanja</string>
+    <string name="reinit_sync_cursor_confirm">Ali ste prepričani, da želite ponovno začeti kazalnik usklajevanja? S tem lahko močno upočasnite naslednje usklajevanje, če bo zaznanih veliko starih sporočil, ki še niso bila usklajena s strežnikom.</string>
     <string name="yes_confirm">Da</string>
     <string name="no_confirm">Ne</string>
+    <string name="pref_show_sync_notifications">Pokaži obvestila usklajevanja</string>
     <string name="sync_complete">Usklajevanje je končano.</string>
     <string name="action_appinfo_privacy_policy">Pravila zasebnosti</string>
     </resources>
