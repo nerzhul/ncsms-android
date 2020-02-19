@@ -181,4 +181,28 @@
     <string name="err_sync_http_write_failed">Hiba #19: nem sikerült a HTTP folyam írása az adattolás során.</string>
     <string name="err_sync_http_request_protocol_exception">Error #20: Nem sikerült megfelelően beállítani a HTTP protokoll verziót.</string>
     <string name="action_appinfo_privacy_policy">Adatvédelmi irányelvek</string>
-    </resources>
+    <string name="privacy_policy_large_text">
+\"Áttekintés\n\n\"
+
+\"A Nextcloud SMS szabad szoftver, melyet a közreműködői fejlesztenek. Ez az adatvédelmi \"
+\"nyilatkozat az alkalmazás által gyűjtött adatokról tájékoztatja.\"
+
+\"Az általunk gyűjtött információk\n\n\"
+
+\"Az alkalmazás csak az SMS- és hívásnaplókat gyűjti.\n\n\"
+
+\"Hová kerülnek az információk.\n\n\"
+
+\"Az információk nem kerülnek elküldésre a Nextcloud csapat kiszolgálói felé, sem a \"
+\"Nextcloud SMS csapat kiszolgálók, illetve egyetlen kormányzati vagy más egyéb nem \"
+\"kívánt fél felé.\n\n\"
+
+\"Ha beállít egy Nextcloud-fiókot az alkalmazásban, akkor beleegyezik, hogy az SMS-és \"
+\"hívásnapló a Nextcloud-példány tulajdonosának infrastruktúráján legyen tárolva, az ő \"
+\"felelőssége legyen.\n\n\"
+
+\"Nem ajánljuk, hogy nyilvános vagy vállalati Nextcloud-példány fiókját használja. Az \"
+\"adatai legyen az Ön irányítása alatt, a saját Nextcloud példányán.\n\n\"
+
+    </string>
+</resources>
