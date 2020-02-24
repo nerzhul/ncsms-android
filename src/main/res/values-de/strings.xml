@@ -102,7 +102,7 @@
     <string name="ma_title_rate_us">Bewerte uns!</string>
     <string name="ma_title_add_account">Account hinzufügen</string>
     <string name="ma_title_welcome">Willkommen</string>
-    <string name="ma_content_welcome">Willkommen bei Nextcloud SMS. Diese Anwendung ermöglicht dir die Synchronisation deiner SMS mit deiner Nextcloud-Instanz.</string>
+    <string name="ma_content_welcome">Willkommen bei Nextcloud SMS. Diese Anwendung ermöglicht dir die Synchronisierung Deiner SMS mit Deiner Nextcloud-Instanz.</string>
     <string name="ma_title_remote_account">Entfernter Account</string>
     <string name="choose_account">Account auswählen</string>
 
@@ -112,7 +112,7 @@
     <string name="no_account_configured">Kein Account konfiguriert.</string>
 
     <!-- Notifications -->
-    <string name="sync_title">Synchronisation</string>
+    <string name="sync_title">Synchronisierungsprozess</string>
     <string name="sync_inprogress">Sychronisation läuft …</string>
     <string name="fatal_error">Kritischer Fehler!</string>
 
@@ -153,7 +153,7 @@
     <string name="cancel">Abbrechen</string>
     <string name="understood">Verstanden</string>
     <string name="notif_permission_required">Berechtigungen benötigt</string>
-    <string name="notif_permission_required_content">Einige Berechtigungen fehlen zur Durchführung des Synchronisationsprozesses. Bitte in den App-Einstellungen korrigieren.</string>
+    <string name="notif_permission_required_content">Einige Berechtigungen fehlen zur Durchführung des Synchronisierungsprozesses. Bitte in den App-Einstellungen korrigieren.</string>
     <string name="please_fix_it">Bitte behebe es.</string>
     <string name="err_cannot_read_contacts">Wir können Ihre Kontakte nicht lesen.</string>
     <string name="err_cannot_read_sms">Wir können Ihre SMS nicht lesen.</string>
@@ -172,11 +172,11 @@
     <string name="restore_finished">SMS-Wiederherstellung ist nun abgeschlossen.</string>
     <string name="x_messages_restored">Nachrichten wiederhergestellt&#8230;</string>
     <string name="err_no_connection">Keine Verbindung verfügbar, bitte stellen Sie sicher, dass Sie eine stabile Datenverbindung haben.</string>
-    <string name="reinit_sync_cursor">Synchronisationscursor reinitialisieren</string>
-    <string name="reinit_sync_cursor_confirm">Sind Sie sich sicher, dass Sie den Synchronisationscursor reinitialisieren möchten? Dies kann die nächste Synchronisation verlangsammen, wenn mehrere, mit dem Server, nicht synchronisierte Nachrichten gefunden werden.</string>
+    <string name="reinit_sync_cursor">Synchronisierungscursor reinitialisieren</string>
+    <string name="reinit_sync_cursor_confirm">Sind Sie sich sicher, dass Sie den Synchronisierungscursor reinitialisieren möchten? Dies kann die nächste Synchronisierung verlangsammen, wenn mehrere, mit dem Server, nicht synchronisierte Nachrichten gefunden werden.</string>
     <string name="yes_confirm">Ja</string>
     <string name="no_confirm">Nein</string>
-    <string name="pref_show_sync_notifications">Synchronisations-Benachrichtigungen anzeigen</string>
+    <string name="pref_show_sync_notifications">Synchronisierungsbenachrichtigungen anzeigen</string>
     <string name="sync_complete">Synchronisierung abgeschlossen</string>
     <string name="err_sync_http_write_failed">Fehler #19: Fehler beim Schreiben des HTTP-Streams während der Datenübertragung zum Server.</string>
     <string name="err_sync_http_request_protocol_exception">Error #20 : Fehler beim Setzen der HTTP-Protokoll-Version.</string>
