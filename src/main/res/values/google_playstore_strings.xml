@@ -32,12 +32,16 @@
 	<string name="gp_translation_version" translatable="false">3</string>
 
 	<!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMS synchronize your local SMS on your Nextcloud instance</string>
+    <string name="gp_short_description">Nextcloud SMS synchronizes your local text messagse (SMS) to your Nextcloud instance</string>
     <string name="gp_description">
-Nextcloud SMS application synchronize your SMS messages on a remote Nextcloud instance and let you read your messages from it.
+Nextcloud SMS synchronizes your text messages (SMS) to a remote Nextcloud instance, letting you read your messages from Nextcloud.
+	    
+It also makes it possible to restore messages from Nextcloud.
 
-Sending SMS from Nextcloud instance will coming in a future release.
+Note: to function, Nextcloud SMS requires the Phone Sync (aka ocsms) app to be installed on Nextcloud.
+	    
+Sending text messages from a Nextcloud instance will come in a future release.
 
-Application is fully compatible from Android 4.0 to 6.0
+This application is fully compatible with Android 4.0 to 8.0
 	</string>
 </resources>
