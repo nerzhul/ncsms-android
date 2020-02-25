@@ -181,4 +181,27 @@
     <string name="err_sync_http_write_failed">錯誤 #19：推送資料至伺服器時，無法寫入 HTTP 串流。</string>
     <string name="err_sync_http_request_protocol_exception">錯誤 #20：無法正確設定 HTTP 通訊協定版本。</string>
     <string name="action_appinfo_privacy_policy">隱私權政策</string>
-    </resources>
+    <string name="privacy_policy_large_text">
+        \"Overview\n\n\"
+
+        \"Nextcloud SMS is a free software developed by its contributors. This privacy policy \"
+        \"is intended to inform you about data gathered by this application.\"
+
+        \"Information we collect\n\n\"
+
+        \"Only SMS and call log are collected by the application.\n\n\"
+
+        \"Where information is sent.\n\n\"
+
+        \"Information is neither sent to Nextcloud team servers nor Nextcloud SMS team servers nor \"
+        \"any government nor another entity you don\'t want.\n\n\"
+
+        \"When you configure a Nextcloud account in the application, you agree with the Nextcloud \"
+        \"instance owner that your SMS and call log data will be stored in his infrastructure \"
+        \"under his responsibility.\n\n\"
+
+        \"We don\'t recommend to use a public or a company Nextcloud instance account. Your privacy \"
+        \"must be under your control on your own Nextcloud instance.\n\n\"
+
+    </string>
+</resources>
