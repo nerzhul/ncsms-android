@@ -108,6 +108,8 @@
 
     <string name="function_not_available">Tämä toiminto ei ole vielä käytettävissä.</string>
 
+    <string name="navigation_drawer_open">Avaa hakuvalikko</string>
+    <string name="navigation_drawer_close">Sulje hakuvalikko</string>
     <string name="ma_title_my_accounts">Omat tilit</string>
     <string name="cancel">Peru</string>
     <string name="understood">Ymmärretty</string>
