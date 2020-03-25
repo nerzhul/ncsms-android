@@ -96,10 +96,10 @@
     <string name="prompt_serverURI">Adresse du serveur</string>
     <string name="error_invalid_server_address">Adresse invalide</string>
     <string name="error_connection_failed">Echec de connexion, assurer vous qu\'il s\'agit du bon serveur</string>
-    <string name="error_http_connection_failed">Impossible d\'effectuer la connexion HTTP. Assurez vous qu\'il s\'agit d\'un serveur HTTP</string>
+    <string name="error_http_connection_failed">Impossible d’effectuer la connexion HTTP. Assurez-vous qu’il s’agit d’un serveur HTTP</string>
 
     <!-- Main activity -->
-    <string name="ma_title_rate_us">Evaluez nous !</string>
+    <string name="ma_title_rate_us">Évaluez-nous !</string>
     <string name="ma_title_add_account">Ajouter un compte</string>
     <string name="ma_title_welcome">Bienvenue</string>
     <string name="ma_content_welcome">Bienvenue sur l\'application Nextcloud SMS. Cette application vous permet de synchroniser vos messages SMS sur votre serveur Nextcloud.</string>
@@ -135,10 +135,10 @@
     <string name="err_sync_account_unparsable">Error #17: Compte mal configuré. Merci de bien vouloir le reconfigurer.</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: L\'application Nextcloud SMS n\'est pas installée ou Nextcloud attend d\'être mis à niveau.</string>
     <string name="err_fetch_phonelist">La liste de numéros reçue depuis le serveur est invalide.</string>
-    <string name="err_proto_v2">Le serveur ne supporte pas cette fonctionnalité. Assurez vous que le serveur est au moins en version 1.6.</string>
+    <string name="err_proto_v2">Le serveur ne supporte pas cette fonctionnalité. Assurez-vous que le serveur est au moins en version 1.6.</string>
     <string name="contactinfos_title">Informations sur le contact</string>
     <string name="subtitle_contact_phones">- Numéros de téléphone associés</string>
-    <string name="pref_title_bulk_messages">Nombre maximum de messages à envoyer par synchronisation</string>
+    <string name="pref_title_bulk_messages">Nombre maximal de messages à envoyer par synchronisation</string>
     <string name="contactinfos_list">Liste des contacts</string>
     <string name="function_not_available">Cette fonctionnalité n\'est pas encore disponible.</string>
 
@@ -181,7 +181,8 @@
     <string name="err_sync_http_write_failed">Erreur #19: Echec de l\'écriture du flux HTTP lors de l\'envoi de données au serveur.</string>
     <string name="err_sync_http_request_protocol_exception">Erreur #20: Impossible de définir correctement la version du protocole HTTP.</string>
     <string name="action_appinfo_privacy_policy">Politique de confidentialité</string>
-    <string name="privacy_policy_large_text">\"Vue d\'ensemble\"
+    <string name="privacy_policy_large_text">
+\"Vue d\'ensemble\"
 
 \"Nextcloud SMS est un logiciel gratuit développé par ses contributeurs. Cette politique de confidentialité vise à  vous informer sur les données recueillies par cette application\"
 
@@ -194,7 +195,5 @@
 \"Ces informations ne sont envoyées ni aux serveurs de l’équipe Nextcloud ni aux serveurs de l’équipe de Nextcloud SMS, ni à un quelconque gouvernement, ni à d\'autres organismes que vous n\'avez pas autorisé\"
 \"Lorsque vous configurez un compte Nextcloud dans l\'application vous convenez implicitement avec le détenteur de l\'instance Nextcloud que les journaux de SMS et d\'appels sont conservés dans son infrastructure et sous sa responsabilité.\"
 
-\"Nous ne recommandons pas l\'utilisation d\'un compte sur une instance publique ou appartenant à une entreprise. Votre vie privée devrait être sous votre contrôle sur votre propre instance Nextcloud.\"
-
-</string>
+\"Nous ne recommandons pas l\'utilisation d\'un compte sur une instance publique ou appartenant à une entreprise. Votre vie privée devrait être sous votre contrôle sur votre propre instance Nextcloud.\"</string>
 </resources>
