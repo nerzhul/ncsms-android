@@ -117,10 +117,10 @@
     <string name="fatal_error">Allvarligt fel! </string>
 
     <!-- Errors -->
-    <string name="err_sync_get_smslist">Fel #1: Ogiltig data mottagen från server när tidigare meddelanden hämtades</string>
+    <string name="err_sync_get_smslist">Fel #1: Ogiltiga data mottagna från servern när tidigare meddelanden hämtades</string>
     <string name="err_sync_craft_http_request">Fel #2: Fel när HTTP-förfrågan hanterades</string>
     <string name="err_sync_push_request">Fel #3: Skickningsförfrågan misslyckades</string>
-    <string name="err_sync_push_request_resp">Fel #4: Ogiltig data mottaget från server när data skickades</string>
+    <string name="err_sync_push_request_resp">Fel #4: Ogiltiga data mottagna från servern när data skickades</string>
     <string name="err_sync_create_json_null_smslist">Fel #5: NULL SMS Lista</string>
     <string name="err_sync_create_json_put_smslist">Fel #6: Fel vid hantering av skickningsbegäran</string>
     <string name="err_sync_create_json_request_encoding">Fel #7: Kodning stöddes inte när begäran skapades</string>
@@ -171,7 +171,7 @@
     <string name="err_kitkat_required">Android 4.4 eller högre krävs för att använda denna funktion.</string>
     <string name="restore_finished">Återställning av SMS är slutförd.</string>
     <string name="x_messages_restored">meddelanden återställda&#8230;</string>
-    <string name="err_no_connection">Ingen anslutning tillgänglig, vänligen säkerställ att du har en giltig anslutning.</string>
+    <string name="err_no_connection">Ingen anslutning tillgänglig, vänligen säkerställ att du har en giltig dataanslutning.</string>
     <string name="reinit_sync_cursor">Starta om synkroniseringsmarkör</string>
     <string name="reinit_sync_cursor_confirm">Är du säker att du vill starta om synkroniseringsmarkör? Detta kan sakta ner nästa synkronisering om massa gamla meddelanden hittas som inte är synkroniserad med servern.</string>
     <string name="yes_confirm">Ja</string>
