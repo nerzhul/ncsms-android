@@ -180,11 +180,11 @@
     <string name="sync_complete">Completouse a sincronización</string>
     <string name="err_sync_http_write_failed">Erro núm. 19: Produciuse un fallo ao escribir o fluxo HTTP ao enviar os datos ao servidor.</string>
     <string name="err_sync_http_request_protocol_exception">Erro núm. 20: Non foi posíbel configurar correctamente a versión do protocolo HTTP.</string>
-    <string name="action_appinfo_privacy_policy">Política de privacidade</string>
+    <string name="action_appinfo_privacy_policy">Directiva de privacidade</string>
     <string name="privacy_policy_large_text">
 \"Descrición xeral\n\n\"
 
-\"Nextcloud SMS é un software libre desenvolvido polos seus colaboradores. Esta política de\"
+\"Nextcloud SMS é un software libre desenvolvido polos seus colaboradores. Esta directiva de\"
 \"privacidade ten como obxectivo informarlle sobre os datos recompilados por esta aplicación.\"
 
 \"Información que recollemos\n\n\"
