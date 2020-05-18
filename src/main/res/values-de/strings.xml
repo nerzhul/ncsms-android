@@ -102,7 +102,7 @@
     <string name="ma_title_rate_us">Bewerte uns!</string>
     <string name="ma_title_add_account">Account hinzufügen</string>
     <string name="ma_title_welcome">Willkommen</string>
-    <string name="ma_content_welcome">Willkommen bei Nextcloud SMS. Diese Anwendung ermöglicht dir die Synchronisierung Deiner SMS mit Deiner Nextcloud-Instanz.</string>
+    <string name="ma_content_welcome">Willkommen bei Nextcloud SMS. Diese Anwendung ermöglicht Dir die Synchronisierung Deiner SMS mit Deiner Nextcloud-Instanz.</string>
     <string name="ma_title_remote_account">Entfernter Account</string>
     <string name="choose_account">Account auswählen</string>
 
@@ -172,8 +172,8 @@
     <string name="restore_finished">SMS-Wiederherstellung ist nun abgeschlossen.</string>
     <string name="x_messages_restored">Nachrichten wiederhergestellt&#8230;</string>
     <string name="err_no_connection">Keine Verbindung verfügbar, bitte stellen Sie sicher, dass Sie eine stabile Datenverbindung haben.</string>
-    <string name="reinit_sync_cursor">Synchronisierungscursor reinitialisieren</string>
-    <string name="reinit_sync_cursor_confirm">Sind Sie sich sicher, dass Sie den Synchronisierungscursor reinitialisieren möchten? Dies kann die nächste Synchronisierung verlangsammen, wenn mehrere, mit dem Server, nicht synchronisierte Nachrichten gefunden werden.</string>
+    <string name="reinit_sync_cursor">Synchronisierungszeiger reinitialisieren</string>
+    <string name="reinit_sync_cursor_confirm">Sind Sie sich sicher, dass Sie den Synchronisierungzeiger reinitialisieren möchten? Dies kann die nächste Synchronisierung verlangsammen, wenn eine Vielzahl mit dem Server nicht synchrone Nachrichten gefunden werden.</string>
     <string name="yes_confirm">Ja</string>
     <string name="no_confirm">Nein</string>
     <string name="pref_show_sync_notifications">Synchronisierungsbenachrichtigungen anzeigen</string>
