@@ -100,8 +100,8 @@
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">דרג אותנו!</string>
-    <string name="ma_title_add_account">הוסף חשבון</string>
-    <string name="ma_title_welcome">ברוך הבא</string>
+    <string name="ma_title_add_account">הוספת חשבון</string>
+    <string name="ma_title_welcome">ברוך בואך</string>
     <string name="ma_content_welcome">ברוך בואך ליישומון ה־SMS של Nextcloud. יישומון זה מאפשר לך לסנכרן את הודעות ה‏־SMS שלך למערכת ה־Nexcloud שלך באמצעות יישומון ה־SMS.</string>
     <string name="ma_title_remote_account">חשבון מרוחק</string>
     <string name="choose_account">נא לבחור חשבון</string>
