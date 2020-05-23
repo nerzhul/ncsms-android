@@ -162,7 +162,7 @@
     <string name="account_actions">Akce účtu</string>
     <string name="error_connection_failed_not_found">Připojení se nezdařilo, server vrátil 404 NENALEZENO (NOT FOUND). Ověřte, že jste nastavili správný popis umístění k vámi využívané instance Nextcloud.</string>
     <string name="nothing_to_sync">Není co synchronizovat.</string>
-    <string name="feature_not_already_implemented">Tato funkce ještě není implementována a bude dostupná brzy.</string>
+    <string name="feature_not_already_implemented">Tato funkce ještě není implementována, ale bude dostupná brzy.</string>
     <string name="pref_title_minimum_sync_chars">Minimální délka telefonního čísla</string>
     <string name="err_didnt_find_account_restore">Nebyl nalezen váš účet pro obnovu zpráv, toto je velmi zvláštní situace.</string>
     <string name="launch_restore">Obnovit mé SMS</string>
