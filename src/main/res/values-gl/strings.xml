@@ -77,7 +77,7 @@
         <item>Nunca</item>
     </string-array>
     <string name="pref_push_on_receive">Enviar SMS ao recibir</string>
-    <string name="pref_sync_wifi">Sincronizar con WiFi</string>
+    <string name="pref_sync_wifi">Sincronizar con wifi</string>
     <string name="pref_sync_4g">Sincronizar con 4G</string>
     <string name="pref_sync_3g">Sincronizar con 3G</string>
     <string name="pref_sync_gprs">Sincronizar con 2,5G (GPRS)</string>
