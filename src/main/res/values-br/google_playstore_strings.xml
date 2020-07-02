@@ -30,4 +30,8 @@
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
     <string name="gp_short_description">Kempredañ a ra Nextcloud o SMSoù war o azgoulenn Nexcloud</string>
-    </resources>
+    <string name="gp_description">Ar meziant Nexcloud SMS a kemprenn o kmenadennoù SMS war un azgoulenn Nextcloud pell ha laosk a ra ac\'haneoc\'h lenn anezho euz outi.
+Kasit SMSoù eus  azgoulenn Nexcloud a vo en un adnevesadenn da zonet.
+Meziant kenglotus gant Android 4.0 betek 6.0
+	</string>
+</resources>
