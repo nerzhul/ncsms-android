@@ -45,7 +45,7 @@
     <string name="title_global_pref_to_general_prefs">Ogólne preferencje</string>
     <string name="summary_global_pref_to_general_prefs">Opcje synchronizacji</string>
     <string name="summary_notif_prefs">Powiadomienia</string>
-    <string name="pref_header_data_sync">Synchronizacja &amp; danych</string>
+    <string name="pref_header_data_sync">Synchronizacja danych &amp;</string>
     <string name="title_activity_general_settings">Ustawienia ogólne</string>
 
     <string-array name="pref_sync_frequency_titles">
@@ -96,13 +96,13 @@
     <string name="prompt_serverURI">Adres serwera</string>
     <string name="error_invalid_server_address">Błędny adres serwera</string>
     <string name="error_connection_failed">Połączenie nie powiodło się, upewnij się, że jest to właściwy serwer</string>
-    <string name="error_http_connection_failed">Nie można wykonać połączenia HTTP. Upewnij się, że istnieje serwer WWW</string>
+    <string name="error_http_connection_failed">Nie można wykonać połączenia HTTP. Upewnij się, czy istnieje serwer WWW</string>
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">Oceń nas!</string>
     <string name="ma_title_add_account">Dodaj konto</string>
     <string name="ma_title_welcome">Witaj</string>
-    <string name="ma_content_welcome">Witamy w aplikacji SMS Nextcloud. Ta aplikacja umożliwia synchronizowanie wiadomości SMS z aplikacją sieciową Nextcloud za pomocą aplikacji SMS.</string>
+    <string name="ma_content_welcome">Witamy w aplikacji SMS Nextcloud. Aplikacja ta umożliwia synchronizację wiadomości SMS z instancją Nextcloud.</string>
     <string name="ma_title_remote_account">Zdalne konto</string>
     <string name="choose_account">Wybierz konto</string>
 
