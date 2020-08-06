@@ -46,7 +46,7 @@
     <string name="summary_global_pref_to_general_prefs">Sync-Einstellungen</string>
     <string name="summary_notif_prefs">Benachrichtigungen</string>
     <string name="pref_header_data_sync">Daten &amp; Sync</string>
-    <string name="title_activity_general_settings">Allg. Einstellungen</string>
+    <string name="title_activity_general_settings">Allgemeine Einstellungen</string>
 
     <string-array name="pref_sync_frequency_titles">
         <item>5 Minuten</item>
@@ -100,16 +100,16 @@
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">Bewerte uns!</string>
-    <string name="ma_title_add_account">Account hinzufügen</string>
+    <string name="ma_title_add_account">Konto hinzufügen</string>
     <string name="ma_title_welcome">Willkommen</string>
     <string name="ma_content_welcome">Willkommen bei Nextcloud SMS. Diese Anwendung ermöglicht Dir die Synchronisierung Deiner SMS mit Deiner Nextcloud-Instanz.</string>
-    <string name="ma_title_remote_account">Entfernter Account</string>
-    <string name="choose_account">Account auswählen</string>
+    <string name="ma_title_remote_account">Entferntes Konto</string>
+    <string name="choose_account">Konto auswählen</string>
 
     <!-- Restauration -->
-    <string name="title_activity_select_account">Account auswählen</string>
+    <string name="title_activity_select_account">Konto auswählen</string>
     <string name="title_activity_select_contact">Kontakt auswählen</string>
-    <string name="no_account_configured">Kein Account konfiguriert.</string>
+    <string name="no_account_configured">Kein Konto konfiguriert.</string>
 
     <!-- Notifications -->
     <string name="sync_title">Synchronisierungsprozess</string>
@@ -140,7 +140,7 @@
     <string name="subtitle_contact_phones">- Handys kontaktieren</string>
     <string name="pref_title_bulk_messages">Maximale Anzahl von Nachrichten, die pro Synchronisieren gesendet werden</string>
     <string name="contactinfos_list">Kontaktliste</string>
-    <string name="function_not_available">Diese Funktion ist noch nicht verfügbar.</string>
+    <string name="function_not_available">Diese Funktion ist nicht verfügbar.</string>
 
     <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
     <string name="communicate">Kommunizieren</string>
@@ -148,8 +148,8 @@
 
     <string name="navigation_drawer_open">Navigationsleiste öffnen</string>
     <string name="navigation_drawer_close">Navigationsleiste schließen</string>
-    <string name="ma_title_my_accounts">Meine Accounts</string>
-    <string name="ma_content_swipeaction">Wisch von links nach rechts um auf das Action-Menü zuzugreifen</string>
+    <string name="ma_title_my_accounts">Meine Konten</string>
+    <string name="ma_content_swipeaction">Wische von links nach rechts um auf das Action-Menü zuzugreifen</string>
     <string name="cancel">Abbrechen</string>
     <string name="understood">Verstanden</string>
     <string name="notif_permission_required">Berechtigungen benötigt</string>
@@ -159,12 +159,12 @@
     <string name="err_cannot_read_sms">Wir können Ihre SMS nicht lesen.</string>
     <string name="action_appinfo_perms">App Infos und Berechtigungen</string>
     <string name="restore_all_messages">Alle Nachrichten wiederherstellen</string>
-    <string name="account_actions">Account-Aktionen</string>
+    <string name="account_actions">Konto-Aktionen</string>
     <string name="error_connection_failed_not_found">Verbindung fehlgeschlagen, der Server hat 404 NICHT GEFUNDEN geantworet. Stellen Sie sicher, dass der Pfad zur Nextcloud-Instanz korrekt gesetzt ist.</string>
     <string name="nothing_to_sync">Es gibt nichts zu synchronisieren.</string>
-    <string name="feature_not_already_implemented">Diese Funktion ist noch nicht implementiert aber wird in Kürze verfügbar sein.</string>
+    <string name="feature_not_already_implemented">Diese Funktion ist noch nicht implementiert, wird aber in Kürze verfügbar sein.</string>
     <string name="pref_title_minimum_sync_chars">Minimale Telefonnummernlänge</string>
-    <string name="err_didnt_find_account_restore">Wir haben Ihren Account nicht gefunden, um Ihre Nachricht wiederherstellen. Dieses ist eine sehr seltsame Situation.</string>
+    <string name="err_didnt_find_account_restore">Wir haben Ihr Konto nicht gefunden, um Ihre Nachricht wiederherstellen. Dieses ist eine seltsame Situation.</string>
     <string name="launch_restore">Meine SMS wiederherstellen</string>
     <string name="error_make_default_sms_app">Bitte diese Anwendung als Standard-SMS-Anwendung definieren. Hierdurch können Ihre SMS-Nachrichten wiederhergestellt werden. Diese Einschränkung wurde mit Android 4.4 eingeführt.</string>
     <string name="fix_permissions">Berechtigungen korrigieren</string>
