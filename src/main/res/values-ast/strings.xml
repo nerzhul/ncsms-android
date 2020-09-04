@@ -98,7 +98,6 @@
     <string name="title_activity_select_contact">Esbillar contautu</string>
     <string name="no_account_configured">Nun se configuraron cuentes.</string>
 
-    <string name="sync_inprogress">Sincronización en cursu...</string>
     <string name="fatal_error">¡Fallu fatal!</string>
 
     <string name="err_sync_craft_http_request">Fallu #2: Fallu entrín s\'ellaboraba la solicitú HTTP</string>

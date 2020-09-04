@@ -113,7 +113,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">同期プロセス</string>
-    <string name="sync_inprogress">同期しています...</string>
     <string name="fatal_error">致命的なエラー !</string>
 
     <!-- Errors -->

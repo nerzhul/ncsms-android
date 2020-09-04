@@ -113,7 +113,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">Sinhronizacija</string>
-    <string name="sync_inprogress">Sinhronizacija u toku...</string>
     <string name="fatal_error">Kobna greška! </string>
 
     <!-- Errors -->

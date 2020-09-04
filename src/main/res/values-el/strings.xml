@@ -113,7 +113,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">Διεργασία συγχρονισμού</string>
-    <string name="sync_inprogress">Συγχρονισμός σε εξέλιξη</string>
     <string name="fatal_error">  Καίριο σφάλμα</string>
 
     <!-- Errors -->

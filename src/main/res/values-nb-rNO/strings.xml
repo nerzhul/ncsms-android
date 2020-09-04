@@ -113,7 +113,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">Synkroniserings prosess</string>
-    <string name="sync_inprogress">Synkronisering pågår…</string>
     <string name="fatal_error">Kritisk feil !</string>
 
     <!-- Errors -->

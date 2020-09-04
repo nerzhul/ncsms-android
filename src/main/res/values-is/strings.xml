@@ -113,7 +113,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">Framvinda samstillingar</string>
-    <string name="sync_inprogress">Samstilling í gangi...</string>
     <string name="fatal_error">Alvarleg villa!</string>
 
     <!-- Errors -->

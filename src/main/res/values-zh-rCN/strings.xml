@@ -113,7 +113,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">同步进度</string>
-    <string name="sync_inprogress">正在同步…</string>
     <string name="fatal_error">严重错误！</string>
 
     <!-- Errors -->

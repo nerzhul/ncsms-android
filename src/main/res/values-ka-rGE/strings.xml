@@ -113,7 +113,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">სინქრონიზაციის პროცესი</string>
-    <string name="sync_inprogress">მიმდინარეობს სინქრონიზაცია...</string>
     <string name="fatal_error">ფატალური შეცდომა !</string>
 
     <!-- Errors -->

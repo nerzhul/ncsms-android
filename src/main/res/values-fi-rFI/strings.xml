@@ -103,7 +103,6 @@
     <string name="title_activity_select_contact">Valitse yhteystieto</string>
     <string name="no_account_configured">Tiliä ei ole määritetty.</string>
 
-    <string name="sync_inprogress">Synkronointi käynnissä..</string>
     <string name="fatal_error">Vakava virhe!</string>
 
     <string name="function_not_available">Tämä toiminto ei ole vielä käytettävissä.</string>

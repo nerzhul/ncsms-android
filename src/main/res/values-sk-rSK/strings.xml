@@ -113,7 +113,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">Priebeh synchronizácie</string>
-    <string name="sync_inprogress">Prebieha synchronizácia</string>
     <string name="fatal_error">Fatálna chyba!</string>
 
     <!-- Errors -->

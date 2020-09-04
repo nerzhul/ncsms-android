@@ -113,7 +113,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">فرآیند همگام سازی</string>
-    <string name="sync_inprogress">همگام سازی در حال انجام است ...</string>
     <string name="fatal_error">خطای مهلک!</string>
 
     <!-- Errors -->

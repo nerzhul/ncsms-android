@@ -102,7 +102,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">عملية المزامنة</string>
-    <string name="sync_inprogress">عملية المزامنة جارية</string>
     <string name="fatal_error">خطأ فادح !</string>
 
     <string name="contactinfos_title">معلومات عن المُراسل</string>

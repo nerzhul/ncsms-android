@@ -113,7 +113,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">Processo di sincronizzazione</string>
-    <string name="sync_inprogress">Sincronizzazione in corso...</string>
     <string name="fatal_error">Errore grave!</string>
 
     <!-- Errors -->

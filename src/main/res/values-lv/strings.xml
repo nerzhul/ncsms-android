@@ -112,7 +112,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">Sinhronizācijas process</string>
-    <string name="sync_inprogress">... notiek sinhronizācija</string>
     <string name="fatal_error">Fatāla kļūda!</string>
 
     <string name="err_sync_craft_http_request">Kļūda #2: Kļūda izveidojot HTTP pieprasījumu</string>

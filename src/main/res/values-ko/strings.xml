@@ -113,7 +113,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">동기화 진행</string>
-    <string name="sync_inprogress">동기화 진행 중...</string>
     <string name="fatal_error">치명적 오류! </string>
 
     <!-- Errors -->

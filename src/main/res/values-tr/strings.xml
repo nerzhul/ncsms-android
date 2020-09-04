@@ -113,7 +113,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">Eşitleme ilerlemesi</string>
-    <string name="sync_inprogress">Eşitleniyor...</string>
     <string name="fatal_error">Ciddi sorun !</string>
 
     <!-- Errors -->

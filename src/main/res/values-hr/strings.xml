@@ -113,7 +113,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">Postupak sinkronizacije</string>
-    <string name="sync_inprogress">Sinkronizacija je u tijeku...</string>
     <string name="fatal_error">Kritična pogreška! </string>
 
     <!-- Errors -->

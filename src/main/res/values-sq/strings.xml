@@ -113,7 +113,6 @@
 
     <!-- Notifications -->
     <string name="sync_title">Proces sinkronizimi</string>
-    <string name="sync_inprogress">Sinkronizimi në progres ...</string>
     <string name="fatal_error">Gabim fatal !</string>
 
     <!-- Errors -->
