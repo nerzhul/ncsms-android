@@ -30,4 +30,11 @@
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS synkroniserer dine SMS-meldinger til din Nextcloud</string>
-    </resources>
+    <string name="gp_description">
+Nextcloud SMS-applikasjon synkroniserer SMS-meldingene dine på en ekstern Nextcloud-forekomst og lar deg lese meldingene dine fra den.
+
+Å sende SMS fra Nextcloud-forekomsten kommer i en fremtidig utgivelse.
+
+Applikasjonen er fullt kompatibel fra Android 4.0 til 6.0
+	</string>
+</resources>
