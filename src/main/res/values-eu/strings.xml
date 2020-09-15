@@ -113,6 +113,7 @@
 
     <!-- Notifications -->
     <string name="sync_title">Sinkronizazio prozesua</string>
+    <string name="sync_inprogress">Sinrkonizazioa abian...</string>
     <string name="fatal_error">Errore larria !</string>
 
     <!-- Errors -->
