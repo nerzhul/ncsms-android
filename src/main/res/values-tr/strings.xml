@@ -109,7 +109,7 @@
     <!-- Restauration -->
     <string name="title_activity_select_account">Hesap seçin</string>
     <string name="title_activity_select_contact">Kişi seçin</string>
-    <string name="no_account_configured">Herhangi bir hesap yapılandırılmamış.</string>
+    <string name="no_account_configured">Henüz bir hesap yapılandırılmamış.</string>
 
     <!-- Notifications -->
     <string name="sync_title">Eşitleme ilerlemesi</string>
