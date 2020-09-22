@@ -132,7 +132,7 @@
     <string name="err_sync_http_request_parse_resp">Грешка #15: не могу да рашчланим одговор сервера</string>
     <string name="err_sync_no_connection_available">Грешка #16: нема везе ка интернету</string>
     <string name="err_sync_account_unparsable">Грешка #17: деформисан налог. Поставите га поново</string>
-    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Грешка #18: Некстклауд СМС апликација није инсталирана на серверу или чека да буде ажурирана</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Грешка #18: Некстклауд СМС апликација није инсталирана или сервер чека на ажурирање</string>
     <string name="err_fetch_phonelist">Ниисправан именик примљен са сервера.</string>
     <string name="err_proto_v2">Сервер не подржава ову функционалниост. Будите сигурни да је верзија сервера бар 1.6.</string>
     <string name="contactinfos_title">Информације о контакту</string>
