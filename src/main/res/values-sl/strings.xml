@@ -113,6 +113,7 @@
 
     <!-- Notifications -->
     <string name="sync_title">Opravilo usklajevanja</string>
+    <string name="sync_inprogress">Poteka usklajevanje ...</string>
     <string name="fatal_error">Usodna napaka!</string>
 
     <!-- Errors -->
