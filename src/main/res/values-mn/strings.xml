@@ -36,6 +36,7 @@
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">МЕССЕЖ-Хурд</string>
+    <string name="pref_title_sync_frequency">хурдан давтамжтай синк хийх</string>
     <string name="action_settings">Тохиргоо</string>
     <string name="sync_now">Одоо тааруулагдөх</string>
     <string name="pref_category_sync">Тааруулагдах нь</string>
