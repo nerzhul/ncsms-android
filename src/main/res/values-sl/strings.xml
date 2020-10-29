@@ -160,15 +160,20 @@
     <string name="nothing_to_sync">Ni podatkov za usklajevanje</string>
     <string name="feature_not_already_implemented">Zmožnost še ni omogočena, bo pa kmalu na voljo.</string>
     <string name="pref_title_minimum_sync_chars">Najmanjša dolžina telefonske številke</string>
+    <string name="err_didnt_find_account_restore">Računa za obnovitev sporočil ni mogoče najti. To je izredno nenavadna napaka.</string>
     <string name="launch_restore">Obnovi sporočila SMS</string>
     <string name="fix_permissions">Popravi dovoljenja</string>
     <string name="err_kitkat_required">Za uporabo te možnosti je zahtevana različica operacijskega sistema Android 4.4 ali višja.</string>
     <string name="restore_finished">Obnavljanje sporočil SMS je končano.</string>
+    <string name="x_messages_restored">sporočilo je obnovljeno &#8230;</string>
+    <string name="err_no_connection">Povezava ni na voljo. Zagotoviti je treba ustrezno podatkovno povezavo.</string>
     <string name="reinit_sync_cursor">Ponovno začni kazalnik usklajevanja</string>
     <string name="reinit_sync_cursor_confirm">Ali ste prepričani, da želite ponovno začeti kazalnik usklajevanja? S tem lahko močno upočasnite naslednje usklajevanje, če bo zaznanih veliko starih sporočil, ki še niso bila usklajena s strežnikom.</string>
     <string name="yes_confirm">Da</string>
     <string name="no_confirm">Ne</string>
     <string name="pref_show_sync_notifications">Pokaži obvestila usklajevanja</string>
     <string name="sync_complete">Usklajevanje je končano.</string>
+    <string name="err_sync_http_write_failed">Napaka #19: ob potiskanju podatkov s strežnika je zapisovanje pretoka HTTP spodletelo.</string>
+    <string name="err_sync_http_request_protocol_exception">Napaka #20: pravilno nastavljanje različice protokola HTTP je spodletelo.</string>
     <string name="action_appinfo_privacy_policy">Pravila zasebnosti</string>
     </resources>
