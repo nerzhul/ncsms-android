@@ -113,6 +113,7 @@ Nepavyko užmegzti HTTP ryšio. Patikrinkite žiniatinklių serverį.</string>
 
     <!-- Notifications -->
     <string name="sync_title">Sinchronizavimo procesas</string>
+    <string name="sync_inprogress">Vyksta sinchronizavimas…</string>
     <string name="fatal_error">Lemtingoji klaida!</string>
 
     <!-- Errors -->
