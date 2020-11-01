@@ -76,7 +76,7 @@
         <item>24 ur</item>
         <item>Nikoli</item>
     </string-array>
-    <string name="pref_push_on_receive">Potisni SMS ob povezavi</string>
+    <string name="pref_push_on_receive">Potisni obvestila SMS ob povezavi</string>
     <string name="pref_sync_wifi">Uskladi na Wi-Fi</string>
     <string name="pref_sync_4g">Uskladi na 4G</string>
     <string name="pref_sync_3g">Uskladi na 3G</string>
