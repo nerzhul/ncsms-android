@@ -162,6 +162,7 @@
     <string name="pref_title_minimum_sync_chars">Najmanjša dolžina telefonske številke</string>
     <string name="err_didnt_find_account_restore">Računa za obnovitev sporočil ni mogoče najti. To je izredno nenavadna napaka.</string>
     <string name="launch_restore">Obnovi sporočila SMS</string>
+    <string name="error_make_default_sms_app">Program mora biti nastavljen kot privzet program za upravljanje s sporočili SMS, da jih bo mogoče obnoviti. Ta omejitev je uvedena z različico Android 4.4.</string>
     <string name="fix_permissions">Popravi dovoljenja</string>
     <string name="err_kitkat_required">Za uporabo te možnosti je zahtevana različica operacijskega sistema Android 4.4 ali višja.</string>
     <string name="restore_finished">Obnavljanje sporočil SMS je končano.</string>
@@ -176,4 +177,25 @@
     <string name="err_sync_http_write_failed">Napaka #19: ob potiskanju podatkov s strežnika je zapisovanje pretoka HTTP spodletelo.</string>
     <string name="err_sync_http_request_protocol_exception">Napaka #20: pravilno nastavljanje različice protokola HTTP je spodletelo.</string>
     <string name="action_appinfo_privacy_policy">Pravila zasebnosti</string>
-    </resources>
+    <string name="privacy_policy_large_text">
+\"Pregled\n\n\"
+
+\"Nextcloud SMS je brezplačna programska oprema, ki jo razvija skupnost. Ta pravilnik Zasebnosti\"
+\"je namenjen obveščanju o podatkih, ki jih ta program obdeluje.\"
+
+\"Kaj program zbira?\n\n\"
+
+\"Zbira sporočila SMS in dnevnike klicev.\n\n\"
+
+\"Ali se podatki kam pošljajo?\n\n\"
+
+\"Podatki se ne pošljejo niti na strežnike razvijalcev okolja Nextcloud niti na strežnike ekipe SMS Nextcloud, še manj\"
+\"vladam oziroma drugim združbam.\n\n\"
+
+\"Ko v programu nastavite račun Nextcloud, se strinjate, da bodo podatki,\"
+\"sporočila SMS in dnevniki klicev shranjeni na strežniku, kjer imate račun,\"
+\"in ta vam mora zagotavljati varnost in zasebnost.\n\n\"
+
+\"Ne priporočamo uporabe ne javnega računa ne računa prek podjetja. Vaša zasebnost mora biti vedno\"
+\"pod vašim nadzorom na vašem lastnem strežniku Nextcloud.\n\n\"</string>
+</resources>
