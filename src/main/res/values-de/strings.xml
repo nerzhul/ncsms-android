@@ -155,8 +155,8 @@
     <string name="notif_permission_required">Berechtigungen benötigt</string>
     <string name="notif_permission_required_content">Einige Berechtigungen fehlen zur Durchführung des Synchronisierungsprozesses. Bitte in den App-Einstellungen korrigieren.</string>
     <string name="please_fix_it">Bitte beheben.</string>
-    <string name="err_cannot_read_contacts">Wir können Ihre Kontakte nicht lesen.</string>
-    <string name="err_cannot_read_sms">Wir können Ihre SMS nicht lesen.</string>
+    <string name="err_cannot_read_contacts">Ihre Kontakte konnten nicht gelesen werden.</string>
+    <string name="err_cannot_read_sms">Ihre SMS konnte nicht gelesen werden.</string>
     <string name="action_appinfo_perms">App Infos und Berechtigungen</string>
     <string name="restore_all_messages">Alle Nachrichten wiederherstellen</string>
     <string name="account_actions">Konto-Aktionen</string>
