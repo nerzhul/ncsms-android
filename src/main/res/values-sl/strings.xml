@@ -137,11 +137,14 @@
     <string name="err_fetch_phonelist">S strežnika je prejet napačen seznam telefonskih številk</string>
     <string name="err_proto_v2">Strežnik te zmožnosti ne podpira. Za to možnost je zahtevana različica 1.6 ali višja.</string>
     <string name="contactinfos_title">Podrobnosti stika</string>
+    <string name="subtitle_contact_phones">– telefoni stika</string>
     <string name="pref_title_bulk_messages">Največje število sporočil na usklajevanje</string>
     <string name="contactinfos_list">Seznam stikov</string>
     <string name="function_not_available">Ta zmožnost še ni na voljo.</string>
 
     <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
     <string name="navigation_drawer_open">Odpri bočno okno</string>
     <string name="navigation_drawer_close">Zapri bočno okno</string>
     <string name="ma_title_my_accounts">Računi</string>
@@ -162,7 +165,7 @@
     <string name="pref_title_minimum_sync_chars">Najmanjša dolžina telefonske številke</string>
     <string name="err_didnt_find_account_restore">Računa za obnovitev sporočil ni mogoče najti. To je izredno nenavadna napaka.</string>
     <string name="launch_restore">Obnovi sporočila SMS</string>
-    <string name="error_make_default_sms_app">Program mora biti nastavljen kot privzet program za upravljanje s sporočili SMS, da jih bo mogoče obnoviti. Ta omejitev je uvedena z različico Android 4.4.</string>
+    <string name="error_make_default_sms_app">Za obnavljanje sporočil mora biti program nastavljen kot privzet program za upravljanje s sporočili SMS. Ta omejitev je uvedena z različico Android 4.4.</string>
     <string name="fix_permissions">Popravi dovoljenja</string>
     <string name="err_kitkat_required">Za uporabo te možnosti je zahtevana različica operacijskega sistema Android 4.4 ali višja.</string>
     <string name="restore_finished">Obnavljanje sporočil SMS je končano.</string>
