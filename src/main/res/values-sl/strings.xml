@@ -143,6 +143,7 @@
     <string name="function_not_available">Ta zmožnost še ni na voljo.</string>
 
     <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="communicate">Sporočanje</string>
     <string name="title_activity_main2">Main2Activity</string>
 
     <string name="navigation_drawer_open">Odpri bočno okno</string>
@@ -190,7 +191,7 @@
 
 \"Zbira sporočila SMS in dnevnike klicev.\n\n\"
 
-\"Ali se podatki kam pošljajo?\n\n\"
+\"Ali se podatki kam pošiljajo?\n\n\"
 
 \"Podatki se ne pošljejo niti na strežnike razvijalcev okolja Nextcloud niti na strežnike ekipe SMS Nextcloud, še manj\"
 \"vladam oziroma drugim združbam.\n\n\"
