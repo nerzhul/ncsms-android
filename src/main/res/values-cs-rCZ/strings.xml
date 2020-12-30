@@ -103,7 +103,7 @@
     <string name="ma_title_add_account">Přidat účet</string>
     <string name="ma_title_welcome">Vítejte</string>
     <string name="ma_content_welcome">Vítejte v aplikaci Nextcloud SMS. Tato aplikace vám umožní synchronizovat SMS zprávy na vámi využívanou instanci Nextcloud.</string>
-    <string name="ma_title_remote_account">Účet na protějšku</string>
+    <string name="ma_title_remote_account">Federovaný účet</string>
     <string name="choose_account">Zvolte účet</string>
 
     <!-- Restauration -->
