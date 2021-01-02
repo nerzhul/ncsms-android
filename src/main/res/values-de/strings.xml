@@ -166,7 +166,7 @@
     <string name="pref_title_minimum_sync_chars">Minimale Telefonnummernlänge</string>
     <string name="err_didnt_find_account_restore">Wir haben Ihr Konto nicht gefunden, um Ihre Nachricht wiederherstellen. Dies ist eine seltsame Situation.</string>
     <string name="launch_restore">Meine SMS wiederherstellen</string>
-    <string name="error_make_default_sms_app">Bitte diese Anwendung als Standard-SMS-Anwendung definieren. Hierdurch können Ihre SMS-Nachrichten wiederhergestellt werden. Diese Einschränkung wurde mit Android 4.4 eingeführt.</string>
+    <string name="error_make_default_sms_app">Bitte machen Sie diese Anwendung zur Standard-SMS-Anwendung, um die Wiederherstellung Ihrer Nachrichten zu ermöglichen. Diese Einschränkung wurde mit Android 4.4 eingeführt.</string>
     <string name="fix_permissions">Berechtigungen korrigieren</string>
     <string name="err_kitkat_required">Android 4.4 oder höher ist erforderlich, um diese Funktion zu verwenden.</string>
     <string name="restore_finished">SMS-Wiederherstellung ist nun abgeschlossen.</string>
