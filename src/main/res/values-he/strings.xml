@@ -113,6 +113,7 @@
 
     <!-- Notifications -->
     <string name="sync_title">תהליך סנכרון</string>
+    <string name="sync_inprogress">מתבצע סנכרון…</string>
     <string name="fatal_error">שגיאה חמורה!</string>
 
     <!-- Errors -->
