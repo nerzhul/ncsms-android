@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">SMS Nextcloud </string>
+    <string name="login_logo">Logotipu de atzessu</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - a lestru</string>
+    <string name="pref_title_sync_frequency">Frecuèntzia de sincronizatzione lestra</string>
+    <string name="action_settings">Cunfiguratzione</string>
+    <string name="sync_now">Sincroniza immoe</string>
+    <string name="pref_category_sync">Sincronizatzione</string>
+    <string name="title_global_pref_to_general_prefs">Preferèntzias generales</string>
+    <string name="summary_global_pref_to_general_prefs">Optziones de sincronizatzione</string>
+    <string name="summary_notif_prefs">Notìficas</string>
+    <string name="pref_header_data_sync">Sincronizatziones &amp; datos</string>
+    <string name="title_activity_general_settings">Cunfiguratzione generale</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 minutos</item>
+        <item>15 minutos</item>
+        <item>30 minutos</item>
+        <item>1 ora</item>
+        <item>3 oras</item>
+        <item>6 oras</item>
+        <item>12 oras</item>
+        <item>24 oras</item>
+        <item>Mai</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Ònnia SMS non sincronizadu</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 ora</item>
+        <item>3 oras</item>
+        <item>6 oras</item>
+        <item>12 oras</item>
+        <item>24 oras</item>
+        <item>Mai</item>
+    </string-array>
+    <string name="pref_sync_wifi">Sincroniza in Wi-Fi</string>
+    <string name="pref_sync_4g">Sincroniza in 4G</string>
+    <string name="pref_sync_3g">Sincroniza in 3G</string>
+    <string name="pref_sync_gprs">Sincroniza in 2.5G (GPRS)</string>
+    <string name="pref_sync_2g">Sincroniza in 2G</string>
+    <string name="pref_sync_others">Sincroniza in àteras modalidades</string>
+    <string name="title_activity_login">Iscrie·ti</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Intra</string>
+    <string name="prompt_password">Crae</string>
+    <string name="action_sign_in">Iscrie·ti o registra·ti</string>
+    <string name="action_sign_in_short">Iscrie·ti</string>
+    <string name="error_invalid_login">Crae o atzessu non curretu</string>
+    <string name="error_invalid_password">Custa crae est tropu curtza</string>
+    <string name="error_field_required">Custa parte est rechesta</string>
+    <string name="prompt_serverURI">Indiritzu serbidore</string>
+    <string name="error_invalid_server_address">Indiritzu serbidore non vàlidu</string>
+    <string name="error_connection_failed">Connessione faddida, assegura·ti chi siat su serbidore giustu</string>
+    <string name="ma_title_add_account">Agiunghe unu contu</string>
+    <string name="ma_title_welcome">Ti donamus sa benebènnida</string>
+    <string name="ma_content_welcome">Ti donamus sa benebènnida in s\'aplicatzione Nextcloud SMS. Custa aplicatzione ti faghet sincronizare is SMS in su Nextcloud tuo impreende s\'aplicatzione SMS.</string>
+    <string name="ma_title_remote_account">Contu remotu</string>
+    <string name="choose_account">Sèbera contu</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Seletziona contu</string>
+    <string name="title_activity_select_contact">Seletziona cuntatu</string>
+    <string name="no_account_configured">Perunu contu cunfiguradu.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">Protzessu de sincronizatzione</string>
+    <string name="sync_inprogress">Sincronizatzione in cursu ...</string>
+    <string name="fatal_error">Errore fatale!</string>
+
+    <string name="err_proto_v2">Su serbidore non suportat custa funtzione. Assegura·ti chi sa versione de su serbidore siat a su mancu 1.6.</string>
+    <string name="contactinfos_title">Informatziones de cuntatu</string>
+    <string name="pref_title_bulk_messages">Màssimu de messàgiu de imbiare pro sincronizatzione</string>
+    <string name="contactinfos_list">Lista de cuntatos</string>
+    <string name="ma_title_my_accounts">Is contos mios</string>
+    <string name="cancel">Cantzella</string>
+    <string name="understood">Cumprèndidu</string>
+    <string name="account_actions">Atziones de su contu</string>
+    <string name="yes_confirm">Eja</string>
+    <string name="no_confirm">No</string>
+    <string name="pref_show_sync_notifications">Mustra notìficas de sincronizatzione</string>
+    <string name="sync_complete">Sincronizatzione cumpleta</string>
+    </resources>

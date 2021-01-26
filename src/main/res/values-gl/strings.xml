@@ -109,7 +109,7 @@
     <!-- Restauration -->
     <string name="title_activity_select_account">Seleccione unha conta</string>
     <string name="title_activity_select_contact">Seleccione un contacto</string>
-    <string name="no_account_configured">Non hai contas configuradas.</string>
+    <string name="no_account_configured">Non hai ningunha conta configurada</string>
 
     <!-- Notifications -->
     <string name="sync_title">Proceso de sincronización</string>
