@@ -30,14 +30,14 @@
     <string name="translation_version">7</string>
 
     <!-- System strings, do not translate -->
-    <string name="app_name">Nextcloud 簡訊</string>
-    <string name="login_logo">登入圖示</string>
+    <string name="app_name">Nextcloud 短訊</string>
+    <string name="login_logo">登入徽標</string>
 
     <!-- Translations must begin there -->
     <!-- Preferences -->
-    <string name="pref_title_sync">簡訊 - 快速</string>
+    <string name="pref_title_sync">短訊 - 快速</string>
     <string name="pref_title_sync_frequency">高同步頻率</string>
-    <string name="pref_title_slow_sync">簡訊 - 緩慢但安全</string>
+    <string name="pref_title_slow_sync">短訊 - 緩慢但安全</string>
     <string name="pref_title_slow_sync_frequency">安全但較慢的同步頻率</string>
     <string name="action_settings">設定</string>
     <string name="sync_now">現在同步</string>
@@ -60,13 +60,13 @@
         <item>永不</item>
     </string-array>
     <string-array name="pref_sync_bulk_max_messages_titles">
-        <item>100 則簡訊</item>
-        <item>1000 則簡訊</item>
-        <item>2000 則簡訊</item>
-        <item>5000 則簡訊</item>
-        <item>10000 則簡訊</item>
-        <item>25000 則簡訊</item>
-        <item>所有簡訊皆未同步</item>
+        <item>100 個短訊</item>
+        <item>1000 個短訊</item>
+        <item>2000 個短訊</item>
+        <item>5000 個短訊</item>
+        <item>10000 個短訊</item>
+        <item>25000 個短訊</item>
+        <item>所有短訊均未同步</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
         <item>1小時</item>
@@ -76,7 +76,7 @@
         <item>24小時</item>
         <item>永不</item>
     </string-array>
-    <string name="pref_push_on_receive">接收時推送簡訊</string>
+    <string name="pref_push_on_receive">接收時推送短訊</string>
     <string name="pref_sync_wifi">透過 Wi-Fi 同步</string>
     <string name="pref_sync_4g">透過 4G 同步</string>
     <string name="pref_sync_3g">透過 3G 同步</string>
@@ -95,14 +95,14 @@
     <string name="error_field_required">此欄位為必填</string>
     <string name="prompt_serverURI">伺服器位址</string>
     <string name="error_invalid_server_address">無效的伺服器位址</string>
-    <string name="error_connection_failed">連線失敗，確認這是正確的伺服器</string>
-    <string name="error_http_connection_failed">無法建立 HTTP 連線。請確保有網路伺服器</string>
+    <string name="error_connection_failed">連線失敗，請確保這是正確的伺服器</string>
+    <string name="error_http_connection_failed">無法建立 HTTP 連線。請確保該網路伺服器存在</string>
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">幫我們評分！</string>
     <string name="ma_title_add_account">新增一個帳號</string>
     <string name="ma_title_welcome">歡迎</string>
-    <string name="ma_content_welcome">歡迎使用 Nextcloud SMS 應用程式。這個應用程式能讓您使用 SMS App 同步 SMS 到您的 Nextcloud 實體。</string>
+    <string name="ma_content_welcome">歡迎使用Nextcloud SMS應用程序。 此應用程序使您可以使用SMS App將SMS同步到您的 Nextcloud。 </string>
     <string name="ma_title_remote_account">遠端帳戶</string>
     <string name="choose_account">選擇帳戶</string>
 
@@ -165,7 +165,7 @@
     <string name="feature_not_already_implemented">此功能正在實作，很快就能使用。</string>
     <string name="pref_title_minimum_sync_chars">最短電話號碼長度</string>
     <string name="err_didnt_find_account_restore">找不到您的帳戶以回復您的訊息，是個棘手問題。</string>
-    <string name="launch_restore">回復我的簡訊</string>
+    <string name="launch_restore">回復我的SMS</string>
     <string name="error_make_default_sms_app">請將此應用程式設為預設簡訊應用程式，才能回復您的訊息。這限制是在 Android 4.4 出現的。</string>
     <string name="fix_permissions">修正權限</string>
     <string name="err_kitkat_required">使用此功能需要 Android 4.4 或更新版本。</string>
@@ -181,27 +181,4 @@
     <string name="err_sync_http_write_failed">錯誤 #19：推送資料至伺服器時，無法寫入 HTTP 串流。</string>
     <string name="err_sync_http_request_protocol_exception">錯誤 #20：無法正確設定 HTTP 通訊協定版本。</string>
     <string name="action_appinfo_privacy_policy">隱私權政策</string>
-    <string name="privacy_policy_large_text">
-        \"Overview\n\n\"
-
-        \"Nextcloud SMS is a free software developed by its contributors. This privacy policy \"
-        \"is intended to inform you about data gathered by this application.\"
-
-        \"Information we collect\n\n\"
-
-        \"Only SMS and call log are collected by the application.\n\n\"
-
-        \"Where information is sent.\n\n\"
-
-        \"Information is neither sent to Nextcloud team servers nor Nextcloud SMS team servers nor \"
-        \"any government nor another entity you don\'t want.\n\n\"
-
-        \"When you configure a Nextcloud account in the application, you agree with the Nextcloud \"
-        \"instance owner that your SMS and call log data will be stored in his infrastructure \"
-        \"under his responsibility.\n\n\"
-
-        \"We don\'t recommend to use a public or a company Nextcloud instance account. Your privacy \"
-        \"must be under your control on your own Nextcloud instance.\n\n\"
-
-    </string>
-</resources>
+    </resources>
