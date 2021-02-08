@@ -144,8 +144,6 @@
 
     <string name="ui_notification_title_template">Nextcloud SMS：%1$s</string>
     <string name="communicate">通訊</string>
-    <string name="title_activity_main2">Main2Activity</string>
-
     <string name="navigation_drawer_open">開啟導覽列</string>
     <string name="navigation_drawer_close">關閉導覽列</string>
     <string name="ma_title_my_accounts">我的帳戶</string>
