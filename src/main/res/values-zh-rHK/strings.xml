@@ -179,4 +179,28 @@
     <string name="err_sync_http_write_failed">錯誤 #19：推送資料至伺服器時，無法寫入 HTTP 串流。</string>
     <string name="err_sync_http_request_protocol_exception">錯誤 #20：無法正確設定 HTTP 通訊協定版本。</string>
     <string name="action_appinfo_privacy_policy">隱私權政策</string>
-    </resources>
+    <string name="privacy_policy_large_text">
+        “概述\n\n”
+
+        “Nextcloud短訊是由其貢獻者開發的自由軟件。”
+
+        “本私隱政策向您告知本應用程式所收集的數據。”
+
+        “我們所收集的信息\n\n“
+
+        ”本應用程式只收集短信和通話記錄。\n\n“
+
+        ”信息發往何處\n\n\"
+
+        “信息既不發往Nextcloud和Nextcloud短訊的伺服器，\n\n“
+
+        ”當您在此應用程式中配置Nextcloud帳戶，“
+
+        ”您同意將短信和通話記錄數據存儲在實例所有者的基礎設施中，“
+
+        ”並由其負責。\n\n“
+
+        ”我們不推薦您使用公開或其他企業Nextcloud實例賬號。“
+
+        ”僅使用自己的Nextcloud實例，您的私隱才能全權掌控。\n\n“</string>
+</resources>
