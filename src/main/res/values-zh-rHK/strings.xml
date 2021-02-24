@@ -135,7 +135,7 @@
     <string name="err_sync_account_unparsable">錯誤 #17：帳戶格式錯誤。請重新設定</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">錯誤 #18：未安裝 Nextcloud SMS App，或 Nextcloud 正在等待升級</string>
     <string name="err_fetch_phonelist">從伺服器收到無效的電話清單。</string>
-    <string name="err_proto_v2">伺服器不支援此功能。請確保伺服器版本至少在 1.6。</string>
+    <string name="err_proto_v2">伺服器不支援此功能。請確保伺服器版本為1.6或以上。</string>
     <string name="contactinfos_title">聯絡人資訊</string>
     <string name="subtitle_contact_phones">- 聯絡電話</string>
     <string name="pref_title_bulk_messages">每次同步時要傳送的最大訊息數</string>
@@ -177,7 +177,7 @@
     <string name="pref_show_sync_notifications">顯示同步通知</string>
     <string name="sync_complete">同步完成</string>
     <string name="err_sync_http_write_failed">錯誤 #19：推送資料至伺服器時，無法寫入 HTTP 串流。</string>
-    <string name="err_sync_http_request_protocol_exception">錯誤 #20：無法正確設定 HTTP 通訊協定版本。</string>
+    <string name="err_sync_http_request_protocol_exception">錯誤 #20：無法正確設定 HTTP 規約版本。</string>
     <string name="action_appinfo_privacy_policy">隱私權政策</string>
     <string name="privacy_policy_large_text">
         “概述\n\n”
