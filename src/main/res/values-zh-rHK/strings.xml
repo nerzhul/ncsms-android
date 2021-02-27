@@ -30,7 +30,7 @@
     <string name="translation_version">7</string>
 
     <!-- System strings, do not translate -->
-    <string name="app_name">Nextcloud 短訊</string>
+    <string name="app_name">Nextcloud SMS</string>
     <string name="login_logo">登入徽標</string>
 
     <!-- Translations must begin there -->
@@ -102,7 +102,7 @@
     <string name="ma_title_rate_us">幫我們評分！</string>
     <string name="ma_title_add_account">新增一個帳號</string>
     <string name="ma_title_welcome">歡迎</string>
-    <string name="ma_content_welcome">歡迎使用Nextcloud SMS應用程序。 此應用程序使您可以使用SMS App將SMS同步到您的 Nextcloud。 </string>
+    <string name="ma_content_welcome">歡迎使用 Nextcloud SMS 應用程式。您可以使用此應用程式將SMS同步到您的 Nextcloud。</string>
     <string name="ma_title_remote_account">遠端帳戶</string>
     <string name="choose_account">選擇帳戶</string>
 
@@ -133,7 +133,7 @@
     <string name="err_sync_http_request_parse_resp">錯誤 #15：無法解析伺服器回應</string>
     <string name="err_sync_no_connection_available">錯誤 #16：沒有可用的資料連線</string>
     <string name="err_sync_account_unparsable">錯誤 #17：帳戶格式錯誤。請重新設定</string>
-    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">錯誤 #18：未安裝 Nextcloud SMS App，或 Nextcloud 正在等待升級</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">錯誤 #18：未安裝 Nextcloud SMS 應用程式，或 Nextcloud 正在等待升級</string>
     <string name="err_fetch_phonelist">從伺服器收到無效的電話清單。</string>
     <string name="err_proto_v2">伺服器不支援此功能。請確保伺服器版本為1.6或以上。</string>
     <string name="contactinfos_title">聯絡人資訊</string>
@@ -157,7 +157,7 @@
     <string name="err_cannot_read_sms">無法讀取簡訊。</string>
     <string name="action_appinfo_perms">應用程式資訊及權限</string>
     <string name="restore_all_messages">回復所有訊息</string>
-    <string name="account_actions">帳戶動作</string>
+    <string name="account_actions">帳戶操作</string>
     <string name="error_connection_failed_not_found">連線失敗，伺服器回傳 404 NOT FOUND。請確保您設定的 Nextcloud 實體路徑正確。</string>
     <string name="nothing_to_sync">沒有訊息要同步。</string>
     <string name="feature_not_already_implemented">此功能正在實作，很快就能使用。</string>
@@ -178,7 +178,7 @@
     <string name="sync_complete">同步完成</string>
     <string name="err_sync_http_write_failed">錯誤 #19：推送資料至伺服器時，無法寫入 HTTP 串流。</string>
     <string name="err_sync_http_request_protocol_exception">錯誤 #20：無法正確設定 HTTP 規約版本。</string>
-    <string name="action_appinfo_privacy_policy">隱私權政策</string>
+    <string name="action_appinfo_privacy_policy">私隱政策</string>
     <string name="privacy_policy_large_text">
         “概述\n\n”
 

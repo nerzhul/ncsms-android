@@ -29,7 +29,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMS 同步您本地上的簡訊到您的 Nextcloud 伺服器中</string>
+    <string name="gp_short_description">Nextcloud SMS 將您的近端 SMS 與 Nextcloud 伺服器同步</string>
     <string name="gp_description">
 Nextcloud SMS 同步您本地上的 SMS 到您的 Nextcloud 伺服器中，並且讓您輕鬆的在遠端讀取您的簡訊。
 
