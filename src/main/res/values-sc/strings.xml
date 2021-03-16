@@ -160,7 +160,7 @@
     <string name="action_appinfo_perms">Informatziones de s\'aplicatzione e permissos</string>
     <string name="restore_all_messages">Riprìstina totu is messàgios</string>
     <string name="account_actions">Atziones de su contu</string>
-    <string name="error_connection_failed_not_found">Connessione faddida, su serbidore rispondet 404 NO AGATADU. Assegura·ti chi as fatu su percursu giustu in Nextcloud pro sa chistione tua.</string>
+    <string name="error_connection_failed_not_found">Connessione faddida, su serbidore rispondet 404 NO AGATADU. Assegura·ti chi as fatu su caminu giustu in Nextcloud pro sa chistione tua.</string>
     <string name="nothing_to_sync">Non ddoe at nudda de sincronizare.</string>
     <string name="feature_not_already_implemented">Custa atzione no est ancora pronta e at a èssere a disponimentu tra pagu tempus.</string>
     <string name="pref_title_minimum_sync_chars">Longària mìnima de nùmeru de telèfonu</string>
