@@ -113,6 +113,7 @@
 
     <!-- Notifications -->
     <string name="sync_title">Ajourføringsproces</string>
+    <string name="sync_inprogress">Synkronisering i gang …</string>
     <string name="fatal_error">Fatal fejl!</string>
 
     <!-- Errors -->
