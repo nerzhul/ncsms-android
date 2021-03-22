@@ -80,7 +80,7 @@
     <string name="pref_sync_wifi">透過 Wi-Fi 同步</string>
     <string name="pref_sync_4g">透過 4G 同步</string>
     <string name="pref_sync_3g">透過 3G 同步</string>
-    <string name="pref_sync_gprs">透過 2.5G (GPRS) 同步</string>
+    <string name="pref_sync_gprs">透過 2。5G（GPRS）同步</string>
     <string name="pref_sync_2g">透過 2G 同步</string>
     <string name="pref_sync_others">透過其他模式同步</string>
     <string name="title_activity_login">登入</string>
@@ -121,7 +121,7 @@
     <string name="err_sync_craft_http_request">錯誤 #2：建立 HTTP 請求時發生錯誤</string>
     <string name="err_sync_push_request">錯誤 #3：推送請求失敗</string>
     <string name="err_sync_push_request_resp">錯誤 #4：推送資料時，從伺服器收到無效資料</string>
-    <string name="err_sync_create_json_null_smslist">錯誤 #5：簡訊清單為空 (NULL)</string>
+    <string name="err_sync_create_json_null_smslist">錯誤 #5：簡訊清單為空（NULL)</string>
     <string name="err_sync_create_json_put_smslist">錯誤 #6：建立推送請求時發生錯誤</string>
     <string name="err_sync_create_json_request_encoding">錯誤 #7：產生請求時遇到不支援的編碼方式</string>
     <string name="err_sync_auth_failed">錯誤 #8：身分驗證失敗</string>
@@ -135,7 +135,7 @@
     <string name="err_sync_account_unparsable">錯誤 #17：賬戶格式錯誤。請重新設定</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">錯誤 #18：未安裝 Nextcloud SMS 應用程式，或 Nextcloud 正在等待升級</string>
     <string name="err_fetch_phonelist">從伺服器收到無效的電話清單。</string>
-    <string name="err_proto_v2">伺服器不支援此功能。請確保伺服器版本為1.6或以上。</string>
+    <string name="err_proto_v2">伺服器不支援此功能。請確保伺服器版本為1。6或以上。</string>
     <string name="contactinfos_title">聯絡人資訊</string>
     <string name="subtitle_contact_phones">- 聯絡電話</string>
     <string name="pref_title_bulk_messages">每次同步時要傳送的最大訊息數</string>
@@ -164,9 +164,9 @@
     <string name="pref_title_minimum_sync_chars">最短電話號碼長度</string>
     <string name="err_didnt_find_account_restore">找不到您的賬戶以回復您的訊息，是個棘手問題。</string>
     <string name="launch_restore">回復我的SMS</string>
-    <string name="error_make_default_sms_app">請將此應用程式設為預設簡訊應用程式，才能回復您的訊息。這限制是在 Android 4.4 出現的。</string>
+    <string name="error_make_default_sms_app">請將此應用程式設為預設簡訊應用程式，才能回復您的訊息。這限制是在 Android 4。4 出現的。</string>
     <string name="fix_permissions">修正權限</string>
-    <string name="err_kitkat_required">使用此功能需要 Android 4.4 或更新版本。</string>
+    <string name="err_kitkat_required">使用此功能需要 Android 4。4 或更新版本。</string>
     <string name="restore_finished">現已完成 SMS 回復。</string>
     <string name="x_messages_restored">已回復訊息&#8230;</string>
     <string name="err_no_connection">沒有可用連線，請確保您有能用的資料連線。</string>
