@@ -180,11 +180,11 @@
     <string name="sync_complete">同期完了</string>
     <string name="err_sync_http_write_failed">Error #19: サーバーにデータをプッシュするときにHTTPストリームの書き込みに失敗しました。</string>
     <string name="err_sync_http_request_protocol_exception">Error #20: HTTPプロトコルのバージョンを正しく設定できませんでした。</string>
-    <string name="action_appinfo_privacy_policy">プライバシーポリシー</string>
+    <string name="action_appinfo_privacy_policy">個人情報保護方針</string>
     <string name="privacy_policy_large_text">
         \"概要\n\n\"
 
-        \"Nextcloud SMS は、貢献者により開発された自由なソフトウェアです。このプライバシー ポリシーは、\"
+        \"Nextcloud SMS は、貢献者により開発された自由なソフトウェアです。この個人情報保護方針は、\"
         \"このアプリケーションによって収集されるデータについて通知することを目的としています。\"
 
         \"収集する情報\n\n\"
