@@ -92,7 +92,7 @@
     <string name="action_sign_in_short">Iscrie·ti</string>
     <string name="error_invalid_login">Crae o atzessu non curretu</string>
     <string name="error_invalid_password">Custa crae est tropu curtza</string>
-    <string name="error_field_required">Custa parte est rechesta</string>
+    <string name="error_field_required">Custa parte est recherta</string>
     <string name="prompt_serverURI">Indiritzu serbidore</string>
     <string name="error_invalid_server_address">Indiritzu serbidore non vàlidu</string>
     <string name="error_connection_failed">Connessione faddida, assegura·ti chi siat su serbidore giustu</string>
@@ -152,7 +152,7 @@
     <string name="ma_content_swipeaction">Iscurre dae manca a dereta pro atzèdere a su menù de atzione.</string>
     <string name="cancel">Cantzella</string>
     <string name="understood">Cumprèndidu</string>
-    <string name="notif_permission_required">Permissos rechèdidos</string>
+    <string name="notif_permission_required">Permissos rechertos</string>
     <string name="notif_permission_required_content">Mancant permissos pro esecutare su protzessu de sincronizatzione. Assenta sa chistione in cunfiguratziones de s\'aplicatzione.</string>
     <string name="please_fix_it">Assenta·dda.</string>
     <string name="err_cannot_read_contacts">Non podimus lèghere is cuntatos tuos.</string>
@@ -168,7 +168,7 @@
     <string name="launch_restore">Riprìstina s\'SMS miu</string>
     <string name="error_make_default_sms_app">Pone custa aplicatzione comente aplicatzione SMS predefinida pro pòdere recuperare is messàgios. Custa est una limitatzione de Android 4.4.</string>
     <string name="fix_permissions">Assenta permissos</string>
-    <string name="err_kitkat_required">Est rechèdidu Android 4.4 o prus reghente pro impreare custa funtzione.</string>
+    <string name="err_kitkat_required">Est rechertu Android 4.4 o prus reghente pro impreare custa funtzione.</string>
     <string name="restore_finished">Su riprìstinu de SMS immoe est acabbadu.</string>
     <string name="x_messages_restored">messàgios ripristinados&#8230;</string>
     <string name="err_no_connection">Peruna connessione a disponimentu, assegura·ti chi tenes una connessione datos vàlida.</string>
