@@ -39,7 +39,7 @@
     <string name="pref_title_sync_frequency">Frecuèntzia de sincronizatzione lestra</string>
     <string name="pref_title_slow_sync">SMS - Lentu e seguru</string>
     <string name="pref_title_slow_sync_frequency">Frecuèntzia de sincronizatzione lenta segura</string>
-    <string name="action_settings">Cunfiguratzione</string>
+    <string name="action_settings">Impostatziones</string>
     <string name="sync_now">Sincroniza immoe</string>
     <string name="pref_category_sync">Sincronizatzione</string>
     <string name="title_global_pref_to_general_prefs">Preferèntzias generales</string>
