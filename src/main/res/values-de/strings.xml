@@ -42,7 +42,7 @@
     <string name="action_settings">Einstellungen</string>
     <string name="sync_now">Jetzt synchronisieren</string>
     <string name="pref_category_sync">Synchronisierung</string>
-    <string name="title_global_pref_to_general_prefs">Allg. Einstellungen</string>
+    <string name="title_global_pref_to_general_prefs">Allgemeine Einstellungen</string>
     <string name="summary_global_pref_to_general_prefs">Sync-Einstellungen</string>
     <string name="summary_notif_prefs">Benachrichtigungen</string>
     <string name="pref_header_data_sync">Daten &amp; Sync</string>
@@ -180,7 +180,7 @@
     <string name="sync_complete">Synchronisierung abgeschlossen</string>
     <string name="err_sync_http_write_failed">Fehler #19: Fehler beim Schreiben des HTTP-Streams während der Datenübertragung zum Server.</string>
     <string name="err_sync_http_request_protocol_exception">Error #20 : Fehler beim Setzen der HTTP-Protokoll-Version.</string>
-    <string name="action_appinfo_privacy_policy">Datenschutz</string>
+    <string name="action_appinfo_privacy_policy">Datenschutzerklärung</string>
     <string name="privacy_policy_large_text">
         \"Übersicht\n\n\"
 
