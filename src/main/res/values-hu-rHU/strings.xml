@@ -113,7 +113,7 @@
 
     <!-- Notifications -->
     <string name="sync_title">Szinkronizálási folyamat</string>
-    <string name="sync_inprogress">Szinkronizáció folyamatban...</string>
+    <string name="sync_inprogress">Szinkronizáció folyamatban…</string>
     <string name="fatal_error">Végzetes hiba!</string>
 
     <!-- Errors -->
@@ -173,12 +173,12 @@
     <string name="x_messages_restored">üzenet helyreállítva:&#8230;</string>
     <string name="err_no_connection">Nincs kapcsolat, győződjön meg róla, hogy van-e érvényes adatkapcsolata.</string>
     <string name="reinit_sync_cursor">Szinkronizálási mutató visszaállítása</string>
-    <string name="reinit_sync_cursor_confirm">Biztosan visszaállítja a szinkronizálási mutatót? Ez nagyon lelassíthatja a szinkronizálást, ha sok olyan régi üzenet található, ami nincs szinkronizálva a kiszolgálóval.</string>
+    <string name="reinit_sync_cursor_confirm">Biztosan visszaállítja a szinkronizálási mutatót? Ez nagyon lelassíthatja a szinkronizálást, ha sok olyan régi üzenet található, amelyek nincsenek szinkronizálva a kiszolgálóval.</string>
     <string name="yes_confirm">Igen</string>
     <string name="no_confirm">Nem</string>
     <string name="pref_show_sync_notifications">Szinkronizálási értesítések megjelenítése</string>
     <string name="sync_complete">Szinkronizálás kész</string>
-    <string name="err_sync_http_write_failed">Hiba #19: nem sikerült a HTTP folyam írása az adattolás során.</string>
+    <string name="err_sync_http_write_failed">Hiba #19: nem sikerült a HTTP adatfolyam írása a kiszolgálóra történő küldés során.</string>
     <string name="err_sync_http_request_protocol_exception">Error #20: Nem sikerült megfelelően beállítani a HTTP protokoll verziót.</string>
     <string name="action_appinfo_privacy_policy">Adatvédelmi irányelvek</string>
     <string name="privacy_policy_large_text">
