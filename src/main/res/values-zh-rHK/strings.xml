@@ -147,7 +147,7 @@
     <string name="navigation_drawer_open">開啟導覽列</string>
     <string name="navigation_drawer_close">關閉導覽列</string>
     <string name="ma_title_my_accounts">我的賬戶</string>
-    <string name="ma_content_swipeaction">從左往右滑以存取動作選單。</string>
+    <string name="ma_content_swipeaction">從左往右滑以存取操作選項單。</string>
     <string name="cancel">取消</string>
     <string name="understood">了解</string>
     <string name="notif_permission_required">需要權限</string>
