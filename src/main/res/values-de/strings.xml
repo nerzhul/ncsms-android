@@ -137,7 +137,7 @@
     <string name="err_fetch_phonelist">Nicht valide Telefonliste vom Server empfangen.</string>
     <string name="err_proto_v2">Der Server unterstützt diese Funktion nicht. Stellen Sie sicher, dass die Serverversion mindestens 1.6 ist.</string>
     <string name="contactinfos_title">Kontaktinformationen</string>
-    <string name="subtitle_contact_phones">- Handys kontaktieren</string>
+    <string name="subtitle_contact_phones">- Kontaktrufnummern</string>
     <string name="pref_title_bulk_messages">Maximale Anzahl von Nachrichten, die pro Synchronisieren gesendet werden</string>
     <string name="contactinfos_list">Kontaktliste</string>
     <string name="function_not_available">Diese Funktion ist nicht verfügbar.</string>
