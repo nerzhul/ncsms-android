@@ -94,7 +94,7 @@
     <string name="error_invalid_password">To hasło jest za krótkie</string>
     <string name="error_field_required">To pole jest wymagane</string>
     <string name="prompt_serverURI">Adres serwera</string>
-    <string name="error_invalid_server_address">Błędny adres serwera</string>
+    <string name="error_invalid_server_address">Nieprawidłowy adres serwera</string>
     <string name="error_connection_failed">Połączenie nie powiodło się, upewnij się, że jest to właściwy serwer</string>
     <string name="error_http_connection_failed">Nie można wykonać połączenia HTTP. Upewnij się, czy istnieje serwer WWW</string>
 
@@ -134,7 +134,7 @@
     <string name="err_sync_no_connection_available">Błąd #16: Brak połączenia transmisji danych</string>
     <string name="err_sync_account_unparsable">Błąd #17: Uszkodzone konto. Ustaw je poprawnie.</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Błąd #18: Aplikacja Nextcloud SMS jest niezainstalowana lub Nextcloud oczekuje na aktualizację</string>
-    <string name="err_fetch_phonelist">Otrzymano od serwera błędną listę telefonów</string>
+    <string name="err_fetch_phonelist">Otrzymano od serwera nieprawidłową listę telefonów</string>
     <string name="err_proto_v2">Serwer nie obsługuje tej funkcji. Upewnij się, że wersja serwera ma co najmniej 1,6.</string>
     <string name="contactinfos_title">Informacje o kontaktach</string>
     <string name="subtitle_contact_phones">- Telefony kontaktowe</string>
