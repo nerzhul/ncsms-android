@@ -30,7 +30,7 @@
     <string name="translation_version">7</string>
 
     <!-- System strings, do not translate -->
-    <string name="app_name">SMS de Nextcloud</string>
+    <string name="app_name">Nextcloud SMS</string>
     <string name="login_logo">Imagen de inicio de sesión</string>
 
     <!-- Translations must begin there -->
@@ -94,7 +94,7 @@
     <string name="error_invalid_password">Contraseña demasiado corta</string>
     <string name="error_field_required">Campo requerido</string>
     <string name="prompt_serverURI">Dirección del servidor</string>
-    <string name="error_invalid_server_address">Dirección inválida</string>
+    <string name="error_invalid_server_address">Dirección no válida</string>
     <string name="error_connection_failed">Fallo al conectarse. Por favor, asegúrate de que la dirección del servidor es correcta</string>
     <string name="error_http_connection_failed">Imposible establecer una conexión HTTP. Por favor asegúrese que el servidor HTTP esta ejecutándose</string>
 
@@ -102,7 +102,7 @@
     <string name="ma_title_rate_us">¡Califíquenos!</string>
     <string name="ma_title_add_account">Agregue una cuenta</string>
     <string name="ma_title_welcome">Bienvenido</string>
-    <string name="ma_content_welcome">Bienvenido a la aplicación de SMS de Nextcloud. Esta aplicación le permite sincronizar sus SMS a su instancia de Nextcloud usando la aplicación de SMS.</string>
+    <string name="ma_content_welcome">Bienvenido a la aplicación de SMS de Nextcloud. Esta aplicación le permite sincronizar sus SMS con su instancia de Nextcloud usando la aplicación de SMS.</string>
     <string name="ma_title_remote_account">Cuenta remota</string>
     <string name="choose_account">Elija una cuenta</string>
 
@@ -113,14 +113,14 @@
 
     <!-- Notifications -->
     <string name="sync_title">Proceso de sincronización</string>
-    <string name="sync_inprogress">Sincronización en curso…</string>
+    <string name="sync_inprogress">Sincronización en curso …</string>
     <string name="fatal_error">!Error irremediable! </string>
 
     <!-- Errors -->
-    <string name="err_sync_get_smslist">Error #1: Información inválida recibida desde el servidor al obtener mensajes previos</string>
+    <string name="err_sync_get_smslist">Error #1: Información no válida recibida desde el servidor al obtener mensajes previos</string>
     <string name="err_sync_craft_http_request">Error #2: Error durante la petición HTTP</string>
     <string name="err_sync_push_request">Error #3: Envío de petición fallida</string>
-    <string name="err_sync_push_request_resp">Error #4: Información inválida recibida desde el servidor al enviar información</string>
+    <string name="err_sync_push_request_resp">Error #4: Información no válida recibida desde el servidor al enviar información</string>
     <string name="err_sync_create_json_null_smslist">Error #5: Lista SMS inexistente</string>
     <string name="err_sync_create_json_put_smslist">Error #6: Error mientras se envíaba la petición</string>
     <string name="err_sync_create_json_request_encoding">Error #7: Codificación inválida al generar la solicitud</string>
@@ -142,7 +142,7 @@
     <string name="contactinfos_list">Lista de contactos</string>
     <string name="function_not_available">Esta función aun no esta disponible</string>
 
-    <string name="ui_notification_title_template">SMS de Nextcloud: %1$s</string>
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
     <string name="communicate">Comunicar</string>
     <string name="title_activity_main2">Main2Activity</string>
 
