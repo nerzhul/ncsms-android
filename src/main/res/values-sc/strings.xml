@@ -94,7 +94,7 @@
     <string name="error_invalid_password">Custa crae est tropu curtza</string>
     <string name="error_field_required">Custa parte est recherta</string>
     <string name="prompt_serverURI">Indiritzu serbidore</string>
-    <string name="error_invalid_server_address">Indiritzu serbidore non vàlidu</string>
+    <string name="error_invalid_server_address">Indiritzu serbidore non bàlidu</string>
     <string name="error_connection_failed">Connessione faddida, assegura·ti chi siat su serbidore giustu</string>
     <string name="error_http_connection_failed">Impossìbile a istabilire una connessione HTTP. Assegura·ti chi ddoe siat unu serbidore web</string>
 
