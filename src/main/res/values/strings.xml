@@ -191,7 +191,7 @@
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">Rate us!</string>
-    <string name="ma_title_add_account">Add an account</string>
+    <string name="ma_title_add_account">Add account</string>
     <string name="ma_title_welcome">Welcome</string>
     <string name="ma_content_welcome">Welcome to Nextcloud SMS application. This application let you synchronize your SMS to your Nextcloud instance using SMS app.</string>
     <string name="ma_title_remote_account">Remote account</string>
