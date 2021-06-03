@@ -29,7 +29,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMS, Nextcloud kopyanızdaki yerel kısa mesajları eşitler</string>
+    <string name="gp_short_description">Nextcloud SMS, yerel kısa mesajları Nextcloud kopyanızla eşitler</string>
     <string name="gp_description">
 NextCloud SMS uygulaması SMS iletilerinizi uzak bir NextCloud kopyası ile eşitleyerek iletilerinizi oradan okuyabilmenizi sağlar.
 

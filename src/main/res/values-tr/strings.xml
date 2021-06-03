@@ -36,9 +36,9 @@
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">SMS - Hızlı</string>
-    <string name="pref_title_sync_frequency">Hızlı Eşitleme Sıklığı</string>
-    <string name="pref_title_slow_sync">SMS - Yavaş ve Güvenli</string>
-    <string name="pref_title_slow_sync_frequency">Yavaş ve Güvenli Eşitleme Sıklığı</string>
+    <string name="pref_title_sync_frequency">Hızlı eşitleme sıklığı</string>
+    <string name="pref_title_slow_sync">SMS - Yavaş ve güvenli</string>
+    <string name="pref_title_slow_sync_frequency">Yavaş ve güvenli eşitleme sıklığı</string>
     <string name="action_settings">Ayarlar</string>
     <string name="sync_now">Eşitle</string>
     <string name="pref_category_sync">Eşitleme</string>
@@ -46,7 +46,7 @@
     <string name="summary_global_pref_to_general_prefs">Eşitleme ayarları</string>
     <string name="summary_notif_prefs">Bildirimler</string>
     <string name="pref_header_data_sync">Veriler ve eşitleme</string>
-    <string name="title_activity_general_settings">Genel Ayarlar</string>
+    <string name="title_activity_general_settings">Genel ayarlar</string>
 
     <string-array name="pref_sync_frequency_titles">
         <item>5 dakika</item>
@@ -83,12 +83,12 @@
     <string name="pref_sync_gprs">2.5G (GPRS) ile eşitlensin</string>
     <string name="pref_sync_2g">2G ile eşitlensin</string>
     <string name="pref_sync_others">Diğer kiplerle eşitlensin</string>
-    <string name="title_activity_login">Oturum Açın</string>
+    <string name="title_activity_login">Oturum açın</string>
 
     <!-- Login -->
-    <string name="prompt_login">Oturum Açın</string>
+    <string name="prompt_login">Oturum açın</string>
     <string name="prompt_password">Parola</string>
-    <string name="action_sign_in">Oturum ya da Hesap Açın</string>
+    <string name="action_sign_in">Oturum ya da hesap açın</string>
     <string name="action_sign_in_short">Oturum açın</string>
     <string name="error_invalid_login">Kullanıcı adı ya da parola yanlış</string>
     <string name="error_invalid_password">Parola çok kısa</string>
@@ -117,23 +117,23 @@
     <string name="fatal_error">Ciddi sorun !</string>
 
     <!-- Errors -->
-    <string name="err_sync_get_smslist">Hata No 1: Önceki iletiler alınırken sunucudan geçersiz veriler alındı</string>
-    <string name="err_sync_craft_http_request">Hata No 2: HTTP isteği hazırlanırken sorun çıktı</string>
-    <string name="err_sync_push_request">Hata No 3: Gönderme isteği yapılamadı</string>
-    <string name="err_sync_push_request_resp">Hata No 4: Veriler gönderilirken sunucudan geçersiz veriler alındı</string>
-    <string name="err_sync_create_json_null_smslist">Hata No 5: NULL SMS Listesi</string>
-    <string name="err_sync_create_json_put_smslist">Hata No 6: Gönderme isteği hazırlanırken sorun çıktı</string>
-    <string name="err_sync_create_json_request_encoding">Hata No 7: İstek oluşturulurken desteklenmeyen kodlama ile karşılaşıldı</string>
-    <string name="err_sync_auth_failed">Hata No 8: Kimlik doğrulanamadı</string>
-    <string name="err_sync_http_request_returncode_unhandled">Hata No 9: Sunucu işlenemeyen bir HTTP dönüş kodu gönderdi</string>
-    <string name="err_sync_http_request_connect">Hata No 11: Nextcloud kopyası ile bağlantı kurulamadı</string>
-    <string name="err_sync_http_request_httpexception">Hata No 12: Nextcloud kopyası ile bağlantı kurulamadı</string>
-    <string name="err_sync_http_request_ioexception">Hata No 13: Nextcloud kopyası ile bağlantı kurulamadı</string>
-    <string name="err_sync_http_request_resp">Hata No 14: Sunucu yanıtı işlenemedi</string>
-    <string name="err_sync_http_request_parse_resp">Hata No 15: Sunucu yanıtı işlenemedi</string>
-    <string name="err_sync_no_connection_available">Hata No 16: Kullanılabilecek bir veri bağlantısı yok</string>
-    <string name="err_sync_account_unparsable">Hata No 17: Hesap sorunlu. Lütfen yeniden yapılandırın</string>
-    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Hata No 18: Nextcloud SMS uygulaması kurulmamış ya da Nextcloud uygulamasının güncellenmesi gerekiyor</string>
+    <string name="err_sync_get_smslist">Hata no 1: Önceki iletiler alınırken sunucudan geçersiz veriler alındı</string>
+    <string name="err_sync_craft_http_request">Hata no 2: HTTP isteği hazırlanırken sorun çıktı</string>
+    <string name="err_sync_push_request">Hata no 3: Gönderme isteği yapılamadı</string>
+    <string name="err_sync_push_request_resp">Hata no 4: Veriler gönderilirken sunucudan geçersiz veriler alındı</string>
+    <string name="err_sync_create_json_null_smslist">Hata no 5: NULL SMS Listesi</string>
+    <string name="err_sync_create_json_put_smslist">Hata no 6: Gönderme isteği hazırlanırken sorun çıktı</string>
+    <string name="err_sync_create_json_request_encoding">Hata no 7: İstek oluşturulurken desteklenmeyen kodlama ile karşılaşıldı</string>
+    <string name="err_sync_auth_failed">Hata no 8: Kimlik doğrulanamadı</string>
+    <string name="err_sync_http_request_returncode_unhandled">Hata no 9: Sunucu işlenemeyen bir HTTP dönüş kodu gönderdi</string>
+    <string name="err_sync_http_request_connect">Hata no 11: Nextcloud kopyası ile bağlantı kurulamadı</string>
+    <string name="err_sync_http_request_httpexception">Hata no 12: Nextcloud kopyası ile bağlantı kurulamadı</string>
+    <string name="err_sync_http_request_ioexception">Hata no 13: Nextcloud kopyası ile bağlantı kurulamadı</string>
+    <string name="err_sync_http_request_resp">Hata no 14: Sunucu yanıtı işlenemedi</string>
+    <string name="err_sync_http_request_parse_resp">Hata no 15: Sunucu yanıtı işlenemedi</string>
+    <string name="err_sync_no_connection_available">Hata no 16: Kullanılabilecek bir veri bağlantısı yok</string>
+    <string name="err_sync_account_unparsable">Hata no 17: Hesap sorunlu. Lütfen yeniden yapılandırın</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Hata no 18: Nextcloud SMS uygulaması kurulmamış ya da Nextcloud uygulamasının güncellenmesi gerekiyor</string>
     <string name="err_fetch_phonelist">Sunucudan alınan telefon listesi geçersiz.</string>
     <string name="err_proto_v2">Sunucu bu özelliği desteklemiyor. Sunucu sürümünün en az 1.6 olduğundan emin olun.</string>
     <string name="contactinfos_title">Kişi bilgileri</string>
@@ -153,7 +153,7 @@
     <string name="cancel">İptal</string>
     <string name="understood">Anladım</string>
     <string name="notif_permission_required">İzinler gerekli</string>
-    <string name="notif_permission_required_content">eşitleme işlemini yapabilmek için gereken bazı izinler eksik. Lütfen uygulama ayarlarından düzeltin</string>
+    <string name="notif_permission_required_content">Eşitleme işlemini yapabilmek için gereken bazı izinler eksik. Lütfen uygulama ayarlarından düzeltin</string>
     <string name="please_fix_it">Lütfen düzeltin.</string>
     <string name="err_cannot_read_contacts">Kişileriniz okunamadı.</string>
     <string name="err_cannot_read_sms">SMS iletileriniz okunamadı.</string>
@@ -165,7 +165,7 @@
     <string name="feature_not_already_implemented">Bu özellik henüz hazır değil. Yakında eklenecek.</string>
     <string name="pref_title_minimum_sync_chars">En kısa telefon numarası uzunluğu</string>
     <string name="err_didnt_find_account_restore">İletinizi geri yüklemek için hesabınız bulunamadı. Bu oldukça garip bir durum.</string>
-    <string name="launch_restore">SMS İletilerimi Geri Yükle</string>
+    <string name="launch_restore">SMS iletilerimi geri yükle</string>
     <string name="error_make_default_sms_app">İletilerinizi geri yüklemede gerekli izinleri vermek için bu uygulamayı varsayılan SMS uygulaması olarak atayın. Bu sınırlama Android 4.4 sürümünden sonra başlamıştır.</string>
     <string name="fix_permissions">İzinleri düzelt</string>
     <string name="err_kitkat_required">Bu özelliği kullanabilmek için Android 4.4 ya da üzerindeki bir sürüm gereklidir.</string>
@@ -178,8 +178,8 @@
     <string name="no_confirm">Hayır</string>
     <string name="pref_show_sync_notifications">Eşitleme bildirimlerini görüntüle</string>
     <string name="sync_complete">Eşitleme tamamlandı</string>
-    <string name="err_sync_http_write_failed">Hata No 19: Veriler sunucuya gönderilirken HTTP akışına yazılamadı.</string>
-    <string name="err_sync_http_request_protocol_exception">Hata 20: HTTP iletişim kuralı sürümü doğru şekilde ayarlanamadı.</string>
+    <string name="err_sync_http_write_failed">Hata no 19: Veriler sunucuya gönderilirken HTTP akışına yazılamadı.</string>
+    <string name="err_sync_http_request_protocol_exception">Hata no 20: HTTP iletişim kuralı sürümü doğru şekilde ayarlanamadı.</string>
     <string name="action_appinfo_privacy_policy">Gizlilik ilkesi</string>
     <string name="privacy_policy_large_text">
  \"Genel Bilgiler\n\n\"
