@@ -87,7 +87,7 @@
 
     <!-- Login -->
     <string name="prompt_login">התחבר</string>
-    <string name="prompt_password">סיסמה</string>
+    <string name="prompt_password">ססמה</string>
     <string name="action_sign_in">התחבר או הירשם</string>
     <string name="action_sign_in_short">היכנס</string>
     <string name="error_invalid_login">שם המשתמש או הססמה שגויים</string>
