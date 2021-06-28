@@ -121,7 +121,7 @@
     <string name="err_sync_craft_http_request">錯誤 #2：建立 HTTP 請求時發生錯誤</string>
     <string name="err_sync_push_request">錯誤 #3：推送請求失敗</string>
     <string name="err_sync_push_request_resp">錯誤 #4：推送資料時，從伺服器收到無效資料</string>
-    <string name="err_sync_create_json_null_smslist">錯誤 #5：簡訊清單為空（NULL)</string>
+    <string name="err_sync_create_json_null_smslist">錯誤 #5：簡訊清單為空（NULL）</string>
     <string name="err_sync_create_json_put_smslist">錯誤 #6：建立推送請求時發生錯誤</string>
     <string name="err_sync_create_json_request_encoding">錯誤 #7：產生請求時遇到不支援的編碼方式</string>
     <string name="err_sync_auth_failed">錯誤 #8：身分驗證失敗</string>
