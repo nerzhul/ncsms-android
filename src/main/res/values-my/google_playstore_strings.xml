@@ -29,12 +29,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMS sinkronizon SMS-et tuaj lokal në instancën tuaj Nextcloud</string>
+    <string name="gp_short_description">Nextcloud SMSသည် သင့် local SMS များကို သင့် Nextcloud instance ပေါ်သို့ Sync လုပ်ပေးသည်။</string>
     <string name="gp_description">
-Aplikacioni SMS Nextcloud sinkronizon mesazhet tuaja SMS në një instance Nextcloud në distancë dhe ju lejon të lexoni mesazhet tuaja nga ai. 
+Nextcloud SMSသည် သင့် local SMS များကို အဝေးရှိ Nextcloud instance ပေါ်သို့ Sync လုပ်ပေးကာ ၎င်းမှ သင့် စာတိုများကို ဖတ်နိုင်အောင် ပြုလုပ်ပေးသည်။
 
-Dërgimi i SMS nga instanca Nextcloud do të vijë në një lëshim të ardhshëm.
+Nextcloud instance မှ SMS ပေးပို့ခြင်းများကို နောင်လာမည့် ဗားရှင်းများတွင် ထည့်သွင်းပေးသွားမည်။
 
-Aplikacioni është plotësisht i pajtueshëm nga Android 4.0 në 6.0
-	</string>
+အက်ပ်သည် Android 4.0 မှ 6.0 အထိ ကောင်းမွန်စွာ အလုပ်လုပ်သည်။</string>
 </resources>
