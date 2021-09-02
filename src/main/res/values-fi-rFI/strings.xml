@@ -105,6 +105,7 @@
 
     <string name="fatal_error">Vakava virhe!</string>
 
+    <string name="err_proto_v2">Palvelin ei tue tätä ominaisuutta. Varmista, että palvelimen versio on vähintään 1.6.</string>
     <string name="function_not_available">Tämä toiminto ei ole vielä käytettävissä.</string>
 
     <string name="navigation_drawer_open">Avaa hakuvalikko</string>
@@ -120,6 +121,7 @@
     <string name="restore_all_messages">Palauta kaikki viestit</string>
     <string name="account_actions">Tilin toiminnot</string>
     <string name="nothing_to_sync">Ei synkronoitavaa.</string>
+    <string name="err_didnt_find_account_restore">Emme löytäneet käyttäjääsi palauttaaksemme viestisi, tämä on hyvin outo tilanne.</string>
     <string name="launch_restore">Palauta tekstiviestit</string>
     <string name="fix_permissions">Korjaa oikeudet</string>
     <string name="err_kitkat_required">Android 4.4 tai uudempi vaaditaan tämän ominaisuuden käyttöä varten.</string>
