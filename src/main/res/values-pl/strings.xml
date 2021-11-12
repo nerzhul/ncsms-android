@@ -119,10 +119,10 @@
     <!-- Errors -->
     <string name="err_sync_get_smslist">Błąd #1: Nieprawidłowe dane otrzymane z serwera podczas pobierania poprzednich wiadomości</string>
     <string name="err_sync_craft_http_request">Błąd #2: Błąd podczas tworzenia żądania HTTP</string>
-    <string name="err_sync_push_request">Błąd #3: Żądanie push nie udało się</string>
+    <string name="err_sync_push_request">Błąd #3: Żądanie Push nie udało się</string>
     <string name="err_sync_push_request_resp">Błąd #4: Nieprawidłowe dane odebrane z serwera podczas przesyłania danych</string>
     <string name="err_sync_create_json_null_smslist">Błąd #5: Pusta lista SMS-ów</string>
-    <string name="err_sync_create_json_put_smslist">Błąd #6: Błąd podczas tworzenia żądania wysłania w trybie push</string>
+    <string name="err_sync_create_json_put_smslist">Błąd #6: Błąd podczas tworzenia żądania wysłania w trybie Push</string>
     <string name="err_sync_create_json_request_encoding">Błąd #7: Nieobsługiwane kodowanie podczas generowania żądania</string>
     <string name="err_sync_auth_failed">Błąd #8: Uwierzytelnienie nie powiodło się</string>
     <string name="err_sync_http_request_returncode_unhandled">Błąd #9: Serwer ustawił nieobsługiwany kod odpowiedzi HTTP</string>
