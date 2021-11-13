@@ -103,6 +103,7 @@
     <string name="title_activity_select_contact">Valitse yhteystieto</string>
     <string name="no_account_configured">Tiliä ei ole määritetty.</string>
 
+    <string name="sync_inprogress">Synkronointi käynnissä...</string>
     <string name="fatal_error">Vakava virhe!</string>
 
     <string name="err_proto_v2">Palvelin ei tue tätä ominaisuutta. Varmista, että palvelimen versio on vähintään 1.6.</string>
