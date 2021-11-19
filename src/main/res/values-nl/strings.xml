@@ -152,12 +152,12 @@
     <string name="ma_content_swipeaction">Veeg van links naar rechts om het actiemenu te openen.</string>
     <string name="cancel">Annuleren</string>
     <string name="understood">Begrepen</string>
-    <string name="notif_permission_required">Permissie vereist</string>
-    <string name="notif_permission_required_content">Sommige permissies ontbreken om deze synchronisatie uit te voeren. Herstel dit in de appinstellingen</string>
+    <string name="notif_permission_required">Machtiging vereist</string>
+    <string name="notif_permission_required_content">Sommige machtiginen ontbreken om deze synchronisatie uit te voeren. Herstel dit in de appinstellingen</string>
     <string name="please_fix_it">Herstel dit.</string>
     <string name="err_cannot_read_contacts">We kunnen je contactpersonen niet lezen.</string>
     <string name="err_cannot_read_sms">We kunnen je SMS-berichten niet lezen.</string>
-    <string name="action_appinfo_perms">App-info en -rechten</string>
+    <string name="action_appinfo_perms">App-info en -machtigingen</string>
     <string name="restore_all_messages">Herstel alle berichten</string>
     <string name="account_actions">Accountacties</string>
     <string name="error_connection_failed_not_found">Verbinding mislukt, de server meldt 404 NOT FOUND. Verifieer dat je het juiste pad voor je Nextcloud hebt ingesteld.</string>
@@ -167,7 +167,7 @@
     <string name="err_didnt_find_account_restore">We vonden je account niet om te kunnen herstellen, een heel vreemde situatie.</string>
     <string name="launch_restore">Herstel mijn SMS</string>
     <string name="error_make_default_sms_app">Maak dit de standaardapplicatie voor SMS om herstel van berichten mogelijk te maken. Dit is een beperking sinds Android 4.4.</string>
-    <string name="fix_permissions">Herstel permissies</string>
+    <string name="fix_permissions">Herstel machtigingen</string>
     <string name="err_kitkat_required">Android 4.4 of hoger is vereist voor deze functionaliteit.</string>
     <string name="restore_finished">SMS-herstel voltooid.</string>
     <string name="x_messages_restored">berichten hersteld&#160;&#8230;</string>
