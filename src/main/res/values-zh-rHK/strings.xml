@@ -179,7 +179,7 @@
     <string name="pref_show_sync_notifications">顯示同步通知</string>
     <string name="sync_complete">同步完成</string>
     <string name="err_sync_http_write_failed">錯誤 #19：推送資料至伺服器時，無法寫入 HTTP 串流。</string>
-    <string name="err_sync_http_request_protocol_exception">錯誤 #20：無法正確設定 HTTP 規約版本。</string>
+    <string name="err_sync_http_request_protocol_exception">錯誤 #20：無法正確設定 HTTP 協定版本。</string>
     <string name="action_appinfo_privacy_policy">私隱政策</string>
     <string name="privacy_policy_large_text">
         “概述\n\n”
