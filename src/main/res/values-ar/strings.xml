@@ -106,6 +106,8 @@
 
     <string name="contactinfos_title">معلومات عن المُراسل</string>
     <string name="contactinfos_list">قائمة المراسلين</string>
+    <string name="navigation_drawer_open">فتح التنقل </string>
+    <string name="navigation_drawer_close">إقفال التنقل </string>
     <string name="ma_title_my_accounts">حساباتي</string>
     <string name="cancel">إلغاء</string>
     <string name="understood">فهمت الأمر</string>
