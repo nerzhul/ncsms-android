@@ -18,8 +18,23 @@ package fr.unix_experience.owncloud_sms.enums;
  */
 
 public enum OCSMSNotificationType {
-	SYNC,
-	SYNC_FAILED,
-	DEBUG,
-    PERMISSION,
+	SYNC(OCSMSNotificationChannel.SYNC, 0),
+	SYNC_FAILED(OCSMSNotificationChannel.DEFAULT, 1),
+    PERMISSION(OCSMSNotificationChannel.DEFAULT, 2);
+
+	private final OCSMSNotificationChannel channel;
+	private final int notificationId;
+
+	OCSMSNotificationType(OCSMSNotificationChannel channel, int notificationId) {
+		this.channel = channel;
+		this.notificationId = notificationId;
+	}
+
+	public OCSMSNotificationChannel getChannel() {
+		return channel;
+	}
+
+	public int getNotificationId() {
+		return notificationId;
+	}
 }

@@ -45,7 +45,7 @@ class SmsSyncAdapter extends AbstractThreadedSyncAdapter {
 
 		if (new OCSMSSharedPrefs(getContext()).showSyncNotifications()) {
 			OCSMSNotificationUI.notify(getContext(), getContext().getString(R.string.sync_title),
-					getContext().getString(R.string.sync_inprogress), OCSMSNotificationType.SYNC.ordinal());
+					getContext().getString(R.string.sync_inprogress), OCSMSNotificationType.SYNC);
 		}
 
 		try {
@@ -56,14 +56,13 @@ class SmsSyncAdapter extends AbstractThreadedSyncAdapter {
 
 			// and push datas
 			_client.doPushRequest(null);
-			OCSMSNotificationUI.cancel(getContext());
+			OCSMSNotificationUI.cancel(getContext(), OCSMSNotificationType.SYNC_FAILED);
 		} catch (IllegalStateException e) {
 			OCSMSNotificationUI.notify(getContext(), getContext().getString(R.string.fatal_error),
-					e.getMessage(), OCSMSNotificationType.SYNC_FAILED.ordinal());
+					e.getMessage(), OCSMSNotificationType.SYNC_FAILED);
 		} catch (OCSyncException e) {
-            OCSMSNotificationUI.cancel(getContext());
             OCSMSNotificationUI.notify(getContext(), getContext().getString(R.string.fatal_error),
-                    getContext().getString(e.getErrorId()), OCSMSNotificationType.SYNC_FAILED.ordinal());
+                    getContext().getString(e.getErrorId()), OCSMSNotificationType.SYNC_FAILED);
 			if (e.getErrorType() == OCSyncErrorType.IO) {
 				syncResult.stats.numIoExceptions++;
 			}
@@ -76,6 +75,8 @@ class SmsSyncAdapter extends AbstractThreadedSyncAdapter {
 			else {
 				Log.w(SmsSyncAdapter.TAG, "onPerformSync: unhandled response");
 			}
+		} finally {
+			OCSMSNotificationUI.cancel(getContext(), OCSMSNotificationType.SYNC);
 		}
 	}
 
