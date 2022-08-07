@@ -149,7 +149,7 @@
     <string name="navigation_drawer_open">Navigációs fiók megnyitása</string>
     <string name="navigation_drawer_close">Navigációs fiók bezárása</string>
     <string name="ma_title_my_accounts">Saját fiókok</string>
-    <string name="ma_content_swipeaction">Seperjen balról jobbra a műveleti menü eléréséhez.</string>
+    <string name="ma_content_swipeaction">Legyintsen balról jobbra a műveleti menü eléréséhez.</string>
     <string name="cancel">Mégse</string>
     <string name="understood">Értettem</string>
     <string name="notif_permission_required">Engedély szükséges</string>
