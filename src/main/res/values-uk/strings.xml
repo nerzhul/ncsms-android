@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="action_settings">Налаштування</string>
+    <string name="sync_now">Синхронізувати зараз</string>
+    <string name="pref_category_sync">Синхронізація</string>
+    <string name="title_global_pref_to_general_prefs">Загальні уподобання</string>
+    <string name="summary_global_pref_to_general_prefs">Опції синхронізації</string>
+    <string name="summary_notif_prefs">Сповіщення</string>
+    <string name="pref_header_data_sync">Дані та синхронізація</string>
+    <string name="title_activity_general_settings">Загальні налаштування</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 хвилин</item>
+        <item>15 хвилин</item>
+        <item>30 хвилин</item>
+        <item>1 година</item>
+        <item>3 години</item>
+        <item>6 годин</item>
+        <item>12 годин</item>
+        <item>24 години</item>
+        <item>Ніколи</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Усі повідомення не синхронізовіні</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 година</item>
+        <item>3 години</item>
+        <item>6 годин</item>
+        <item>12 годин</item>
+        <item>24 години</item>
+        <item>Ніколи</item>
+    </string-array>
+    <string name="pref_sync_wifi">Синхронізувати через Wi-Fi</string>
+    <string name="pref_sync_4g">Синхронізувати через 4G</string>
+    <string name="pref_sync_3g">Синхронізувати через 3G</string>
+    <string name="pref_sync_gprs">Синхронізувати через 2.5G (GPRS)</string>
+    <string name="pref_sync_2g">Синхронізувати через 2G</string>
+    <string name="pref_sync_others">Синхронізувати через інші режими</string>
+    <string name="title_activity_login">Ввійти...</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Логін</string>
+    <string name="prompt_password">Пароль</string>
+    <string name="action_sign_in">Увійти або зареєструватися</string>
+    <string name="action_sign_in_short">Ввійти...</string>
+    <string name="error_invalid_login">Логін або пароль невірний</string>
+    <string name="error_invalid_password">Цей пароль занадто короткий</string>
+    <string name="error_field_required">Обов\'язкове поле</string>
+    <string name="prompt_serverURI">Адреса сервера</string>
+    <string name="error_invalid_server_address">Невірна адреса сервера</string>
+    <string name="error_connection_failed">Не вдалося з\'єдантися. Перевірте, чи сервер вказано вірно</string>
+    <string name="error_http_connection_failed">Не вдалося встановити HTTP з\'єднання. Перевірте сервер, будь ласка</string>
+
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">Оцініть нас!</string>
+    <string name="ma_title_add_account">Додати обліковий запис</string>
+    <string name="ma_title_welcome">Вітання</string>
+    <string name="ma_title_remote_account">Віддалений обліковий запис</string>
+    <string name="choose_account">Оберіть обліковий запис</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Оберіть обліковий запис</string>
+    <string name="title_activity_select_contact">Оберіть контакт</string>
+    <string name="no_account_configured">Немає налаштованого облікового запису</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">Процес синхронізації</string>
+    <string name="sync_inprogress">Виконується синхронізація...</string>
+    <string name="fatal_error">Критична помилка!</string>
+
+    <string name="contactinfos_list">Список контактів</string>
+    <string name="navigation_drawer_open">Відкрити скриньку налаштувань</string>
+    <string name="navigation_drawer_close">Закрити скриньку налаштувань</string>
+    <string name="ma_title_my_accounts">Мої облікові записи</string>
+    <string name="ma_content_swipeaction">Проведіть пальцем зліва направо для доступу до головного меню.</string>
+    <string name="cancel">Скасувати</string>
+    <string name="restore_all_messages">Відновити всі повідомлення</string>
+    <string name="pref_title_minimum_sync_chars">Мінімальна довжина тел. номеру</string>
+    <string name="yes_confirm">Так</string>
+    <string name="no_confirm">Ні</string>
+    <string name="action_appinfo_privacy_policy">Політика конфіденційності</string>
+    </resources>
