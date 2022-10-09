@@ -29,7 +29,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMS синхронізує ваші локальні SMS з вашим середовищем Nextcloud</string>
+    <string name="gp_short_description">Nextcloud SMS синхронізовує SMS на вашому пристрої із вашою хмарою Nextcloud</string>
     <string name="gp_description">
 Застосунок Nextcloud SMS синхронізує Ваші повідомлення SMS з вашим віддаленим середовищем Nextcloud і дає змогу читати ваші повідомнення там.
 
