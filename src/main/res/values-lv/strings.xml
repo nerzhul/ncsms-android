@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="login_logo">Lietotāja logotips</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - Ātri</string>
+    <string name="pref_title_sync_frequency">Ātras sinhronizēšanas biežums</string>
+    <string name="pref_title_slow_sync">SMS - Lēni un droši</string>
+    <string name="pref_title_slow_sync_frequency">Drošas, Lēnas Sinhronizēšanas biežums </string>
+    <string name="action_settings">Iestatījumi</string>
+    <string name="sync_now">Sinhronizēt tagad</string>
+    <string name="pref_category_sync">Synchronization</string>
+    <string name="title_global_pref_to_general_prefs">Vispārīgās preferences</string>
+    <string name="summary_global_pref_to_general_prefs">Sinhronizācijas opcijas</string>
+    <string name="summary_notif_prefs">Paziņojumi</string>
+    <string name="pref_header_data_sync">Datu &amp; sinhronizēšana</string>
+    <string name="title_activity_general_settings">Vispārīgie iestatījumi</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 minūtes</item>
+        <item>15 minūtes</item>
+        <item>30 minūtes</item>
+        <item>1 stunda</item>
+        <item>3 stundas</item>
+        <item>6 stundas</item>
+        <item>12 stundas</item>
+        <item>24 stundas</item>
+        <item>Nekad</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Katrs SMS nav sinhronizēts</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 stunda</item>
+        <item>3 stundas</item>
+        <item>6 stundas</item>
+        <item>12 stundas</item>
+        <item>24 stundas</item>
+        <item>Nekad</item>
+    </string-array>
+    <string name="pref_sync_wifi">Sinhronizēt izmantojot WiFi</string>
+    <string name="pref_sync_4g">Sinhronizēt izmantojot 4G</string>
+    <string name="pref_sync_3g">Sinhronizēt izmantojot 3G</string>
+    <string name="pref_sync_gprs">Sinhronizēt izmantojot 2.5G (GPRS)</string>
+    <string name="pref_sync_2g">Sinhronizēt izmantojot 2G</string>
+    <string name="pref_sync_others">Sinhronizēt izmantojot citus veidus</string>
+    <string name="title_activity_login">Pierakstīties</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Autorizēties</string>
+    <string name="prompt_password">Parole</string>
+    <string name="action_sign_in">Pierakstīties vai reģistrēties</string>
+    <string name="action_sign_in_short">Pierakstīties</string>
+    <string name="error_invalid_login">Lietotājvārds vai parole nav pareiza</string>
+    <string name="error_invalid_password">Parole ir par īsu</string>
+    <string name="error_field_required">Šis lauks ir obligāts</string>
+    <string name="prompt_serverURI">Servera adrese</string>
+    <string name="error_invalid_server_address">Nederīgs servera adrese</string>
+    <string name="error_connection_failed">Savienojums neizdevās, pārliecinies vai šis ir īstais serveris</string>
+    <string name="error_http_connection_failed">Neizdevās izveidot HTTP savienojumu. Lūdzu pārliecinies vai tur ir web serveris</string>
+
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">Vērtē mūs!</string>
+    <string name="ma_title_add_account">Pievienot kontam</string>
+    <string name="ma_title_welcome">Laipni lūdzam!</string>
+    <string name="ma_content_welcome">Esiet sveicināts Nextcloud SMS lietotnē. Šī lietotne ļaus tev sinhronizēt tavus SMS ar tavu Nextcloud serveri izmantojot SMS lietotni.</string>
+    <string name="ma_title_remote_account">Attālais konts</string>
+    <string name="choose_account">Izvēlieties kontu</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Izvēlieties kontu</string>
+    <string name="title_activity_select_contact">Izvēlieties kontaktpersonu</string>
+    <string name="no_account_configured">Nav konfigurēts konts.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">Sinhronizācijas process</string>
+    <string name="fatal_error">Fatāla kļūda!</string>
+
+    <string name="err_sync_craft_http_request">Kļūda #2: Kļūda izveidojot HTTP pieprasījumu</string>
+    <string name="err_sync_create_json_null_smslist">Kļūda #5: Null SMS saraksts</string>
+    <string name="err_sync_create_json_request_encoding">Kļūda #7: Neatbalstīta kodēšana ģenerējot pieprasījumu</string>
+    <string name="err_sync_auth_failed">Kļūda #8: Autentifikācija neizdevās</string>
+    <string name="err_sync_no_connection_available">Kļūda #16: Datu savienojums nav pieejams</string>
+    <string name="err_proto_v2">Serveris neatbalsta šo iespēju. Pārliecinies ka servera versija ir vismaz 1.6.</string>
+    <string name="contactinfos_title">Kontaktpersonas informācija</string>
+    <string name="subtitle_contact_phones">- Kontaktpersonas tālrunis</string>
+    <string name="contactinfos_list">Kontaktpersonu saraksts</string>
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="communicate">Sazināties</string>
+    <string name="ma_title_my_accounts">Mani konti</string>
+    <string name="cancel">Atcelt</string>
+    <string name="understood">Sapratu</string>
+    <string name="notif_permission_required">Nepieciešamās atļaujas</string>
+    <string name="please_fix_it">Lūdzu, izlabojiet to.</string>
+    <string name="err_cannot_read_sms">Mēs nevaram nolasīt jūsu SMS.</string>
+    <string name="restore_all_messages">Atjaunot visus ziņojumus</string>
+    <string name="account_actions">Konta darbības</string>
+    <string name="nothing_to_sync">Nav nekā, ko sinhronizēt.</string>
+    <string name="pref_title_minimum_sync_chars">Minimālais telefona numura garums</string>
+    <string name="err_didnt_find_account_restore">Mēs neatradām tavu kontu lai atjaunotu tavas ziņas... Šī ir ļoti savāda situācija.</string>
+    <string name="launch_restore">Atjaunot manas SMS</string>
+    <string name="error_make_default_sms_app">Lūdzu uzstādi šo lietotni kā noklusējuma SMS lietotni, lai ļautu tai atjaunot tavas ziņas. Šī limitācija nāca spēka Android 4.4.</string>
+    <string name="fix_permissions">Labot atļaujas</string>
+    <string name="err_kitkat_required">Android 4.4 vai jaunāks ir vajadzīgs lai izmantotu šo iespēju.</string>
+    <string name="restore_finished">SMS atjaunošana tagad ir pabeigta.</string>
+    <string name="x_messages_restored">ziņas atjaunotas &#8230;</string>
+    <string name="err_no_connection">Nav interneta savienojuma. Pārliecinies ka tev ir datu vai wifi savienojums.</string>
+    <string name="yes_confirm">Jā</string>
+    <string name="no_confirm">Nē</string>
+    <string name="pref_show_sync_notifications">Rādīt sinhronizācijas paziņojumus</string>
+    <string name="sync_complete">Sinhronizācija pabeigta</string>
+    <string name="err_sync_http_request_protocol_exception">Kļūda #20: Neizdevās pareizi uzstādīt HTTP protokola verisju.</string>
+    </resources>
