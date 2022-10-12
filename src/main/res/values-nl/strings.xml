@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="login_logo">Inloglogo</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - Snel</string>
+    <string name="pref_title_sync_frequency">Snelle sync-frequentie</string>
+    <string name="pref_title_slow_sync">SMS - Langzaam en veilig</string>
+    <string name="pref_title_slow_sync_frequency">Beveiligde langzame sync-frequentie</string>
+    <string name="action_settings">Instellingen</string>
+    <string name="sync_now">Nu synchroniseren</string>
+    <string name="pref_category_sync">Synchronisatie</string>
+    <string name="title_global_pref_to_general_prefs">Algemene voorkeuren</string>
+    <string name="summary_global_pref_to_general_prefs">Synchronisatieopties</string>
+    <string name="summary_notif_prefs">Meldingen</string>
+    <string name="pref_header_data_sync">Gegevens &amp; synchronisatie</string>
+    <string name="title_activity_general_settings">Algemene instellingen</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 minuten</item>
+        <item>15 minuten</item>
+        <item>30 minuten</item>
+        <item>1 uur</item>
+        <item>3 uur</item>
+        <item>6 uur</item>
+        <item>12 uur</item>
+        <item>24 uur</item>
+        <item>Nooit</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Niet elke SMS gesynchroniseerd</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 uur</item>
+        <item>3 uur</item>
+        <item>6 uur</item>
+        <item>12 uur</item>
+        <item>24 uur</item>
+        <item>Nooit</item>
+    </string-array>
+    <string name="pref_push_on_receive">Push SMS bij ontvangst</string>
+    <string name="pref_sync_wifi">Synchroniseren over Wi-Fi</string>
+    <string name="pref_sync_4g">Synchroniseren over 4G</string>
+    <string name="pref_sync_3g">Synchroniseren over 3G</string>
+    <string name="pref_sync_gprs">Synchroniseren over 2.5G (GPRS)</string>
+    <string name="pref_sync_2g">Synchroniseren over 2G</string>
+    <string name="pref_sync_others">Synchroniseren in andere modus</string>
+    <string name="title_activity_login">Inloggen</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Inloggen</string>
+    <string name="prompt_password">Wachtwoord</string>
+    <string name="action_sign_in">Inloggen of registreren</string>
+    <string name="action_sign_in_short">Inloggen</string>
+    <string name="error_invalid_login">Login of wachtwoord onjuist</string>
+    <string name="error_invalid_password">Het wachtwoord is te kort</string>
+    <string name="error_field_required">Dit is een verplicht veld</string>
+    <string name="prompt_serverURI">Serveradres</string>
+    <string name="error_invalid_server_address">Ongeldig serveradres</string>
+    <string name="error_connection_failed">Verbinding mislukt, verifieer dat dit de juiste server is</string>
+    <string name="error_http_connection_failed">Kon geen HTTP-verbinding maken. Verifieer dat er een webserver is</string>
+
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">Beoordeel ons!</string>
+    <string name="ma_title_add_account">Account toevoegen</string>
+    <string name="ma_title_welcome">Welkom</string>
+    <string name="ma_content_welcome">Welkom bij de Nextcloud-SMS-applicatie. Met deze applicatie kun je SMS-berichten synchroniseren met Nextcloud.</string>
+    <string name="ma_title_remote_account">Extern account</string>
+    <string name="choose_account">Kies account</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Selecteer account</string>
+    <string name="title_activity_select_contact">Selecteer contactpersoon</string>
+    <string name="no_account_configured">Geen account geconfigureerd.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">Synchronisatieproces</string>
+    <string name="sync_inprogress">Synchronisatie bezig...</string>
+    <string name="fatal_error">Fatale fout!</string>
+
+    <!-- Errors -->
+    <string name="err_sync_get_smslist">Fout #1: ongeldige gegevens ontvangen van de server bij ophalen voorgaande berichten</string>
+    <string name="err_sync_craft_http_request">Fout #2: Fout bij creëren HTTP-aanvraag</string>
+    <string name="err_sync_push_request">Fout #3: Pushaanvraag mislukt</string>
+    <string name="err_sync_push_request_resp">Fout #4: Ongeldige gegevens van server ontvangen tijdens pushen data</string>
+    <string name="err_sync_create_json_null_smslist">Fout #5: NULL SMS-lijst</string>
+    <string name="err_sync_create_json_put_smslist">Fout #6: Fout bij creëren pushaanvraag</string>
+    <string name="err_sync_create_json_request_encoding">Fout #7: Niet-ondersteunde codering bij genereren aanvraag</string>
+    <string name="err_sync_auth_failed">Fout #8: Authenticatie mislukt</string>
+    <string name="err_sync_http_request_returncode_unhandled">Fout #9: Server creëerde niet behandelde HTTP-return-code</string>
+    <string name="err_sync_http_request_connect">Fout #11: Kon geen verbinding maken met Nextcloud</string>
+    <string name="err_sync_http_request_httpexception">Fout #12: Kon geen verbinding maken met Nextcloud</string>
+    <string name="err_sync_http_request_ioexception">Fout #13: Kon geen verbinding maken met Nextcloud</string>
+    <string name="err_sync_http_request_resp">Fout #14: Kon serverantwoord niet analyseren</string>
+    <string name="err_sync_http_request_parse_resp">Fout #15: Kon serverantwoord niet analyseren</string>
+    <string name="err_sync_no_connection_available">Fout #16: Geen dataverbinding beschikbaar</string>
+    <string name="err_sync_account_unparsable">Fout #17: Misvormd account. Herconfigureer het</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Fout #18: SMS-applicatie is niet geïnstalleerd op de server of Nextcloud wacht op een upgrade</string>
+    <string name="err_fetch_phonelist">Ongeldige telefoonlijst ontvangen van de server.</string>
+    <string name="err_proto_v2">De server ondersteunt dit niet. Verifieer dat de server minimaal versie 1.6 is.</string>
+    <string name="contactinfos_title">Contactinformatie</string>
+    <string name="subtitle_contact_phones">- Contactpersoon-telefoon</string>
+    <string name="pref_title_bulk_messages">Maximum aantal per synchronisatie te versturen berichten</string>
+    <string name="contactinfos_list">Contactenlijst</string>
+    <string name="function_not_available">Deze functie is nog niet beschikbaar.</string>
+
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="communicate">Communiceren</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigatielade</string>
+    <string name="navigation_drawer_close">Sluit navigatielade</string>
+    <string name="ma_title_my_accounts">Mijn accounts</string>
+    <string name="ma_content_swipeaction">Veeg van links naar rechts om het actiemenu te openen.</string>
+    <string name="cancel">Annuleren</string>
+    <string name="understood">Begrepen</string>
+    <string name="notif_permission_required">Machtiging vereist</string>
+    <string name="notif_permission_required_content">Sommige machtiginen ontbreken om deze synchronisatie uit te voeren. Herstel dit in de appinstellingen</string>
+    <string name="please_fix_it">Herstel dit.</string>
+    <string name="err_cannot_read_contacts">We kunnen je contactpersonen niet lezen.</string>
+    <string name="err_cannot_read_sms">We kunnen je SMS-berichten niet lezen.</string>
+    <string name="action_appinfo_perms">App-info en -machtigingen</string>
+    <string name="restore_all_messages">Herstel alle berichten</string>
+    <string name="account_actions">Accountacties</string>
+    <string name="error_connection_failed_not_found">Verbinding mislukt, de server meldt 404 NOT FOUND. Verifieer dat je het juiste pad voor je Nextcloud hebt ingesteld.</string>
+    <string name="nothing_to_sync">Niets te synchroniseren.</string>
+    <string name="feature_not_already_implemented">Deze optie is nog niet geïmplementeerd maar komt binnenkort beschikbaar.</string>
+    <string name="pref_title_minimum_sync_chars">Minimumlengte telefoonnummer</string>
+    <string name="err_didnt_find_account_restore">We vonden je account niet om te kunnen herstellen, een heel vreemde situatie.</string>
+    <string name="launch_restore">Herstel mijn SMS</string>
+    <string name="error_make_default_sms_app">Maak dit de standaardapplicatie voor SMS om herstel van berichten mogelijk te maken. Dit is een beperking sinds Android 4.4.</string>
+    <string name="fix_permissions">Herstel machtigingen</string>
+    <string name="err_kitkat_required">Android 4.4 of hoger is vereist voor deze functionaliteit.</string>
+    <string name="restore_finished">SMS-herstel voltooid.</string>
+    <string name="x_messages_restored">berichten hersteld&#160;&#8230;</string>
+    <string name="err_no_connection">Geen verbinding beschikbaar, zorg ervoor dat je een geldige dataverbinding hebt.</string>
+    <string name="reinit_sync_cursor">Herinitialisatie synchronisatie cursor</string>
+    <string name="reinit_sync_cursor_confirm">Weet je zeker dat je de synchronizatiecursor wilt herinitialiseren? Dit kan de volgende synchronisatie vertragen als we veel oude, nog niet met de server gesynchroniseerde berichten aantroffen.</string>
+    <string name="yes_confirm">Ja</string>
+    <string name="no_confirm">Nee</string>
+    <string name="pref_show_sync_notifications">Sync-notificatie weergeven</string>
+    <string name="sync_complete">Synchronisatie voltooid</string>
+    <string name="err_sync_http_write_failed">Fout #4: Kon HTTP-stream niet wegschrijven bij het naar de server sturen van data</string>
+    <string name="err_sync_http_request_protocol_exception">Fout #20: Het juist instellen van de HTTP protocolversie is mislukt.</string>
+    <string name="action_appinfo_privacy_policy">Privacybeleid</string>
+    <string name="privacy_policy_large_text">
+        \"Overzicht\n\n\"
+
+        \"Nextcloud SMS is gratis software. Dit privacybeleid \"
+        \"is bedoeld om je te informeren over de gegevens die door deze
+         applicatie worden verameld.\"
+
+        \"Informatie die we verzamelen\n\n\"
+
+        \"Er worden alleen SMS en gesprekslog verzameld door de applicatie.\n\n\"
+
+        \"Waar informatie naartoe wordt verzonden.\n\n\"
+
+        \"Informatie wordt noch naar Nextcloud team servers noch naar Nextcloud SMS team servers noch naar enige overheidsinstantie \"
+        \"of andere organisatie verzonden als je dat niet wilt.\n\n\"
+
+        \"Als je een Nextcloud account in de applicatie configureert, stem je ermee in dat de Nextcloud \"
+        \"servereigenaar je SMS en gesprekslogs data bewaart in zijn infrastructuur \"
+        \"onder zijn verantwoordelijkheid.\n\n\"
+
+        \"We adviseren niet om eem openbare of bedrijfsaccount te gebruiken . Je moet zelf het beheer hebben\"
+        \"over jouw persoonsgegevens op jouw Nextcloud server.\n\n\"
+
+    </string>
+</resources>
