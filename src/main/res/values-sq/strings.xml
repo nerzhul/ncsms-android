@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="login_logo">Shenja e hyrjes</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - i shpejtë</string>
+    <string name="pref_title_sync_frequency">Frekuence e shpejtë sinkronizimi</string>
+    <string name="pref_title_slow_sync">SMS - e ngadaltë dhe e sigurt</string>
+    <string name="pref_title_slow_sync_frequency">Frekuencë sinkronizimi e sigurt e ngadaltë </string>
+    <string name="action_settings">Rregullimet</string>
+    <string name="sync_now">Sinkronizo tani</string>
+    <string name="pref_category_sync">Sinkronizimi</string>
+    <string name="title_global_pref_to_general_prefs">Opsione të përgjithshme</string>
+    <string name="summary_global_pref_to_general_prefs">Mundësitë e sinkronizimit</string>
+    <string name="summary_notif_prefs">Njoftimet</string>
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+    <string name="title_activity_general_settings">Cilësimet e Përgjithshme</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 minuta</item>
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 orë</item>
+        <item>3 orë</item>
+        <item>6 orë</item>
+        <item>12 orë</item>
+        <item>24 orë</item>
+        <item>Kurrë</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Nuk sinkronizohet çdo SMS </item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 orë</item>
+        <item>3 orë</item>
+        <item>6 orë</item>
+        <item>12 orë</item>
+        <item>24 orë</item>
+        <item>Kurrë</item>
+    </string-array>
+    <string name="pref_push_on_receive">Shty SMS-t në pritje</string>
+    <string name="pref_sync_wifi">Sinkronizuar në Wi-Fi</string>
+    <string name="pref_sync_4g">Sinkronizuar në 4G</string>
+    <string name="pref_sync_3g">Sinkronizuar në 3G</string>
+    <string name="pref_sync_gprs">Sinkronizuar në 2.5G (GPRS)</string>
+    <string name="pref_sync_2g">Sinkronizuar në 2G</string>
+    <string name="pref_sync_others">Sinkronizuar në mënyra të tjera</string>
+    <string name="title_activity_login">Hyni</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Hyrje</string>
+    <string name="prompt_password">Fjalëkalim</string>
+    <string name="action_sign_in">Hyni ose regjistrohuni</string>
+    <string name="action_sign_in_short">Hyni</string>
+    <string name="error_invalid_login">Hyni ose fjalëkalim pasakt!</string>
+    <string name="error_invalid_password">Ky fjalëkalim është shumë i shkurtër</string>
+    <string name="error_field_required">Kjo fushë është e detyrueshme</string>
+    <string name="prompt_serverURI">Adresë serveri</string>
+    <string name="error_invalid_server_address">Adresë serveri e pavlefshme</string>
+    <string name="error_connection_failed">Lidhja dështoi, sigurohuni që është serveri i duhur</string>
+    <string name="error_http_connection_failed">E pamundur të kryhet një lidhje HTTP. Ju lutemi sigurohuni që nuk është një web server</string>
+
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">Na vleresoni!</string>
+    <string name="ma_title_add_account">Shtoni një llogari</string>
+    <string name="ma_title_welcome">Mirëseerdhët</string>
+    <string name="ma_content_welcome">Mirë se vini në aplikimin e  Nextcloud SMS . Kjo kërkesë ju lejon të sinkronizoni SMS-t tuaj në instancën  tuaj të Nextcloud duke përdorur aplikacionin SMS</string>
+    <string name="ma_title_remote_account">Llogari në largësi</string>
+    <string name="choose_account">Zgjidhni llogari</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Përzgjidhni llogari</string>
+    <string name="title_activity_select_contact">Zgjidhi llogari</string>
+    <string name="no_account_configured">Nuk ka llogari të konfiguruar.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">Proces sinkronizimi</string>
+    <string name="fatal_error">Gabim fatal !</string>
+
+    <!-- Errors -->
+    <string name="err_sync_get_smslist">Gabim # 1: Të dhënat e pavlefshme janë marrë nga serveri kur janë marrë mesazht ee mëparshme</string>
+    <string name="err_sync_craft_http_request">Gabim # 2: Gabim gjatë përpilimin të kërkesës HTTP</string>
+    <string name="err_sync_push_request">Gabim # 3: Kërkesa shtyrjë  e dështuar</string>
+    <string name="err_sync_push_request_resp">Gabim # 4: Të dhëna të pavlefshme marrë nga serveri kur u shtyn të dhënave</string>
+    <string name="err_sync_create_json_null_smslist">Lista NULL SMS</string>
+    <string name="err_sync_create_json_put_smslist">Error #6: Gabim gjatë përpilimin të kërkesës</string>
+    <string name="err_sync_create_json_request_encoding">Gabim #7: Enkodimi i pambështetur gjatë gjenerimit të kërkesës</string>
+    <string name="err_sync_auth_failed">Gabim #8: Autentifikimi dështoi</string>
+    <string name="err_sync_http_request_returncode_unhandled">Gabim #9: Serveri vendosi kodin e kthimit HTTP të patrajtuar</string>
+    <string name="err_sync_http_request_connect">Gabim #11: Në pamundësi për të kryer një lidhje të instancës Nextcloud</string>
+    <string name="err_sync_http_request_httpexception">Gabim #12: Në pamundësi për të kryer një lidhje të instancës Nextcloud</string>
+    <string name="err_sync_http_request_ioexception">Gabim #13: Në pamundësi për të kryer një lidhje të instancës Nextcloud</string>
+    <string name="err_sync_http_request_resp">Gabim #14: Në pamundësi për të analizuar përgjigjen e serverit</string>
+    <string name="err_sync_http_request_parse_resp">Gabim #15: Në pamundësi për të analizuar përgjigjen e serverit</string>
+    <string name="err_sync_no_connection_available">Gabim #16: Nuk ka lidhje me të dhëna e disponueshme</string>
+    <string name="err_sync_account_unparsable">Gabim #17: llogari e keqformuar. Ju lutemi rikonfigurojeni atë</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Gabim #18: Aplikacioni Nextcloud SMS nuk është i instaluar ose Nextcloud në pritje për një upgrade</string>
+    <string name="err_fetch_phonelist">U morr list telefonike jo e vlefshme nga serveri</string>
+    <string name="err_proto_v2">Serveri nuk e mbështet këtë karakteristikë. Sigurohuni që versioni i serverit të jetë të paktën 1.6.</string>
+    <string name="contactinfos_title">Informacioni i kontaktit</string>
+    <string name="subtitle_contact_phones">- Kontaktet e telefonave</string>
+    <string name="pref_title_bulk_messages">Maksimumi i Mesazheve për të dërguar në sinkronizim</string>
+    <string name="contactinfos_list">Lista e kontakteve</string>
+    <string name="function_not_available">Ky funksion nuk është ende i gatshëm</string>
+
+    <string name="ui_notification_title_template">Nextcloud SMS: 1%1$s</string>
+    <string name="communicate">Komuniko</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Hapni sirtarin e navigimit</string>
+    <string name="navigation_drawer_close">Mbyllni sirtarin e navigimit</string>
+    <string name="ma_title_my_accounts">Llogarit e mia</string>
+    <string name="ma_content_swipeaction">Kaloni nga e majta në të djathtë për të aksesuar menun e veprimeve.</string>
+    <string name="cancel">Anuloje</string>
+    <string name="understood">Kuptohet</string>
+    <string name="notif_permission_required">Kërkohen të drejtat</string>
+    <string name="notif_permission_required_content">Disa të drejta mungojnë në mënyrë që të performojmë procesin e sinkronizimit. Ju lutemi rregullojini ato në konfigurimet e aplikacionit. </string>
+    <string name="please_fix_it">Ju lutem rregullojeni</string>
+    <string name="err_cannot_read_contacts">Ne nuk mund ti lexojm kontaktet tuaja.</string>
+    <string name="err_cannot_read_sms">Ne nuk mund ti lexojm SMS-të tuaja.</string>
+    <string name="action_appinfo_perms">Info e aplikacionit dhe të drejtat</string>
+    <string name="restore_all_messages">Rikthe të gjithë mesazhet</string>
+    <string name="account_actions">Veprimet e llogarisë</string>
+    <string name="error_connection_failed_not_found">Lidhja dështoi, serveri kthen 404 NOT FOUND. Sigurohuni që keni vendosur rrugën e duhur për instancën tuaj Nextcloud. </string>
+    <string name="nothing_to_sync">Nuk ka gjë për të sinkronizuar</string>
+    <string name="feature_not_already_implemented">Kjo veçori nuk është implementuar akoma dhedo të jetë e gatshme së shpejti.</string>
+    <string name="pref_title_minimum_sync_chars">Gjatësia minimale e numrit të telefonit</string>
+    <string name="err_didnt_find_account_restore">Ne nuk 1\' e gjetëm llogarinë tuaj që t\'ju kthenim mesazhet, kjo është një situat shumë e çuditshme. </string>
+    <string name="launch_restore">Rikthe SMS-të e mija</string>
+    <string name="error_make_default_sms_app">Ju lutemi bëjeni këtë aplikacionin default të SMS-ve në mënyrë që të lejoni rikthimin e mesazheve tuaja. Ky limitim ka ardhur nga Android 4.4.</string>
+    <string name="fix_permissions">Rregullo të drejtat</string>
+    <string name="err_kitkat_required"> Android 4.4. ose më i lartë kërkohet që ta përdor këtë karakteristikë.</string>
+    <string name="restore_finished">Kufizimi i SMS-ve tani ka mbaruar.</string>
+    <string name="x_messages_restored">mesazhet u rikthyen&#8230;</string>
+    <string name="err_no_connection">Nuk ka asnjë lidhje, ju lutemi sigurohuni që të keni një lidhje të dhëmasj të vlefshme.</string>
+    <string name="reinit_sync_cursor">Riinicializo kursorin e inicializimit</string>
+    <string name="reinit_sync_cursor_confirm">Jeni të sigurt që doni të riinicializoni kursorin e sinkronizimit? Kjo mund të ngadalsoj sinkronizimin tjetër nëse gjejmë shumë mesazhe të vjetra të pa sinkronizuara me serverin.</string>
+    <string name="yes_confirm">Po</string>
+    <string name="no_confirm">Jo</string>
+    <string name="pref_show_sync_notifications">Shfaqni njoftimet e sinkronizimit</string>
+    <string name="sync_complete">Sinkronizimi përfundoi</string>
+    <string name="err_sync_http_write_failed">Gabim #19: Dështoi të shkruajë vargun HTTP kur dërgoi të dhënat në server.</string>
+    <string name="err_sync_http_request_protocol_exception">Gabim #20: Dështoi të vendosë si duhet versionin e protokollit HTTP </string>
+    </resources>

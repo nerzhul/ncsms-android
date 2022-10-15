@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">الرسائل القصيرة - سريع</string>
+    <string name="pref_title_slow_sync">الرسائل القصيرة - بطيء و سريع</string>
+    <string name="action_settings">الإعدادات</string>
+    <string name="sync_now">زامن الآن</string>
+    <string name="pref_category_sync">المزامنة</string>
+    <string name="title_global_pref_to_general_prefs">الخيارات العامة</string>
+    <string name="summary_global_pref_to_general_prefs">خيارات المزامنة</string>
+    <string name="summary_notif_prefs">الإشعارات</string>
+    <string name="title_activity_general_settings">الإعدادات العامة</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 دقائق</item>
+        <item>15 دقيقة</item>
+        <item>30 دقيقة</item>
+        <item>ساعة</item>
+        <item>3 ساعات</item>
+        <item>6 ساعات</item>
+        <item>12 ساعة</item>
+        <item>24 ساعة</item>
+        <item>لا أبدًا</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 رسالة قصيرة</item>
+        <item>1000 رسالة قصيرة</item>
+        <item>2000 رسالة قصيرة</item>
+        <item>5000 رسالة قصيرة</item>
+        <item>10000 رسالة قصيرة</item>
+        <item>25000 رسالة قصيرة</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>ساعة</item>
+        <item>3 ساعات</item>
+        <item>6 ساعات</item>
+        <item>12 ساعة</item>
+        <item>24 ساعة</item>
+        <item>لا أبدًا</item>
+    </string-array>
+    <string name="pref_sync_wifi">المزامنة عبر الواي فاي</string>
+    <string name="pref_sync_4g">المزامنة عبر 4G</string>
+    <string name="pref_sync_3g">المزامنة عبر 3G</string>
+    <string name="pref_sync_gprs">المزامنة في وضع 2.5G (GPRS)</string>
+    <string name="pref_sync_2g">المزامنة عبر 2G</string>
+    <string name="pref_sync_others">المزامنة في الأوضاع الأخرى</string>
+    <string name="title_activity_login">تسجيل الدخول</string>
+
+    <!-- Login -->
+    <string name="prompt_login">الدخول</string>
+    <string name="prompt_password">كلمة السر</string>
+    <string name="action_sign_in">تسجيل الدخول أو إنشاء حساب</string>
+    <string name="action_sign_in_short">تسجيل الدخول</string>
+    <string name="error_invalid_login">إسم المستخدم أو كلمة السر خاطئة</string>
+    <string name="error_invalid_password">كلمة السر صغيرة جدا</string>
+    <string name="error_field_required">هذا الحقل مطلوب</string>
+    <string name="prompt_serverURI">عنوان الخادوم</string>
+    <string name="error_invalid_server_address">عنوان الخادم غير صالح</string>
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">قم بتقييمنا !</string>
+    <string name="ma_title_add_account">إضافة حساب</string>
+    <string name="ma_title_welcome">مرحباً</string>
+    <string name="ma_title_remote_account">حساب عن بُعد</string>
+    <string name="choose_account">إختر حسابًا</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">إختيار حساب</string>
+    <string name="title_activity_select_contact">إختيار مراسل</string>
+    <string name="no_account_configured">لم يتم إعداد أي حساب بعد.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">عملية المزامنة</string>
+    <string name="fatal_error">خطأ فادح !</string>
+
+    <string name="contactinfos_title">معلومات عن المُراسل</string>
+    <string name="contactinfos_list">قائمة المراسلين</string>
+    <string name="navigation_drawer_open">فتح التنقل </string>
+    <string name="navigation_drawer_close">إقفال التنقل </string>
+    <string name="ma_title_my_accounts">حساباتي</string>
+    <string name="cancel">إلغاء</string>
+    <string name="understood">فهمت الأمر</string>
+    <string name="notif_permission_required">التصريح مطلوب</string>
+    <string name="please_fix_it">يرجى تصليحه.</string>
+    <string name="err_cannot_read_contacts">ليس بإمكاننا النفاذ لقراءة قائمة مراسليك.</string>
+    <string name="err_cannot_read_sms">ليس بإمكاننا قراءة رسائلك القصيرة.</string>
+    <string name="action_appinfo_perms">معلومات التطبيق و التصريحات</string>
+    <string name="restore_all_messages">استرجاع كافة الرسائل</string>
+    <string name="account_actions">إجراءات الحساب</string>
+    <string name="nothing_to_sync">ليس هناك أي شيء للمزامنة.</string>
+    <string name="pref_title_minimum_sync_chars">الحد الأدنى لطول رقم الهاتف</string>
+    <string name="launch_restore">إستعادة رسائلي القصيرة</string>
+    <string name="fix_permissions">تصليح التصريحات</string>
+    <string name="restore_finished">تمت الآن عملية استعادة الرسائل القصيرة.</string>
+    <string name="yes_confirm">نعم</string>
+    <string name="no_confirm">لا</string>
+    <string name="pref_show_sync_notifications">إظهار إشعارات المزامنة</string>
+    <string name="sync_complete">تمت عملية المزامنة</string>
+    <string name="action_appinfo_privacy_policy">سياسة الخصوصية</string>
+    </resources>

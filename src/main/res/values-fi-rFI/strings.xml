@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="login_logo">Kirjautumislogo</string>
+
+    <string name="action_settings">Asetukset</string>
+    <string name="sync_now">Synkronoi nyt</string>
+    <string name="pref_category_sync">Synkronointi</string>
+    <string name="title_global_pref_to_general_prefs">Yleiset asetukset</string>
+    <string name="summary_global_pref_to_general_prefs">Synkronointivalinnat</string>
+    <string name="summary_notif_prefs">Ilmoitukset</string>
+    <string name="pref_header_data_sync">Tiedot ja synkronointi</string>
+    <string name="title_activity_general_settings">Yleiset asetukset</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 minuuttia</item>
+        <item>15 minuuttia</item>
+        <item>30 minuuttia</item>
+        <item>1 tunti</item>
+        <item>3 tuntia</item>
+        <item>6 tuntia</item>
+        <item>12 tuntia</item>
+        <item>24 tuntia</item>
+        <item>Ei koskaan</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 tunti</item>
+        <item>3 tuntia</item>
+        <item>6 tuntia</item>
+        <item>12 tuntia</item>
+        <item>24 tuntia</item>
+        <item>Ei koskaan</item>
+    </string-array>
+    <string name="pref_sync_wifi">Synkronoi Wi-Fi-yhteydessä</string>
+    <string name="pref_sync_4g">Synkronoi 4G-yhteydessä</string>
+    <string name="pref_sync_3g">Synkronoi 3G-yhteydessä</string>
+    <string name="pref_sync_gprs">Synkronoi 2.5G (GRPS) -yhteydessä</string>
+    <string name="pref_sync_2g">Synkronoi 2G-yhteydessä</string>
+    <string name="pref_sync_others">Synkronoi muissa tiloissa</string>
+    <string name="title_activity_login">Kirjaudu sisään</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Kirjaudu</string>
+    <string name="prompt_password">Salasana</string>
+    <string name="action_sign_in">Kirjaudu sisään tai rekisteröidy</string>
+    <string name="action_sign_in_short">Kirjaudu sisään</string>
+    <string name="error_invalid_login">Tunnus tai salasana väärin</string>
+    <string name="error_invalid_password">Tämä salasana on liian lyhyt</string>
+    <string name="error_field_required">Tämä kenttä vaaditaan</string>
+    <string name="prompt_serverURI">Palvelimen osoite</string>
+    <string name="error_invalid_server_address">Virheellinen palvelimen osoite</string>
+    <string name="error_connection_failed">Yhteys epäonnistui, varmista että kyseessä on oikea palvelin</string>
+    <string name="error_http_connection_failed">HTTP-yhteyden muodostaminen epäonnistui. Varmista web-palvelimen olevan käytettävissä</string>
+
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">Arvostele meidät!</string>
+    <string name="ma_title_add_account">Lisää tili</string>
+    <string name="ma_title_welcome">Tervetuloa</string>
+    <string name="ma_content_welcome">Tervetuloa Nextcloudin tekstiviestisovellukseen. Tämän sovelluksen avulla voit synkronoida tekstiviestisi Nextcloudiin.</string>
+    <string name="ma_title_remote_account">Etätili</string>
+    <string name="choose_account">Valitse tili</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Valitse tili</string>
+    <string name="title_activity_select_contact">Valitse yhteystieto</string>
+    <string name="no_account_configured">Tiliä ei ole määritetty.</string>
+
+    <string name="sync_inprogress">Synkronointi käynnissä...</string>
+    <string name="fatal_error">Vakava virhe!</string>
+
+    <string name="err_proto_v2">Palvelin ei tue tätä ominaisuutta. Varmista, että palvelimen versio on vähintään 1.6.</string>
+    <string name="function_not_available">Tämä toiminto ei ole vielä käytettävissä.</string>
+
+    <string name="navigation_drawer_open">Avaa hakuvalikko</string>
+    <string name="navigation_drawer_close">Sulje hakuvalikko</string>
+    <string name="ma_title_my_accounts">Omat tilit</string>
+    <string name="cancel">Peru</string>
+    <string name="understood">Ymmärretty</string>
+    <string name="notif_permission_required">Oikeuksia vaaditaan</string>
+    <string name="please_fix_it">Korjaa se.</string>
+    <string name="err_cannot_read_contacts">Yhteystietojasi ei voitu lukea.</string>
+    <string name="err_cannot_read_sms">Tekstiviestejäsi ei voitu lukea.</string>
+    <string name="action_appinfo_perms">Äpin tiedot ja oikeudet</string>
+    <string name="restore_all_messages">Palauta kaikki viestit</string>
+    <string name="account_actions">Tilin toiminnot</string>
+    <string name="nothing_to_sync">Ei synkronoitavaa.</string>
+    <string name="err_didnt_find_account_restore">Emme löytäneet käyttäjääsi palauttaaksemme viestisi, tämä on hyvin outo tilanne.</string>
+    <string name="launch_restore">Palauta tekstiviestit</string>
+    <string name="fix_permissions">Korjaa oikeudet</string>
+    <string name="err_kitkat_required">Android 4.4 tai uudempi vaaditaan tämän ominaisuuden käyttöä varten.</string>
+    <string name="restore_finished">Tekstiviestien palautus on nyt valmistunut.</string>
+    <string name="x_messages_restored">viestit palautettu&#8230;</string>
+    <string name="yes_confirm">Kyllä</string>
+    <string name="no_confirm">Ei</string>
+    <string name="pref_show_sync_notifications">Näytä synkronointi-ilmoitukset</string>
+    <string name="sync_complete">Synkronointi valmistui</string>
+    <string name="action_appinfo_privacy_policy">Yksityisyyskäytäntö</string>
+    </resources>
