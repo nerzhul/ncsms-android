@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="login_logo">Táknmynd innskráningar</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - Hratt</string>
+    <string name="pref_title_sync_frequency">Tíðni hraðsamstillingar</string>
+    <string name="pref_title_slow_sync">SMS - Hægt og öruggt</string>
+    <string name="pref_title_slow_sync_frequency">Tíðni hægsamstillingar</string>
+    <string name="action_settings">Stillingar</string>
+    <string name="sync_now">Samstilla núna</string>
+    <string name="pref_category_sync">Samstilling</string>
+    <string name="title_global_pref_to_general_prefs">Almennar kjörstillingar</string>
+    <string name="summary_global_pref_to_general_prefs">Valkostir samstillingar</string>
+    <string name="summary_notif_prefs">Tilkynningar</string>
+    <string name="pref_header_data_sync">Gögn &amp; samstilling</string>
+    <string name="title_activity_general_settings">Almennar stillingar</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 mínútur</item>
+        <item>15 mínútur</item>
+        <item>30 mínútur</item>
+        <item>1 klukkustund</item>
+        <item>3 klukkustundir</item>
+        <item>6 klukkustundir</item>
+        <item>12 klukkustundir</item>
+        <item>24 klukkustundir</item>
+        <item>Aldrei</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Ekki öll SMS eru samstillt</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 klukkustund</item>
+        <item>3 klukkustundir</item>
+        <item>6 klukkustundir</item>
+        <item>12 klukkustundir</item>
+        <item>24 klukkustundir</item>
+        <item>Aldrei</item>
+    </string-array>
+    <string name="pref_push_on_receive">Ýta SMS við móttöku</string>
+    <string name="pref_sync_wifi">Samstilla á Wi-Fi</string>
+    <string name="pref_sync_4g">Samstilla á 4G</string>
+    <string name="pref_sync_3g">Samstilla á 3G</string>
+    <string name="pref_sync_gprs">Samstilla á 2.5G (GPRS)</string>
+    <string name="pref_sync_2g">Samstilla á 2G</string>
+    <string name="pref_sync_others">Samstilla á öðrum hömum</string>
+    <string name="title_activity_login">Skrá inn</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Innskráning</string>
+    <string name="prompt_password">Lykilorð</string>
+    <string name="action_sign_in">Skrá inn eða nýskrá</string>
+    <string name="action_sign_in_short">Skrá inn</string>
+    <string name="error_invalid_login">Innskráningarnafn eða lykilorð er ekki rétt</string>
+    <string name="error_invalid_password">Þetta lykilorð er of stutt</string>
+    <string name="error_field_required">Krafist er að fyllt sé í þennan reit</string>
+    <string name="prompt_serverURI">Vistfang þjóns</string>
+    <string name="error_invalid_server_address">Ógilt vistfang vefþjóns</string>
+    <string name="error_connection_failed">Tenging misfórst, gakktu úr skugga um að þetta sé réttur þjónn</string>
+    <string name="error_http_connection_failed">Get ekki framkvæmt HTTP-tengingu. Gakktu úr skugga um að það sé einhver vefþjónn</string>
+
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">Gefðu okkur einkunn!</string>
+    <string name="ma_title_add_account">Bæta við notandaaðgangi</string>
+    <string name="ma_title_welcome">Velkomin</string>
+    <string name="ma_content_welcome">Velkomin í Nextcloud SMS-forritið. Þetta forrit samstillir SMS á símanum þínum við Nextcloud skýið þitt.</string>
+    <string name="ma_title_remote_account">Fjartengdur aðgangur</string>
+    <string name="choose_account">Veldu aðgang</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Veldu aðgang</string>
+    <string name="title_activity_select_contact">Veldu tengilið</string>
+    <string name="no_account_configured">Enginn notandaaðgangur stilltur.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">Framvinda samstillingar</string>
+    <string name="sync_inprogress">Samstilling í gangi …</string>
+    <string name="fatal_error">Alvarleg villa!</string>
+
+    <!-- Errors -->
+    <string name="err_sync_get_smslist">Villa #1: Ógild gögn bárust frá þjóni þegar náð var í fyrri skilaboð</string>
+    <string name="err_sync_craft_http_request">Villa #2: Villa við að útbúa HTTP-beiðni</string>
+    <string name="err_sync_push_request">Villa #3: Ýtibeiðni mistókst</string>
+    <string name="err_sync_push_request_resp">Villa #4: Ógild gögn bárust frá þjóni þegar gögnum var ýtt</string>
+    <string name="err_sync_create_json_null_smslist">Villa #5: Enginn (NULL) SMS-listi</string>
+    <string name="err_sync_create_json_put_smslist">Villa #6: Villa við að útbúa ýtibeiðni</string>
+    <string name="err_sync_create_json_request_encoding">Villa #7: Óstudd stafatafla við að útbúa beiðni</string>
+    <string name="err_sync_auth_failed">Villa #8: Auðkenning mistókst</string>
+    <string name="err_sync_http_request_returncode_unhandled">Villa #9: Þjónninn setti ómeðhöndlanlegan HTTP-svarkóða</string>
+    <string name="err_sync_http_request_connect">Villa #11: Tókst ekki að framkalla tengingu við Nextcloud-tilvik</string>
+    <string name="err_sync_http_request_httpexception">Villa #12: Tókst ekki að framkalla tengingu við Nextcloud-tilvik</string>
+    <string name="err_sync_http_request_ioexception">Villa #13: Tókst ekki að framkalla tengingu við Nextcloud-tilvik</string>
+    <string name="err_sync_http_request_resp">Villa #14: Tókst ekki að þátta svar frá þjóni</string>
+    <string name="err_sync_http_request_parse_resp">Villa #15: Tókst ekki að þátta svar frá þjóni</string>
+    <string name="err_sync_no_connection_available">Villa #16: Engin gagnatenging tiltæk</string>
+    <string name="err_sync_account_unparsable">Villa #17: rangt sniðinn aðgangur. Settu hann aftur upp</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Villa #18: Nextcloud SMS-forritið er ekki uppsett eða að Nextcloud sé að bíða eftir uppfærslu</string>
+    <string name="err_fetch_phonelist">Ógildur listi yfir síma kom frá þjóni.</string>
+    <string name="err_proto_v2">Þjónninn styður ekki þennan eiginleika. Gakktu úr skugga um að þjónninn sé amk. af útgáfu 1.6.</string>
+    <string name="contactinfos_title">Upplýsingar um tengilið</string>
+    <string name="subtitle_contact_phones">- Símanúmer tengiliðar</string>
+    <string name="pref_title_bulk_messages">Hámarksfjöldi skeyta sem má senda í hverri samstillingu</string>
+    <string name="contactinfos_list">Tengiliðalisti</string>
+    <string name="function_not_available">Þessi aðgerð er ekki tiltæk ennþá.</string>
+
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="communicate">Senda út</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Opna rennivalmynd</string>
+    <string name="navigation_drawer_close">Loka rennivalmynd</string>
+    <string name="ma_title_my_accounts">Notandaaðgangar mínir</string>
+    <string name="ma_content_swipeaction">Strjúktu frá vinstri til hægri til að opna aðgerðavalmyndina.</string>
+    <string name="cancel">Hætta við</string>
+    <string name="understood">Náði þessu</string>
+    <string name="notif_permission_required">Heimilda er krafist</string>
+    <string name="notif_permission_required_content">Einhverjar heimildir vantar svo hægt sé að framkvæma samstillingarferlið. Lagaðu þetta í forritsstillingunum.</string>
+    <string name="please_fix_it">Endilega lagaðu þetta.</string>
+    <string name="err_cannot_read_contacts">Við getum ekki lesið tengiliðalistana þína.</string>
+    <string name="err_cannot_read_sms">Við getum ekki lesið SMS-in þín.</string>
+    <string name="action_appinfo_perms">Upplúsingar um forrit og aðgangsheimildir</string>
+    <string name="restore_all_messages">Endurheimta öll skilaboð</string>
+    <string name="account_actions">Aðgerðir fyrir aðgang</string>
+    <string name="error_connection_failed_not_found">Tenging mistókst, þjónninn svaraði með 404 NOT FOUND. Gakktu úr skugga um að þú hafir sett inn rétta slóð á Nextcloud-tilvikið þitt.</string>
+    <string name="nothing_to_sync">Það er ekkert sem hægt ser að samstilla.</string>
+    <string name="feature_not_already_implemented">Ekki er ennþá búið að gefa út þennan eiginleika, en það mun gerast fljótlega.</string>
+    <string name="pref_title_minimum_sync_chars">Lágmarkslengd símanúmers</string>
+    <string name="err_didnt_find_account_restore">Við fundum ekki notandaaðganginn þinn svo að við gætum endurheimt skilaboðin, þetta er mjög sérkennileg staða.</string>
+    <string name="launch_restore">Endurheimta SMS-in mín</string>
+    <string name="error_make_default_sms_app">Endilega gerðu þetta forrit að sjálfgefnu SMS-forriti svo hægt verði að leyfa endurheimtingu á skilaboðunum þínum. Þessi takmörkun tók gildi í Android 4.4.</string>
+    <string name="fix_permissions">Laga aðgangsheimildir</string>
+    <string name="err_kitkat_required">Android 4.4 eða nýrra er nauðsynlegt til að geta notað þennan eiginleika.</string>
+    <string name="restore_finished">Endurheimtingu SMS er lokið.</string>
+    <string name="x_messages_restored">endurheimt skilaboð&#8230;</string>
+    <string name="err_no_connection">Engin tenging tiltæk, gakktu úr skugga um að þú sért með gilda gagnatengingu.</string>
+    <string name="reinit_sync_cursor">Endurstilla samstillingarbendil</string>
+    <string name="reinit_sync_cursor_confirm">Ertu viss um að þú viljir endurstilla samstillingarbendil? Þetta getur hægt á næstu samstillingu ef það finnast mörg gömul skilaboð sem ekki hafa verið samstillt við þjóninn.</string>
+    <string name="yes_confirm">Já</string>
+    <string name="no_confirm">Nei</string>
+    <string name="pref_show_sync_notifications">Birta tilkynningar vegna samstillingar</string>
+    <string name="sync_complete">Samstillingu lokið</string>
+    <string name="err_sync_http_write_failed">Villa #19: Mistókst að skrifa í HTTP-streymi þegar gögnum var ýtt til vefþjóns.</string>
+    <string name="err_sync_http_request_protocol_exception">Villa #20: Mistókst að setja rétt útgáfu HTTP-samskiptamáta.</string>
+    <string name="action_appinfo_privacy_policy">Stefna um meðferð persónulegra gagna</string>
+    <string name="privacy_policy_large_text">
+        \"Yfirlit:\n\n\"
+
+        \"Nextcloud SMS er frjáls hugbúnaður sem hannaður er af þátttakendum í verkefninu. Þessi stefna um \"
+        \"meðferð persónugagna er til að láta þig vita um hvaða gögnum sé safnað í þessu forriti.\"
+
+        \"Upplýsingar sem við söfnum:\n\n\"
+
+        \"Einungis er safnað skrám yfir SMS-færslur og hringingar.\n\n\"
+
+        \"Hvert upplýsingarnar eru sendar:\n\n\"
+
+        \"Upplýsingar eru hvorki sendar á samstarfsþjóna Nextcloud né SMS-þjóna Nextcloud SMS né heldur til neinna \"
+        \"ríkisstofnana eða annarra aðila sem þú vilt ekki að þær fari til.\n\n\"
+
+        \"Þegar þú setur upp Nextcloud aðgang í forritinu, gefur þú leyfi til eiganda Nextcloud-\"
+        \"tilviksins að gögn yfir SMS og símtöl verði geymd á kerfinu hans \"
+        \"og á ábyrgð viðkomandi rekstraraðila.\n\n\"
+
+        \"Við mælum ekki með því að nota aðgang á opinberu tilviki Nextcloud eða hjá fyrirtæki. Gagnaleynd þín \"
+        \"er er betur farið undir þinni stjórn á þínu eigin Nextcloud-tilviki.\n\n\"
+
+    </string>
+</resources>
