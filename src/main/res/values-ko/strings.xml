@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="login_logo">로그인 로고</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - 빠름</string>
+    <string name="pref_title_sync_frequency">빠른 동기화 주기</string>
+    <string name="pref_title_slow_sync">SMS - 느리지만 안전함</string>
+    <string name="pref_title_slow_sync_frequency">느리지만 안전한 동기화 주기</string>
+    <string name="action_settings">설정</string>
+    <string name="sync_now">지금 동기화</string>
+    <string name="pref_category_sync">동기화</string>
+    <string name="title_global_pref_to_general_prefs">일반 설정</string>
+    <string name="summary_global_pref_to_general_prefs">동기화 옵션</string>
+    <string name="summary_notif_prefs">알림</string>
+    <string name="pref_header_data_sync">데이터 및 동기화</string>
+    <string name="title_activity_general_settings">일반 설정</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5분</item>
+        <item>15분</item>
+        <item>30분</item>
+        <item>1시간</item>
+        <item>3시간</item>
+        <item>6시간</item>
+        <item>12시간</item>
+        <item>24시간</item>
+        <item>하지 않음</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>SMS 100개</item>
+        <item>SMS 1000개</item>
+        <item>SMS 2000개</item>
+        <item>SMS 5000개</item>
+        <item>SMS 10000개</item>
+        <item>SMS 25000개</item>
+        <item>모든 동기화하지 않은 SMS</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1시간</item>
+        <item>3시간</item>
+        <item>6시간</item>
+        <item>12시간</item>
+        <item>24시간</item>
+        <item>하지 않음</item>
+    </string-array>
+    <string name="pref_push_on_receive">SMS 수신 시 푸시</string>
+    <string name="pref_sync_wifi">Wi-Fi에서 동기화</string>
+    <string name="pref_sync_4g">4G에서 동기화</string>
+    <string name="pref_sync_3g">3G에서 동기화</string>
+    <string name="pref_sync_gprs">2.5G(GPRS)에서 동기화</string>
+    <string name="pref_sync_2g">2G에서 동기화</string>
+    <string name="pref_sync_others">다른 모드에서 동기화</string>
+    <string name="title_activity_login">로그인</string>
+
+    <!-- Login -->
+    <string name="prompt_login">로그인</string>
+    <string name="prompt_password">암호 </string>
+    <string name="action_sign_in">로그인 및 회원 가입</string>
+    <string name="action_sign_in_short">로그인</string>
+    <string name="error_invalid_login">로그인 정보가 잘못됨</string>
+    <string name="error_invalid_password">암호가 너무 짧음</string>
+    <string name="error_field_required">이 필드는 필수 항목임</string>
+    <string name="prompt_serverURI">서버 주소</string>
+    <string name="error_invalid_server_address">잘못된 서버 주소</string>
+    <string name="error_connection_failed">연결 실패, 서버 주소가 올바른지 확인하십시오</string>
+    <string name="error_http_connection_failed">HTTP 연결을 열 수 없습니다. 웹 서버인지 확인하십시오</string>
+
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">평가해 주세요!</string>
+    <string name="ma_title_add_account">계정 추가</string>
+    <string name="ma_title_welcome">환영합니다</string>
+    <string name="ma_content_welcome">Nextcloud SMS 앱 사용을 환영합니다. SMS 앱을 사용하여 Nextcloud 인스턴스와 SMS를 동기화할 수 있습니다.</string>
+    <string name="ma_title_remote_account">원격 계정</string>
+    <string name="choose_account">계정 선택</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">계정 선택</string>
+    <string name="title_activity_select_contact">연락처 선택</string>
+    <string name="no_account_configured">설정한 계정이 없습니다.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">동기화 진행</string>
+    <string name="sync_inprogress">동기화 진행 중 ...</string>
+    <string name="fatal_error">치명적 오류! </string>
+
+    <!-- Errors -->
+    <string name="err_sync_get_smslist">오류 #1: 이전 메시지를 가져오는 중 서버에서 잘못된 데이터를 받음</string>
+    <string name="err_sync_craft_http_request">오류 #2: HTTP 요청을 만드는 중 오류 발생</string>
+    <string name="err_sync_push_request">오류 #3: 푸시 요청 실패</string>
+    <string name="err_sync_push_request_resp">오류 #4: 데이터를 푸시하는 중 잘못된 데이터를 받음</string>
+    <string name="err_sync_create_json_null_smslist">오류 #5: 빈 SMS 목록</string>
+    <string name="err_sync_create_json_put_smslist">오류 #6: 푸시 요청을 만드는 중 오류 발생</string>
+    <string name="err_sync_create_json_request_encoding">오류 #7: 요청을 만드는 중 지원하지 않는 인코딩</string>
+    <string name="err_sync_auth_failed">오류 #8: 인증 실패</string>
+    <string name="err_sync_http_request_returncode_unhandled">오류 #9: 서버에서 예상하지 못한 HTTP 응답 코드를 보냄</string>
+    <string name="err_sync_http_request_connect">오류 #11: Nextcloud 인스턴스에 연결할 수 없음</string>
+    <string name="err_sync_http_request_httpexception">오류 #12: Nextcloud 인스턴스에 연결할 수 없음</string>
+    <string name="err_sync_http_request_ioexception">오류 #13: Nextcloud 인스턴스에 연결할 수 없음</string>
+    <string name="err_sync_http_request_resp">오류 #14: 서버 응답을 처리할 수 없음</string>
+    <string name="err_sync_http_request_parse_resp">오류 #15: 서버 응답을 처리할 수 없음</string>
+    <string name="err_sync_no_connection_available">오류 #16: 데이터 연결을 사용할 수 없음</string>
+    <string name="err_sync_account_unparsable">오류 #17: 잘못된 계정, 다시 설정해야 함</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">오류 #18: Nextcloud SMS 앱이 설치되지 않았거나 Nextcloud 업그레이드 대기 중</string>
+    <string name="err_fetch_phonelist">서버에서 잘못된 phonelist를 받았습니다.</string>
+    <string name="err_proto_v2">서버에서 이 기능을 지원하지 않습니다. 서버 버전이 1.6 이상이어야 합니다.</string>
+    <string name="contactinfos_title">연락처 정보</string>
+    <string name="subtitle_contact_phones">- 연락처 전화번호</string>
+    <string name="pref_title_bulk_messages">동기화 시 보낼 최대 메시지 개수</string>
+    <string name="contactinfos_list">연락처 목록</string>
+    <string name="function_not_available">이 기능은 아직 사용할 수 없습니다.</string>
+
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="communicate">통신</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">탐색 서랍 열기</string>
+    <string name="navigation_drawer_close">탐색 서랍 닫기</string>
+    <string name="ma_title_my_accounts">내 계정</string>
+    <string name="ma_content_swipeaction">동작 메뉴를 보려면 왼쪽에서 오른쪽으로 미십시오.</string>
+    <string name="cancel">취소</string>
+    <string name="understood">알겠습니다</string>
+    <string name="notif_permission_required">권한 필요함</string>
+    <string name="notif_permission_required_content">동기화를 진행할 때 필요한 권한이 없습니다. 앱 설정에서 권한을 허가하십시오</string>
+    <string name="please_fix_it">다음을 수정해야 합니다.</string>
+    <string name="err_cannot_read_contacts">연락처 목록을 읽을 수 없습니다.</string>
+    <string name="err_cannot_read_sms">SMS를 읽을 수 없습니다.</string>
+    <string name="action_appinfo_perms">앱 정보와 권한</string>
+    <string name="restore_all_messages">모든 메시지 복원</string>
+    <string name="account_actions">계정 동작</string>
+    <string name="error_connection_failed_not_found">연결이 실패했습니다. 서버에서 404 오류를 반환했습니다. Nextcloud 주소와 경로를 확인하십시오.</string>
+    <string name="nothing_to_sync">동기화할 항목이 없습니다.</string>
+    <string name="feature_not_already_implemented">이 기능은 아직 구현되지 않았고 곧 사용 가능할 예정입니다.</string>
+    <string name="pref_title_minimum_sync_chars">최소 전화번호 길이</string>
+    <string name="err_didnt_find_account_restore">메시지를 복원할 계정을 찾을 수 없습니다. 일반적으로 일어날 상황이 아닙니다.</string>
+    <string name="launch_restore">내 SMS 복원</string>
+    <string name="error_make_default_sms_app">SMS를 복원하려면 이 앱을 기본 SMS 앱으로 설정하십시오. 이 제한은 Android 4.4 이상에 적용됩니다.</string>
+    <string name="fix_permissions">권한 허가</string>
+    <string name="err_kitkat_required">이 기능을 사용하려면 Android 4.4 이상이 필요합니다.</string>
+    <string name="restore_finished">SMS를 복원했습니다.</string>
+    <string name="x_messages_restored">개 메시지 복원됨&#8230;</string>
+    <string name="err_no_connection">연결할 수 없습니다. 데이터 연결 상태를 확인하십시오.</string>
+    <string name="reinit_sync_cursor">동기화 커서 다시 초기화</string>
+    <string name="reinit_sync_cursor_confirm">동기화 커서를 다시 초기화하시겠습니까? 대량의 오래된 메시지가 서버와 동기화되지 않았다면 다음 동기화가 느려질 수도 있습니다.</string>
+    <string name="yes_confirm">예</string>
+    <string name="no_confirm">아니요</string>
+    <string name="pref_show_sync_notifications">동기화 알림 표시</string>
+    <string name="sync_complete">동기화 완료</string>
+    <string name="err_sync_http_write_failed">오류 #19: 데이터를 서버에 기록하는 중 HTTP 스트림에 기록할 수 없습니다.</string>
+    <string name="err_sync_http_request_protocol_exception">오류 #20: HTTP 프로토콜 버전을 설정할 수 없습니다.</string>
+    <string name="action_appinfo_privacy_policy">개인 정보 취급 방침</string>
+    <string name="privacy_policy_large_text">
+        \"개요\n\n\"
+
+        \"Nextcloud SMS 는 본 프로그램 기여자들에 의해 개발된 자유 소프트웨어입니다. 본 개인정보 보호 정책은 \"
+        \"프로그램에 의해 수집된 데이터에 대해 알리기 위해 작성되었습니다.\"
+
+        \"우리가 수집하는 정보\n\n\"
+
+        \"본 프로그램에서는 통화 및 SMS 기록만 수집됩니다. \n\n\"
+
+        \"정보를 전송하는 곳.\n\n\"
+
+        \"정보는 Nextcloud팀 서버나 Nextcloud SMS팀 서버 또는 \"
+        \"원하지 않는 정부나 다른 단체들로 보내지지 않습니다..\n\n\"
+
+        \"본 애플리케이션에서 Nextcloud 계정을 설정할 때, Nextcloud 인스턴스 소유자의 \"
+        \"책임 내에 SMS 및  통화 내역이 본 인프라에\"
+        \"저장된다는 것에 동의하셨습니다.\n\n\"
+
+        \"우리는 공용 또는 회사 Nextcloud 인스턴스 계정에서 사용하는 것을 추천하지 않습니다. \"
+        \"개인 정보는 자신의 Nextcloud 인스턴스 내에서 자신의 통제 아래에 있어야 합니다.\n\n\"
+
+    </string>
+</resources>

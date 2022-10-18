@@ -29,5 +29,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
-    <string name="gp_short_description">يقوم تطبيق ناكست كلاود للرسائل القصيرة بمُزامنَة رسائلك النصية القصيرة المحلية مع مثيل خادومك</string>
-    </resources>
+    <string name="gp_short_description">يقوم تطبيق ناكست كلاود للرسائل القصيرة بمُزامنَة رسائلك النصية القصيرة المحلية مع خادمك النيكست كلاود.</string>
+    <string name="gp_description">
+تطبيق نيكست كلاود الخاص بالرسائل القصيرة يقوم بمزامنة رسائلك القصيرة على خادم نيكست كلاود البعيد و يُمكّنك من قراءة رسائلك منه. إرسال الرسائل القصيرة سيكون متاحاً في المستقبل القريب. 
+التطبيق متوافق تماماً مع نسخ أندرويد من 4.0 إلى 6.0.</string>
+</resources>
