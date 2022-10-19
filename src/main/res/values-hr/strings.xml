@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="login_logo">Logotip prijave</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS – brzo</string>
+    <string name="pref_title_sync_frequency">Brza učestalost sinkronizacije</string>
+    <string name="pref_title_slow_sync">SMS - sporo i sigurno</string>
+    <string name="pref_title_slow_sync_frequency">Spora i sigurna učestalost sinkronizacije</string>
+    <string name="action_settings">Postavke</string>
+    <string name="sync_now">Sinkroniziraj sada</string>
+    <string name="pref_category_sync">Sinkronizacija</string>
+    <string name="title_global_pref_to_general_prefs">Opće preferencije</string>
+    <string name="summary_global_pref_to_general_prefs">Mogućnosti sinkronizacije</string>
+    <string name="summary_notif_prefs">Obavijesti</string>
+    <string name="pref_header_data_sync">Podaci i sinkronizacija</string>
+    <string name="title_activity_general_settings">Opće postavke</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 minuta</item>
+        <item>15 minuta</item>
+        <item>30 minuta</item>
+        <item>1 sat</item>
+        <item>3 sata</item>
+        <item>6 sati</item>
+        <item>12 sati</item>
+        <item>24 sata</item>
+        <item>Nikad</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Nije sinkronizirana svaka SMS poruka</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 sat</item>
+        <item>3 sata</item>
+        <item>6 sati</item>
+        <item>12 sati</item>
+        <item>24 sata</item>
+        <item>Nikad</item>
+    </string-array>
+    <string name="pref_push_on_receive">Gurni SMS kao obavijest po primitku</string>
+    <string name="pref_sync_wifi">Sinkroniziraj u bežičnoj (Wi-Fi) mreži</string>
+    <string name="pref_sync_4g">Sinkroniziraj u 4G mreži</string>
+    <string name="pref_sync_3g">Sinkroniziraj u 3G mreži</string>
+    <string name="pref_sync_gprs">Sinkroniziraj u 2.5G (GPRS) mreži</string>
+    <string name="pref_sync_2g">Sinkroniziraj u 2G mreži</string>
+    <string name="pref_sync_others">Sinkroniziraj u drugim načinima</string>
+    <string name="title_activity_login">Prijava</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Prijava</string>
+    <string name="prompt_password">Zaporka </string>
+    <string name="action_sign_in">Prijavite se ili registrirajte</string>
+    <string name="action_sign_in_short">Prijava</string>
+    <string name="error_invalid_login">Netočni podaci za prijavu ili zaporka</string>
+    <string name="error_invalid_password">Zaporka je prekratka</string>
+    <string name="error_field_required">Ovo polje je obavezno</string>
+    <string name="prompt_serverURI">Adresa poslužitelja</string>
+    <string name="error_invalid_server_address">Nevažeća adresa poslužitelja</string>
+    <string name="error_connection_failed">Povezivanje nije uspjelo, provjerite je li to pravi poslužitelj</string>
+    <string name="error_http_connection_failed">Nije moguće uspostaviti HTTP vezu. Provjerite postoji li web poslužitelj</string>
+
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">Ocijenite nas!</string>
+    <string name="ma_title_add_account">Dodaj račun</string>
+    <string name="ma_title_welcome">Dobrodošli</string>
+    <string name="ma_content_welcome">Dobrodošli u aplikaciju Nextcloud SMS. Ovaj vam aplikacija omogućuje sinkronizaciju SMS poruka s vašom instancom Nextclouda putem aplikacije za razmjenu SMS poruka.</string>
+    <string name="ma_title_remote_account">Udaljeni račun</string>
+    <string name="choose_account">Odaberite račun</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Odaberi račun</string>
+    <string name="title_activity_select_contact">Odaberi kontakt</string>
+    <string name="no_account_configured">Račun nije konfiguriran.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">Postupak sinkronizacije</string>
+    <string name="sync_inprogress">Sinkronizacija je u tijeku...</string>
+    <string name="fatal_error">Kritična pogreška! </string>
+
+    <!-- Errors -->
+    <string name="err_sync_get_smslist">Pogreška br. 1.: nevažeći podaci primljeni od poslužitelja prilikom dohvaćanja prethodnih poruka</string>
+    <string name="err_sync_craft_http_request">Pogreška br. 2.: pogreška prilikom izrade HTTP zahtjeva</string>
+    <string name="err_sync_push_request">Pogreška br. 3.: neuspješan push zahtjev</string>
+    <string name="err_sync_push_request_resp">Pogreška br. 4.: nevažeći podaci primljeni od poslužitelja prilikom slanja push podataka</string>
+    <string name="err_sync_create_json_null_smslist">Pogreška br. 5.: NULL SMS popis</string>
+    <string name="err_sync_create_json_put_smslist">Pogreška br. 6.: pogreška prilikom izrade zahtjeva za slanje push podataka</string>
+    <string name="err_sync_create_json_request_encoding">Pogreška br. 7.: nepodržano kodiranje prilikom generiranja zahtjeva</string>
+    <string name="err_sync_auth_failed">Pogreška br. 8.: autentifikacija nije uspjela</string>
+    <string name="err_sync_http_request_returncode_unhandled">Pogreška br. 9.: poslužitelj je postavio povratni kôd neobrađenog zahtjeva HTTP-a</string>
+    <string name="err_sync_http_request_connect">Pogreška br. 11.: nije moguće uspostaviti vezu s instancom Nextclouda</string>
+    <string name="err_sync_http_request_httpexception">Pogreška br. 12.: nije moguće uspostaviti vezu s instancom Nextclouda</string>
+    <string name="err_sync_http_request_ioexception">Pogreška br. 13.: nije moguće uspostaviti vezu s instancom Nextclouda</string>
+    <string name="err_sync_http_request_resp">Pogreška br. 14.: nije moguće parsirati odgovor poslužitelja</string>
+    <string name="err_sync_http_request_parse_resp">Pogreška br. 15.: nije moguće parsirati odgovor poslužitelja</string>
+    <string name="err_sync_no_connection_available">Pogreška br. 16.: nema dostupne podatkovne veze</string>
+    <string name="err_sync_account_unparsable">Pogreška br. 17.: neispravan račun. Ponovno ga konfigurirajte</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Pogreška br. 18.: nije instalirana Nextcloudova aplikacija za razmjenu SMS poruka ili Nextcloud čeka nadogradnju</string>
+    <string name="err_fetch_phonelist">Nevažeći popis telefona primljen s poslužitelja.</string>
+    <string name="err_proto_v2">Poslužitelj ne podržava ovu značajku. Provjerite je li inačica poslužitelja barem 1.6.</string>
+    <string name="contactinfos_title">Kontaktni podaci</string>
+    <string name="subtitle_contact_phones">- kontaktni telefoni</string>
+    <string name="pref_title_bulk_messages">Maks. broj poruka za slanje tijekom sinkronizacije</string>
+    <string name="contactinfos_list">Popis kontakata</string>
+    <string name="function_not_available">Ova funkcija još nije dostupna.</string>
+
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="communicate">Komuniciraj</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Otvorite navigacijsku ladicu</string>
+    <string name="navigation_drawer_close">Zatvori navigacijsku ladicu</string>
+    <string name="ma_title_my_accounts">Moji računi</string>
+    <string name="ma_content_swipeaction">Povucite prstom s lijeva nadesno za pristup izborniku s radnjama.</string>
+    <string name="cancel">Odustani</string>
+    <string name="understood">Razumijem</string>
+    <string name="notif_permission_required">Potrebna su dopuštenja</string>
+    <string name="notif_permission_required_content">Nedostaju određena dopuštenja za izvođenje postupka sinkronizacije. Otklonite ovaj nedostatak u postavkama aplikacije</string>
+    <string name="please_fix_it">Otklonite ga.</string>
+    <string name="err_cannot_read_contacts">Ne možemo čitati vaše kontakte.</string>
+    <string name="err_cannot_read_sms">Ne možemo čitati vaše SMS poruke.</string>
+    <string name="action_appinfo_perms">Informacije o aplikaciji i dopuštenja</string>
+    <string name="restore_all_messages">Vratite sve poruke</string>
+    <string name="account_actions">Radnje računa</string>
+    <string name="error_connection_failed_not_found">Veza nije uspjela, poslužitelj vraća 404 NOT FOUND. Provjerite jeste li postavili ispravan put za instancu Nextclouda.</string>
+    <string name="nothing_to_sync">Ne postoji ništa za sinkronizaciju.</string>
+    <string name="feature_not_already_implemented">Ova značajka nije implementirana i uskoro će biti dostupna.</string>
+    <string name="pref_title_minimum_sync_chars">Minimalna duljina telefonskog broja</string>
+    <string name="err_didnt_find_account_restore">Nismo pronašli račun za vraćanje vaše poruke, ovo je vrlo čudna situacija.</string>
+    <string name="launch_restore">Vrati SMS poruku</string>
+    <string name="error_make_default_sms_app">Učinite ovu aplikaciju zadanom aplikacijom za razmjenu SMS poruka kako biste dopustili vraćanje poruka. Ovo ograničenje uvedeno je s Androidom 4.4.</string>
+    <string name="fix_permissions">Fiksna dopuštenja</string>
+    <string name="err_kitkat_required">Za upotrebu ove značajke potreban je Android 4.4 ili noviji.</string>
+    <string name="restore_finished">Vraćanje SMS poruke je dovršeno.</string>
+    <string name="x_messages_restored">poruke vraćene&#8230;</string>
+    <string name="err_no_connection">Nema dostupne veze, provjerite imate li valjanu podatkovnu vezu.</string>
+    <string name="reinit_sync_cursor">Ponovno postavite pokazivač sinkronizacije</string>
+    <string name="reinit_sync_cursor_confirm">Jeste li sigurni da želite ponovno postaviti pokazivač sinkronizacije? To može usporiti sljedeću sinkronizaciju ako pronađemo mnogo starih poruka koje nisu sinkronizirane s poslužiteljem.</string>
+    <string name="yes_confirm">Da</string>
+    <string name="no_confirm">Ne</string>
+    <string name="pref_show_sync_notifications">Prikaži obavijesti o sinkronizaciji</string>
+    <string name="sync_complete">Sinkronizacija je dovršena</string>
+    <string name="err_sync_http_write_failed">Pogreška br. 19.: neuspješno zapisivanje HTTP strujanja prilikom slanja push podataka na poslužitelj.</string>
+    <string name="err_sync_http_request_protocol_exception">Pogreška br. 20.: neuspješno postavljanje inačice HTTP protokola.</string>
+    <string name="action_appinfo_privacy_policy">Pravila o privatnosti</string>
+    <string name="privacy_policy_large_text">
+        „Pregled\n\n”
+
+        „Nextcloud SMS je besplatan softver koji je razvila zajednica suradnika. Ova pravila o privatnosti”
+        „sadrže informacije o podacima koje prikuplja ova aplikacija.”
+
+        „Informacije koje prikupljamo\n\n”
+
+        „Aplikacija prikuplja samo SMS poruke i zapise o pozivima.\n\n”
+
+        „Gdje se šalju informacije.\n\n”
+
+        „Informacije se ne šalju poslužiteljima Nextcloudovog tima, poslužiteljima Nextcloudovog SMS tima ni”
+        „državnim ili nekim neželjenim drugim tijelima.\n\n”
+
+        „Kada konfigurirate Nextcloud račun u aplikaciji, potvrđujete vlasniku instance”
+        „da smije pohraniti vaše SMS poruke i zapise o pozivima u svojoj infrastrukturi”
+        „za koju je odgovoran.\n\n”
+
+        „Ne preporučujemo korištenje javnog ili poslovnog računa instance Nextclouda. Vaša privatnost”
+        „mora biti pod vašom kontrolom u vašoj instanci Nextclouda.\n\n”
+
+    </string>
+</resources>
