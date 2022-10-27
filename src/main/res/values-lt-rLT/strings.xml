@@ -114,7 +114,7 @@ Nepavyko užmegzti HTTP ryšio. Patikrinkite žiniatinklių serverį.</string>
     <!-- Notifications -->
     <string name="sync_title">Sinchronizavimo procesas</string>
     <string name="sync_inprogress">Vyksta sinchronizavimas…</string>
-    <string name="fatal_error">Lemtingoji klaida!</string>
+    <string name="fatal_error">Lemtinga klaida!</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Klaida #1: Gaunami netinkami duomenys, su ankstesniais pranešimais.</string>
