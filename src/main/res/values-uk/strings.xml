@@ -85,7 +85,7 @@
     <string name="error_invalid_password">Цей пароль занадто короткий</string>
     <string name="error_field_required">Обов\'язкове поле</string>
     <string name="prompt_serverURI">Адреса сервера</string>
-    <string name="error_invalid_server_address">Невірна адреса сервера</string>
+    <string name="error_invalid_server_address">Недійсна адреса сервера</string>
     <string name="error_connection_failed">Не вдалося з\'єдантися. Перевірте, чи сервер вказано вірно</string>
     <string name="error_http_connection_failed">Не вдалося встановити HTTP з\'єднання. Перевірте сервер, будь ласка</string>
 
