@@ -31,6 +31,8 @@
 
     <!-- System strings, do not translate -->
     <string name="app_name">Nextcloud SMS</string>
+    <string name="login_logo">Зображення на сторінці входу</string>
+
     <string name="action_settings">Налаштування</string>
     <string name="sync_now">Синхронізувати зараз</string>
     <string name="pref_category_sync">Синхронізація</string>
@@ -112,8 +114,14 @@
     <string name="ma_title_my_accounts">Мої облікові записи</string>
     <string name="ma_content_swipeaction">Проведіть пальцем зліва направо для доступу до головного меню.</string>
     <string name="cancel">Скасувати</string>
+    <string name="understood">Зрозуміло</string>
+    <string name="notif_permission_required">Потрібні додаткові повноваження</string>
+    <string name="please_fix_it">Будь ласка, виправте це.</string>
+    <string name="err_cannot_read_contacts">Неможливо прочитати ваші контакти.</string>
     <string name="restore_all_messages">Відновити всі повідомлення</string>
+    <string name="nothing_to_sync">Все синхронізовано</string>
     <string name="pref_title_minimum_sync_chars">Мінімальна довжина тел. номеру</string>
+    <string name="fix_permissions">Виправити повноваження</string>
     <string name="yes_confirm">Так</string>
     <string name="no_confirm">Ні</string>
     <string name="action_appinfo_privacy_policy">Політика конфіденційності</string>
