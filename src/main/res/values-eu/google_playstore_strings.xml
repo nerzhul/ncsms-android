@@ -29,7 +29,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMSak zure lokaleko SMSak sinkronizatzen ditu zure Nextcloud instantzian</string>
+    <string name="gp_short_description">Nextcloud SMS aplikazioak zure lokaleko SMSak sinkronizatzen ditu zure Nextcloud instantzian</string>
     <string name="gp_description">
 Nextcloud SMS aplikazioak zure SMS mezuak urruneko Nextcloud instantzia batean sinkronizatzen ditu eta zure mezuak bertatik irakurtzeko aukera ematen dizu.
 
