@@ -149,7 +149,7 @@
     <string name="navigation_drawer_open">Navigationsleiste öffnen</string>
     <string name="navigation_drawer_close">Navigationsleiste schließen</string>
     <string name="ma_title_my_accounts">Meine Konten</string>
-    <string name="ma_content_swipeaction">Wische von links nach rechts um auf das Action-Menü zuzugreifen</string>
+    <string name="ma_content_swipeaction">Wische von links nach rechts, um auf das Action-Menü zuzugreifen</string>
     <string name="cancel">Abbrechen</string>
     <string name="understood">Verstanden</string>
     <string name="notif_permission_required">Berechtigungen benötigt</string>
