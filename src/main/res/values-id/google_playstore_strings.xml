@@ -29,5 +29,5 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation">
     <!-- Translations must begin here -->
-    <string name="gp_short_description">Nextcloud SMS menyinkronkan SMS lokal anda ke Nextcloud anda</string>
+    <string name="gp_short_description">Nextcloud SMS menyinkronkan SMS lokal Anda ke Nextcloud Anda</string>
     </resources>
