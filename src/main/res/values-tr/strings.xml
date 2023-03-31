@@ -96,7 +96,7 @@
     <string name="prompt_serverURI">Sunucu adresi</string>
     <string name="error_invalid_server_address">Sunucu adresi geçersiz</string>
     <string name="error_connection_failed">Bağlantı kurulamadı. Sunucunun doğru olduğundan emin olun</string>
-    <string name="error_http_connection_failed">HTTP bağlantısı kurulamadı. Lütfen orada bir web sunucusu olduğundan emin olun</string>
+    <string name="error_http_connection_failed">HTTP bağlantısı kurulamadı. Lütfen orada bir site sunucusu olduğundan emin olun</string>
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">Bizi değerlendirin!</string>
