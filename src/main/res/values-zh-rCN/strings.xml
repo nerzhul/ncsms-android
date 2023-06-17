@@ -49,14 +49,14 @@
     <string name="title_activity_general_settings">通用设置</string>
 
     <string-array name="pref_sync_frequency_titles">
-        <item>5 分钟</item>
-        <item>15 分钟</item>
-        <item>30 分钟</item>
-        <item>1 小时</item>
-        <item>3 小时</item>
-        <item>6 小时</item>
-        <item>12 小时</item>
-        <item>24 小时</item>
+        <item>5分钟</item>
+        <item>15分钟</item>
+        <item>30分钟</item>
+        <item>1小时</item>
+        <item>3小时</item>
+        <item>6小时</item>
+        <item>12小时</item>
+        <item>24小时</item>
         <item>永不</item>
     </string-array>
     <string-array name="pref_sync_bulk_max_messages_titles">
@@ -69,11 +69,11 @@
         <item>全部未同步短信</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
-        <item>1 小时</item>
-        <item>3 小时</item>
-        <item>6 小时</item>
-        <item>12 小时</item>
-        <item>24 小时</item>
+        <item>1小时</item>
+        <item>3小时</item>
+        <item>6小时</item>
+        <item>12小时</item>
+        <item>24小时</item>
         <item>永不</item>
     </string-array>
     <string name="pref_push_on_receive">收到短信时便推送</string>
