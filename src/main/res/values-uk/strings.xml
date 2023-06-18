@@ -108,6 +108,7 @@
     <string name="sync_inprogress">Виконується синхронізація...</string>
     <string name="fatal_error">Критична помилка!</string>
 
+    <string name="err_proto_v2">Сервер не підтримує таку функцію. Будь ласка, перевірте, чи версія серверу є щонайменше 1.6.</string>
     <string name="contactinfos_list">Список контактів</string>
     <string name="navigation_drawer_open">Відкрити скриньку налаштувань</string>
     <string name="navigation_drawer_close">Закрити скриньку налаштувань</string>
