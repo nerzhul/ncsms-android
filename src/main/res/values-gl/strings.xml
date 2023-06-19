@@ -102,7 +102,7 @@
     <string name="ma_title_rate_us">Cualifiquenos!</string>
     <string name="ma_title_add_account">Engadir unha conta</string>
     <string name="ma_title_welcome">Benvido</string>
-    <string name="ma_content_welcome">Benvido á aplicación Nextcloud SMS. Esta aplicación permítelle sincronizar os seus SMS coa súa instancia Nextcloud usando a aplicación SMS.</string>
+    <string name="ma_content_welcome">Dámoslle a benvida á aplicación Nextcloud SMS. Esta aplicación permítelle sincronizar os seus SMS coa súa instancia Nextcloud usando a aplicación SMS.</string>
     <string name="ma_title_remote_account">Conta remota</string>
     <string name="choose_account">Escolla unha conta</string>
 
