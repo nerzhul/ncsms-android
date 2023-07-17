@@ -173,7 +173,7 @@
     <string name="x_messages_restored">mensaxes restauradas&#8230;</string>
     <string name="err_no_connection">Non hai unha conexión dispoñíbel, asegúrese de contar cunha conexión de datos correcta.</string>
     <string name="reinit_sync_cursor">Reiniciar o cursor de sincronización</string>
-    <string name="reinit_sync_cursor_confirm">Está seguro de que quere reiniciar o cursor de sincronización? Isto pode enlentecer a seguinte sincronización se se atopan varias mensaxes antigas que non teñan sido sincronizadas co servidor.</string>
+    <string name="reinit_sync_cursor_confirm">Confirma que quere reiniciar o cursor de sincronización? Isto pode enlentecer a seguinte sincronización se se atopan varias mensaxes antigas que non teñan sido sincronizadas co servidor.</string>
     <string name="yes_confirm">Si</string>
     <string name="no_confirm">Non</string>
     <string name="pref_show_sync_notifications">Amosar as notificacións de sincronización</string>
