@@ -92,7 +92,7 @@
     <string name="action_sign_in_short">Autenticarse</string>
     <string name="error_invalid_login">Ou o acceso ou o contrasinal é incorrecto</string>
     <string name="error_invalid_password">O contrasinal é curto de máis</string>
-    <string name="error_field_required">Este campo é obrigatorio</string>
+    <string name="error_field_required">Precisase este campo</string>
     <string name="prompt_serverURI">Enderezo do servidor</string>
     <string name="error_invalid_server_address">O enderezo do servidor é incorrecto</string>
     <string name="error_connection_failed">Produciuse un fallo na conexión, asegúrese de que este sexa o servidor correcto</string>
@@ -152,7 +152,7 @@
     <string name="ma_content_swipeaction">Esvare da esquerda á dereita para acceder ao menú de accións</string>
     <string name="cancel">Cancelar</string>
     <string name="understood">Entendido</string>
-    <string name="notif_permission_required">Son necesarios permisos</string>
+    <string name="notif_permission_required">Precísanse permisos</string>
     <string name="notif_permission_required_content">Faltan algúns permisos adicionais para executar o proceso de sincronización. Asígneos nos axustes da aplicación</string>
     <string name="please_fix_it">Arránxeo.</string>
     <string name="err_cannot_read_contacts">Non é posíbel ler os seus contactos.</string>
@@ -168,7 +168,7 @@
     <string name="launch_restore">Restaurar os meus SMS</string>
     <string name="error_make_default_sms_app">Estabeleza esta aplicación como predeterminada para SMS se quere permitir restaurar as súas mensaxes. Esta limitación introduciuse en Android 4.4.</string>
     <string name="fix_permissions">Arraxar os permisos</string>
-    <string name="err_kitkat_required">É necesario Android 4.4 ou superior para usar esta funcionalidade.</string>
+    <string name="err_kitkat_required">Precisase Android 4.4 ou superior para usar esta funcionalidade.</string>
     <string name="restore_finished">Xa rematou a restauración dos SMS.</string>
     <string name="x_messages_restored">mensaxes restauradas&#8230;</string>
     <string name="err_no_connection">Non hai unha conexión dispoñíbel, asegúrese de contar cunha conexión de datos correcta.</string>
