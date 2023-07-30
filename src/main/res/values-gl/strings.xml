@@ -83,13 +83,13 @@
     <string name="pref_sync_gprs">Sincronizar con 2,5G (GPRS)</string>
     <string name="pref_sync_2g">Sincronizar con 2G</string>
     <string name="pref_sync_others">Sincronizar con outros modos</string>
-    <string name="title_activity_login">Autenticarse</string>
+    <string name="title_activity_login">Acceder</string>
 
     <!-- Login -->
     <string name="prompt_login">Acceder</string>
     <string name="prompt_password">Contrasinal</string>
-    <string name="action_sign_in">Autenticarse ou rexistrarse</string>
-    <string name="action_sign_in_short">Autenticarse</string>
+    <string name="action_sign_in">Acceder ou rexistrarse</string>
+    <string name="action_sign_in_short">Acceder</string>
     <string name="error_invalid_login">Ou o acceso ou o contrasinal é incorrecto</string>
     <string name="error_invalid_password">O contrasinal é curto de máis</string>
     <string name="error_field_required">Precisase este campo</string>
