@@ -160,7 +160,7 @@
     <string name="action_appinfo_perms">Información e permisos da aplicación</string>
     <string name="restore_all_messages">Restaurar todas as mensaxes</string>
     <string name="account_actions">Accións da conta</string>
-    <string name="error_connection_failed_not_found">Produciuse un fallo na conexión, o servidor devolve 404 NON ATOPADO. Asegúrese de indicar a ruta correcta para a súa instancia de Nextcloud.</string>
+    <string name="error_connection_failed_not_found">Produciuse un fallo na conexión, o servidor devolve 404 NON ATOPADO. Asegúrese de estabelecer a ruta correcta para a súa instancia de Nextcloud.</string>
     <string name="nothing_to_sync">No hai nada para sincronizar</string>
     <string name="feature_not_already_implemented">Esta funcionalidade aínda non está implementada mais estará dispoñíbel cedo</string>
     <string name="pref_title_minimum_sync_chars">Lonxitude mínima do número telefónico.</string>
