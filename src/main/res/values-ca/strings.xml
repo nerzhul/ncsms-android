@@ -86,7 +86,7 @@
     <string name="title_activity_login">Inicia la sessió</string>
 
     <!-- Login -->
-    <string name="prompt_login">Entra</string>
+    <string name="prompt_login">Inici de sessió</string>
     <string name="prompt_password">Contrasenya</string>
     <string name="action_sign_in">Inicia la sessió o registra\'t</string>
     <string name="action_sign_in_short">Inicia la sessió</string>
