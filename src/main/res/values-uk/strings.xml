@@ -88,7 +88,7 @@
     <string name="error_field_required">Обов\'язкове поле</string>
     <string name="prompt_serverURI">Адреса сервера</string>
     <string name="error_invalid_server_address">Недійсна адреса сервера</string>
-    <string name="error_connection_failed">Не вдалося з\'єдантися. Перевірте, чи сервер вказано вірно</string>
+    <string name="error_connection_failed">Не вдалося встановити з\'єднання. Перевірте, чи сервер зазначено правильно</string>
     <string name="error_http_connection_failed">Не вдалося встановити HTTP з\'єднання. Перевірте сервер, будь ласка</string>
 
     <!-- Main activity -->
@@ -120,6 +120,7 @@
     <string name="please_fix_it">Будь ласка, виправте це.</string>
     <string name="err_cannot_read_contacts">Неможливо прочитати ваші контакти.</string>
     <string name="restore_all_messages">Відновити всі повідомлення</string>
+    <string name="error_connection_failed_not_found">Не вдалося встановити з\'єднання, сервер повернув помилку 404 НЕ ЗНАЙДЕНО. Переконайтесь, що ви встановили правильний шлях для вашого примірника хмари Nextcloud.</string>
     <string name="nothing_to_sync">Все синхронізовано</string>
     <string name="pref_title_minimum_sync_chars">Мінімальна довжина тел. номеру</string>
     <string name="fix_permissions">Виправити повноваження</string>
