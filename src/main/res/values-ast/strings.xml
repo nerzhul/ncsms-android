@@ -75,6 +75,8 @@
     <string name="pref_sync_others">Sincronizar nos demás moos</string>
     <string name="title_activity_login">Aniciar la sesión</string>
 
+    <!-- Login -->
+    <string name="prompt_login">Aniciar la sesión</string>
     <string name="prompt_password">Contraseña</string>
     <string name="action_sign_in_short">Aniciar la sesión</string>
     <string name="error_invalid_password">Esta contraseña ye mui curtia</string>
