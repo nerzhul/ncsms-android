@@ -90,8 +90,12 @@
     <string name="ma_title_remote_account">Cuenta remota</string>
     <string name="no_account_configured">Nun se configuró nenguna cuenta</string>
 
+    <string name="sync_inprogress">Sincronización en cursu…</string>
+    <string name="fatal_error">¡Error fatal!</string>
+
     <string name="err_sync_http_request_resp">Error #14: nun ye posible analizar la rempuesta del sirvidor</string>
     <string name="err_sync_http_request_parse_resp">Error #15: nun ye posible analizar la rempuesta del sirvidor</string>
+    <string name="contactinfos_list">Llista de contautos</string>
     <string name="function_not_available">Esta función entá nun ta disponible.</string>
 
     <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
@@ -102,8 +106,10 @@
     <string name="ma_title_my_accounts">Les mios cuentes</string>
     <string name="cancel">Encaboxar</string>
     <string name="understood">Entendílo</string>
+    <string name="notif_permission_required_content">Falten dalgunos permisos pa facer el procesu de sincronización. Igua esti problema na configuración de l\'aplicación</string>
     <string name="err_cannot_read_contacts">Nun podemos lleer los contautos.</string>
     <string name="err_cannot_read_sms">Nun podemos lleer los SMS.</string>
+    <string name="restore_all_messages">Restaurar tolos mensaxes</string>
     <string name="nothing_to_sync">Nun hai nada pa sincronizar.</string>
     <string name="feature_not_already_implemented">Esta función entá nun s\'implementó mas va tar disponible pronto.</string>
     <string name="yes_confirm">Sí</string>
