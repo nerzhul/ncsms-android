@@ -90,7 +90,7 @@
     <string name="action_sign_in">Pierakstīties vai reģistrēties</string>
     <string name="action_sign_in_short">Pierakstīties</string>
     <string name="error_invalid_login">Lietotājvārds vai parole nav pareiza</string>
-    <string name="error_invalid_password">Parole ir par īsu</string>
+    <string name="error_invalid_password">Parole ir pārāk īsa</string>
     <string name="error_field_required">Šis lauks ir obligāts</string>
     <string name="prompt_serverURI">Servera adrese</string>
     <string name="error_invalid_server_address">Nederīgs servera adrese</string>
