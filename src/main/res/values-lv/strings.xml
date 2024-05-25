@@ -31,7 +31,7 @@
 
     <!-- System strings, do not translate -->
     <string name="app_name">Nextcloud SMS</string>
-    <string name="login_logo">Lietotāja logotips</string>
+    <string name="login_logo">Pieteikšanās logotips</string>
 
     <!-- Translations must begin there -->
     <!-- Preferences -->
@@ -134,7 +134,7 @@
     <string name="restore_all_messages">Atjaunot visus ziņojumus</string>
     <string name="account_actions">Konta darbības</string>
     <string name="nothing_to_sync">Nav nekā, ko sinhronizēt.</string>
-    <string name="pref_title_minimum_sync_chars">Minimālais telefona numura garums</string>
+    <string name="pref_title_minimum_sync_chars">Mazākais pieļaujamais tālruņa numura garums</string>
     <string name="err_didnt_find_account_restore">Mēs neatradām tavu kontu lai atjaunotu tavas ziņas... Šī ir ļoti savāda situācija.</string>
     <string name="launch_restore">Atjaunot manas SMS</string>
     <string name="error_make_default_sms_app">Lūdzu uzstādi šo lietotni kā noklusējuma SMS lietotni, lai ļautu tai atjaunot tavas ziņas. Šī limitācija nāca spēka Android 4.4.</string>
