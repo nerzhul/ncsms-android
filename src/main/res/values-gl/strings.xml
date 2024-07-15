@@ -182,26 +182,26 @@
     <string name="err_sync_http_request_protocol_exception">Erro nº 20: Non foi posíbel configurar correctamente a versión do protocolo HTTP.</string>
     <string name="action_appinfo_privacy_policy">Directiva de privacidade</string>
     <string name="privacy_policy_large_text">
-\"Descrición xeral\n\n\"
+        \"Descrición xeral\n\n\"
 
-\"Nextcloud SMS é un software libre desenvolvido polos seus colaboradores. Esta directiva de\"
-\"privacidade ten como obxectivo informarlle sobre os datos recompilados por esta aplicación.\"
+        \"Nextcloud SMS é un software libre desenvolvido polos seus colaboradores. Esta directiva de \"
+        \"privacidade ten como obxectivo informarlle sobre os datos recompilados por esta aplicación.\"
 
-\"Información que recollemos\n\n\"
+        \"Información que recollemos\n\n\"
 
-\"A aplicación só recolle os SMS e o rexistro de chamadas.\n\n\"
+        \"A aplicación só recolle os SMS e o rexistro de chamadas.\n\n\"
 
-\"Onde se envía a información.\n\n\"
+        \"Onde se envía a información.\n\n\"
 
-\"A información non se envía nin aos servidores do equipo de Nextcloud nin aos servidores do equipo\"
-\"do \"Nextcloud SMS nin a ningún goberno nin a ningunha outra entidade que Vde. non queira.\n\n\"
+        \"A información non se envía nin aos servidores do equipo de Nextcloud nin aos servidores do equipo\"
+        \"do Nextcloud SMS nin a ningún goberno nin a ningunha outra entidade que Vde. non queira.\n\n\"
 
-\"Cando configura unha conta de Nextcloud na aplicación, Vde. acorda co propietario da instancia\"
-\"de Nextcloud que os seus datos de SMS e rexistro de chamadas serán almacenados na súa\"
-\"infraestrutura baixo a súa responsabilidade.\n\n\"
+        \"Cando configura unha conta de Nextcloud na aplicación, Vde. acorda co propietario da instancia \"
+        \"de Nextcloud que os seus datos de SMS e rexistro de chamadas serán almacenados na súa \"
+        \"infraestrutura baixo a súa responsabilidade.\n\n\"
 
-\"Non recomendamos usar unha conta pública ou de empresa en Nextcloud. A súa privacidade debe\"
-\"estar baixo o seu control na súa propia instancia de Nextcloud.\n\n\"
+        \"Non recomendamos usar unha conta pública ou de empresa en Nextcloud. A súa privacidade debe \"
+        \"estar baixo o seu control na súa propia instancia de Nextcloud.\n\n\"
 
-</string>
+    </string>
 </resources>
