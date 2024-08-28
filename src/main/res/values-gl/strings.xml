@@ -161,7 +161,7 @@
     <string name="restore_all_messages">Restaurar todas as mensaxes</string>
     <string name="account_actions">Accións da conta</string>
     <string name="error_connection_failed_not_found">Produciuse un fallo na conexión, o servidor devolve 404 NON ATOPADO. Asegúrese de definir a ruta correcta para a súa instancia de Nextcloud.</string>
-    <string name="nothing_to_sync">No hai nada para sincronizar</string>
+    <string name="nothing_to_sync">No hai ren para sincronizar</string>
     <string name="feature_not_already_implemented">Esta funcionalidade aínda non está implementada mais estará dispoñíbel cedo</string>
     <string name="pref_title_minimum_sync_chars">Lonxitude mínima do número telefónico.</string>
     <string name="err_didnt_find_account_restore">Non atopamos a súa conta para restaurar as súas mensaxes, esta é unha situación moi estraña.</string>
