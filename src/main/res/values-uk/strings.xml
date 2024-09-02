@@ -120,6 +120,7 @@
     <string name="please_fix_it">Будь ласка, виправте це.</string>
     <string name="err_cannot_read_contacts">Неможливо прочитати ваші контакти.</string>
     <string name="restore_all_messages">Відновити всі повідомлення</string>
+    <string name="account_actions">Дії з обліковим записом</string>
     <string name="error_connection_failed_not_found">Не вдалося встановити з\'єднання, сервер повернув помилку 404 НЕ ЗНАЙДЕНО. Переконайтесь, що ви встановили правильний шлях для вашого примірника хмари Nextcloud.</string>
     <string name="nothing_to_sync">Все синхронізовано</string>
     <string name="pref_title_minimum_sync_chars">Мінімальна довжина тел. номеру</string>
