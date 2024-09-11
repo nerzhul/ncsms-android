@@ -132,7 +132,7 @@
     <string name="err_sync_http_request_resp">Erro nº 14: Non é posíbel interpretar a resposta do servidor</string>
     <string name="err_sync_http_request_parse_resp">Erro nº 15: Non é posíbel interpretar a resposta do servidor</string>
     <string name="err_sync_no_connection_available">Erro nº 16: Non hai unha conexión de datos dispoñíbel</string>
-    <string name="err_sync_account_unparsable">Erro nº 17: Conta mal formada. Reconfigúrea.</string>
+    <string name="err_sync_account_unparsable">Erro nº 17: Conta con formato incorrecto. Volva configurala</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Erro nº 18: A aplicación Nextcloud SMS non esta instalada ou Nextcloud esta agardando unha anovación</string>
     <string name="err_fetch_phonelist">A lista de teléfonos recibida do servidor é incorrecta.</string>
     <string name="err_proto_v2">O servidor non admite esta funcionalidade. Asegúrese de que a versión do servidor sexa cando menos a 1.6.</string>
