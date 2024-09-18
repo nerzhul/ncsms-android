@@ -179,7 +179,7 @@
     <string name="pref_show_sync_notifications">Mustra notìficas de sincronizatzione</string>
     <string name="sync_complete">Sincronizatzione cumpleta</string>
     <string name="err_sync_http_write_failed">Errore #19: No at fatu a iscrìere in direta HTTP in sa fortzadura de is datos a su serbidore.</string>
-    <string name="err_sync_http_request_protocol_exception">Errore #20: No at fatu a impostare sa versione de protocollu HTTP.</string>
+    <string name="err_sync_http_request_protocol_exception">Errore #20: Impossìbile cunfigurare in manera curreta sa versione de protocollu HTTP.</string>
     <string name="action_appinfo_privacy_policy">Normativa de sa riservadesa</string>
     <string name="privacy_policy_large_text">
         \"Panoràmica\n\n\"
