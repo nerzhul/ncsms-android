@@ -162,7 +162,7 @@
     <string name="account_actions">إجراءات الحساب</string>
     <string name="error_connection_failed_not_found">فشل الاتصال. قام الخادم بإرجاع رسالة الخطأ رقم 404 NOT FOUND. تأكّد من تعيين المسار الصحيح path لخادوم نكست كلاود.</string>
     <string name="nothing_to_sync">ليس هناك شيءٌ للمزامنة.</string>
-    <string name="feature_not_already_implemented">هذه الخاصّيّة لم يتم تطويرها بعدُ و ستكون جاهزةً قريباً </string>
+    <string name="feature_not_already_implemented">هذه الخاصية لم يتم تطويرها بعدُ و ستكون جاهزةً قريباً </string>
     <string name="pref_title_minimum_sync_chars">الحد الأدنى لطول رقم الهاتف</string>
     <string name="err_didnt_find_account_restore">لم نعثر على حسابك لاستعادة رسالتك. و يُفترض ألّا يحدث مثل هذا الخطأ.</string>
     <string name="launch_restore">إستعادة رسائلي القصيرة</string>
@@ -178,7 +178,7 @@
     <string name="no_confirm">لا</string>
     <string name="pref_show_sync_notifications">إظهار إشعارات المزامنة</string>
     <string name="sync_complete">تمت عملية المزامنة</string>
-    <string name="err_sync_http_write_failed">الخطأ #19: فشل كتابة دفق stream ـ HTTP عند زجّ pushing البيانات إلى الخادوم</string>
+    <string name="err_sync_http_write_failed">الخطأ #19: فشل كتابة stream ـ HTTP عند زجّ pushing البيانات إلى الخادوم</string>
     <string name="err_sync_http_request_protocol_exception">خطأ #20: فشل في تعيين رقم الإصدار المناسب لبروتوكول HTTP.</string>
     <string name="action_appinfo_privacy_policy">سياسة الخصوصية</string>
     <string name="privacy_policy_large_text">
