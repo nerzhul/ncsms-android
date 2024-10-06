@@ -191,7 +191,7 @@
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">Rate us!</string>
-    <string name="ma_title_add_account">Add an account</string>
+    <string name="ma_title_add_account">Add account</string>
     <string name="ma_title_welcome">Welcome</string>
     <string name="ma_content_welcome">Welcome to Nextcloud SMS application. This application let you synchronize your SMS to your Nextcloud instance using SMS app.</string>
     <string name="ma_title_remote_account">Remote account</string>
@@ -225,7 +225,7 @@
     <string name="err_sync_no_connection_available">Error #16: No data connection available</string>
     <string name="err_sync_account_unparsable">Error #17: malformed account. Please reconfigure it</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: Nextcloud SMS app is not installed or Nextcloud awaiting for an upgrade</string>
-    <string name="err_fetch_phonelist">Invalid phonelist received from server.</string>
+    <string name="err_fetch_phonelist">Invalid phone list received from server.</string>
     <string name="err_proto_v2">Server doesn\'t support this feature. Ensure server version is at least 1.6.</string>
     <string name="contactinfos_title">Contact informations</string>
     <string name="subtitle_contact_phones">- Contact phones</string>
