@@ -119,7 +119,7 @@
     <!-- Errors -->
     <string name="err_sync_get_smslist">الخطأ # 1: تلقّي بياناتٍ غير صالحة من الخادوم عند جلب الرسائل السابقة</string>
     <string name="err_sync_craft_http_request">خطأ #2: خطأ عند صياغة طلب HTTP</string>
-    <string name="err_sync_push_request">خطأ #3: إخفاق في طلب الزَّجّ Push request</string>
+    <string name="err_sync_push_request">خطأ #3: فشل في طلب الدفع Push request</string>
     <string name="err_sync_push_request_resp">خطأ #4: تلقّي بياناتٍ غير صالحة من الخادوم عند زجّ البيانات pushing data</string>
     <string name="err_sync_create_json_null_smslist">الخطأ #5: قائمة رسائل قصيرة فارغة NULL SMS List</string>
     <string name="err_sync_create_json_put_smslist">الخطأ # 6: خطأ أثناء صياغة طلب الزّجّ push request</string>
