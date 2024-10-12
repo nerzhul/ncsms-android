@@ -93,9 +93,9 @@
     <string name="error_invalid_login">إسم المستخدم أو كلمة المرور خاطئة</string>
     <string name="error_invalid_password">كلمة المرور قصيرةٌ جداً</string>
     <string name="error_field_required">هذا الحقل مطلوب</string>
-    <string name="prompt_serverURI">عنوان الخادوم</string>
-    <string name="error_invalid_server_address">عنوان الخادوم غير صالح</string>
-    <string name="error_connection_failed">تعذّر الاتصال. تأكد أن هذا هو الخادوم الصحيح</string>
+    <string name="prompt_serverURI">عنوان الخادم</string>
+    <string name="error_invalid_server_address">عنوان الخادم غير صالح</string>
+    <string name="error_connection_failed">تعذّر الاتصال. تأكد أن هذا هو الخادم الصحيح</string>
     <string name="error_http_connection_failed">تعذّر أداء اتصال HTTP. رجاءً، تأكّد من وجود خادوم وِب</string>
 
     <!-- Main activity -->
@@ -161,7 +161,7 @@
     <string name="restore_all_messages">استرجاع كافة الرسائل</string>
     <string name="account_actions">إجراءات الحساب</string>
     <string name="error_connection_failed_not_found">فشل الاتصال. قام الخادم بإرجاع رسالة الخطأ رقم 404 NOT FOUND. تأكّد من تعيين المسار الصحيح path لخادوم نكست كلاود.</string>
-    <string name="nothing_to_sync">ليس هناك شيءٌ للمزامنة.</string>
+    <string name="nothing_to_sync">ليس هناك أي شيء للمزامنة.</string>
     <string name="feature_not_already_implemented">هذه الخاصية لم يتم تطويرها بعدُ و ستكون جاهزةً قريباً </string>
     <string name="pref_title_minimum_sync_chars">الحد الأدنى لطول رقم الهاتف</string>
     <string name="err_didnt_find_account_restore">لم نعثر على حسابك لاستعادة رسالتك. و يُفترض ألّا يحدث مثل هذا الخطأ.</string>
