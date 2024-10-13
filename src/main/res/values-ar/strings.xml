@@ -122,7 +122,7 @@
     <string name="err_sync_push_request">خطأ #3: فشل في طلب الدفع Push request</string>
     <string name="err_sync_push_request_resp">خطأ #4: تلقّي بياناتٍ غير صالحة من الخادوم عند زجّ البيانات pushing data</string>
     <string name="err_sync_create_json_null_smslist">الخطأ #5: قائمة رسائل قصيرة فارغة NULL SMS List</string>
-    <string name="err_sync_create_json_put_smslist">الخطأ # 6: خطأ أثناء صياغة طلب الزّجّ push request</string>
+    <string name="err_sync_create_json_put_smslist">الخطأ # 6: خطأ أثناء صياغة طلب أسلوب الإشعارات Push</string>
     <string name="err_sync_create_json_request_encoding">خطأ #7: ترميز غير مدعوم عند توليد الطلب </string>
     <string name="err_sync_auth_failed">خطأ #8: فشلت المُصادقة</string>
     <string name="err_sync_http_request_returncode_unhandled">خطأ #9: قام الخادوم بتعيين كود إرجاع HTTP غير مُعالجٍ unhandled</string>
@@ -153,7 +153,7 @@
     <string name="cancel">إلغاء</string>
     <string name="understood">عُلِم</string>
     <string name="notif_permission_required">أذونات سماح مطلوبة</string>
-    <string name="notif_permission_required_content">تنقص بعض أذونات السماح لتنفيذ عملية المُزامنة. رجاءً، عدّل إعدادات التطبيق</string>
+    <string name="notif_permission_required_content">صلاحيات تنفيذ عملية المزامنة غير موجودة. يرجى إصلاح ذلك في إعدادات التطبيق.</string>
     <string name="please_fix_it">يرجى تصليحه.</string>
     <string name="err_cannot_read_contacts">ليس بإمكاننا النفاذ لقراءة جهات اتصالك.</string>
     <string name="err_cannot_read_sms">ليس بإمكاننا قراءة رسائلك القصيرة.</string>
