@@ -90,13 +90,13 @@
     <string name="prompt_password">كلمة المرور</string>
     <string name="action_sign_in">تسجيل الدخول أو إنشاء حساب</string>
     <string name="action_sign_in_short">تسجيل الدخول</string>
-    <string name="error_invalid_login">إسم المستخدم أو كلمة المرور خاطئة</string>
+    <string name="error_invalid_login">اسم المستخدم أو كلمة المرور خاطئة</string>
     <string name="error_invalid_password">كلمة المرور قصيرةٌ جداً</string>
     <string name="error_field_required">هذا الحقل مطلوب</string>
     <string name="prompt_serverURI">عنوان الخادم</string>
     <string name="error_invalid_server_address">عنوان الخادم غير صالح</string>
     <string name="error_connection_failed">تعذّر الاتصال. تأكد أن هذا هو الخادم الصحيح</string>
-    <string name="error_http_connection_failed">تعذّر أداء اتصال HTTP. رجاءً، تأكّد من وجود خادوم وِب</string>
+    <string name="error_http_connection_failed">تعذّر أداء اتصال HTTP. رجاءً، تأكّد من وجود خادوم الويب</string>
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">قم بتقييمنا !</string>
