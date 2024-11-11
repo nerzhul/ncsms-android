@@ -109,7 +109,7 @@
     <!-- Restauration -->
     <string name="title_activity_select_account">إختيار حساب</string>
     <string name="title_activity_select_contact">إختيار جهة اتصالٍ</string>
-    <string name="no_account_configured">لم يتمّ إعداد أيّ حسابٍ بعدُ.</string>
+    <string name="no_account_configured">لم يتم إعداد أي حساب حتى الآن.</string>
 
     <!-- Notifications -->
     <string name="sync_title">عملية المُزامنة</string>
@@ -140,7 +140,7 @@
     <string name="subtitle_contact_phones">- هواتف جهة الاتصال</string>
     <string name="pref_title_bulk_messages">أقصى عدد من الرسائل يتم إرسالها عند كل مُزامنة</string>
     <string name="contactinfos_list">جهات الاتصال</string>
-    <string name="function_not_available">هذه الوظيفة ليست مُتاحةٌ بعدُ</string>
+    <string name="function_not_available">هذه الوظيفة ليست متاحة حتى الآن</string>
 
     <string name="ui_notification_title_template">الرسائل القصيرة على نكست كلاود: %1$s</string>
     <string name="communicate">إتّصِل</string>
@@ -162,7 +162,7 @@
     <string name="account_actions">إجراءات الحساب</string>
     <string name="error_connection_failed_not_found">فشل الاتصال. قام الخادم بإرجاع رسالة الخطأ رقم 404 NOT FOUND. تأكّد من تعيين المسار الصحيح path لخادوم نكست كلاود.</string>
     <string name="nothing_to_sync">ليس هناك أي شيء للمزامنة.</string>
-    <string name="feature_not_already_implemented">هذه الخاصية لم يتم تطويرها بعدُ و ستكون جاهزةً قريباً </string>
+    <string name="feature_not_already_implemented">هذه الخاصية لم يتم تطويرها حتى الآن و ستكون جاهزةً قريباً </string>
     <string name="pref_title_minimum_sync_chars">الحد الأدنى لطول رقم الهاتف</string>
     <string name="err_didnt_find_account_restore">لم نعثر على حسابك لاستعادة رسالتك. و يُفترض ألّا يحدث مثل هذا الخطأ.</string>
     <string name="launch_restore">إستعادة رسائلي القصيرة</string>
