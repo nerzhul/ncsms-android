@@ -117,7 +117,7 @@
     <string name="fatal_error">Produciuse un erro fatal!</string>
 
     <!-- Errors -->
-    <string name="err_sync_get_smslist">Erro nº 1: Recibíronse datos incorrectos dende o servidor ao obter as mensaxes previas</string>
+    <string name="err_sync_get_smslist">Erro nº 1: Recibíronse datos incorrectos desde o servidor ao obter as mensaxes previas</string>
     <string name="err_sync_craft_http_request">Erro nº 2:  Produciuse un erro ao xerar a solicitude HTTP</string>
     <string name="err_sync_push_request">Erro nº 3: Produciuse un fallo ao enviar a petición</string>
     <string name="err_sync_push_request_resp">Erro nº 4: Recibíronse datos incorrectos do servidor ao enviar os datos</string>
