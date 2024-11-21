@@ -67,7 +67,7 @@ public class PermissionChecker {
             // For context only show a notification
             OCSMSNotificationUI.notify(context, context.getString(R.string.notif_permission_required),
                     context.getString(R.string.notif_permission_required_content),
-                    OCSMSNotificationType.PERMISSION.ordinal());
+                    OCSMSNotificationType.PERMISSION);
 
             return false;
         }

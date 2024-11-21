@@ -17,17 +17,17 @@ package fr.unix_experience.owncloud_sms.notifications;
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import android.annotation.TargetApi;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 
 import fr.unix_experience.owncloud_sms.R;
+import fr.unix_experience.owncloud_sms.enums.OCSMSNotificationChannel;
+import fr.unix_experience.owncloud_sms.enums.OCSMSNotificationType;
 
 /**
  * Helper class for showing and canceling ui
@@ -42,25 +42,30 @@ public class OCSMSNotificationUI {
      */
     private static final String NOTIFICATION_TAG = "OCSMS_NOTIFICATION";
 
+    public static void notify(Context context, String titleString,
+                              String contentString, OCSMSNotificationType type) {
+        notify(context, titleString, contentString,
+                type.getChannel().getChannelId(), type.getNotificationId());
+    }
+
     /**
      * Shows the notification, or updates a previously shown notification of
      * this type, with the given parameters.
      *
-     * @see #cancel(Context)
+     * @see #cancel(Context, OCSMSNotificationType)
      */
-    public static void notify(Context context, String titleString,
-                              String contentString, int number) {
+    public static void notify(Context context, String titleString, String contentString,
+                              String channelId, int notificationId) {
         Resources res = context.getResources();
 
         // This image is used as the notification's large icon (thumbnail).
         // TODO: Remove this if your notification has no relevant thumbnail.
-        Bitmap picture = BitmapFactory.decodeResource(res, R.mipmap.ic_launcher);
+//        Bitmap picture = BitmapFactory.decodeResource(res, R.mipmap.ic_launcher);
 
-
-        String ticker = (titleString.length() > 20) ? titleString.substring(0, 20) : titleString;
+//        String ticker = (titleString.length() > 20) ? titleString.substring(0, 20) : titleString;
         String title = res.getString(R.string.ui_notification_title_template, titleString);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context)
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, channelId)
 
                 // Set appropriate defaults for the notification light, sound,
                 // and vibration.
@@ -77,9 +82,6 @@ public class OCSMSNotificationUI {
                 // Set ticker text (preview) information for this notification.
                 //.setTicker(ticker)
 
-                // Show a number. This is useful when stacking notifications of
-                // a single type.
-                .setNumber(number)
                 .setStyle(new NotificationCompat.BigTextStyle()
                         .bigText(contentString)
                         .setBigContentTitle(title)
@@ -87,24 +89,45 @@ public class OCSMSNotificationUI {
                 .setAutoCancel(true)
                 .setColor(context.getResources().getColor(R.color.oc_primary));
 
-        OCSMSNotificationUI.notify(context, builder.build());
+        notify(context, builder.build(), notificationId);
     }
 
-    @TargetApi(Build.VERSION_CODES.ECLAIR)
-    private static void notify(Context context, Notification notification) {
+    private static void notify(Context context, Notification notification, int notificationId) {
         NotificationManager nm = (NotificationManager) context
                 .getSystemService(Context.NOTIFICATION_SERVICE);
-        nm.notify(OCSMSNotificationUI.NOTIFICATION_TAG, 0, notification);
+        createNotificationChannels(context, nm);
+        nm.notify(OCSMSNotificationUI.NOTIFICATION_TAG, notificationId, notification);
     }
 
     /**
      * Cancels any notifications of this type previously shown using
-     * {@link #notify(Context, String, String, int)}.
+     * {@link #notify(Context, String, String, OCSMSNotificationType)}.
      */
-    @TargetApi(Build.VERSION_CODES.ECLAIR)
-    public static void cancel(Context context) {
+    public static void cancel(Context context, OCSMSNotificationType type) {
+        cancel(context, type.getNotificationId());
+    }
+
+    public static void cancel(Context context, int notificationId) {
         NotificationManager nm = (NotificationManager) context
                 .getSystemService(Context.NOTIFICATION_SERVICE);
-        nm.cancel(OCSMSNotificationUI.NOTIFICATION_TAG, 0);
+        nm.cancel(OCSMSNotificationUI.NOTIFICATION_TAG, notificationId);
     }
+
+    private static void createNotificationChannels(Context context, NotificationManager nm) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            for (OCSMSNotificationChannel ocsmsChannel : OCSMSNotificationChannel.values()) {
+                NotificationChannel channel = new NotificationChannel(
+                        ocsmsChannel.getChannelId(),
+                        context.getString(ocsmsChannel.getNameResId()),
+                        ocsmsChannel.getImportance());
+
+                if (ocsmsChannel.getDescResId() != null) {
+                    channel.setDescription(context.getString(ocsmsChannel.getDescResId()));
+                }
+
+                nm.createNotificationChannel(channel);
+            }
+        }
+    }
+
 }
