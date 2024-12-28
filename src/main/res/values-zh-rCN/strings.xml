@@ -49,9 +49,9 @@
     <string name="title_activity_general_settings">通用设置</string>
 
     <string-array name="pref_sync_frequency_titles">
-        <item>5分钟</item>
-        <item>15分钟</item>
-        <item>30分钟</item>
+        <item>5 分钟</item>
+        <item>15 分钟</item>
+        <item>30 分钟</item>
         <item>1小时</item>
         <item>3小时</item>
         <item>6小时</item>
