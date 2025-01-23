@@ -206,6 +206,8 @@
     <string name="sync_title">Sync process</string>
     <string name="sync_inprogress">Sync in progress …</string>
     <string name="fatal_error">Fatal error ! </string>
+    <string name="notification_channel_name_default">Default</string>
+    <string name="notification_channel_name_sync">Sync</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Error #1: Invalid data received from server when getting previous messages</string>

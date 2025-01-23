@@ -12,15 +12,15 @@ jdk:
   - oraclejdk8
 
 before_install:
-  - yes | sdkmanager "platforms;android-27"
+  - yes | sdkmanager "platforms;android-28"
 
 android:
   components:
     - tools
     - platform-tools
     - extra
-    - build-tools-27.0.3
-    - android-27
+    - build-tools-28.0.3
+    - android-28
   licenses:
     - 'android-sdk-license-.+'
     - 'google-gdk-license-.+'
