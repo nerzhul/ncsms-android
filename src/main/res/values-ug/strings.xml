@@ -115,6 +115,8 @@
     <string name="sync_title">قەدەمداش جەريان</string>
     <string name="sync_inprogress">قەدەمداش…</string>
     <string name="fatal_error">ئەجەللىك خاتالىق! </string>
+    <string name="notification_channel_name_default">كۆڭۈلدىكى</string>
+    <string name="notification_channel_name_sync">ماسقەدەملەش</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">خاتالىق # 1: ئالدىنقى ئۇچۇرلارنى تاپشۇرۇۋالغاندا مۇلازىمېتىردىن تاپشۇرۇۋالغان ئىناۋەتسىز سانلىق مەلۇمات</string>

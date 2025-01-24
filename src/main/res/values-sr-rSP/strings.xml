@@ -114,6 +114,7 @@
     <!-- Notifications -->
     <string name="sync_title">Sinhronizacija</string>
     <string name="fatal_error">Kobna greška! </string>
+    <string name="notification_channel_name_sync">Sinhronizuj</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Greška #1: neispravni podaci primljeni sa servera prilikom dobavljanja prethodnih poruka</string>

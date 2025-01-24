@@ -115,6 +115,7 @@
     <string name="sync_title">同步进度</string>
     <string name="sync_inprogress">正在同步中...</string>
     <string name="fatal_error">严重错误！</string>
+    <string name="notification_channel_name_sync">同步</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">错误 #1：获取先前信息时，服务器返回了无效数据</string>

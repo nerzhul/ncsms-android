@@ -115,6 +115,8 @@
     <string name="sync_title">동기화 진행</string>
     <string name="sync_inprogress">동기화 진행 중 ...</string>
     <string name="fatal_error">치명적 오류! </string>
+    <string name="notification_channel_name_default">디폴트</string>
+    <string name="notification_channel_name_sync">동기화</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">오류 #1: 이전 메시지를 가져오는 중 서버에서 잘못된 데이터를 받음</string>

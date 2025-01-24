@@ -115,6 +115,8 @@
     <string name="sync_title">Synchronisatieproces</string>
     <string name="sync_inprogress">Synchronisatie bezig...</string>
     <string name="fatal_error">Fatale fout!</string>
+    <string name="notification_channel_name_default">Standaard</string>
+    <string name="notification_channel_name_sync">Synchroniseren</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Fout #1: ongeldige gegevens ontvangen van de server bij ophalen voorgaande berichten</string>

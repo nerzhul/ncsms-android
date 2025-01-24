@@ -115,6 +115,7 @@
     <string name="sync_title">Ajourføringsproces</string>
     <string name="sync_inprogress">Synkronisering i gang …</string>
     <string name="fatal_error">Fatal fejl!</string>
+    <string name="notification_channel_name_sync">Synkronisér</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Error #1: Forkerte data modtaget fra serveren ved modtagelsen af sidste beskeder</string>

@@ -115,6 +115,8 @@
     <string name="sync_title">תהליך סנכרון</string>
     <string name="sync_inprogress">מתבצע סנכרון…</string>
     <string name="fatal_error">שגיאה חמורה!</string>
+    <string name="notification_channel_name_default">ברירת מחדל</string>
+    <string name="notification_channel_name_sync">סנכרון</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">שגיאה מס׳ 1: התקבלו נתונים שגויים מהשרת בעת קבלת ההודעות הקודמות</string>

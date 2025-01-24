@@ -115,6 +115,8 @@
     <string name="sync_title">Synchronisierungsprozess</string>
     <string name="sync_inprogress">Sychronisation läuft …</string>
     <string name="fatal_error">Kritischer Fehler!</string>
+    <string name="notification_channel_name_default">Standard</string>
+    <string name="notification_channel_name_sync">Synchronisieren</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Fehler #1: Bei vorherigen Nachrichten ungültige Serverdaten empfangen</string>

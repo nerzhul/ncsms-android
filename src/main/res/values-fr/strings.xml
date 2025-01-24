@@ -115,6 +115,8 @@
     <string name="sync_title">Processus de synchronisation</string>
     <string name="sync_inprogress">Synchonisation en cours…</string>
     <string name="fatal_error">Erreur fatale !</string>
+    <string name="notification_channel_name_default">Défaut</string>
+    <string name="notification_channel_name_sync">Synchroniser</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Erreur #1: Données invalides reçues lors de l\'obtention des messages précédents.</string>

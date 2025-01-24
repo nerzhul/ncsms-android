@@ -114,6 +114,8 @@
     <!-- Notifications -->
     <string name="sync_title">სინქრონიზაციის პროცესი</string>
     <string name="fatal_error">ფატალური შეცდომა !</string>
+    <string name="notification_channel_name_default">საწყისი პარამეტრები</string>
+    <string name="notification_channel_name_sync">სინქ</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">შეცდომა #1: წინა წერილის მიღებისას, სერვერიდან დაბრუნდა არასწორი მონაცემი</string>

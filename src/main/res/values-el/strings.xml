@@ -115,6 +115,8 @@
     <string name="sync_title">Διεργασία συγχρονισμού</string>
     <string name="sync_inprogress">Συγχρονισμός σε εξέλιξη ...</string>
     <string name="fatal_error">  Καίριο σφάλμα</string>
+    <string name="notification_channel_name_default">Προεπιλογή</string>
+    <string name="notification_channel_name_sync">Συγχρονισμός</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Σφάλμα #1: Μη έγκυρα δεδομένα ελήφθησαν από τον εξυπηρετητή όταν λήφθηκαν  παλαιότερα μηνύματα</string>

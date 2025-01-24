@@ -115,6 +115,8 @@
     <string name="sync_title">Proces synchronizacji</string>
     <string name="sync_inprogress">Trwa synchronizacja…</string>
     <string name="fatal_error">Krytyczny błąd!</string>
+    <string name="notification_channel_name_default">Domyślny</string>
+    <string name="notification_channel_name_sync">Synchronizuj</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Błąd #1: Nieprawidłowe dane otrzymane z serwera podczas pobierania poprzednich wiadomości</string>

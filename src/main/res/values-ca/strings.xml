@@ -115,7 +115,6 @@
     <string name="sync_title">Procés de sincronització</string>
     <string name="sync_inprogress">Sincronització en curs…</string>
     <string name="fatal_error">Error fatal!</string>
-
     <!-- Errors -->
     <string name="err_sync_get_smslist">Error núm. 1: S\'han rebut dades no vàlides del servidor mentre s\'obtenien missatges anteriors</string>
     <string name="err_sync_craft_http_request">Error núm. 2: Hi ha hagut un error mentre s\'elaborava la sol·licitud HTTP</string>

@@ -115,6 +115,8 @@
     <string name="sync_title">Processo di sincronizzazione</string>
     <string name="sync_inprogress">Sincronizzazione in corso...</string>
     <string name="fatal_error">Errore grave!</string>
+    <string name="notification_channel_name_default">Predefinito</string>
+    <string name="notification_channel_name_sync">Sincronizzazione</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Errore #1: dati non validi ricevuti dal server mentre si ottenevano i messaggi precedenti</string>

@@ -115,6 +115,8 @@
     <string name="sync_title">Proceso de sincronización</string>
     <string name="sync_inprogress">Sincronización en curso…</string>
     <string name="fatal_error">Produciuse un erro fatal!</string>
+    <string name="notification_channel_name_default">Predeterminado</string>
+    <string name="notification_channel_name_sync">Sincronizar</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Erro nº 1: Recibíronse datos incorrectos desde o servidor ao obter as mensaxes previas</string>

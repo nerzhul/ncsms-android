@@ -115,6 +115,8 @@
     <string name="sync_title">Priebeh synchronizácie</string>
     <string name="sync_inprogress">Prebieha synchronizácia ...</string>
     <string name="fatal_error">Fatálna chyba!</string>
+    <string name="notification_channel_name_default">Predvolené</string>
+    <string name="notification_channel_name_sync">Synchronizovať</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Chyba #1: Neplatné údaje prijaté zo servera pri získavaní predchádzajúcich správ</string>

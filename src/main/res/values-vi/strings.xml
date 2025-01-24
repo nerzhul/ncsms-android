@@ -115,6 +115,7 @@
     <string name="sync_title">Quá trình đồng bộ hoá</string>
     <string name="sync_inprogress">Đang đồng bộ ...</string>
     <string name="fatal_error">Lỗi nghiêm trọng !</string>
+    <string name="notification_channel_name_sync">Đồng bộ</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Lỗi #1: Đã nhận dữ liệu không hợp lệ từ máy chủ khi lấy các tin nhắn trước đó</string>

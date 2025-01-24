@@ -115,6 +115,8 @@
     <string name="sync_title">Proceso de sincronización</string>
     <string name="sync_inprogress">Sincronización en curso …</string>
     <string name="fatal_error">!Error irremediable! </string>
+    <string name="notification_channel_name_default">Por defecto</string>
+    <string name="notification_channel_name_sync">Sincronizar</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Error #1: Información no válida recibida desde el servidor al obtener mensajes previos</string>

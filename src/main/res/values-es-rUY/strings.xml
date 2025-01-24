@@ -114,7 +114,6 @@
     <!-- Notifications -->
     <string name="sync_title">Proceso de sincronización</string>
     <string name="fatal_error">¡Error fatal!</string>
-
     <!-- Errors -->
     <string name="err_sync_get_smslist">Error #1: Se recibieron datos inválidos al tratar de obtener los mensajes previos</string>
     <string name="err_sync_craft_http_request">Error #2: Error al generar la solicitud HTTP </string>

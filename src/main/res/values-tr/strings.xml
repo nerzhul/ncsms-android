@@ -115,6 +115,8 @@
     <string name="sync_title">Eşitleme ilerlemesi</string>
     <string name="sync_inprogress">Eşitleniyor …</string>
     <string name="fatal_error">Ciddi sorun !</string>
+    <string name="notification_channel_name_default">Varsayılan</string>
+    <string name="notification_channel_name_sync">Eşitle</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Hata no 1: Önceki iletiler alınırken sunucudan geçersiz veriler alındı</string>

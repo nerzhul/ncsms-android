@@ -115,6 +115,8 @@
     <string name="sync_title">Opravilo usklajevanja</string>
     <string name="sync_inprogress">Poteka usklajevanje ...</string>
     <string name="fatal_error">Usodna napaka!</string>
+    <string name="notification_channel_name_default">privzeto</string>
+    <string name="notification_channel_name_sync">Uskladi</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Napaka #1: med pridobivanjem predhodnih sporočil so s strežnika prejeti neustrezni podatki</string>

@@ -115,7 +115,6 @@
     <string name="sync_title">Průběh synchronizace</string>
     <string name="sync_inprogress">Synchronizuje se…</string>
     <string name="fatal_error">Závažná chyba!</string>
-
     <!-- Errors -->
     <string name="err_sync_get_smslist">Chyba č. 1: Při získávání předchozích zpráv ze serveru obdržena neplatná data</string>
     <string name="err_sync_craft_http_request">Chyba č. 2: Chyba při vytváření HTTP požadavku</string>

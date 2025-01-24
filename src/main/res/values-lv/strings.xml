@@ -113,6 +113,7 @@
     <!-- Notifications -->
     <string name="sync_title">Sinhronizācijas process</string>
     <string name="fatal_error">Fatāla kļūda!</string>
+    <string name="notification_channel_name_sync">Sinhronizēt</string>
 
     <string name="err_sync_craft_http_request">Kļūda #2: Kļūda izveidojot HTTP pieprasījumu</string>
     <string name="err_sync_create_json_null_smslist">Kļūda #5: Null SMS saraksts</string>

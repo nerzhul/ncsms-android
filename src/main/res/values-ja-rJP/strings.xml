@@ -115,6 +115,7 @@
     <string name="sync_title">同期プロセス</string>
     <string name="sync_inprogress">同期しています...</string>
     <string name="fatal_error">致命的なエラー !</string>
+    <string name="notification_channel_name_sync">同期</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">エラー #1: 前のメッセージを取得するときに、サーバーから無効なデータを受信しました</string>

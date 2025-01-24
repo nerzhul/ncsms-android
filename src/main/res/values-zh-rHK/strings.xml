@@ -115,6 +115,8 @@
     <string name="sync_title">同步程序</string>
     <string name="sync_inprogress">正在同步中…</string>
     <string name="fatal_error">嚴重錯誤！</string>
+    <string name="notification_channel_name_default">默認</string>
+    <string name="notification_channel_name_sync">同步</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">錯誤 #1：取得上則訊息時，從伺服器收到無效資料</string>

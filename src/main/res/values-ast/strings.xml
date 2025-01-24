@@ -92,7 +92,6 @@
 
     <string name="sync_inprogress">Sincronización en cursu…</string>
     <string name="fatal_error">¡Error fatal!</string>
-
     <string name="err_sync_http_request_resp">Error #14: nun ye posible analizar la rempuesta del sirvidor</string>
     <string name="err_sync_http_request_parse_resp">Error #15: nun ye posible analizar la rempuesta del sirvidor</string>
     <string name="contactinfos_list">Llista de contautos</string>

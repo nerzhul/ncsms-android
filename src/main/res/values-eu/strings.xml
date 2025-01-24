@@ -115,6 +115,8 @@
     <string name="sync_title">Sinkronizazio prozesua</string>
     <string name="sync_inprogress">Sinrkonizazioa abian...</string>
     <string name="fatal_error">Errore larria !</string>
+    <string name="notification_channel_name_default">Lehenetsia</string>
+    <string name="notification_channel_name_sync">Sinkronizatu</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Errore #1: balio ez duten datuak jaso dira zerbitzaritik aurreko mezuak jasotzerakoan</string>

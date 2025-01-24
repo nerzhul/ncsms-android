@@ -115,6 +115,8 @@
     <string name="sync_title">Protzessu de sincronizatzione</string>
     <string name="sync_inprogress">Sincronizatzione in cursu ...</string>
     <string name="fatal_error">Errore fatale!</string>
+    <string name="notification_channel_name_default">Predefinidu</string>
+    <string name="notification_channel_name_sync">Sincronizatzione</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Errore #1: Is datos retzidos dae su serbidore in sa retzidura de messàgios pretzedentes non sunt vàlidos</string>

@@ -115,6 +115,8 @@
     <string name="sync_title">Процесс синхронизации</string>
     <string name="sync_inprogress">Выполняется синхронизация ...</string>
     <string name="fatal_error">Критическая ошибка!</string>
+    <string name="notification_channel_name_default">По умолчанию</string>
+    <string name="notification_channel_name_sync">Синхронизировать</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Error #1: Недопустимые данные, полученные от сервера при получении предыдущих сообщений </string>

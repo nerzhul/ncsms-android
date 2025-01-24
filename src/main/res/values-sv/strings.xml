@@ -115,6 +115,8 @@
     <string name="sync_title">Synkroniseringsprocess</string>
     <string name="sync_inprogress">Synkronisering pågår ...</string>
     <string name="fatal_error">Allvarligt fel! </string>
+    <string name="notification_channel_name_default">Förvald</string>
+    <string name="notification_channel_name_sync">Synkronisera</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Fel #1: Ogiltiga data mottagna från servern när tidigare meddelanden hämtades</string>

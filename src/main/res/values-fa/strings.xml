@@ -115,6 +115,8 @@
     <string name="sync_title">فرآیند همگام سازی</string>
     <string name="sync_inprogress">در حال همگام‌سازی ...</string>
     <string name="fatal_error">خطای مهلک!</string>
+    <string name="notification_channel_name_default">پیش‌فرض</string>
+    <string name="notification_channel_name_sync">همگام‌سازی</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">خطای شماره 1: داده های نامعتبر دریافت شده از سرور هنگام دریافت پیام های قبلی</string>

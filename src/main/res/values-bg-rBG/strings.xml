@@ -115,7 +115,6 @@
     <string name="sync_title">Процес на синхронизиране</string>
     <string name="sync_inprogress">В ход на синхронизиране...</string>
     <string name="fatal_error">Фатална грешка !</string>
-
     <!-- Errors -->
     <string name="err_sync_get_smslist">Грешка #1: Невалидни данни, получени от сървъра при получаване на предишни съобщения</string>
     <string name="err_sync_craft_http_request">Грешка #2: Грешка при създаването на HTTP заявка</string>

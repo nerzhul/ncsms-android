@@ -115,6 +115,7 @@
     <string name="sync_title">Framvinda samstillingar</string>
     <string name="sync_inprogress">Samstilling í gangi …</string>
     <string name="fatal_error">Alvarleg villa!</string>
+    <string name="notification_channel_name_sync">Samstilla</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Villa #1: Ógild gögn bárust frá þjóni þegar náð var í fyrri skilaboð</string>

@@ -115,7 +115,7 @@ Nepavyko užmegzti HTTP ryšio. Patikrinkite žiniatinklių serverį.</string>
     <string name="sync_title">Sinchronizavimo procesas</string>
     <string name="sync_inprogress">Vyksta sinchronizavimas…</string>
     <string name="fatal_error">Lemtinga klaida!</string>
-
+    <string name="notification_channel_name_default">Numatytasis</string>
     <!-- Errors -->
     <string name="err_sync_get_smslist">Klaida #1: Gaunami netinkami duomenys, su ankstesniais pranešimais.</string>
     <string name="err_sync_create_json_request_encoding">Klaida #7: Nepalaikoma koduotė generuojant užklausas</string>

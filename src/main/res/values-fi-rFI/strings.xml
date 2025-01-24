@@ -105,6 +105,7 @@
 
     <string name="sync_inprogress">Synkronointi käynnissä...</string>
     <string name="fatal_error">Vakava virhe!</string>
+    <string name="notification_channel_name_sync">Synkronoi</string>
 
     <string name="err_proto_v2">Palvelin ei tue tätä ominaisuutta. Varmista, että palvelimen versio on vähintään 1.6.</string>
     <string name="function_not_available">Tämä toiminto ei ole vielä käytettävissä.</string>

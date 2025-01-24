@@ -115,6 +115,8 @@
     <string name="sync_title">Синхронизација</string>
     <string name="sync_inprogress">Синхронизација у току…</string>
     <string name="fatal_error">Кобна грешка! </string>
+    <string name="notification_channel_name_default">Подразумевано</string>
+    <string name="notification_channel_name_sync">Синхронизуј</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Грешка #1: неисправни подаци примљени са сервера приликом добављања претходних порука</string>

@@ -115,6 +115,8 @@
     <string name="sync_title">Processo de sincronização</string>
     <string name="sync_inprogress">Sincronização em andamento...</string>
     <string name="fatal_error">Erro fatal !</string>
+    <string name="notification_channel_name_default">Padrão</string>
+    <string name="notification_channel_name_sync">Sincronizar</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Erro #1: Dados inválidos recebidos do servidor ao obter mensagens anteriores</string>

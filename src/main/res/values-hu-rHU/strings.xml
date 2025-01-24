@@ -115,6 +115,7 @@
     <string name="sync_title">Szinkronizálási folyamat</string>
     <string name="sync_inprogress">Szinkronizáció folyamatban…</string>
     <string name="fatal_error">Végzetes hiba!</string>
+    <string name="notification_channel_name_sync">Szinkronizálás</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Hiba #1: Érvénytelen adatok fogadva a kiszolgálótól az előző üzenetek betöltésekor</string>

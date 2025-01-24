@@ -115,6 +115,8 @@
     <string name="sync_title">Postupak sinkronizacije</string>
     <string name="sync_inprogress">Sinkronizacija je u tijeku...</string>
     <string name="fatal_error">Kritična pogreška! </string>
+    <string name="notification_channel_name_default">Zadani</string>
+    <string name="notification_channel_name_sync">Sinkronizacija</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Pogreška br. 1.: nevažeći podaci primljeni od poslužitelja prilikom dohvaćanja prethodnih poruka</string>

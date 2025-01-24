@@ -114,6 +114,8 @@
     <!-- Notifications -->
     <string name="sync_title">Proces sinkronizimi</string>
     <string name="fatal_error">Gabim fatal !</string>
+    <string name="notification_channel_name_default">Paraprake</string>
+    <string name="notification_channel_name_sync">Sinkronizo</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Gabim # 1: Të dhënat e pavlefshme janë marrë nga serveri kur janë marrë mesazht ee mëparshme</string>

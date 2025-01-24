@@ -115,6 +115,8 @@
     <string name="sync_title">Próiseas sioncronaithe</string>
     <string name="sync_inprogress">Sioncronú ar siúl…</string>
     <string name="fatal_error">Earráid marfach !</string>
+    <string name="notification_channel_name_default">Réamhshocrú</string>
+    <string name="notification_channel_name_sync">Sioncrónaigh</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Earráid #1: Sonraí neamhbhailí a fuarthas ón bhfreastalaí agus teachtaireachtaí roimhe seo á bhfáil</string>
