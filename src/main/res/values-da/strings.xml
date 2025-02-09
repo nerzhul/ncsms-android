@@ -115,6 +115,7 @@
     <string name="sync_title">Ajourføringsproces</string>
     <string name="sync_inprogress">Synkronisering i gang …</string>
     <string name="fatal_error">Fatal fejl!</string>
+    <string name="notification_channel_name_default">Standard</string>
     <string name="notification_channel_name_sync">Synkronisér</string>
 
     <!-- Errors -->
