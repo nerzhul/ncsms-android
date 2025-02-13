@@ -115,6 +115,9 @@
     <string name="sync_title">عملية المُزامنة</string>
     <string name="sync_inprogress">مُزامنة تحت الإجراء ...</string>
     <string name="fatal_error">خطأ فادح !</string>
+    <string name="notification_channel_name_default">التلقائي</string>
+    <string name="notification_channel_name_sync">زامن</string>
+
     <!-- Errors -->
     <string name="err_sync_get_smslist">الخطأ # 1: تلقّي بياناتٍ غير صالحة من الخادوم عند جلب الرسائل السابقة</string>
     <string name="err_sync_craft_http_request">خطأ #2: خطأ عند صياغة طلب HTTP</string>
