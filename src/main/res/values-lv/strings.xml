@@ -43,7 +43,7 @@
     <string name="sync_now">Sinhronizēt tagad</string>
     <string name="pref_category_sync">Synchronization</string>
     <string name="title_global_pref_to_general_prefs">Vispārīgās preferences</string>
-    <string name="summary_global_pref_to_general_prefs">Sinhronizācijas opcijas</string>
+    <string name="summary_global_pref_to_general_prefs">Sinhronizēšanas iespējas</string>
     <string name="summary_notif_prefs">Paziņojumi</string>
     <string name="pref_header_data_sync">Datu &amp; sinhronizēšana</string>
     <string name="title_activity_general_settings">Vispārīgie iestatījumi</string>
