@@ -88,7 +88,7 @@
     <!-- Login -->
     <string name="prompt_login">Brugernavn</string>
     <string name="prompt_password">Adgangskode</string>
-    <string name="action_sign_in">Log ind eller registér</string>
+    <string name="action_sign_in">Log ind eller register</string>
     <string name="action_sign_in_short">Log ind</string>
     <string name="error_invalid_login">Brugernavn eller adgangskode er ikke korrekt</string>
     <string name="error_invalid_password">Adgangskoden er forkort</string>
@@ -116,7 +116,7 @@
     <string name="sync_inprogress">Synkronisering i gang …</string>
     <string name="fatal_error">Fatal fejl!</string>
     <string name="notification_channel_name_default">Standard</string>
-    <string name="notification_channel_name_sync">Synkronisér</string>
+    <string name="notification_channel_name_sync">Synkroniser</string>
 
     <!-- Errors -->
     <string name="err_sync_get_smslist">Error #1: Forkerte data modtaget fra serveren ved modtagelsen af sidste beskeder</string>
@@ -145,14 +145,14 @@
     <string name="function_not_available">Denne funktion er endnu ikke tilgængelig.</string>
 
     <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
-    <string name="communicate">Kommunikér</string>
+    <string name="communicate">Kommuniker</string>
     <string name="title_activity_main2">Main2Aktivitet</string>
 
     <string name="navigation_drawer_open">Åbn navigationsskuffe</string>
     <string name="navigation_drawer_close">Luk navigationsskuffe</string>
     <string name="ma_title_my_accounts">Mine konti</string>
     <string name="ma_content_swipeaction">Stryg fra venstre mod højre for adgang til handlingsmenu.</string>
-    <string name="cancel">Annullér</string>
+    <string name="cancel">Annuller</string>
     <string name="understood">Forstået</string>
     <string name="notif_permission_required">Rettigheder påkrævet</string>
     <string name="notif_permission_required_content">Der mangler nogle rettigheder for at kunne gennemføre en synkronisering. Ret fejlen i app indstillingerne</string>
