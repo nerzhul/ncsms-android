@@ -111,7 +111,7 @@
     <string name="no_account_configured">Nav konfigurēts konts.</string>
 
     <!-- Notifications -->
-    <string name="sync_title">Sinhronizācijas process</string>
+    <string name="sync_title">Sinhronizēšanas virzība</string>
     <string name="fatal_error">Fatāla kļūda!</string>
     <string name="notification_channel_name_sync">Sinhronizēt</string>
 
@@ -146,8 +146,8 @@
     <string name="err_no_connection">Nav interneta savienojuma. Pārliecinies ka tev ir datu vai wifi savienojums.</string>
     <string name="yes_confirm">Jā</string>
     <string name="no_confirm">Nē</string>
-    <string name="pref_show_sync_notifications">Rādīt sinhronizācijas paziņojumus</string>
-    <string name="sync_complete">Sinhronizācija pabeigta</string>
+    <string name="pref_show_sync_notifications">Rādīt sinhronizēšanas paziņojumus</string>
+    <string name="sync_complete">Sinhronizēšana pabeigta</string>
     <string name="err_sync_http_request_protocol_exception">Kļūda #20: Neizdevās pareizi uzstādīt HTTP protokola verisju.</string>
     <string name="action_appinfo_privacy_policy">Privātuma politika</string>
     </resources>
