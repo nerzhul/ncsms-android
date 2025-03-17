@@ -115,6 +115,7 @@
     <string name="sync_title">Procés de sincronització</string>
     <string name="sync_inprogress">Sincronització en curs…</string>
     <string name="fatal_error">Error fatal!</string>
+    <string name="notification_channel_name_default">Per defecte</string>
     <string name="notification_channel_name_sync">Sincronitza</string>
 
     <!-- Errors -->
