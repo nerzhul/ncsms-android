@@ -85,7 +85,7 @@
     <string name="title_activity_login">Pierakstīties</string>
 
     <!-- Login -->
-    <string name="prompt_login">Autorizēties</string>
+    <string name="prompt_login">Pieteikumvārds</string>
     <string name="prompt_password">Parole</string>
     <string name="action_sign_in">Pierakstīties vai reģistrēties</string>
     <string name="action_sign_in_short">Pierakstīties</string>
