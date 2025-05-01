@@ -101,7 +101,7 @@
     <string name="ma_title_rate_us">Vērtē mūs!</string>
     <string name="ma_title_add_account">Pievienot kontam</string>
     <string name="ma_title_welcome">Laipni lūdzam!</string>
-    <string name="ma_content_welcome">Esiet sveicināts Nextcloud SMS lietotnē. Šī lietotne ļaus tev sinhronizēt tavus SMS ar tavu Nextcloud serveri izmantojot SMS lietotni.</string>
+    <string name="ma_content_welcome">Laipni lūdzma Nextcloud SMS lietotnē! Šī lietotne ļauj sinhronizēt Tavus SMS ar Tavu Nextcloud serveri izmantojot SMS lietotni.</string>
     <string name="ma_title_remote_account">Attālais konts</string>
     <string name="choose_account">Izvēlieties kontu</string>
 

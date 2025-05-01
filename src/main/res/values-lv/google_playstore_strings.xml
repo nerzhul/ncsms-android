@@ -31,10 +31,10 @@
     <!-- Translations must begin here -->
     <string name="gp_short_description">Nextcloud SMS sinhronizē vietējos SMS savā Nextcloud instancē.</string>
     <string name="gp_description">
-Nextcloud SMS lietotne sinhronizē īsziņas attālā Nextcloud instancē un ļauj no tās lasīt ziņas.
+Nextcloud SMS lietotne sinhronizē īsziņas attālā Nextcloud Serverī un ļauj no tā lasīt ziņas.
 
-Īsziņas sūtīšana no Nextcloud instances notiks nākamajā laidienā.
+Īsziņas sūtīšana no Nextcloud servera ir gaidāma nākotnes laidienā.
 
-Aplikācija ir pilnībā saderīga no Android 4.0 līdz 6.0
+Lietotne ir pilnībā saderīga ar Android 4.0 līdz 6.0
 	</string>
 </resources>
