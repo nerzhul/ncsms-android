@@ -99,7 +99,7 @@
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">Vērtē mūs!</string>
-    <string name="ma_title_add_account">Pievienot kontam</string>
+    <string name="ma_title_add_account">Pievienot kontu</string>
     <string name="ma_title_welcome">Laipni lūdzam!</string>
     <string name="ma_content_welcome">Laipni lūdzma Nextcloud SMS lietotnē! Šī lietotne ļauj sinhronizēt Tavus SMS ar Tavu Nextcloud serveri izmantojot SMS lietotni.</string>
     <string name="ma_title_remote_account">Attālais konts</string>
@@ -117,7 +117,7 @@
 
     <string name="err_sync_craft_http_request">Kļūda #2: Kļūda izveidojot HTTP pieprasījumu</string>
     <string name="err_sync_create_json_null_smslist">Kļūda #5: Null SMS saraksts</string>
-    <string name="err_sync_create_json_request_encoding">Kļūda #7: Neatbalstīta kodēšana ģenerējot pieprasījumu</string>
+    <string name="err_sync_create_json_request_encoding">Kļūda #7: Neatbalstīta kodēšana pieprasījuma izveidošanā</string>
     <string name="err_sync_auth_failed">Kļūda #8: Autentifikācija neizdevās</string>
     <string name="err_sync_no_connection_available">Kļūda #16: Datu savienojums nav pieejams</string>
     <string name="err_proto_v2">Serveris neatbalsta šo iespēju. Jānodrošina, ka servera versija ir vismaz 1.6.</string>
