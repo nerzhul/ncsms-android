@@ -45,7 +45,7 @@
     <string name="title_global_pref_to_general_prefs">Préférences générales</string>
     <string name="summary_global_pref_to_general_prefs">Options de synchronisation</string>
     <string name="summary_notif_prefs">Notifications</string>
-    <string name="pref_header_data_sync">Données &amp; synchronisation</string>
+    <string name="pref_header_data_sync">Données &amp; synchronisées</string>
     <string name="title_activity_general_settings">Préférences générales</string>
 
     <string-array name="pref_sync_frequency_titles">
@@ -122,7 +122,7 @@
     <string name="err_sync_get_smslist">Erreur #1: Données invalides reçues lors de l\'obtention des messages précédents.</string>
     <string name="err_sync_craft_http_request">Erreur #2 : Échec de la création de la requête HTTP</string>
     <string name="err_sync_push_request">Erreur #3 : Échec de la requête de poussé</string>
-    <string name="err_sync_push_request_resp">Erreur #4: Données invalides reçues lors de la synchronisation.</string>
+    <string name="err_sync_push_request_resp">Erreur #4: Données invalides reçues lors de la synchronisation</string>
     <string name="err_sync_create_json_null_smslist">Erreur #6: Liste SMS Nulle</string>
     <string name="err_sync_create_json_put_smslist">Erreur #6: Échec de la création de la requête push</string>
     <string name="err_sync_create_json_request_encoding">Erreur #7: Encodage inconnu à la conversion</string>
@@ -134,8 +134,8 @@
     <string name="err_sync_http_request_resp">Erreur #14: Impossible d\'interpréter la réponse du serveur</string>
     <string name="err_sync_http_request_parse_resp">Erreur #15: Impossible d\'interpréter la réponse du serveur</string>
     <string name="err_sync_no_connection_available">Erreur #16: Aucune connexion data disponible</string>
-    <string name="err_sync_account_unparsable">Error #17: Compte mal configuré. Merci de bien vouloir le reconfigurer.</string>
-    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: L\'application Nextcloud SMS n\'est pas installée ou Nextcloud attend d\'être mis à niveau.</string>
+    <string name="err_sync_account_unparsable">Error #17: Compte mal configuré. Merci de bien vouloir le reconfigurer</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Error #18: L\'application Nextcloud SMS n\'est pas installée ou Nextcloud attend d\'être mis à niveau</string>
     <string name="err_fetch_phonelist">La liste de numéros reçue depuis le serveur est invalide.</string>
     <string name="err_proto_v2">Le serveur ne supporte pas cette fonctionnalité. Assurez-vous que le serveur est au moins en version 1.6.</string>
     <string name="contactinfos_title">Informations sur le contact</string>
