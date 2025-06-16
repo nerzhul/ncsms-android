@@ -88,7 +88,7 @@
     <!-- Login -->
     <string name="prompt_login">Вписване</string>
     <string name="prompt_password">Парола</string>
-    <string name="action_sign_in">Влезане или регистриране</string>
+    <string name="action_sign_in">Вход или регистрация</string>
     <string name="action_sign_in_short">Вписване</string>
     <string name="error_invalid_login">Грешно име или парола</string>
     <string name="error_invalid_password">Тази парола е твърде кратка</string>
