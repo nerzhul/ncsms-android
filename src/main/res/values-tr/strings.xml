@@ -77,7 +77,7 @@
         <item>Asla</item>
     </string-array>
     <string name="pref_push_on_receive">SMS alındığında iletim</string>
-    <string name="pref_sync_wifi">Wi-Fi ile eşitlensin</string>
+    <string name="pref_sync_wifi">Kablosuz ağ ile eşitlensin</string>
     <string name="pref_sync_4g">4G ile eşitlensin</string>
     <string name="pref_sync_3g">3G ile eşitlensin</string>
     <string name="pref_sync_gprs">2.5G (GPRS) ile eşitlensin</string>
