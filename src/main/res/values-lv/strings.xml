@@ -82,13 +82,13 @@
     <string name="pref_sync_gprs">Sinhronizēt izmantojot 2.5G (GPRS)</string>
     <string name="pref_sync_2g">Sinhronizēt izmantojot 2G</string>
     <string name="pref_sync_others">Sinhronizēt izmantojot citus veidus</string>
-    <string name="title_activity_login">Pierakstīties</string>
+    <string name="title_activity_login">Pieteikties</string>
 
     <!-- Login -->
     <string name="prompt_login">Pieteikumvārds</string>
     <string name="prompt_password">Parole</string>
-    <string name="action_sign_in">Pierakstīties vai reģistrēties</string>
-    <string name="action_sign_in_short">Pierakstīties</string>
+    <string name="action_sign_in">Pieteikties vai reģistrēties</string>
+    <string name="action_sign_in_short">Pieteikties</string>
     <string name="error_invalid_login">Lietotājvārds vai parole nav pareiza</string>
     <string name="error_invalid_password">Parole ir pārāk īsa</string>
     <string name="error_field_required">Šis lauks ir obligāts</string>
