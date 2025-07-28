@@ -33,6 +33,12 @@
     <string name="app_name">Nextcloud SMS</string>
     <string name="login_logo">Зображення на сторінці входу</string>
 
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - Швидкий</string>
+    <string name="pref_title_sync_frequency">Частота швидкої синхронізації</string>
+    <string name="pref_title_slow_sync">SMS - повільно та безпечно</string>
+    <string name="pref_title_slow_sync_frequency">Безпечна частота повільної синхронізації</string>
     <string name="action_settings">Налаштування</string>
     <string name="sync_now">Синхронізувати зараз</string>
     <string name="pref_category_sync">Синхронізація</string>
@@ -70,6 +76,7 @@
         <item>24 години</item>
         <item>Ніколи</item>
     </string-array>
+    <string name="pref_push_on_receive">Push SMS при отриманні</string>
     <string name="pref_sync_wifi">Синхронізувати через Wi-Fi</string>
     <string name="pref_sync_4g">Синхронізувати через 4G</string>
     <string name="pref_sync_3g">Синхронізувати через 3G</string>
@@ -95,6 +102,7 @@
     <string name="ma_title_rate_us">Оцініть нас!</string>
     <string name="ma_title_add_account">Додати обліковий запис</string>
     <string name="ma_title_welcome">Вітання</string>
+    <string name="ma_content_welcome">Ласкаво просимо до програми Nextcloud SMS. Ця програма дозволяє синхронізувати ваші SMS-повідомлення з вашим екземпляром Nextcloud за допомогою програми SMS.</string>
     <string name="ma_title_remote_account">Віддалений обліковий запис</string>
     <string name="choose_account">Оберіть обліковий запис</string>
 
@@ -110,8 +118,36 @@
     <string name="notification_channel_name_default">Типово</string>
     <string name="notification_channel_name_sync">Синхронізація</string>
 
+    <!-- Errors -->
+    <string name="err_sync_get_smslist">Помилка #1: Невірні дані, отримані від сервера при отриманні попередніх повідомлень</string>
+    <string name="err_sync_craft_http_request">Помилка #2: Помилка під час створення HTTP-запиту</string>
+    <string name="err_sync_push_request">Помилка #3: Не вдалося виконати push-запит</string>
+    <string name="err_sync_push_request_resp">Помилка #4: Невірні дані, отримані від сервера під час проштовхування даних</string>
+    <string name="err_sync_create_json_null_smslist">Помилка #5: NULL SMS-список</string>
+    <string name="err_sync_create_json_put_smslist">Помилка #6: Помилка під час створення push-запиту</string>
+    <string name="err_sync_create_json_request_encoding">Помилка #7: Непідтримуване кодування при формуванні запиту</string>
+    <string name="err_sync_auth_failed">Помилка #8: Не вдалося пройти автентифікацію</string>
+    <string name="err_sync_http_request_returncode_unhandled">Помилка #9: Сервер встановив необроблений код повернення HTTP</string>
+    <string name="err_sync_http_request_connect">Помилка #11: Не вдається виконати підключення до екземпляра Nextcloud</string>
+    <string name="err_sync_http_request_httpexception">Помилка #12: Не вдається виконати підключення до екземпляра Nextcloud</string>
+    <string name="err_sync_http_request_ioexception">Помилка #13: Не вдається виконати підключення до екземпляра Nextcloud</string>
+    <string name="err_sync_http_request_resp">Помилка #14: Неможливо розібрати відповідь сервера</string>
+    <string name="err_sync_http_request_parse_resp">Помилка #15: Неможливо розібрати відповідь сервера</string>
+    <string name="err_sync_no_connection_available">Помилка #16: Відсутнє з\'єднання для передачі даних</string>
+    <string name="err_sync_account_unparsable">Помилка #17: невірно сформований обліковий запис. Будь ласка, переналаштуйте його</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Помилка #18: SMS-додаток Nextcloud не встановлено або Nextcloud очікує на оновлення</string>
+    <string name="err_fetch_phonelist">Від сервера отримано невірний список контактів.</string>
     <string name="err_proto_v2">Сервер не підтримує таку функцію. Будь ласка, перевірте, чи версія серверу є щонайменше 1.6.</string>
+    <string name="contactinfos_title">Контактна інформація</string>
+    <string name="subtitle_contact_phones">- Контактні телефони</string>
+    <string name="pref_title_bulk_messages">Максимум повідомлень для надсилання за одну синхронізацію</string>
     <string name="contactinfos_list">Список контактів</string>
+    <string name="function_not_available">Ця функція поки що недоступна.</string>
+
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="communicate">Спілкуйтеся</string>
+    <string name="title_activity_main2">Головна2Діяльність</string>
+
     <string name="navigation_drawer_open">Відкрити скриньку налаштувань</string>
     <string name="navigation_drawer_close">Закрити скриньку налаштувань</string>
     <string name="ma_title_my_accounts">Мої облікові записи</string>
@@ -119,15 +155,53 @@
     <string name="cancel">Скасувати</string>
     <string name="understood">Зрозуміло</string>
     <string name="notif_permission_required">Потрібні додаткові повноваження</string>
+    <string name="notif_permission_required_content">Відсутні деякі дозволи для виконання процесу синхронізації. Будь ласка, виправте це в налаштуваннях програми</string>
     <string name="please_fix_it">Будь ласка, виправте це.</string>
     <string name="err_cannot_read_contacts">Неможливо прочитати ваші контакти.</string>
+    <string name="err_cannot_read_sms">Ми не можемо прочитати ваше SMS.</string>
+    <string name="action_appinfo_perms">Інформація про програму та дозволи</string>
     <string name="restore_all_messages">Відновити всі повідомлення</string>
     <string name="account_actions">Дії з обліковим записом</string>
     <string name="error_connection_failed_not_found">Не вдалося встановити з\'єднання, сервер повернув помилку 404 НЕ ЗНАЙДЕНО. Переконайтесь, що ви встановили правильний шлях для вашого примірника хмари Nextcloud.</string>
     <string name="nothing_to_sync">Все синхронізовано</string>
+    <string name="feature_not_already_implemented">Ця функція ще не реалізована і буде доступна найближчим часом.</string>
     <string name="pref_title_minimum_sync_chars">Мінімальна довжина тел. номеру</string>
+    <string name="err_didnt_find_account_restore">Ми не знайшли ваш обліковий запис, щоб відновити ваше повідомлення, це дуже дивна ситуація.</string>
+    <string name="launch_restore">Відновити мої SMS</string>
+    <string name="error_make_default_sms_app">Будь ласка, встановіть цю програму як стандартну програму для SMS, щоб можна було відновити ваші повідомлення. Це обмеження було введено в Android 4.4.</string>
     <string name="fix_permissions">Виправити повноваження</string>
+    <string name="err_kitkat_required">Для використання цієї функції потрібна версія Android 4.4 або новіша.</string>
+    <string name="restore_finished">Відновлення SMS завершено.</string>
+    <string name="x_messages_restored">повідомлення відновлено...</string>
+    <string name="err_no_connection">З\'єднання відсутнє, будь ласка, переконайтеся, що у вас є дійсне з\'єднання для передачі даних.</string>
+    <string name="reinit_sync_cursor">Перезапустити курсор синхронізації</string>
+    <string name="reinit_sync_cursor_confirm">Ви впевнені, що хочете переініціалізувати курсор синхронізації? Це може уповільнити наступну синхронізацію, якщо ми знайдемо багато старих повідомлень, які не синхронізовані з сервером.</string>
     <string name="yes_confirm">Так</string>
     <string name="no_confirm">Ні</string>
+    <string name="pref_show_sync_notifications">Показувати сповіщення про синхронізацію</string>
+    <string name="sync_complete">Синхронізація завершена</string>
+    <string name="err_sync_http_write_failed">Помилка #19: Не вдалося записати HTTP-потік під час надсилання даних на сервер.</string>
+    <string name="err_sync_http_request_protocol_exception">Помилка #20: Не вдалося правильно встановити версію протоколу HTTP.</string>
     <string name="action_appinfo_privacy_policy">Політика конфіденційності</string>
-    </resources>
+    <string name="privacy_policy_large_text">
+«Огляд\n\n»
+
+«Nextcloud SMS — це безкоштовне програмне забезпечення, розроблене його учасниками. Ця політика конфіденційності »
+«має на меті інформувати вас про дані, які збирає ця програма».
+
+«Інформація, яку ми збираємо\n\n»
+
+«Програма збирає лише SMS та журнал дзвінків.\n\n»
+
+«Куди надсилається інформація.\n\n»
+
+«Інформація не надсилається на сервери команди Nextcloud, сервери команди Nextcloud SMS, »
+«будь-які урядові органи чи інші організації, яким ви не хочете її надавати.\n\n»
+
+«Коли ви налаштовуєте обліковий запис Nextcloud у програмі, ви погоджуєтеся з тим, що »
+«власником екземпляра Nextcloud, що ваші дані SMS та журнал дзвінків будуть зберігатися в його інфраструктурі
+під його відповідальність.
+
+Ми не рекомендуємо використовувати публічний або корпоративний обліковий запис екземпляра Nextcloud. Ваша конфіденційність
+повинна бути під вашим контролем на вашому власному екземплярі Nextcloud.</string>
+</resources>
