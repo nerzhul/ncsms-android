@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="login_logo">Nembo ya kuingia</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - Haraka</string>
+    <string name="pref_title_sync_frequency">Usaqwazishaji wa masafa wa haraka</string>
+    <string name="pref_title_slow_sync">SMS - Polepole na Salama</string>
+    <string name="pref_title_slow_sync_frequency">Linda kasi ya Usawazishaji wa masafa</string>
+    <string name="action_settings">Mipangilio</string>
+    <string name="sync_now">Synchronize now</string>
+    <string name="pref_category_sync">Usawazishaji</string>
+    <string name="title_global_pref_to_general_prefs">Mapendeleo ya jumla</string>
+    <string name="summary_global_pref_to_general_prefs">Chaguo za usawazishaji</string>
+    <string name="summary_notif_prefs">Arifa</string>
+    <string name="pref_header_data_sync">Data &amp;; kusawazisha</string>
+    <string name="title_activity_general_settings">Mipangilio ya Jumla</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>Dakika 5</item>
+        <item>Dakika 15</item>
+        <item>Dakika 30</item>
+        <item>Saa 1</item>
+        <item>Masaa 3</item>
+        <item>Masaa 6</item>
+        <item>Masaa 12</item>
+        <item>Masaa 24</item>
+        <item>Kamwe</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Kila SMS haijasawazishwa</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>Saa 1</item>
+        <item>Masaa 3</item>
+        <item>Masaa 6</item>
+        <item>Masaa 12</item>
+        <item>Masaa 24</item>
+        <item>Kamwe</item>
+    </string-array>
+    <string name="pref_push_on_receive">Bonyeza SMS kwenye mapokezi</string>
+    <string name="pref_sync_wifi">Sawazisha katika Wi-Fi</string>
+    <string name="pref_sync_4g">Sawazisha katika 4G</string>
+    <string name="pref_sync_3g">Sawazisha katika 3G</string>
+    <string name="pref_sync_gprs">Sawazisha katika 2.5G (GPRS)</string>
+    <string name="pref_sync_2g">Sawazisha katika 2G</string>
+    <string name="pref_sync_others">Sawazisha katika hali zingine</string>
+    <string name="title_activity_login">Ingia</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Ingia</string>
+    <string name="prompt_password">Nenosiri</string>
+    <string name="action_sign_in">Ingia ao jisajili</string>
+    <string name="action_sign_in_short">Ingia</string>
+    <string name="error_invalid_login">Jina la mtumiaji au nenosiri si sahihi</string>
+    <string name="error_invalid_password">Nenosiri hili ni fupi sana</string>
+    <string name="error_field_required">Sehemu hii inahitajika</string>
+    <string name="prompt_serverURI">Anwani ya seva</string>
+    <string name="error_invalid_server_address">Anwani ya seva si halali</string>
+    <string name="error_connection_failed">Muunganisho umeshindikana, hakikisha hii ni seva sahihi</string>
+    <string name="error_http_connection_failed">Imeshindwa kufanya muunganisho wa HTTP. Tafadhali hakikisha kuna seva ya wavuti</string>
+
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">Tupatie alama!</string>
+    <string name="ma_title_add_account">Ongeza akaunti</string>
+    <string name="ma_title_welcome">Karibu</string>
+    <string name="ma_content_welcome">Karibu kwenye programu ya Nextcloud SMS. Programu hii inakuwezesha kusawazisha SMS zako na mfano wako wa Nextcloud kwa kutumia programu ya SMS.</string>
+    <string name="ma_title_remote_account">Akaunti ya mbali</string>
+    <string name="choose_account">Chagua akaunti</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Chagua akaunti</string>
+    <string name="title_activity_select_contact">Chagua mawasiliano</string>
+    <string name="no_account_configured">Hakuna akaunti iliyosanidiwa.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">Mchakato wa kusawazisha</string>
+    <string name="sync_inprogress">Usawazishaji unaendelea...</string>
+    <string name="fatal_error">Hitilafu mbaya!</string>
+    <string name="notification_channel_name_default">Chaguo msingi</string>
+    <string name="notification_channel_name_sync">Sawazisha</string>
+
+    <!-- Errors -->
+    <string name="err_sync_get_smslist">Hitilafu #1: Data batili imepokelewa kutoka kwa seva wakati wa kupata ujumbe wa awali</string>
+    <string name="err_sync_craft_http_request">Hitilafu #2: Hitilafu wakati wa kuunda ombi la HTTP</string>
+    <string name="err_sync_push_request">Hitilafu #3: Ombi la kusukuma limeshindwa</string>
+    <string name="err_sync_push_request_resp">Hitilafu #4: Data batili imepokelewa kutoka kwa seva wakati wa kusukuma data</string>
+    <string name="err_sync_create_json_null_smslist">Hitilafu #5: Orodha ya SMS NULL</string>
+    <string name="err_sync_create_json_put_smslist">Hitilafu #6: Hitilafu wakati wa kuunda ombi la kusukuma</string>
+    <string name="err_sync_create_json_request_encoding">Hitilafu #7: Usimbaji usioungwa mkono wakati wa kuunda ombi</string>
+    <string name="err_sync_auth_failed">Hitilafu #8: Uthibitishaji umeshindwa</string>
+    <string name="err_sync_http_request_returncode_unhandled">Hitilafu #9: Seva imeweka msimbo wa kurudi wa HTTP usioshughulikiwa</string>
+    <string name="err_sync_http_request_connect">Hitilafu #11: Haiwezi kuunganisha kwa mfano wa Nextcloud</string>
+    <string name="err_sync_http_request_httpexception">Hitilafu #12: Imeshindwa kuunganisha na mfano wa Nextcloud</string>
+    <string name="err_sync_http_request_ioexception">Hitilafu #13: Imeshindwa kuunganisha na mfano wa Nextcloud</string>
+    <string name="err_sync_http_request_resp">Hitilafu #14: Imeshindwa kuchanganua majibu ya seva</string>
+    <string name="err_sync_http_request_parse_resp">Hitilafu #15: Imeshindwa kuchambua majibu ya seva</string>
+    <string name="err_sync_no_connection_available">Hitilafu #16: Hakuna muunganisho wa data unaopatikana</string>
+    <string name="err_sync_account_unparsable">Hitilafu #17: akaunti isiyosahihi. Tafadhali irekebishe upya</string>
+    <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Hitilafu #18: Programu ya SMS ya Nextcloud haijasakinishwa au Nextcloud inasubiri kusasishwa</string>
+    <string name="err_fetch_phonelist">Orodha ya simu batili imepokelewa kutoka kwa seva.</string>
+    <string name="err_proto_v2">Seva haiungi kipengele hiki. Hakikisha toleo la seva ni angalau 1.6.</string>
+    <string name="contactinfos_title">Maelezo ya mawasiliano</string>
+    <string name="subtitle_contact_phones">- Simu za mawasiliano</string>
+    <string name="pref_title_bulk_messages">Ujumbe wa juu zaidi wa kutuma kwa kila usawazishaji</string>
+    <string name="contactinfos_list">Orodha ya mawasiliano</string>
+    <string name="function_not_available">Kazi hii haipatikani bado.</string>
+
+    <string name="ui_notification_title_template">SMS za Nextcloud : %1$s</string>
+    <string name="communicate">Wasiliana</string>
+    <string name="title_activity_main2">Shughuli kuu2</string>
+
+    <string name="navigation_drawer_open">Fungua droo ya urambazaji</string>
+    <string name="navigation_drawer_close">Funga droo ya urambazaji</string>
+    <string name="ma_title_my_accounts">Akaunti zangu</string>
+    <string name="ma_content_swipeaction">Telezesha kidole kutoka kushoto kwenda kulia ili kufikia menyu ya kitendo.</string>
+    <string name="cancel">Ghairi</string>
+    <string name="understood">Inaeleweka</string>
+    <string name="notif_permission_required">Ruhusa zinazohitajika</string>
+    <string name="notif_permission_required_content">Baadhi ya ruhusa zinakosekana ili kufanya mchakato wa usawazishaji. Tafadhali rekebisha katika mipangilio ya programu</string>
+    <string name="please_fix_it">Tafadhali rekebisha.</string>
+    <string name="err_cannot_read_contacts">Hatuwezi kusoma mawasiliano yako.</string>
+    <string name="err_cannot_read_sms">Hatuwezi kusoma SMS yako.</string>
+    <string name="action_appinfo_perms">Maelezo ya programu na ruhusa</string>
+    <string name="restore_all_messages">Rejesha jumbe zote</string>
+    <string name="account_actions">Hatua za akaunti</string>
+    <string name="error_connection_failed_not_found">Muunganisho umeshindikana, seva inarudisha 404 NOT FOUND. Hakikisha umeweka njia sahihi kwa instance yako ya Nextcloud.</string>
+    <string name="nothing_to_sync">Hakuna kitu cha kusawazisha.</string>
+    <string name="feature_not_already_implemented">Kipengele hiki hakijatekelezwa tayari na kitapatikana hivi karibuni.</string>
+    <string name="pref_title_minimum_sync_chars">Urefu wa chini wa nambari ya simu</string>
+    <string name="err_didnt_find_account_restore">Hatukupata akaunti yako ili kurejesha ujumbe wako, hii ni hali ya ajabu sana.</string>
+    <string name="launch_restore">Rejesha SMS yangu</string>
+    <string name="error_make_default_sms_app">Tafadhali fanya programu hii kuwa programu chaguo-msingi ya SMS ili kuruhusu kurejesha ujumbe wako. Kizuizi hiki kimeanzishwa na Android 4.4.</string>
+    <string name="fix_permissions">Rekebisha ruhusa</string>
+    <string name="err_kitkat_required">Android 4.4 au zaidi inahitajika ili kutumia kipengele hiki.</string>
+    <string name="restore_finished">Urejeshaji wa SMS sasa umekamilika.</string>
+    <string name="x_messages_restored">Jumbe zimerejeshwa  &#8230;</string>
+    <string name="err_no_connection">Hakuna muunganisho unaopatikana, tafadhali hakikisha una muunganisho wa data halali.</string>
+    <string name="reinit_sync_cursor">Anzisha upya kielekezi cha usawazishaji</string>
+    <string name="reinit_sync_cursor_confirm">Je, una uhakika unataka kuanzisha upya kielekezi cha usawazishaji? Hii inaweza kupunguza kasi ya usawazishaji ujao ikiwa tutapata jumbe nyingi za zamani ambazo hazijasawazishwa na seva.</string>
+    <string name="yes_confirm">Ndiyo</string>
+    <string name="no_confirm">Hapana</string>
+    <string name="pref_show_sync_notifications">Onesha arifa za usawazishaji</string>
+    <string name="sync_complete">Usawazishaji umekamilika</string>
+    <string name="err_sync_http_write_failed">Hitilafu #19: Imeshindwa kuandika mkondo wa HTTP wakati wa kusukuma data kwenye seva.</string>
+    <string name="err_sync_http_request_protocol_exception">Hitilafu #20: Imeshindwa kuweka toleo la itifaki ya HTTP ipasavyo.</string>
+    <string name="action_appinfo_privacy_policy">Sheria ya faragha</string>
+    <string name="privacy_policy_large_text">
+\"Muhtasari\n\n\"
+
+\"Nextcloud SMS ni programu isiyolipishwa iliyotengenezwa na wachangiaji wake. Sera hii ya faragha \"
+\"inakusudiwa kukujulisha kuhusu data iliyokusanywa na programu hii.\"
+
+\"Maelezo tunayokusanya\n\n\"
+
+\"SMS na rekodi za simu pekee ndizo zinazokusanywa na programu.\n\n\"
+
+\"Maelezo yanapotumwa.\n\n\"
+
+\"Taarifa hazitumwi kwa seva za timu ya Nextcloud wala seva za timu ya Nextcloud SMS wala\"
+\"serikali yoyote wala chombo kingine usichokitaka.\n\n\"
+
+\"Unaposanidi akaunti ya Nextcloud katika programu, unakubaliana na Nextcloud \"
+\"Mmiliki wa mfano kwamba data yako ya SMS na kumbukumbu ya simu itahifadhiwa katika miundombinu yake\"
+\"chini ya wajibu wake.\n\n\"
+
+\"Hatupendekezi kutumia akaunti ya umma au ya kampuni ya Nextcloud. Faragha yako \"
+\"lazima iwe chini ya udhibiti wako kwa mfano wako mwenyewe wa Nextcloud.\n\n\"
+
+</string>
+</resources>
