@@ -46,7 +46,7 @@
     <string name="summary_global_pref_to_general_prefs">Sinhronizēšanas iespējas</string>
     <string name="summary_notif_prefs">Paziņojumi</string>
     <string name="pref_header_data_sync">Datu &amp; sinhronizēšana</string>
-    <string name="title_activity_general_settings">Vispārīgie iestatījumi</string>
+    <string name="title_activity_general_settings">Vispārīgi iestatījumi</string>
 
     <string-array name="pref_sync_frequency_titles">
         <item>5 minūtes</item>
