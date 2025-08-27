@@ -131,7 +131,7 @@
     <string name="understood">Sapratu</string>
     <string name="notif_permission_required">Nepieciešamās atļaujas</string>
     <string name="please_fix_it">Lūdzu, izlabojiet to.</string>
-    <string name="err_cannot_read_sms">Mēs nevaram nolasīt jūsu SMS.</string>
+    <string name="err_cannot_read_sms">Mēs nevaram nolasīt Tavas SMS.</string>
     <string name="restore_all_messages">Atjaunot visus ziņojumus</string>
     <string name="account_actions">Konta darbības</string>
     <string name="nothing_to_sync">Nav nekā, ko sinhronizēt.</string>
