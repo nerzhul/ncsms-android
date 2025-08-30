@@ -95,7 +95,7 @@
     <string name="prompt_serverURI">Servera adrese</string>
     <string name="error_invalid_server_address">Nederīgs servera adrese</string>
     <string name="error_connection_failed">Savienojums neizdevās, pārliecinies vai šis ir īstais serveris</string>
-    <string name="error_http_connection_failed">Neizdevās izveidot HTTP savienojumu. Lūdzu pārliecinies vai tur ir web serveris</string>
+    <string name="error_http_connection_failed">Neizdevās izveidot HTTP savienojumu. Lūgums nodrošināt, ka tur ir tīmekļa serveris</string>
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">Vērtē mūs!</string>
@@ -103,11 +103,11 @@
     <string name="ma_title_welcome">Laipni lūdzam!</string>
     <string name="ma_content_welcome">Laipni lūdzma Nextcloud SMS lietotnē! Šī lietotne ļauj sinhronizēt Tavus SMS ar Tavu Nextcloud serveri izmantojot SMS lietotni.</string>
     <string name="ma_title_remote_account">Attālais konts</string>
-    <string name="choose_account">Izvēlieties kontu</string>
+    <string name="choose_account">Izvēlēties kontu</string>
 
     <!-- Restauration -->
-    <string name="title_activity_select_account">Izvēlieties kontu</string>
-    <string name="title_activity_select_contact">Izvēlieties kontaktpersonu</string>
+    <string name="title_activity_select_account">Izvēlēties kontu</string>
+    <string name="title_activity_select_contact">Atlasīt kontaktpersonu</string>
     <string name="no_account_configured">Nav konfigurēts konts.</string>
 
     <!-- Notifications -->
@@ -130,7 +130,7 @@
     <string name="cancel">Atcelt</string>
     <string name="understood">Sapratu</string>
     <string name="notif_permission_required">Nepieciešamās atļaujas</string>
-    <string name="please_fix_it">Lūdzu, izlabojiet to.</string>
+    <string name="please_fix_it">Lūgums novērst to.</string>
     <string name="err_cannot_read_sms">Mēs nevaram nolasīt Tavas SMS.</string>
     <string name="restore_all_messages">Atjaunot visus ziņojumus</string>
     <string name="account_actions">Konta darbības</string>
@@ -138,7 +138,7 @@
     <string name="pref_title_minimum_sync_chars">Mazākais pieļaujamais tālruņa numura garums</string>
     <string name="err_didnt_find_account_restore">Mēs neatradām tavu kontu lai atjaunotu tavas ziņas... Šī ir ļoti savāda situācija.</string>
     <string name="launch_restore">Atjaunot manas SMS</string>
-    <string name="error_make_default_sms_app">Lūdzu uzstādi šo lietotni kā noklusējuma SMS lietotni, lai ļautu tai atjaunot tavas ziņas. Šī limitācija nāca spēka Android 4.4.</string>
+    <string name="error_make_default_sms_app">Lūgums padarīt šo lietotni par noklusējuma SMS lietotni, lai ļautu atjaunot Tavas ziņas. Šis ierobežojums ir ieviests Android 4.4.</string>
     <string name="fix_permissions">Labot atļaujas</string>
     <string name="err_kitkat_required">Android 4.4 vai jaunāks ir vajadzīgs lai izmantotu šo iespēju.</string>
     <string name="restore_finished">SMS atjaunošana tagad ir pabeigta.</string>
