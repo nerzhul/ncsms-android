@@ -190,12 +190,12 @@
 
 \"Informations que nous collectons\"
 
-\"Seuls les journaux de SMS et d\'appels sont collectés par l\'application.\"
+\"Seuls les logs de SMS et d\'appels sont collectés par l\'application.\"
 
 \"Où sont envoyées ces informations ?\"
 
 \"Ces informations ne sont envoyées ni aux serveurs de l’équipe Nextcloud ni aux serveurs de l’équipe de Nextcloud SMS, ni à un quelconque gouvernement, ni à d\'autres organismes que vous n\'avez pas autorisé\"
-\"Lorsque vous configurez un compte Nextcloud dans l\'application vous convenez implicitement avec le détenteur de l\'instance Nextcloud que les journaux de SMS et d\'appels sont conservés dans son infrastructure et sous sa responsabilité.\"
+\"Lorsque vous configurez un compte Nextcloud dans l\'application vous convenez implicitement avec le détenteur de l\'instance Nextcloud que les logs de SMS et d\'appels sont conservés dans son infrastructure et sous sa responsabilité.\"
 
 \"Nous ne recommandons pas l\'utilisation d\'un compte sur une instance publique ou appartenant à une entreprise. Votre vie privée devrait être sous votre contrôle sur votre propre instance Nextcloud.\"</string>
 </resources>
