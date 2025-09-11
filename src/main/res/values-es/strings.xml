@@ -115,7 +115,7 @@
     <string name="sync_title">Proceso de sincronización</string>
     <string name="sync_inprogress">Sincronización en curso …</string>
     <string name="fatal_error">!Error irremediable! </string>
-    <string name="notification_channel_name_default">Por defecto</string>
+    <string name="notification_channel_name_default">Predeterminado</string>
     <string name="notification_channel_name_sync">Sincronizar</string>
 
     <!-- Errors -->
