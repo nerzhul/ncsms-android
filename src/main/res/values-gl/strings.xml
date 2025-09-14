@@ -35,9 +35,9 @@
 
     <!-- Translations must begin there -->
     <!-- Preferences -->
-    <string name="pref_title_sync">SMS – Rápido</string>
+    <string name="pref_title_sync">SMS — Rápido</string>
     <string name="pref_title_sync_frequency">Frecuencia de sincronización rápida</string>
-    <string name="pref_title_slow_sync">SMS – Lento e seguro</string>
+    <string name="pref_title_slow_sync">SMS — Lento e seguro</string>
     <string name="pref_title_slow_sync_frequency">Frecuencia de sincronización lenta e segura</string>
     <string name="action_settings">Axustes</string>
     <string name="sync_now">Sincronizar agora</string>
@@ -139,7 +139,7 @@
     <string name="err_fetch_phonelist">A lista de teléfonos recibida do servidor é incorrecta.</string>
     <string name="err_proto_v2">O servidor non admite esta funcionalidade. Asegúrese de que a versión do servidor sexa cando menos a 1.6.</string>
     <string name="contactinfos_title">Información dos contactos</string>
-    <string name="subtitle_contact_phones">– Teléfonos dos contactos</string>
+    <string name="subtitle_contact_phones">- Teléfonos dos contactos</string>
     <string name="pref_title_bulk_messages">Número máximo de mensaxes a enviar por sincronización</string>
     <string name="contactinfos_list">Lista de contactos</string>
     <string name="function_not_available">Esta función aínda non está dispoñíbel.</string>
