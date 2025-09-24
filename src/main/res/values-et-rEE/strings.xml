@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ /*
+ * Copyright (c) 2014-2015, Loic Blot <loic.blot@unix-experience.fr>
+ * All rights reserved.
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+ * OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ * HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+ * LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+ * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ */
+-->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+    <!-- Translation version, reference for translators -->
+    <string name="translation_version">7</string>
+
+    <!-- System strings, do not translate -->
+    <string name="app_name">Nextcloud SMS</string>
+    <string name="login_logo">Sisselogimise logo</string>
+
+    <!-- Translations must begin there -->
+    <!-- Preferences -->
+    <string name="pref_title_sync">SMS - kiire</string>
+    <string name="pref_title_sync_frequency">Kiire sünkroonimine</string>
+    <string name="pref_title_slow_sync">SMS - aeglane ja turvaline</string>
+    <string name="pref_title_slow_sync_frequency">Aeglane, aga turvaline sünkroonimine</string>
+    <string name="action_settings">Seaded</string>
+    <string name="sync_now">Sünkrooni kohe</string>
+    <string name="pref_category_sync">Sünkroniseerimine</string>
+    <string name="title_global_pref_to_general_prefs">Üldised eelistused</string>
+    <string name="summary_global_pref_to_general_prefs">Sünkroonimise eelistused</string>
+    <string name="summary_notif_prefs">Teavitused</string>
+    <string name="pref_header_data_sync">Andmed &amp; sünkroniseerimine</string>
+    <string name="title_activity_general_settings">Üldised seadistused</string>
+
+    <string-array name="pref_sync_frequency_titles">
+        <item>5 minutit</item>
+        <item>15 minutit</item>
+        <item>30 minutit</item>
+        <item>1 tund</item>
+        <item>3 tundi</item>
+        <item>6 tundi</item>
+        <item>12 tundi</item>
+        <item>24 tundi</item>
+        <item>Mitte kunagi</item>
+    </string-array>
+    <string-array name="pref_sync_bulk_max_messages_titles">
+        <item>100 SMS</item>
+        <item>1000 SMS</item>
+        <item>2000 SMS</item>
+        <item>5000 SMS</item>
+        <item>10000 SMS</item>
+        <item>25000 SMS</item>
+        <item>Iga SMS pole sünkroonitud</item>
+    </string-array>
+    <string-array name="pref_slow_sync_frequency_titles">
+        <item>1 tund</item>
+        <item>3 tundi</item>
+        <item>6 tundi</item>
+        <item>12 tundi</item>
+        <item>24 tundi</item>
+        <item>Mitte kunagi</item>
+    </string-array>
+    <string name="pref_sync_wifi">Sünkrooni WiFi võrgus</string>
+    <string name="pref_sync_4g">Sünkrooni 4G võrgus</string>
+    <string name="pref_sync_3g">Sünkrooni 3G võrgus</string>
+    <string name="pref_sync_gprs">Sünkrooni 2.5G (GPRS) võrgus</string>
+    <string name="pref_sync_2g">Sünkrooni 2G võrgus</string>
+    <string name="title_activity_login">Logi sisse</string>
+
+    <!-- Login -->
+    <string name="prompt_login">Logi sisse</string>
+    <string name="prompt_password">Salasõna</string>
+    <string name="action_sign_in">Logi sisse või registreeru</string>
+    <string name="action_sign_in_short">Logi sisse</string>
+    <string name="error_invalid_login">Kasutajanimi või salasõne pole õiged</string>
+    <string name="error_invalid_password">Salasõna on liiga lühike</string>
+    <string name="error_field_required">See väli on kohustuslik</string>
+    <string name="prompt_serverURI">Serveri aadress</string>
+    <string name="error_invalid_server_address">Vigane serveri aadress</string>
+    <string name="ma_title_add_account">Lisa kasutajakonto</string>
+    <string name="ma_title_welcome">Tere tulemast</string>
+    <string name="choose_account">Vali konto</string>
+
+    <!-- Restauration -->
+    <string name="title_activity_select_account">Vali kasutajakonto</string>
+    <string name="sync_inprogress">Sünkroonimine on pooleli…</string>
+    <string name="notification_channel_name_default">Vaikimisi</string>
+    <string name="notification_channel_name_sync">Sünkrooni</string>
+
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
+    <string name="navigation_drawer_open">Ava menüü</string>
+    <string name="navigation_drawer_close">Sulge menüü</string>
+    <string name="cancel">Loobu</string>
+    <string name="account_actions">Kasutajakonto tegevused</string>
+    <string name="yes_confirm">Jah</string>
+    <string name="no_confirm">Ei</string>
+    <string name="pref_show_sync_notifications">Näita sünkroniseerimise teavitusi</string>
+    <string name="sync_complete">Sünkroniseerimine on lõppenud</string>
+    <string name="action_appinfo_privacy_policy">Privaatsusreeglid</string>
+    </resources>
