@@ -139,7 +139,7 @@
     <string name="err_fetch_phonelist">Érvénytelen telefonlista fogadva a kiszolgálótól.</string>
     <string name="err_proto_v2">A kiszolgáló nem támogatja ezt a funkciót. Győződjön meg róla, hogy a kiszolgáló legalább 1.6-os verziója van fent.</string>
     <string name="contactinfos_title">Kapcsolatinformációk</string>
-    <string name="subtitle_contact_phones"> – Névjegyek telefonszámai</string>
+    <string name="subtitle_contact_phones">- Névjegyek telefonszámai</string>
     <string name="pref_title_bulk_messages">Maximálisan küldendő üzenetek száma szinkronizálásonként</string>
     <string name="contactinfos_list">Kapcsolati lista</string>
     <string name="function_not_available">Ez a funkció még nem érhető el.</string>
