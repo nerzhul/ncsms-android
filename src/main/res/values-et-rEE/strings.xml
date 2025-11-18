@@ -81,25 +81,35 @@
     <string name="pref_sync_3g">Sünkrooni 3G võrgus</string>
     <string name="pref_sync_gprs">Sünkrooni 2.5G (GPRS) võrgus</string>
     <string name="pref_sync_2g">Sünkrooni 2G võrgus</string>
+    <string name="pref_sync_others">Sünkrooni muudes režiimised</string>
     <string name="title_activity_login">Logi sisse</string>
 
     <!-- Login -->
-    <string name="prompt_login">Logi sisse</string>
+    <string name="prompt_login">Kasutajanimi</string>
     <string name="prompt_password">Salasõna</string>
     <string name="action_sign_in">Logi sisse või registreeru</string>
     <string name="action_sign_in_short">Logi sisse</string>
-    <string name="error_invalid_login">Kasutajanimi või salasõne pole õiged</string>
+    <string name="error_invalid_login">Kasutajanimi või salasõna pole õiged</string>
     <string name="error_invalid_password">Salasõna on liiga lühike</string>
     <string name="error_field_required">See väli on kohustuslik</string>
     <string name="prompt_serverURI">Serveri aadress</string>
     <string name="error_invalid_server_address">Vigane serveri aadress</string>
+    <string name="error_connection_failed">Ühendamine ei õnnestunud, palun kontrolli, et see ikka oli õige server</string>
+    <!-- Main activity -->
+    <string name="ma_title_rate_us">Hinda meid!</string>
     <string name="ma_title_add_account">Lisa kasutajakonto</string>
     <string name="ma_title_welcome">Tere tulemast</string>
     <string name="choose_account">Vali konto</string>
 
     <!-- Restauration -->
     <string name="title_activity_select_account">Vali kasutajakonto</string>
+    <string name="title_activity_select_contact">Vali kontakt</string>
+    <string name="no_account_configured">Ühtegi kasutajakontot pole seadistatud.</string>
+
+    <!-- Notifications -->
+    <string name="sync_title">Sünkroonimisprotsess</string>
     <string name="sync_inprogress">Sünkroonimine on pooleli…</string>
+    <string name="fatal_error">Lõplik viga!</string>
     <string name="notification_channel_name_default">Vaikimisi</string>
     <string name="notification_channel_name_sync">Sünkrooni</string>
 
