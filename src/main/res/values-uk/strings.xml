@@ -137,7 +137,7 @@
     <string name="err_sync_account_unparsable">Помилка #17: невірно сформований обліковий запис. Будь ласка, переналаштуйте його</string>
     <string name="err_sync_ocsms_not_installed_or_oc_upgrade_required">Помилка #18: SMS-додаток Nextcloud не встановлено або Nextcloud очікує на оновлення</string>
     <string name="err_fetch_phonelist">Від сервера отримано невірний список контактів.</string>
-    <string name="err_proto_v2">Сервер не підтримує таку функцію. Будь ласка, перевірте, чи версія серверу є щонайменше 1.6.</string>
+    <string name="err_proto_v2">Сервер не підтримує таку функцію. Будь ласка, перевірте, чи версія серверу є 1.6 або більше.</string>
     <string name="contactinfos_title">Контактна інформація</string>
     <string name="subtitle_contact_phones">- Контактні телефони</string>
     <string name="pref_title_bulk_messages">Максимум повідомлень для надсилання за одну синхронізацію</string>
