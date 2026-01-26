@@ -45,7 +45,7 @@
     <string name="title_global_pref_to_general_prefs">ئادەتتىكى مايىللىق</string>
     <string name="summary_global_pref_to_general_prefs">ماسقەدەملەش تاللانمىلىرى</string>
     <string name="summary_notif_prefs">ئۇقتۇرۇش</string>
-    <string name="pref_header_data_sync">سانلىق مەلۇمات ۋە ماسقەدەملەش</string>
+    <string name="pref_header_data_sync">سانلىق مەلۇمات &amp; ماسقەدەملەش</string>
     <string name="title_activity_general_settings">ئادەتتىكى تەڭشەكلەر</string>
 
     <string-array name="pref_sync_frequency_titles">
@@ -144,7 +144,7 @@
     <string name="contactinfos_list">ئالاقىلىشىش تىزىملىكى</string>
     <string name="function_not_available">بۇ ئىقتىدار تېخىچە يوق.</string>
 
-    <string name="ui_notification_title_template">Nextcloud SMS:% 1 $ s</string>
+    <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
     <string name="communicate">ئالاقىلىشىڭ</string>
     <string name="title_activity_main2">Main2Activity</string>
 
@@ -172,7 +172,7 @@
     <string name="fix_permissions">ئىجازەتنى ئوڭشاڭ</string>
     <string name="err_kitkat_required">بۇ ئىقتىدارنى ئىشلىتىش ئۈچۈن ئاندىرويىد 4.4 ياكى ئۇنىڭدىن يۇقىرى نەشرى تەلەپ قىلىنىدۇ.</string>
     <string name="restore_finished">قىسقا ئۇچۇرنى ئەسلىگە كەلتۈرۈش ھازىر تاماملاندى.</string>
-    <string name="x_messages_restored">ئۇچۇرلار ئەسلىگە كەلتۈرۈلدى…</string>
+    <string name="x_messages_restored">ئۇچۇرلار ئەسلىگە كەلتۈرۈلدى &#8230;</string>
     <string name="err_no_connection">ئۇلىنىش يوق ، ئىناۋەتلىك سانلىق مەلۇمات ئۇلىنىشىڭىزغا كاپالەتلىك قىلىڭ.</string>
     <string name="reinit_sync_cursor">ماس قەدەملىك نۇر بەلگىنى قايتا قوزغىتىڭ</string>
     <string name="reinit_sync_cursor_confirm">ماس قەدەملىك نۇر بەلگىنى قايتا قوزغىتىشنى خالامسىز؟ مۇلازىمېتىر بىلەن ماسلاشمىغان نۇرغۇن كونا ئۇچۇرلارنى بايقىساق ، كېيىنكى قەدەمداشلىقنى ئاستىلىتىدۇ.</string>
@@ -183,27 +183,23 @@
     <string name="err_sync_http_write_failed">خاتالىق # 19: سانلىق مەلۇماتنى مۇلازىمېتىرغا ئىتتىرگەندە HTTP ئېقىمىنى يېزىش مەغلۇب بولدى.</string>
     <string name="err_sync_http_request_protocol_exception">خاتالىق # 20: HTTP كېلىشىم نۇسخىسىنى توغرا تەڭشىيەلمىدى.</string>
     <string name="action_appinfo_privacy_policy">مەخپىيەتلىك تۈزۈمى</string>
-    <string name="privacy_policy_large_text">
-        "ئومۇمىي چۈشەنچە \ n \ n"
+    <string name="privacy_policy_large_text">\"ئومۇمىي چۈشەنچە\n\n\"
 
-        "Nextcloud قىسقا ئۇچۇر تۆھپىكارلىرى ئىجاد قىلغان ھەقسىز يۇمشاق دېتال. بۇ مەخپىيەتلىك تۈزۈمى".
-        "بۇ پروگرامما توپلىغان سانلىق مەلۇماتلارنى سىزگە بىلدۈرۈشنى مەقسەت قىلىدۇ."
+\"Nextcloud SMS ئۇنىڭ تۆھپىكارلىرى تەرىپىدىن ئىجاد قىلىنغان ھەقسىز يۇمشاق دېتال. بۇ مەخپىيەتلىك سىياسىتى \"
+\"بۇ ئەپ توپلىغان سانلىق مەلۇماتلار توغرىسىدا سىزگە ئۇچۇر بېرىش ئۈچۈندۇر.\"
 
-        "بىز توپلايدىغان ئۇچۇرلار \ n \ n"
+\"بىز توپلىغان ئۇچۇرلار\n\n\"
 
-        "پەقەت قىسقا ئۇچۇر ۋە چاقىرىش خاتىرىسىنىلا توپلايدۇ. \ N \ n"
+\"ئەپ پەقەت SMS ۋە تېلېفون خاتىرىسىنى توپلايدۇ.\n\n\"
 
-        "ئۇچۇر قەيەرگە ئەۋەتىلىدۇ. \ N \ n"
+\"ئۇچۇر ئەۋەتىلگەن جاي.\n\n\"
 
-        «ئۇچۇر Nextcloud گۇرۇپپا مۇلازىمېتىرىغا ياكى Nextcloud قىسقا ئۇچۇر گۇرۇپپىسىنىڭ مۇلازىمېتىرىغا ئەۋەتىلمەيدۇ».
-        "سىز خالىمايدىغان ھەر قانداق ھۆكۈمەت ياكى باشقا ئورۇن. \ n \ n"
+\"ئۇچۇرلار Nextcloud گۇرۇپپا سېرۋېرلىرىغا، Nextcloud SMS گۇرۇپپا سېرۋېرلىرىغا، ياكى \"
+\"ھېچقانداق ھۆكۈمەتكە ياكى سىز خالىمىغان باشقا ئورۇنغا ئەۋەتىلمەيدۇ.\n\n\"
 
-        «قوللىنىشچان پروگراممىدا Nextcloud ھېساباتىنى تەڭشىگەندە ، Nextcloud غا قوشۇلىسىز».
-        «مەسىلەن ، قىسقا ئۇچۇر ۋە چاقىرىش خاتىرىسى سانلىق مەلۇماتلىرى ئۇنىڭ ئۇل ئەسلىھەلىرىدە ساقلىنىدۇ».
-        "ئۇنىڭ مەسئۇلىيىتى ئاستىدا. \ n \ n"
+\"ئەپتە Nextcloud ھېساباتىنى تەڭشىگەندە، Nextcloud \"
+\"ئەپ ئىگىسى بىلەن SMS ۋە تېلېفون خاتىرىسى سانلىق مەلۇماتلىرىڭىزنىڭ ئۇنىڭ ئاساسىي قۇرۇلمىسىدا ساقلىنىدىغانلىقىغا قوشۇلىسىز.\n\n\"
 
-        «بىز ئاممىۋى ياكى شىركەت Nextcloud ئۈلگە ھېساباتىنى ئىشلىتىشنى تەۋسىيە قىلمايمىز. مەخپىيەتلىكىڭىز».
-        "چوقۇم ئۆزىڭىزنىڭ Nextcloud مىسالىدا كونتروللۇقىڭىزدا بولۇشى كېرەك. \ n \ n"
-
-    </string>
+\"ئاممىۋى ياكى شىركەت Nextcloud مىسال ھېساباتىنى ئىشلىتىشنى تەۋسىيە قىلمايمىز. مەخپىيەتلىكىڭىز \"
+\"ئۆزىڭىزنىڭ Nextcloud مىسالىڭىزدا كونترول قىلىنىشى كېرەك.\n\n\"</string>
 </resources>
