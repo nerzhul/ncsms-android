@@ -155,7 +155,7 @@
     <string name="cancel">Скасувати</string>
     <string name="understood">Зрозуміло</string>
     <string name="notif_permission_required">Потрібні додаткові повноваження</string>
-    <string name="notif_permission_required_content">Відсутні деякі дозволи для виконання процесу синхронізації. Будь ласка, виправте це в налаштуваннях програми</string>
+    <string name="notif_permission_required_content">Відсутні деякі дозволи для виконання процесу синхронізації. Будь ласка, виправте це в налаштуваннях застосунку.</string>
     <string name="please_fix_it">Будь ласка, виправте це.</string>
     <string name="err_cannot_read_contacts">Неможливо прочитати ваші контакти.</string>
     <string name="err_cannot_read_sms">Ми не можемо прочитати ваше SMS.</string>
