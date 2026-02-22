@@ -97,6 +97,7 @@
 
     <!-- Restauration -->
     <string name="title_activity_select_account">Аккаунт сонгох</string>
+    <string name="notification_channel_name_default">Өгөгдмөл</string>
     <string name="subtitle_contact_phones">Утаны жагсаалт</string>
     <string name="contactinfos_list">холбоо барих жагсаалт</string>
     <string name="communicate">Харилцах</string>
@@ -114,4 +115,5 @@
     <string name="pref_title_minimum_sync_chars">Хамгийн бага утасны дугаар урт нь</string>
     <string name="yes_confirm">Тийм</string>
     <string name="no_confirm">Үгүй</string>
+    <string name="action_appinfo_privacy_policy">Нууцлалын бодлого</string>
     </resources>
