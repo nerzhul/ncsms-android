@@ -43,7 +43,7 @@
     <string name="sync_now">Jetzt synchronisieren</string>
     <string name="pref_category_sync">Synchronisierung</string>
     <string name="title_global_pref_to_general_prefs">Allgemeine Einstellungen</string>
-    <string name="summary_global_pref_to_general_prefs">Sync-Einstellungen</string>
+    <string name="summary_global_pref_to_general_prefs">Synchronisations-Einstellungen</string>
     <string name="summary_notif_prefs">Benachrichtigungen</string>
     <string name="pref_header_data_sync">Daten &amp; Sync</string>
     <string name="title_activity_general_settings">Allgemeine Einstellungen</string>
@@ -61,11 +61,11 @@
     </string-array>
     <string-array name="pref_sync_bulk_max_messages_titles">
         <item>100 SMS</item>
-        <item>1000 SMS</item>
-        <item>2000 SMS</item>
-        <item>5000 SMS</item>
-        <item>10000 SMS</item>
-        <item>25000 SMS</item>
+        <item>1.000 SMS</item>
+        <item>2.000 SMS</item>
+        <item>5.000 SMS</item>
+        <item>10.000 SMS</item>
+        <item>25.000 SMS</item>
         <item>Noch nicht alle SMS synchronisiert</item>
     </string-array>
     <string-array name="pref_slow_sync_frequency_titles">
@@ -99,7 +99,7 @@
     <string name="error_http_connection_failed">Kann keine HTTP-Verbindung aufbauen. Läuft der Webserver unter dieser Adresse?</string>
 
     <!-- Main activity -->
-    <string name="ma_title_rate_us">Bewerte uns!</string>
+    <string name="ma_title_rate_us">Bewerten Sie uns!</string>
     <string name="ma_title_add_account">Konto hinzufügen</string>
     <string name="ma_title_welcome">Willkommen</string>
     <string name="ma_content_welcome">Willkommen bei Nextcloud SMS. Diese Anwendung ermöglicht es Ihnen die Synchronisierung Ihrer SMS mit Ihrer Nextcloud-Instanz.</string>
