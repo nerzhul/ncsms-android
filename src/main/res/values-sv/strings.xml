@@ -36,8 +36,8 @@
     <!-- Translations must begin there -->
     <!-- Preferences -->
     <string name="pref_title_sync">SMS - Snabb</string>
-    <string name="pref_title_sync_frequency">Intervall mellan synkorniseringar</string>
-    <string name="pref_title_slow_sync">SMS - Långsam och Säker</string>
+    <string name="pref_title_sync_frequency">Intervall mellan synkroniseringar</string>
+    <string name="pref_title_slow_sync">SMS - långsam och säker</string>
     <string name="pref_title_slow_sync_frequency">Intervall mellan synkroniseringar</string>
     <string name="action_settings">Inställningar</string>
     <string name="sync_now">Synkronisera nu</string>
@@ -95,8 +95,8 @@
     <string name="error_field_required">Detta fält är obligatoriskt</string>
     <string name="prompt_serverURI">Serveradress</string>
     <string name="error_invalid_server_address">Felaktig serveradress</string>
-    <string name="error_connection_failed">Anslutning misslyckades, vänligen säkerställ att detta är rätt server</string>
-    <string name="error_http_connection_failed">Det gick inte att genomföra en HTTP-anslutning. Vänligen säkerställ att det finns en web-server</string>
+    <string name="error_connection_failed">Anslutning misslyckades, säkerställ att detta är rätt server</string>
+    <string name="error_http_connection_failed">Det gick inte att genomföra en HTTP-anslutning. Säkerställ att det finns en web-server</string>
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">Skriv en recension!</string>
@@ -173,14 +173,15 @@
     <string name="err_kitkat_required">Android 4.4 eller högre krävs för att använda denna funktion.</string>
     <string name="restore_finished">Återställning av SMS är slutförd.</string>
     <string name="x_messages_restored">meddelanden återställda&#8230;</string>
-    <string name="err_no_connection">Ingen anslutning tillgänglig, vänligen säkerställ att du har en giltig dataanslutning.</string>
+    <string name="err_no_connection">Ingen anslutning tillgänglig, säkerställ att du har en giltig dataanslutning.</string>
     <string name="reinit_sync_cursor">Starta om synkroniseringsmarkör</string>
-    <string name="reinit_sync_cursor_confirm">Är du säker att du vill starta om synkroniseringsmarkör? Detta kan sakta ner nästa synkronisering om massa gamla meddelanden hittas som inte är synkroniserad med servern.</string>
+    <string name="reinit_sync_cursor_confirm">Är du säker på att du vill starta om synkroniseringsmarkören? Detta kan sakta ner nästa synkronisering om många gamla meddelanden hittas som inte är synkroniserade med servern.</string>
     <string name="yes_confirm">Ja</string>
     <string name="no_confirm">Nej</string>
     <string name="pref_show_sync_notifications">Visa synkroniseringsaviseringar</string>
     <string name="sync_complete">Synkronisering färdig</string>
-    <string name="err_sync_http_write_failed">Fel #19: det gick inte att skriva HTTP-ström när du överföra data till en server.</string>
+    <string name="err_sync_http_write_failed">Fel #19: det gick inte att skriva HTTP-ström när data överfördes till servern.
+</string>
     <string name="err_sync_http_request_protocol_exception">Fel # 20: Det gick inte att korrekt ställa in HTTP-protokollversionen.</string>
     <string name="action_appinfo_privacy_policy">Integritetspolicy</string>
     <string name="privacy_policy_large_text">

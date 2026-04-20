@@ -33,7 +33,7 @@
     <string name="gp_description">
 Nextcloud SMS-applikationen synkroniserar dina SMS-meddelanden till din Nextcloud-instans och gör det möjligt att läsa dina meddelanden från den.
 
-Skicka meddelanden från din Nextcloud-instans kommer att bli möjligt i en kommande version.
+Det kommer att bli möjligt att skicka meddelanden från din Nextcloud-instans i en kommande version.
 
 Applikationen är fullt kompatibel från Android 4.0 till 6.0
 	</string>
