@@ -95,8 +95,8 @@
     <string name="error_field_required">Detta fält är obligatoriskt</string>
     <string name="prompt_serverURI">Serveradress</string>
     <string name="error_invalid_server_address">Felaktig serveradress</string>
-    <string name="error_connection_failed">Anslutning misslyckades, säkerställ att detta är rätt server</string>
-    <string name="error_http_connection_failed">Det gick inte att genomföra en HTTP-anslutning. Säkerställ att det finns en web-server</string>
+    <string name="error_connection_failed">Anslutning misslyckades, kontrollera att det här är rätt server.</string>
+    <string name="error_http_connection_failed">Det gick inte att genomföra en HTTP-anslutning. Säkerställ att det finns en webbserver</string>
 
     <!-- Main activity -->
     <string name="ma_title_rate_us">Skriv en recension!</string>
