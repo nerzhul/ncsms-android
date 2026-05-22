@@ -187,7 +187,7 @@
  \"Genel Bilgiler\n\n\"
 
  \"Nextcloud SMS katılımcılar tarafından geliştirilmiş özgür bir uygulamadır. Bu gizlilik ilkesi \"
- \"sizi bu uygulama tarafından toplanan bilgiler hakkında bilgilendirmeyi amaçlamaktadır.\"
+ \"sizi bu uygulama tarafından toplanan veriler ile ilgili bilgilendirmeyi amaçlamaktadır.\"
 
  \"Toplanan bilgiler\n\n\"
 
@@ -200,7 +200,7 @@
 
  \"Uygulama içinde bir Nextcloud hesabı yapılandırldığında, Nextcloud kopyası sahibinin \"
  \"SMS ve çağrı günlüğü kayıtlarının kendi alt yapısında ve kendi sorumluluğunda \"
- \"saklandığı hakkında bir ilke onaylanır.\n\n\"
+ \"saklandığı ile ilgili bir ilke onaylanır.\n\n\"
 
  \"Herkese açık ya da bir kuruma ait olan bir Nextcloud kopyası hesabı kullanmanız önerilmez. \"
  \"Kendi Nextcloud kopyanızda gizliliğinizin kendi kontrolunuzda olması gerekir.\n\n\"
