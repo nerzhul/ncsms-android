@@ -39,13 +39,13 @@
     <string name="pref_title_sync_frequency">Kiire sünkroonimine</string>
     <string name="pref_title_slow_sync">SMS - aeglane ja turvaline</string>
     <string name="pref_title_slow_sync_frequency">Aeglane, aga turvaline sünkroonimine</string>
-    <string name="action_settings">Seaded</string>
+    <string name="action_settings">Seadistused</string>
     <string name="sync_now">Sünkrooni kohe</string>
     <string name="pref_category_sync">Sünkroniseerimine</string>
     <string name="title_global_pref_to_general_prefs">Üldised eelistused</string>
     <string name="summary_global_pref_to_general_prefs">Sünkroonimise eelistused</string>
     <string name="summary_notif_prefs">Teavitused</string>
-    <string name="pref_header_data_sync">Andmed &amp; sünkroniseerimine</string>
+    <string name="pref_header_data_sync">Andmed ja sünkroonimine</string>
     <string name="title_activity_general_settings">Üldised seadistused</string>
 
     <string-array name="pref_sync_frequency_titles">
@@ -113,9 +113,13 @@
     <string name="notification_channel_name_default">Vaikimisi</string>
     <string name="notification_channel_name_sync">Sünkrooni</string>
 
+    <string name="contactinfos_list">Kontaktide loend</string>
+    <string name="function_not_available">See funktsionaalsus pole veel saadaval.</string>
+
     <string name="ui_notification_title_template">Nextcloud SMS: %1$s</string>
     <string name="navigation_drawer_open">Ava menüü</string>
     <string name="navigation_drawer_close">Sulge menüü</string>
+    <string name="ma_title_my_accounts">Minu kasutajakontod</string>
     <string name="cancel">Loobu</string>
     <string name="account_actions">Kasutajakonto tegevused</string>
     <string name="yes_confirm">Jah</string>
