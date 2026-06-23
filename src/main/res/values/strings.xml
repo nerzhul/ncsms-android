@@ -193,7 +193,7 @@
     <string name="ma_title_rate_us">Rate us!</string>
     <string name="ma_title_add_account">Add an account</string>
     <string name="ma_title_welcome">Welcome</string>
-    <string name="ma_content_welcome">Welcome to Nextcloud SMS application. This application let you synchronize your SMS to your Nextcloud instance using SMS app.</string>
+    <string name="ma_content_welcome">Welcome to the Nextcloud SMS application.\nThis application lets you synchronize your text messages (SMS) to a Nextcloud server.\n To get started, open the menu on the left  and choose "Add an account", then pick Nextcloud SMS and enter your server details.\n\n Note: the Nextcloud server must be running the <a href="https://apps.nextcloud.com/apps/ocsms">Phone Sync SMS app</a>. Please ensure the app is installed on your Nextcloud server or ask your server admin to install it. </string>
     <string name="ma_title_remote_account">Remote account</string>
     <string name="choose_account">Choose account</string>
 
